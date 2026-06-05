@@ -9,6 +9,9 @@ node_modules/
 dist/
 build/
 .vite/
+
+# Dashboard data is generated from analytics/snapshots by sync-data.mjs
+dashboard/public/data/
 *.log
 npm-debug.log*
 

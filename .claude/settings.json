@@ -11,7 +11,17 @@
       "mcp__claude_ai_Windsor_ai__get_current_user",
       "mcp__claude_ai_Windsor_ai__get_connectors",
       "mcp__claude_ai_Windsor_ai__get_fields",
-      "mcp__claude_ai_Windsor_ai__get_data"
+      "mcp__claude_ai_Windsor_ai__get_data",
+      "Bash(node -e \"console.log\\('vite', require\\('vite/package.json'\\).version, '| recharts', require\\('recharts/package.json'\\).version\\)\")",
+      "Bash(npm config *)",
+      "Bash(echo \"registry: $\\(npm config get registry\\)\")",
+      "Bash(npm ping *)",
+      "Bash(echo \"EXITCODE=$?\")",
+      "Bash(NODE_OPTIONS=--use-system-ca npm ping --fetch-timeout=10000)",
+      "Bash(NODE_OPTIONS=--use-system-ca npm install --no-audit --no-fund --loglevel=error)",
+      "Bash(echo \"INSTALL_EXIT=$?\")",
+      "Bash(ls node_modules/.bin/vite)",
+      "Bash(echo \"BUILD_EXIT=$?\")"
     ],
     "additionalDirectories": [
       "c:\\Users\\matte\\.claude\\projects\\c--Users-matte-Documents-Claude-Projects--matteofights\\memory"
