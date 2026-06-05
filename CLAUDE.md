@@ -46,6 +46,7 @@ Other connected MCPs (see `context/apps.md`): Higgsfield (`virality_predictor`, 
 | Growth plan & funnel | [context/strategy.md](context/strategy.md) | Strategic decisions, cadence, CTAs |
 | Pillars, formats, cadence | [context/content.md](context/content.md) | Planning what to post |
 | The proven viral reel format | [context/viral-format.md](context/viral-format.md) | Making a reel / writing a hook + caption |
+| Caption engine (hook → caption) | [production/captions/CAPTION-ENGINE.md](production/captions/CAPTION-ENGINE.md) | Generating a reel's subhook + full caption from a hook |
 | Analytics snapshots + IDs | [context/social.md](context/social.md) | Performance questions, before pulling live |
 | Connected tools/MCPs | [context/apps.md](context/apps.md) | Tooling decisions |
 
@@ -66,7 +67,7 @@ docs/superpowers/specs/   design + phase specs
 
 - **Phase 0 — Foundation:** brain + migrated content + repo. _In progress._
 - **Phase 1 — Analytics + dashboard:** Windsor pulls → snapshots/reports → read-only UI. _Next._
-- **Phase 2 — Content engine + "make a reel":** _Designed._
+- **Phase 2 — Content engine + "make a reel":** caption + subhook engine built (text); video rendering deferred. _In progress._
 - **Phase 3 — Jarvis + voice:** _Designed._
 - **Phase 4 — Posting + 24/7 agents:** _Designed._
 
