@@ -1,0 +1,45 @@
+{
+  "pulled_at": "2026-06-05",
+  "source": "windsor.ai instagram connector",
+  "account": { "username": "matteofights", "id": "17841465098113052", "windsor_account": "joinstance@gmail.com" },
+  "note": "Curated snapshot. Full raw 40-media pull preserved at .claude/projects/.../tool-results/toolu_01VxVQJh34oEMVXKGDw72DbW.txt",
+  "profile": {
+    "followers_count": 1651,
+    "follows_count": 599,
+    "media_count": 40,
+    "biography": "Fighter rebuilding from broken leg + ACL tear\nI help beginners stop training random\nDM “HELP” for free boxing advice\n🇨🇭🇧🇷 Bangkok",
+    "website": null,
+    "dm_trigger_current": "HELP"
+  },
+  "daily_last_30d": [
+    { "date": "2026-05-22", "reach": 5, "views": 5, "new_followers": 1 },
+    { "date": "2026-05-23", "reach": 1, "views": 4, "new_followers": 0 },
+    { "date": "2026-05-24", "reach": 71, "views": 84, "new_followers": 0 },
+    { "date": "2026-05-25", "reach": 39, "views": 48, "new_followers": 0 },
+    { "date": "2026-05-26", "reach": 104, "views": 210, "new_followers": 1 },
+    { "date": "2026-05-27", "reach": 397, "views": 561, "new_followers": 3 },
+    { "date": "2026-05-28", "reach": 1895, "views": 3337, "new_followers": 4 },
+    { "date": "2026-05-29", "reach": 3488, "views": 6038, "new_followers": 7 },
+    { "date": "2026-05-30", "reach": 11697, "views": 21432, "new_followers": 17 },
+    { "date": "2026-05-31", "reach": 14156, "views": 26998, "new_followers": 27 },
+    { "date": "2026-06-01", "reach": 58428, "views": 106502, "new_followers": 36 },
+    { "date": "2026-06-02", "reach": 58943, "views": 109034, "new_followers": 53 },
+    { "date": "2026-06-03", "reach": 22053, "views": 39998, "new_followers": 20 },
+    { "date": "2026-06-04", "reach": 18412, "views": 35812, "new_followers": 0 }
+  ],
+  "top_media_by_views": [
+    { "date": "2026-06-01", "type": "REELS", "archetype": "identity", "views": 320982, "reach": 145953, "saved": 745, "shares": 233, "likes": 4959, "comments": 70, "avg_watch_ms": 10992, "hook": "6 signs you were born to be a fighter", "cta": "Repost this so the born fighters find out who they are", "permalink": "https://www.instagram.com/reel/DZBjI9qzi6f/" },
+    { "date": "2026-01-17", "type": "REELS", "archetype": "tactical", "views": 160951, "reach": 68882, "saved": 1937, "shares": 301, "likes": 2740, "comments": 64, "avg_watch_ms": 12773, "hook": "8 ways to become dangerous without living in the gym", "cta": "DM FIGHT", "permalink": "https://www.instagram.com/reel/DTnY8eMk-6E/" },
+    { "date": "2026-05-30", "type": "REELS", "archetype": "tactical", "views": 32056, "reach": 14577, "saved": 612, "shares": 108, "likes": 690, "comments": 14, "avg_watch_ms": 11205, "hook": "7 ways to get smarter without taking damage", "cta": "DM IQ", "permalink": "https://www.instagram.com/reel/DY9UUgfTpYD/" },
+    { "date": "2026-02-13", "type": "REELS", "archetype": "tactical", "views": 27327, "reach": 13378, "saved": 664, "shares": 148, "likes": 632, "comments": 18, "avg_watch_ms": 10552, "hook": "8 ways to train boxing anywhere, no gym", "cta": "Comment WORK", "permalink": "https://www.instagram.com/reel/DUs_sWCE7e1/" },
+    { "date": "2026-05-29", "type": "REELS", "archetype": "tactical", "views": 21465, "reach": 11051, "saved": 265, "shares": 24, "likes": 228, "comments": 0, "avg_watch_ms": 9923, "hook": "7 ways to hit hard without weights", "cta": "DM POWER", "permalink": "https://www.instagram.com/reel/DY7gUEFpnZ-/" },
+    { "date": "2026-05-31", "type": "REELS", "archetype": "tactical", "views": 7562, "reach": 4010, "saved": 65, "shares": 4, "likes": 61, "comments": 9, "avg_watch_ms": 8752, "hook": "smarter reps, not more damage", "cta": "DM IQ", "permalink": "https://www.instagram.com/reel/DZA-Ps_Tnrq/" },
+    { "date": "2026-06-03", "type": "REELS", "archetype": "tactical", "views": 7374, "reach": 3913, "saved": 54, "shares": 12, "likes": 109, "comments": 0, "avg_watch_ms": 8778, "hook": "7 ways to build dangerous hands without hard sparring", "cta": "Repost this", "permalink": "https://www.instagram.com/reel/DZIMyNiTl3k/" },
+    { "date": "2026-06-04", "type": "REELS", "archetype": "tactical", "views": 6820, "reach": 3304, "saved": 20, "shares": 2, "likes": 46, "comments": 0, "avg_watch_ms": 9482, "hook": "6 signs you're training boxing like a beginner", "cta": "Comment HELP", "permalink": "https://www.instagram.com/reel/DZKWA9STuTx/" }
+  ],
+  "carousels": [
+    { "date": "2025-11-20", "views": 1834, "shares": 74, "hook": "Why you should start boxing in 2025", "note": "carousels underperform reels" },
+    { "date": "2026-03-11", "views": 374, "hook": "First fight. 16 years old. April 2023." }
+  ],
+  "observed_dm_triggers": ["HELP", "FIGHT", "POWER", "IQ", "CARDIO", "WORK", "START", "DISCIPLINE", "ANYWHERE", "STRUCTURE"]
+}

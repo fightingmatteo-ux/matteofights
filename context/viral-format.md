@@ -42,6 +42,41 @@ DM Me "FIGHT" if you need help setting up a schedule.
 
 ---
 
+## TWO PROVEN ARCHETYPES (confirmed by 2026-06-05 data)
+
+The account has two distinct viral formats. Both are listicles; they optimize for different signals.
+
+### A) Tactical Listicle → SAVES
+Hook: `[NUMBER] WAYS TO [OUTCOME] WITHOUT [REQUIREMENT]`. Numbered, usable tips. Closes with a
+save/DM CTA. Hits: 160k (1,937 saves), 32k, 27k, 21k. This is the section above (Reel 1).
+
+### B) Identity Listicle → SHARES / REPOSTS
+Hook: `[NUMBER] SIGNS YOU [ARE / AREN'T A REAL FIGHTER]`. Statements about who the viewer *is*, not
+tips. Closes with **"Repost this so real fighters find it."** This produced the biggest post ever:
+
+```
+Some people train for fun.
+Some people were built for this.
+
+6 signs you were born to be a fighter:
+
+1. You don't panic under pressure, you wake up
+2. You hate losing more than you enjoy winning
+3. You can take pain without making excuses
+4. You replay mistakes until you fix them
+5. You feel more alive in chaos than comfort
+6. You were never looking for easy, you were looking for a test
+
+Repost this so the born fighters find out who they are.
+
+#boxing #fightermindset #fight #fightlife #muaythai
+```
+→ 320,982 views · 145,953 reach · 4,959 likes · 233 shares.
+
+**Rotate A and B.** A keeps the save signal high; B detonates reach via shares.
+
+---
+
 ## FORMAT RULES (never break these)
 
 **Thumbnail:**

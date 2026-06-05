@@ -15,7 +15,11 @@ Bad: "Unlock your potential and transform your training journey."
 - **Prefer second person over "I"** in hooks and openers — direct address pulls harder.
 - **Short sentences. Active voice.** Say what you mean.
 - **One idea per line.** Captions are scannable, not paragraphs.
-- **End with one CTA.** Engagement CTA ("Drop a 🥊 if…") and/or conversion CTA ("DM me 'FIGHT'…").
+- **End with one CTA.** Three that work here, matched to the post's goal:
+  - **Save/learn:** "Save this before your next session."
+  - **Share/reach (identity posts):** "Repost this so real fighters find it." ← drove the 320k reel.
+  - **Convert/DM:** "Comment HELP" or "DM 'HELP'" for free boxing advice. _(`HELP` is the current
+    bio trigger; older reels used FIGHT/POWER/IQ/CARDIO/WORK — standardizing is a live question.)_
 - **2–4 hashtags, niche-specific.** Combat sports only.
 
 ## Language to use (mirror the audience)

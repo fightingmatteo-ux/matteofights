@@ -4,6 +4,9 @@ _Read for any caption, script, or narrative work. This is the raw material for c
 
 ## Handle
 @matteofights — Instagram, the primary (and currently only) channel. No X/Twitter.
+**19 years old. Swiss + Brazilian (🇨🇭🇧🇷), based in Bangkok.** First Muay Thai fight at 16 (April 2023).
+Current bio: _"Fighter rebuilding from broken leg + ACL tear · I help beginners stop training random ·
+DM 'HELP' for free boxing advice · 🇨🇭🇧🇷 Bangkok."_
 
 ## The story (the content goldmine)
 Martial arts his whole life. Karate at 7. Moved to Thailand, trained Muay Thai. Three years of

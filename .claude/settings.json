@@ -10,7 +10,8 @@
       "WebFetch(domain:claude.ai)",
       "mcp__claude_ai_Windsor_ai__get_current_user",
       "mcp__claude_ai_Windsor_ai__get_connectors",
-      "mcp__claude_ai_Windsor_ai__get_fields"
+      "mcp__claude_ai_Windsor_ai__get_fields",
+      "mcp__claude_ai_Windsor_ai__get_data"
     ],
     "additionalDirectories": [
       "c:\\Users\\matte\\.claude\\projects\\c--Users-matte-Documents-Claude-Projects--matteofights\\memory"

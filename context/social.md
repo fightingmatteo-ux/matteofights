@@ -12,14 +12,21 @@ Account: joinstance@gmail.com. Rich per-reel insights available (reach, views, a
 total watch time, saves, shares, engagement) plus captions, permalinks, and follower/views daily
 series.
 
-## Baseline
-_To be filled by the first Windsor pull (Phase 1). Latest snapshots/reports live in
-`analytics/snapshots/` and `analytics/reports/`._
+## Baseline (2026-06-05 pull)
+- **Followers: 1,651** · Following: 599 · Posts: 40.
+- **Mid-viral-surge:** daily reach jumped from ~5/day (pre-May 24) to ~58k/day on Jun 1–2;
+  ~165 new followers in 9 days. Driven by one reel (320k views). The window is open — keep posting.
+- Latest detail lives in `analytics/snapshots/2026-06-05.json` and `analytics/reports/2026-06-05.md`.
 
-## Known winners
-- **160k-view reel** — "8 WAYS TO FIGHT LIKE A KILLER, WITHOUT SPARRING 5x/WEEK" (listicle-rant).
-- **27k-view reel** — "8 WAYS TO TRAIN BOXING ANYWHERE".
-- Pattern: curiosity-gap listicle hooks + `READ DESCRIPTION ⬇️` overlay. Carousels underperform.
+## Two viral archetypes (the engines)
+1. **Tactical listicle** — `"X ways to [outcome] WITHOUT [requirement]"`. Drives **saves** (the
+   algorithmic rocket fuel). Top: 160k-view "without living in the gym" (1,937 saves), 32k/27k/21k.
+2. **Identity listicle** — `"X signs you [are/aren't a real fighter]"`. Drives **shares + reposts**
+   via a `Repost this so real fighters find it` CTA. Top: **320k-view** "6 signs you were born to be
+   a fighter" (Jun 1) — the single biggest post and the surge's cause.
+
+Watch-time gate: viral reels hold **~10–13s** avg; flops sit at ~5–7s. **Carousels flop** (confirmed,
+both album posts <2k views). See [content.md](content.md) and [viral-format.md](viral-format.md).
 
 ## Useful Windsor fields (instagram)
 - Profile: `followers_count`, `follows_count`, `media_count`, `biography`, `username`.

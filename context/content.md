@@ -8,9 +8,15 @@ _Read when planning what to post._
 "I built an app with a broken fibula." Quick cuts: injury → recovery → laptop → push-ups → app.
 Raw voice-note narration. The hook for everyone who lands on the account.
 
-### 2. Fighter Listicle-Rants (the proven viral engine)
-The format that hit 160k and 27k. Numbered, tactical, curiosity-gap hook. See
-[viral-format.md](viral-format.md) for the exact structure. Highest priority for growth.
+### 2a. Tactical Listicle (the save engine) — TOP PRIORITY
+`"X ways to [outcome] WITHOUT [requirement]"`. Numbered, usable, curiosity-gap hook. Drives **saves**
+(the algorithm's rocket fuel). Hits: 160k "without living in the gym" (1,937 saves), 32k/27k/21k.
+Serves the beginner who wants to actually use it. See [viral-format.md](viral-format.md).
+
+### 2b. Identity Listicle (the share engine) — TOP PRIORITY
+`"X signs you were born to be a fighter"` / `"X signs you're training like a beginner"`. Drives
+**shares + reposts** via a `Repost this so real fighters find it` CTA. This produced the **320k-view**
+biggest-ever post (Jun 1). Lower save rate, far higher share/reach. Alternate these with 2a.
 
 ### 3. Talking-Head Rants
 Matteo to camera, raw, unfiltered, short. Topics that work:

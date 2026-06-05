@@ -3,13 +3,18 @@
 _Read for hook psychology, targeting, and copy that lands._
 
 ## Who's watching
-Fighters and aspiring fighters. Trains 4–5x a week — Muay Thai or boxing, maybe some BJJ. Has a job
-or studies. Bangkok, London, Rome, Sydney — location doesn't matter, the identity does. Gets up for
-roadwork when he has to (sometimes doesn't). Knows what to do, doesn't always do it, keeps
-restarting. Scrolls IG after a session instead of sleeping.
+**Primary: beginner-to-early-intermediate boxers who train but train "random"** — no structure, no
+plan, going through the motions. The bio is explicit: _"I help beginners stop training random."_
+They train recreationally or are early in the sport, have a job or studies, and want to get
+genuinely dangerous without unlimited gym time. The tactical reels (saves) serve this person
+directly — they save the "X ways without Y" reels to actually use them.
 
-He's **not looking for motivation** — he's looking for **proof that others do the work**, and for
-tactical edges he can use. When he finds someone who's clearly lived it, he goes deep.
+**Secondary / reach layer: the broad fighter identity.** The identity reels ("signs you were born
+to be a fighter") pull a much wider net — anyone who *wants to see themselves* as a fighter, not
+just beginners. That's what drives the share-fueled viral spikes.
+
+They're **not looking for motivation** for its own sake — the tactical crowd wants usable edges, the
+identity crowd wants to recognize themselves and tag/repost. Serve both.
 
 ## Core frustrations (use in hooks)
 1. Can't train as much as he wants — schedule, money, or injury caps his volume.
