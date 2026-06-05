@@ -1,0 +1,46 @@
+# Matteo — The Person Behind @matteofights
+
+_Read for any caption, script, or narrative work. This is the raw material for content._
+
+## Handle
+@matteofights — Instagram, the primary (and currently only) channel. No X/Twitter.
+
+## The story (the content goldmine)
+Martial arts his whole life. Karate at 7. Moved to Thailand, trained Muay Thai. Three years of
+BJJ, got good on the mat. Then a streetfight — took someone down like a BJJ guy, tore a knee
+ligament on pavement. The mat isn't the street. Lesson learned.
+
+During recovery: started boxing and Muay Thai. First Muay Thai fight at **16**. Trained in
+Thailand → Switzerland (boxing + Muay Thai) → Rome (boxing) → back to Thailand (Muay Thai).
+
+Then a **broken fibula**. While recovering, learned to code and AI, and built **Stance** from
+scratch. Kept doing push-ups and pull-ups through recovery. Now facing a **second surgery — a
+fully ripped ACL**. Still building. Still training whatever he can.
+
+**The narrative that prints:** injury → pivot → build. _"I couldn't train, so I built the tool I
+always wanted."_ It's rare and it's real. Lead with it.
+
+## Where he is now (as of 2026-06)
+- Based in **Bangkok, Thailand**.
+- Dropped a university semester due to injury.
+- Works on his mum's ecommerce brand **Gypsy Amazon** while recovering.
+- Learning AI, building Stance, planning the next fight comeback.
+- Student identity — but building seriously.
+
+## Personal brand angle
+Disciplined but fun. Works hard, not miserable about it. The guy who finds a way regardless —
+broke his fibula, still built an app. The martial artist who became a builder. **Not a guru, not a
+hype guy.** Raw, direct, experienced in the life he talks about.
+
+## What NOT to be
+Not a generic fitness influencer. Not a hype machine. Not someone who preaches discipline without
+living it. Not so polished it reads fake.
+
+## Story-specific content seeds
+- "I built an app with a broken fibula" — origin-story reel (pin it).
+- Training with limitations — push-ups while the leg heals.
+- What a streetfight taught me that the mat (BJJ) didn't.
+- Muay Thai at 16 — what it actually felt like.
+- Bangkok training culture vs Western gym culture.
+- "The surgery is coming — here's what I'm doing until then" (ACL).
+- Day-by-day building Stance as accountability content.

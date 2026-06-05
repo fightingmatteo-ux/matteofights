@@ -1,0 +1,30 @@
+# Secrets
+.env
+.env.local
+*.sessionid
+.ig_sessionid
+
+# Node
+node_modules/
+dist/
+build/
+.vite/
+*.log
+npm-debug.log*
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Large media (keep the bank's structure + small frames, not raw video)
+content-bank/reels/**/*.mp4
+content-bank/scraped/**
+production/**/out/
+production/**/output/
+*.mov
+
+# OS
+.DS_Store
+Thumbs.db

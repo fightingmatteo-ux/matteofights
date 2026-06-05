@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls -la \"c:/Users/matte/Documents/Claude/Projects/\")",
+      "Read(//c/Users/matte/Documents/Claude/Projects/**)",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git -c user.name=Matteo -c user.email=fightingmatteo@gmail.com commit -q -m ' *)",
+      "Read(//c/Users/matte/.claude/projects/c--Users-matte-Documents-Claude-Projects--matteofights/memory/**)",
+      "WebFetch(domain:claude.ai)",
+      "mcp__claude_ai_Windsor_ai__get_current_user",
+      "mcp__claude_ai_Windsor_ai__get_connectors",
+      "mcp__claude_ai_Windsor_ai__get_fields"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\matte\\.claude\\projects\\c--Users-matte-Documents-Claude-Projects--matteofights\\memory"
+    ]
+  }
+}
