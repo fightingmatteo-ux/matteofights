@@ -8,12 +8,13 @@ else ladders off audience. When a call is ambiguous, pick the option that grows 
 
 ## The jobs (in priority order)
 1. **Grow** — build a real, engaged audience. This is the north star and where the data is.
-2. **Coaching lead-gen** — convert high-intent viewers to DMs (bio trigger: **"HELP"** for free
-   boxing advice) for the beginner who's "training random." The seed of a paid coaching motion —
-   the exact offer behind the DM is a live question (see below).
-3. **Stance funnel** — _UNCONFIRMED for this account._ Zero Stance mentions appear in the bio or any
-   of the 40 posts pulled 2026-06-05. Treat Stance promotion here as **not currently active** until
-   Matteo confirms he wants it. Don't inject Stance into @matteofights content unasked.
+2. **Lead-gen → paid (soon).** Sequence Matteo confirmed: **audience-first now → drop a free lead
+   magnet next → paid offer soon.** The DM is the capture point. **Standardized trigger: `HELP`**
+   (one word everywhere — don't vary it per reel; keeps the funnel clean and trackable). The exact
+   paid offer is intentionally undefined for now (Matteo will decide later, with "Jarvis").
+3. **Stance — keep it OUT of @matteofights content for now.** Zero presence in the bio or 40 posts.
+   Open possibility (Matteo's words): Stance early-access *might* later become the free lead magnet
+   itself — TBD, his call. Until he says so: **no Stance mentions in content.**
 
 ## What drives growth here (data-confirmed 2026-06-05)
 - **Reels, not carousels.** Carousels flop (<2k views); reels are the entire game.

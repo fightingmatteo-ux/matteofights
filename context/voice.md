@@ -18,8 +18,9 @@ Bad: "Unlock your potential and transform your training journey."
 - **End with one CTA.** Three that work here, matched to the post's goal:
   - **Save/learn:** "Save this before your next session."
   - **Share/reach (identity posts):** "Repost this so real fighters find it." ← drove the 320k reel.
-  - **Convert/DM:** "Comment HELP" or "DM 'HELP'" for free boxing advice. _(`HELP` is the current
-    bio trigger; older reels used FIGHT/POWER/IQ/CARDIO/WORK — standardizing is a live question.)_
+  - **Convert/DM:** "Comment HELP" or "DM 'HELP'" for free boxing advice. **Always use `HELP`** —
+    it's the standardized trigger. Do not vary it per reel (older posts used FIGHT/POWER/IQ/etc.;
+    that's deprecated — one word keeps the funnel clean).
 - **2–4 hashtags, niche-specific.** Combat sports only.
 
 ## Language to use (mirror the audience)
