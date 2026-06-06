@@ -23,7 +23,8 @@ export async function* runJarvisTurn(
       options: {
         model: MODEL,
         thinking: { type: "adaptive" },
-        effort: "high",
+        effort: "medium", // conserves Claude Pro usage limits; raise to "high" on paid API/Max
+
         cwd: REPO_ROOT,
         settingSources: ["project"], // loads CLAUDE.md (the brain's operating rules)
         systemPrompt: JARVIS_PERSONA,

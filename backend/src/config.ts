@@ -6,7 +6,10 @@ const here = dirname(fileURLToPath(import.meta.url));
 export const REPO_ROOT = resolve(here, "..", "..");
 export const DRAFTS_DIR = resolve(REPO_ROOT, "content-bank", "captions", "drafts");
 
-export const MODEL = "claude-opus-4-8";
+// Sonnet by default so the backend runs comfortably on a Claude Pro subscription
+// (Opus is heavily limited on Pro). Bump to "claude-opus-4-8" if you move to the
+// paid API or a Max plan and want maximum capability.
+export const MODEL = "claude-sonnet-4-6";
 export const PORT = Number(process.env.PORT ?? 8787);
 
 export const JARVIS_PERSONA = [
