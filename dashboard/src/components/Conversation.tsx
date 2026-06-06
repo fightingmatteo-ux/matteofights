@@ -1,19 +1,49 @@
-import { useRef, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import { useChat } from "../lib/useChat";
+import { useMicLevel } from "../lib/useMicLevel";
+import { useSpeech } from "../lib/useSpeech";
+import { BrainConstellation } from "./BrainConstellation";
+import { derivePhase, targetToNode, type NodeId } from "../lib/brainNodes";
 import { Eyebrow } from "./primitives";
 
 export function Conversation() {
-  const [speak, setSpeak] = useState(false);
+  const [speakOn, setSpeakOn] = useState(false);
   const [draft, setDraft] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const speakReply = (text: string) => {
-    if (!speak || typeof window === "undefined" || !window.speechSynthesis) return;
-    window.speechSynthesis.cancel();
-    window.speechSynthesis.speak(new SpeechSynthesisUtterance(text));
-  };
+  const { speak, speaking, levelRef: ttsLevelRef } = useSpeech();
+  const { levelRef: micLevelRef, status: micStatus } = useMicLevel();
 
-  const { turns, activity, busy, send } = useChat(speakReply);
+  const [activeNode, setActiveNode] = useState<NodeId | null>(null);
+  const [toolKind, setToolKind] = useState<"reading" | "drafting" | null>(null);
+  const clearTimer = useRef<number | undefined>(undefined);
+
+  const onTool = useCallback((name: string, target?: string) => {
+    setActiveNode(targetToNode(name, target));
+    setToolKind(name.includes("save_reel_draft") ? "drafting" : "reading");
+    if (clearTimer.current) window.clearTimeout(clearTimer.current);
+    clearTimer.current = window.setTimeout(() => {
+      setToolKind(null);
+      setActiveNode(null);
+    }, 1600);
+  }, []);
+
+  const onDone = useCallback(
+    (text: string) => {
+      if (speakOn) speak(text);
+    },
+    [speakOn, speak],
+  );
+
+  const { turns, busy, send } = useChat({ onTool, onDone });
+
+  const phase = derivePhase({
+    busy,
+    speaking,
+    reading: toolKind === "reading",
+    drafting: toolKind === "drafting",
+    listening: micStatus === "granted",
+  });
 
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -25,15 +55,22 @@ export function Conversation() {
 
   return (
     <section className="mx-auto max-w-[1320px] px-5 sm:px-8 py-6">
-      <div className="flex items-center justify-between mb-4">
+      <div className="flex items-center justify-between mb-2">
         <Eyebrow>Jarvis</Eyebrow>
         <label className="font-mono text-[11px] text-muted flex items-center gap-2 cursor-pointer">
-          <input type="checkbox" checked={speak} onChange={(e) => setSpeak(e.target.checked)} />
+          <input type="checkbox" checked={speakOn} onChange={(e) => setSpeakOn(e.target.checked)} />
           🔊 speak replies
         </label>
       </div>
 
-      <div className="space-y-3 min-h-[40vh]">
+      <BrainConstellation
+        phase={phase}
+        activeNode={activeNode}
+        micLevelRef={micLevelRef}
+        ttsLevelRef={ttsLevelRef}
+      />
+
+      <div className="space-y-3 min-h-[20vh]">
         {turns.length === 0 && (
           <p className="font-mono text-[12px] text-muted">
             Dictate or type — ask about your analytics, or have Jarvis draft a reel.
@@ -52,7 +89,6 @@ export function Conversation() {
             {t.text || (busy && i === turns.length - 1 ? "…" : "")}
           </div>
         ))}
-        {activity && <div className="font-mono text-[11px] text-muted">{activity}</div>}
       </div>
 
       <form onSubmit={submit} className="mt-6 flex gap-2">

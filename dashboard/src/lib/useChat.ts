@@ -1,18 +1,23 @@
 import { useRef, useState } from "react";
 
 export type Turn = { role: "user" | "assistant"; text: string };
-type ToolName = string;
 
 type ServerEvent =
   | { type: "session"; sessionId: string }
   | { type: "text"; text: string }
-  | { type: "tool"; name: ToolName }
+  | { type: "tool"; name: string; target?: string }
   | { type: "done"; result: string }
   | { type: "error"; message: string };
 
-export function useChat(onAssistantDone?: (text: string) => void) {
+export interface ChatCallbacks {
+  /** Fired for each tool the agent uses (drives the brain constellation). */
+  onTool?: (name: string, target?: string) => void;
+  /** Fired once the assistant turn finishes, with the full reply text. */
+  onDone?: (text: string) => void;
+}
+
+export function useChat(cb: ChatCallbacks = {}) {
   const [turns, setTurns] = useState<Turn[]>([]);
-  const [activity, setActivity] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
   const sessionId = useRef<string | undefined>(undefined);
 
@@ -51,7 +56,7 @@ export function useChat(onAssistantDone?: (text: string) => void) {
         if (evt.type === "session") {
           sessionId.current = evt.sessionId;
         } else if (evt.type === "tool") {
-          setActivity(`${evt.name}…`);
+          cb.onTool?.(evt.name, evt.target);
         } else if (evt.type === "text") {
           assistantText += evt.text;
           setTurns((t) => {
@@ -69,10 +74,9 @@ export function useChat(onAssistantDone?: (text: string) => void) {
         }
       }
     }
-    setActivity(null);
     setBusy(false);
-    if (assistantText) onAssistantDone?.(assistantText);
+    if (assistantText) cb.onDone?.(assistantText);
   }
 
-  return { turns, activity, busy, send };
+  return { turns, busy, send };
 }

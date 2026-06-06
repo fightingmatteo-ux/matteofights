@@ -5,7 +5,7 @@ const valid: ReelInput = {
   date: "2026-06-05",
   archetype: "IDENTITY",
   thumbnail: "6 SIGNS YOU'LL MAKE IT AS A FIGHTER",
-  subhook: "Most people quit the second it stops being fun.\nAnd almost none of them get past #4.",
+  subhook: "Some people train for fun.\nSome people were built for this.",
   caption: "Most people quit...\n\n6 signs you'll make it:\n\n1. ...",
   hashtags: ["#boxing", "#fightermindset", "#muaythai", "#fightlife"],
 };
@@ -31,10 +31,8 @@ describe("validateReelInput", () => {
       validateReelInput({ ...valid, archetype: "STANCE" as unknown as ReelInput["archetype"] }),
     ).toContain("archetype must be TACTICAL or IDENTITY");
   });
-  it("warns when the subhook does not point at a numbered item", () => {
-    expect(
-      validateReelInput({ ...valid, subhook: "Most people quit.\nA few were built for it." }),
-    ).toContain("subhook should point at a specific number (e.g. #4)");
+  it("requires a non-empty subhook", () => {
+    expect(validateReelInput({ ...valid, subhook: "   " })).toContain("subhook is required");
   });
 });
 

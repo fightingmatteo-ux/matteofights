@@ -6,6 +6,18 @@ import type { JarvisEvent } from "./sse";
 const READ_ONLY_TOOLS = ["Read", "Grep", "Glob"];
 const ALLOWED_TOOLS = [...READ_ONLY_TOOLS, "mcp__jarvis__save_reel_draft"];
 
+/** Pull a human/UI-meaningful target from a tool_use input (file path or pattern). */
+function toolTarget(input: unknown): string | undefined {
+  if (input && typeof input === "object") {
+    const o = input as Record<string, unknown>;
+    for (const key of ["file_path", "path", "pattern", "query"]) {
+      const v = o[key];
+      if (typeof v === "string" && v.length > 0) return v;
+    }
+  }
+  return undefined;
+}
+
 /**
  * Runs one conversational turn. On the first turn omit `sessionId`; capture the
  * emitted session id and pass it back on later turns to keep context.
@@ -44,7 +56,7 @@ export async function* runJarvisTurn(
           if (block.type === "text") {
             yield { type: "text", text: block.text };
           } else if (block.type === "tool_use") {
-            yield { type: "tool", name: block.name };
+            yield { type: "tool", name: block.name, target: toolTarget(block.input) };
           }
         }
       } else if (message.type === "result") {

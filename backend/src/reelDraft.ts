@@ -28,8 +28,10 @@ export function validateReelInput(input: ReelInput): string[] {
   if (!input.hashtags.every((h) => h.startsWith("#"))) {
     errors.push("each hashtag must start with #");
   }
-  if (!/#\d/.test(input.subhook)) {
-    errors.push("subhook should point at a specific number (e.g. #4)");
+  // Subhook style (binary contrast / counterintuitive statement) is enforced by the
+  // caption engine + the agent, not by a rigid regex here — kept free-form on purpose.
+  if (input.subhook.trim().length === 0) {
+    errors.push("subhook is required");
   }
   if (!/^\d{4}-\d{2}-\d{2}$/.test(input.date)) {
     errors.push("date must be YYYY-MM-DD");

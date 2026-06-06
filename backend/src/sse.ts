@@ -3,7 +3,7 @@ import type { Response } from "express";
 export type JarvisEvent =
   | { type: "session"; sessionId: string }
   | { type: "text"; text: string }
-  | { type: "tool"; name: string }
+  | { type: "tool"; name: string; target?: string }
   | { type: "done"; result: string }
   | { type: "error"; message: string };
 
