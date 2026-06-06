@@ -17,14 +17,16 @@ export default function App() {
   return (
     <>
       <Grain />
-      <nav className="mx-auto max-w-[1320px] px-5 sm:px-8 pt-5 flex gap-4 font-mono text-[11px] uppercase tracking-[0.18em]">
+      <nav className="mx-auto max-w-[1320px] px-5 sm:px-8 pt-6 flex gap-7 border-b border-line">
         {(["dashboard", "jarvis"] as Tab[]).map((t) => (
           <button
             key={t}
             onClick={() => setTab(t)}
-            className={tab === t ? "text-gold" : "text-muted hover:text-fg"}
+            className={`-mb-px pb-3 font-mono text-[13px] uppercase tracking-[0.22em] border-b-2 transition-colors ${
+              tab === t ? "text-gold border-gold" : "text-muted border-transparent hover:text-fg"
+            }`}
           >
-            {t}
+            {t === "jarvis" ? "◆ Jarvis" : t}
           </button>
         ))}
       </nav>
