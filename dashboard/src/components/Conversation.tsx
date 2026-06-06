@@ -2,6 +2,7 @@ import { useCallback, useRef, useState } from "react";
 import { useChat } from "../lib/useChat";
 import { useMicLevel } from "../lib/useMicLevel";
 import { useSpeech } from "../lib/useSpeech";
+import { useSpeechRecognition } from "../lib/useSpeechRecognition";
 import { BrainConstellation } from "./BrainConstellation";
 import { derivePhase, targetToNode, type NodeId } from "../lib/brainNodes";
 import { Eyebrow } from "./primitives";
@@ -36,6 +37,7 @@ export function Conversation() {
   );
 
   const { turns, busy, send } = useChat({ onTool, onDone });
+  const recog = useSpeechRecognition((text) => void send(text));
 
   const phase = derivePhase({
     busy,
@@ -92,17 +94,38 @@ export function Conversation() {
       </div>
 
       <form onSubmit={submit} className="mt-6 flex gap-2">
+        {recog.supported && (
+          <button
+            type="button"
+            onClick={() => (recog.listening ? recog.stop() : recog.start())}
+            disabled={busy}
+            title={recog.listening ? "Stop listening" : "Push to talk"}
+            className={`border px-3 py-2 text-[15px] leading-none disabled:opacity-40 ${
+              recog.listening
+                ? "border-[#C0392B] text-[#C0392B] animate-pulse"
+                : "border-line text-fg hover:border-gold"
+            }`}
+          >
+            🎤
+          </button>
+        )}
         <input
           ref={inputRef}
-          value={draft}
+          value={recog.listening ? recog.interim : draft}
           onChange={(e) => setDraft(e.target.value)}
-          placeholder="Talk to Jarvis (Wispr Flow dictates here)…"
-          className="flex-1 bg-transparent border border-line px-3 py-2 font-mono text-[13px] text-fg outline-none focus:border-gold"
-          disabled={busy}
+          placeholder={
+            recog.listening
+              ? "Listening… speak now"
+              : recog.supported
+                ? "Tap 🎤 and talk, or type — then Enter"
+                : "Type here (or dictate with Wispr Flow), then Enter"
+          }
+          className="flex-1 bg-transparent border border-line px-3 py-2 font-mono text-[13px] text-fg outline-none focus:border-gold disabled:opacity-60"
+          disabled={busy || recog.listening}
         />
         <button
           type="submit"
-          disabled={busy || !draft.trim()}
+          disabled={busy || recog.listening || !draft.trim()}
           className="border border-line px-4 py-2 font-mono text-[11px] uppercase tracking-[0.18em] text-fg hover:border-gold disabled:opacity-40"
         >
           Send
