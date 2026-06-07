@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Protocol — @matteofights</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:       #0B0B0D;
+      --bg-2:     #111114;
+      --bg-3:     #17171b;
+      --text:     #e8e8e8;
+      --text-dim: #777;
+      --text-mid: #aaa;
+      --red:      #C82020;
+      --gold:     #C49040;
+      --border:   #1e1e22;
+      --border-2: #2a2a30;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 24px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .card {
+      width: 100%;
+      max-width: 960px;
+      display: grid;
+      grid-template-columns: 1fr 1px 420px;
+      min-height: 560px;
+      border: 1px solid var(--border-2);
+      animation: fadeUp 0.5s ease forwards;
+    }
+
+    /* ── LEFT ── */
+    .left {
+      padding: 56px 52px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 20px;
+    }
+
+    .title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(72px, 10vw, 120px);
+      line-height: 0.88;
+      letter-spacing: 0.01em;
+      color: #f0f0f0;
+      margin-bottom: 32px;
+    }
+
+    .rule {
+      width: 40px;
+      height: 2px;
+      background: var(--red);
+      margin-bottom: 28px;
+    }
+
+    .desc {
+      font-size: 15px;
+      color: var(--text-mid);
+      line-height: 1.8;
+      font-weight: 300;
+      margin-bottom: 36px;
+      max-width: 380px;
+    }
+
+    .what-you-get {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 40px;
+    }
+
+    .item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .item-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--red);
+      border-radius: 50%;
+      margin-top: 7px;
+      flex-shrink: 0;
+    }
+
+    .item-text {
+      font-size: 14px;
+      color: var(--text-mid);
+      line-height: 1.65;
+      font-weight: 400;
+    }
+
+    .item-text strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .from {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border);
+    }
+
+    .from-avatar {
+      width: 36px;
+      height: 36px;
+      background: var(--bg-3);
+      border: 1px solid var(--border-2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 16px;
+      color: var(--red);
+      flex-shrink: 0;
+    }
+
+    .from-text {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--text-dim);
+      line-height: 1.6;
+    }
+
+    .from-text strong {
+      color: var(--text);
+      display: block;
+      font-size: 12px;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      background: var(--border-2);
+      width: 1px;
+    }
+
+    /* ── RIGHT ── */
+    .right {
+      padding: 56px 44px;
+      background: var(--bg-2);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .form-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 28px;
+    }
+
+    .field {
+      margin-bottom: 16px;
+    }
+
+    .field label {
+      display: block;
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 8px;
+    }
+
+    .field input {
+      width: 100%;
+      background: var(--bg-3);
+      border: 1px solid var(--border-2);
+      color: var(--text);
+      font-family: 'DM Mono', monospace;
+      font-size: 14px;
+      padding: 14px 16px;
+      outline: none;
+      transition: border-color 0.15s;
+      -webkit-appearance: none;
+      border-radius: 0;
+    }
+
+    .field input::placeholder {
+      color: var(--text-dim);
+      font-weight: 300;
+    }
+
+    .field input:focus {
+      border-color: var(--red);
+    }
+
+    .submit {
+      width: 100%;
+      margin-top: 8px;
+      background: var(--red);
+      color: #fff;
+      border: none;
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 16px;
+      cursor: pointer;
+      transition: opacity 0.15s;
+    }
+
+    .submit:hover { opacity: 0.88; }
+    .submit:active { opacity: 0.75; }
+
+    .privacy {
+      margin-top: 16px;
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--text-dim);
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    .meta-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    .tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      color: var(--text-dim);
+      border: 1px solid var(--border-2);
+      padding: 4px 10px;
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 720px) {
+      body { padding: 24px 16px; align-items: flex-start; }
+
+      .card {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        min-height: unset;
+      }
+
+      .left { padding: 40px 28px 32px; }
+      .right { padding: 32px 28px 40px; }
+      .divider { width: 100%; height: 1px; }
+
+      .from { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+
+    <!-- LEFT: VALUE PROP -->
+    <div class="left">
+      <div>
+        <div class="eyebrow">@matteofights / Free Resource</div>
+        <h1 class="title">THE<br>PROTOCOL</h1>
+        <div class="rule"></div>
+        <p class="desc">The UFC Performance Institute trains 600+ world-class fighters. This is their off-camp training framework — adapted for strikers with 3 sessions a week.</p>
+
+        <div class="what-you-get">
+          <div class="item">
+            <div class="item-dot"></div>
+            <div class="item-text"><strong>5 non-negotiable rules</strong> the UFC PI uses to structure every training block</div>
+          </div>
+          <div class="item">
+            <div class="item-dot"></div>
+            <div class="item-text"><strong>A complete 4-week plan</strong> — Foundation, Build, Peak, Deload — with every session mapped out</div>
+          </div>
+          <div class="item">
+            <div class="item-dot"></div>
+            <div class="item-text"><strong>Gym and no-gym versions</strong> for every exercise</div>
+          </div>
+          <div class="item">
+            <div class="item-dot"></div>
+            <div class="item-text"><strong>The tracking method</strong> UFC athletes use to self-monitor between coaching sessions</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="from">
+        <div class="from-avatar">M</div>
+        <div class="from-text">
+          <strong>Matteo</strong>
+          Fighter · Bangkok · First fight at 16 · Trained across 4 countries
+        </div>
+      </div>
+    </div>
+
+    <!-- DIVIDER -->
+    <div class="divider"></div>
+
+    <!-- RIGHT: FORM -->
+    <div class="right">
+      <div class="form-label">Get instant access</div>
+
+      <!-- Replace YOUR_FORMSPREE_ID with your actual Formspree endpoint -->
+      <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+
+        <!-- Redirect to the protocol after submission -->
+        <input type="hidden" name="_next" value="the-protocol.html">
+        <input type="hidden" name="_subject" value="New Protocol Download">
+
+        <div class="field">
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email" placeholder="you@email.com" required>
+        </div>
+
+        <div class="field">
+          <label for="instagram">Instagram handle</label>
+          <input type="text" id="instagram" name="instagram" placeholder="@yourhandle" required>
+        </div>
+
+        <button type="submit" class="submit">Get The Protocol →</button>
+
+        <p class="privacy">No spam. No newsletter. I'll only reach out if I have something worth sending. You can unsubscribe anytime.</p>
+      </form>
+
+      <div class="meta-tags">
+        <span class="tag">4 Weeks</span>
+        <span class="tag">3× / Week</span>
+        <span class="tag">Source: UFC PI Vol. 2</span>
+        <span class="tag">100% Free</span>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
