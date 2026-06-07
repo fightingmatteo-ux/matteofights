@@ -289,6 +289,17 @@
       color: var(--border2);
     }
 
+    /* ── AVATAR ── */
+    .hero-avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--red);
+      display: block;
+      margin-bottom: 20px;
+    }
+
     .link-item:active { background: var(--bg-3); }
     .featured:active { background: linear-gradient(135deg, #220e0e 0%, #1a0808 100%); }
     .dm-cta:active { background: #18180a; }
@@ -315,14 +326,16 @@
 
     <!-- HERO -->
     <div class="hero">
-      <div class="hero-eyebrow">Matteo / Bangkok</div>
+      <img class="hero-avatar" src="avatar.jpg" alt="Matteo">
+      <div class="hero-eyebrow">Fighter. Builder. Bangkok.</div>
       <div class="hero-name">
         MATTEO<br><span class="red">FIGHTS</span>
       </div>
       <div class="hero-rule"></div>
       <div class="hero-tag">
-        Muay Thai · Boxing · MMA<br>
-        First fight at 16. Trained across 4 countries. Now sharing it all.
+        19. Swiss-Brazilian. First Muay Thai fight at 16.<br>
+        Broken fibula, torn ACL — still training, still building.<br>
+        Four countries. One goal.
       </div>
     </div>
 
