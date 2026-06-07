@@ -21,7 +21,18 @@
       "Bash(NODE_OPTIONS=--use-system-ca npm install --no-audit --no-fund --loglevel=error)",
       "Bash(echo \"INSTALL_EXIT=$?\")",
       "Bash(ls node_modules/.bin/vite)",
-      "Bash(echo \"BUILD_EXIT=$?\")"
+      "Bash(echo \"BUILD_EXIT=$?\")",
+      "Skill(claude-api)",
+      "Skill(claude-api:*)",
+      "Bash(git commit -m ' *)",
+      "WebFetch(domain:docs.claude.com)",
+      "Bash(NODE_OPTIONS=--use-system-ca npm install express dotenv zod @anthropic-ai/claude-agent-sdk)",
+      "Bash(NODE_OPTIONS=--use-system-ca npm install -D typescript tsx vitest @types/express @types/node)",
+      "Bash(npx tsc *)",
+      "Bash(npx vitest *)",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}\\\\n\" http://localhost:5173/)",
+      "Bash(curl -s http://localhost:5173/)",
+      "Bash(git commit *)"
     ],
     "additionalDirectories": [
       "c:\\Users\\matte\\.claude\\projects\\c--Users-matte-Documents-Claude-Projects--matteofights\\memory"

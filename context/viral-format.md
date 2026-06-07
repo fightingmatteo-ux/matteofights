@@ -86,8 +86,11 @@ Repost this so the born fighters find out who they are.
 - Fight poster energy
 
 **Caption structure:**
-1. One punchy opening line (no "I" preferred — direct address)
-2. "Here are X [ways/things/reasons]..." transition line
+1. **Subhook** — same text as the on-screen line under the hook in the video:
+   - Identity: `Some people [easy thing]. / Some people [built different].` + `Most fighters never figure out #[N].`
+   - Tactical: `You don't need [barrier] to [outcome].` + `Most fighters never figure out #[N].`
+   - Point at the most counterintuitive item on the list — don't default to #4, pick the one that earns it
+2. "Here are X [ways/things/signs]..." transition line (or skip for identity format)
 3. Numbered list: `[number]. [concept] [emoji] [short title] → [elaboration]`
 4. Engagement CTA: `Drop a [emoji] if [relatable statement]`
 5. Conversion CTA: `DM Me "[WORD]" if [specific offer]`
@@ -103,13 +106,19 @@ The "WITHOUT" creates the curiosity gap.
 
 ---
 
-## READY-TO-USE HOOKS (tested format, swap topic)
-- `8 WAYS TO FIGHT LIKE A KILLER, WITHOUT SPARRING 5x/WEEK`
-- `8 WAYS TO TRAIN BOXING ANYWHERE`
-- `6 THINGS MUAY THAI GYMS IN THAILAND TEACH THAT WESTERN GYMS DON'T`
-- `7 HABITS FIGHTERS HAVE THAT LOOK INSANE TO NORMAL PEOPLE`
-- `5 THINGS KILLING YOUR PROGRESS THAT FEEL LIKE DISCIPLINE`
-- `8 WAYS TO KEEP TRAINING WHEN YOU'RE INJURED`
+## PROVEN HOOKS (actual top performers — these are gold)
+- `6 SIGNS YOU WERE BORN TO BE A FIGHTER` ← 331k views, 6,543 interactions (IDENTITY)
+- `8 WAYS TO FIGHT LIKE A KILLER WITHOUT SPARRING 5X/WEEK` ← 161k views, 5,091 interactions
+- `8 WAYS YOU CAN TRAIN BOXING ANYWHERE` ← 27k views, 1,482 interactions
+- `7 WAYS TO BUILD FIGHT IQ WITHOUT SPARRING EVERYDAY` ← 32k views, 1,480 interactions
+- `7 WAYS I DEVELOPED REAL POWER WITHOUT EVER TOUCHING A WEIGHT` ← 22k views, 544 interactions
+
+## UNTESTED HOOKS (high potential — barriers not yet covered)
+- `8 WAYS TO GET DANGEROUS WITHOUT A TRAINING PARTNER`
+- `7 WAYS TO BUILD REAL TECHNIQUE WITHOUT A COACH`
+- `8 WAYS TO BECOME A THREAT WITHOUT NATURAL SIZE OR REACH`
+- `6 SIGNS YOU STARTED LATE AND ARE STILL GOING TO MAKE IT`
+- `8 WAYS TO TRAIN BOXING WITHOUT SPENDING MONEY`
 
 ---
 

@@ -9,14 +9,23 @@ _Read when planning what to post._
 Raw voice-note narration. The hook for everyone who lands on the account.
 
 ### 2a. Tactical Listicle (the save engine) — TOP PRIORITY
-`"X ways to [outcome] WITHOUT [requirement]"`. Numbered, usable, curiosity-gap hook. Drives **saves**
-(the algorithm's rocket fuel). Hits: 160k "without living in the gym" (1,937 saves), 32k/27k/21k.
-Serves the beginner who wants to actually use it. See [viral-format.md](viral-format.md).
+`"X ways to [outcome] WITHOUT [requirement]"`. The WITHOUT is always a **barrier removal** — the one
+thing stopping most people. Drives **saves** (algo rocket fuel). Save rate benchmark: 1.2–2.5%.
+8 items outperforms 6 on saves. Top performers: 161k views "without living in the gym" (1,938 saves),
+32k "without damage", 27k "anywhere no gym" (2.46% save rate). See [viral-format.md](viral-format.md).
+
+**Barriers already covered — don't repeat these as hooks:**
+- Sparring too often / 5x a week ✓ | Sparring every day ✓ | No gym (train anywhere) ✓ | No weights ✓
+
+**Barriers not yet covered (high upside):**
+- No training partner | No coach | No natural size/reach | No years of experience | No money | No time (busy schedule — used as caption framing but not yet as a hook)
 
 ### 2b. Identity Listicle (the share engine) — TOP PRIORITY
-`"X signs you were born to be a fighter"` / `"X signs you're training like a beginner"`. Drives
-**shares + reposts** via a `Repost this so real fighters find it` CTA. This produced the **320k-view**
-biggest-ever post (Jun 1). Lower save rate, far higher share/reach. Alternate these with 2a.
+`"X signs you [are/born to be a fighter]"`. The "born" / nature framing is the most flattering possible
+— no skill required, just recognition of who you are. Drives **shares + reposts** via a
+`Repost this so [X] finds [Y]` CTA (framing sharing as a gift, not self-promotion).
+**331k-view** biggest-ever post (Jun 1). Save rate only 0.24% — this format drives reach, not saves.
+Alternate with 2a. Do NOT repeat "born to be a fighter" — find new identity framing.
 
 ### 3. Talking-Head Rants
 Matteo to camera, raw, unfiltered, short. Topics that work:

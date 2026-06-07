@@ -12,11 +12,11 @@ dm_trigger: HELP
 
 ## Subhook (caption opener, 2 lines)
 You don't need faster hands to stop getting hit.
-You need to stop making the same 7 mistakes.
+And almost everyone ignores #5.
 
 ## Caption
 You don't need faster hands to stop getting hit.
-You need to stop making the same 7 mistakes.
+And almost everyone ignores #5.
 
 Here are 7 ways to stop getting tagged in sparring without getting any faster:
 

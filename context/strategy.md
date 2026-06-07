@@ -16,16 +16,22 @@ else ladders off audience. When a call is ambiguous, pick the option that grows 
    Open possibility (Matteo's words): Stance early-access *might* later become the free lead magnet
    itself — TBD, his call. Until he says so: **no Stance mentions in content.**
 
-## What drives growth here (data-confirmed 2026-06-05)
+## What drives growth here (data-confirmed 2026-06-06, top 5 pulled live)
 - **Reels, not carousels.** Carousels flop (<2k views); reels are the entire game.
 - **Two listicle archetypes** (see [viral-format.md](viral-format.md)) — alternate them:
-  - **Tactical** `[NUMBER] WAYS TO [OUTCOME] WITHOUT [REQUIREMENT]` → drives **saves** (the algo
-    signal that went big: 160k reel had 1,937 saves).
-  - **Identity** `[NUMBER] SIGNS YOU [ARE A REAL FIGHTER]` + "Repost this" → drives **shares**
-    (the 320k reel that caused the current surge).
+  - **Tactical** `[NUMBER] WAYS TO [OUTCOME] WITHOUT [REQUIREMENT]` → drives **saves** (save rate
+    1.2–2.5%). The WITHOUT = barrier removal. Highest ever: 161k reel, 1,938 saves. 8 items > 6.
+  - **Identity** `[NUMBER] SIGNS YOU [ARE A REAL FIGHTER]` + "Repost this so [X] finds [Y]" →
+    drives **shares + reach** (save rate only 0.24%, but reach detonates). The 331k-view "born to be
+    a fighter" reel (Jun 1) caused the surge. "Born" / nature framing = most flattering.
+- **Metric drivers by archetype:**
+  - Likes → both archetypes similar like *rate* (~1.5–1.7%); identity wins on raw count via reach
+  - Saves → tactical only; identity barely saves
+  - Shares → tactical shares via "my friend needs this"; identity shares via "this is me" + CTA framing
+  - Comments → explicit invite required (`Drop a 🥊 if...` or a closing question)
 - **Watch-time gate ~10s+.** Front-load the hook; each numbered point resets attention.
-- **Ride the surge.** As of 2026-06-05 the account is mid-spike — post more of both archetypes now.
-- **Pin an origin-story reel** (injury → rebuild) to convert the flood of new visitors.
+- **Ride the surge.** Account mid-spike as of 2026-06-05 — post both archetypes consistently.
+- **Pin an origin-story reel** (injury → rebuild) to convert flood of new visitors.
 
 ## Cadence
 Consistency over volume. A sustainable reel rhythm beats sporadic bursts. Batch-make when possible

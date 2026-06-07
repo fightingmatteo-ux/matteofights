@@ -12,11 +12,11 @@ dm_trigger: HELP
 
 ## Subhook (caption opener, 2 lines)
 Most people quit the second it stops being fun.
-A few were built for exactly that part.
+And almost none of them get past #4.
 
 ## Caption
 Most people quit the second it stops being fun.
-A few were built for exactly that part.
+And almost none of them get past #4.
 
 6 signs you'll actually make it as a fighter:
 

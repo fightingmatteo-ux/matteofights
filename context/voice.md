@@ -14,6 +14,7 @@ Bad: "Unlock your potential and transform your training journey."
 - **Lead with a blunt or counterintuitive statement.** No warm-up.
 - **Prefer second person over "I"** in hooks and openers — direct address pulls harder.
 - **Short sentences. Active voice.** Say what you mean.
+- **No em dashes.** Use a period instead. "Losing bothers you for days. And you use every one of them." — not "Losing bothers you for days — and you use every one of them."
 - **One idea per line.** Captions are scannable, not paragraphs.
 - **End with one CTA.** Three that work here, matched to the post's goal:
   - **Save/learn:** "Save this before your next session."
