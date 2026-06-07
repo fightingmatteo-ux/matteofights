@@ -1,0 +1,34 @@
+{
+  "1": {
+    "class_type": "LoadImage",
+    "inputs": { "image": "PLACEHOLDER_IMAGE_PATH" }
+  },
+  "2": {
+    "class_type": "WanImageToVideo",
+    "inputs": {
+      "model": ["3", 0],
+      "image": ["1", 0],
+      "positive_prompt": "PLACEHOLDER_PROMPT cinematic motion, smooth camera movement",
+      "negative_prompt": "static, blurry, low quality",
+      "num_frames": 81,
+      "fps": 16,
+      "steps": 20,
+      "cfg": 6.0,
+      "seed": 42
+    }
+  },
+  "3": {
+    "class_type": "WanModelLoader",
+    "inputs": { "model_name": "wan2.1-i2v-14b-480p.safetensors" }
+  },
+  "4": {
+    "class_type": "SaveAnimatedWEBP",
+    "inputs": {
+      "images": ["2", 0],
+      "filename_prefix": "clip",
+      "fps": 16,
+      "lossless": false,
+      "quality": 85
+    }
+  }
+}
