@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Protocol — @matteofights</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:        #0B0B0D;
+      --bg-2:      #111114;
+      --bg-3:      #17171b;
+      --text:      #e8e8e8;
+      --text-dim:  #777;
+      --text-mid:  #aaa;
+      --red:       #C82020;
+      --red-dim:   rgba(200, 32, 32, 0.2);
+      --gold:      #C49040;
+      --border:    #1e1e22;
+      --border-2:  #2a2a30;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── FADE IN ─────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade { opacity: 0; animation: fadeUp 0.6s ease forwards; }
+    .fade:nth-child(1) { animation-delay: 0.05s; }
+    .fade:nth-child(2) { animation-delay: 0.15s; }
+    .fade:nth-child(3) { animation-delay: 0.25s; }
+    .fade:nth-child(4) { animation-delay: 0.35s; }
+    .fade:nth-child(5) { animation-delay: 0.45s; }
+
+    /* ─── LAYOUT ──────────────────────────────── */
+    .wrap {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    /* ─── HERO ────────────────────────────────── */
+    .hero {
+      padding: 72px 40px 56px;
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+    .hero-eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 24px;
+    }
+
+    .hero-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(90px, 16vw, 168px);
+      line-height: 0.88;
+      letter-spacing: 0.01em;
+      color: #f0f0f0;
+      margin-bottom: 36px;
+    }
+
+    .hero-rule {
+      width: 48px;
+      height: 2px;
+      background: var(--red);
+      margin-bottom: 32px;
+    }
+
+    .hero-sub {
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      color: var(--text-dim);
+      line-height: 1.9;
+      max-width: 480px;
+      margin-bottom: 44px;
+      font-weight: 300;
+    }
+
+    .hero-meta {
+      display: flex;
+      gap: 0;
+      border: 1px solid var(--border-2);
+    }
+
+    .hero-meta-item {
+      padding: 14px 28px;
+      border-right: 1px solid var(--border-2);
+      flex: 1;
+    }
+    .hero-meta-item:last-child { border-right: none; }
+
+    .hero-meta-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 6px;
+    }
+
+    .hero-meta-val {
+      font-family: 'DM Mono', monospace;
+      font-size: 13px;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    /* ─── DIVIDER ─────────────────────────────── */
+    hr.div {
+      border: none;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ─── SECTION ─────────────────────────────── */
+    .section {
+      padding: 64px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-head {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      margin-bottom: 48px;
+    }
+
+    .section-n {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--red);
+      letter-spacing: 0.1em;
+    }
+
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 38px;
+      letter-spacing: 0.04em;
+      color: #f0f0f0;
+    }
+
+    /* ─── RULES ───────────────────────────────── */
+    .rules { display: flex; flex-direction: column; gap: 28px; }
+
+    .rule {
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      gap: 20px;
+      padding: 24px;
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-left: 2px solid var(--red);
+    }
+
+    .rule-n {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 40px;
+      color: var(--red);
+      line-height: 1;
+      padding-top: 1px;
+    }
+
+    .rule-title {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+
+    .rule-body {
+      font-size: 15px;
+      color: var(--text-mid);
+      line-height: 1.8;
+      font-weight: 400;
+    }
+
+    /* ─── WEEKS ───────────────────────────────── */
+    .weeks { display: flex; flex-direction: column; gap: 52px; }
+
+    .week-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border-2);
+    }
+
+    .week-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 28px;
+      letter-spacing: 0.05em;
+    }
+
+    .rpe-badge {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      border: 1px solid var(--border-2);
+      padding: 5px 12px;
+    }
+
+    .rpe-badge strong {
+      color: var(--gold);
+    }
+
+    .sessions { display: flex; flex-direction: column; gap: 12px; }
+
+    /* SESSION CARD */
+    .session {
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+    }
+
+    .session-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 20px;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-3);
+    }
+
+    .session-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--red);
+    }
+
+    .session-type {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--text-dim);
+      letter-spacing: 0.08em;
+    }
+
+    table.tbl {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    table.tbl thead tr {
+      background: #0f0f12;
+    }
+
+    table.tbl th {
+      padding: 9px 20px;
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      font-weight: 400;
+    }
+
+    table.tbl td {
+      padding: 12px 20px;
+      font-family: 'DM Mono', monospace;
+      font-size: 13px;
+      color: var(--text-mid);
+      border-bottom: 1px solid #141418;
+      vertical-align: top;
+      line-height: 1.65;
+      font-weight: 400;
+    }
+
+    table.tbl tr:last-child td { border-bottom: none; }
+
+    table.tbl td:first-child {
+      color: var(--text);
+      font-weight: 500;
+      white-space: nowrap;
+      width: 110px;
+    }
+
+    table.tbl td:last-child {
+      color: var(--text-dim);
+      text-align: right;
+      white-space: nowrap;
+      width: 130px;
+    }
+
+    .session-note {
+      padding: 10px 20px;
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--text-dim);
+      background: #0e0e11;
+      border-top: 1px solid var(--border);
+      font-style: italic;
+      font-weight: 300;
+    }
+
+    /* CHANGES BLOCK */
+    .changes {
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    .changes-intro {
+      padding: 16px 20px;
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      background: var(--bg-3);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .change-row {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      padding: 12px 20px;
+      border-bottom: 1px solid #141418;
+      gap: 16px;
+    }
+
+    .change-row:last-child { border-bottom: none; }
+
+    .change-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .change-body {
+      font-family: 'DM Mono', monospace;
+      font-size: 13px;
+      color: var(--text-mid);
+      font-weight: 400;
+      line-height: 1.65;
+    }
+
+    /* ─── ALT TABLE ───────────────────────────── */
+    .alt-intro {
+      font-size: 12px;
+      color: var(--text-dim);
+      margin-bottom: 20px;
+      line-height: 1.8;
+      font-weight: 300;
+    }
+
+    table.alt {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid var(--border);
+    }
+
+    table.alt th {
+      padding: 10px 20px;
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      text-align: left;
+      background: var(--bg-3);
+      border-bottom: 1px solid var(--border);
+      font-weight: 400;
+    }
+
+    table.alt td {
+      padding: 12px 20px;
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--text-mid);
+      border-bottom: 1px solid var(--border);
+      font-weight: 300;
+      line-height: 1.5;
+    }
+
+    table.alt tr:last-child td { border-bottom: none; }
+
+    table.alt td:first-child {
+      color: var(--text);
+      font-weight: 500;
+      width: 200px;
+    }
+
+    /* ─── TRACKING ────────────────────────────── */
+    .track-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .track-card {
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      padding: 28px;
+    }
+
+    .track-n {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 56px;
+      color: var(--red);
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .track-title {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text);
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .track-body {
+      font-size: 14px;
+      color: var(--text-dim);
+      line-height: 1.8;
+      font-weight: 400;
+    }
+
+    /* ─── ABOUT ──────────────────────────────── */
+    .about {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 56px 40px;
+      border-bottom: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 3px 1fr;
+      gap: 36px;
+      align-items: start;
+    }
+
+    .about-bar {
+      background: var(--red);
+      height: 100%;
+      min-height: 120px;
+    }
+
+    .about-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 20px;
+    }
+
+    .about-body p {
+      font-size: 16px;
+      color: var(--text-mid);
+      line-height: 1.8;
+      font-weight: 300;
+      margin-bottom: 16px;
+    }
+
+    .about-body p:last-child { margin-bottom: 0; }
+
+    .about-body strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .about-creds {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 24px;
+    }
+
+    .cred {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      color: var(--text-dim);
+      border: 1px solid var(--border-2);
+      padding: 5px 12px;
+    }
+
+    /* ─── DOWNLOAD ───────────────────────────── */
+    .download-bar {
+      background: var(--bg-2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+    .download-text {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--text-dim);
+      letter-spacing: 0.08em;
+    }
+
+    .download-btn {
+      background: none;
+      border: 1px solid var(--border-2);
+      color: var(--text-mid);
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    .download-btn:hover {
+      border-color: var(--text-mid);
+      color: var(--text);
+    }
+
+    @media print {
+      .download-bar, .cta-wrap { display: none; }
+      body { background: #fff; color: #000; }
+      .hero, .wrap { max-width: 100%; }
+    }
+
+    /* ─── CTA ─────────────────────────────────── */
+    .cta-wrap {
+      padding: 80px 40px;
+      max-width: 880px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .cta-eye {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .cta-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 64px;
+      color: #f0f0f0;
+      letter-spacing: 0.02em;
+      margin-bottom: 16px;
+    }
+
+    .cta-body {
+      font-size: 15px;
+      color: var(--text-dim);
+      margin-bottom: 40px;
+      line-height: 1.8;
+      font-weight: 400;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      border: 1px solid var(--red);
+      color: var(--red);
+      padding: 14px 44px;
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .cta-btn:hover {
+      background: var(--red);
+      color: var(--bg);
+    }
+
+    .cta-handle {
+      margin-top: 24px;
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--text-dim);
+      letter-spacing: 0.12em;
+    }
+
+    /* ─── RESPONSIVE ──────────────────────────── */
+    @media (max-width: 640px) {
+      .hero, .cta-wrap { padding: 48px 24px; }
+      .wrap { padding: 0 24px; }
+      .hero-meta { flex-direction: column; }
+      .hero-meta-item { border-right: none; border-bottom: 1px solid var(--border-2); }
+      .hero-meta-item:last-child { border-bottom: none; }
+      .track-grid { grid-template-columns: 1fr; }
+      .change-row { grid-template-columns: 1fr; gap: 4px; }
+      table.tbl td:last-child { white-space: normal; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── HERO ──────────────────────────────────── -->
+  <div class="hero">
+    <div class="hero-eyebrow fade">@matteofights / Free Training Resource</div>
+    <h1 class="hero-title fade">THE<br>PROTOCOL</h1>
+    <div class="hero-rule fade"></div>
+    <p class="hero-sub fade">The training framework UFC Performance Institute athletes use between fights — adapted for strikers (boxing, Muay Thai, MMA) with 3 sessions a week and a real life.</p>
+    <div class="hero-meta fade">
+      <div class="hero-meta-item">
+        <div class="hero-meta-label">Source</div>
+        <div class="hero-meta-val">UFC PI Vol. 2 / 2021</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="hero-meta-label">Duration</div>
+        <div class="hero-meta-val">4 Weeks</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="hero-meta-label">Frequency</div>
+        <div class="hero-meta-val">3× / Week</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="hero-meta-label">Equipment</div>
+        <div class="hero-meta-val">Optional</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="div">
+
+  <!-- ── ABOUT ─────────────────────────────────── -->
+  <div class="about">
+    <div class="about-bar"></div>
+    <div class="about-body">
+      <div class="about-label">Who made this</div>
+      <p>I'm Matteo — 19, Swiss-Brazilian, based in Bangkok. I had my first Muay Thai fight at 16. I've trained across Thailand, Switzerland, Rome, and back in Bangkok — different gyms, different coaches, different standards. <strong>I've made every mistake in this document.</strong></p>
+      <p>I broke my fibula mid-training. Then fully ripped my ACL. Right now I'm waiting on surgery and still training whatever I can. I'm not telling you to grind yourself into the ground — I learned the hard way that that approach doesn't work. <strong>This protocol is the smarter version.</strong></p>
+      <p>The UFC Performance Institute published a 483-page research document on how their athletes train. I read it, pulled out what applies to strikers, and cut it down to what actually matters when you have 3 sessions a week and a real life. That's what this is.</p>
+      <div class="about-creds">
+        <span class="cred">Muay Thai — Bangkok</span>
+        <span class="cred">Boxing — Rome + Switzerland</span>
+        <span class="cred">First fight at 16</span>
+        <span class="cred">Rebuilt from injury twice</span>
+        <span class="cred">@matteofights</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── DOWNLOAD BAR ─────────────────────────── -->
+  <div class="download-bar">
+    <span class="download-text">Save a copy to your device</span>
+    <button class="download-btn" onclick="window.print()">Download PDF →</button>
+  </div>
+
+  <!-- ── CONTENT ────────────────────────────────── -->
+  <div class="wrap">
+
+    <!-- 01 RULES -->
+    <div class="section">
+      <div class="section-head">
+        <span class="section-n">01 /</span>
+        <h2 class="section-title">The Foundation Rules</h2>
+      </div>
+      <div class="rules">
+
+        <div class="rule">
+          <div class="rule-n">01</div>
+          <div>
+            <div class="rule-title">Every session has a target intensity — and it's not always high</div>
+            <p class="rule-body">UFC coaches assign every session a target RPE (effort out of 10). Off-camp sessions sit at 5–7/10. You shouldn't be destroying yourself every session. An 8 you repeat for months beats a 10 that breaks you in two weeks.</p>
+          </div>
+        </div>
+
+        <div class="rule">
+          <div class="rule-n">02</div>
+          <div>
+            <div class="rule-title">Technical drilling before live work. Always.</div>
+            <p class="rule-body">The UFC PI puts drilling before sparring, every time. A technique must be clean when you're fresh before it's tested under fatigue. If you're always going live before drilling, you're training your bad habits under pressure.</p>
+          </div>
+        </div>
+
+        <div class="rule">
+          <div class="rule-n">03</div>
+          <div>
+            <div class="rule-title">Minimum 48 hours between sparring sessions</div>
+            <p class="rule-body">Non-negotiable in the UFC PI protocol. Sparring accumulates damage — and damage needs time to clear. Off-camp sparring stays at learning intensity. Controlled, not competitive. Hard rounds are for fight camp.</p>
+          </div>
+        </div>
+
+        <div class="rule">
+          <div class="rule-n">04</div>
+          <div>
+            <div class="rule-title">Time every single round</div>
+            <p class="rule-body">3 minutes on, 1 minute off. The only way to train for an actual fight. Untimed bag work builds zero fight-specific conditioning. Set a timer for every bag session — no exceptions.</p>
+          </div>
+        </div>
+
+        <div class="rule">
+          <div class="rule-n">05</div>
+          <div>
+            <div class="rule-title">Build before you peak</div>
+            <p class="rule-body">The UFC PI runs a 4-week cycle: 3 weeks of building load, then 1 deload week. This is how professional fighters avoid injuries and keep progressing for years instead of burning out in months.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 02 THE PLAN -->
+    <div class="section">
+      <div class="section-head">
+        <span class="section-n">02 /</span>
+        <h2 class="section-title">The 4-Week Plan</h2>
+      </div>
+
+      <div class="weeks">
+
+        <!-- WEEK 1 -->
+        <div>
+          <div class="week-head">
+            <div class="week-title">WEEK 01 — FOUNDATION</div>
+            <div class="rpe-badge">Target RPE <strong>5–6</strong> / 10</div>
+          </div>
+          <div class="sessions">
+
+            <div class="session">
+              <div class="session-head">
+                <span class="session-tag">Session 01</span>
+                <span class="session-type">Technical — Skill Building</span>
+              </div>
+              <table class="tbl">
+                <thead><tr><th>Block</th><th>Exercise</th><th>Duration</th></tr></thead>
+                <tbody>
+                  <tr><td>Warm-up</td><td>Shadowboxing — footwork only, no punches</td><td>5 min</td></tr>
+                  <tr><td>Warm-up</td><td>Shadowboxing — add jab, find your rhythm</td><td>5 min</td></tr>
+                  <tr><td>Drilling</td><td>Jab–cross. Slow and deliberate. Coach yourself — no power.</td><td>3 × 3 min</td></tr>
+                  <tr><td>Bag</td><td>Jab–cross only. Perfect reps, not power. Timer on.</td><td>4 × 3 min / 1 min rest</td></tr>
+                  <tr><td>Cool-down</td><td>Shadowboxing — slow, loose</td><td>5 min</td></tr>
+                </tbody>
+              </table>
+              <div class="session-note">No bag? Shadowboxing works. Hold light water bottles for resistance if needed.</div>
+            </div>
+
+            <div class="session">
+              <div class="session-head">
+                <span class="session-tag">Session 02</span>
+                <span class="session-type">Non-Technical — Strength + Conditioning</span>
+              </div>
+              <table class="tbl">
+                <thead><tr><th>Block</th><th>Exercise</th><th>Volume</th></tr></thead>
+                <tbody>
+                  <tr><td>Activation</td><td>Jump rope or high knees</td><td>3 min</td></tr>
+                  <tr><td>Strength</td><td>Push-ups — chest to floor, controlled descent</td><td>4 × max</td></tr>
+                  <tr><td>Strength</td><td>Pull-ups or table-edge rows</td><td>3 × max</td></tr>
+                  <tr><td>Strength</td><td>Plank</td><td>3 × 45 sec</td></tr>
+                  <tr><td>Conditioning</td><td>Burpees — 30 sec on / 30 sec off</td><td>5 rounds</td></tr>
+                  <tr><td>Conditioning</td><td>Shadow sprint — explosive shadowboxing, full output</td><td>5 × 20 sec / 40 sec off</td></tr>
+                </tbody>
+              </table>
+              <div class="session-note">Finish tired, not wrecked. If RPE exceeds 7, cut one round.</div>
+            </div>
+
+            <div class="session">
+              <div class="session-head">
+                <span class="session-tag">Session 03</span>
+                <span class="session-type">Technical — Integration</span>
+              </div>
+              <table class="tbl">
+                <thead><tr><th>Block</th><th>Exercise</th><th>Duration</th></tr></thead>
+                <tbody>
+                  <tr><td>Warm-up</td><td>Shadowboxing — recall Session 01 drills from memory</td><td>5 min</td></tr>
+                  <tr><td>Drilling</td><td>Add defense: jab–cross–slip. Slow, deliberate.</td><td>2 × 3 min</td></tr>
+                  <tr><td>Bag</td><td>Jab–cross–hook. Timer on.</td><td>6 × 3 min / 1 min rest</td></tr>
+                  <tr><td>Sparring</td><td>Level 1 only — learning mindset, no power to head (optional)</td><td>2–3 rounds</td></tr>
+                  <tr><td>Cool-down</td><td>Stretch — hips, shoulders, neck</td><td>5 min</td></tr>
+                </tbody>
+              </table>
+              <div class="session-note">Film sparring. Watch same day. Pick one thing to fix next session.</div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- WEEK 2 -->
+        <div>
+          <div class="week-head">
+            <div class="week-title">WEEK 02 — BUILD</div>
+            <div class="rpe-badge">Target RPE <strong>6–7</strong> / 10</div>
+          </div>
+          <div class="changes">
+            <div class="changes-intro">Same structure as Week 01. Apply these changes:</div>
+            <div class="change-row">
+              <div class="change-label">Session 01</div>
+              <div class="change-body">Add 1 bag round (5 total). Introduce a 3-punch combo of your choice.</div>
+            </div>
+            <div class="change-row">
+              <div class="change-label">Session 02</div>
+              <div class="change-body">Add 1 set to each strength exercise. Burpee rounds increase to 7.</div>
+            </div>
+            <div class="change-row">
+              <div class="change-label">Session 03</div>
+              <div class="change-body">Add 1 bag round (7 total). Work on whatever you identified from the sparring film review.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- WEEK 3 -->
+        <div>
+          <div class="week-head">
+            <div class="week-title">WEEK 03 — PEAK</div>
+            <div class="rpe-badge">Target RPE <strong>7–8</strong> / 10</div>
+          </div>
+          <div class="changes">
+            <div class="changes-intro">Same structure. Apply these changes:</div>
+            <div class="change-row">
+              <div class="change-label">Session 01</div>
+              <div class="change-body">6 bag rounds. Add head movement between combos.</div>
+            </div>
+            <div class="change-row">
+              <div class="change-label">Session 02</div>
+              <div class="change-body">Conditioning rounds increase to 10. Add bodyweight squats (4 × 15) for leg drive in punching.</div>
+            </div>
+            <div class="change-row">
+              <div class="change-label">Session 03</div>
+              <div class="change-body">8 bag rounds. Sparring at Level 2 — you can feel power, not trying to damage. Film it.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- WEEK 4 -->
+        <div>
+          <div class="week-head">
+            <div class="week-title">WEEK 04 — DELOAD</div>
+            <div class="rpe-badge">Target RPE <strong>4–5</strong> / 10</div>
+          </div>
+          <div class="changes">
+            <div class="changes-intro">Drop volume by 40%. This is when adaptation locks in — not optional.</div>
+            <div class="change-row">
+              <div class="change-label">Session 01</div>
+              <div class="change-body">3 bag rounds only. Technique focus only, no intensity.</div>
+            </div>
+            <div class="change-row">
+              <div class="change-label">Session 02</div>
+              <div class="change-body">Strength only, no conditioning. 3 sets each, nothing to failure.</div>
+            </div>
+            <div class="change-row">
+              <div class="change-label">Session 03</div>
+              <div class="change-body">Shadowboxing and light drilling only. No sparring.</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 03 ALTERNATIVES -->
+    <div class="section">
+      <div class="section-head">
+        <span class="section-n">03 /</span>
+        <h2 class="section-title">Equipment Alternatives</h2>
+      </div>
+      <p class="alt-intro">Every exercise in this plan has a version for wherever you train. Pick the column that matches your setup.</p>
+      <table class="alt">
+        <thead><tr><th>Exercise</th><th>No Gym</th><th>With Gym</th></tr></thead>
+        <tbody>
+          <tr><td>Bag work</td><td>Shadowboxing — hold light weight for resistance</td><td>Heavy bag</td></tr>
+          <tr><td>Pad work</td><td>Shadow defense drills solo</td><td>Pads with a partner or coach</td></tr>
+          <tr><td>Push / horizontal press</td><td>Push-up variations: standard, wide, close-grip, elevated feet</td><td>Bench press or incline bench</td></tr>
+          <tr><td>Pull / rows</td><td>Horizontal rows under a table / towel-over-door rows</td><td>Pull-up bar, lat pulldown, or dumbbell rows</td></tr>
+          <tr><td>Conditioning</td><td>Burpees, shadow sprints, jump squats</td><td>Assault bike, rowing machine, or jump rope</td></tr>
+          <tr><td>Core</td><td>Plank, hollow body hold</td><td>Ab wheel, cable crunches, hanging leg raises</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 04 TRACKING -->
+    <div class="section">
+      <div class="section-head">
+        <span class="section-n">04 /</span>
+        <h2 class="section-title">Session Tracking</h2>
+      </div>
+      <p class="alt-intro" style="margin-bottom:24px;">After every session, write down two things. Thirty seconds. Compounds over months. This is the method UFC athletes use to self-monitor between coaching sessions.</p>
+      <div class="track-grid">
+        <div class="track-card">
+          <div class="track-n">01</div>
+          <div class="track-title">RPE (1–10)</div>
+          <p class="track-body">How hard did it actually feel? If it regularly exceeds the target, reduce volume. If it's always below, you have room to push.</p>
+        </div>
+        <div class="track-card">
+          <div class="track-n">02</div>
+          <div class="track-title">One Observation</div>
+          <p class="track-body">What worked, what didn't, what to fix next session. This is what separates fighters who progress from fighters who plateau.</p>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /wrap -->
+
+  <!-- ── CTA ───────────────────────────────────── -->
+  <div class="cta-wrap">
+    <div class="cta-eye">Next Step</div>
+    <div class="cta-title">Build the Next 4 Weeks</div>
+    <p class="cta-body">Once you've completed this cycle, the next one gets more specific.<br>DM me and I'll help you build it around your situation.</p>
+    <a href="https://instagram.com/matteofights" class="cta-btn">DM "HELP" on Instagram</a>
+    <div class="cta-handle">@matteofights</div>
+  </div>
+
+</body>
+</html>
