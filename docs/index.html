@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Protocol — @matteofights</title>
+  <title>Matteo — @matteofights</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg:       #0B0B0D;
-      --bg-2:     #111114;
-      --bg-3:     #17171b;
-      --text:     #e8e8e8;
-      --text-dim: #777;
-      --text-mid: #aaa;
-      --red:      #C82020;
-      --gold:     #C49040;
-      --border:   #1e1e22;
-      --border-2: #2a2a30;
+      --bg:      #0B0B0D;
+      --bg-2:    #111114;
+      --bg-3:    #17171b;
+      --text:    #e8e8e8;
+      --mid:     #aaa;
+      --dim:     #666;
+      --red:     #C82020;
+      --gold:    #C49040;
+      --border:  #1e1e22;
+      --border2: #2a2a30;
     }
 
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -29,270 +29,277 @@
       font-family: 'Inter', system-ui, sans-serif;
       min-height: 100vh;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: center;
-      padding: 40px 24px;
+      padding: 0 0 60px;
       -webkit-font-smoothing: antialiased;
     }
 
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
+      from { opacity: 0; transform: translateY(16px); }
       to   { opacity: 1; transform: translateY(0); }
     }
 
     .card {
       width: 100%;
-      max-width: 960px;
-      display: grid;
-      grid-template-columns: 1fr 1px 420px;
-      min-height: 560px;
-      border: 1px solid var(--border-2);
+      max-width: 480px;
+      display: flex;
+      flex-direction: column;
       animation: fadeUp 0.5s ease forwards;
     }
 
-    /* ── LEFT ── */
-    .left {
-      padding: 56px 52px;
+    /* ── HEADER BAR ── */
+    .header-bar {
+      background: var(--red);
+      padding: 12px 28px;
       display: flex;
-      flex-direction: column;
+      align-items: center;
       justify-content: space-between;
     }
 
-    .eyebrow {
+    .header-left {
       font-family: 'DM Mono', monospace;
-      font-size: 10px;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      color: var(--red);
-      margin-bottom: 20px;
-    }
-
-    .title {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(72px, 10vw, 120px);
-      line-height: 0.88;
-      letter-spacing: 0.01em;
-      color: #f0f0f0;
-      margin-bottom: 32px;
-    }
-
-    .rule {
-      width: 40px;
-      height: 2px;
-      background: var(--red);
-      margin-bottom: 28px;
-    }
-
-    .desc {
-      font-size: 15px;
-      color: var(--text-mid);
-      line-height: 1.8;
-      font-weight: 300;
-      margin-bottom: 36px;
-      max-width: 380px;
-    }
-
-    .what-you-get {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      margin-bottom: 40px;
-    }
-
-    .item {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-    }
-
-    .item-dot {
-      width: 6px;
-      height: 6px;
-      background: var(--red);
-      border-radius: 50%;
-      margin-top: 7px;
-      flex-shrink: 0;
-    }
-
-    .item-text {
-      font-size: 14px;
-      color: var(--text-mid);
-      line-height: 1.65;
-      font-weight: 400;
-    }
-
-    .item-text strong {
-      color: var(--text);
-      font-weight: 500;
-    }
-
-    .from {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding-top: 28px;
-      border-top: 1px solid var(--border);
-    }
-
-    .from-avatar {
-      width: 36px;
-      height: 36px;
-      background: var(--bg-3);
-      border: 1px solid var(--border-2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 16px;
-      color: var(--red);
-      flex-shrink: 0;
-    }
-
-    .from-text {
-      font-family: 'DM Mono', monospace;
-      font-size: 11px;
-      color: var(--text-dim);
-      line-height: 1.6;
-    }
-
-    .from-text strong {
-      color: var(--text);
-      display: block;
-      font-size: 12px;
-    }
-
-    /* ── DIVIDER ── */
-    .divider {
-      background: var(--border-2);
-      width: 1px;
-    }
-
-    /* ── RIGHT ── */
-    .right {
-      padding: 56px 44px;
-      background: var(--bg-2);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .form-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 10px;
+      font-size: 9px;
       letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: var(--text-dim);
-      margin-bottom: 28px;
+      color: rgba(255,255,255,0.75);
     }
 
-    .field {
-      margin-bottom: 16px;
-    }
-
-    .field label {
-      display: block;
+    .header-right {
       font-family: 'DM Mono', monospace;
-      font-size: 10px;
-      letter-spacing: 0.18em;
+      font-size: 9px;
+      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.55);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 36px 28px 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: var(--text-dim);
-      margin-bottom: 8px;
+      color: var(--dim);
+      margin-bottom: 12px;
     }
 
-    .field input {
-      width: 100%;
-      background: var(--bg-3);
-      border: 1px solid var(--border-2);
-      color: var(--text);
-      font-family: 'DM Mono', monospace;
-      font-size: 14px;
-      padding: 14px 16px;
-      outline: none;
-      transition: border-color 0.15s;
-      -webkit-appearance: none;
-      border-radius: 0;
+    .hero-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(80px, 22vw, 120px);
+      line-height: 0.86;
+      letter-spacing: 0.01em;
+      color: #f0f0f0;
     }
 
-    .field input::placeholder {
-      color: var(--text-dim);
-      font-weight: 300;
-    }
+    .hero-name .red { color: var(--red); }
 
-    .field input:focus {
-      border-color: var(--red);
-    }
-
-    .submit {
-      width: 100%;
-      margin-top: 8px;
+    .hero-rule {
+      width: 36px;
+      height: 2px;
       background: var(--red);
-      color: #fff;
-      border: none;
-      font-family: 'DM Mono', monospace;
-      font-size: 12px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      padding: 16px;
-      cursor: pointer;
-      transition: opacity 0.15s;
+      margin: 20px 0 16px;
     }
 
-    .submit:hover { opacity: 0.88; }
-    .submit:active { opacity: 0.75; }
-
-    .privacy {
-      margin-top: 16px;
+    .hero-tag {
       font-family: 'DM Mono', monospace;
-      font-size: 10px;
-      color: var(--text-dim);
+      font-size: 11px;
+      color: var(--dim);
       line-height: 1.7;
       font-weight: 300;
     }
 
-    .meta-tags {
+    /* ── FEATURED ── */
+    .featured {
+      margin: 20px 28px 0;
+      background: linear-gradient(135deg, #140808 0%, #0f0505 100%);
+      border: 1px solid var(--red);
+      padding: 18px 20px;
       display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 32px;
-      padding-top: 24px;
-      border-top: 1px solid var(--border);
+      align-items: center;
+      justify-content: space-between;
+      text-decoration: none;
+      transition: background 0.15s;
+      cursor: pointer;
     }
 
-    .tag {
+    .featured:hover {
+      background: linear-gradient(135deg, #1c0b0b 0%, #150808 100%);
+    }
+
+    .featured-inner {}
+
+    .featured-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 6px;
+    }
+
+    .featured-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 32px;
+      color: #f0f0f0;
+      letter-spacing: 0.04em;
+      line-height: 1;
+    }
+
+    .featured-sub {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--dim);
+      margin-top: 6px;
+      font-weight: 300;
+    }
+
+    .featured-arrow {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 28px;
+      color: var(--red);
+      flex-shrink: 0;
+      margin-left: 16px;
+    }
+
+    /* ── LINKS ── */
+    .links {
+      display: flex;
+      flex-direction: column;
+      margin: 12px 28px 0;
+      border: 1px solid var(--border2);
+    }
+
+    .link-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border);
+      text-decoration: none;
+      transition: background 0.12s;
+      cursor: pointer;
+    }
+
+    .link-item:last-child { border-bottom: none; }
+
+    .link-item:hover { background: var(--bg-2); }
+
+    .link-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .link-icon {
+      width: 28px;
+      height: 28px;
+      background: var(--bg-3);
+      border: 1px solid var(--border2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .link-icon svg {
+      width: 13px;
+      height: 13px;
+      fill: var(--dim);
+    }
+
+    .link-name {
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      color: var(--mid);
+    }
+
+    .link-arrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--border2);
+    }
+
+    /* ── DM CTA ── */
+    .dm-cta {
+      margin: 12px 28px 0;
+      background: var(--bg-2);
+      border: 1px solid var(--gold);
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+
+    .dm-cta:hover { background: #111108; }
+
+    .dm-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 4px;
+    }
+
+    .dm-text {
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      color: var(--mid);
+      font-weight: 400;
+    }
+
+    .dm-arrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 14px;
+      color: var(--gold);
+      flex-shrink: 0;
+      margin-left: 16px;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      margin: 28px 28px 0;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-handle {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      color: var(--border2);
+    }
+
+    .footer-loc {
       font-family: 'DM Mono', monospace;
       font-size: 10px;
       letter-spacing: 0.1em;
-      color: var(--text-dim);
-      border: 1px solid var(--border-2);
-      padding: 4px 10px;
+      color: var(--border2);
     }
 
-    /* ── MOBILE ── */
-    @media (max-width: 720px) {
-      body { padding: 0; align-items: flex-start; }
+    .link-item:active { background: var(--bg-3); }
+    .featured:active { background: linear-gradient(135deg, #220e0e 0%, #1a0808 100%); }
+    .dm-cta:active { background: #18180a; }
 
-      .card {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-        min-height: unset;
-        border: none;
-      }
-
-      .left { padding: 36px 24px 28px; }
-      .right { padding: 28px 24px 40px; }
-      .divider { width: 100%; height: 1px; }
-
-      .from { display: none; }
-
-      .field input {
-        font-size: 16px;
-        padding: 16px;
-      }
-
-      .submit {
-        padding: 18px;
-        font-size: 13px;
-      }
+    @media (max-width: 400px) {
+      .hero { padding: 28px 16px 20px; }
+      .featured { margin-left: 16px; margin-right: 16px; }
+      .links { margin-left: 16px; margin-right: 16px; }
+      .dm-cta { margin-left: 16px; margin-right: 16px; }
+      .footer { margin-left: 16px; margin-right: 16px; }
+      .hero-tag { font-size: 12px; }
     }
   </style>
 </head>
@@ -300,76 +307,101 @@
 
   <div class="card">
 
-    <!-- LEFT: VALUE PROP -->
-    <div class="left">
-      <div>
-        <div class="eyebrow">@matteofights / Free Resource</div>
-        <h1 class="title">THE<br>PROTOCOL</h1>
-        <div class="rule"></div>
-        <p class="desc">The UFC Performance Institute trains 600+ world-class fighters. This is their off-camp training framework — adapted for strikers with 3 sessions a week.</p>
+    <!-- HEADER BAR -->
+    <div class="header-bar">
+      <div class="header-left">Fighter · Coach</div>
+      <div class="header-right">@matteofights</div>
+    </div>
 
-        <div class="what-you-get">
-          <div class="item">
-            <div class="item-dot"></div>
-            <div class="item-text"><strong>5 non-negotiable rules</strong> the UFC PI uses to structure every training block</div>
-          </div>
-          <div class="item">
-            <div class="item-dot"></div>
-            <div class="item-text"><strong>A complete 4-week plan</strong> — Foundation, Build, Peak, Deload — with every session mapped out</div>
-          </div>
-          <div class="item">
-            <div class="item-dot"></div>
-            <div class="item-text"><strong>Gym and no-gym versions</strong> for every exercise</div>
-          </div>
-          <div class="item">
-            <div class="item-dot"></div>
-            <div class="item-text"><strong>The tracking method</strong> UFC athletes use to self-monitor between coaching sessions</div>
-          </div>
-        </div>
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-eyebrow">Matteo / Bangkok</div>
+      <div class="hero-name">
+        MATTEO<br><span class="red">FIGHTS</span>
       </div>
-
-      <div class="from">
-        <div class="from-avatar">M</div>
-        <div class="from-text">
-          <strong>Matteo</strong>
-          Fighter · Bangkok · First fight at 16 · Trained across 4 countries
-        </div>
+      <div class="hero-rule"></div>
+      <div class="hero-tag">
+        Muay Thai · Boxing · MMA<br>
+        First fight at 16. Trained across 4 countries. Now sharing it all.
       </div>
     </div>
 
-    <!-- DIVIDER -->
-    <div class="divider"></div>
-
-    <!-- RIGHT: FORM -->
-    <div class="right">
-      <div class="form-label">Get instant access</div>
-
-      <form action="https://formsubmit.co/fightingmatteo@gmail.com" method="POST">
-        <input type="hidden" name="_next" value="https://matteofights.me/the-protocol.html">
-        <input type="hidden" name="_subject" value="New Protocol Download">
-        <input type="hidden" name="_captcha" value="false">
-
-        <div class="field">
-          <label for="email">Email address</label>
-          <input type="email" id="email" name="email" placeholder="you@email.com" required>
-        </div>
-
-        <div class="field">
-          <label for="instagram">Instagram handle</label>
-          <input type="text" id="instagram" name="instagram" placeholder="@yourhandle" required>
-        </div>
-
-        <button type="submit" class="submit">Get The Protocol →</button>
-
-        <p class="privacy">No spam. No newsletter. I'll only reach out if I have something worth sending. You can unsubscribe anytime.</p>
-      </form>
-
-      <div class="meta-tags">
-        <span class="tag">4 Weeks</span>
-        <span class="tag">3× / Week</span>
-        <span class="tag">Source: UFC PI Vol. 2</span>
-        <span class="tag">100% Free</span>
+    <!-- FEATURED: THE PROTOCOL -->
+    <a class="featured" href="gate.html">
+      <div class="featured-inner">
+        <div class="featured-label">Free Download</div>
+        <div class="featured-title">THE PROTOCOL</div>
+        <div class="featured-sub">UFC PI off-camp framework — 4 weeks, 3×/week</div>
       </div>
+      <div class="featured-arrow">→</div>
+    </a>
+
+    <!-- SOCIAL LINKS -->
+    <div class="links">
+
+      <a class="link-item" href="https://instagram.com/matteofights" target="_blank" rel="noopener">
+        <div class="link-left">
+          <div class="link-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </div>
+          <div class="link-name">Instagram</div>
+        </div>
+        <div class="link-arrow">↗</div>
+      </a>
+
+      <a class="link-item" href="https://tiktok.com/@matteofights" target="_blank" rel="noopener">
+        <div class="link-left">
+          <div class="link-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.77a4.85 4.85 0 01-1.01-.08z"/>
+            </svg>
+          </div>
+          <div class="link-name">TikTok</div>
+        </div>
+        <div class="link-arrow">↗</div>
+      </a>
+
+      <a class="link-item" href="https://threads.net/@matteofights" target="_blank" rel="noopener">
+        <div class="link-left">
+          <div class="link-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.5 12.186v-.007c.024-3.581 1.205-6.334 3.509-8.184C7.06 2.35 9.914 1.5 13.314 1.5c1.581 0 3.109.274 4.543.816 1.411.532 2.526 1.257 3.315 2.156l-1.663 1.498c-1.298-1.388-3.255-2.094-5.195-2.094-2.715 0-4.914.802-6.534 2.384-1.594 1.557-2.416 3.756-2.44 6.533v.007c.024 2.715.846 4.914 2.44 6.534 1.62 1.582 3.819 2.384 6.534 2.384 1.563 0 2.909-.282 4.002-.839 1.066-.542 1.875-1.299 2.404-2.252.509-.914.768-1.994.768-3.212v-.24c-.601.337-1.362.557-2.27.657-.944.103-1.926.088-2.886-.044-2.247-.31-3.859-1.54-4.395-3.356-.249-.843-.263-1.732-.041-2.568.247-.925.793-1.755 1.578-2.4.747-.614 1.673-.999 2.678-1.113.979-.111 1.962.042 2.842.443.845.385 1.523.989 1.961 1.741l-1.764.849c-.524-.921-1.549-1.449-2.821-1.449-.141 0-.284.009-.427.027-.627.071-1.201.33-1.659.749-.446.408-.731.946-.827 1.543-.1.618-.024 1.256.219 1.841.378.906 1.178 1.514 2.405 1.778.721.153 1.479.189 2.254.106.767-.082 1.461-.296 2.008-.619.018-.011.036-.021.054-.031v-.609c0-2.018-.499-3.633-1.484-4.801l1.672-1.481c1.306 1.565 1.972 3.656 1.972 6.282v.24c0 1.62-.338 3.072-1.005 4.317-.671 1.254-1.666 2.215-2.959 2.856-1.302.646-2.839.973-4.567.973z"/>
+            </svg>
+          </div>
+          <div class="link-name">Threads</div>
+        </div>
+        <div class="link-arrow">↗</div>
+      </a>
+
+      <a class="link-item" href="https://facebook.com/matteofights" target="_blank" rel="noopener">
+        <div class="link-left">
+          <div class="link-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </div>
+          <div class="link-name">Facebook</div>
+        </div>
+        <div class="link-arrow">↗</div>
+      </a>
+
+    </div>
+
+    <!-- DM CTA -->
+    <a class="dm-cta" href="https://instagram.com/matteofights" target="_blank" rel="noopener">
+      <div>
+        <div class="dm-label">Direct Message</div>
+        <div class="dm-text">DM "HELP" — Build Your Next 4 Weeks</div>
+      </div>
+      <div class="dm-arrow">→</div>
+    </a>
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <div class="footer-handle">@matteofights</div>
+      <div class="footer-loc">Bangkok, Thailand</div>
     </div>
 
   </div>
