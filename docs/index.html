@@ -269,19 +269,30 @@
 
     /* ── MOBILE ── */
     @media (max-width: 720px) {
-      body { padding: 24px 16px; align-items: flex-start; }
+      body { padding: 0; align-items: flex-start; }
 
       .card {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
         min-height: unset;
+        border: none;
       }
 
-      .left { padding: 40px 28px 32px; }
-      .right { padding: 32px 28px 40px; }
+      .left { padding: 36px 24px 28px; }
+      .right { padding: 28px 24px 40px; }
       .divider { width: 100%; height: 1px; }
 
       .from { display: none; }
+
+      .field input {
+        font-size: 16px;
+        padding: 16px;
+      }
+
+      .submit {
+        padding: 18px;
+        font-size: 13px;
+      }
     }
   </style>
 </head>
@@ -333,12 +344,10 @@
     <div class="right">
       <div class="form-label">Get instant access</div>
 
-      <!-- Replace YOUR_FORMSPREE_ID with your actual Formspree endpoint -->
-      <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
-
-        <!-- Redirect to the protocol after submission -->
-        <input type="hidden" name="_next" value="the-protocol.html">
+      <form action="https://formsubmit.co/fightingmatteo@gmail.com" method="POST">
+        <input type="hidden" name="_next" value="https://matteofights.me/the-protocol.html">
         <input type="hidden" name="_subject" value="New Protocol Download">
+        <input type="hidden" name="_captcha" value="false">
 
         <div class="field">
           <label for="email">Email address</label>

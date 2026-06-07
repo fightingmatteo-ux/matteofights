@@ -288,6 +288,19 @@
       letter-spacing: 0.1em;
       color: var(--border2);
     }
+
+    .link-item:active { background: var(--bg-3); }
+    .featured:active { background: linear-gradient(135deg, #220e0e 0%, #1a0808 100%); }
+    .dm-cta:active { background: #18180a; }
+
+    @media (max-width: 400px) {
+      .hero { padding: 28px 16px 20px; }
+      .featured { margin-left: 16px; margin-right: 16px; }
+      .links { margin-left: 16px; margin-right: 16px; }
+      .dm-cta { margin-left: 16px; margin-right: 16px; }
+      .footer { margin-left: 16px; margin-right: 16px; }
+      .hero-tag { font-size: 12px; }
+    }
   </style>
 </head>
 <body>
