@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Protocol — @matteofights</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:       #0B0B0D;
+      --bg-2:     #111114;
+      --bg-3:     #17171b;
+      --text:     #e8e8e8;
+      --text-dim: #777;
+      --text-mid: #aaa;
+      --red:      #C82020;
+      --gold:     #C49040;
+      --border:   #1e1e22;
+      --border-2: #2a2a30;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .card {
+      width: 100%;
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* ── LEFT: hero image panel ── */
+    .left {
+      flex: 1;
+      background:
+        linear-gradient(to bottom, rgba(11,11,13,0.1) 0%, rgba(11,11,13,0.35) 50%, rgba(11,11,13,0.82) 100%),
+        url(hero-final.png) center top / cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 64px 60px;
+    }
+
+    .left-content { position: relative; }
+
+    .eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 18px;
+    }
+
+    .title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(88px, 10vw, 150px);
+      line-height: 0.86;
+      letter-spacing: 0.01em;
+      color: #fff;
+      margin-bottom: 24px;
+      text-shadow: 0 4px 24px rgba(0,0,0,0.4);
+    }
+
+    .rule {
+      width: 48px;
+      height: 3px;
+      background: var(--red);
+      margin-bottom: 24px;
+    }
+
+    .desc {
+      font-size: 17px;
+      color: rgba(232,232,232,0.85);
+      line-height: 1.75;
+      font-weight: 300;
+      margin-bottom: 32px;
+      max-width: 460px;
+    }
+
+    .what-you-get {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 40px;
+    }
+
+    .item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .item-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--red);
+      border-radius: 50%;
+      margin-top: 9px;
+      flex-shrink: 0;
+    }
+
+    .item-text {
+      font-size: 16px;
+      color: rgba(232,232,232,0.8);
+      line-height: 1.65;
+      font-weight: 400;
+    }
+
+    .item-text strong {
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .from {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .from-avatar {
+      width: 40px;
+      height: 40px;
+      background: var(--red);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 18px;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    .from-text {
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      color: rgba(232,232,232,0.55);
+      line-height: 1.6;
+    }
+
+    .from-text strong {
+      color: rgba(232,232,232,0.85);
+      display: block;
+      font-size: 13px;
+    }
+
+    /* ── RIGHT: form ── */
+    .right {
+      width: 480px;
+      flex-shrink: 0;
+      padding: 64px 52px;
+      background: var(--bg-2);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-left: 1px solid var(--border-2);
+    }
+
+    .form-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 32px;
+    }
+
+    .field {
+      margin-bottom: 18px;
+    }
+
+    .field label {
+      display: block;
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 10px;
+    }
+
+    .field input {
+      width: 100%;
+      background: var(--bg-3);
+      border: 1px solid var(--border-2);
+      color: var(--text);
+      font-family: 'DM Mono', monospace;
+      font-size: 16px;
+      padding: 16px 18px;
+      outline: none;
+      transition: border-color 0.15s;
+      -webkit-appearance: none;
+      border-radius: 0;
+    }
+
+    .field input::placeholder {
+      color: var(--text-dim);
+      font-weight: 300;
+    }
+
+    .field input:focus {
+      border-color: var(--red);
+    }
+
+    .submit {
+      width: 100%;
+      margin-top: 10px;
+      background: var(--red);
+      color: #fff;
+      border: none;
+      font-family: 'DM Mono', monospace;
+      font-size: 13px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      padding: 0;
+      cursor: pointer;
+      transition: opacity 0.15s;
+      font-weight: 500;
+      display: flex;
+      align-items: stretch;
+    }
+
+    .submit-img {
+      height: 60px;
+      width: auto;
+      object-fit: cover;
+      display: block;
+      border-right: 1px solid rgba(0,0,0,0.18);
+      flex-shrink: 0;
+    }
+
+    .submit-text {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 24px;
+    }
+
+    .submit:hover { opacity: 0.88; }
+    .submit:active { opacity: 0.75; }
+
+    .privacy {
+      margin-top: 18px;
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--text-dim);
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    .meta-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 36px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border);
+    }
+
+    .tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      color: var(--text-dim);
+      border: 1px solid var(--border-2);
+      padding: 5px 12px;
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 720px) {
+      body { display: block; }
+
+      .card {
+        display: flex;
+        flex-direction: column;
+        min-height: unset;
+      }
+
+      .left {
+        min-height: 65vh;
+        padding: 40px 24px 36px;
+        justify-content: flex-end;
+      }
+
+      .left::before {
+        background: linear-gradient(
+          to bottom,
+          rgba(11,11,13,0.15) 0%,
+          rgba(11,11,13,0.5) 40%,
+          rgba(11,11,13,0.92) 100%
+        );
+      }
+
+      .right {
+        width: 100%;
+        padding: 36px 24px 48px;
+        border-left: none;
+        border-top: 1px solid var(--border-2);
+      }
+
+      .from { display: none; }
+
+      .field input {
+        font-size: 16px;
+        padding: 16px;
+      }
+
+      .submit {
+        font-size: 14px;
+      }
+
+      .submit-img { height: 56px; }
+
+      .title { font-size: clamp(68px, 20vw, 110px); }
+      .desc { font-size: 15px; }
+      .item-text { font-size: 15px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+
+    <!-- LEFT: value prop over hero image -->
+    <div class="left">
+      <div class="left-content">
+        <div class="eyebrow">@matteofights / Free Resource</div>
+        <h1 class="title">THE<br>PROTOCOL</h1>
+        <div class="rule"></div>
+        <p class="desc">The UFC Performance Institute trains 600+ world-class fighters. This is their off-camp training framework — adapted for strikers with 3 sessions a week.</p>
+
+        <div class="what-you-get">
+          <div class="item">
+            <div class="item-dot"></div>
+            <div class="item-text"><strong>5 non-negotiable rules</strong> the UFC PI uses to structure every training block</div>
+          </div>
+          <div class="item">
+            <div class="item-dot"></div>
+            <div class="item-text"><strong>A complete 4-week plan</strong> — Foundation, Build, Peak, Deload — with every session mapped out</div>
+          </div>
+          <div class="item">
+            <div class="item-dot"></div>
+            <div class="item-text"><strong>Gym and no-gym versions</strong> for every exercise</div>
+          </div>
+          <div class="item">
+            <div class="item-dot"></div>
+            <div class="item-text"><strong>The tracking method</strong> UFC athletes use to self-monitor between coaching sessions</div>
+          </div>
+        </div>
+
+        <div class="from">
+          <div class="from-avatar">M</div>
+          <div class="from-text">
+            <strong>Matteo</strong>
+            Fighter · Bangkok · First fight at 16 · Trained across 4 countries
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: form -->
+    <div class="right">
+      <div class="form-label">Get instant access</div>
+
+      <form action="https://formsubmit.co/fightingmatteo@gmail.com" method="POST">
+        <input type="hidden" name="_next" value="https://matteofights.me/the-protocol.html">
+        <input type="hidden" name="_subject" value="New Protocol Download">
+        <input type="hidden" name="_captcha" value="false">
+
+        <div class="field">
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email" placeholder="you@email.com" required>
+        </div>
+
+        <div class="field">
+          <label for="instagram">Instagram handle</label>
+          <input type="text" id="instagram" name="instagram" placeholder="@yourhandle" required>
+        </div>
+
+        <button type="submit" class="submit">
+          <img class="submit-img" src="protocol-card.png" alt="">
+          <span class="submit-text">Get The Protocol — Free →</span>
+        </button>
+
+        <p class="privacy">No spam. No newsletter. I'll only reach out if I have something worth sending. You can unsubscribe anytime.</p>
+      </form>
+
+      <div class="meta-tags">
+        <span class="tag">4 Weeks</span>
+        <span class="tag">3× / Week</span>
+        <span class="tag">Source: UFC PI Vol. 2</span>
+        <span class="tag">100% Free</span>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
