@@ -31,3 +31,19 @@ tech dashboard — the same direction as the Stance app.
 ## What breaks the brand
 Pastel/wellness aesthetics, yoga-brand softness, stocky motivational-quote graphics, anything
 over-produced enough to feel like an ad. Raw beats polished for this audience.
+
+## Video / Cinematic Look
+
+**Color grade:** Warm-gritty base with punchy contrast. Warm orange-brown skin tones,
+deep (not crushed) shadows, slight red push in midtones. Consistent across all cameras.
+LUT: `content-bank/luts/matteofights-v1.cube`
+
+**Camera pipeline:** iPhone 13 BM (Blackmagic Film log) + iPhone 15 BM (Apple Log) +
+Nikon D750 (Flat profile) → DaVinci grade → CapCut edit.
+
+**Caption style on video:** Three animated styles — Word-Pop (bold, synced to speech),
+Title Card (impact moments, red accent word), Lower Third (talking head full sentences).
+All animated, nothing static. Colors: white, black, #CC2222 red. Font: Impact / Arial Black.
+
+**Reel formats:** Voiceover + b-roll (primary), Talking head + b-roll (secondary).
+Production guides: `production/shooting/`, `production/color/`, `production/editing/`
