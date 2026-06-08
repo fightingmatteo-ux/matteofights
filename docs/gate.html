@@ -375,10 +375,7 @@
     <div class="right">
       <div class="form-label">Get instant access</div>
 
-      <form action="https://formsubmit.co/fightingmatteo@gmail.com" method="POST">
-        <input type="hidden" name="_next" value="https://matteofights.me/the-protocol.html">
-        <input type="hidden" name="_subject" value="New Protocol Download">
-        <input type="hidden" name="_captcha" value="false">
+      <form id="protocol-form">
 
         <div class="field">
           <label for="email">Email address</label>
@@ -408,5 +405,29 @@
 
   </div>
 
+  <script>
+    document.getElementById('protocol-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = document.querySelector('.submit');
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+
+      const data = {
+        email: document.getElementById('email').value,
+        instagram: document.getElementById('instagram').value,
+        date: new Date().toISOString()
+      };
+
+      try {
+        await fetch('https://hook.eu1.make.com/7tieu19hys3tpolvxvj6ti1jn6t7x0ra', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+      } catch(err) {}
+
+      window.location.href = 'https://matteofights.me/the-protocol.html';
+    });
+  </script>
 </body>
 </html>
