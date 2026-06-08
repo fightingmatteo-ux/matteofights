@@ -52,12 +52,6 @@
 
     .left-content { position: relative; }
 
-    .book-img {
-      width: 110px;
-      display: block;
-      margin-bottom: 28px;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.6);
-    }
 
     .eyebrow {
       font-family: 'DM Mono', monospace;
@@ -230,10 +224,29 @@
       font-size: 13px;
       letter-spacing: 0.22em;
       text-transform: uppercase;
-      padding: 20px;
+      padding: 0;
       cursor: pointer;
       transition: opacity 0.15s;
       font-weight: 500;
+      display: flex;
+      align-items: stretch;
+    }
+
+    .submit-img {
+      height: 60px;
+      width: auto;
+      object-fit: cover;
+      display: block;
+      border-right: 1px solid rgba(0,0,0,0.18);
+      flex-shrink: 0;
+    }
+
+    .submit-text {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 24px;
     }
 
     .submit:hover { opacity: 0.88; }
@@ -306,9 +319,10 @@
       }
 
       .submit {
-        padding: 20px;
         font-size: 14px;
       }
+
+      .submit-img { height: 56px; }
 
       .title { font-size: clamp(68px, 20vw, 110px); }
       .desc { font-size: 15px; }
@@ -323,7 +337,6 @@
     <!-- LEFT: value prop over hero image -->
     <div class="left">
       <div class="left-content">
-        <img class="book-img" src="protocol-card.png" alt="The Protocol">
         <div class="eyebrow">@matteofights / Free Resource</div>
         <h1 class="title">THE<br>PROTOCOL</h1>
         <div class="rule"></div>
@@ -377,7 +390,10 @@
           <input type="text" id="instagram" name="instagram" placeholder="@yourhandle" required>
         </div>
 
-        <button type="submit" class="submit">Get The Protocol →</button>
+        <button type="submit" class="submit">
+          <img class="submit-img" src="protocol-card.png" alt="">
+          <span class="submit-text">Get The Protocol — Free →</span>
+        </button>
 
         <p class="privacy">No spam. No newsletter. I'll only reach out if I have something worth sending. You can unsubscribe anytime.</p>
       </form>
