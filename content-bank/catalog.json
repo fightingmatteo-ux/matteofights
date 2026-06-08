@@ -1,1 +1,52 @@
-[]
+[
+  {
+    "file": "ai-assets/atmosphere/atmosphere_1780841604.mp4",
+    "source": "ai",
+    "shot_type": "atmosphere",
+    "style_preset": "gym",
+    "mood": "cinematic",
+    "likeness": false,
+    "tags": [
+      "gym",
+      "atmosphere"
+    ],
+    "duration_sec": 5.0,
+    "prompt": "dark moody gym, red heavy bag swinging, smoke in air",
+    "generated_at": "2026-06-07",
+    "id": "6a8e72ce"
+  },
+  {
+    "file": "ai-assets/atmosphere/atmosphere_1780843026.mp4",
+    "source": "ai",
+    "shot_type": "atmosphere",
+    "style_preset": "gym",
+    "mood": "cinematic",
+    "likeness": false,
+    "tags": [
+      "gym",
+      "atmosphere"
+    ],
+    "duration_sec": 5.0,
+    "prompt": "dark moody boxing gym, heavy bag hanging, dramatic red lighting, cinematic",
+    "generated_at": "2026-06-07",
+    "id": "d8e70d9b"
+  },
+  {
+    "file": "ai-assets/arrivals/arrival_1780846088.mp4",
+    "source": "ai",
+    "shot_type": "arrival",
+    "style_preset": "gym",
+    "mood": "cinematic",
+    "likeness": true,
+    "tags": [
+      "gym",
+      "entrance",
+      "red-wraps"
+    ],
+    "duration_sec": 5.0,
+    "prompt": "MATTEO dark moody gym entrance, red boxing hand wraps, cinematic",
+    "generated_at": "2026-06-07",
+    "instagram_post_id": null,
+    "id": "4aaf8f22"
+  }
+]
