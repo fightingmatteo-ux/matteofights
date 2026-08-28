@@ -12,9 +12,10 @@ else ladders off audience. When a call is ambiguous, pick the option that grows 
    magnet next → paid offer soon.** The DM is the capture point. **Standardized trigger: `HELP`**
    (one word everywhere — don't vary it per reel; keeps the funnel clean and trackable). The exact
    paid offer is intentionally undefined for now (Matteo will decide later, with "Jarvis").
-3. **Stance — keep it OUT of @matteofights content for now.** Zero presence in the bio or 40 posts.
-   Open possibility (Matteo's words): Stance early-access *might* later become the free lead magnet
-   itself — TBD, his call. Until he says so: **no Stance mentions in content.**
+3. **Stance — keep it OUT of reel/post content and the bio for now.** One exception, made explicit
+   by Matteo in the THE PROTOCOL build brief: a single, honest early-access waitlist CTA at the very
+   end of THE PROTOCOL itself (`docs/protocol/`), shown only after a user completes a session. No
+   Stance mentions anywhere else — reels, captions, bio — until Matteo says otherwise.
 
 ## What drives growth here (data-confirmed 2026-06-06, top 5 pulled live)
 - **Reels, not carousels.** Carousels flop (<2k views); reels are the entire game.
