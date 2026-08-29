@@ -250,6 +250,30 @@ documented as the future-product mechanism, not wired into v1's free flow, which
 explicitly recommends keeping minimal); add-to-home-screen prompting (mobile-UX research flags this
 as a legitimate later addition, not a launch requirement).
 
+**Revised post-launch (round 2), based on live feedback:**
+
+- The single combined "teaser plus email plus unlocked result" screen was split into two distinct
+  views, `gate` (`#email`) and `result` (`#result`), each independently addressable. The quiz
+  (`#quiz`), the email step, and the workout (`#workout`, reachable via the result and hub) now
+  each have their own URL, satisfying the explicit ask to make each one a findable, dedicated
+  place rather than a hidden sub-state of one screen.
+- A persistent nav bar was added, shown on every screen except the live workout player (which
+  collapses it to a single Exit link to protect focus mode). It always surfaces the quiz, and once
+  a result is unlocked, the user's own workout and the full six-protocol hub.
+- Browser back/forward and direct hash entry (a bookmark, a pasted link) are handled by
+  `validateView()`, which redirects to the nearest sensible screen rather than rendering a broken
+  or nonsensical one (a workout view with nothing loaded, a result view with no email captured).
+- Workouts are now downloadable as plain text: one button on the unlocked result screen for the
+  user's matched workout, and one per card in the hub for any of the six, generated client-side
+  with no dependency.
+- An optional Instagram-handle field was added to the post-workout micro-form (still fully
+  optional, still asked only after real value has been delivered). Reason: Matteo doesn't run
+  email sequences and follows up through Instagram or WhatsApp instead, so email alone gave him no
+  way to actually act on a lead. Email capture and the Notion sync it feeds were confirmed still
+  working end to end before this change shipped.
+- All product copy was rewritten shorter and with zero em dashes, per explicit instruction, and a
+  regression check for both now lives in the test suite.
+
 ## 18. What "done" looks like
 
 Direct callback to the brief's own final standard — this spec is complete when every one of these is true of the shipped product, not just the plan:

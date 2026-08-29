@@ -573,6 +573,14 @@
   // Kept here so none of it is hardcoded into index.html/app.js.
   // ---------------------------------------------------------------------
   var UI_COPY = {
+    nav: {
+      home: "Home",
+      quiz: "Quiz",
+      retakeQuiz: "Retake",
+      yourWorkout: "My Workout",
+      allWorkouts: "Protocols",
+      exitWorkout: "Exit"
+    },
     landing: {
       eyebrow: "@matteofights / Free",
       title: "THE PROTOCOL",
@@ -601,14 +609,20 @@
       fullResultTitle: "Your Result",
       whatToDoLabel: "What to do",
       startWorkoutCta: "Start Your Workout",
-      browseAllCta: "Browse all 6 Protocols"
+      browseAllCta: "Browse all 6 Protocols",
+      downloadCta: "Download this workout"
     },
     workout: {
       startCta: "Start",
       doneCta: "Done",
       skipRestCta: "Skip rest",
       restLabel: "Rest",
-      nextUp: "Next up"
+      nextUp: "Next up",
+      downloadCta: "Download"
+    },
+    hub: {
+      title: "All 6 Protocols",
+      backCta: "Back to your result"
     },
     completion: {
       title: "Session Complete",
@@ -636,6 +650,10 @@
   // OPTIONAL POST-WORKOUT ICP FIELDS (never required, never gate anything)
   // ---------------------------------------------------------------------
   var OPTIONAL_FIELDS = {
+    instagram: {
+      label: "Instagram handle (optional)",
+      placeholder: "@yourhandle"
+    },
     combatSport: {
       label: "What do you train?",
       options: ["Boxing", "Muay Thai", "Kickboxing", "MMA", "Other or multiple"]

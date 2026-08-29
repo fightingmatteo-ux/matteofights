@@ -40,19 +40,39 @@ categories) is mirrored to `localStorage` on every change. No accounts, no serve
 determine what a user sees. The whole app reads and writes one JSON blob client-side. See
 `STORAGE_KEY = "protocol_state_v1"` in `app.js`.
 
-The router (`showView(name)`) just toggles the `hidden` attribute on the six `[data-view]`
-sections in `index.html`. There's no client-side routing library, no hash routes, no history API
-usage. Reloading always re-derives what to show from the persisted `state.view`. This also means
-the phone's hardware or browser back button leaves the page entirely rather than stepping back a
-screen, same as the previous `gate.html`. In-app "Back" only exists inside the assessment,
-between its own questions.
+The router gives every view a real URL hash, so the quiz, the email step, and the workout are
+each a distinct, bookmarkable place rather than hidden sub-states of one opaque flow.
+`renderView(view)` toggles the `hidden` attribute on the `[data-view]` sections and renders that
+view's content; `navigate(view)` is the one function every in-app button calls, and it does two
+things: `renderView(view)` plus `history.pushState` to the matching hash (`ROUTE_MAP` in
+`app.js`). Direct hash entry, a browser back/forward action, a pasted link, or a bookmark all go
+through `resolveViewFromHash()` and `validateView()` first, so nobody ever lands on a screen that
+doesn't make sense given what they've actually done (a workout screen with nothing loaded, a
+result screen with no email captured, and so on). Those redirect to the nearest sensible view and
+correct the URL with `history.replaceState` rather than piling up broken history entries. Both
+`popstate` (back/forward) and `hashchange` (a hash edited or pasted into an already-open tab) are
+handled, since only the former is guaranteed to fire on every kind of hash change.
+
+A persistent nav bar (`#site-nav`, rendered by `renderNav()`) is shown on every screen except the
+live workout player, where it collapses to a single "Exit" link so the workout stays in
+uncluttered focus mode. It always shows a way back to the quiz, and once a result is unlocked, a
+way to the user's own workout and the full six-protocol library. This is the fix for
+"where is the quiz/workout," not a decorative addition.
 
 ---
 
-## The six views
+## The seven views
 
-`landing -> assessment -> result -> hub -> workout -> complete`. `hub` (browse all six workouts)
-is reachable from `result` and `complete`, not part of the primary linear funnel.
+`landing -> assessment -> gate -> result -> hub -> workout -> complete`.
+
+- `gate` is the dedicated email-capture screen: a real teaser of the result plus the single email
+  field. It has its own view and its own URL (`#email`) precisely so "where do I enter my email"
+  has an unambiguous answer, separate from the result itself.
+- `result` only renders once `state.emailUnlocked` is true. It's the user's personalized
+  "my workout" page, always reachable again later via the nav's "My Workout" link or the
+  `#result` URL.
+- `hub` (browse all six workouts) is reachable from `result`, `complete`, and the nav's
+  "Protocols" link, but isn't part of the primary linear funnel.
 
 ---
 
@@ -155,6 +175,20 @@ More work than editing a workout, but still fully data-driven:
 6. Re-run the scoring tests. `scoreAssessment` and the UI both iterate `CATEGORY_ORDER`
    generically, so a correctly-added category needs no changes to `app.js`.
 
+## Downloading a workout
+
+`generateWorkoutText(workout)` in `app.js` turns a workout object into a clean, readable plain
+text file (goal, why it works, every section and exercise with cues/mistake/easier/harder, the
+coaching notes, the 4-week progression), and `downloadTextFile()` triggers a client-side download
+via a `Blob` and a temporary `<a download>`, no server, no dependency, works offline. Two entry
+points: the "Download this workout" button on the unlocked result screen (downloads the user's
+matched workout), and a small "Download" action on every card in the hub (downloads that specific
+workout without opening it, via `e.stopPropagation()` so it doesn't also start the session).
+
+To change what's in the exported file, edit `generateWorkoutText()` directly. Nothing about the
+download depends on which workout it is; adding a new category's workout (above) makes it
+downloadable automatically.
+
 ## Email integration
 
 `CONFIG.EMAIL_WEBHOOK_URL` in `app.js` points at the **existing** Make.com scenario already used
@@ -167,10 +201,14 @@ needs to know.
 **What's sent, and when:**
 - `submitEmail(email)`: fired once, the moment a user unlocks their result. Payload: `email`,
   `primaryFocus`, `secondaryFocus`, `trainingFrequency`, `equipmentAccess` (from the assessment),
-  `source`, `date`. **Instagram handle is never collected or sent anywhere**, deliberately. See
-  `PROTOCOL_RESEARCH.md` for why: asking for it upfront is a documented conversion-killer.
-- `submitOptionalData(fields)`: fired only if the user fills in the optional post-workout
-  combat-sport/experience micro-form. Skippable, never blocks anything.
+  `source`, `date`. **No Instagram handle in this call**, deliberately: asking for it upfront,
+  before any value has been delivered, is a documented conversion-killer (see
+  `PROTOCOL_RESEARCH.md`).
+- `submitOptionalData(fields)`: fired only if the user fills in the optional post-workout form.
+  Payload: `email`, `kind: "optional_profile"`, `instagram`, `combatSport`, `experience`, `date`.
+  Instagram handle is asked for here instead, after a real workout is already done, because
+  Matteo follows up through Instagram/WhatsApp rather than email campaigns. All three fields are
+  optional and independently nullable; skipping the form sends nothing.
 - `submitStanceWaitlist()`: fired when the STANCE CTA is clicked. Uses
   `CONFIG.STANCE_WEBHOOK_URL` if set, otherwise reuses the same email webhook with
   `list: "stance_waitlist"`, so it lands in the same place until a dedicated STANCE list exists.

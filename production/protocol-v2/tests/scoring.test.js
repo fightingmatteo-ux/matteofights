@@ -1,5 +1,5 @@
 /*
- * THE PROTOCOL — scoring & content structure regression tests.
+ * THE PROTOCOL , scoring & content structure regression tests.
  * Pure Node, no dependencies. Run: node production/protocol-v2/tests/scoring.test.js
  * Re-run after any edit to docs/protocol/data.js.
  */
@@ -16,7 +16,7 @@ function check(name, condition, detail) {
     passed++;
   } else {
     failures++;
-    console.log("FAIL — " + name + (detail ? " :: " + JSON.stringify(detail) : ""));
+    console.log("FAIL , " + name + (detail ? " :: " + JSON.stringify(detail) : ""));
   }
 }
 
@@ -110,7 +110,7 @@ Object.keys(D.WORKOUTS).forEach(function (key) {
 
 // ---------------------------------------------------------------------
 // UI copy sanity: no Instagram field anywhere in copy (product decision,
-// research §2 — Instagram handle is never asked for in this funnel).
+// research §2 , Instagram handle is never asked for in this funnel).
 // ---------------------------------------------------------------------
 var allCopyText = JSON.stringify(D.UI_COPY).toLowerCase();
 check("no 'instagram' text anywhere in UI_COPY", allCopyText.indexOf("instagram") === -1);

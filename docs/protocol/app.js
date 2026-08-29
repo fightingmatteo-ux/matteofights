@@ -34,12 +34,69 @@
   // Test-mode only: ?test=1 clamps every timer to at most 2 seconds so the
   // full flow (including rest steps and full workout completion) can be
   // exercised quickly in automated tests. Invisible and inert for real
-  // users . never enabled unless the query param is explicitly present.
+  // users, never enabled unless the query param is explicitly present.
   var TEST_MODE = (function () {
     try { return new URLSearchParams(window.location.search).get("test") === "1"; }
     catch (e) { return false; }
   })();
   function clampSeconds(s) { return TEST_MODE ? Math.min(s, 2) : s; }
+
+  // -----------------------------------------------------------------
+  // Routing. Every view gets a real, bookmarkable URL hash so the quiz,
+  // the email step, and the workout are each a distinct, findable place
+  // instead of hidden inside one opaque single-page flow. Back/forward
+  // work through popstate. Programmatic navigation always goes through
+  // navigate(); direct hash entry (a bookmark, the back button, a typed
+  // URL) is validated first so nobody lands on a screen that doesn't
+  // make sense given what they've actually done (e.g. a workout screen
+  // with no workout chosen).
+  // -----------------------------------------------------------------
+  var ROUTE_MAP = {
+    landing: "",
+    assessment: "quiz",
+    gate: "email",
+    result: "result",
+    hub: "workouts",
+    workout: "workout",
+    complete: "complete"
+  };
+  var VIEW_BY_ROUTE = (function () {
+    var map = {};
+    Object.keys(ROUTE_MAP).forEach(function (view) { map[ROUTE_MAP[view]] = view; });
+    return map;
+  })();
+
+  function hashFor(view) {
+    var route = ROUTE_MAP[view] || "";
+    return route ? "#" + route : "";
+  }
+
+  // Only used for hash-driven entry (initial load, back/forward, a typed
+  // or bookmarked URL) , never for in-app button clicks, which call
+  // navigate() directly and always know exactly what they're doing.
+  function validateView(view) {
+    if (view === "gate") return state.scoreResult ? "gate" : "assessment";
+    if (view === "result") {
+      if (state.emailUnlocked) return "result";
+      return state.scoreResult ? "gate" : "assessment";
+    }
+    if (view === "hub") {
+      if (state.emailUnlocked) return "hub";
+      return state.scoreResult ? "gate" : "assessment";
+    }
+    // A live workout or a finished-session screen should never be
+    // silently resumed from a URL, a bookmark, or the back button ,
+    // land somewhere the user can deliberately choose from instead.
+    if (view === "workout") return "hub";
+    if (view === "complete") return "hub";
+    return view; // landing, assessment always pass through as-is
+  }
+
+  function resolveViewFromHash() {
+    var rawRoute = window.location.hash.replace(/^#/, "");
+    var view = rawRoute ? (VIEW_BY_ROUTE[rawRoute] || "landing") : "landing";
+    return validateView(view);
+  }
 
   // -----------------------------------------------------------------
   // Small utilities
@@ -237,14 +294,89 @@
   });
 
   // -----------------------------------------------------------------
-  // Router
+  // Router. renderView() shows a view and renders its content but never
+  // touches history. navigate() is the one function every in-app button
+  // should call: it renders the view AND pushes the matching URL hash.
+  // popstate (browser back/forward) calls renderView() directly with a
+  // validated hash so it never double-pushes history.
   // -----------------------------------------------------------------
-  function showView(name) {
-    qsa("[data-view]").forEach(function (v) { v.hidden = v.getAttribute("data-view") !== name; });
-    state.view = name;
+  function renderView(view) {
+    qsa("[data-view]").forEach(function (v) { v.hidden = v.getAttribute("data-view") !== view; });
+    state.view = view;
     saveState();
+    if (view !== "workout") releaseWakeLock();
+    renderNav();
+    if (view === "landing") renderLanding();
+    else if (view === "assessment") renderAssessmentStep();
+    else if (view === "gate") renderGate();
+    else if (view === "result") renderResult();
+    else if (view === "hub") renderHub();
+    else if (view === "workout") renderWorkoutStep();
+    else if (view === "complete") renderCompletion();
     window.scrollTo(0, 0);
-    if (name !== "workout") releaseWakeLock();
+  }
+
+  function navigate(view) {
+    renderView(view);
+    var target = hashFor(view);
+    if (window.location.hash !== target) {
+      history.pushState({ view: view }, "", window.location.pathname + window.location.search + target);
+    }
+  }
+
+  // Both events matter here: popstate fires on browser back/forward,
+  // hashchange fires whenever the URL's fragment changes by any other
+  // means (a typed/pasted link, a bookmark opened into an already-loaded
+  // tab). navigate() itself uses pushState, which triggers neither, so
+  // this can't create a feedback loop with in-app navigation.
+  function handleExternalHashChange() {
+    var view = resolveViewFromHash();
+    renderView(view);
+    var correctHash = hashFor(view);
+    if (window.location.hash !== correctHash) {
+      history.replaceState({ view: view }, "", window.location.pathname + window.location.search + correctHash);
+    }
+  }
+  window.addEventListener("popstate", handleExternalHashChange);
+  window.addEventListener("hashchange", handleExternalHashChange);
+
+  // -----------------------------------------------------------------
+  // Persistent nav. Shown on every screen except the live workout
+  // (focus mode stays uncluttered there, per the mobile-UX research) ,
+  // just an Exit link during a session instead.
+  // -----------------------------------------------------------------
+  function renderNav() {
+    var nav = qs("#site-nav");
+    if (!nav) return;
+    nav.innerHTML = "";
+    var uic = D.UI_COPY.nav;
+
+    if (state.view === "workout") {
+      nav.appendChild(el("button", { class: "nav-exit", onclick: function () { navigate("hub"); }, text: uic.exitWorkout }));
+      return;
+    }
+
+    nav.appendChild(el("button", { class: "nav-wordmark", onclick: function () { navigate("landing"); }, text: "THE PROTOCOL" }));
+
+    var links = el("div", { class: "nav-links" });
+    links.appendChild(el("button", {
+      class: "nav-link" + (state.view === "assessment" ? " nav-link-active" : ""),
+      onclick: startAssessment,
+      text: state.scoreResult ? uic.retakeQuiz : uic.quiz
+    }));
+    if (state.emailUnlocked) {
+      links.appendChild(el("button", {
+        class: "nav-link" + (state.view === "result" ? " nav-link-active" : ""),
+        onclick: function () { navigate("result"); },
+        text: uic.yourWorkout
+      }));
+      links.appendChild(el("button", {
+        class: "nav-link" + (state.view === "hub" ? " nav-link-active" : ""),
+        onclick: function () { navigate("hub"); },
+        text: uic.allWorkouts
+      }));
+    }
+    nav.appendChild(links);
   }
 
   // ===================================================================
@@ -297,8 +429,7 @@
     }
     state.assessmentStep = 0;
     saveState();
-    showView("assessment");
-    renderAssessmentStep();
+    navigate("assessment");
   }
 
   function renderAssessmentStep() {
@@ -359,63 +490,88 @@
     saveState();
     track("assessment_completed", { answers: state.answers });
     track("result_category", { primary: result.primary, secondary: result.secondary });
-    showView("result");
-    renderResult();
+    navigate("gate");
   }
 
   // ===================================================================
-  // RESULT . teaser first, single-field email gate, then full unlock.
+  // GATE. The dedicated email step: a real teaser of the result, then a
+  // single email field. Its own view/URL (#email) so it's a findable
+  // place, not a hidden sub-state of the result screen.
+  // ===================================================================
+  function renderGate() {
+    var root = qs("[data-view='gate']");
+    root.innerHTML = "";
+    var result = state.scoreResult;
+    if (!result) { navigate("assessment"); return; }
+    if (state.emailUnlocked) { navigate("result"); return; }
+
+    var copy = D.RESULT_COPY[result.primary];
+    var uic = D.UI_COPY.result;
+
+    root.appendChild(el("div", { class: "result-eyebrow", text: uic.teaserTitle }));
+    root.appendChild(el("h2", { class: "result-headline", text: copy.headline }));
+    root.appendChild(el("p", { class: "result-teaser-line", text: copy.why.split(". ")[0] + "." }));
+
+    var gate = el("div", { class: "email-gate" });
+    gate.appendChild(el("div", { class: "email-gate-title", text: uic.teaserPrompt }));
+    gate.appendChild(el("div", { class: "email-gate-subtext", text: uic.teaserSubtext }));
+    // novalidate: browser-native validation bubbles are inconsistent
+    // across browsers and would show a light-mode tooltip against this
+    // dark UI. The app's own inline error (below) is the single,
+    // consistently-styled source of truth for email validity.
+    var form = el("form", { class: "email-form", novalidate: "novalidate" });
+    var input = el("input", { type: "email", class: "email-input", placeholder: uic.emailPlaceholder, required: "required", autocomplete: "email" });
+    var errorMsg = el("div", { class: "field-error", hidden: "hidden" });
+    var submitBtn = el("button", { type: "submit", class: "btn btn-primary btn-large", text: uic.emailCta });
+    form.appendChild(input);
+    form.appendChild(errorMsg);
+    form.appendChild(submitBtn);
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var value = input.value.trim();
+      if (!isValidEmail(value)) {
+        errorMsg.textContent = "Enter a valid email address.";
+        errorMsg.hidden = false;
+        input.setAttribute("aria-invalid", "true");
+        return;
+      }
+      errorMsg.hidden = true;
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Unlocking…";
+      unlockResult(value);
+    });
+    gate.appendChild(form);
+    root.appendChild(gate);
+  }
+
+  function unlockResult(email) {
+    state.email = email;
+    state.emailUnlocked = true;
+    saveState();
+    submitEmail(email);
+    track("email_submitted", { email: email });
+    track("workout_unlocked", { primary: state.scoreResult.primary });
+    navigate("result");
+  }
+
+  // ===================================================================
+  // RESULT. Unlocked only: the full "why," secondary focus, and the
+  // matching workout. Its own view/URL (#result) so "your workout" is
+  // always a specific place to come back to, not a re-run of the quiz.
   // ===================================================================
   function renderResult() {
     var root = qs("[data-view='result']");
     root.innerHTML = "";
     var result = state.scoreResult;
-    if (!result) { showView("landing"); renderLanding(); return; }
+    if (!result) { navigate("assessment"); return; }
+    if (!state.emailUnlocked) { navigate("gate"); return; }
+
     var copy = D.RESULT_COPY[result.primary];
-    var cat = D.CATEGORIES[result.primary];
     var secCat = D.CATEGORIES[result.secondary];
     var uic = D.UI_COPY.result;
 
-    root.appendChild(el("div", { class: "result-eyebrow", text: uic.teaserTitle }));
+    root.appendChild(el("div", { class: "result-eyebrow", text: uic.fullResultTitle }));
     root.appendChild(el("h2", { class: "result-headline", text: copy.headline }));
-
-    if (!state.emailUnlocked) {
-      root.appendChild(el("p", { class: "result-teaser-line", text: copy.why.split(". ")[0] + "." }));
-
-      var gate = el("div", { class: "email-gate" });
-      gate.appendChild(el("div", { class: "email-gate-title", text: uic.teaserPrompt }));
-      gate.appendChild(el("div", { class: "email-gate-subtext", text: uic.teaserSubtext }));
-      // novalidate: browser-native validation bubbles are inconsistent
-      // across browsers and would show a light-mode tooltip against this
-      // dark UI . the app's own inline error (below) is the single,
-      // consistently-styled source of truth for email validity.
-      var form = el("form", { class: "email-form", novalidate: "novalidate" });
-      var input = el("input", { type: "email", class: "email-input", placeholder: uic.emailPlaceholder, required: "required", autocomplete: "email" });
-      var errorMsg = el("div", { class: "field-error", hidden: "hidden" });
-      var submitBtn = el("button", { type: "submit", class: "btn btn-primary btn-large", text: uic.emailCta });
-      form.appendChild(input);
-      form.appendChild(errorMsg);
-      form.appendChild(submitBtn);
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
-        var value = input.value.trim();
-        if (!isValidEmail(value)) {
-          errorMsg.textContent = "Enter a valid email address.";
-          errorMsg.hidden = false;
-          input.setAttribute("aria-invalid", "true");
-          return;
-        }
-        errorMsg.hidden = true;
-        submitBtn.disabled = true;
-        submitBtn.textContent = "Unlocking…";
-        unlockResult(value);
-      });
-      gate.appendChild(form);
-      root.appendChild(gate);
-      return;
-    }
-
-    // Unlocked: full result + workout preview.
     root.appendChild(el("p", { class: "result-why", text: copy.why }));
 
     var secondaryBlock = el("div", { class: "secondary-focus" }, [
@@ -437,44 +593,114 @@
       onclick: function () { openWorkout(result.primary); },
       text: uic.startWorkoutCta
     }));
-    root.appendChild(el("button", {
+    var actionRow = el("div", { class: "btn-row" });
+    actionRow.appendChild(el("button", {
       class: "btn btn-text",
-      onclick: function () { showView("hub"); renderHub(); },
+      onclick: function () { navigate("hub"); },
       text: uic.browseAllCta
     }));
-  }
-
-  function unlockResult(email) {
-    state.email = email;
-    state.emailUnlocked = true;
-    saveState();
-    submitEmail(email);
-    track("email_submitted", { email: email });
-    track("workout_unlocked", { primary: state.scoreResult.primary });
-    renderResult();
+    actionRow.appendChild(el("button", {
+      class: "btn btn-text",
+      onclick: function () { downloadWorkout(result.primary); },
+      text: uic.downloadCta
+    }));
+    root.appendChild(actionRow);
   }
 
   // ===================================================================
-  // HUB . browse all six protocols (available post-unlock only)
+  // DOWNLOAD. Plain-text export of a workout, generated client-side.
+  // No dependency, works offline, opens/saves cleanly on any device.
+  // ===================================================================
+  function generateWorkoutText(workout) {
+    var lines = [];
+    lines.push("THE PROTOCOL");
+    lines.push(workout.title.toUpperCase());
+    lines.push(workout.duration + " | " + workout.equipment);
+    lines.push("");
+    lines.push("GOAL");
+    lines.push(workout.goal);
+    lines.push("");
+    lines.push("WHY THIS WORKS");
+    lines.push(workout.whyThisWorks);
+    lines.push("");
+    workout.sections.forEach(function (section) {
+      lines.push("== " + section.title.toUpperCase() + " ==");
+      section.steps.forEach(function (step) {
+        if (step.type === "note") {
+          lines.push("- " + step.text);
+        } else if (step.type === "exercise") {
+          var detail = step.mode === "time" ? formatTime(step.seconds) : step.repsLabel;
+          lines.push("- " + step.name + " (" + detail + ")");
+          (step.cues || []).forEach(function (c) { lines.push("    cue: " + c); });
+          if (step.mistake) lines.push("    avoid: " + step.mistake);
+          if (step.easier) lines.push("    easier: " + step.easier);
+          if (step.harder) lines.push("    harder: " + step.harder);
+          if (step.restSeconds) lines.push("    rest: " + formatTime(step.restSeconds));
+        }
+      });
+      lines.push("");
+    });
+    lines.push("COACHING NOTES");
+    (workout.coachingNotes || []).forEach(function (n) { lines.push("- " + n); });
+    lines.push("");
+    lines.push("PROGRESSION");
+    (workout.progression || []).forEach(function (p) { lines.push("- " + p); });
+    lines.push("");
+    lines.push("matteofights.me/protocol");
+    return lines.join("\n");
+  }
+
+  function downloadTextFile(filename, text) {
+    try {
+      var blob = new Blob([text], { type: "text/plain;charset=utf-8" });
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement("a");
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+    } catch (e) { /* download unsupported in this browser, non-fatal */ }
+  }
+
+  function downloadWorkout(categoryId) {
+    var workout = D.WORKOUTS[categoryId];
+    if (!workout) return;
+    downloadTextFile("the-protocol-" + categoryId + ".txt", generateWorkoutText(workout));
+    track("workout_downloaded", { category: categoryId });
+  }
+
+  // ===================================================================
+  // HUB. Browse all six protocols (available post-unlock only)
   // ===================================================================
   function renderHub() {
     var root = qs("[data-view='hub']");
     root.innerHTML = "";
-    root.appendChild(el("h2", { class: "section-title", text: "All 6 Protocols" }));
+    var huic = D.UI_COPY.hub;
+    root.appendChild(el("h2", { class: "section-title", text: huic.title }));
     var grid = el("div", { class: "category-grid" });
     D.CATEGORY_ORDER.forEach(function (id) {
       var cat = D.CATEGORIES[id];
       var workout = D.WORKOUTS[id];
       var done = state.completedCategories.indexOf(id) !== -1;
-      var card = el("button", { class: "category-card category-card-button", onclick: function () { openWorkout(id); } }, [
+      var card = el("div", { class: "category-card category-card-interactive" });
+      card.appendChild(el("button", { class: "category-card-open", onclick: function () { openWorkout(id); } }, [
         el("div", { class: "category-card-name", text: cat.name + (done ? " ✓" : "") }),
         el("div", { class: "category-card-desc", text: cat.oneLiner }),
         el("div", { class: "category-card-meta", text: workout.duration })
-      ]);
+      ]));
+      card.appendChild(el("button", {
+        class: "category-card-download",
+        onclick: function (e) { e.stopPropagation(); downloadWorkout(id); },
+        text: D.UI_COPY.workout.downloadCta
+      }));
       grid.appendChild(card);
     });
     root.appendChild(grid);
-    root.appendChild(el("button", { class: "btn btn-text", onclick: function () { showView("result"); renderResult(); }, text: "Back to your result" }));
+    if (state.scoreResult) {
+      root.appendChild(el("button", { class: "btn btn-text", onclick: function () { navigate("result"); }, text: huic.backCta }));
+    }
   }
 
   // ===================================================================
@@ -502,8 +728,7 @@
     activeFlatSteps = flattenWorkout(D.WORKOUTS[categoryId]);
     track("workout_started", { category: categoryId });
     requestWakeLock();
-    showView("workout");
-    renderWorkoutStep();
+    navigate("workout");
   }
 
   function stopTimer() {
@@ -641,8 +866,7 @@
     saveState();
     track("workout_completed", { category: categoryId });
     releaseWakeLock();
-    showView("complete");
-    renderCompletion();
+    navigate("complete");
   }
 
   // ===================================================================
@@ -672,7 +896,7 @@
     progWrap.appendChild(el("div", { text: state.completedCategories.length + " of 6 Protocols complete" }));
     root.appendChild(progWrap);
 
-    root.appendChild(el("button", { class: "btn btn-primary btn-large", onclick: function () { showView("hub"); renderHub(); }, text: "Browse all 6 Protocols" }));
+    root.appendChild(el("button", { class: "btn btn-primary btn-large", onclick: function () { navigate("hub"); }, text: D.UI_COPY.result.browseAllCta }));
     root.appendChild(el("button", { class: "btn btn-text", onclick: retakeAssessment, text: uic.reassessCta }));
 
     if (!state.optionalDataSubmitted) {
@@ -690,6 +914,8 @@
     wrap.appendChild(el("div", { class: "optional-data-title", text: uic.optionalDataTitle }));
     wrap.appendChild(el("div", { class: "optional-data-body", text: uic.optionalDataBody }));
 
+    var igInput = el("input", { type: "text", class: "select", placeholder: D.OPTIONAL_FIELDS.instagram.placeholder, autocomplete: "off" });
+
     var sportSelect = el("select", { class: "select" });
     sportSelect.appendChild(el("option", { value: "", text: D.OPTIONAL_FIELDS.combatSport.label }));
     D.OPTIONAL_FIELDS.combatSport.options.forEach(function (o) { sportSelect.appendChild(el("option", { value: o, text: o })); });
@@ -698,6 +924,8 @@
     expSelect.appendChild(el("option", { value: "", text: D.OPTIONAL_FIELDS.experience.label }));
     D.OPTIONAL_FIELDS.experience.options.forEach(function (o) { expSelect.appendChild(el("option", { value: o, text: o })); });
 
+    wrap.appendChild(el("label", { class: "field-label", text: D.OPTIONAL_FIELDS.instagram.label }));
+    wrap.appendChild(igInput);
     wrap.appendChild(sportSelect);
     wrap.appendChild(expSelect);
 
@@ -714,7 +942,11 @@
       renderCompletion();
     });
     submitBtn.addEventListener("click", function () {
-      submitOptionalData({ combatSport: sportSelect.value || null, experience: expSelect.value || null });
+      submitOptionalData({
+        instagram: igInput.value.trim() || null,
+        combatSport: sportSelect.value || null,
+        experience: expSelect.value || null
+      });
       state.optionalDataSubmitted = true;
       saveState();
       renderCompletion();
@@ -781,20 +1013,20 @@
       activeFlatSteps = flattenWorkout(D.WORKOUTS[state.activeWorkoutCategory]);
     }
 
-    renderLanding();
-    if (state.scoreResult) { renderResult(); }
-    if (state.view === "assessment") { renderAssessmentStep(); }
-    if (state.view === "hub") { renderHub(); }
-    if (state.view === "complete") { renderCompletion(); }
+    // A hash in the URL (a bookmark, a shared link, a fresh visit to
+    // matteofights.me/protocol/#quiz) takes priority over the persisted
+    // view; otherwise resume wherever this browser last left off. Either
+    // way the result is validated against actual state before it's ever
+    // rendered, so nobody lands on a screen that doesn't make sense yet.
+    var rawRoute = window.location.hash.replace(/^#/, "");
+    var initialView = rawRoute ? validateView(VIEW_BY_ROUTE[rawRoute] || "landing") : validateView(state.view || "landing");
 
-    // Resume mid-workout on refresh: land on the result screen rather
-    // than silently replaying timers . safer than assuming the athlete
-    // is still mid-set after a reload.
-    if (state.view === "workout") {
-      state.view = "result";
+    renderView(initialView);
+
+    var correctHash = hashFor(initialView);
+    if (window.location.hash !== correctHash) {
+      history.replaceState({ view: initialView }, "", window.location.pathname + window.location.search + correctHash);
     }
-
-    showView(state.view === "landing" ? "landing" : state.view);
   }
 
   if (document.readyState === "loading") {

@@ -37,7 +37,39 @@ body {
   * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
 }
 
-#app { max-width: var(--max-w); margin: 0 auto; padding: 32px 20px 80px; }
+#app { max-width: var(--max-w); margin: 0 auto; padding: 24px 20px 80px; }
+
+/* ---------- Persistent nav ---------- */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 20px;
+  background: rgba(11, 11, 13, 0.94);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--border-2);
+}
+.nav-wordmark {
+  background: transparent; border: none; cursor: pointer; padding: 0; flex-shrink: 0;
+  font-family: 'Bebas Neue', sans-serif; font-size: 15px; letter-spacing: 0.02em; color: #fff;
+  min-height: var(--tap); display: flex; align-items: center;
+}
+.nav-links { display: flex; gap: 0; overflow-x: auto; flex-shrink: 1; min-width: 0; }
+.nav-link {
+  background: transparent; border: none; cursor: pointer; white-space: nowrap; flex-shrink: 0;
+  font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.03em; text-transform: uppercase;
+  color: var(--text-dim); padding: 8px 6px; min-height: var(--tap);
+}
+.nav-link-active { color: var(--red); }
+.nav-exit {
+  background: transparent; border: none; cursor: pointer; color: var(--text-dim);
+  font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 8px 4px; min-height: var(--tap); margin-left: auto;
+}
 
 .view { display: flex; flex-direction: column; gap: 18px; }
 
@@ -133,6 +165,23 @@ body {
 .category-card-name { font-family: 'DM Mono', monospace; font-size: 13px; letter-spacing: 0.05em; color: #fff; text-transform: uppercase; }
 .category-card-desc { font-size: 13px; color: var(--text-dim); }
 .category-card-meta { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--gold); margin-top: 2px; }
+
+.category-card-interactive { padding: 0; overflow: hidden; }
+.category-card-open {
+  background: transparent; border: none; color: inherit; font-family: inherit;
+  cursor: pointer; text-align: left; width: 100%;
+  display: flex; flex-direction: column; gap: 4px;
+  padding: 16px 16px 10px; min-height: var(--tap);
+}
+.category-card-download {
+  background: transparent; border: none; border-top: 1px solid var(--border-2);
+  color: var(--text-dim); font-family: 'DM Mono', monospace; font-size: 10px;
+  letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer;
+  width: 100%; padding: 9px 16px; text-align: left; min-height: 36px;
+}
+.category-card-download:hover, .category-card-download:focus-visible { color: var(--red); }
+
+.field-label { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-dim); }
 
 /* ---------- Assessment ---------- */
 .progress-dots { display: flex; gap: 6px; }
