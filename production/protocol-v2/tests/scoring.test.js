@@ -118,6 +118,27 @@ check("no 'instagram' text anywhere in UI_COPY", allCopyText.indexOf("instagram"
 // STANCE copy must not claim the product is live.
 check("STANCE note is honest that it's not launched", D.UI_COPY.stance.note.toLowerCase().indexOf("isn't launched") !== -1, D.UI_COPY.stance.note);
 
+// ---------------------------------------------------------------------
+// Style rule: no em dashes anywhere in user-facing copy (explicit
+// instruction). Checks every string value across all copy-bearing data,
+// not just UI_COPY, so a new workout or assessment string is covered too.
+// ---------------------------------------------------------------------
+function collectStrings(value, out) {
+  if (typeof value === "string") { out.push(value); return; }
+  if (Array.isArray(value)) { value.forEach(function (v) { collectStrings(v, out); }); return; }
+  if (value && typeof value === "object") {
+    Object.keys(value).forEach(function (k) { collectStrings(value[k], out); });
+  }
+}
+var allStrings = [];
+collectStrings(D.UI_COPY, allStrings);
+collectStrings(D.ASSESSMENT, allStrings);
+collectStrings(D.RESULT_COPY, allStrings);
+collectStrings(D.WORKOUTS, allStrings);
+collectStrings(D.OPTIONAL_FIELDS, allStrings);
+var emDashOffenders = allStrings.filter(function (s) { return s.indexOf("—") !== -1; });
+check("no em dashes anywhere in copy content", emDashOffenders.length === 0, emDashOffenders);
+
 console.log("\n--- summary ---");
 console.log(passed + "/" + (passed + failures) + " checks passed");
 if (failures > 0) process.exitCode = 1;
