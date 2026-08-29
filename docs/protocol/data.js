@@ -606,6 +606,7 @@
       emailPlaceholder: "you@email.com",
       emailCta: "Get My Protocol",
       secondaryLabel: "Secondary focus",
+      statBlockTitle: "Your Fighter Profile",
       fullResultTitle: "Your Result",
       whatToDoLabel: "What to do",
       startWorkoutCta: "Start Your Workout",

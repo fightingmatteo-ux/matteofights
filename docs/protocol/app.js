@@ -555,6 +555,41 @@
   }
 
   // ===================================================================
+  // FIGHTER PROFILE. Animated stat-bar breakdown across all six
+  // categories, using the same scores already computed for the result.
+  // Bars fill in on a short stagger rather than jumping straight to
+  // final width, respecting prefers-reduced-motion via the global rule.
+  // ===================================================================
+  function renderStatBar(categoryId, result, maxScore, index) {
+    var cat = D.CATEGORIES[categoryId];
+    var score = result.scores[categoryId] || 0;
+    var pct = Math.max(4, Math.round((score / maxScore) * 100)); // 4% floor so a zero score still reads as a bar, not a gap
+    var isPrimary = categoryId === result.primary;
+    var isSecondary = categoryId === result.secondary;
+
+    var row = el("div", { class: "stat-row" });
+    row.appendChild(el("div", { class: "stat-label" + (isPrimary ? " stat-label-primary" : ""), text: cat.name }));
+    var track = el("div", { class: "stat-track" });
+    var fillClass = "stat-fill" + (isPrimary ? " stat-fill-primary" : isSecondary ? " stat-fill-secondary" : "");
+    var fill = el("div", { class: fillClass });
+    fill.style.width = "0%";
+    track.appendChild(fill);
+    row.appendChild(track);
+
+    setTimeout(function () { fill.style.width = pct + "%"; }, 120 + index * 90);
+    return row;
+  }
+
+  function renderStatBlock(result) {
+    var maxScore = D.ASSESSMENT.questions.reduce(function (sum, q) { return sum + (q.weight || 0); }, 0);
+    var wrap = el("div", { class: "stat-block" });
+    D.CATEGORY_ORDER.forEach(function (id, index) {
+      wrap.appendChild(renderStatBar(id, result, maxScore, index));
+    });
+    return wrap;
+  }
+
+  // ===================================================================
   // RESULT. Unlocked only: the full "why," secondary focus, and the
   // matching workout. Its own view/URL (#result) so "your workout" is
   // always a specific place to come back to, not a re-run of the quiz.
@@ -570,9 +605,16 @@
     var secCat = D.CATEGORIES[result.secondary];
     var uic = D.UI_COPY.result;
 
-    root.appendChild(el("div", { class: "result-eyebrow", text: uic.fullResultTitle }));
-    root.appendChild(el("h2", { class: "result-headline", text: copy.headline }));
+    var hero = el("div", { class: "result-hero" });
+    hero.appendChild(el("div", { class: "result-hero-glow" }));
+    hero.appendChild(el("div", { class: "result-eyebrow", text: uic.fullResultTitle }));
+    hero.appendChild(el("h2", { class: "result-headline", text: copy.headline }));
+    root.appendChild(hero);
+
     root.appendChild(el("p", { class: "result-why", text: copy.why }));
+
+    root.appendChild(el("div", { class: "stat-block-label", text: uic.statBlockTitle }));
+    root.appendChild(renderStatBlock(result));
 
     var secondaryBlock = el("div", { class: "secondary-focus" }, [
       el("span", { class: "secondary-label", text: uic.secondaryLabel + ": " }),
