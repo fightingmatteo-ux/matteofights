@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stance — Early Access</title>
+<meta name="description" content="Stance is the execution system for fighters. Log your training, track your discipline, and find people who take it as seriously as you do. Join the early access list.">
+<link rel="icon" href="stance-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:           #0B0B0D;
+    --surface:      #131316;
+    --surface-2:    #1a1a1e;
+    --ink:          #F0EFED;
+    --ink-dim:      #9a9a9f;
+    --ink-faint:    #737378;
+    --accent:       #C82020;
+    --accent-hi:    #E03030;
+    --gold:         #C49040;
+    --green:        #5E9E72;
+    --border:       rgba(240,239,237,0.10);
+    --border-strong:rgba(240,239,237,0.20);
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+  }
+
+  a { color: inherit; }
+
+  .wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent-hi);
+    outline-offset: 3px;
+  }
+
+  /* ── HEADER ── */
+  header.site {
+    padding: 28px 0 0;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .brand img {
+    width: 30px;
+    height: 30px;
+    display: block;
+  }
+  .brand .word {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.12em;
+    color: var(--ink);
+  }
+
+  /* ── HERO ── */
+  .hero {
+    padding: 72px 0 56px;
+  }
+  .hero-tag {
+    font-family: 'Geist Mono', monospace;
+    font-size: 12.5px;
+    letter-spacing: 0.14em;
+    color: var(--ink-dim);
+    margin-bottom: 22px;
+  }
+  .hero-tag a { color: var(--ink-dim); text-decoration: underline; text-underline-offset: 3px; }
+  .hero-tag a:hover { color: var(--ink); }
+
+  h1.headline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(58px, 9.5vw, 128px);
+    line-height: 0.92;
+    letter-spacing: 0.005em;
+    color: #fff;
+    margin-bottom: 30px;
+    max-width: 900px;
+  }
+
+  .hero-sub {
+    font-size: clamp(17px, 2vw, 20px);
+    color: rgba(240,239,237,0.88);
+    font-weight: 400;
+    max-width: 540px;
+    margin-bottom: 22px;
+  }
+
+  .hero-honest {
+    font-size: 14px;
+    color: var(--ink-faint);
+    max-width: 480px;
+    margin-bottom: 36px;
+    line-height: 1.65;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    font-family: 'Geist', sans-serif;
+    font-weight: 600;
+    font-size: 15.5px;
+    padding: 16px 30px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.15s;
+  }
+  .btn-primary:hover { background: var(--accent-hi); }
+  .btn-primary:active { background: #a81a1a; }
+
+  /* ── SECTION SPACING ── */
+  section { padding: 56px 0; border-top: 1px solid var(--border); }
+
+  /* ── MANIFESTO ── */
+  .manifesto {
+    border-left: 3px solid var(--accent);
+    padding-left: 28px;
+    max-width: 660px;
+  }
+  .manifesto p {
+    font-size: clamp(20px, 2.6vw, 27px);
+    line-height: 1.5;
+    color: var(--ink);
+    font-weight: 400;
+  }
+  .manifesto p + p { margin-top: 18px; }
+  .manifesto .quiet {
+    color: var(--ink-dim);
+    font-size: clamp(17px, 2vw, 20px);
+  }
+
+  /* ── WHO IT'S FOR ── */
+  h2.section-head {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(30px, 4vw, 42px);
+    letter-spacing: 0.01em;
+    color: #fff;
+    margin-bottom: 40px;
+  }
+
+  .audience-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border: 1px solid var(--border);
+  }
+  .audience-col {
+    padding: 30px 28px;
+    border-left: 1px solid var(--border);
+  }
+  .audience-col:first-child { border-left: none; }
+
+  .status-tag {
+    font-family: 'Geist Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 16px;
+  }
+  .status-tag .dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .status-tag.live { color: var(--green); }
+  .status-tag.live .dot { background: var(--green); }
+  .status-tag.next { color: var(--gold); }
+  .status-tag.next .dot { background: var(--gold); }
+
+  .audience-col h3 {
+    font-family: 'Geist', sans-serif;
+    font-size: 21px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 10px;
+  }
+  .audience-col p {
+    font-size: 15px;
+    color: var(--ink-dim);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 760px) {
+    .audience-grid { grid-template-columns: 1fr; }
+    .audience-col { border-left: none; border-top: 1px solid var(--border); }
+    .audience-col:first-child { border-top: none; }
+  }
+
+  /* ── FOUNDER ── */
+  .founder {
+    display: flex;
+    gap: 26px;
+    align-items: flex-start;
+    max-width: 620px;
+  }
+  .founder img {
+    width: 84px;
+    height: 84px;
+    object-fit: cover;
+    flex-shrink: 0;
+    border-left: 3px solid var(--accent);
+  }
+  .founder p {
+    font-size: 16.5px;
+    color: rgba(240,239,237,0.9);
+    line-height: 1.65;
+  }
+  .founder .sig {
+    display: block;
+    margin-top: 14px;
+    font-family: 'Geist Mono', monospace;
+    font-size: 13px;
+    color: var(--ink-dim);
+  }
+
+  /* ── FORM ── */
+  .form-section { background: var(--surface); border-top: 1px solid var(--border); }
+  .form-inner { max-width: 560px; }
+  .form-inner > p {
+    color: var(--ink-dim);
+    font-size: 15.5px;
+    margin-bottom: 32px;
+    max-width: 460px;
+  }
+
+  .field-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  @media (max-width: 560px) {
+    .field-row { grid-template-columns: 1fr; }
+  }
+
+  .field { margin-bottom: 16px; }
+  .field label {
+    display: block;
+    font-family: 'Geist Mono', monospace;
+    font-size: 11.5px;
+    letter-spacing: 0.08em;
+    color: var(--ink-dim);
+    margin-bottom: 9px;
+  }
+  .field input,
+  .field select {
+    width: 100%;
+    background: var(--surface-2);
+    border: 1px solid var(--border-strong);
+    color: var(--ink);
+    font-family: 'Geist', sans-serif;
+    font-size: 15.5px;
+    padding: 14px 15px;
+    border-radius: 0;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+  .field select {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'><path d='M1 1L7 7L13 1' stroke='%239a9a9f' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    padding-right: 38px;
+  }
+  .field input::placeholder { color: var(--ink-faint); }
+  .field input:focus, .field select:focus {
+    border-color: var(--accent);
+    outline: none;
+  }
+  .field select:invalid { color: var(--ink-faint); }
+
+  .submit-row { margin-top: 22px; }
+  .btn-submit {
+    width: 100%;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    font-family: 'Geist', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 17px;
+    cursor: pointer;
+    transition: background 0.15s, opacity 0.15s;
+  }
+  .btn-submit:hover:not(:disabled) { background: var(--accent-hi); }
+  .btn-submit:disabled { opacity: 0.6; cursor: default; }
+
+  .form-privacy {
+    margin-top: 16px;
+    font-size: 13px;
+    color: var(--ink-faint);
+    line-height: 1.6;
+  }
+
+  .confirm {
+    padding: 8px 0 4px;
+  }
+  .confirm h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 34px;
+    letter-spacing: 0.02em;
+    color: #fff;
+    margin-bottom: 12px;
+  }
+  .confirm p { color: var(--ink-dim); font-size: 15.5px; max-width: 420px; }
+
+  /* ── FOOTER ── */
+  footer.site {
+    padding: 32px 0 48px;
+  }
+  .footer-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-family: 'Geist Mono', monospace;
+    font-size: 12px;
+    color: var(--ink-faint);
+  }
+  .footer-brand img { width: 15px; height: 15px; }
+  .footer-brand a { color: var(--ink-dim); text-decoration: none; }
+  .footer-brand a:hover { text-decoration: underline; }
+  .footer-year { font-family: 'Geist Mono', monospace; font-size: 12px; color: var(--ink-faint); }
+
+  /* ── ONE DELIBERATE ENTRANCE ── */
+  .hero-tag, h1.headline, .hero-sub, .hero-honest, .hero .btn-primary {
+    opacity: 0;
+    animation: rise 0.7s ease-out forwards;
+  }
+  .hero-tag       { animation-delay: 0.02s; }
+  h1.headline     { animation-delay: 0.10s; }
+  .hero-sub       { animation-delay: 0.30s; }
+  .hero-honest    { animation-delay: 0.40s; }
+  .hero .btn-primary { animation-delay: 0.48s; }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-tag, h1.headline, .hero-sub, .hero-honest, .hero .btn-primary {
+      animation: none; opacity: 1; transform: none;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <header class="site">
+    <div class="wrap">
+      <div class="brand">
+        <img src="stance-icon.png" alt="">
+        <span class="word">STANCE</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero" style="border-top:none;">
+    <div class="wrap">
+      <div class="hero-tag">FROM <a href="https://matteofights.me">@MATTEOFIGHTS</a> — EARLY ACCESS</div>
+      <h1 class="headline">HOLD THE LINE.<br>WIN THE DAY.</h1>
+      <p class="hero-sub">The execution system for fighters. Log your training, track your discipline, and find people who take it as seriously as you do.</p>
+      <p class="hero-honest">Stance isn't live yet. This is the early-access list — I'll message you myself when it opens, and for nothing else.</p>
+      <a href="#waitlist-form" class="btn-primary">Join the waitlist</a>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="manifesto">
+        <p>Most fighters track their training in their head. Or not at all.</p>
+        <p>Stance changes that. Log your sessions. See your score. Find people who train like you do.</p>
+        <p class="quiet">No infinite scroll. No fake motivation. Just the work.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2 class="section-head">Who it's for</h2>
+      <div class="audience-grid">
+        <div class="audience-col">
+          <span class="status-tag live"><span class="dot"></span>LIVE IN V1</span>
+          <h3>Fighters</h3>
+          <p>Log every session, see your Stance Score, and find training partners who actually show up.</p>
+        </div>
+        <div class="audience-col">
+          <span class="status-tag next"><span class="dot"></span>COMING NEXT</span>
+          <h3>Coaches</h3>
+          <p>A way to find serious students instead of chasing DMs. Built right after the fighter side ships.</p>
+        </div>
+        <div class="audience-col">
+          <span class="status-tag next"><span class="dot"></span>COMING NEXT</span>
+          <h3>Gyms</h3>
+          <p>Get discovered by fighters looking for a home, not just another pin on a map.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="founder">
+        <img src="avatar.jpg" alt="Matteo, founder of Stance">
+        <p>I broke my fibula and couldn't train. So I learned to code and built the tool I always wanted instead. Still recovering. Still building. Still training whatever I can.
+          <span class="sig">— Matteo, @matteofights, Bangkok</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="form-section" id="waitlist-form">
+    <div class="wrap form-inner">
+      <h2 class="section-head">Join the waitlist</h2>
+      <p>Six quick fields. This tells me who's actually out there before I build the wrong thing.</p>
+
+      <form id="stance-form">
+        <div class="field">
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email" placeholder="you@email.com" required>
+        </div>
+
+        <div class="field">
+          <label for="instagram">Instagram handle</label>
+          <input type="text" id="instagram" name="instagram" placeholder="@yourhandle" required>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="combatSport">Combat sport</label>
+            <select id="combatSport" name="combatSport" required>
+              <option value="" disabled selected hidden>Choose one</option>
+              <option>Muay Thai</option>
+              <option>Boxing</option>
+              <option>MMA</option>
+              <option>BJJ</option>
+              <option>Wrestling</option>
+              <option>Kickboxing</option>
+              <option>Judo</option>
+              <option>Karate</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="experience">Experience level</label>
+            <select id="experience" name="experience" required>
+              <option value="" disabled selected hidden>Choose one</option>
+              <option>New — under 1 year</option>
+              <option>Developing — 1 to 3 years</option>
+              <option>Experienced — 3 to 7 years</option>
+              <option>Competing or pro — 7+ years</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="trainingFrequency">Training frequency</label>
+            <select id="trainingFrequency" name="trainingFrequency" required>
+              <option value="" disabled selected hidden>Choose one</option>
+              <option>1 to 2 times a week</option>
+              <option>3 to 4 times a week</option>
+              <option>5+ times a week</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="role">Joining as</label>
+            <select id="role" name="role" required>
+              <option value="" disabled selected hidden>Choose one</option>
+              <option>Fighter</option>
+              <option>Coach</option>
+              <option>Gym or team owner</option>
+              <option>Just curious</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="submit-row">
+          <button type="submit" class="btn-submit">Join the waitlist</button>
+          <p class="form-privacy">No spam. I'll only message you when there's something real to say.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <footer class="site">
+    <div class="wrap footer-row">
+      <div class="footer-brand">
+        <img src="stance-icon.png" alt="">
+        <span>STANCE · part of <a href="https://matteofights.me">@matteofights</a></span>
+      </div>
+      <span class="footer-year">Bangkok, 2026</span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('stance-form').addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const form = e.target;
+      const btn = form.querySelector('.btn-submit');
+      btn.disabled = true;
+      btn.textContent = 'Joining…';
+
+      const data = {
+        email: form.email.value.trim(),
+        instagram: form.instagram.value.trim(),
+        combatSport: form.combatSport.value,
+        experience: form.experience.value,
+        trainingFrequency: form.trainingFrequency.value,
+        role: form.role.value,
+        list: 'stance_waitlist',
+        source: 'stance_page_direct',
+        date: new Date().toISOString()
+      };
+
+      try {
+        await fetch('https://hook.eu1.make.com/7tieu19hys3tpolvxvj6ti1jn6t7x0ra', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+      } catch (err) {}
+
+      const section = document.querySelector('.form-inner');
+      section.innerHTML =
+        '<div class="confirm">' +
+        '<h3>YOU\'RE ON THE LIST</h3>' +
+        '<p>I\'ll message you on Instagram when early access opens. That\'s it — no email drip, no funnel.</p>' +
+        '</div>';
+    });
+  </script>
+
+</body>
+</html>
