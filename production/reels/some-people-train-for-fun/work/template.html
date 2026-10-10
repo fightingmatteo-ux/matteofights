@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "AntonL"; src: url("assets/fonts/Anton-Regular.ttf") format("truetype"); font-weight: 400; }
+      @font-face { font-family: "BebasL"; src: url("assets/fonts/BebasNeue-Regular.ttf") format("truetype"); font-weight: 400; }
+      :root { --red: #c82020; --sig: #ff2a2a; --ink: #f2f0ea; --bg: #0b0b0d; --surf: #141317; --line: #2b2a2f;
+        --gold: #d4a24c; --mute: #a29e95; --grey: #8d8a84; }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: var(--bg); }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; background: var(--bg); font-family: Inter, sans-serif; color: var(--ink); }
+      .layer { position: absolute; inset: 0; }
+      .mono { font-family: "JetBrains Mono", monospace; letter-spacing: 0.06em; }
+      #cam { position: absolute; inset: 0; transform-origin: 540px 900px; will-change: transform, filter; }
+      #face { position: absolute; inset: 0; overflow: hidden; }
+      .face-inner { position: absolute; inset: 0; transform-origin: 540px 760px; will-change: transform; }
+      .th, .br { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; }
+      .brw { position: absolute; inset: 0; will-change: transform, filter; }
+
+      .band { position: absolute; left: 60px; top: 196px; width: 960px; height: 284px; }
+      .card { position: absolute; inset: 0; background: var(--surf); border: 2px solid var(--line); border-radius: 26px; overflow: hidden; }
+      .card.red { border-color: var(--red); }
+      .chip { display: inline-block; font-size: 24px; padding: 6px 14px; background: var(--red); color: var(--ink); }
+      .chip.grey { background: #3a3936; color: var(--ink); }
+      .k-big { font-family: "AntonL"; line-height: 1; white-space: nowrap; }
+
+      /* hook */
+      .hk { position: absolute; left: 0; top: 196px; width: 1080px; height: 420px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+      .hk-l { font-family: "AntonL"; font-size: 150px; line-height: 1.02; white-space: nowrap; color: var(--ink);
+        -webkit-text-stroke: 14px var(--bg); paint-order: stroke fill; }
+      .hk-l.r { color: var(--sig); }
+      .hk-l.sm { font-size: 116px; }
+
+      /* scorecard */
+      .sc { position: absolute; left: 140px; top: 500px; width: 800px; height: 92px; display: flex; align-items: stretch; }
+      .sc-side { width: 250px; display: flex; align-items: center; justify-content: space-between; padding: 0 22px; border: 4px solid var(--ink); }
+      .sc-side span:first-child { font-family: "BebasL"; font-size: 48px; letter-spacing: 0.08em; }
+      .sc-side span:last-child { font-family: "AntonL"; font-size: 60px; line-height: 1; }
+      #sc-them { background: rgba(58, 57, 54, 0.92); color: var(--ink); }
+      #sc-you { background: var(--red); color: var(--ink); }
+      .sc-mid { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; background: var(--bg); border-top: 4px solid var(--ink); border-bottom: 4px solid var(--ink); }
+      .sc-mid .mono { font-size: 22px; color: var(--mute); }
+      .sc-mid b { font-family: "AntonL"; font-weight: 400; font-size: 44px; line-height: 1; color: var(--ink); }
+      .sc-win { position: absolute; inset: 0; background: var(--gold); display: flex; align-items: center; justify-content: center; opacity: 0; }
+      .sc-win span { font-family: "AntonL"; font-size: 64px; color: var(--bg); line-height: 1; white-space: nowrap; }
+
+      /* p1 weather */
+      .wx-h { position: absolute; left: 30px; top: 26px; font-size: 26px; color: var(--mute); }
+      .wx-t { position: absolute; left: 30px; top: 70px; font-family: "AntonL"; font-size: 110px; line-height: 1; }
+      .wx-r { position: absolute; left: 330px; top: 84px; font-size: 40px; font-weight: 800; }
+      .wx-r small { display: block; font-size: 28px; color: var(--mute); font-weight: 500; margin-top: 6px; }
+      .wx-row { position: absolute; left: 30px; top: 206px; width: 900px; height: 56px; display: flex; align-items: center; gap: 18px; font-size: 32px; font-weight: 700; }
+      .wx-box { width: 40px; height: 40px; border: 4px solid var(--ink); position: relative; }
+      .wx-strike { position: absolute; left: 76px; top: 26px; width: 210px; height: 6px; background: var(--grey); transform-origin: 0 50%; }
+      .stamp { position: absolute; font-family: "AntonL"; line-height: 1; padding: 6px 16px 0; white-space: nowrap; border: 6px solid currentColor; }
+      .rn-big { position: absolute; left: 30px; top: 60px; font-family: "AntonL"; font-size: 150px; line-height: 1; color: var(--sig); }
+      .rn-meta { position: absolute; left: 30px; top: 214px; font-size: 32px; font-weight: 700; }
+      #rain i { position: absolute; top: 0; width: 3px; height: 140px; background: linear-gradient(180deg, rgba(220,230,255,0), rgba(220,230,255,0.55)); }
+
+      /* p2 */
+      .ct-h { position: absolute; left: 30px; top: 26px; font-size: 26px; color: var(--mute); }
+      .ct-n { position: absolute; left: 30px; top: 66px; font-family: "AntonL"; font-size: 170px; line-height: 1; }
+      .ct-s { position: absolute; left: 330px; top: 110px; font-family: "BebasL"; font-size: 84px; line-height: 1; }
+
+      /* p3 story ui */
+      .st-bars { position: absolute; left: 30px; top: 30px; width: 1020px; height: 8px; display: flex; gap: 8px; }
+      .st-bars i { flex: 1; background: rgba(242, 240, 234, 0.35); border-radius: 4px; position: relative; overflow: hidden; }
+      .st-bars i b { position: absolute; inset: 0; background: var(--ink); transform-origin: 0 50%; }
+      .st-who { position: absolute; left: 30px; top: 58px; display: flex; align-items: center; gap: 16px; font-size: 30px; font-weight: 700; }
+      .st-ava { width: 64px; height: 64px; border-radius: 50%; border: 4px solid var(--ink); background: #3a3936; }
+      .st-rec { position: absolute; left: 0; top: 1500px; width: 1080px; display: flex; justify-content: center; }
+      .st-rec span { font-size: 34px; font-weight: 700; background: rgba(11, 11, 13, 0.6); padding: 10px 24px; border-radius: 40px; }
+      .st-rec span b { color: var(--sig); }
+      #lights { background: radial-gradient(ellipse 420px 620px at 540px 880px, rgba(5,5,6,0) 0%, rgba(5,5,6,0.55) 55%, rgba(5,5,6,0.96) 100%); opacity: 0; }
+
+      /* p4 */
+      .cal { position: absolute; left: 30px; top: 92px; width: 900px; height: 120px; display: flex; gap: 14px; }
+      .cal div { flex: 1; border: 3px solid var(--line); border-radius: 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; }
+      .cal span { font-size: 22px; color: var(--mute); position: absolute; top: 8px; }
+      .cal b { font-family: "AntonL"; font-weight: 400; font-size: 88px; line-height: 1; color: #6d6a65; position: absolute; top: 26px; opacity: 0; }
+      .chat-me { position: absolute; right: 30px; top: 40px; height: 84px; background: var(--red); border-radius: 34px 34px 8px 34px; padding: 0 30px; display: flex; align-items: center; font-size: 38px; font-weight: 700; white-space: nowrap; }
+      .chat-them { position: absolute; left: 30px; top: 150px; height: 84px; background: #2b2a2f; border-radius: 34px 34px 34px 8px; padding: 0 30px; display: flex; align-items: center; font-size: 38px; font-weight: 700; white-space: nowrap; }
+
+      /* p5 */
+      .qt { position: absolute; inset: 0; background: #f6d6e4; border-radius: 26px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #8b4a6b; }
+      .qt b { font-size: 70px; font-weight: 800; font-style: italic; }
+      .qt small { font-size: 28px; margin-top: 10px; }
+      .sd-grid { position: absolute; left: 30px; top: 78px; width: 900px; height: 180px; display: grid; grid-template-columns: 140px repeat(7, 1fr); gap: 8px; }
+      .sd-grid > div { display: flex; align-items: center; justify-content: center; font-size: 22px; color: var(--mute); }
+      .sd-grid .lab { justify-content: flex-start; font-size: 24px; color: var(--ink); font-weight: 700; }
+      .sd-grid .tk { background: var(--red); border-radius: 8px; transform-origin: 50% 50%; }
+
+      /* problem */
+      .pb-t { position: absolute; left: 0; top: 64px; width: 960px; text-align: center; font-family: "AntonL"; font-size: 86px; line-height: 1.04; color: var(--ink); -webkit-text-stroke: 12px var(--bg); paint-order: stroke fill; }
+
+      /* stance */
+      .st-bg { position: absolute; inset: 0; background: var(--bg); }
+      .st-logo { position: absolute; left: 400px; top: 500px; width: 280px; height: 474px; }
+      .st-logo img, .st-lock img, .sh-lock img { width: 100%; height: 100%; object-fit: contain; }
+      .st-lock { position: absolute; left: 230px; top: 300px; width: 620px; height: 150px; }
+      .st-rows { position: absolute; left: 70px; top: 560px; width: 940px; height: 600px; }
+      .row { position: absolute; left: 0; width: 940px; height: 124px; background: rgba(20, 19, 23, 0.92); border: 2px solid var(--line); display: flex; align-items: center; }
+      .row-ic { width: 124px; height: 124px; background: var(--red); display: flex; align-items: center; justify-content: center; flex: none; }
+      .row-ic svg { width: 60px; height: 60px; }
+      .row-t { font-family: "AntonL"; font-size: 60px; color: var(--ink); padding-left: 32px; line-height: 1; white-space: nowrap; }
+      .row-bar { position: absolute; right: 30px; top: 50px; width: 150px; height: 24px; background: var(--line); }
+      .row-bar-f { position: absolute; left: 0; top: 0; width: 150px; height: 24px; background: var(--gold); transform-origin: 0 50%; }
+
+      /* cta + share */
+      .cta-h { position: absolute; left: 30px; top: 28px; font-size: 26px; color: var(--mute); }
+      .cta-row { position: absolute; left: 30px; top: 86px; width: 900px; height: 110px; display: flex; align-items: center; gap: 22px; }
+      .cta-ava { width: 96px; height: 96px; border-radius: 50%; background: var(--ink); color: var(--bg); display: flex; align-items: center; justify-content: center; font-family: "AntonL"; font-size: 50px; flex: none; }
+      .cta-pill { flex: 1; height: 96px; border: 3px solid var(--line); border-radius: 48px; display: flex; align-items: center; padding-left: 34px; }
+      .cta-pill span { font-family: "AntonL"; font-size: 64px; color: var(--sig); line-height: 1; }
+      .cta-caret { width: 6px; height: 60px; background: var(--ink); margin-left: 8px; }
+      .cta-send { width: 96px; height: 96px; border-radius: 50%; background: var(--red); flex: none; display: flex; align-items: center; justify-content: center; }
+      .cta-ok { position: absolute; left: 30px; top: 212px; }
+      .cta-ok span { font-size: 28px; font-weight: 700; color: var(--bg); background: var(--gold); padding: 8px 16px; }
+      .sh-h { position: absolute; left: 30px; top: 24px; font-size: 30px; font-weight: 800; }
+      .sh-row { position: absolute; left: 30px; top: 82px; width: 900px; height: 150px; display: flex; justify-content: space-between; }
+      .sh-p { width: 150px; display: flex; flex-direction: column; align-items: center; gap: 10px; position: relative; }
+      .sh-a { width: 108px; height: 108px; border-radius: 50%; background: #3a3936; display: flex; align-items: center; justify-content: center; font-family: "AntonL"; font-size: 44px; }
+      .sh-p span { font-size: 22px; color: var(--mute); white-space: nowrap; }
+      .sh-ring { position: absolute; left: 15px; top: -6px; width: 120px; height: 120px; border-radius: 50%; border: 6px solid var(--sig); opacity: 0; }
+      .sh-send { position: absolute; right: 30px; top: 18px; height: 50px; padding: 0 30px; background: var(--red); border-radius: 26px; display: flex; align-items: center; font-size: 26px; font-weight: 800; }
+
+      /* captions */
+      .cap { position: absolute; left: 40px; top: 612px; width: 1000px; height: 140px; }
+      .cap-in { position: absolute; inset: 0; display: flex; justify-content: center; align-items: center; gap: 22px; }
+      .w { display: inline-block; font-family: "AntonL"; font-size: 96px; line-height: 1; color: var(--ink); text-transform: uppercase;
+        -webkit-text-stroke: 14px var(--bg); paint-order: stroke fill; white-space: nowrap; }
+      .w.them { color: var(--mute); }
+      .cap.big .w { font-size: 160px; color: var(--sig); -webkit-text-stroke: 18px var(--bg); }
+      .fx { position: absolute; inset: 0; opacity: 0; }
+      #fx-red { background: var(--red); }
+      #fx-white { background: var(--ink); }
+      #fx-edge { box-shadow: inset 0 0 0 26px var(--red); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="@@TOTAL@@" data-width="1080" data-height="1920">
+      <div id="cam">
+        <div id="face"><div class="face-inner">
+          @@VIDEOS@@
+        </div></div>
+        <div id="broll" class="layer">
+        @@BROLL@@
+        </div>
+        <div id="rainl" class="layer clip" @@W_RAIN@@ data-track-index="2" style="overflow:hidden"><div id="rain" class="layer"></div></div>
+        <div id="lightsl" class="layer clip" @@W_P3B@@ data-track-index="2"><div id="lights" class="layer"></div></div>
+      </div>
+
+      <div id="fxl" class="layer clip" @@W_ALL@@ data-track-index="3">
+        <div class="fx" id="fx-red"></div><div class="fx" id="fx-white"></div><div class="fx" id="fx-edge"></div>
+      </div>
+
+      <!-- HOOK -->
+      <div id="hook" class="layer clip" @@W_HOOK@@ data-track-index="4">
+        <div class="hk" id="hk-a"><div class="hk-l" id="hk-a1">SOME PEOPLE</div><div class="hk-l" id="hk-a2">TRAIN FOR FUN.</div></div>
+        <div class="hk" id="hk-b"><div class="hk-l sm" id="hk-b1">YOU TRAIN LIKE</div><div class="hk-l sm r" id="hk-b2">SOMEONE'S COMING</div><div class="hk-l sm" id="hk-b3">FOR YOUR SPOT.</div></div>
+      </div>
+
+      <!-- SCORECARD -->
+      <div id="score" class="clip" @@W_SCORE@@ data-track-index="5" style="position:absolute;inset:0">
+        <div class="sc" id="sc">
+          <div class="sc-side" id="sc-them"><span>THEM</span><span id="sc-tn">0</span></div>
+          <div class="sc-mid"><span class="mono">ROUND</span><b id="sc-rd">1</b></div>
+          <div class="sc-side" id="sc-you"><span>YOU</span><span id="sc-yn">0</span></div>
+          <div class="sc-win" id="sc-win"><span>50 – 45 · YOU WIN</span></div>
+        </div>
+      </div>
+
+      <!-- PAIR 1: roadwork in the rain -->
+      <div id="p1" class="clip" @@W_P1@@ data-track-index="6" style="position:absolute;inset:0">
+        <div class="band" id="p1a"><div class="card">
+          <div class="wx-h mono">WEATHER · TODAY 6:00</div>
+          <div class="wx-t">26°</div>
+          <div class="wx-r">Heavy rain<small>Rain 100% · Wind 18 km/h</small></div>
+          <div class="wx-row"><div class="wx-box"></div><span>ROADWORK 5K</span><div class="wx-strike" id="p1-strike"></div></div>
+          <div class="stamp" id="p1-stamp" style="left:560px;top:180px;font-size:60px;color:#a29e95">SKIPPED</div>
+        </div></div>
+        <div class="band" id="p1b"><div class="card red">
+          <div class="wx-h mono" style="color:#ff2a2a">ROADWORK · COMPLETED</div>
+          <div class="rn-big">5.2 KM</div>
+          <div class="rn-meta">26:41 · 5'08"/km · <span style="color:#ff2a2a">IN THE RAIN</span></div>
+        </div></div>
+      </div>
+
+      <!-- PAIR 2: reps vs days out -->
+      <div id="p2" class="clip" @@W_P2@@ data-track-index="6" style="position:absolute;inset:0">
+        <div class="band" id="p2a"><div class="card">
+          <div class="ct-h mono">SET 3 OF 3</div>
+          <div class="ct-n" id="p2-reps" style="color:#a29e95">1</div>
+          <div class="ct-s" style="color:#a29e95">REPS / 10</div>
+        </div></div>
+        <div class="band" id="p2b"><div class="card red">
+          <div class="ct-h mono" style="color:#ff2a2a">FIGHT NIGHT · COUNTDOWN</div>
+          <div class="ct-n" id="p2-days" style="color:#f2f0ea">60</div>
+          <div class="ct-s">DAYS OUT</div>
+        </div></div>
+      </div>
+
+      <!-- PAIR 3: story vs lights off -->
+      <div id="p3" class="clip" @@W_P3@@ data-track-index="6" style="position:absolute;inset:0">
+        <div class="layer" id="p3-ui">
+          <div class="st-bars"><i><b id="st-b1"></b></i><i><b id="st-b2"></b></i><i><b></b></i></div>
+          <div class="st-who"><div class="st-ava"></div><span>your story</span><span style="color:#a29e95;font-weight:500">· 1 round</span></div>
+          <div class="st-rec"><span><b>●</b> REC 0:59 · posting…</span></div>
+        </div>
+      </div>
+      <div id="p3b" class="clip" @@W_P3B@@ data-track-index="6" style="position:absolute;inset:0">
+        <div class="band" id="p3b-band" style="height:150px"><div class="card red">
+          <div class="mono" style="position:absolute;left:30px;top:26px;font-size:26px;color:#ff2a2a">GYM · CLOSED</div>
+          <div class="k-big" style="position:absolute;left:30px;top:58px;font-size:80px">23:47</div>
+          <div class="k-big" style="position:absolute;left:300px;top:70px;font-size:64px;color:#a29e95">STILL GOING</div>
+        </div></div>
+      </div>
+
+      <!-- PAIR 4: dropped vs same partner -->
+      <div id="p4" class="clip" @@W_P4@@ data-track-index="6" style="position:absolute;inset:0">
+        <div class="band" id="p4a"><div class="card">
+          <div class="mono" style="position:absolute;left:30px;top:30px;font-size:26px;color:#a29e95">TRAINING LOG · THIS WEEK</div>
+          <div class="cal">
+            <div><span>MON</span><b id="cx-1">X</b></div><div><span>TUE</span><b id="cx-2">X</b></div><div><span>WED</span><b id="cx-3">X</b></div>
+            <div><span>THU</span><b id="cx-4">X</b></div><div><span>FRI</span><b id="cx-5">X</b></div><div><span>SAT</span><b id="cx-6">X</b></div><div><span>SUN</span><b id="cx-7">X</b></div>
+          </div>
+          <div class="stamp" id="p4-stamp" style="left:300px;top:200px;font-size:56px;color:#a29e95;background:#141317">MISSED: 7 DAYS</div>
+        </div></div>
+        <div class="band" id="p4b"><div class="card red">
+          <div class="chat-me" id="p4-me">same partner tomorrow?</div>
+          <div class="chat-them" id="p4-them">bet. 6am.</div>
+        </div></div>
+      </div>
+
+      <!-- PAIR 5: motivation vs schedule -->
+      <div id="p5" class="clip" @@W_P5@@ data-track-index="6" style="position:absolute;inset:0">
+        <div class="band" id="p5a"><div class="qt"><b>“YOU GOT THIS!”</b><small>— monday motivation · 2.1M likes</small></div></div>
+        <div class="band" id="p5b"><div class="card red">
+          <div class="mono" style="position:absolute;left:30px;top:26px;font-size:26px;color:#ff2a2a">THE SCHEDULE</div>
+          <div class="sd-grid">
+            <div></div><div>M</div><div>T</div><div>W</div><div>T</div><div>F</div><div>S</div><div>S</div>
+            <div class="lab">06:00 RUN</div><div class="tk"></div><div class="tk"></div><div class="tk"></div><div class="tk"></div><div class="tk"></div><div class="tk"></div><div></div>
+            <div class="lab">18:00 SPAR</div><div class="tk"></div><div></div><div class="tk"></div><div></div><div class="tk"></div><div class="tk"></div><div></div>
+          </div>
+        </div></div>
+      </div>
+
+      <!-- THE PROBLEM -->
+      <div id="pb" class="clip" @@W_PROB@@ data-track-index="6" style="position:absolute;inset:0">
+        <div class="band">
+          <div class="chip mono" id="pb-chip" style="position:absolute;left:380px;top:0">THE PROBLEM</div>
+          <div class="pb-t" id="pb-t">NOBODY AROUND YOU TRAINS LIKE THAT.</div>
+        </div>
+      </div>
+
+      <!-- STANCE -->
+      <div id="st" class="clip" @@W_STANCE@@ data-track-index="7" style="position:absolute;inset:0">
+        <div class="st-bg" id="st-bg"></div>
+        <div class="st-lock" id="st-lock"><img src="assets/brand/lockup_c.png" alt="Stance" /></div>
+        <div class="st-logo" id="st-logo"><img src="assets/brand/icon_c.png" alt="" /></div>
+        <div class="st-rows">
+          <div class="row" id="row-1" style="top:0"><div class="row-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#f2f0ea" stroke-width="2.4" stroke-linejoin="round"><path d="M12 22s7-7.2 7-12.5A7 7 0 0 0 5 9.5C5 14.8 12 22 12 22z"/><circle cx="12" cy="9.5" r="2.6"/></svg></div><div class="row-t">REAL GYMS</div></div>
+          <div class="row" id="row-2" style="top:148px"><div class="row-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#f2f0ea" stroke-width="2.4" stroke-linejoin="round"><circle cx="8" cy="8" r="3.4"/><circle cx="16.5" cy="8" r="3.4"/><path d="M2 20c.6-3.8 3-5.6 6-5.6s5.4 1.8 6 5.6M12.6 15c1-.5 2.4-.6 3.9-.6 3 0 5.4 1.8 6 5.6"/></svg></div><div class="row-t">REAL PEOPLE</div></div>
+          <div class="row" id="row-3" style="top:296px"><div class="row-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#f2f0ea" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"><path d="M7 4h6a4 4 0 0 1 4 4v3a5 5 0 0 1-5 5H9a4 4 0 0 1-4-4V6a2 2 0 0 1 2-2z"/><path d="M5 11h6M9 16v4h6v-4"/></svg></div><div class="row-t">REAL SPARRING PARTNERS</div></div>
+          <div class="row" id="row-4" style="top:444px"><div class="row-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#f2f0ea" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"><path d="M3 20h18"/><path d="M6 16v-4M11 16V8M16 16V5"/></svg></div><div class="row-t">PROGRESS YOU CAN SEE</div>
+            <div class="row-bar"><div class="row-bar-f" id="row-bar"></div></div></div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div id="cta" class="clip" @@W_CTA@@ data-track-index="6" style="position:absolute;inset:0">
+        <div class="band" id="cta-band"><div class="card">
+          <div class="cta-h mono">COMMENT FOR THE WAITLIST</div>
+          <div class="cta-row">
+            <div class="cta-ava">M</div>
+            <div class="cta-pill"><span id="cta-text"></span><div class="cta-caret"></div></div>
+            <div class="cta-send" id="cta-send"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#f2f0ea" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 6l6 6-6 6"/></svg></div>
+          </div>
+          <div class="cta-ok" id="cta-ok"><span class="mono">WAITLIST LINK → YOUR DMS</span></div>
+        </div></div>
+      </div>
+
+      <!-- SHARE (loop line) -->
+      <div id="share" class="clip" @@W_SHARE@@ data-track-index="6" style="position:absolute;inset:0">
+        <div class="band" id="sh-band"><div class="card">
+          <div class="sh-h">Send to</div>
+          <div class="sh-row">
+            <div class="sh-p"><div class="sh-a">K</div><span>kai.boxing</span></div>
+            <div class="sh-p"><div class="sh-a">A</div><span>alex_mt</span></div>
+            <div class="sh-p" id="sh-pick"><div class="sh-ring" id="sh-ring"></div><div class="sh-a" style="background:#c82020">M</div><span style="color:#f2f0ea">marco · partner</span></div>
+            <div class="sh-p"><div class="sh-a">J</div><span>jr.fights</span></div>
+            <div class="sh-p"><div class="sh-a">T</div><span>tom.bkk</span></div>
+          </div>
+          <div class="sh-send" id="sh-send">SEND</div>
+        </div></div>
+      </div>
+
+      <div id="pbarw" class="clip" @@W_ALL@@ data-track-index="8" style="position:absolute;left:0;top:0;width:1080px;height:12px;background:rgba(11,11,13,0.5);z-index:60">
+        <div id="pbar" style="position:absolute;left:0;top:0;width:1080px;height:12px;background:var(--sig);transform-origin:0 50%"></div>
+      </div>
+
+    @@CAPTIONS@@
+
+      <div id="grain-overlay" style="position:absolute;inset:0;pointer-events:none;z-index:100;overflow:hidden"><div class="grain-texture"></div></div>
+      <style>
+        @keyframes hf-grain-noise { 0%,100%{transform:translate(0,0)} 10%{transform:translate(-5%,-5%)} 20%{transform:translate(-10%,5%)}
+          30%{transform:translate(5%,-10%)} 40%{transform:translate(-5%,15%)} 50%{transform:translate(-10%,5%)} 60%{transform:translate(15%,0)}
+          70%{transform:translate(0,10%)} 80%{transform:translate(-15%,0)} 90%{transform:translate(10%,5%)} }
+        #grain-overlay .grain-texture { position:absolute; top:-50%; left:-50%; width:200%; height:200%;
+          background:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+          opacity:0.07; animation:hf-grain-noise 0.5s steps(1) infinite; }
+      </style>
+
+    @@AUDIO@@
+    </div>
+
+    <script>
+      const T = @@T_JSON@@;
+      const BROLL = @@BROLL_JSON@@;
+      const CAPS = @@CAPS_JSON@@;
+      const INK = "#f2f0ea", SIG = "#ff2a2a", MUTE = "#a29e95";
+      const tl = gsap.timeline({ paused: true });
+      const $ = (id) => document.getElementById(id);
+
+      function enter(sel, a, b, t) { tl.set(sel, Object.assign({}, a), 0); return tl.fromTo(sel, Object.assign({}, a), b, t); }
+      function pop(sel, t, from) {
+        enter(sel, Object.assign({ scale: 0.6, opacity: 0 }, from || {}),
+          { scale: 1, opacity: 1, x: 0, y: 0, rotation: 0, duration: 0.32, ease: "back.out(2.2)", immediateRender: false }, t);
+      }
+      function cardIn(sel, t) { enter(sel, { y: -70, opacity: 0, rotationX: 25 }, { y: 0, opacity: 1, rotationX: 0, duration: 0.36, ease: "back.out(1.6)", immediateRender: false }, t); }
+      function cardOut(sel, t) { tl.to(sel, { y: -50, opacity: 0, duration: 0.18, ease: "power2.in" }, t - 0.18); }
+      function swap(a, b, t) {   // THEM card flips out, YOU card slams in
+        tl.to(a, { scale: 0.9, opacity: 0, filter: "blur(8px)", duration: 0.16, ease: "power2.in" }, t - 0.04);
+        enter(b, { scale: 1.25, opacity: 0, rotation: -2 }, { scale: 1, opacity: 1, rotation: 0, duration: 0.28, ease: "expo.out", immediateRender: false }, t + 0.04);
+      }
+      function flash(id, t, peak, dur) { tl.fromTo(id, { opacity: peak }, { opacity: 0, duration: dur, ease: "power2.out", immediateRender: false }, t); }
+      function shake(t, amp, dur) {   // one keyframed tween per shake (no self-overlap)
+        const n = Math.max(3, Math.round(dur / 0.04)); let seed = Math.round(t * 1000) + 11;
+        const r = () => { seed = (seed * 9301 + 49297) % 233280; return seed / 233280 - 0.5; };
+        const kf = [];
+        for (let i = 0; i < n; i++) { const k = 1 - i / n; kf.push({ x: r() * amp * 2 * k, y: r() * amp * 2 * k, duration: dur / n, ease: "none" }); }
+        kf.push({ x: 0, y: 0, duration: 0.04, ease: "none" });
+        tl.to("#cam", { keyframes: kf }, t);
+      }
+      function counter(el, from, to, t, dur, ease) {
+        const p = { v: 0 };
+        tl.to(p, { v: 1, duration: dur, ease: ease || "none", onUpdate: () => { el.textContent = String(Math.round(from + (to - from) * p.v)); } }, t);
+      }
+      function typeText(el, str, t, dur) {
+        const p = { v: 0 };
+        tl.to(p, { v: 1, duration: dur, ease: "none", onUpdate: () => { el.textContent = str.slice(0, Math.round(p.v * str.length)); } }, t);
+      }
+
+      // ---------- footage: punch-ins, THEM grey / YOU colour ----------
+      T.seg.forEach(([s, e, a, b]) => tl.fromTo(".face-inner", { scale: a }, { scale: b, duration: e - s, ease: "none", immediateRender: false }, s));
+      const GREY = "grayscale(1) contrast(1.12) brightness(0.9)", COLOR = "grayscale(0) contrast(1) brightness(1)";
+      tl.set("#cam", { filter: GREY }, 0);
+      tl.to("#cam", { filter: COLOR, duration: 0.12, ease: "power2.out" }, T.you0);
+      T.phases.forEach(([t, k]) => {
+        if (k === "them") tl.to("#cam", { filter: GREY, duration: 0.14, ease: "power2.out" }, t);
+        if (k === "you") {
+          tl.to("#cam", { filter: COLOR, duration: 0.1, ease: "power2.out" }, t);
+          flash("#fx-edge", t, 1, 0.45); shake(t + 0.02, 10, 0.2);
+          tl.fromTo("#cam", { scale: 1 }, { scale: 1.06, duration: 0.06, ease: "power2.out", immediateRender: false }, t);
+          tl.to("#cam", { scale: 1, duration: 0.3, ease: "power2.out" }, t + 0.06);
+        }
+      });
+      BROLL.forEach((c) => {
+        enter("#w-" + c.id, { xPercent: 100, filter: "blur(14px)" }, { xPercent: 0, filter: "blur(0px)", duration: 0.24, ease: "power3.out", immediateRender: false }, c.start);
+      });
+
+      // ---------- hook ----------
+      enter("#hk-a1", { scale: 1.08, opacity: 1 }, { scale: 1, duration: 0.5, ease: "power3.out", immediateRender: false }, 0);
+      enter("#hk-a2", { scale: 1.08, opacity: 1 }, { scale: 1, duration: 0.5, ease: "power3.out", immediateRender: false }, 0);
+      tl.to("#hk-a", { opacity: 0, scale: 0.85, filter: "blur(10px)", duration: 0.14, ease: "power2.in" }, T.you0 - 0.1);
+      pop("#hk-b1", T.you0, { y: 30, scale: 1.4 });
+      pop("#hk-b2", T.coming - 0.05, { y: 30, scale: 1.6, rotation: -3 });
+      pop("#hk-b3", T.spot - 0.1, { y: 30, scale: 1.6 });
+      flash("#fx-red", T.you0, 0.55, 0.3); shake(T.you0, 20, 0.3); shake(T.spot, 14, 0.25);
+      tl.to("#hk-b", { y: -40, opacity: 0, duration: 0.18, ease: "power2.in" }, T.they1 - 0.18);
+
+      // ---------- scorecard (driven from the phase list, seek-safe) ----------
+      enter("#sc", { y: -30, opacity: 0, scale: 0.9 }, { y: 0, opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)", immediateRender: false }, T.they1);
+      (function () {
+        const p = { v: 0 }, t0 = T.they1, dur = T.problem - T.they1;
+        const tn = $("sc-tn"), yn = $("sc-yn"), rd = $("sc-rd");
+        tl.to(p, { v: dur, duration: dur, ease: "none", onUpdate: () => {
+          const now = t0 + p.v; let them = 0, you = 0, round = 1;
+          T.phases.forEach(([t, k]) => { if (now >= t + 0.25) { if (k === "them") them++; if (k === "you") you++; } });
+          round = Math.min(5, Math.max(1, them));
+          tn.textContent = String(them * 9); yn.textContent = String(you * 10); rd.textContent = String(round);
+        } }, t0);
+      })();
+      T.phases.forEach(([t, k]) => {
+        if (k === "them") tl.fromTo("#sc-them", { scale: 1.18 }, { scale: 1, duration: 0.3, ease: "back.out(3)", immediateRender: false }, t + 0.25);
+        if (k === "you") tl.fromTo("#sc-you", { scale: 1.3 }, { scale: 1, duration: 0.35, ease: "back.out(3)", immediateRender: false }, t + 0.25);
+      });
+      enter("#sc-win", { opacity: 0, scaleX: 0.2 }, { opacity: 1, scaleX: 1, duration: 0.3, ease: "expo.out", immediateRender: false }, T.verdict + 0.4);
+      flash("#fx-white", T.verdict + 0.4, 0.35, 0.25);
+      tl.to("#sc", { y: -30, opacity: 0, duration: 0.2, ease: "power2.in" }, T.problem - 0.2);
+
+      // ---------- pair 1 ----------
+      cardIn("#p1a", T.they1 + 0.05);
+      enter("#p1-strike", { scaleX: 0 }, { scaleX: 1, duration: 0.25, ease: "power2.out", immediateRender: false }, T.rains);
+      pop("#p1-stamp", T.rains + 0.2, { scale: 2, rotation: 10 });
+      tl.set("#p1b", { opacity: 0 }, 0);
+      swap("#p1a", "#p1b", T.you1);
+      cardOut("#p1b", T.they2);
+      (function () {   // deterministic rain streaks
+        const box = $("rain"); const n = 46;
+        for (let i = 0; i < n; i++) {
+          const el = document.createElement("i");
+          const x = (i * 211) % 1080, d = 0.32 + ((i * 37) % 23) / 100, off = ((i * 53) % 100) / 100;
+          el.style.left = x + "px"; el.style.transform = "rotate(12deg)"; box.appendChild(el);
+          const dur = T.they2 - T.you1 + 0.5, reps = Math.max(1, Math.floor(dur / d));
+          tl.fromTo(el, { y: -200 - off * 1900 }, { y: 2100 - off * 1900, duration: d, ease: "none", repeat: reps, immediateRender: false }, T.you1 - off * d);
+        }
+      })();
+
+      // ---------- pair 2 ----------
+      cardIn("#p2a", T.they2 + 0.05);
+      counter($("p2-reps"), 1, 10, T.they2 + 0.1, T.you2 - T.they2 - 0.2);
+      tl.set("#p2b", { opacity: 0 }, 0);
+      swap("#p2a", "#p2b", T.you2);
+      counter($("p2-days"), 60, 23, T.you2 + 0.1, 1.1, "expo.out");
+      tl.fromTo("#p2-days", { color: INK }, { color: SIG, duration: 0.15, immediateRender: false }, T.fight);
+      cardOut("#p2b", T.they3);
+
+      // ---------- pair 3 ----------
+      enter("#p3-ui", { opacity: 0 }, { opacity: 1, duration: 0.2, immediateRender: false }, T.they3);
+      enter("#st-b1", { scaleX: 0 }, { scaleX: 1, duration: 0.9, ease: "none", immediateRender: false }, T.they3);
+      enter("#st-b2", { scaleX: 0 }, { scaleX: 1, duration: 1.2, ease: "none", immediateRender: false }, T.they3 + 0.9);
+      cardIn("#p3b-band", T.you3 + 0.3);
+      enter("#lights", { opacity: 0 }, { opacity: 1, duration: 0.06, ease: "none", immediateRender: false }, T.off);
+      shake(T.off, 8, 0.15);
+
+      // ---------- pair 4 ----------
+      cardIn("#p4a", T.they4 + 0.05);
+      for (let i = 1; i <= 7; i++) enter("#cx-" + i, { opacity: 0, scale: 2 }, { opacity: 1, scale: 1, duration: 0.14, ease: "back.out(3)", immediateRender: false },
+        T.disappear + (i - 1) * ((T.week - T.disappear + 0.15) / 7));
+      pop("#p4-stamp", T.week + 0.2, { scale: 2, rotation: -8 });
+      tl.set("#p4b", { opacity: 0 }, 0);
+      swap("#p4a", "#p4b", T.you4);
+      pop("#p4-me", T.you4 + 0.35, { x: 60, scale: 0.7 });
+      pop("#p4-them", T.partner - 0.5, { x: -60, scale: 0.7 });
+      cardOut("#p4b", T.they5);
+
+      // ---------- pair 5 ----------
+      cardIn("#p5a", T.they5 + 0.05);
+      tl.fromTo("#p5a .qt", { rotation: -1 }, { rotation: 1, duration: 0.4, yoyo: true, repeat: 2, ease: "sine.inOut", immediateRender: false }, T.they5 + 0.3);
+      tl.set("#p5b", { opacity: 0 }, 0);
+      swap("#p5a", "#p5b", T.you5);
+      enter("#p5b .tk", { scale: 0 }, { scale: 1, duration: 0.2, stagger: 0.035, ease: "back.out(3)", immediateRender: false }, T.you5 + 0.15);
+      cardOut("#p5b", T.problem);
+
+      // ---------- problem ----------
+      pop("#pb-chip", T.problem, { y: -20, scale: 1 });
+      enter("#pb-t", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35, ease: "power4.out", immediateRender: false }, T.nobody - 0.05);
+
+      // ---------- STANCE ----------
+      tl.set("#st-bg", { opacity: 1 }, 0);
+      flash("#fx-white", T.stance, 0.9, 0.3);
+      enter("#st-logo", { scale: 3.2, opacity: 0, filter: "blur(16px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.34, ease: "expo.out", immediateRender: false }, T.stance);
+      shake(T.stance, 22, 0.35);
+      tl.to("#st-logo", { y: -320, scale: 0.4, opacity: 0, duration: 0.3, ease: "power3.inOut" }, Math.max(T.stance + 0.4, T.r1 - 0.35));
+      enter("#st-lock", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out", immediateRender: false }, T.r1 - 0.2);
+      tl.fromTo("#st-bg", { opacity: 1 }, { opacity: 0.45, duration: 0.35, ease: "power2.out", immediateRender: false }, T.r1 - 0.15);
+      ["r1", "r2", "r3", "r4"].forEach((k, i) => {
+        enter("#row-" + (i + 1), { x: -120, opacity: 0 }, { x: 0, opacity: 1, duration: 0.28, ease: "power4.out", immediateRender: false }, T[k] - 0.05);
+        enter("#row-" + (i + 1) + " .row-ic", { scale: 0.4, rotation: -30 }, { scale: 1, rotation: 0, duration: 0.35, ease: "back.out(2.6)", immediateRender: false }, T[k]);
+        tl.fromTo("#cam", { scale: 1 }, { scale: 1.05, duration: 0.06, immediateRender: false }, T[k]);
+        tl.to("#cam", { scale: 1, duration: 0.25, ease: "power2.out" }, T[k] + 0.06);
+      });
+      enter("#row-bar", { scaleX: 0 }, { scaleX: 0.86, duration: 0.9, ease: "power3.out", immediateRender: false }, T.r4 + 0.3);
+
+      // ---------- CTA ----------
+      cardIn("#cta-band", T.cta);
+      typeText($("cta-text"), "STANCE", T.cta_type, 0.4);
+      tl.fromTo("#cta-send", { scale: 1 }, { scale: 0.82, duration: 0.08, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, T.cta_type + 0.55);
+      pop("#cta-ok", T.waitlist, { y: 20, scale: 0.8 });
+
+      // ---------- share ----------
+      cardIn("#sh-band", T.send - 0.2);
+      enter("#sh-ring", { opacity: 0, scale: 1.5 }, { opacity: 1, scale: 1, duration: 0.25, ease: "back.out(2.5)", immediateRender: false }, T.partner2);
+      tl.fromTo("#sh-pick", { y: 0 }, { y: -10, duration: 0.12, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, T.partner2);
+      tl.fromTo("#sh-send", { scale: 1 }, { scale: 0.86, duration: 0.08, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, T.knows);
+
+      // ---------- retention bar ----------
+      tl.fromTo("#pbar", { scaleX: 0 }, { scaleX: 1, duration: T.total, ease: "none", immediateRender: false }, 0);
+
+      // ---------- captions: word-by-word ----------
+      CAPS.forEach((c, i) => {
+        const box = "#cap-" + i + " .cap-in";
+        if (c.big) {
+          tl.fromTo(box, { scale: 2.3, opacity: 0, rotation: -5 }, { scale: 1, opacity: 1, rotation: 0, duration: 0.22, ease: "expo.out", immediateRender: false }, c.start);
+          tl.fromTo("#cam", { scale: 1 }, { scale: 1.08, duration: 0.07, immediateRender: false }, c.start);
+          tl.to("#cam", { scale: 1, duration: 0.32, ease: "power2.out" }, c.start + 0.07);
+          return;
+        }
+        c.words.forEach((w, j) => {
+          const el = "#cw-" + i + "-" + j, at = j === 0 ? c.start : w.s;
+          const base = w.k === "them" ? MUTE : w.k === "you" ? SIG : INK;
+          tl.set(el, { opacity: 0, y: 28, scale: 0.6, color: w.k ? base : SIG }, 0);
+          tl.fromTo(el, { opacity: 0, y: 28, scale: 0.6 }, { opacity: 1, y: 0, scale: 1, duration: 0.14, ease: "back.out(3)", immediateRender: false }, at);
+          if (!w.k && j < c.words.length - 1) tl.set(el, { color: INK }, Math.max(at + 0.05, c.words[j + 1].s));
+        });
+      });
+
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

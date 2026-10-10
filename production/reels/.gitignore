@@ -1,0 +1,13 @@
+# Heavy / regenerable media stays local (re-create with the reel-kit scripts)
+*/raw/
+*/renders/
+*/snapshots/
+*/node_modules/
+*/assets/broll/
+*/assets/cut/
+*/assets/talking.mp4
+*/work/*.png
+*/work/*.jpg
+*/.hyperframes/
+*/.thumbnails/
+*/.waveform-cache/

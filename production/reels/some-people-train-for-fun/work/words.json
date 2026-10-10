@@ -1,0 +1,712 @@
+[
+ {
+  "text": "Some",
+  "start": 0.0,
+  "end": 0.74
+ },
+ {
+  "text": "people",
+  "start": 0.74,
+  "end": 1.02
+ },
+ {
+  "text": "train",
+  "start": 1.02,
+  "end": 1.32
+ },
+ {
+  "text": "for",
+  "start": 1.32,
+  "end": 1.52
+ },
+ {
+  "text": "fun.",
+  "start": 1.52,
+  "end": 1.84
+ },
+ {
+  "text": "You",
+  "start": 2.38,
+  "end": 2.48
+ },
+ {
+  "text": "train",
+  "start": 2.48,
+  "end": 2.84
+ },
+ {
+  "text": "like",
+  "start": 2.84,
+  "end": 3.04
+ },
+ {
+  "text": "someone's",
+  "start": 3.04,
+  "end": 3.46
+ },
+ {
+  "text": "coming",
+  "start": 3.46,
+  "end": 3.68
+ },
+ {
+  "text": "for",
+  "start": 3.68,
+  "end": 3.9
+ },
+ {
+  "text": "your",
+  "start": 3.9,
+  "end": 4.04
+ },
+ {
+  "text": "spot.",
+  "start": 4.04,
+  "end": 4.34
+ },
+ {
+  "text": "They",
+  "start": 5.24,
+  "end": 5.36
+ },
+ {
+  "text": "skip",
+  "start": 5.36,
+  "end": 5.68
+ },
+ {
+  "text": "road",
+  "start": 5.68,
+  "end": 6.02
+ },
+ {
+  "text": "work",
+  "start": 6.02,
+  "end": 6.24
+ },
+ {
+  "text": "when",
+  "start": 6.24,
+  "end": 6.42
+ },
+ {
+  "text": "it",
+  "start": 6.42,
+  "end": 6.6
+ },
+ {
+  "text": "rains.",
+  "start": 6.6,
+  "end": 6.88
+ },
+ {
+  "text": "You",
+  "start": 7.34,
+  "end": 7.44
+ },
+ {
+  "text": "run",
+  "start": 7.44,
+  "end": 7.72
+ },
+ {
+  "text": "it.",
+  "start": 7.72,
+  "end": 8.5
+ },
+ {
+  "text": "They",
+  "start": 11.52,
+  "end": 12.08
+ },
+ {
+  "text": "count",
+  "start": 12.08,
+  "end": 12.36
+ },
+ {
+  "text": "reps.",
+  "start": 12.36,
+  "end": 12.76
+ },
+ {
+  "text": "You",
+  "start": 12.98,
+  "end": 13.18
+ },
+ {
+  "text": "count",
+  "start": 13.18,
+  "end": 13.5
+ },
+ {
+  "text": "days",
+  "start": 13.5,
+  "end": 13.78
+ },
+ {
+  "text": "until",
+  "start": 13.78,
+  "end": 14.08
+ },
+ {
+  "text": "your",
+  "start": 14.08,
+  "end": 14.26
+ },
+ {
+  "text": "fight.",
+  "start": 14.26,
+  "end": 14.54
+ },
+ {
+  "text": "They",
+  "start": 18.7,
+  "end": 19.26
+ },
+ {
+  "text": "film",
+  "start": 19.26,
+  "end": 19.56
+ },
+ {
+  "text": "one",
+  "start": 19.56,
+  "end": 19.9
+ },
+ {
+  "text": "round",
+  "start": 19.9,
+  "end": 20.22
+ },
+ {
+  "text": "for",
+  "start": 20.22,
+  "end": 20.48
+ },
+ {
+  "text": "their",
+  "start": 20.48,
+  "end": 20.64
+ },
+ {
+  "text": "story.",
+  "start": 20.64,
+  "end": 21.02
+ },
+ {
+  "text": "And",
+  "start": 21.64,
+  "end": 21.86
+ },
+ {
+  "text": "you,",
+  "start": 21.86,
+  "end": 22.12
+ },
+ {
+  "text": "you're",
+  "start": 22.42,
+  "end": 22.72
+ },
+ {
+  "text": "still",
+  "start": 22.72,
+  "end": 22.9
+ },
+ {
+  "text": "hitting",
+  "start": 22.9,
+  "end": 23.08
+ },
+ {
+  "text": "the",
+  "start": 23.08,
+  "end": 23.32
+ },
+ {
+  "text": "bag",
+  "start": 23.32,
+  "end": 23.52
+ },
+ {
+  "text": "when",
+  "start": 23.52,
+  "end": 23.7
+ },
+ {
+  "text": "the",
+  "start": 23.7,
+  "end": 23.88
+ },
+ {
+  "text": "lights",
+  "start": 23.88,
+  "end": 24.06
+ },
+ {
+  "text": "go",
+  "start": 24.06,
+  "end": 24.28
+ },
+ {
+  "text": "off.",
+  "start": 24.28,
+  "end": 24.7
+ },
+ {
+  "text": "They",
+  "start": 29.56,
+  "end": 30.1
+ },
+ {
+  "text": "get",
+  "start": 30.1,
+  "end": 30.34
+ },
+ {
+  "text": "dropped",
+  "start": 30.34,
+  "end": 30.66
+ },
+ {
+  "text": "and",
+  "start": 30.66,
+  "end": 30.92
+ },
+ {
+  "text": "sparring",
+  "start": 30.92,
+  "end": 31.4
+ },
+ {
+  "text": "and",
+  "start": 31.4,
+  "end": 31.58
+ },
+ {
+  "text": "disappear",
+  "start": 31.58,
+  "end": 31.98
+ },
+ {
+  "text": "for",
+  "start": 31.98,
+  "end": 32.3
+ },
+ {
+  "text": "a",
+  "start": 32.3,
+  "end": 32.54
+ },
+ {
+  "text": "week.",
+  "start": 32.54,
+  "end": 32.74
+ },
+ {
+  "text": "You",
+  "start": 33.1,
+  "end": 33.18
+ },
+ {
+  "text": "show",
+  "start": 33.18,
+  "end": 33.46
+ },
+ {
+  "text": "up",
+  "start": 33.46,
+  "end": 33.72
+ },
+ {
+  "text": "the",
+  "start": 33.72,
+  "end": 33.86
+ },
+ {
+  "text": "next",
+  "start": 33.86,
+  "end": 34.06
+ },
+ {
+  "text": "day",
+  "start": 34.06,
+  "end": 34.34
+ },
+ {
+  "text": "asking",
+  "start": 34.34,
+  "end": 34.78
+ },
+ {
+  "text": "for",
+  "start": 34.78,
+  "end": 35.04
+ },
+ {
+  "text": "the",
+  "start": 35.04,
+  "end": 35.18
+ },
+ {
+  "text": "same",
+  "start": 35.18,
+  "end": 35.42
+ },
+ {
+  "text": "partner.",
+  "start": 35.42,
+  "end": 35.88
+ },
+ {
+  "text": "They",
+  "start": 39.58,
+  "end": 40.12
+ },
+ {
+  "text": "need",
+  "start": 40.12,
+  "end": 40.32
+ },
+ {
+  "text": "motivation.",
+  "start": 40.32,
+  "end": 40.9
+ },
+ {
+  "text": "You've",
+  "start": 41.4,
+  "end": 41.6
+ },
+ {
+  "text": "got",
+  "start": 41.6,
+  "end": 41.76
+ },
+ {
+  "text": "a",
+  "start": 41.76,
+  "end": 42.02
+ },
+ {
+  "text": "schedule.",
+  "start": 42.02,
+  "end": 42.4
+ },
+ {
+  "text": "The",
+  "start": 49.88,
+  "end": 50.48
+ },
+ {
+  "text": "problem",
+  "start": 50.48,
+  "end": 50.78
+ },
+ {
+  "text": "is,",
+  "start": 50.78,
+  "end": 51.18
+ },
+ {
+  "text": "nobody",
+  "start": 51.8,
+  "end": 51.84
+ },
+ {
+  "text": "around",
+  "start": 51.84,
+  "end": 52.3
+ },
+ {
+  "text": "you",
+  "start": 52.3,
+  "end": 52.54
+ },
+ {
+  "text": "is",
+  "start": 52.54,
+  "end": 52.72
+ },
+ {
+  "text": "training",
+  "start": 52.72,
+  "end": 53.02
+ },
+ {
+  "text": "like",
+  "start": 53.02,
+  "end": 53.26
+ },
+ {
+  "text": "that.",
+  "start": 53.26,
+  "end": 53.54
+ },
+ {
+  "text": "That's",
+  "start": 53.72,
+  "end": 53.88
+ },
+ {
+  "text": "why",
+  "start": 53.88,
+  "end": 54.02
+ },
+ {
+  "text": "I'm",
+  "start": 54.02,
+  "end": 54.26
+ },
+ {
+  "text": "building",
+  "start": 54.26,
+  "end": 54.54
+ },
+ {
+  "text": "stands.",
+  "start": 54.54,
+  "end": 55.02
+ },
+ {
+  "text": "Real",
+  "start": 56.24,
+  "end": 56.4
+ },
+ {
+  "text": "gyms,",
+  "start": 56.4,
+  "end": 56.88
+ },
+ {
+  "text": "real",
+  "start": 57.3,
+  "end": 57.44
+ },
+ {
+  "text": "people,",
+  "start": 57.44,
+  "end": 57.88
+ },
+ {
+  "text": "real",
+  "start": 58.3,
+  "end": 58.48
+ },
+ {
+  "text": "sparring",
+  "start": 58.48,
+  "end": 58.92
+ },
+ {
+  "text": "partners,",
+  "start": 58.92,
+  "end": 59.34
+ },
+ {
+  "text": "and",
+  "start": 59.96,
+  "end": 60.1
+ },
+ {
+  "text": "progress",
+  "start": 60.1,
+  "end": 60.6
+ },
+ {
+  "text": "you",
+  "start": 60.6,
+  "end": 60.88
+ },
+ {
+  "text": "can",
+  "start": 60.88,
+  "end": 61.08
+ },
+ {
+  "text": "actually",
+  "start": 61.08,
+  "end": 61.5
+ },
+ {
+  "text": "see.",
+  "start": 61.5,
+  "end": 62.14
+ },
+ {
+  "text": "Comment",
+  "start": 64.64,
+  "end": 65.02
+ },
+ {
+  "text": "stance",
+  "start": 65.02,
+  "end": 65.4
+ },
+ {
+  "text": "and",
+  "start": 65.4,
+  "end": 65.66
+ },
+ {
+  "text": "I'll",
+  "start": 65.66,
+  "end": 65.86
+ },
+ {
+  "text": "send",
+  "start": 65.86,
+  "end": 66.0
+ },
+ {
+  "text": "you",
+  "start": 66.0,
+  "end": 66.16
+ },
+ {
+  "text": "the",
+  "start": 66.16,
+  "end": 66.32
+ },
+ {
+  "text": "link",
+  "start": 66.32,
+  "end": 66.48
+ },
+ {
+  "text": "to",
+  "start": 66.48,
+  "end": 66.66
+ },
+ {
+  "text": "the",
+  "start": 66.66,
+  "end": 66.82
+ },
+ {
+  "text": "waitlist.",
+  "start": 66.82,
+  "end": 67.8
+ },
+ {
+  "text": "And",
+  "start": 74.54,
+  "end": 75.14
+ },
+ {
+  "text": "send",
+  "start": 75.14,
+  "end": 75.44
+ },
+ {
+  "text": "this",
+  "start": 75.44,
+  "end": 75.74
+ },
+ {
+  "text": "to",
+  "start": 75.74,
+  "end": 75.98
+ },
+ {
+  "text": "the",
+  "start": 75.98,
+  "end": 76.14
+ },
+ {
+  "text": "one",
+  "start": 76.14,
+  "end": 76.34
+ },
+ {
+  "text": "training",
+  "start": 76.34,
+  "end": 76.72
+ },
+ {
+  "text": "partner",
+  "start": 76.72,
+  "end": 77.12
+ },
+ {
+  "text": "that",
+  "start": 77.12,
+  "end": 77.4
+ },
+ {
+  "text": "knows",
+  "start": 77.4,
+  "end": 77.74
+ },
+ {
+  "text": "some",
+  "start": 77.74,
+  "end": 78.5
+ },
+ {
+  "text": "people",
+  "start": 78.5,
+  "end": 78.78
+ },
+ {
+  "text": "train",
+  "start": 78.78,
+  "end": 79.14
+ },
+ {
+  "text": "for",
+  "start": 79.14,
+  "end": 79.36
+ },
+ {
+  "text": "fun.",
+  "start": 79.36,
+  "end": 79.66
+ },
+ {
+  "text": "You,",
+  "start": 80.4,
+  "end": 80.56
+ },
+ {
+  "text": "you're",
+  "start": 81.2,
+  "end": 81.56
+ },
+ {
+  "text": "training",
+  "start": 81.56,
+  "end": 81.84
+ },
+ {
+  "text": "like",
+  "start": 81.84,
+  "end": 82.04
+ },
+ {
+  "text": "someone's",
+  "start": 82.04,
+  "end": 82.46
+ },
+ {
+  "text": "coming",
+  "start": 82.46,
+  "end": 82.7
+ },
+ {
+  "text": "for",
+  "start": 82.7,
+  "end": 82.92
+ },
+ {
+  "text": "your",
+  "start": 82.92,
+  "end": 83.08
+ },
+ {
+  "text": "spot.",
+  "start": 83.08,
+  "end": 83.34
+ }
+]
