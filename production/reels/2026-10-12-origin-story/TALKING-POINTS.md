@@ -1,7 +1,7 @@
 # Talking points: Origin story (pinned reel)
 
 Film handheld at eye level, chin clear of the bottom edge. Say each point 2–3 times in your own words,
-pause a beat between takes. Only the hooks are word-for-word. Target 35–45 s.
+pause a beat between takes. Only the hooks are word-for-word. Target ~35 s. (Appendix + "I can't give up" cut by Matteo 2026-10-12: unnecessary.)
 
 **Hook (verbatim, film all three):**
 - A: "My first fight, I knocked the guy out. It was still a draw."
@@ -25,10 +25,6 @@ you think in there.
 **5. Where that mindset was built (fast, one breath):** Zurich, Essaouira, São Paulo, Koh Samui, Rome.
 The Swiss-Brazilian kid who grew up training Muay Thai with Brazilians in Thailand.
 
-**6. The low point:** a ruptured appendix the day before a fight. The closest you've ever come to quitting.
-
-**7. Why you didn't:** "I can't give up."
-
 **Loop takes (film each as ONE continuous take, don't stop at the dash):**
 The edit starts the video at the hook inside this take and ends it just before the hook, so the replay
 continues the sentence with no jump. Same laptop position as the story takes.
@@ -37,7 +33,7 @@ continues the sentence with no jump. Same laptop position as the story takes.
   knock him out, you lose."
 - C: "…follow. Because — people think combat sports is just violence. My first fight is why I know it isn't."
 
-Order: story beats 1–7 → loop take A ×2–3 → B ×2–3 → C ×2–3.
+Order: story beats 1–5 → loop take A ×2–3 → B ×2–3 → C ×2–3.
 
 **Close + CTA:** "If you want the mental side of fighting from someone still living it, follow."
 Comment question (caption + pin it): "Ever had a fight you won taken from you?"
