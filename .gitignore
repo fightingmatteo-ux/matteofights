@@ -41,3 +41,7 @@ production/remixes/
 # Secrets: login cookies, tokens (never commit)
 secrets/
 *cookies*.txt
+
+# local video working files (big media lives on the "media" GitHub release)
+media/
+*.render.mp4
