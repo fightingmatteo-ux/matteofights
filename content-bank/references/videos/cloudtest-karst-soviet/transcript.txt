@@ -1,0 +1,8 @@
+language: en
+[   0.0-   5.7] Advanced training methods of Soviet Boxers, domination in the ring, this was in typical training.
+[   5.9-  11.8] Soviet Boxers didn't focus only on muscles strength. Their priority was developing the nervous system.
+[  11.9-  16.6] Instead of mindlessly hitting the heavy bag, they trained reaction speed and adaptability.
+[  16.8-  21.3] The goal was for the body to respond faster than the opponent could make a decision.
+[  21.4-  26.4] Their advantage didn't come from brute force. It came from reaction time, precision and full
+[  26.4-  29.0] control of the body in every second of the fight.
+[  29.1-  33.6] Comment Soviet and you will receive a training protocol based on Soviet shock method.
