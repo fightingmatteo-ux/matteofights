@@ -8,24 +8,55 @@ _Read when planning what to post._
 "I built an app with a broken fibula." Quick cuts: injury → recovery → laptop → push-ups → app.
 Raw voice-note narration. The hook for everyone who lands on the account.
 
-### 2a. Tactical Listicle (the save engine) — TOP PRIORITY
+### 2a. Tactical Listicle (the save engine) — DECLINING, use sparingly
 `"X ways to [outcome] WITHOUT [requirement]"`. The WITHOUT is always a **barrier removal** — the one
 thing stopping most people. Drives **saves** (algo rocket fuel). Save rate benchmark: 1.2–2.5%.
-8 items outperforms 6 on saves. Top performers: 161k views "without living in the gym" (1,938 saves),
-32k "without damage", 27k "anywhere no gym" (2.46% save rate). See [viral-format.md](viral-format.md).
+8 items outperforms 6 on saves. Historic top performers: 161k views "without living in the gym"
+(1,938 saves), 32k "without damage", 27k "anywhere no gym" (2.46% save rate).
+See [viral-format.md](viral-format.md).
+
+**The barrier-removal hook is exhausted.** Read live from the Graph API — same hook shape, own
+account, chronological. Figures are **likes + comments**: reach, saves and views are blocked on
+this token (`#10`, needs `instagram_manage_insights`), so no reach figure below is measured.
+
+```
+2814  Jan 17   You don't need to live in the gym to become dangerous
+ 669  May 29   You don't need a barbell to hit like a truck
+ 176  Jun 20   You don't need to spar every day to get dangerous
+  24  Feb 15   You don't need a boxing gym
+  20  Feb 24   You don't need a training partner to get sharper
+```
+
+Two orders of magnitude in seven months, measured in likes + comments. The audience has heard it. Do not open a deck with this
+shape unless the barrier is genuinely new **and** the payoff is concrete. The *format* (numbered,
+saveable) still works — it is the *hook frame* that is spent.
 
 **Barriers already covered — don't repeat these as hooks:**
 - Sparring too often / 5x a week ✓ | Sparring every day ✓ | No gym (train anywhere) ✓ | No weights ✓
+- No training partner ✓ (Jun 24, 20 likes+comments — covered and dead)
 
-**Barriers not yet covered (high upside):**
-- No training partner | No coach | No natural size/reach | No years of experience | No money | No time (busy schedule — used as caption framing but not yet as a hook)
+**Barriers not yet covered:**
+- No coach | No natural size/reach | No years of experience | No money | No time (busy schedule —
+  used as caption framing but not yet as a hook)
 
 ### 2b. Identity Listicle (the share engine) — TOP PRIORITY
 `"X signs you [are/born to be a fighter]"`. The "born" / nature framing is the most flattering possible
 — no skill required, just recognition of who you are. Drives **shares + reposts** via a
 `Repost this so [X] finds [Y]` CTA (framing sharing as a gift, not self-promotion).
 **331k-view** biggest-ever post (Jun 1). Save rate only 0.24% — this format drives reach, not saves.
-Alternate with 2a. Do NOT repeat "born to be a fighter" — find new identity framing.
+Do NOT repeat "born to be a fighter" — find new identity framing.
+
+**Identity and contrast beat instruction.** Re-read live 2026-08-13. The account's best-performing
+hook is four words and gives no advice at all (likes + comments):
+
+```
+7413   Some people train for fun.
+1004   Sparring builds timing. Study builds IQ.
+```
+
+The shape is *two groups, or two things, set against each other* — the reader sorts themselves into
+one side. It outperforms the instructional register by roughly 7×. Lead with this pillar; alternate
+2a underneath it rather than the other way round.
 
 ### 3. Talking-Head Rants
 Matteo to camera, raw, unfiltered, short. Topics that work:
@@ -50,8 +81,14 @@ hard sell. Always "this is what I use."
 - **Stat/number reveal** — a number fills the screen, then context, then CTA. Very batchable.
 
 ## What NOT to make
-Generic motivational quotes over stock photos. 8-slide tip carousels (they flop). Anything that
-reads wellness/yoga. Pointless "day in my life" with no hook. Over-produced app ads.
+Generic motivational quotes over stock photos. Anything that reads wellness/yoga. Pointless
+"day in my life" with no hook. Over-produced app ads.
+
+**Carousels: retest in progress, not settled.** The old "8-slide tip carousel" flopped, but those
+were untyped screenshots with no design system and no photo direction. `production/carousels/`
+is a deliberate retest with a locked design system. Treat carousel performance as **unproven on
+this account** — neither "they flop" nor "they work" is currently evidence-backed. First real post
+settles it.
 
 ## Caption formula
 See [voice.md](voice.md) and [viral-format.md](viral-format.md). Short hook line → optional support

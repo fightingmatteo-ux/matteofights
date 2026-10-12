@@ -1,6 +1,7 @@
 # Secrets
 .env
 .env.local
+.env.bak
 *.sessionid
 .ig_sessionid
 
@@ -31,3 +32,12 @@ production/**/output/
 # OS
 .DS_Store
 Thumbs.db
+
+# Remixed reels are generated from the bank by production/remix.py, plus the local
+# publish queue (captions awaiting approval). Both are working state, not source.
+production/remixes/
+*.mp4
+
+# Secrets: login cookies, tokens (never commit)
+secrets/
+*cookies*.txt

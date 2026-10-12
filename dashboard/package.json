@@ -5,6 +5,9 @@
   "type": "module",
   "scripts": {
     "sync-data": "node scripts/sync-data.mjs",
+    "check-sources": "node scripts/check-sources.mjs",
+    "pull": "node scripts/pull-snapshot.mjs",
+    "test": "node scripts/snapshot-health.test.mjs",
     "predev": "node scripts/sync-data.mjs",
     "dev": "vite",
     "prebuild": "node scripts/sync-data.mjs",

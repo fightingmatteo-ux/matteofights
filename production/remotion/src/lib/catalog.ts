@@ -1,4 +1,4 @@
-import catalogData from "../../../content-bank/catalog.json";
+import catalogData from "../../../../content-bank/catalog.json";
 
 export interface AssetEntry {
   id: string;

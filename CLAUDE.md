@@ -21,7 +21,12 @@ analytics. Build it in phases; don't try to do everything at once.
   then write a fresh snapshot — don't trust a stale one.
 - **Answer from the brain when you can.** If `context/` already covers a brand/voice/format
   question, answer directly without an API call.
-- **Reels win, carousels flop** for this account. Default to reel thinking unless told otherwise.
+- **Reels win.** Default to reel thinking unless told otherwise. Carousels are being retested
+  deliberately in `production/carousels/` with a locked design system — their performance on this
+  account is **unproven**, not disproven. See [context/content.md](context/content.md).
+- **Identity and contrast beat instruction.** Verified live 2026-08-12: the top hook is
+  `Some people train for fun.` at 7410. Barrier-removal (`You don't need X`) has decayed from 2814
+  to 20 over seven months — it is spent.
 
 ---
 
@@ -47,6 +52,8 @@ Other connected MCPs (see `context/apps.md`): Higgsfield (`virality_predictor`, 
 | Pillars, formats, cadence | [context/content.md](context/content.md) | Planning what to post |
 | The proven viral reel format | [context/viral-format.md](context/viral-format.md) | Making a reel / writing a hook + caption |
 | Caption engine (hook → caption) | [production/captions/CAPTION-ENGINE.md](production/captions/CAPTION-ENGINE.md) | Generating a reel's subhook + full caption from a hook |
+| Carousel look — locked | [production/carousels/BRAND.md](production/carousels/BRAND.md) | **Any carousel work. Read first.** |
+| Carousel copy procedure | [production/carousels/COPY-ENGINE.md](production/carousels/COPY-ENGINE.md) | Writing carousel hooks and slide copy |
 | Analytics snapshots + IDs | [context/social.md](context/social.md) | Performance questions, before pulling live |
 | Connected tools/MCPs | [context/apps.md](context/apps.md) | Tooling decisions |
 

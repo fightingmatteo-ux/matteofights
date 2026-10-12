@@ -1,10 +1,19 @@
 import { query } from "@anthropic-ai/claude-agent-sdk";
 import { REPO_ROOT, MODEL, JARVIS_PERSONA } from "./config";
 import { captionServer } from "./captionTool";
+import { remixServer } from "./remixTools";
 import type { JarvisEvent } from "./sse";
 
 const READ_ONLY_TOOLS = ["Read", "Grep", "Glob"];
-const ALLOWED_TOOLS = [...READ_ONLY_TOOLS, "mcp__jarvis__save_reel_draft"];
+const ALLOWED_TOOLS = [
+  ...READ_ONLY_TOOLS,
+  "mcp__jarvis__save_reel_draft",
+  // The remix tools cut video and queue it. None of them can post: publishing lives
+  // behind the dashboard's confirm route, which no tool can reach.
+  "mcp__remix__list_source_reels",
+  "mcp__remix__remix_reel",
+  "mcp__remix__stage_reel_publish",
+];
 
 /** Pull a human/UI-meaningful target from a tool_use input (file path or pattern). */
 function toolTarget(input: unknown): string | undefined {
@@ -23,7 +32,9 @@ function toolTarget(input: unknown): string | undefined {
  * emitted session id and pass it back on later turns to keep context.
  *
  * Guardrail: `tools` enables ONLY read-only file tools — no Write/Bash/Edit and
- * no posting tool exist, so the agent can draft but never publish.
+ * no posting tool exists. The remix tools can cut video and queue a reel, but the Graph
+ * API call is reachable only from the dashboard's confirm route, behind a human click,
+ * so the agent can prepare a post end to end and still never send one.
  */
 export async function* runJarvisTurn(
   userText: string,
@@ -45,6 +56,7 @@ export async function* runJarvisTurn(
         permissionMode: "default",
         mcpServers: {
           jarvis: { type: "sdk", name: "jarvis", instance: captionServer.instance },
+          remix: { type: "sdk", name: "remix", instance: remixServer.instance },
         },
         ...(sessionId ? { resume: sessionId } : {}),
       },
