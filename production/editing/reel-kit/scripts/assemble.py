@@ -7,7 +7,7 @@ work/takes.json:
   {
     "src": "assets/raw.mp4",            # prepped clip (prep_footage.sh), relative to the reel folder
     "words": "work/words.json",          # transcribe.py output [{text,start,end}]
-    "speed": 1.06,                       # <=1.06: faster reads as rushed and clips words
+    "speed": 1.0,                        # natural speed. Any time-stretch made Matteo's voice sound robotic
     "takes":    {"hook": [3.88, 7.45], "point1": [12.2, 18.9], ...},   # source seconds
     "variants": {"A": ["hook", "point1", ...], "B": ["hookB", "point1", ...]},
     "fix":      {"MAP": "MAT"}            # optional Whisper corrections for captions (UPPERCASE)
@@ -36,7 +36,7 @@ def norm(text, fix):
 
 
 def build(cfg, variant):
-    speed = cfg.get("speed", 1.06)
+    speed = cfg.get("speed", 1.0)
     fix = cfg.get("fix", {})
     words = json.load(open(cfg["words"], encoding="utf-8"))
     fc, segs, out_words, inputs, t = [], [], [], [], 0.0

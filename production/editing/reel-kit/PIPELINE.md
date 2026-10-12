@@ -59,7 +59,7 @@ House layout 1080x1920: top-band cards 170–790 · subtitles centred ~y1440 · 
 
 **Non-negotiables (each one learned from Matteo's feedback):**
 - Frame 0 already shows the hook (it's the thumbnail). Hook = the first spoken line + on-screen text.
-- **Pacing:** never trim on Whisper word ends (clips words). Keep tails; speed ≤1.06x; leave 0.3–0.6 s of
+- **Pacing:** never trim on Whisper word ends (clips words). Keep tails; **no speed-up** (any time-stretch sounds robotic on his voice; Matteo heard it at 1.06x); leave 0.3–0.6 s of
   dead space after every reveal line. Build tension (riser → slam), drop the music for the quiet line.
 - **No hard cut straight to the next line:** b-roll enters 0.12 s early (J-cut) with a zoom-blur;
   flashes only on big hits. Pattern interrupt every 2–4 s.
@@ -71,7 +71,7 @@ House layout 1080x1920: top-band cards 170–790 · subtitles centred ~y1440 · 
 - **Voice:** first person, a real detail. Never "they vs you" lecturing (rejected as cringe).
 - **Colour:** neutral; check skin vs source after any re-encode.
 - **Voice:** never denoise/compress phone audio (afftdn = watery, robotic voice). takes.json `audio_src` = the
-  original recording; assemble.py only low-cuts, time-stretches with Rubber Band, and sets -14 LUFS once.
+  original recording; assemble.py only low-cuts and sets -14 LUFS once (speed stays 1.0).
 - Every entrance sets its from-state at t=0; never tween the same property from two timelines.
 - Loop: film close + bridge + hook as ONE continuous take per variant; start the video at the hook inside
   that take and end it just before the hook. Replay = one unbroken sentence, no visual jump.
