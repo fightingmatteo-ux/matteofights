@@ -24,6 +24,15 @@ analytics. Build it in phases; don't try to do everything at once.
 - **Reels win.** Default to reel thinking unless told otherwise. Carousels are being retested
   deliberately in `production/carousels/` with a locked design system — their performance on this
   account is **unproven**, not disproven. See [context/content.md](context/content.md).
+- **Content direction (2026-10-12):** combat sport psychology + fighter mindset, not injury stories.
+  Goal = followers and engaged fighters; no Stance plug in reels unless Matteo asks. Matteo films from
+  **talking points**, not scripts. Every reel = 3 hook variants, posted by Matteo as trial reels 48 h
+  apart, logged in `production/reels/LEDGER.md`. Pipeline: `production/editing/reel-kit/PIPELINE.md`.
+- **Stance (the app/business) lives in a separate folder:** `C:\Users\matte\Documents\Claude\Projects\Stance`
+  (brand, audience, business, launch reel). Go there when Matteo says "Stance stuff". Not in this repo.
+- **Secrets never get committed:** `secrets/` (gitignored) holds `ig_cookies.txt` (Instagram login, for
+  yt-dlp). Cloud equivalent: Actions secret `IG_COOKIES`. Raw footage/renders: `media/` (gitignored)
+  locally; Drive input/output or the `media` GitHub release remotely.
 - **Identity and contrast beat instruction.** Verified live 2026-08-12: the top hook is
   `Some people train for fun.` at 7410. Barrier-removal (`You don't need X`) has decayed from 2814
   to 20 over seven months — it is spent.
@@ -54,6 +63,10 @@ Other connected MCPs (see `context/apps.md`): Higgsfield (`virality_predictor`, 
 | Caption engine (hook → caption) | [production/captions/CAPTION-ENGINE.md](production/captions/CAPTION-ENGINE.md) | Generating a reel's subhook + full caption from a hook |
 | Carousel look — locked | [production/carousels/BRAND.md](production/carousels/BRAND.md) | **Any carousel work. Read first.** |
 | Carousel copy procedure | [production/carousels/COPY-ENGINE.md](production/carousels/COPY-ENGINE.md) | Writing carousel hooks and slide copy |
+| **Make a reel (watch → plan → edit → test)** | [production/editing/reel-kit/PIPELINE.md](production/editing/reel-kit/PIPELINE.md) | **Any reel/video work. Read first.** |
+| Reel results + test history | [production/reels/LEDGER.md](production/reels/LEDGER.md) | Choosing hooks/formats; logging a posted variant |
+| Reference reels (watched) | [content-bank/references/](content-bank/references/) | Before planning a new format |
+| Watch a video from the cloud | [tools/video/README.md](tools/video/README.md) | Cloud session needs to watch/download a reel |
 | Analytics snapshots + IDs | [context/social.md](context/social.md) | Performance questions, before pulling live |
 | Connected tools/MCPs | [context/apps.md](context/apps.md) | Tooling decisions |
 

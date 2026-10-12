@@ -45,3 +45,9 @@ secrets/
 # local video working files (big media lives on the "media" GitHub release)
 media/
 *.render.mp4
+
+# Reel working media (photos of people, b-roll, A-rolls, renders) stay out of git
+production/reels/*/assets/media/
+production/reels/*/assets/aroll*
+production/reels/*/snapshots/
+production/reels/*/node_modules/

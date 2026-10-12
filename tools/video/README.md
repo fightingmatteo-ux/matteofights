@@ -18,7 +18,9 @@ cloud session ──► media.sh pull ──► reel.py edits ──► finished
   `contact.jpg`, `frames/`, `scenes/` (one per hard cut), `cuts.txt`, `transcript.txt`, `meta.json`,
   `source.json` (creator, caption, views when the site exposes them).
 
-Locally: `python3 tools/video/watch.py VIDEO OUTDIR`.
+Locally (laptop can reach Instagram): `bash production/editing/reel-kit/scripts/fetch_ref.sh <url> <slug>`
+downloads with `secrets/ig_cookies.txt` and runs `watch.py` (now also writes `words.json`; works on Windows).
+Just a file: `python3 tools/video/watch.py VIDEO OUTDIR`. Editing: `production/editing/reel-kit/PIPELINE.md`.
 
 ## Edit a reel
 ```

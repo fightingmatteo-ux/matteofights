@@ -10,13 +10,23 @@ Writes to OUTDIR:
   contact.jpg      grid of the timed frames, numbered, for a one-glance read
   cuts.txt         timestamps of every hard cut
   transcript.txt   speech with timestamps (needs faster-whisper + model download)
+  words.json       word-level timestamps (for edits and subtitle timing)
 """
 import argparse, json, math, re, shutil, subprocess, sys
 from pathlib import Path
 
 
+# Windows ffmpeg has no fontconfig default, so drawtext needs an explicit font file there.
+_WINFONT = Path("C:/Windows/Fonts/arial.ttf")
+FONT = f"fontfile='{_WINFONT.as_posix().replace(':', chr(92) + ':')}':" if _WINFONT.exists() else ""
+
+
 def run(cmd, **kw):
     return subprocess.run(cmd, check=True, capture_output=True, text=True, **kw)
+
+
+def run_bytes(cmd):
+    return subprocess.run(cmd, check=True, capture_output=True).stdout
 
 
 def probe(video):
@@ -74,7 +84,7 @@ def contact_sheet(frames, outdir, every):
     for i, f in enumerate(frames):
         label = f"{i * every:.0f}s"
         run(["ffmpeg", "-v", "error", "-i", str(f), "-vf",
-             f"scale=240:-2,drawtext=text='{label}':x=8:y=8:fontsize=28:fontcolor=white:box=1:boxcolor=black@0.7",
+             f"scale=240:-2,drawtext={FONT}text='{label}':x=8:y=8:fontsize=28:fontcolor=white:box=1:boxcolor=black@0.7",
              str(tmp / f"l{i:04d}.jpg")])
     run(["ffmpeg", "-v", "error", "-y", "-i", str(tmp / "l%04d.jpg"), "-vf",
          f"tile={cols}x{rows}:padding=4:color=black", "-frames:v", "1", "-q:v", "3", str(outdir / "contact.jpg")])
@@ -88,11 +98,18 @@ def transcribe(video, outdir):
         return "skipped: pip install faster-whisper"
     try:
         model = WhisperModel("small", device="cpu", compute_type="int8")
-        segments, info = model.transcribe(str(video), vad_filter=True)
+        # decode with ffmpeg (PyAV is broken on some Windows Pythons); 16 kHz mono float
+        import numpy as np
+        pcm = run_bytes(["ffmpeg", "-v", "error", "-i", str(video), "-f", "s16le", "-ac", "1", "-ar", "16000", "-"])
+        audio = np.frombuffer(pcm, np.int16).astype(np.float32) / 32768
+        segments, info = model.transcribe(audio, vad_filter=True, word_timestamps=True)
+        segments = list(segments)
+        (outdir / "words.json").write_text(json.dumps(
+            [{"w": w.word.strip(), "s": round(w.start, 2), "e": round(w.end, 2)} for s in segments for w in s.words]))
         lines = [f"[{s.start:6.1f}-{s.end:6.1f}] {s.text.strip()}" for s in segments]
     except Exception as e:  # model download blocked, no audio, etc.
         return f"skipped: {type(e).__name__}: {e}"
-    (outdir / "transcript.txt").write_text(f"language: {info.language}\n" + "\n".join(lines) + "\n")
+    (outdir / "transcript.txt").write_text(encoding="utf-8", data=f"language: {info.language}\n" + "\n".join(lines) + "\n")
     return f"ok ({len(lines)} segments, {info.language})"
 
 

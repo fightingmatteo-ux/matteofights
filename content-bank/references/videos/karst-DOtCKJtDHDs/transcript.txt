@@ -1,0 +1,8 @@
+language: en
+[   0.0-   3.8] For 8 years, I've been watching fighters waste months on training.
+[   4.1-   7.6] That slows them down instead of pushing their performance forward.
+[   8.0-  12.8] My name is Jacob Karst and I've created a program that guarantees results.
+[  12.9-  19.7] It's built on 4 pillars – power and explosiveness, functional strength, conditioning and mobility.
+[  20.0-  24.0] So every session directly translates into fight performance.
+[  24.0-  31.9] If you want to throw harder punches, have more energy in every round and train in the way that protects you from injuries.
+[  32.2-  41.2] Comment MMA and I will send you a free guide with exercises my fighters used to become faster, stronger and more explosive than their opponents.
