@@ -90,11 +90,13 @@ Cover: copy `worst-decision/thumb/` (HyperFrames snapshot at 0.5 s). Keep text i
 
 ## 7. Deliver + trial-test
 - Upload the 3 renders + covers to Drive output (`drive.sh put`, or drag-and-drop if rclone isn't authed).
-- Matteo posts each as an **Instagram trial reel** himself, 48 h apart, same time of day
-  (the Windsor `instagram` connector can't post trial reels).
+- Matteo posts all 3 as **Instagram trial reels** himself, the SAME day, back to back (~15 min). Trial reels
+  only reach non-followers, so spacing protects nobody and adds day-to-day noise. Auto-share OFF.
+  (The Windsor `instagram` connector can't post trial reels.)
 - Log every variant in the reel's `REEL.md` + `production/reels/LEDGER.md`.
 
 ## 8. Track
 Pull per-media metrics via Windsor (`instagram`, account `17841465098113052`) at 24 h / 72 h / 7 d.
-Compare variants at the same age. Winner → shared to the grid. Write the one-line learning into
+Compare at 72 h. Winner metric: follows per 1k views, then shares, then avg watch time. Winner → shared
+to the grid (and pinned if it's a profile reel). Write the one-line learning into
 `LEDGER.md` "Patterns so far". If trial reels don't show in the API, ask Matteo for the insights screenshot.

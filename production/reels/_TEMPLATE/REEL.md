@@ -27,7 +27,7 @@ Shared body: <beats in order>. Edit: subtitles <style>, music <track>, pacing no
 <caption>
 ```
 
-## Posting log (Matteo posts trial reels himself; 48 h apart, same time of day)
+## Posting log (Matteo posts all 3 trial reels the same day, back to back; auto-share OFF)
 | V | Posted (local time) | Type | IG media id | Notes |
 |---|---|---|---|---|
 | A | | trial | | |
