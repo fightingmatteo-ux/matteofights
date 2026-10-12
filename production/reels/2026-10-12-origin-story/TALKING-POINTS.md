@@ -11,10 +11,12 @@ pause a beat between takes. Only the hooks are word-for-word. Target 35–45 s.
 **1. The setup:** you were 16, first Muay Thai fight. His sixth, a regular there, the ref knew him.
 Someone told you: if you don't knock him out, you lose.
 
-**2. The knockout:** the ref was separating you, you threw the right hand, he went to sleep.
-_(Say it honestly: it was illegal. Owning it is what makes people trust the rest.)_
+**2. The knockout:** it was chaos: he was hanging on you in the clinch, you elbowed the top of his head
+(legal in Muay Thai, not pretty), then as the ref was separating you, you threw the right hand. He slept.
+_(Own it in one line: "I threw it while the ref was pulling us apart." Showing the clip, owning it = trust.)_
 
-**3. The payoff:** the result? A draw. Pause after it, let it land.
+**3. The payoff:** the result? A draw. Pause, let it land. You did exactly what you were told, and it
+still cost you the win.
 
 **4. The lesson (your belief):** people think combat sports is just violence. It's balance, technique
 and flow. Chess, with more pressure because you might get punched. You can't control the ref, only how

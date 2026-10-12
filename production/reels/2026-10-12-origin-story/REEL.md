@@ -23,7 +23,7 @@ Talking points: `TALKING-POINTS.md`. Supersedes the injury-led draft in
 ## Footage plan (stock until the b-roll bank is shot)
 | Beat | Own footage (Drive) | Stock |
 |---|---|---|
-| Setup / KO | ring photos only (KO clip is NOT clean, don't show it), other fight-video moments without the KO | Mixkit referee 40997/40991 |
+| Setup / KO | the KO clip from his fight video: <1 s of the clinch, cut on the right hand, freeze + red circle, slow the half-second after; shown ONCE on "he slept". Pinned reply idea: "Elbows in the clinch are legal in Muay Thai. The right hand during the break wasn't. I was 16." | Mixkit referee 40997/40991 |
 | Chess | sparring innov8 | Mixkit chess 49731 (vert), 5339 |
 | Zurich | sparring innov8 | Mixkit Zurich 4367 |
 | Essaouira | padwork morocco | Mixkit Morocco streets 26822/26817 |

@@ -26,8 +26,9 @@ always wanted."_ It's rare and it's real. Lead with it.
 ## Story details in Matteo's own words (2026-10-12, for the pinned origin reel + future content)
 - **First Muay Thai fight, age 16:** he wanted the knockout. Someone told him beforehand: "if you don't
   knock this guy out, you're gonna lose", because the ref knew the opponent, a regular at that venue. It
-  was the opponent's **6th fight and Matteo's 1st**. Matteo knocked him out **with an illegal right hand while
-  the ref was trying to separate them** ("he slept"). **Official result: a draw.** The KO is on video in his
+  was the opponent's **6th fight and Matteo's 1st**. Matteo clinched with him (opponent hanging on), elbowed the top
+  of his head (legal in Muay Thai, messy), then knocked him out **with a right hand thrown while the ref was
+  separating them** ("he slept"). Matteo calls it "not clean at all". **Official result: a draw.** The KO is on video in his
   fight footage (Drive). _Still to confirm: who said the line._
 - **Closest he came to quitting:** a **ruptured appendix the day before a fight**.
 - **What kept him in it:** "I can't give up."
