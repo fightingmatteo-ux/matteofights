@@ -42,7 +42,7 @@ Loop: close + bridge + hook filmed as one continuous take per variant → seamle
 |---|---|---|---|---|
 | A | "…my first fight when I knocked the guy out, and there was still a draw." | KNOCKED HIM OUT. / STILL A DRAW. | 59.2 s | `media/2026-10-12-origin-story/renders/origin-A.mp4` |
 | B | "Someone told me, if you don't knock him out, you're gonna lose." | "KNOCK HIM OUT / OR YOU LOSE." | 53.7 s | `…/origin-B.mp4` |
-| C | "People think combat sports is just about violence. My first fight is how I know that's not true." | IT'S NOT JUST / VIOLENCE. | 54.5 s | `…/origin-C.mp4` |
+| C | "People think combat sports is just about violence. My first fight is how I know that's not true." | COMBAT SPORTS / IS NOT JUST / VIOLENCE. | 54.5 s | `…/origin-C.mp4` |
 
 Footage: own (ring photo, fight clips cleaned + 2x upscaled, KO from "Muay Thai fight matteo" 0:47.9–0:49.5
 starting after the elbows, freeze on the right hand; Impact MMA Zurich; Essaouira pads; Super 8 Samui;
