@@ -23,6 +23,25 @@ fully ripped ACL**. Still building. Still training whatever he can.
 **The narrative that prints:** injury → pivot → build. _"I couldn't train, so I built the tool I
 always wanted."_ It's rare and it's real. Lead with it.
 
+## Story details in Matteo's own words (2026-10-12, for the pinned origin reel + future content)
+- **First Muay Thai fight, age 16:** he wanted the knockout. Someone told him beforehand: "if you don't
+  knock this guy out, you're gonna lose", because the ref knew the opponent, a regular at that venue. It
+  was the opponent's **6th fight and Matteo's 1st**. Matteo knocked him out **with an illegal punch while
+  the ref was trying to separate them**. _Still to confirm: official result (win / DQ / NC), whether the
+  punch was deliberate, who said the line, whether the KO is on video._
+- **Closest he came to quitting:** appendicitis the **day before a fight**. _Still to confirm: which fight,
+  surgery and time out, what brought him back._
+- **What kept him in it:** "I can't give up."
+- **His core belief about fighting:** "Fighting isn't just about violence. You need to think a lot. It's
+  like chess, but higher pressure because you might get punched." (Anchor for the mindset pillar.)
+- **Where he's trained (credibility, 5 countries):** Impact MMA, Zurich (Switzerland) · Essaouira
+  (Morocco) · São Paulo (Brazil) · Koh Samui (Thailand), mostly, many gyms and coaches · Audace Box,
+  Rome, near the Colosseum (Italy).
+- **Only-him identity:** Swiss-Brazilian who grew up in Thailand, training Muay Thai alongside other
+  Brazilians in a Brazilian-run gym.
+- **What followers get (his words):** "They get to see my story." Sharpen to: the mental side of fighting
+  from someone living it.
+
 ## Where he is now (as of 2026-06)
 - Based in **Bangkok, Thailand**.
 - Dropped a university semester due to injury.
