@@ -1,0 +1,98 @@
+# Fetch a video by link (Instagram, TikTok, YouTube, Google Drive share link, or direct URL),
+# "watch" it (frames, cuts, transcript) and commit the analysis to the repo.
+# The video itself goes to the "media" release (see tools/video/media.sh).
+#
+# Run it: Actions tab -> Fetch video -> Run workflow (works from the GitHub mobile app),
+# or ask Claude to trigger it.
+#
+# Instagram often blocks logged-out downloads from cloud IPs. If it fails, add a repo secret
+# IG_COOKIES with a Netscape-format cookies.txt exported from a logged-in browser session.
+name: Fetch video
+
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: Video link
+        required: true
+      name:
+        description: Short slug for the folder, e.g. legend-names-ref
+        required: true
+      kind:
+        description: reference (someone else's) or footage (yours)
+        type: choice
+        options: [reference, footage]
+        default: reference
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fetch-video
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      URL: ${{ inputs.url }}
+      NAME: ${{ inputs.name }}
+      KIND: ${{ inputs.kind }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install tools
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
+          pip install -q yt-dlp gdown faster-whisper
+
+      - name: Download
+        env:
+          IG_COOKIES: ${{ secrets.IG_COOKIES }}
+        run: |
+          case "$NAME" in *[!a-zA-Z0-9._-]*|"") echo "name must be a simple slug"; exit 1;; esac
+          mkdir -p dl
+          if [[ "$URL" == *drive.google.com* ]]; then
+            gdown --fuzzy "$URL" -O dl/video
+          else
+            args=()
+            if [ -n "$IG_COOKIES" ]; then printf '%s\n' "$IG_COOKIES" > cookies.txt; args+=(--cookies cookies.txt); fi
+            yt-dlp "${args[@]}" -f "bv*+ba/b" --merge-output-format mp4 --write-info-json \
+              -o "dl/video.%(ext)s" "$URL"
+          fi
+          f=$(ls dl/video* | grep -v '\.json$' | head -1)
+          ffmpeg -v error -i "$f" -c copy -movflags +faststart "dl/$NAME.mp4" || cp "$f" "dl/$NAME.mp4"
+
+      - name: Watch
+        run: |
+          if [ "$KIND" = reference ]; then dir="content-bank/references/videos/$NAME"
+          else dir="content-bank/real-footage/analysis/$NAME"; fi
+          python3 tools/video/watch.py "dl/$NAME.mp4" "$dir"
+          if [ -f dl/video.info.json ]; then
+            python3 - "$dir" <<'PY'
+          import json, sys
+          i = json.load(open("dl/video.info.json"))
+          keep = {k: i.get(k) for k in ["uploader", "uploader_id", "channel", "title", "description",
+                  "timestamp", "view_count", "like_count", "comment_count", "webpage_url", "track", "artist"]}
+          json.dump(keep, open(f"{sys.argv[1]}/source.json", "w"), indent=2, ensure_ascii=False)
+          PY
+          fi
+          echo "DIR=$dir" >> "$GITHUB_ENV"
+
+      - name: Store video on the media release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release view media > /dev/null 2>&1 || \
+            gh release create media --title Media --notes "Raw footage, references and renders. Managed by tools/video/media.sh."
+          gh release upload media "dl/$NAME.mp4" --clobber
+
+      - name: Commit analysis
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add "$DIR"
+          git commit -m "media: watch $NAME ($KIND)"
+          git pull --rebase -q origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"

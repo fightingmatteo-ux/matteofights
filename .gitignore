@@ -31,3 +31,7 @@ production/**/output/
 # OS
 .DS_Store
 Thumbs.db
+
+# local video working files (big media lives on the "media" GitHub release)
+media/
+*.render.mp4

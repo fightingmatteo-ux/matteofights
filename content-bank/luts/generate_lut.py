@@ -66,10 +66,10 @@ def generate():
         'DOMAIN_MAX 1.0 1.0 1.0',
         '',
     ]
-    # .cube order: R outer, G middle, B inner (B changes fastest)
-    for ri in range(LUT_SIZE):
+    # .cube order: B outer, G middle, R inner (R changes fastest, per the Adobe/Resolve spec)
+    for bi in range(LUT_SIZE):
         for gi in range(LUT_SIZE):
-            for bi in range(LUT_SIZE):
+            for ri in range(LUT_SIZE):
                 ro, go, bo = transform(ri * step, gi * step, bi * step)
                 lines.append(f'{ro:.6f} {go:.6f} {bo:.6f}')
     return '\n'.join(lines)
