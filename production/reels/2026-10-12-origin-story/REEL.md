@@ -23,7 +23,7 @@ Talking points: `TALKING-POINTS.md`. Supersedes the injury-led draft in
 ## Footage plan (stock until the b-roll bank is shot)
 | Beat | Own footage (Drive) | Stock |
 |---|---|---|
-| Setup / KO | boxing/Muay Thai fight videos (KO is in them), ring photos | Mixkit referee 40997/40991 |
+| Setup / KO | ring photos only (KO clip is NOT clean, don't show it), other fight-video moments without the KO | Mixkit referee 40997/40991 |
 | Chess | sparring innov8 | Mixkit chess 49731 (vert), 5339 |
 | Zurich | sparring innov8 | Mixkit Zurich 4367 |
 | Essaouira | padwork morocco | Mixkit Morocco streets 26822/26817 |
