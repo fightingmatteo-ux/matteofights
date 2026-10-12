@@ -39,13 +39,15 @@ def build(cfg, variant):
     speed = cfg.get("speed", 1.06)
     fix = cfg.get("fix", {})
     words = json.load(open(cfg["words"], encoding="utf-8"))
-    fc, segs, out_words, t = [], [], [], 0.0
+    fc, segs, out_words, inputs, t = [], [], [], [], 0.0
     order = cfg["variants"][variant]
     for i, name in enumerate(order):
         a, b = cfg["takes"][name]
         d = b - a
-        fc.append(f"[0:v]trim={a}:{b},setpts=PTS-STARTPTS[v{i}];"
-                  f"[0:a]atrim={a}:{b},asetpts=PTS-STARTPTS,afade=t=in:d=0.012,"
+        # one input per take with fast seek: decoding only the take, not the whole clip
+        inputs += ["-ss", f"{a:.3f}", "-t", f"{d:.3f}", "-i", cfg["src"]]
+        fc.append(f"[{i}:v]setpts=PTS-STARTPTS[v{i}];"
+                  f"[{i}:a]asetpts=PTS-STARTPTS,afade=t=in:d=0.012,"
                   f"afade=t=out:st={d - 0.015:.3f}:d=0.015[a{i}];")
         toks = []
         for w in words:
@@ -67,7 +69,7 @@ def build(cfg, variant):
     fc.append("".join(f"[v{i}][a{i}]" for i in range(n)) + f"concat=n={n}:v=1:a=1[vc][ac];")
     fc.append(f"[vc]setpts=PTS/{speed},fps=30,format=yuv420p[vo];[ac]atempo={speed},loudnorm=I=-14:TP=-1.5:LRA=9[ao]")
     Path("assets").mkdir(exist_ok=True)
-    subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", cfg["src"], "-filter_complex", "".join(fc),
+    subprocess.run(["ffmpeg", "-loglevel", "error", "-y", *inputs, "-filter_complex", "".join(fc),
                     "-map", "[vo]", "-map", "[ao]", "-c:v", "libx264", "-crf", "17", "-preset", "medium",
                     "-pix_fmt", "yuv420p", "-color_range", "tv", "-colorspace", "bt709", "-color_primaries", "bt709",
                     "-color_trc", "bt709", "-c:a", "aac", "-b:a", "192k", "-ar", "48000",

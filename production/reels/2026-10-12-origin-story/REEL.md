@@ -1,6 +1,6 @@
 ---
 slug: 2026-10-12-origin-story
-status: talking-points
+status: edited
 pillar: story → mindset (pinned profile reel)
 format: story, paradox payoff (KO → draw), 5-country montage
 credibility: own experience (5 countries, first fight)
@@ -32,3 +32,19 @@ Talking points: `TALKING-POINTS.md`. Supersedes the injury-led draft in
 | Rome | boxing rome simba, sunrise skipping rome | Mixkit Colosseum 47981/11039 |
 | Appendix | — | Mixkit hospital 4745, heart monitor 46365 |
 | Now / close | — | Mixkit Bangkok night 21920 |
+
+## Edit (2026-10-12)
+Filmed handheld in Bangkok (Edits app, one long take). Takes picked in `work/takes.json`; A-rolls via
+`assemble.py`; one template for all variants (`work/template.html`, `bash build.sh <V>`).
+Loop: close + bridge + hook filmed as one continuous take per variant → seamless replay.
+
+| V | Spoken hook | On-screen | Length | Render |
+|---|---|---|---|---|
+| A | "…my first fight when I knocked the guy out, and there was still a draw." | KNOCKED HIM OUT. / STILL A DRAW. | 59.2 s | `media/2026-10-12-origin-story/renders/origin-A.mp4` |
+| B | "Someone told me, if you don't knock him out, you're gonna lose." | "KNOCK HIM OUT / OR YOU LOSE." | 53.7 s | `…/origin-B.mp4` |
+| C | "People think combat sports is just about violence. My first fight is how I know that's not true." | IT'S NOT JUST / VIOLENCE. | 54.5 s | `…/origin-C.mp4` |
+
+Footage: own (ring photo, fight clips cleaned + 2x upscaled, KO from "Muay Thai fight matteo" 0:47.9–0:49.5
+starting after the elbows, freeze on the right hand; Impact MMA Zurich; Essaouira pads; Super 8 Samui;
+Audace Rome; Bangkok = Matteo talking) + stock (Mixkit chess 5339; Wikimedia CC0 São Paulo Sé cathedral).
+Music: launch soundtrack bed, cut to silence on "The result? A draw.", back in on the lesson.

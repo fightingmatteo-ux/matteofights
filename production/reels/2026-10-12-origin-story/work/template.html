@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Bebas Neue"; src: url("assets/fonts/BebasNeue-Regular.woff2") format("woff2"); font-weight: 400; font-display: block; }
+      @font-face { font-family: "Geist Mono"; src: url("assets/fonts/GeistMono.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+      @font-face { font-family: "Tinos"; src: url("assets/fonts/Tinos-Bold.woff2") format("woff2"); font-weight: 700; font-display: block; }
+      :root { --ink: #0B0B0D; --ivory: #F2F0EA; --red: #C82020; --hot: #FF1E1E; --line: #242428; }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: var(--ink); }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; background: var(--ink); font-family: "Bebas Neue", sans-serif; color: var(--ivory); }
+      .layer { position: absolute; inset: 0; }
+      .full { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+      #cam { position: absolute; inset: 0; overflow: hidden; }
+      #cam-inner { position: absolute; inset: 0; transform-origin: 50% 100%; }   /* handheld: chin near the bottom, zoom never crops it */
+      .photo { position: absolute; inset: 0; overflow: hidden; background: var(--ink); }
+      .photo .kb { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+      .photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+      .chip { position: absolute; left: 64px; top: 190px; display: flex; align-items: center; gap: 14px; font-family: "Geist Mono", monospace; font-weight: 600; font-size: 34px; letter-spacing: 0.14em; text-transform: uppercase; }
+      .chip .tag { background: var(--red); color: var(--ivory); padding: 10px 18px; }
+      .chip .val { background: var(--ink); color: var(--ivory); padding: 10px 18px; }
+      .panel { position: absolute; left: 60px; right: 60px; top: 170px; background: rgba(11,11,13,0.92); border: 1px solid var(--line); overflow: hidden; }
+      .kicker { position: absolute; left: 36px; top: 30px; font-family: "Geist Mono", monospace; font-weight: 600; font-size: 28px; letter-spacing: 0.14em; color: var(--red); text-transform: uppercase; }
+      .card { position: absolute; inset: 0; background: var(--ink); display: flex; flex-direction: column; align-items: center; justify-content: center; overflow: hidden; }
+      .title { position: absolute; left: 50px; right: 50px; top: 220px; text-align: center; }
+      .title span { display: block; font-size: 172px; line-height: 0.9; color: var(--ivory); -webkit-text-stroke: 14px var(--ink); paint-order: stroke fill; }
+      .title span.r { color: var(--hot); }
+      #caps { position: absolute; left: 60px; right: 60px; top: 1360px; height: 160px; }
+      .cw { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 0; font-family: "Tinos", serif; font-weight: 700; font-size: 124px; line-height: 1; letter-spacing: -0.01em; color: #FFFFFF; -webkit-text-stroke: 9px #000; paint-order: stroke fill; }
+      .cw.red { color: #E8112D; }
+      #flash { position: absolute; inset: 0; background: #F2F0EA; opacity: 0; pointer-events: none; }
+      #vignette { position: absolute; inset: 0; background: #000; opacity: 0; pointer-events: none; }
+      .mono { font-family: "Geist Mono", monospace; }
+      .row { position: absolute; left: 36px; right: 36px; height: 130px; border-top: 1px solid var(--line); display: flex; align-items: center; gap: 28px; font-size: 120px; line-height: 1; }
+      .row .n { font-family: "Geist Mono", monospace; font-size: 34px; color: var(--red); font-weight: 700; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="{{d['duration']}}" data-width="1080" data-height="1920">
+
+      <div id="cam"><div id="cam-inner">
+        <video id="aroll" class="clip full" src="assets/media/aroll_{{V}}.mp4" data-start="0" data-duration="{{d['duration']}}" data-track-index="0" muted playsinline></video>
+      </div></div>
+      <div id="vignette"></div>
+
+      <!-- ===== SETUP: ring photo (archival) ===== -->
+      <div id="ph-ring" class="clip photo" data-start="{{S('setup1')-0.12}}" data-duration="{{E('setup1')-S('setup1')+0.12}}" data-track-index="1"><div class="kb"><img src="assets/media/p_7194.jpg" alt="" /></div></div>
+      <div id="ch-ring" class="clip layer" data-start="{{S('setup1')}}" data-duration="{{E('setup1')-S('setup1')}}" data-track-index="4"><div class="chip"><span class="tag">AGE 16</span><span class="val">KOH SAMUI · FIRST FIGHT</span></div></div>
+
+      <!-- matchup stat: his 6 fights vs my 1 -->
+      <div id="pn-stat" class="clip layer" data-start="{{W('setup2','SIXTH')-0.1}}" data-duration="{{(W('setup2','SOMEONE') if has('setup2','SOMEONE') else E('setup2'))-W('setup2','SIXTH')+0.1}}" data-track-index="2">
+        <div class="panel" style="height:520px">
+          <div class="kicker">THE MATCHUP</div>
+          <div style="position:absolute;left:36px;right:36px;top:100px;display:flex;justify-content:space-between">
+            <div><div class="mono" style="font-size:30px;letter-spacing:0.14em;color:var(--ivory)">HIS FIGHTS</div><div id="stat-his" class="mono" style="font-size:230px;font-weight:700;line-height:1;color:var(--hot)">6</div></div>
+            <div style="text-align:right"><div class="mono" style="font-size:30px;letter-spacing:0.14em;color:var(--ivory)">MINE</div><div class="mono" style="font-size:230px;font-weight:700;line-height:1;color:var(--ivory)">1</div></div>
+          </div>
+          <div id="stat-ref" class="mono" style="position:absolute;left:36px;right:36px;bottom:30px;font-size:34px;font-weight:700;letter-spacing:0.12em;color:var(--hot)">+ HE KNEW THE REF</div>
+        </div>
+      </div>
+      <!--@only A,C-->
+      <div id="pn-quote" class="clip layer" data-start="{{W('setup2','SOMEONE')-0.05}}" data-duration="{{E('setup2')-W('setup2','SOMEONE')+0.05}}" data-track-index="2">
+        <div class="panel" style="height:520px;display:flex;flex-direction:column;align-items:center;justify-content:center">
+          <div class="kicker">WHAT I WAS TOLD</div>
+          <div id="q1" style="font-size:190px;line-height:0.88;color:var(--hot);display:block">KNOCK HIM OUT</div>
+          <div id="q2" style="font-size:150px;line-height:0.9;color:var(--ivory);display:block">OR YOU LOSE.</div>
+        </div>
+      </div>
+      <!--@end-->
+
+      <!-- ===== KO: chaos -> (A-roll: elbow line, no footage) -> right hand -> freeze -> fall ===== -->
+      <video id="b-chaos" class="clip full" src="assets/media/b_chaos.mp4" data-start="{{S('ko1')-0.12}}" data-duration="{{E('ko1')-S('ko1')+0.12}}" data-track-index="1" muted playsinline></video>
+      <video id="b-ko1" class="clip full" src="assets/media/b_ko.mp4" data-start="{{W('ko2','THREW')-0.25}}" data-duration="0.4" data-track-index="1" muted playsinline></video>
+      <div id="ph-freeze" class="clip photo" data-start="{{W('ko2','THREW')+0.15}}" data-duration="{{W('ko2','SLEPT')-W('ko2','THREW')-0.15}}" data-track-index="1">
+        <div class="kb"><img src="assets/media/p_ko_freeze.jpg" alt="" /></div>
+        <svg width="1080" height="1920" viewBox="0 0 1080 1920" style="position:absolute;inset:0"><circle id="ko-ring" cx="880" cy="520" r="170" fill="none" stroke="#FF1E1E" stroke-width="12" stroke-dasharray="1070" stroke-dashoffset="1070" /></svg>
+      </div>
+      <video id="b-ko2" class="clip full" src="assets/media/b_ko.mp4" data-start="{{W('ko2','SLEPT')}}" data-duration="{{E('ko2')-W('ko2','SLEPT')}}" data-media-start="0.4" data-track-index="1" muted playsinline></video>
+      <div id="ch-ko" class="clip layer" data-start="{{S('ko1')}}" data-duration="{{E('ko1')-S('ko1')}}" data-track-index="4"><div class="chip"><span class="tag">ROUND 1</span><span class="val">KOH SAMUI · 2023</span></div></div>
+      <div id="ch-ko2" class="clip layer" data-start="{{W('ko2','THREW')-0.25}}" data-duration="{{E('ko2')-W('ko2','THREW')+0.25}}" data-track-index="4"><div class="chip"><span class="tag">THE RIGHT HAND</span><span class="val">REF SEPARATING</span></div></div>
+
+      <!-- ===== THE RESULT? A DRAW. ===== -->
+      <div id="cd-draw" class="clip card" data-start="{{S('draw')}}" data-duration="{{E('draw')-S('draw')}}" data-track-index="2">
+        <div id="draw-q" style="font-size:150px;line-height:0.9;color:var(--ivory)">THE RESULT?</div>
+        <div id="draw-a" style="font-size:330px;line-height:0.86;color:var(--hot);margin-top:20px">DRAW.</div>
+      </div>
+
+      <!-- ===== LESSON ===== -->
+      <!--@only A,B-->
+      <div id="pn-violence" class="clip layer" data-start="{{W('lesson','VIOLENCE')-0.1}}" data-duration="{{W('lesson','BALANCE')-W('lesson','VIOLENCE')+0.05}}" data-track-index="2">
+        <div class="panel" style="height:470px;display:flex;align-items:center;justify-content:center">
+          <div class="kicker">WHAT PEOPLE THINK</div>
+          <div style="font-size:250px;line-height:1;color:var(--ivory);position:relative;display:block">VIOLENCE
+            <div id="v-strike" style="position:absolute;left:-20px;right:-20px;top:45%;height:22px;background:var(--hot);transform-origin:0 50%"></div>
+          </div>
+        </div>
+      </div>
+      <!--@end-->
+      <div id="pn-btf" class="clip layer" data-start="{{W('lesson','BALANCE')-0.05}}" data-duration="{{W('lesson','CHESS')-W('lesson','BALANCE')}}" data-track-index="2">
+        <div class="panel" style="height:520px">
+          <div class="kicker">WHAT IT ACTUALLY IS</div>
+          <div id="r1" class="row" style="top:80px"><span class="n">01</span>BALANCE</div>
+          <div id="r2" class="row" style="top:225px"><span class="n">02</span>TECHNIQUE</div>
+          <div id="r3" class="row" style="top:370px"><span class="n">03</span>FLOW</div>
+        </div>
+      </div>
+      <video id="b-chess" class="clip full" src="assets/media/b_chess.mp4" data-start="{{W('lesson','CHESS')-0.08}}" data-duration="{{W('lesson','SMACKED')-W('lesson','CHESS')+0.03}}" data-track-index="1" muted playsinline></video>
+      <div id="ch-chess" class="clip layer" data-start="{{W('lesson','CHESS')-0.08}}" data-duration="{{W('lesson','SMACKED')-W('lesson','CHESS')+0.03}}" data-track-index="4"><div class="chip"><span class="tag">CHESS</span><span class="val">BUT YOU MIGHT GET HIT</span></div></div>
+
+      <!-- ===== MONTAGE: one cut per city, own footage first ===== -->
+      <video id="m-zurich" class="clip full" src="assets/media/b_zurich.mp4" data-start="{{W('montage','ZURICH')-0.06}}" data-duration="{{W('montage','ESSAOUIRA')-W('montage','ZURICH')}}" data-track-index="1" muted playsinline></video>
+      <video id="m-essaouira" class="clip full" src="assets/media/b_essaouira.mp4" data-start="{{W('montage','ESSAOUIRA')-0.06}}" data-duration="{{W('montage','PAULO')-0.3-W('montage','ESSAOUIRA')}}" data-track-index="1" muted playsinline></video>
+      <div id="m-saopaulo" class="clip photo" data-start="{{W('montage','PAULO')-0.36}}" data-duration="{{W('montage','KOH')-W('montage','PAULO')+0.3}}" data-track-index="1"><div class="kb"><img src="assets/media/p_saopaulo.jpg" alt="" /></div></div>
+      <video id="m-samui" class="clip full" src="assets/media/b_samui.mp4" data-start="{{W('montage','KOH')-0.06}}" data-duration="{{W('montage','ROME')-W('montage','KOH')}}" data-track-index="1" muted playsinline></video>
+      <video id="m-rome" class="clip full" src="assets/media/b_rome.mp4" data-start="{{W('montage','ROME')-0.06}}" data-duration="{{W('montage','BANGKOK')-W('montage','ROME')}}" data-track-index="1" muted playsinline></video>
+      <div id="c-zurich" class="clip layer" data-start="{{W('montage','ZURICH')-0.06}}" data-duration="{{W('montage','ESSAOUIRA')-W('montage','ZURICH')}}" data-track-index="4"><div class="chip"><span class="tag">CH</span><span class="val">ZURICH</span></div></div>
+      <div id="c-essaouira" class="clip layer" data-start="{{W('montage','ESSAOUIRA')-0.06}}" data-duration="{{W('montage','PAULO')-0.3-W('montage','ESSAOUIRA')}}" data-track-index="4"><div class="chip"><span class="tag">MA</span><span class="val">ESSAOUIRA</span></div></div>
+      <div id="c-saopaulo" class="clip layer" data-start="{{W('montage','PAULO')-0.36}}" data-duration="{{W('montage','KOH')-W('montage','PAULO')+0.3}}" data-track-index="4"><div class="chip"><span class="tag">BR</span><span class="val">SÃO PAULO</span></div></div>
+      <div id="c-samui" class="clip layer" data-start="{{W('montage','KOH')-0.06}}" data-duration="{{W('montage','ROME')-W('montage','KOH')}}" data-track-index="4"><div class="chip"><span class="tag">TH</span><span class="val">KOH SAMUI</span></div></div>
+      <div id="c-rome" class="clip layer" data-start="{{W('montage','ROME')-0.06}}" data-duration="{{W('montage','BANGKOK')-W('montage','ROME')}}" data-track-index="4"><div class="chip"><span class="tag">IT</span><span class="val">ROME</span></div></div>
+      <div id="c-bkk" class="clip layer" data-start="{{W('montage','BANGKOK')-0.06}}" data-duration="{{E('montage')-W('montage','BANGKOK')+0.06}}" data-track-index="4"><div class="chip"><span class="tag">NOW</span><span class="val">BANGKOK</span></div></div>
+
+      <!-- ===== CLOSE: follow CTA ===== -->
+      <div id="cta" class="clip layer" data-start="{{W('close','FOLLOW')-0.1}}" data-duration="{{E('close')-W('close','FOLLOW')+0.1}}" data-track-index="4">
+        <div class="chip" style="top:200px"><span class="tag">FOLLOW</span><span class="val">THE MENTAL SIDE OF FIGHTING</span></div>
+      </div>
+
+      <!-- ===== HOOK TITLE (frame 0 = thumbnail) ===== -->
+      <div id="title" class="clip title" data-start="0" data-duration="{{E('hook')}}" data-track-index="5">
+        <!--@only A--><span class="r">KNOCKED HIM OUT.</span><span>STILL A DRAW.</span><!--@end-->
+        <!--@only B--><span>"KNOCK HIM OUT</span><span class="r">OR YOU LOSE."</span><!--@end-->
+        <!--@only C--><span>IT'S NOT JUST</span><span class="r">VIOLENCE.</span><!--@end-->
+      </div>
+
+      <div id="caps"></div>
+      <div id="flash"></div>
+
+      <!-- ===== AUDIO ===== -->
+      <audio id="vo" src="assets/media/aroll_{{V}}.mp4" data-start="0" data-duration="{{d['duration']}}" data-track-index="10" data-volume="1"></audio>
+      <audio id="music-bed" src="assets/media/bgm.wav" data-start="0" data-duration="{{S('draw')+0.12}}" data-track-index="11" data-volume="0.24"
+        data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":0.5},{"t":{{S('ko1')}},"v":1},{"t":{{S('draw')}},"v":1},{"t":{{S('draw')+0.12}},"v":0}]}]}'></audio>
+      <audio id="music-bed-2" src="assets/media/bgm.wav" data-start="{{S('lesson')}}" data-duration="{{d['duration']-S('lesson')}}" data-media-start="0" data-track-index="12" data-volume="0.24"
+        data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":0.45},{"t":{{S('montage')-S('lesson')}},"v":1},{"t":{{d['duration']-S('lesson')}},"v":0.6}]}]}'></audio>
+      <audio id="sfx-hit-0" src="assets/sfx/hit.mp3" data-start="0" data-duration="1" data-track-index="13" data-volume="0.7"></audio>
+      <audio id="sfx-click-ring" src="assets/sfx/click.mp3" data-start="{{S('setup1')-0.12}}" data-duration="1" data-track-index="14" data-volume="0.3"></audio>
+      <audio id="sfx-dig-stat" src="assets/sfx/digital_click.mp3" data-start="{{W('setup2','SIXTH')}}" data-duration="1" data-track-index="17" data-volume="0.45"></audio>
+      <!--@only A,C--><audio id="sfx-hit-quote" src="assets/sfx/hit.mp3" data-start="{{W('setup2','KNOCK')}}" data-duration="1" data-track-index="13" data-volume="0.6"></audio><!--@end-->
+      <audio id="sfx-click-chaos" src="assets/sfx/click.mp3" data-start="{{S('ko1')-0.12}}" data-duration="1" data-track-index="14" data-volume="0.3"></audio>
+      <audio id="sfx-hit-ko" src="assets/sfx/hit.mp3" data-start="{{W('ko2','THREW')+0.15}}" data-duration="1" data-track-index="13" data-volume="0.85"></audio>
+      <audio id="sfx-line-ko" src="assets/sfx/red_line.mp3" data-start="{{W('ko2','THREW')+0.3}}" data-duration="1" data-track-index="15" data-volume="0.45"></audio>
+      <audio id="sfx-riser" src="assets/sfx/riser.mp3" data-start="{{W('draw','DRAW')-2.0}}" data-duration="2" data-track-index="18" data-volume="0.4"></audio>
+      <audio id="sfx-bass-draw" src="assets/sfx/lib_impact-bass-1.wav" data-start="{{W('draw','DRAW')}}" data-duration="1.5" data-track-index="16" data-volume="0.75"></audio>
+      <!--@only A,B--><audio id="sfx-line-v" src="assets/sfx/red_line.mp3" data-start="{{W('lesson','VIOLENCE')+0.1}}" data-duration="1" data-track-index="15" data-volume="0.45"></audio><!--@end-->
+      <audio id="sfx-dig-1" src="assets/sfx/digital_click.mp3" data-start="{{W('lesson','BALANCE')}}" data-duration="1" data-track-index="17" data-volume="0.4"></audio>
+      <audio id="sfx-dig-2" src="assets/sfx/digital_click.mp3" data-start="{{W('lesson','TECHNIQUE')}}" data-duration="1" data-track-index="17" data-volume="0.4"></audio>
+      <audio id="sfx-dig-3" src="assets/sfx/digital_click.mp3" data-start="{{W('lesson','FLOW')}}" data-duration="1" data-track-index="17" data-volume="0.4"></audio>
+      <audio id="sfx-hit-smack" src="assets/sfx/hit.mp3" data-start="{{W('lesson','SMACKED')}}" data-duration="1" data-track-index="13" data-volume="0.7"></audio>
+      <audio id="sfx-c1" src="assets/sfx/click.mp3" data-start="{{W('montage','ZURICH')-0.06}}" data-duration="1" data-track-index="14" data-volume="0.3"></audio>
+      <audio id="sfx-c2" src="assets/sfx/click.mp3" data-start="{{W('montage','ESSAOUIRA')-0.06}}" data-duration="1" data-track-index="19" data-volume="0.3"></audio>
+      <audio id="sfx-c3" src="assets/sfx/click.mp3" data-start="{{W('montage','PAULO')-0.36}}" data-duration="1" data-track-index="14" data-volume="0.3"></audio>
+      <audio id="sfx-c4" src="assets/sfx/click.mp3" data-start="{{W('montage','KOH')-0.06}}" data-duration="1" data-track-index="19" data-volume="0.3"></audio>
+      <audio id="sfx-c5" src="assets/sfx/click.mp3" data-start="{{W('montage','ROME')-0.06}}" data-duration="1" data-track-index="14" data-volume="0.3"></audio>
+      <audio id="sfx-c6" src="assets/sfx/click.mp3" data-start="{{W('montage','BANGKOK')-0.06}}" data-duration="1" data-track-index="19" data-volume="0.3"></audio>
+      <audio id="sfx-pop-cta" src="assets/sfx/lib_pop.wav" data-start="{{W('close','FOLLOW')-0.1}}" data-duration="0.72" data-track-index="20" data-volume="0.55"></audio>
+    </div>
+
+    <script>
+      const EDL = {{d}};
+      const ALIAS = { hookA: "hook", hookB: "hook", hookC: "hook", closeA: "close", closeB: "close", closeC: "close", setup2B: "setup2", lessonC: "lesson" };
+      const SEG = {};
+      EDL.segments.forEach((s) => { SEG[s.name] = s; SEG[ALIAS[s.name] || s.name] = s; });
+      const WORDS = EDL.words;
+      const S = (n) => SEG[n].start, E = (n) => SEG[n].end;
+      const has = (n, w) => WORDS.some((x) => x.seg === SEG[n].i && x.w === w);
+      const W = (n, w, k = 1) => WORDS.filter((x) => x.seg === SEG[n].i && x.w === w)[k - 1].s;
+      const tl = gsap.timeline({ paused: true });
+      const cam = "#cam-inner";
+
+      // ---- camera: gentle pushes only (<=1.08, bottom-anchored) ----
+      const push = (a, b, from, to) => tl.fromTo(cam, { scale: from }, { immediateRender: false, scale: to, duration: b - a, ease: "none" }, a);
+      tl.fromTo(cam, { scale: 1.0 }, { scale: 1.05, duration: E("hook"), ease: "none" }, 0);
+      push(S("setup2"), E("setup2"), 1.0, 1.04);
+      push(S("ko2"), W("ko2", "THREW") - 0.25, 1.04, 1.08);         // creeping in before the punch
+      push(S("lesson"), E("lesson"), 1.0, 1.05);
+      push(W("lesson", "SMACKED"), E("lesson"), 1.08, 1.03);       // punch-in on "smacked"
+      push(S("close"), E("close"), 1.03, 1.0);                     // ease back to the hook's opening framing
+
+      // ---- entries: zoom-blur instead of hard cuts ----
+      const enter = (sel, at) => tl.fromTo(sel, { filter: "blur(14px) brightness(1.4)" }, { filter: "blur(0px) brightness(1)", duration: 0.24, ease: "power2.out" }, at);
+      [["#ph-ring", S("setup1") - 0.12], ["#b-chaos", S("ko1") - 0.12], ["#b-chess", W("lesson", "CHESS") - 0.08],
+       ["#m-zurich", W("montage", "ZURICH") - 0.06], ["#m-essaouira", W("montage", "ESSAOUIRA") - 0.06], ["#m-saopaulo", W("montage", "PAULO") - 0.36],
+       ["#m-samui", W("montage", "KOH") - 0.06], ["#m-rome", W("montage", "ROME") - 0.06]].forEach(([s, t]) => enter(s, t));
+
+      // ---- Ken Burns on stills ----
+      tl.fromTo("#ph-ring .kb", { scale: 1.04 }, { scale: 1.16, duration: E("setup1") - S("setup1") + 0.12, ease: "none" }, S("setup1") - 0.12);
+      tl.fromTo("#m-saopaulo .kb", { scale: 1.12 }, { scale: 1.0, duration: W("montage", "KOH") - W("montage", "PAULO") + 0.3, ease: "none" }, W("montage", "PAULO") - 0.36);
+      const fz = W("ko2", "THREW") + 0.15;
+      tl.fromTo("#ph-freeze .kb", { scale: 1.0 }, { scale: 1.14, duration: W("ko2", "SLEPT") - fz, ease: "power1.out", transformOrigin: "80% 30%" }, fz);
+      tl.to("#ko-ring", { strokeDashoffset: 0, duration: 0.35, ease: "power2.out" }, fz + 0.12);
+
+      // ---- flashes on the big hits ----
+      const flash = (t, a = 0.8) => { tl.set("#flash", { opacity: a }, t); tl.to("#flash", { opacity: 0, duration: 0.22, ease: "power2.out" }, t + 0.01); };
+      flash(fz);
+      flash(W("lesson", "SMACKED"), 0.5);
+
+      // ---- hook title on frame 0 ----
+      tl.fromTo("#title .r", { scale: 1.12 }, { scale: 1, duration: 0.25, ease: "power3.out" }, 0);
+
+      // ---- matchup stat, then the warning ----
+      tl.fromTo("#stat-his", { scale: 1.4, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.22, ease: "back.out(2)" }, W("setup2", "SIXTH"));
+      tl.fromTo("#stat-ref", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.2, ease: "power3.out" }, W("setup2", "REF") - 0.1);
+      if (document.getElementById("q1")) {
+        tl.fromTo("#q1", { scale: 1.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.18, ease: "power4.out" }, W("setup2", "KNOCK"));
+        tl.fromTo("#q2", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.2, ease: "power3.out" }, W("setup2", "LOSE") - 0.1);
+      }
+
+      // ---- the draw: a beat of nothing, then the word ----
+      tl.fromTo("#draw-q", { opacity: 0 }, { opacity: 1, duration: 0.15 }, S("draw"));
+      tl.fromTo("#draw-a", { scale: 1.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.18, ease: "power4.out" }, W("draw", "DRAW"));
+      [12, -10, 7, -4, 2, 0].forEach((x, k) => tl.set("#draw-a", { x }, W("draw", "DRAW") + 0.18 + k * 0.035));
+
+      // ---- lesson: violence struck out, then the three words build ----
+      if (document.getElementById("v-strike")) tl.fromTo("#v-strike", { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: "power3.out" }, W("lesson", "VIOLENCE") + 0.1);
+      [["#r1", "BALANCE"], ["#r2", "TECHNIQUE"], ["#r3", "FLOW"]].forEach(([id, w]) =>
+        tl.fromTo(id, { opacity: 0, x: -50 }, { opacity: 1, x: 0, duration: 0.2, ease: "power3.out" }, W("lesson", w) - 0.04));
+
+      // ---- montage: quick push on each city ----
+      ["#m-zurich", "#m-essaouira", "#m-samui", "#m-rome"].forEach((id) => {
+        const el = document.querySelector(id); const t = +el.dataset.start;
+        tl.fromTo(id, { scale: 1.1 }, { scale: 1.0, duration: +el.dataset.duration, ease: "power2.out" }, t);
+      });
+
+      // ---- subtitles: one word at a time, bold serif, cinematic in/out ----
+      const HIDE = [[0, E("hook")], [S("draw"), E("draw")]];
+      if (has("setup2", "SOMEONE")) HIDE.push([W("setup2", "SOMEONE") - 0.05, E("setup2")]);
+      const hidden = (t) => HIDE.some(([a, b]) => t >= a && t < b);
+      const RED = new Set(["16", "THAILAND", "SIXTH", "REF", "KNOCK", "LOSE", "CHAOS", "ELBOWED", "RIGHT", "SLEPT", "DRAW", "VIOLENCE", "BALANCE", "TECHNIQUE", "FLOW", "CHESS", "SMACKED", "ZURICH", "ESSAOUIRA", "PAULO", "SAMUI", "ROME", "BANGKOK", "MENTAL", "FOLLOW"]);
+      const KEEP = { "I": "I", "I'M": "I'm", "DON'T": "don't", "IT'S": "it's", "THERE'S": "there's", "WHO'S": "who's", "YOU'RE": "you're", "THAILAND": "Thailand",
+        "ZURICH": "Zurich", "ESSAOUIRA": "Essaouira", "SÃO": "São", "PAULO": "Paulo", "KOH": "Koh", "SAMUI": "Samui", "ROME": "Rome", "BANGKOK": "Bangkok", "F*CKING": "f*cking" };
+      const caps = document.getElementById("caps");
+      EDL.segments.forEach((seg) => {
+        const ws = WORDS.filter((w) => w.seg === seg.i);
+        ws.forEach((w, wi) => {
+          if (hidden(w.s)) return;
+          let txt = KEEP[w.w] || w.w.toLowerCase();
+          if (wi === 0 && !KEEP[w.w]) txt = txt.charAt(0).toUpperCase() + txt.slice(1);
+          const el = document.createElement("div");
+          el.className = "cw" + (RED.has(w.w) ? " red" : "");
+          el.textContent = txt; caps.appendChild(el);
+          const red = RED.has(w.w);
+          const tIn = Math.max(0, w.s - 0.03);
+          const nextIn = wi < ws.length - 1 ? Math.max(0, ws[wi + 1].s - 0.03) : Infinity;
+          const OUT = 0.06;
+          const tOut = Number.isFinite(nextIn) ? Math.min(nextIn - OUT, w.e + 0.45) : Math.min(seg.end, w.e + 0.3) - OUT;
+          const dIn = Math.max(0.05, Math.min(red ? 0.22 : 0.17, tOut - tIn - 0.03));
+          tl.fromTo(el, { opacity: 0, y: red ? 0 : 38, scale: red ? 1.35 : 1.1, filter: "blur(12px)" },
+                        { opacity: 1, y: 0, scale: 1, filter: "blur(0px)", duration: dIn, ease: red ? "back.out(1.8)" : "expo.out" }, tIn);
+          tl.to(el, { opacity: 0, y: -22, filter: "blur(8px)", duration: OUT, ease: "power1.in" }, Math.max(tOut, tIn + dIn));
+        });
+      });
+
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

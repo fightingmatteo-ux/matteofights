@@ -1,0 +1,3857 @@
+[
+ {
+  "text": "I",
+  "start": 0.0,
+  "end": 0.78
+ },
+ {
+  "text": "was",
+  "start": 0.78,
+  "end": 0.96
+ },
+ {
+  "text": "16",
+  "start": 0.96,
+  "end": 1.52
+ },
+ {
+  "text": "years",
+  "start": 1.52,
+  "end": 1.74
+ },
+ {
+  "text": "old,",
+  "start": 1.74,
+  "end": 2.08
+ },
+ {
+  "text": "it",
+  "start": 2.2,
+  "end": 2.34
+ },
+ {
+  "text": "was",
+  "start": 2.34,
+  "end": 2.46
+ },
+ {
+  "text": "my",
+  "start": 2.46,
+  "end": 2.66
+ },
+ {
+  "text": "first",
+  "start": 2.66,
+  "end": 3.12
+ },
+ {
+  "text": "Muay",
+  "start": 3.12,
+  "end": 3.46
+ },
+ {
+  "text": "Thai",
+  "start": 3.46,
+  "end": 3.6
+ },
+ {
+  "text": "fight.",
+  "start": 3.6,
+  "end": 3.98
+ },
+ {
+  "text": "He",
+  "start": 4.52,
+  "end": 4.8
+ },
+ {
+  "text": "was",
+  "start": 4.8,
+  "end": 5.0
+ },
+ {
+  "text": "a",
+  "start": 5.0,
+  "end": 5.14
+ },
+ {
+  "text": "regular",
+  "start": 5.14,
+  "end": 5.48
+ },
+ {
+  "text": "there,",
+  "start": 5.48,
+  "end": 5.9
+ },
+ {
+  "text": "and",
+  "start": 6.34,
+  "end": 6.62
+ },
+ {
+  "text": "the",
+  "start": 6.62,
+  "end": 6.76
+ },
+ {
+  "text": "ref",
+  "start": 6.76,
+  "end": 7.0
+ },
+ {
+  "text": "knew",
+  "start": 7.0,
+  "end": 7.34
+ },
+ {
+  "text": "him.",
+  "start": 7.34,
+  "end": 7.68
+ },
+ {
+  "text": "Someone",
+  "start": 8.12,
+  "end": 8.4
+ },
+ {
+  "text": "told",
+  "start": 8.4,
+  "end": 8.7
+ },
+ {
+  "text": "me,",
+  "start": 8.7,
+  "end": 9.06
+ },
+ {
+  "text": "if",
+  "start": 9.62,
+  "end": 9.92
+ },
+ {
+  "text": "you",
+  "start": 9.92,
+  "end": 10.14
+ },
+ {
+  "text": "don't",
+  "start": 10.14,
+  "end": 10.46
+ },
+ {
+  "text": "knock",
+  "start": 10.46,
+  "end": 10.6
+ },
+ {
+  "text": "him",
+  "start": 10.6,
+  "end": 10.82
+ },
+ {
+  "text": "out,",
+  "start": 10.82,
+  "end": 11.08
+ },
+ {
+  "text": "you're",
+  "start": 11.42,
+  "end": 11.64
+ },
+ {
+  "text": "gonna",
+  "start": 11.64,
+  "end": 11.88
+ },
+ {
+  "text": "lose.",
+  "start": 11.88,
+  "end": 12.22
+ },
+ {
+  "text": "Okay,",
+  "start": 13.72,
+  "end": 14.02
+ },
+ {
+  "text": "so",
+  "start": 14.12,
+  "end": 14.34
+ },
+ {
+  "text": "I",
+  "start": 14.34,
+  "end": 14.5
+ },
+ {
+  "text": "was",
+  "start": 14.5,
+  "end": 14.64
+ },
+ {
+  "text": "16",
+  "start": 14.64,
+  "end": 15.16
+ },
+ {
+  "text": "years",
+  "start": 15.16,
+  "end": 15.42
+ },
+ {
+  "text": "old,",
+  "start": 15.42,
+  "end": 15.8
+ },
+ {
+  "text": "and",
+  "start": 16.18,
+  "end": 16.28
+ },
+ {
+  "text": "this",
+  "start": 16.28,
+  "end": 16.42
+ },
+ {
+  "text": "was",
+  "start": 16.42,
+  "end": 16.56
+ },
+ {
+  "text": "my",
+  "start": 16.56,
+  "end": 16.74
+ },
+ {
+  "text": "first",
+  "start": 16.74,
+  "end": 17.14
+ },
+ {
+  "text": "fight",
+  "start": 17.14,
+  "end": 17.58
+ },
+ {
+  "text": "in",
+  "start": 17.58,
+  "end": 17.94
+ },
+ {
+  "text": "Koh",
+  "start": 17.94,
+  "end": 17.96
+ },
+ {
+  "text": "Samui,",
+  "start": 17.96,
+  "end": 18.36
+ },
+ {
+  "text": "Thailand.",
+  "start": 18.44,
+  "end": 18.78
+ },
+ {
+  "text": "He",
+  "start": 19.94,
+  "end": 20.26
+ },
+ {
+  "text": "was",
+  "start": 20.26,
+  "end": 20.44
+ },
+ {
+  "text": "a",
+  "start": 20.44,
+  "end": 20.6
+ },
+ {
+  "text": "regular",
+  "start": 20.6,
+  "end": 20.88
+ },
+ {
+  "text": "there,",
+  "start": 20.88,
+  "end": 21.32
+ },
+ {
+  "text": "and",
+  "start": 21.64,
+  "end": 21.76
+ },
+ {
+  "text": "the",
+  "start": 21.76,
+  "end": 21.92
+ },
+ {
+  "text": "ref",
+  "start": 21.92,
+  "end": 22.26
+ },
+ {
+  "text": "knew",
+  "start": 22.26,
+  "end": 22.68
+ },
+ {
+  "text": "him.",
+  "start": 22.68,
+  "end": 23.02
+ },
+ {
+  "text": "Someone",
+  "start": 23.5,
+  "end": 23.76
+ },
+ {
+  "text": "told",
+  "start": 23.76,
+  "end": 24.1
+ },
+ {
+  "text": "me",
+  "start": 24.1,
+  "end": 24.48
+ },
+ {
+  "text": "that",
+  "start": 24.48,
+  "end": 24.86
+ },
+ {
+  "text": "if",
+  "start": 24.86,
+  "end": 25.08
+ },
+ {
+  "text": "I",
+  "start": 25.08,
+  "end": 25.24
+ },
+ {
+  "text": "don't",
+  "start": 25.24,
+  "end": 25.54
+ },
+ {
+  "text": "knock",
+  "start": 25.54,
+  "end": 25.72
+ },
+ {
+  "text": "him",
+  "start": 25.72,
+  "end": 25.94
+ },
+ {
+  "text": "out,",
+  "start": 25.94,
+  "end": 26.16
+ },
+ {
+  "text": "I'm",
+  "start": 26.3,
+  "end": 26.5
+ },
+ {
+  "text": "gonna",
+  "start": 26.5,
+  "end": 26.72
+ },
+ {
+  "text": "lose.",
+  "start": 26.72,
+  "end": 27.06
+ },
+ {
+  "text": "I",
+  "start": 28.06,
+  "end": 28.52
+ },
+ {
+  "text": "was",
+  "start": 28.52,
+  "end": 28.66
+ },
+ {
+  "text": "16",
+  "start": 28.66,
+  "end": 29.18
+ },
+ {
+  "text": "years",
+  "start": 29.18,
+  "end": 29.42
+ },
+ {
+  "text": "old,",
+  "start": 29.42,
+  "end": 29.74
+ },
+ {
+  "text": "and",
+  "start": 29.94,
+  "end": 30.02
+ },
+ {
+  "text": "it",
+  "start": 30.02,
+  "end": 30.14
+ },
+ {
+  "text": "was",
+  "start": 30.14,
+  "end": 30.24
+ },
+ {
+  "text": "my",
+  "start": 30.24,
+  "end": 30.42
+ },
+ {
+  "text": "first",
+  "start": 30.42,
+  "end": 30.82
+ },
+ {
+  "text": "fight",
+  "start": 30.82,
+  "end": 31.34
+ },
+ {
+  "text": "in",
+  "start": 31.34,
+  "end": 31.64
+ },
+ {
+  "text": "Thailand.",
+  "start": 31.64,
+  "end": 32.02
+ },
+ {
+  "text": "The",
+  "start": 32.86,
+  "end": 32.88
+ },
+ {
+  "text": "guy",
+  "start": 32.88,
+  "end": 33.04
+ },
+ {
+  "text": "I",
+  "start": 33.04,
+  "end": 33.22
+ },
+ {
+  "text": "was",
+  "start": 33.22,
+  "end": 33.42
+ },
+ {
+  "text": "fighting",
+  "start": 33.42,
+  "end": 33.72
+ },
+ {
+  "text": "was",
+  "start": 33.72,
+  "end": 34.36
+ },
+ {
+  "text": "a",
+  "start": 34.36,
+  "end": 34.5
+ },
+ {
+  "text": "little",
+  "start": 34.5,
+  "end": 34.66
+ },
+ {
+  "text": "bit",
+  "start": 34.66,
+  "end": 34.84
+ },
+ {
+  "text": "older,",
+  "start": 34.84,
+  "end": 35.2
+ },
+ {
+  "text": "and",
+  "start": 35.68,
+  "end": 35.74
+ },
+ {
+  "text": "it",
+  "start": 35.74,
+  "end": 35.84
+ },
+ {
+  "text": "was",
+  "start": 35.84,
+  "end": 36.02
+ },
+ {
+  "text": "his",
+  "start": 36.02,
+  "end": 36.14
+ },
+ {
+  "text": "sixth",
+  "start": 36.14,
+  "end": 36.5
+ },
+ {
+  "text": "fight,",
+  "start": 36.5,
+  "end": 36.88
+ },
+ {
+  "text": "and",
+  "start": 37.12,
+  "end": 37.32
+ },
+ {
+  "text": "he",
+  "start": 37.32,
+  "end": 37.48
+ },
+ {
+  "text": "knew",
+  "start": 37.48,
+  "end": 37.68
+ },
+ {
+  "text": "the",
+  "start": 37.68,
+  "end": 37.88
+ },
+ {
+  "text": "ref.",
+  "start": 37.88,
+  "end": 38.08
+ },
+ {
+  "text": "Someone",
+  "start": 38.44,
+  "end": 38.74
+ },
+ {
+  "text": "told",
+  "start": 38.74,
+  "end": 39.04
+ },
+ {
+  "text": "me",
+  "start": 39.04,
+  "end": 39.5
+ },
+ {
+  "text": "that",
+  "start": 39.5,
+  "end": 39.92
+ },
+ {
+  "text": "if",
+  "start": 39.92,
+  "end": 40.64
+ },
+ {
+  "text": "I",
+  "start": 40.64,
+  "end": 40.76
+ },
+ {
+  "text": "don't",
+  "start": 40.76,
+  "end": 41.04
+ },
+ {
+  "text": "knock",
+  "start": 41.04,
+  "end": 41.16
+ },
+ {
+  "text": "him",
+  "start": 41.16,
+  "end": 41.32
+ },
+ {
+  "text": "out,",
+  "start": 41.32,
+  "end": 41.56
+ },
+ {
+  "text": "I'm",
+  "start": 41.84,
+  "end": 41.96
+ },
+ {
+  "text": "gonna",
+  "start": 41.96,
+  "end": 42.16
+ },
+ {
+  "text": "lose.",
+  "start": 42.16,
+  "end": 42.46
+ },
+ {
+  "text": "Okay,",
+  "start": 43.74,
+  "end": 44.0
+ },
+ {
+  "text": "so",
+  "start": 44.06,
+  "end": 44.26
+ },
+ {
+  "text": "I",
+  "start": 44.26,
+  "end": 44.4
+ },
+ {
+  "text": "was",
+  "start": 44.4,
+  "end": 44.54
+ },
+ {
+  "text": "16",
+  "start": 44.54,
+  "end": 45.0
+ },
+ {
+  "text": "years",
+  "start": 45.0,
+  "end": 45.22
+ },
+ {
+  "text": "old,",
+  "start": 45.22,
+  "end": 45.56
+ },
+ {
+  "text": "and",
+  "start": 45.72,
+  "end": 45.78
+ },
+ {
+  "text": "this",
+  "start": 45.78,
+  "end": 45.92
+ },
+ {
+  "text": "was",
+  "start": 45.92,
+  "end": 46.06
+ },
+ {
+  "text": "my",
+  "start": 46.06,
+  "end": 46.24
+ },
+ {
+  "text": "first",
+  "start": 46.24,
+  "end": 46.66
+ },
+ {
+  "text": "fight",
+  "start": 46.66,
+  "end": 47.14
+ },
+ {
+  "text": "ever.",
+  "start": 47.14,
+  "end": 47.64
+ },
+ {
+  "text": "The",
+  "start": 48.8,
+  "end": 49.08
+ },
+ {
+  "text": "guy",
+  "start": 49.08,
+  "end": 49.3
+ },
+ {
+  "text": "I",
+  "start": 49.3,
+  "end": 49.48
+ },
+ {
+  "text": "was",
+  "start": 49.48,
+  "end": 49.68
+ },
+ {
+  "text": "fighting",
+  "start": 49.68,
+  "end": 50.06
+ },
+ {
+  "text": "was",
+  "start": 50.06,
+  "end": 50.72
+ },
+ {
+  "text": "a",
+  "start": 50.72,
+  "end": 50.86
+ },
+ {
+  "text": "regular",
+  "start": 50.86,
+  "end": 51.16
+ },
+ {
+  "text": "there.",
+  "start": 51.16,
+  "end": 51.5
+ },
+ {
+  "text": "He",
+  "start": 51.64,
+  "end": 51.72
+ },
+ {
+  "text": "had",
+  "start": 51.72,
+  "end": 51.86
+ },
+ {
+  "text": "six",
+  "start": 51.86,
+  "end": 52.16
+ },
+ {
+  "text": "fights,",
+  "start": 52.16,
+  "end": 52.58
+ },
+ {
+  "text": "and",
+  "start": 53.0,
+  "end": 53.18
+ },
+ {
+  "text": "someone",
+  "start": 53.18,
+  "end": 53.46
+ },
+ {
+  "text": "told",
+  "start": 53.46,
+  "end": 53.72
+ },
+ {
+  "text": "me",
+  "start": 53.72,
+  "end": 54.0
+ },
+ {
+  "text": "that",
+  "start": 54.0,
+  "end": 54.28
+ },
+ {
+  "text": "he",
+  "start": 54.28,
+  "end": 54.44
+ },
+ {
+  "text": "knew",
+  "start": 54.44,
+  "end": 54.58
+ },
+ {
+  "text": "the",
+  "start": 54.58,
+  "end": 54.74
+ },
+ {
+  "text": "ref.",
+  "start": 54.74,
+  "end": 54.98
+ },
+ {
+  "text": "So",
+  "start": 54.98,
+  "end": 55.44
+ },
+ {
+  "text": "if",
+  "start": 55.44,
+  "end": 55.58
+ },
+ {
+  "text": "I",
+  "start": 55.58,
+  "end": 55.7
+ },
+ {
+  "text": "don't",
+  "start": 55.7,
+  "end": 55.9
+ },
+ {
+  "text": "knock",
+  "start": 55.9,
+  "end": 56.12
+ },
+ {
+  "text": "him",
+  "start": 56.12,
+  "end": 56.24
+ },
+ {
+  "text": "out,",
+  "start": 56.24,
+  "end": 56.54
+ },
+ {
+  "text": "I'm",
+  "start": 56.54,
+  "end": 57.08
+ },
+ {
+  "text": "gonna",
+  "start": 57.08,
+  "end": 57.18
+ },
+ {
+  "text": "lose",
+  "start": 57.18,
+  "end": 57.44
+ },
+ {
+  "text": "the",
+  "start": 57.44,
+  "end": 57.62
+ },
+ {
+  "text": "fight.",
+  "start": 57.62,
+  "end": 57.86
+ },
+ {
+  "text": "If",
+  "start": 58.3,
+  "end": 58.74
+ },
+ {
+  "text": "it's",
+  "start": 58.74,
+  "end": 58.98
+ },
+ {
+  "text": "down",
+  "start": 58.98,
+  "end": 59.16
+ },
+ {
+  "text": "to",
+  "start": 59.16,
+  "end": 59.32
+ },
+ {
+  "text": "points,",
+  "start": 59.32,
+  "end": 59.62
+ },
+ {
+  "text": "I",
+  "start": 59.84,
+  "end": 59.9
+ },
+ {
+  "text": "lost.",
+  "start": 59.9,
+  "end": 60.36
+ },
+ {
+  "text": "The",
+  "start": 62.18,
+  "end": 62.18
+ },
+ {
+  "text": "fight",
+  "start": 62.18,
+  "end": 62.4
+ },
+ {
+  "text": "was",
+  "start": 62.4,
+  "end": 62.62
+ },
+ {
+  "text": "fucking",
+  "start": 62.62,
+  "end": 63.34
+ },
+ {
+  "text": "chaos.",
+  "start": 63.34,
+  "end": 63.94
+ },
+ {
+  "text": "He",
+  "start": 64.98,
+  "end": 65.42
+ },
+ {
+  "text": "was",
+  "start": 65.42,
+  "end": 65.6
+ },
+ {
+  "text": "clenching",
+  "start": 65.6,
+  "end": 66.02
+ },
+ {
+  "text": "on",
+  "start": 66.02,
+  "end": 66.28
+ },
+ {
+  "text": "me.",
+  "start": 66.28,
+  "end": 66.64
+ },
+ {
+  "text": "I",
+  "start": 66.88,
+  "end": 67.16
+ },
+ {
+  "text": "couldn't",
+  "start": 67.16,
+  "end": 67.52
+ },
+ {
+  "text": "get",
+  "start": 67.52,
+  "end": 67.78
+ },
+ {
+  "text": "him",
+  "start": 67.78,
+  "end": 67.96
+ },
+ {
+  "text": "off,",
+  "start": 67.96,
+  "end": 68.14
+ },
+ {
+  "text": "so",
+  "start": 68.24,
+  "end": 68.34
+ },
+ {
+  "text": "I",
+  "start": 68.34,
+  "end": 68.42
+ },
+ {
+  "text": "started",
+  "start": 68.42,
+  "end": 68.76
+ },
+ {
+  "text": "elbowing",
+  "start": 68.76,
+  "end": 69.18
+ },
+ {
+  "text": "the",
+  "start": 69.18,
+  "end": 69.4
+ },
+ {
+  "text": "top",
+  "start": 69.4,
+  "end": 69.58
+ },
+ {
+  "text": "of",
+  "start": 69.58,
+  "end": 69.72
+ },
+ {
+  "text": "his",
+  "start": 69.72,
+  "end": 69.88
+ },
+ {
+  "text": "head.",
+  "start": 69.88,
+  "end": 70.16
+ },
+ {
+  "text": "And",
+  "start": 70.86,
+  "end": 70.96
+ },
+ {
+  "text": "then",
+  "start": 70.96,
+  "end": 71.06
+ },
+ {
+  "text": "when",
+  "start": 71.06,
+  "end": 71.22
+ },
+ {
+  "text": "he",
+  "start": 71.22,
+  "end": 71.38
+ },
+ {
+  "text": "let",
+  "start": 71.38,
+  "end": 71.58
+ },
+ {
+  "text": "go,",
+  "start": 71.58,
+  "end": 71.84
+ },
+ {
+  "text": "the",
+  "start": 71.98,
+  "end": 72.08
+ },
+ {
+  "text": "ref",
+  "start": 72.08,
+  "end": 72.24
+ },
+ {
+  "text": "was",
+  "start": 72.24,
+  "end": 72.44
+ },
+ {
+  "text": "separating",
+  "start": 72.44,
+  "end": 72.86
+ },
+ {
+  "text": "us,",
+  "start": 72.86,
+  "end": 73.24
+ },
+ {
+  "text": "and",
+  "start": 73.32,
+  "end": 73.4
+ },
+ {
+  "text": "then",
+  "start": 73.4,
+  "end": 73.52
+ },
+ {
+  "text": "I",
+  "start": 73.52,
+  "end": 73.68
+ },
+ {
+  "text": "threw",
+  "start": 73.68,
+  "end": 73.82
+ },
+ {
+  "text": "the",
+  "start": 73.82,
+  "end": 73.98
+ },
+ {
+  "text": "right",
+  "start": 73.98,
+  "end": 74.12
+ },
+ {
+  "text": "hand,",
+  "start": 74.12,
+  "end": 74.38
+ },
+ {
+  "text": "and",
+  "start": 74.5,
+  "end": 74.58
+ },
+ {
+  "text": "he",
+  "start": 74.58,
+  "end": 74.8
+ },
+ {
+  "text": "slept,",
+  "start": 74.8,
+  "end": 75.12
+ },
+ {
+  "text": "and",
+  "start": 75.3,
+  "end": 75.4
+ },
+ {
+  "text": "the",
+  "start": 75.4,
+  "end": 75.5
+ },
+ {
+  "text": "fight",
+  "start": 75.5,
+  "end": 75.68
+ },
+ {
+  "text": "was",
+  "start": 75.68,
+  "end": 75.86
+ },
+ {
+  "text": "over.",
+  "start": 75.86,
+  "end": 76.18
+ },
+ {
+  "text": "The",
+  "start": 77.72,
+  "end": 78.16
+ },
+ {
+  "text": "fight",
+  "start": 78.16,
+  "end": 78.5
+ },
+ {
+  "text": "was",
+  "start": 78.5,
+  "end": 78.72
+ },
+ {
+  "text": "absolute",
+  "start": 78.72,
+  "end": 79.38
+ },
+ {
+  "text": "chaos.",
+  "start": 79.38,
+  "end": 79.98
+ },
+ {
+  "text": "He",
+  "start": 80.6,
+  "end": 80.86
+ },
+ {
+  "text": "was",
+  "start": 80.86,
+  "end": 81.02
+ },
+ {
+  "text": "clenching",
+  "start": 81.02,
+  "end": 81.42
+ },
+ {
+  "text": "on",
+  "start": 81.42,
+  "end": 81.64
+ },
+ {
+  "text": "me,",
+  "start": 81.64,
+  "end": 81.9
+ },
+ {
+  "text": "and",
+  "start": 81.94,
+  "end": 82.12
+ },
+ {
+  "text": "I",
+  "start": 82.12,
+  "end": 82.26
+ },
+ {
+  "text": "couldn't",
+  "start": 82.26,
+  "end": 82.52
+ },
+ {
+  "text": "really",
+  "start": 82.52,
+  "end": 82.74
+ },
+ {
+  "text": "push",
+  "start": 82.74,
+  "end": 83.06
+ },
+ {
+  "text": "him",
+  "start": 83.06,
+  "end": 83.24
+ },
+ {
+  "text": "off,",
+  "start": 83.24,
+  "end": 83.48
+ },
+ {
+  "text": "so",
+  "start": 83.48,
+  "end": 83.7
+ },
+ {
+  "text": "I",
+  "start": 83.7,
+  "end": 83.86
+ },
+ {
+  "text": "elbowed",
+  "start": 83.86,
+  "end": 84.2
+ },
+ {
+  "text": "the",
+  "start": 84.2,
+  "end": 84.38
+ },
+ {
+  "text": "top",
+  "start": 84.38,
+  "end": 84.52
+ },
+ {
+  "text": "of",
+  "start": 84.52,
+  "end": 84.66
+ },
+ {
+  "text": "his",
+  "start": 84.66,
+  "end": 84.8
+ },
+ {
+  "text": "head,",
+  "start": 84.8,
+  "end": 85.02
+ },
+ {
+  "text": "and",
+  "start": 85.52,
+  "end": 85.66
+ },
+ {
+  "text": "then",
+  "start": 85.66,
+  "end": 85.8
+ },
+ {
+  "text": "when",
+  "start": 85.8,
+  "end": 85.98
+ },
+ {
+  "text": "he",
+  "start": 85.98,
+  "end": 86.16
+ },
+ {
+  "text": "let",
+  "start": 86.16,
+  "end": 86.34
+ },
+ {
+  "text": "go,",
+  "start": 86.34,
+  "end": 86.68
+ },
+ {
+  "text": "I",
+  "start": 87.54,
+  "end": 87.96
+ },
+ {
+  "text": "threw",
+  "start": 87.96,
+  "end": 88.16
+ },
+ {
+  "text": "the",
+  "start": 88.16,
+  "end": 88.32
+ },
+ {
+  "text": "right",
+  "start": 88.32,
+  "end": 88.48
+ },
+ {
+  "text": "hand,",
+  "start": 88.48,
+  "end": 88.84
+ },
+ {
+  "text": "but",
+  "start": 89.0,
+  "end": 89.2
+ },
+ {
+  "text": "the",
+  "start": 89.2,
+  "end": 89.4
+ },
+ {
+  "text": "ref",
+  "start": 89.4,
+  "end": 89.5
+ },
+ {
+  "text": "was",
+  "start": 89.5,
+  "end": 89.74
+ },
+ {
+  "text": "separating",
+  "start": 89.74,
+  "end": 90.16
+ },
+ {
+  "text": "us.",
+  "start": 90.16,
+  "end": 90.66
+ },
+ {
+  "text": "He",
+  "start": 91.12,
+  "end": 91.32
+ },
+ {
+  "text": "slept.",
+  "start": 91.32,
+  "end": 91.66
+ },
+ {
+  "text": "When",
+  "start": 93.3,
+  "end": 93.74
+ },
+ {
+  "text": "the",
+  "start": 93.74,
+  "end": 93.92
+ },
+ {
+  "text": "fight",
+  "start": 93.92,
+  "end": 94.26
+ },
+ {
+  "text": "actually",
+  "start": 94.26,
+  "end": 94.76
+ },
+ {
+  "text": "came,",
+  "start": 94.76,
+  "end": 95.22
+ },
+ {
+  "text": "it",
+  "start": 95.52,
+  "end": 95.62
+ },
+ {
+  "text": "was",
+  "start": 95.62,
+  "end": 95.8
+ },
+ {
+  "text": "absolute",
+  "start": 95.8,
+  "end": 96.5
+ },
+ {
+  "text": "chaos.",
+  "start": 96.5,
+  "end": 97.14
+ },
+ {
+  "text": "He",
+  "start": 97.74,
+  "end": 97.92
+ },
+ {
+  "text": "was",
+  "start": 97.92,
+  "end": 98.08
+ },
+ {
+  "text": "clenching",
+  "start": 98.08,
+  "end": 98.52
+ },
+ {
+  "text": "onto",
+  "start": 98.52,
+  "end": 98.8
+ },
+ {
+  "text": "me,",
+  "start": 98.8,
+  "end": 99.14
+ },
+ {
+  "text": "and",
+  "start": 99.48,
+  "end": 99.7
+ },
+ {
+  "text": "I",
+  "start": 99.7,
+  "end": 99.86
+ },
+ {
+  "text": "couldn't",
+  "start": 99.86,
+  "end": 100.16
+ },
+ {
+  "text": "get",
+  "start": 100.16,
+  "end": 100.32
+ },
+ {
+  "text": "him",
+  "start": 100.32,
+  "end": 100.48
+ },
+ {
+  "text": "off,",
+  "start": 100.48,
+  "end": 100.66
+ },
+ {
+  "text": "so",
+  "start": 100.72,
+  "end": 100.9
+ },
+ {
+  "text": "I",
+  "start": 100.9,
+  "end": 101.02
+ },
+ {
+  "text": "was",
+  "start": 101.02,
+  "end": 101.34
+ },
+ {
+  "text": "elbowing",
+  "start": 101.34,
+  "end": 101.8
+ },
+ {
+  "text": "the",
+  "start": 101.8,
+  "end": 102.02
+ },
+ {
+  "text": "top",
+  "start": 102.02,
+  "end": 102.18
+ },
+ {
+  "text": "of",
+  "start": 102.18,
+  "end": 102.32
+ },
+ {
+  "text": "his",
+  "start": 102.32,
+  "end": 102.46
+ },
+ {
+  "text": "head,",
+  "start": 102.46,
+  "end": 102.7
+ },
+ {
+  "text": "and",
+  "start": 103.18,
+  "end": 103.38
+ },
+ {
+  "text": "then",
+  "start": 103.38,
+  "end": 103.64
+ },
+ {
+  "text": "the",
+  "start": 103.64,
+  "end": 104.04
+ },
+ {
+  "text": "ref",
+  "start": 104.04,
+  "end": 104.28
+ },
+ {
+  "text": "was",
+  "start": 104.28,
+  "end": 104.52
+ },
+ {
+  "text": "separating",
+  "start": 104.52,
+  "end": 104.92
+ },
+ {
+  "text": "us,",
+  "start": 104.92,
+  "end": 105.28
+ },
+ {
+  "text": "and",
+  "start": 105.5,
+  "end": 105.62
+ },
+ {
+  "text": "I",
+  "start": 105.62,
+  "end": 105.74
+ },
+ {
+  "text": "threw",
+  "start": 105.74,
+  "end": 106.08
+ },
+ {
+  "text": "the",
+  "start": 106.08,
+  "end": 106.28
+ },
+ {
+  "text": "right",
+  "start": 106.28,
+  "end": 106.46
+ },
+ {
+  "text": "hand,",
+  "start": 106.46,
+  "end": 106.82
+ },
+ {
+  "text": "and",
+  "start": 106.94,
+  "end": 107.14
+ },
+ {
+  "text": "he",
+  "start": 107.14,
+  "end": 107.36
+ },
+ {
+  "text": "slept.",
+  "start": 107.36,
+  "end": 107.78
+ },
+ {
+  "text": "The",
+  "start": 108.78,
+  "end": 109.42
+ },
+ {
+  "text": "result?",
+  "start": 109.42,
+  "end": 109.86
+ },
+ {
+  "text": "A",
+  "start": 110.96,
+  "end": 110.98
+ },
+ {
+  "text": "draw.",
+  "start": 110.98,
+  "end": 111.38
+ },
+ {
+  "text": "The",
+  "start": 114.74,
+  "end": 114.74
+ },
+ {
+  "text": "result?",
+  "start": 114.74,
+  "end": 115.2
+ },
+ {
+  "text": "A",
+  "start": 116.1,
+  "end": 116.18
+ },
+ {
+  "text": "draw.",
+  "start": 116.18,
+  "end": 116.66
+ },
+ {
+  "text": "And",
+  "start": 119.54,
+  "end": 119.98
+ },
+ {
+  "text": "the",
+  "start": 119.98,
+  "end": 120.14
+ },
+ {
+  "text": "result",
+  "start": 120.14,
+  "end": 120.52
+ },
+ {
+  "text": "was",
+  "start": 120.52,
+  "end": 121.08
+ },
+ {
+  "text": "a",
+  "start": 121.08,
+  "end": 121.28
+ },
+ {
+  "text": "draw.",
+  "start": 121.28,
+  "end": 121.64
+ },
+ {
+  "text": "People",
+  "start": 123.5,
+  "end": 124.08
+ },
+ {
+  "text": "think",
+  "start": 124.08,
+  "end": 124.46
+ },
+ {
+  "text": "combat",
+  "start": 124.46,
+  "end": 124.9
+ },
+ {
+  "text": "sports",
+  "start": 124.9,
+  "end": 125.36
+ },
+ {
+  "text": "is",
+  "start": 125.36,
+  "end": 125.74
+ },
+ {
+  "text": "just",
+  "start": 125.74,
+  "end": 126.04
+ },
+ {
+  "text": "about",
+  "start": 126.04,
+  "end": 126.46
+ },
+ {
+  "text": "violence.",
+  "start": 126.46,
+  "end": 127.34
+ },
+ {
+  "text": "It's",
+  "start": 128.12,
+  "end": 128.18
+ },
+ {
+  "text": "about",
+  "start": 128.18,
+  "end": 128.4
+ },
+ {
+  "text": "balance,",
+  "start": 128.4,
+  "end": 129.02
+ },
+ {
+  "text": "technique,",
+  "start": 129.4,
+  "end": 129.82
+ },
+ {
+  "text": "and",
+  "start": 130.28,
+  "end": 130.4
+ },
+ {
+  "text": "flow.",
+  "start": 130.4,
+  "end": 130.94
+ },
+ {
+  "text": "It's",
+  "start": 131.94,
+  "end": 132.3
+ },
+ {
+  "text": "chess,",
+  "start": 132.3,
+  "end": 132.6
+ },
+ {
+  "text": "but",
+  "start": 133.44,
+  "end": 134.04
+ },
+ {
+  "text": "there's",
+  "start": 134.04,
+  "end": 134.36
+ },
+ {
+  "text": "more",
+  "start": 134.36,
+  "end": 134.6
+ },
+ {
+  "text": "pressure",
+  "start": 134.6,
+  "end": 135.06
+ },
+ {
+  "text": "because",
+  "start": 135.06,
+  "end": 135.48
+ },
+ {
+  "text": "you",
+  "start": 135.48,
+  "end": 135.7
+ },
+ {
+  "text": "might",
+  "start": 135.7,
+  "end": 135.9
+ },
+ {
+  "text": "get",
+  "start": 135.9,
+  "end": 136.2
+ },
+ {
+  "text": "fucking",
+  "start": 136.2,
+  "end": 136.64
+ },
+ {
+  "text": "smacked.",
+  "start": 136.64,
+  "end": 137.3
+ },
+ {
+  "text": "You",
+  "start": 139.16,
+  "end": 139.16
+ },
+ {
+  "text": "can't",
+  "start": 139.16,
+  "end": 139.82
+ },
+ {
+  "text": "control",
+  "start": 139.82,
+  "end": 139.9
+ },
+ {
+  "text": "the",
+  "start": 139.9,
+  "end": 140.1
+ },
+ {
+  "text": "referee,",
+  "start": 140.1,
+  "end": 140.38
+ },
+ {
+  "text": "you",
+  "start": 141.12,
+  "end": 141.24
+ },
+ {
+  "text": "can",
+  "start": 141.24,
+  "end": 141.38
+ },
+ {
+  "text": "only",
+  "start": 141.38,
+  "end": 141.74
+ },
+ {
+  "text": "control",
+  "start": 141.74,
+  "end": 142.22
+ },
+ {
+  "text": "what",
+  "start": 142.22,
+  "end": 142.68
+ },
+ {
+  "text": "you",
+  "start": 142.68,
+  "end": 142.94
+ },
+ {
+  "text": "do",
+  "start": 142.94,
+  "end": 143.3
+ },
+ {
+  "text": "in",
+  "start": 143.3,
+  "end": 143.58
+ },
+ {
+  "text": "the",
+  "start": 143.58,
+  "end": 143.72
+ },
+ {
+  "text": "fight.",
+  "start": 143.72,
+  "end": 144.0
+ },
+ {
+  "text": "People",
+  "start": 144.92,
+  "end": 145.32
+ },
+ {
+  "text": "think",
+  "start": 145.32,
+  "end": 145.68
+ },
+ {
+  "text": "combat",
+  "start": 145.68,
+  "end": 146.1
+ },
+ {
+  "text": "sports",
+  "start": 146.1,
+  "end": 146.54
+ },
+ {
+  "text": "is",
+  "start": 146.54,
+  "end": 147.04
+ },
+ {
+  "text": "just",
+  "start": 147.04,
+  "end": 147.38
+ },
+ {
+  "text": "about",
+  "start": 147.38,
+  "end": 147.76
+ },
+ {
+  "text": "violence,",
+  "start": 147.76,
+  "end": 148.36
+ },
+ {
+  "text": "when",
+  "start": 148.86,
+  "end": 149.02
+ },
+ {
+  "text": "in",
+  "start": 149.02,
+  "end": 149.14
+ },
+ {
+  "text": "reality",
+  "start": 149.14,
+  "end": 149.56
+ },
+ {
+  "text": "it's",
+  "start": 149.56,
+  "end": 149.98
+ },
+ {
+  "text": "about",
+  "start": 149.98,
+  "end": 150.22
+ },
+ {
+  "text": "balance,",
+  "start": 150.22,
+  "end": 150.82
+ },
+ {
+  "text": "it's",
+  "start": 151.44,
+  "end": 151.5
+ },
+ {
+  "text": "about",
+  "start": 151.5,
+  "end": 151.74
+ },
+ {
+  "text": "technique,",
+  "start": 151.74,
+  "end": 152.22
+ },
+ {
+  "text": "it's",
+  "start": 152.8,
+  "end": 152.88
+ },
+ {
+  "text": "about",
+  "start": 152.88,
+  "end": 153.1
+ },
+ {
+  "text": "flow.",
+  "start": 153.1,
+  "end": 153.62
+ },
+ {
+  "text": "It's",
+  "start": 154.56,
+  "end": 154.78
+ },
+ {
+  "text": "like",
+  "start": 154.78,
+  "end": 154.96
+ },
+ {
+  "text": "chess,",
+  "start": 154.96,
+  "end": 155.34
+ },
+ {
+  "text": "but",
+  "start": 155.66,
+  "end": 155.82
+ },
+ {
+  "text": "there's",
+  "start": 155.82,
+  "end": 156.04
+ },
+ {
+  "text": "more",
+  "start": 156.04,
+  "end": 156.26
+ },
+ {
+  "text": "pressure",
+  "start": 156.26,
+  "end": 156.62
+ },
+ {
+  "text": "because",
+  "start": 156.62,
+  "end": 156.98
+ },
+ {
+  "text": "you",
+  "start": 156.98,
+  "end": 157.14
+ },
+ {
+  "text": "might",
+  "start": 157.14,
+  "end": 157.32
+ },
+ {
+  "text": "get",
+  "start": 157.32,
+  "end": 157.56
+ },
+ {
+  "text": "fucking",
+  "start": 157.56,
+  "end": 157.96
+ },
+ {
+  "text": "smacked.",
+  "start": 157.96,
+  "end": 158.44
+ },
+ {
+  "text": "You",
+  "start": 159.34,
+  "end": 159.68
+ },
+ {
+  "text": "can't",
+  "start": 159.68,
+  "end": 160.02
+ },
+ {
+  "text": "control",
+  "start": 160.02,
+  "end": 160.46
+ },
+ {
+  "text": "what",
+  "start": 160.46,
+  "end": 160.86
+ },
+ {
+  "text": "the",
+  "start": 160.86,
+  "end": 161.04
+ },
+ {
+  "text": "referee",
+  "start": 161.04,
+  "end": 161.3
+ },
+ {
+  "text": "does",
+  "start": 161.3,
+  "end": 161.82
+ },
+ {
+  "text": "in",
+  "start": 161.82,
+  "end": 162.46
+ },
+ {
+  "text": "the",
+  "start": 162.46,
+  "end": 162.6
+ },
+ {
+  "text": "fight,",
+  "start": 162.6,
+  "end": 162.86
+ },
+ {
+  "text": "you",
+  "start": 163.1,
+  "end": 163.22
+ },
+ {
+  "text": "can",
+  "start": 163.22,
+  "end": 163.4
+ },
+ {
+  "text": "only",
+  "start": 163.4,
+  "end": 163.66
+ },
+ {
+  "text": "control",
+  "start": 163.66,
+  "end": 164.12
+ },
+ {
+  "text": "Zurich,",
+  "start": 165.76,
+  "end": 166.76
+ },
+ {
+  "text": "Essaouira,",
+  "start": 166.94,
+  "end": 167.6
+ },
+ {
+  "text": "São",
+  "start": 167.92,
+  "end": 168.12
+ },
+ {
+  "text": "Paulo,",
+  "start": 168.12,
+  "end": 168.84
+ },
+ {
+  "text": "Koh",
+  "start": 169.36,
+  "end": 169.94
+ },
+ {
+  "text": "Samui,",
+  "start": 169.94,
+  "end": 170.08
+ },
+ {
+  "text": "Rome,",
+  "start": 170.64,
+  "end": 171.14
+ },
+ {
+  "text": "and",
+  "start": 171.62,
+  "end": 171.78
+ },
+ {
+  "text": "now",
+  "start": 171.78,
+  "end": 171.96
+ },
+ {
+  "text": "Bangkok.",
+  "start": 171.96,
+  "end": 172.46
+ },
+ {
+  "text": "Zurich,",
+  "start": 172.46,
+  "end": 174.3
+ },
+ {
+  "text": "Essaouira,",
+  "start": 174.48,
+  "end": 175.12
+ },
+ {
+  "text": "São",
+  "start": 175.42,
+  "end": 175.6
+ },
+ {
+  "text": "Paulo,",
+  "start": 175.6,
+  "end": 176.2
+ },
+ {
+  "text": "Koh",
+  "start": 176.5,
+  "end": 176.6
+ },
+ {
+  "text": "Samui,",
+  "start": 176.6,
+  "end": 177.28
+ },
+ {
+  "text": "Rome,",
+  "start": 177.78,
+  "end": 178.42
+ },
+ {
+  "text": "and",
+  "start": 178.88,
+  "end": 179.0
+ },
+ {
+  "text": "now",
+  "start": 179.0,
+  "end": 179.2
+ },
+ {
+  "text": "Bangkok.",
+  "start": 179.2,
+  "end": 179.7
+ },
+ {
+  "text": "want",
+  "start": 188.3,
+  "end": 188.56
+ },
+ {
+  "text": "the",
+  "start": 188.56,
+  "end": 188.74
+ },
+ {
+  "text": "mental",
+  "start": 188.74,
+  "end": 189.2
+ },
+ {
+  "text": "sight",
+  "start": 189.2,
+  "end": 189.54
+ },
+ {
+  "text": "of",
+  "start": 189.54,
+  "end": 189.78
+ },
+ {
+  "text": "fighting",
+  "start": 189.78,
+  "end": 190.12
+ },
+ {
+  "text": "from",
+  "start": 190.12,
+  "end": 190.6
+ },
+ {
+  "text": "someone",
+  "start": 190.6,
+  "end": 191.0
+ },
+ {
+  "text": "who's",
+  "start": 191.0,
+  "end": 191.34
+ },
+ {
+  "text": "still",
+  "start": 191.34,
+  "end": 191.54
+ },
+ {
+  "text": "living",
+  "start": 191.54,
+  "end": 191.88
+ },
+ {
+  "text": "it,",
+  "start": 191.88,
+  "end": 192.24
+ },
+ {
+  "text": "follow.",
+  "start": 192.4,
+  "end": 192.74
+ },
+ {
+  "text": "Because",
+  "start": 192.74,
+  "end": 193.84
+ },
+ {
+  "text": "the",
+  "start": 193.84,
+  "end": 194.56
+ },
+ {
+  "text": "first",
+  "start": 194.56,
+  "end": 195.06
+ },
+ {
+  "text": "fight",
+  "start": 195.06,
+  "end": 195.46
+ },
+ {
+  "text": "I",
+  "start": 195.46,
+  "end": 195.72
+ },
+ {
+  "text": "ever",
+  "start": 195.72,
+  "end": 196.1
+ },
+ {
+  "text": "had,",
+  "start": 196.1,
+  "end": 196.56
+ },
+ {
+  "text": "I",
+  "start": 196.92,
+  "end": 196.92
+ },
+ {
+  "text": "knocked",
+  "start": 196.92,
+  "end": 197.24
+ },
+ {
+  "text": "someone",
+  "start": 197.24,
+  "end": 197.68
+ },
+ {
+  "text": "out,",
+  "start": 197.68,
+  "end": 198.0
+ },
+ {
+  "text": "and",
+  "start": 198.28,
+  "end": 198.32
+ },
+ {
+  "text": "it",
+  "start": 198.32,
+  "end": 198.52
+ },
+ {
+  "text": "was",
+  "start": 198.52,
+  "end": 198.74
+ },
+ {
+  "text": "a",
+  "start": 198.74,
+  "end": 198.96
+ },
+ {
+  "text": "draw.",
+  "start": 198.96,
+  "end": 199.26
+ },
+ {
+  "text": "If",
+  "start": 200.16,
+  "end": 200.36
+ },
+ {
+  "text": "you",
+  "start": 200.36,
+  "end": 200.54
+ },
+ {
+  "text": "want",
+  "start": 200.54,
+  "end": 200.74
+ },
+ {
+  "text": "the",
+  "start": 200.74,
+  "end": 200.92
+ },
+ {
+  "text": "mental",
+  "start": 200.92,
+  "end": 201.28
+ },
+ {
+  "text": "sight",
+  "start": 201.28,
+  "end": 201.66
+ },
+ {
+  "text": "of",
+  "start": 201.66,
+  "end": 201.86
+ },
+ {
+  "text": "fighting",
+  "start": 201.86,
+  "end": 202.26
+ },
+ {
+  "text": "from",
+  "start": 202.26,
+  "end": 202.74
+ },
+ {
+  "text": "someone",
+  "start": 202.74,
+  "end": 203.12
+ },
+ {
+  "text": "who's",
+  "start": 203.12,
+  "end": 203.44
+ },
+ {
+  "text": "still",
+  "start": 203.44,
+  "end": 203.64
+ },
+ {
+  "text": "living",
+  "start": 203.64,
+  "end": 203.96
+ },
+ {
+  "text": "it,",
+  "start": 203.96,
+  "end": 204.32
+ },
+ {
+  "text": "follow",
+  "start": 204.74,
+  "end": 204.92
+ },
+ {
+  "text": "me.",
+  "start": 204.92,
+  "end": 205.34
+ },
+ {
+  "text": "Because",
+  "start": 205.68,
+  "end": 206.1
+ },
+ {
+  "text": "it",
+  "start": 206.1,
+  "end": 206.3
+ },
+ {
+  "text": "all",
+  "start": 206.3,
+  "end": 206.48
+ },
+ {
+  "text": "started",
+  "start": 206.48,
+  "end": 206.88
+ },
+ {
+  "text": "with",
+  "start": 206.88,
+  "end": 207.5
+ },
+ {
+  "text": "my",
+  "start": 207.5,
+  "end": 207.68
+ },
+ {
+  "text": "first",
+  "start": 207.68,
+  "end": 208.1
+ },
+ {
+  "text": "fight",
+  "start": 208.1,
+  "end": 208.58
+ },
+ {
+  "text": "when",
+  "start": 208.58,
+  "end": 209.12
+ },
+ {
+  "text": "I",
+  "start": 209.12,
+  "end": 209.3
+ },
+ {
+  "text": "knocked",
+  "start": 209.3,
+  "end": 209.52
+ },
+ {
+  "text": "someone",
+  "start": 209.52,
+  "end": 209.88
+ },
+ {
+  "text": "out,",
+  "start": 209.88,
+  "end": 210.26
+ },
+ {
+  "text": "and",
+  "start": 210.48,
+  "end": 210.7
+ },
+ {
+  "text": "there",
+  "start": 210.7,
+  "end": 210.84
+ },
+ {
+  "text": "was",
+  "start": 210.84,
+  "end": 210.98
+ },
+ {
+  "text": "still",
+  "start": 210.98,
+  "end": 211.38
+ },
+ {
+  "text": "a",
+  "start": 211.38,
+  "end": 211.74
+ },
+ {
+  "text": "draw.",
+  "start": 211.74,
+  "end": 212.06
+ },
+ {
+  "text": "If",
+  "start": 212.88,
+  "end": 213.2
+ },
+ {
+  "text": "you",
+  "start": 213.2,
+  "end": 213.48
+ },
+ {
+  "text": "want",
+  "start": 213.48,
+  "end": 213.78
+ },
+ {
+  "text": "the",
+  "start": 213.78,
+  "end": 213.96
+ },
+ {
+  "text": "mental",
+  "start": 213.96,
+  "end": 214.28
+ },
+ {
+  "text": "sight",
+  "start": 214.28,
+  "end": 214.62
+ },
+ {
+  "text": "of",
+  "start": 214.62,
+  "end": 214.82
+ },
+ {
+  "text": "fighting",
+  "start": 214.82,
+  "end": 215.2
+ },
+ {
+  "text": "from",
+  "start": 215.2,
+  "end": 215.46
+ },
+ {
+  "text": "someone",
+  "start": 215.46,
+  "end": 215.8
+ },
+ {
+  "text": "who's",
+  "start": 215.8,
+  "end": 216.08
+ },
+ {
+  "text": "still",
+  "start": 216.08,
+  "end": 216.26
+ },
+ {
+  "text": "living",
+  "start": 216.26,
+  "end": 216.56
+ },
+ {
+  "text": "it,",
+  "start": 216.56,
+  "end": 216.9
+ },
+ {
+  "text": "follow",
+  "start": 217.14,
+  "end": 217.34
+ },
+ {
+  "text": "me.",
+  "start": 217.34,
+  "end": 217.7
+ },
+ {
+  "text": "Because",
+  "start": 217.7,
+  "end": 218.32
+ },
+ {
+  "text": "it",
+  "start": 218.32,
+  "end": 218.5
+ },
+ {
+  "text": "all",
+  "start": 218.5,
+  "end": 218.68
+ },
+ {
+  "text": "started",
+  "start": 218.68,
+  "end": 219.06
+ },
+ {
+  "text": "with",
+  "start": 219.06,
+  "end": 219.54
+ },
+ {
+  "text": "my",
+  "start": 219.54,
+  "end": 219.68
+ },
+ {
+  "text": "first",
+  "start": 219.68,
+  "end": 220.06
+ },
+ {
+  "text": "fight",
+  "start": 220.06,
+  "end": 220.48
+ },
+ {
+  "text": "when",
+  "start": 220.48,
+  "end": 220.94
+ },
+ {
+  "text": "I",
+  "start": 220.94,
+  "end": 221.1
+ },
+ {
+  "text": "knocked",
+  "start": 221.1,
+  "end": 221.34
+ },
+ {
+  "text": "someone",
+  "start": 221.34,
+  "end": 221.7
+ },
+ {
+  "text": "out,",
+  "start": 221.7,
+  "end": 222.04
+ },
+ {
+  "text": "and",
+  "start": 222.24,
+  "end": 222.3
+ },
+ {
+  "text": "there",
+  "start": 222.3,
+  "end": 222.42
+ },
+ {
+  "text": "was",
+  "start": 222.42,
+  "end": 222.6
+ },
+ {
+  "text": "still",
+  "start": 222.6,
+  "end": 222.9
+ },
+ {
+  "text": "a",
+  "start": 222.9,
+  "end": 223.2
+ },
+ {
+  "text": "draw.",
+  "start": 223.2,
+  "end": 223.52
+ },
+ {
+  "text": "If",
+  "start": 224.5,
+  "end": 224.52
+ },
+ {
+  "text": "you",
+  "start": 224.52,
+  "end": 224.78
+ },
+ {
+  "text": "want",
+  "start": 224.78,
+  "end": 225.04
+ },
+ {
+  "text": "the",
+  "start": 225.04,
+  "end": 225.22
+ },
+ {
+  "text": "mental",
+  "start": 225.22,
+  "end": 225.54
+ },
+ {
+  "text": "sight",
+  "start": 225.54,
+  "end": 225.86
+ },
+ {
+  "text": "of",
+  "start": 225.86,
+  "end": 226.04
+ },
+ {
+  "text": "fighting",
+  "start": 226.04,
+  "end": 226.38
+ },
+ {
+  "text": "from",
+  "start": 226.38,
+  "end": 226.94
+ },
+ {
+  "text": "someone",
+  "start": 226.94,
+  "end": 227.28
+ },
+ {
+  "text": "who's",
+  "start": 227.28,
+  "end": 227.58
+ },
+ {
+  "text": "still",
+  "start": 227.58,
+  "end": 227.76
+ },
+ {
+  "text": "living",
+  "start": 227.76,
+  "end": 228.04
+ },
+ {
+  "text": "it,",
+  "start": 228.04,
+  "end": 228.68
+ },
+ {
+  "text": "follow",
+  "start": 228.96,
+  "end": 229.1
+ },
+ {
+  "text": "me.",
+  "start": 229.1,
+  "end": 229.5
+ },
+ {
+  "text": "Because",
+  "start": 229.84,
+  "end": 230.38
+ },
+ {
+  "text": "it",
+  "start": 230.38,
+  "end": 231.68
+ },
+ {
+  "text": "all",
+  "start": 231.68,
+  "end": 231.88
+ },
+ {
+  "text": "started",
+  "start": 231.88,
+  "end": 232.28
+ },
+ {
+  "text": "with",
+  "start": 232.28,
+  "end": 232.68
+ },
+ {
+  "text": "my",
+  "start": 232.68,
+  "end": 232.88
+ },
+ {
+  "text": "first",
+  "start": 232.88,
+  "end": 233.28
+ },
+ {
+  "text": "fight",
+  "start": 233.28,
+  "end": 233.74
+ },
+ {
+  "text": "when",
+  "start": 233.74,
+  "end": 234.68
+ },
+ {
+  "text": "I",
+  "start": 234.68,
+  "end": 234.84
+ },
+ {
+  "text": "knocked",
+  "start": 234.84,
+  "end": 235.1
+ },
+ {
+  "text": "the",
+  "start": 235.1,
+  "end": 235.34
+ },
+ {
+  "text": "guy",
+  "start": 235.34,
+  "end": 235.56
+ },
+ {
+  "text": "out,",
+  "start": 235.56,
+  "end": 235.94
+ },
+ {
+  "text": "and",
+  "start": 236.2,
+  "end": 236.24
+ },
+ {
+  "text": "there",
+  "start": 236.24,
+  "end": 236.38
+ },
+ {
+  "text": "was",
+  "start": 236.38,
+  "end": 236.54
+ },
+ {
+  "text": "still",
+  "start": 236.54,
+  "end": 236.92
+ },
+ {
+  "text": "a",
+  "start": 236.92,
+  "end": 237.24
+ },
+ {
+  "text": "draw.",
+  "start": 237.24,
+  "end": 237.66
+ },
+ {
+  "text": "If",
+  "start": 238.32,
+  "end": 238.54
+ },
+ {
+  "text": "you",
+  "start": 238.54,
+  "end": 238.84
+ },
+ {
+  "text": "want",
+  "start": 238.84,
+  "end": 239.08
+ },
+ {
+  "text": "the",
+  "start": 239.08,
+  "end": 239.28
+ },
+ {
+  "text": "mental",
+  "start": 239.28,
+  "end": 239.64
+ },
+ {
+  "text": "sight",
+  "start": 239.64,
+  "end": 240.0
+ },
+ {
+  "text": "of",
+  "start": 240.0,
+  "end": 240.22
+ },
+ {
+  "text": "fighting,",
+  "start": 240.22,
+  "end": 240.68
+ },
+ {
+  "text": "follow",
+  "start": 241.68,
+  "end": 242.1
+ },
+ {
+  "text": "me.",
+  "start": 242.1,
+  "end": 242.6
+ },
+ {
+  "text": "It",
+  "start": 242.6,
+  "end": 243.22
+ },
+ {
+  "text": "all",
+  "start": 243.22,
+  "end": 243.42
+ },
+ {
+  "text": "started",
+  "start": 243.42,
+  "end": 243.8
+ },
+ {
+  "text": "with",
+  "start": 243.8,
+  "end": 244.1
+ },
+ {
+  "text": "one",
+  "start": 244.1,
+  "end": 244.44
+ },
+ {
+  "text": "sentence,",
+  "start": 244.44,
+  "end": 245.16
+ },
+ {
+  "text": "someone",
+  "start": 245.58,
+  "end": 246.08
+ },
+ {
+  "text": "told",
+  "start": 246.08,
+  "end": 246.44
+ },
+ {
+  "text": "me",
+  "start": 246.44,
+  "end": 246.74
+ },
+ {
+  "text": "if",
+  "start": 246.74,
+  "end": 247.0
+ },
+ {
+  "text": "you",
+  "start": 247.0,
+  "end": 247.18
+ },
+ {
+  "text": "don't",
+  "start": 247.18,
+  "end": 247.78
+ },
+ {
+  "text": "knock",
+  "start": 247.78,
+  "end": 247.78
+ },
+ {
+  "text": "him",
+  "start": 247.78,
+  "end": 248.0
+ },
+ {
+  "text": "out,",
+  "start": 248.0,
+  "end": 248.36
+ },
+ {
+  "text": "you",
+  "start": 248.8,
+  "end": 248.96
+ },
+ {
+  "text": "lose.",
+  "start": 248.96,
+  "end": 249.56
+ },
+ {
+  "text": "If",
+  "start": 250.38,
+  "end": 250.58
+ },
+ {
+  "text": "you",
+  "start": 250.58,
+  "end": 250.78
+ },
+ {
+  "text": "want",
+  "start": 250.78,
+  "end": 250.98
+ },
+ {
+  "text": "the",
+  "start": 250.98,
+  "end": 251.14
+ },
+ {
+  "text": "mental",
+  "start": 251.14,
+  "end": 251.48
+ },
+ {
+  "text": "sight",
+  "start": 251.48,
+  "end": 251.78
+ },
+ {
+  "text": "of",
+  "start": 251.78,
+  "end": 251.96
+ },
+ {
+  "text": "fighting",
+  "start": 251.96,
+  "end": 252.3
+ },
+ {
+  "text": "from",
+  "start": 252.3,
+  "end": 252.56
+ },
+ {
+  "text": "someone",
+  "start": 252.56,
+  "end": 252.84
+ },
+ {
+  "text": "who's",
+  "start": 252.84,
+  "end": 253.1
+ },
+ {
+  "text": "still",
+  "start": 253.1,
+  "end": 253.28
+ },
+ {
+  "text": "living",
+  "start": 253.28,
+  "end": 253.58
+ },
+ {
+  "text": "it,",
+  "start": 253.58,
+  "end": 253.78
+ },
+ {
+  "text": "follow",
+  "start": 254.0,
+  "end": 254.18
+ },
+ {
+  "text": "me.",
+  "start": 254.18,
+  "end": 254.62
+ },
+ {
+  "text": "It",
+  "start": 255.08,
+  "end": 255.34
+ },
+ {
+  "text": "all",
+  "start": 255.34,
+  "end": 255.5
+ },
+ {
+  "text": "started",
+  "start": 255.5,
+  "end": 255.82
+ },
+ {
+  "text": "with",
+  "start": 255.82,
+  "end": 256.08
+ },
+ {
+  "text": "one",
+  "start": 256.08,
+  "end": 256.34
+ },
+ {
+  "text": "sentence,",
+  "start": 256.34,
+  "end": 256.94
+ },
+ {
+  "text": "someone",
+  "start": 257.34,
+  "end": 257.72
+ },
+ {
+  "text": "told",
+  "start": 257.72,
+  "end": 258.04
+ },
+ {
+  "text": "me",
+  "start": 258.04,
+  "end": 258.26
+ },
+ {
+  "text": "if",
+  "start": 258.26,
+  "end": 258.46
+ },
+ {
+  "text": "you",
+  "start": 258.46,
+  "end": 258.7
+ },
+ {
+  "text": "don't",
+  "start": 258.7,
+  "end": 259.06
+ },
+ {
+  "text": "knock",
+  "start": 259.06,
+  "end": 259.24
+ },
+ {
+  "text": "him",
+  "start": 259.24,
+  "end": 259.48
+ },
+ {
+  "text": "out,",
+  "start": 259.48,
+  "end": 259.76
+ },
+ {
+  "text": "you",
+  "start": 259.96,
+  "end": 260.16
+ },
+ {
+  "text": "lose.",
+  "start": 260.16,
+  "end": 260.68
+ },
+ {
+  "text": "If",
+  "start": 261.74,
+  "end": 262.3
+ },
+ {
+  "text": "you",
+  "start": 262.3,
+  "end": 262.54
+ },
+ {
+  "text": "want",
+  "start": 262.54,
+  "end": 262.76
+ },
+ {
+  "text": "the",
+  "start": 262.76,
+  "end": 262.94
+ },
+ {
+  "text": "mental",
+  "start": 262.94,
+  "end": 263.28
+ },
+ {
+  "text": "sight",
+  "start": 263.28,
+  "end": 263.64
+ },
+ {
+  "text": "of",
+  "start": 263.64,
+  "end": 263.84
+ },
+ {
+  "text": "fighting",
+  "start": 263.84,
+  "end": 264.22
+ },
+ {
+  "text": "from",
+  "start": 264.22,
+  "end": 264.56
+ },
+ {
+  "text": "someone",
+  "start": 264.56,
+  "end": 264.9
+ },
+ {
+  "text": "who's",
+  "start": 264.9,
+  "end": 265.16
+ },
+ {
+  "text": "still",
+  "start": 265.16,
+  "end": 265.36
+ },
+ {
+  "text": "living",
+  "start": 265.36,
+  "end": 265.62
+ },
+ {
+  "text": "it,",
+  "start": 265.62,
+  "end": 265.98
+ },
+ {
+  "text": "follow",
+  "start": 266.26,
+  "end": 266.5
+ },
+ {
+  "text": "me.",
+  "start": 266.5,
+  "end": 266.9
+ },
+ {
+  "text": "It",
+  "start": 266.9,
+  "end": 267.46
+ },
+ {
+  "text": "all",
+  "start": 267.46,
+  "end": 267.7
+ },
+ {
+  "text": "started",
+  "start": 267.7,
+  "end": 268.1
+ },
+ {
+  "text": "with",
+  "start": 268.1,
+  "end": 268.34
+ },
+ {
+  "text": "one",
+  "start": 268.34,
+  "end": 268.62
+ },
+ {
+  "text": "sentence.",
+  "start": 268.62,
+  "end": 269.32
+ },
+ {
+  "text": "Someone",
+  "start": 270.08,
+  "end": 270.08
+ },
+ {
+  "text": "told",
+  "start": 270.08,
+  "end": 270.38
+ },
+ {
+  "text": "me,",
+  "start": 270.38,
+  "end": 270.74
+ },
+ {
+  "text": "if",
+  "start": 271.1,
+  "end": 271.1
+ },
+ {
+  "text": "you",
+  "start": 271.1,
+  "end": 271.28
+ },
+ {
+  "text": "don't",
+  "start": 271.28,
+  "end": 271.62
+ },
+ {
+  "text": "knock",
+  "start": 271.62,
+  "end": 271.8
+ },
+ {
+  "text": "him",
+  "start": 271.8,
+  "end": 272.02
+ },
+ {
+  "text": "out,",
+  "start": 272.02,
+  "end": 272.38
+ },
+ {
+  "text": "you're",
+  "start": 272.7,
+  "end": 272.92
+ },
+ {
+  "text": "gonna",
+  "start": 272.92,
+  "end": 273.1
+ },
+ {
+  "text": "lose.",
+  "start": 273.1,
+  "end": 273.46
+ },
+ {
+  "text": "If",
+  "start": 274.62,
+  "end": 274.62
+ },
+ {
+  "text": "you",
+  "start": 274.62,
+  "end": 274.84
+ },
+ {
+  "text": "want",
+  "start": 274.84,
+  "end": 275.08
+ },
+ {
+  "text": "the",
+  "start": 275.08,
+  "end": 275.28
+ },
+ {
+  "text": "mental",
+  "start": 275.28,
+  "end": 275.64
+ },
+ {
+  "text": "side",
+  "start": 275.64,
+  "end": 275.98
+ },
+ {
+  "text": "of",
+  "start": 275.98,
+  "end": 276.18
+ },
+ {
+  "text": "fighting",
+  "start": 276.18,
+  "end": 276.5
+ },
+ {
+  "text": "from",
+  "start": 276.5,
+  "end": 276.88
+ },
+ {
+  "text": "someone",
+  "start": 276.88,
+  "end": 277.2
+ },
+ {
+  "text": "who's",
+  "start": 277.2,
+  "end": 277.46
+ },
+ {
+  "text": "still",
+  "start": 277.46,
+  "end": 277.66
+ },
+ {
+  "text": "living",
+  "start": 277.66,
+  "end": 277.98
+ },
+ {
+  "text": "it,",
+  "start": 277.98,
+  "end": 278.16
+ },
+ {
+  "text": "follow",
+  "start": 278.34,
+  "end": 278.56
+ },
+ {
+  "text": "me.",
+  "start": 278.56,
+  "end": 279.02
+ },
+ {
+  "text": "Because",
+  "start": 279.64,
+  "end": 280.14
+ },
+ {
+  "text": "people",
+  "start": 280.14,
+  "end": 280.74
+ },
+ {
+  "text": "think",
+  "start": 280.74,
+  "end": 281.14
+ },
+ {
+  "text": "combat",
+  "start": 281.14,
+  "end": 281.56
+ },
+ {
+  "text": "sports",
+  "start": 281.56,
+  "end": 281.94
+ },
+ {
+  "text": "is",
+  "start": 281.94,
+  "end": 282.34
+ },
+ {
+  "text": "just",
+  "start": 282.34,
+  "end": 282.68
+ },
+ {
+  "text": "about",
+  "start": 282.68,
+  "end": 283.04
+ },
+ {
+  "text": "violence.",
+  "start": 283.04,
+  "end": 283.58
+ },
+ {
+  "text": "My",
+  "start": 284.12,
+  "end": 284.28
+ },
+ {
+  "text": "first",
+  "start": 284.28,
+  "end": 284.64
+ },
+ {
+  "text": "fight",
+  "start": 284.64,
+  "end": 284.98
+ },
+ {
+  "text": "is",
+  "start": 284.98,
+  "end": 285.22
+ },
+ {
+  "text": "how",
+  "start": 285.22,
+  "end": 285.46
+ },
+ {
+  "text": "I",
+  "start": 285.46,
+  "end": 285.74
+ },
+ {
+  "text": "know",
+  "start": 285.74,
+  "end": 285.98
+ },
+ {
+  "text": "that's",
+  "start": 285.98,
+  "end": 286.44
+ },
+ {
+  "text": "not",
+  "start": 286.44,
+  "end": 286.6
+ },
+ {
+  "text": "true.",
+  "start": 286.6,
+  "end": 286.94
+ },
+ {
+  "text": "If",
+  "start": 287.52,
+  "end": 287.62
+ },
+ {
+  "text": "you",
+  "start": 287.62,
+  "end": 287.86
+ },
+ {
+  "text": "want",
+  "start": 287.86,
+  "end": 288.08
+ },
+ {
+  "text": "the",
+  "start": 288.08,
+  "end": 288.28
+ },
+ {
+  "text": "mental",
+  "start": 288.28,
+  "end": 288.62
+ },
+ {
+  "text": "side",
+  "start": 288.62,
+  "end": 288.98
+ },
+ {
+  "text": "of",
+  "start": 288.98,
+  "end": 289.16
+ },
+ {
+  "text": "fighting",
+  "start": 289.16,
+  "end": 289.54
+ },
+ {
+  "text": "from",
+  "start": 289.54,
+  "end": 289.82
+ },
+ {
+  "text": "someone",
+  "start": 289.82,
+  "end": 290.18
+ },
+ {
+  "text": "who's",
+  "start": 290.18,
+  "end": 290.46
+ },
+ {
+  "text": "still",
+  "start": 290.46,
+  "end": 290.68
+ },
+ {
+  "text": "living",
+  "start": 290.68,
+  "end": 290.94
+ },
+ {
+  "text": "it,",
+  "start": 290.94,
+  "end": 291.24
+ },
+ {
+  "text": "follow",
+  "start": 291.56,
+  "end": 291.7
+ },
+ {
+  "text": "me.",
+  "start": 291.7,
+  "end": 292.14
+ },
+ {
+  "text": "Because",
+  "start": 292.7,
+  "end": 293.2
+ },
+ {
+  "text": "people",
+  "start": 293.2,
+  "end": 294.4
+ },
+ {
+  "text": "think",
+  "start": 294.4,
+  "end": 294.8
+ },
+ {
+  "text": "combat",
+  "start": 294.8,
+  "end": 295.24
+ },
+ {
+  "text": "sports",
+  "start": 295.24,
+  "end": 295.6
+ },
+ {
+  "text": "are",
+  "start": 295.6,
+  "end": 296.08
+ },
+ {
+  "text": "just",
+  "start": 296.08,
+  "end": 296.46
+ },
+ {
+  "text": "about",
+  "start": 296.46,
+  "end": 296.82
+ },
+ {
+  "text": "violence.",
+  "start": 296.82,
+  "end": 297.42
+ },
+ {
+  "text": "My",
+  "start": 298.34,
+  "end": 298.48
+ },
+ {
+  "text": "first",
+  "start": 298.48,
+  "end": 298.82
+ },
+ {
+  "text": "fight",
+  "start": 298.82,
+  "end": 299.18
+ },
+ {
+  "text": "is",
+  "start": 299.18,
+  "end": 299.5
+ },
+ {
+  "text": "how",
+  "start": 299.5,
+  "end": 299.7
+ },
+ {
+  "text": "I",
+  "start": 299.7,
+  "end": 299.86
+ },
+ {
+  "text": "know",
+  "start": 299.86,
+  "end": 300.08
+ },
+ {
+  "text": "that's",
+  "start": 300.08,
+  "end": 300.54
+ },
+ {
+  "text": "not",
+  "start": 300.54,
+  "end": 300.74
+ },
+ {
+  "text": "true.",
+  "start": 300.74,
+  "end": 301.14
+ },
+ {
+  "text": "If",
+  "start": 301.82,
+  "end": 302.16
+ },
+ {
+  "text": "you",
+  "start": 302.16,
+  "end": 302.36
+ },
+ {
+  "text": "want",
+  "start": 302.36,
+  "end": 302.56
+ },
+ {
+  "text": "the",
+  "start": 302.56,
+  "end": 302.72
+ },
+ {
+  "text": "mental",
+  "start": 302.72,
+  "end": 303.04
+ },
+ {
+  "text": "side",
+  "start": 303.04,
+  "end": 303.4
+ },
+ {
+  "text": "of",
+  "start": 303.4,
+  "end": 303.58
+ },
+ {
+  "text": "fighting",
+  "start": 303.58,
+  "end": 303.92
+ },
+ {
+  "text": "from",
+  "start": 303.92,
+  "end": 304.7
+ },
+ {
+  "text": "someone",
+  "start": 304.7,
+  "end": 305.04
+ },
+ {
+  "text": "who's",
+  "start": 305.04,
+  "end": 305.3
+ },
+ {
+  "text": "still",
+  "start": 305.3,
+  "end": 305.6
+ },
+ {
+  "text": "living",
+  "start": 305.6,
+  "end": 305.88
+ },
+ {
+  "text": "it,",
+  "start": 305.88,
+  "end": 306.36
+ },
+ {
+  "text": "follow",
+  "start": 306.72,
+  "end": 306.98
+ },
+ {
+  "text": "me.",
+  "start": 306.98,
+  "end": 307.34
+ },
+ {
+  "text": "Because",
+  "start": 308.02,
+  "end": 308.16
+ },
+ {
+  "text": "people",
+  "start": 308.16,
+  "end": 308.94
+ },
+ {
+  "text": "think",
+  "start": 308.94,
+  "end": 309.26
+ },
+ {
+  "text": "combat",
+  "start": 309.26,
+  "end": 309.6
+ },
+ {
+  "text": "sports",
+  "start": 309.6,
+  "end": 309.94
+ },
+ {
+  "text": "are",
+  "start": 309.94,
+  "end": 310.2
+ },
+ {
+  "text": "just",
+  "start": 310.2,
+  "end": 310.54
+ },
+ {
+  "text": "about",
+  "start": 310.54,
+  "end": 310.88
+ },
+ {
+  "text": "violence.",
+  "start": 310.88,
+  "end": 311.42
+ },
+ {
+  "text": "My",
+  "start": 311.88,
+  "end": 312.08
+ },
+ {
+  "text": "first",
+  "start": 312.08,
+  "end": 312.4
+ },
+ {
+  "text": "fight",
+  "start": 312.4,
+  "end": 312.72
+ },
+ {
+  "text": "is",
+  "start": 312.72,
+  "end": 313.0
+ },
+ {
+  "text": "how",
+  "start": 313.0,
+  "end": 313.18
+ },
+ {
+  "text": "I",
+  "start": 313.18,
+  "end": 313.3
+ },
+ {
+  "text": "know",
+  "start": 313.3,
+  "end": 313.52
+ },
+ {
+  "text": "that's",
+  "start": 313.52,
+  "end": 314.18
+ },
+ {
+  "text": "not",
+  "start": 314.18,
+  "end": 314.3
+ },
+ {
+  "text": "true.",
+  "start": 314.3,
+  "end": 314.66
+ }
+]
