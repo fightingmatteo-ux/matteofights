@@ -92,7 +92,7 @@ Cover: copy `worst-decision/thumb/` (HyperFrames snapshot at 0.5 s). Keep text i
 - Upload the 3 renders + covers to Drive output. Laptop: `rclone copyto <file> gdrive:<name> --drive-root-folder-id
   1bHwCLpkK2w9e9BN22dXWgQnn8_CLYpR2`. Cloud: `bash tools/video/media.sh push <file>` then run the **Upload to Drive**
   Action (`gh workflow run drive-upload.yml -f asset=<file>`; secret `RCLONE_CONF`).
-- Matteo posts all 3 as **Instagram trial reels** himself, the SAME day, back to back (~15 min). Trial reels
+- Matteo posts all 3 as **Instagram trial reels** himself, the SAME day, 2–3 h apart (spam-safe, same-day conditions). Trial reels
   only reach non-followers, so spacing protects nobody and adds day-to-day noise. Auto-share OFF.
   (The Windsor `instagram` connector can't post trial reels.)
 - Log every variant in the reel's `REEL.md` + `production/reels/LEDGER.md`.
