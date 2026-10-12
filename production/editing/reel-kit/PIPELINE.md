@@ -70,6 +70,8 @@ House layout 1080x1920: top-band cards 170–790 · subtitles centred ~y1440 · 
   each word clears before the next lands. No letter-spacing animation (lint rejects it).
 - **Voice:** first person, a real detail. Never "they vs you" lecturing (rejected as cringe).
 - **Colour:** neutral; check skin vs source after any re-encode.
+- **Voice:** never denoise/compress phone audio (afftdn = watery, robotic voice). takes.json `audio_src` = the
+  original recording; assemble.py only low-cuts, time-stretches with Rubber Band, and sets -14 LUFS once.
 - Every entrance sets its from-state at t=0; never tween the same property from two timelines.
 - Loop: film close + bridge + hook as ONE continuous take per variant; start the video at the hook inside
   that take and end it just before the hook. Replay = one unbroken sentence, no visual jump.

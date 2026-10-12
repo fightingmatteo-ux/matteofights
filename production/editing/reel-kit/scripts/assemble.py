@@ -14,7 +14,7 @@ work/takes.json:
   }
 
 Usage:  python -P assemble.py work/takes.json [A B C]
-Writes per variant: assets/aroll_<V>.mp4 and work/edl_<V>.json
+Writes per variant: assets/media/aroll_<V>.mp4 and work/edl_<V>.json
   {"variant", "duration", "segments": [{i,name,start,end}], "words": [{w,s,e,seg}]}  (output seconds)
 
 Rules baked in (learned on worst-decision, 2026-10-12):
@@ -46,8 +46,11 @@ def build(cfg, variant):
         d = b - a
         # one input per take with fast seek: decoding only the take, not the whole clip
         inputs += ["-ss", f"{a:.3f}", "-t", f"{d:.3f}", "-i", cfg["src"]]
-        fc.append(f"[{i}:v]setpts=PTS-STARTPTS[v{i}];"
-                  f"[{i}:a]asetpts=PTS-STARTPTS,afade=t=in:d=0.012,"
+        if cfg.get("audio_src"):  # voice from the untouched original recording (same timeline)
+            inputs += ["-ss", f"{a:.3f}", "-t", f"{d:.3f}", "-i", cfg["audio_src"]]
+        vi, ai = (2 * i, 2 * i + 1) if cfg.get("audio_src") else (i, i)
+        fc.append(f"[{vi}:v]setpts=PTS-STARTPTS[v{i}];"
+                  f"[{ai}:a]asetpts=PTS-STARTPTS,afade=t=in:d=0.012,"
                   f"afade=t=out:st={d - 0.015:.3f}:d=0.015[a{i}];")
         toks = []
         for w in words:
@@ -67,13 +70,16 @@ def build(cfg, variant):
         t += d
     n = len(order)
     fc.append("".join(f"[v{i}][a{i}]" for i in range(n)) + f"concat=n={n}:v=1:a=1[vc][ac];")
-    fc.append(f"[vc]setpts=PTS/{speed},fps=30,format=yuv420p[vo];[ac]atempo={speed},loudnorm=I=-14:TP=-1.5:LRA=9[ao]")
-    Path("assets").mkdir(exist_ok=True)
+    # Rubber Band (formant-preserving) when ffmpeg has it: atempo smears speech into a phasey sound
+    rb = "rubberband" in subprocess.run(["ffmpeg", "-hide_banner", "-filters"], capture_output=True, text=True).stdout
+    tempo = "" if speed == 1 else (f"rubberband=tempo={speed}:formant=preserved:pitchq=quality," if rb else f"atempo={speed},")
+    fc.append(f"[vc]setpts=PTS/{speed},fps=30,format=yuv420p[vo];[ac]{tempo}highpass=f=70,loudnorm=I=-14:TP=-1.5:LRA=11[ao]")
+    Path("assets/media").mkdir(parents=True, exist_ok=True)
     subprocess.run(["ffmpeg", "-loglevel", "error", "-y", *inputs, "-filter_complex", "".join(fc),
                     "-map", "[vo]", "-map", "[ao]", "-c:v", "libx264", "-crf", "17", "-preset", "medium",
                     "-pix_fmt", "yuv420p", "-color_range", "tv", "-colorspace", "bt709", "-color_primaries", "bt709",
                     "-color_trc", "bt709", "-c:a", "aac", "-b:a", "192k", "-ar", "48000",
-                    f"assets/aroll_{variant}.mp4"], check=True)
+                    f"assets/media/aroll_{variant}.mp4"], check=True)
     edl = {"variant": variant, "duration": round(t / speed, 3), "segments": segs, "words": out_words}
     json.dump(edl, open(f"work/edl_{variant}.json", "w", encoding="utf-8"), indent=1)
     print(f"{variant}: {edl['duration']:.1f}s")

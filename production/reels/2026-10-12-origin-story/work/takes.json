@@ -3,26 +3,106 @@
   "words": "work/words.json",
   "speed": 1.06,
   "takes": {
-    "hookA":    [232.62, 238.10],
-    "closeA":   [224.40, 232.62],
-    "hookB":    [269.90, 273.90],
-    "closeB":   [261.60, 269.90],
-    "hookC":    [280.10, 287.40],
-    "closeC":   [274.50, 280.10],
-    "setup1":   [27.95, 32.40],
-    "setup2":   [35.72, 42.85],
-    "setup2B":  [35.72, 38.35],
-    "ko1":      [77.60, 81.93],
-    "ko2":      [83.66, 92.15],
-    "draw":     [108.70, 112.30],
-    "lesson":   [144.80, 158.95],
-    "lessonC":  [148.98, 158.95],
-    "montage":  [173.15, 180.10]
+    "hookA": [
+      232.62,
+      238.1
+    ],
+    "closeA": [
+      224.4,
+      232.62
+    ],
+    "hookB": [
+      269.9,
+      273.9
+    ],
+    "closeB": [
+      261.6,
+      269.9
+    ],
+    "hookC": [
+      280.1,
+      287.4
+    ],
+    "closeC": [
+      274.5,
+      280.1
+    ],
+    "setup1": [
+      27.95,
+      32.4
+    ],
+    "setup2": [
+      35.72,
+      42.85
+    ],
+    "setup2B": [
+      35.72,
+      38.35
+    ],
+    "ko1": [
+      77.6,
+      81.93
+    ],
+    "ko2": [
+      83.66,
+      92.15
+    ],
+    "draw": [
+      108.7,
+      112.3
+    ],
+    "lesson": [
+      144.8,
+      158.95
+    ],
+    "lessonC": [
+      148.98,
+      158.95
+    ],
+    "montage": [
+      173.15,
+      180.1
+    ]
   },
   "variants": {
-    "A": ["hookA", "setup1", "setup2", "ko1", "ko2", "draw", "lesson", "montage", "closeA"],
-    "B": ["hookB", "setup1", "setup2B", "ko1", "ko2", "draw", "lesson", "montage", "closeB"],
-    "C": ["hookC", "setup1", "setup2", "ko1", "ko2", "draw", "lessonC", "montage", "closeC"]
+    "A": [
+      "hookA",
+      "setup1",
+      "setup2",
+      "ko1",
+      "ko2",
+      "draw",
+      "lesson",
+      "montage",
+      "closeA"
+    ],
+    "B": [
+      "hookB",
+      "setup1",
+      "setup2B",
+      "ko1",
+      "ko2",
+      "draw",
+      "lesson",
+      "montage",
+      "closeB"
+    ],
+    "C": [
+      "hookC",
+      "setup1",
+      "setup2",
+      "ko1",
+      "ko2",
+      "draw",
+      "lessonC",
+      "montage",
+      "closeC"
+    ]
   },
-  "fix": {"SIGHT": "SIDE", "CLENCHING": "CLINCHING", "FUCKING": "F*CKING"}
+  "fix": {
+    "SIGHT": "SIDE",
+    "CLENCHING": "CLINCHING",
+    "FUCKING": "F*CKING"
+  },
+  "audio_src": "../../../media/2026-10-12-origin-story/raw.mp4"
 }

@@ -3,6 +3,8 @@
 # usage: prep_footage.sh <raw clip> <out.mp4>
 # Auto-detects iPhone HLG/PQ HDR (tone-maps to SDR bt709) and full-range "yuvj" footage (maps to tv range;
 # otherwise the browser renderer reads it wrong and skin goes orange).
+# Audio: untouched apart from a 70 Hz low-cut. NO denoise/compressor: on phone audio afftdn sounds
+# watery/robotic (Matteo heard it immediately). Loudness is set once, in assemble.py.
 # Grade: neutral by default (Matteo prefers the original colour). GRADE=house for the old warm/contrast look.
 set -euo pipefail
 IN="$1"; OUT="$2"
@@ -20,6 +22,6 @@ ffmpeg -v error -y -i "$IN" -map 0:v:0 -map 0:a:0 \
   -vf "${TM}${G}scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,fps=30,format=yuv420p" \
   -color_primaries bt709 -color_trc bt709 -colorspace bt709 -color_range tv \
   -c:v libx264 -preset slow -crf 16 -g 15 \
-  -af "highpass=f=80,afftdn=nf=-30,acompressor=threshold=-20dB:ratio=3:attack=5:release=80,loudnorm=I=-14:TP=-1.5:LRA=9" \
+  -af "highpass=f=70" \
   -ar 48000 -c:a aac -b:a 192k -movflags +faststart "$OUT"
 echo "prepped -> $OUT (trc=$TRC range=$RANGE grade=${GRADE:-neutral})"
