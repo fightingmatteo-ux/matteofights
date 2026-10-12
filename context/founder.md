@@ -33,6 +33,8 @@ always wanted."_ It's rare and it's real. Lead with it.
 - **What kept him in it:** "I can't give up."
 - **His core belief about fighting:** "Fighting isn't just about violence. You need to think a lot. It's
   like chess, but higher pressure because you might get punched." (Anchor for the mindset pillar.)
+  Sharper version (his words, 2026-10-12): **"People think combat sports is just violence. In reality it's
+  about balance, technique and flow."** Misconception-flip angle: use for hooks and as a recurring theme.
 - **Where he's trained (credibility, 5 countries):** Impact MMA, Zurich (Switzerland) · Essaouira
   (Morocco) · São Paulo (Brazil) · Koh Samui (Thailand), mostly, many gyms and coaches · Audace Box,
   Rome, near the Colosseum (Italy).

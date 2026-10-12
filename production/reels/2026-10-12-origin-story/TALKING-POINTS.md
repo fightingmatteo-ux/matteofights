@@ -6,7 +6,7 @@ pause a beat between takes. Only the hooks are word-for-word. Target 35–45 s.
 **Hook (verbatim, film all three):**
 - A: "My first fight, I knocked the guy out. It was still a draw."
 - B: "Before my first fight, someone told me: if you don't knock him out, you lose."
-- C: "His sixth fight. My first. And the ref knew him."
+- C: "People think combat sports is just violence. My first fight is why I know it isn't."
 
 **1. The setup:** you were 16, first Muay Thai fight. His sixth, a regular there, the ref knew him.
 Someone told you: if you don't knock him out, you lose.
@@ -16,8 +16,9 @@ _(Say it honestly: it was illegal. Owning it is what makes people trust the rest
 
 **3. The payoff:** the result? A draw. Pause after it, let it land.
 
-**4. The lesson (your belief):** fighting isn't just violence. It's chess, with more pressure because
-you might get punched. You can't control the ref, only how you think in there.
+**4. The lesson (your belief):** people think combat sports is just violence. It's balance, technique
+and flow. Chess, with more pressure because you might get punched. You can't control the ref, only how
+you think in there.
 
 **5. Where that mindset was built (fast, one breath):** Zurich, Essaouira, São Paulo, Koh Samui, Rome.
 The Swiss-Brazilian kid who grew up training Muay Thai with Brazilians in Thailand.

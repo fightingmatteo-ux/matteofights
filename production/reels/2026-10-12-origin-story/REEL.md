@@ -18,7 +18,7 @@ Talking points: `TALKING-POINTS.md`. Supersedes the injury-led draft in
 |---|---|---|---|
 | A | My first fight, I knocked the guy out. It was still a draw. | KNOCKED HIM OUT. STILL A DRAW. | ring photo |
 | B | Before my first fight, someone told me: if you don't knock him out, you lose. | "KNOCK HIM OUT OR YOU LOSE" | ring photo |
-| C | His sixth fight. My first. And the ref knew him. | HIS 6TH FIGHT. MY 1ST. | ring photo |
+| C | People think combat sports is just violence. My first fight is why I know it isn't. | IT'S NOT JUST VIOLENCE | ring photo |
 
 ## Footage plan (stock until the b-roll bank is shot)
 | Beat | Own footage (Drive) | Stock |
