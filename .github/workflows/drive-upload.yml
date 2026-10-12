@@ -1,0 +1,50 @@
+# Push a finished render from the "media" release into Google Drive (Talking Head Reel Production System/output).
+# Cloud sessions can't reach Drive; GitHub Actions can. Flow from the cloud:
+#   bash tools/video/media.sh push renders/<file>.mp4   ->   run this workflow with that file name.
+# Needs repo secret RCLONE_CONF: the [gdrive] section of a working rclone.conf (set 2026-10-13).
+name: Upload to Drive
+
+on:
+  workflow_dispatch:
+    inputs:
+      asset:
+        description: File name on the media release, e.g. origin-A.mp4
+        required: true
+      as:
+        description: Name in Drive (optional, defaults to the asset name)
+        required: false
+      folder:
+        description: Drive folder id (default = output)
+        required: false
+        default: 1bHwCLpkK2w9e9BN22dXWgQnn8_CLYpR2
+
+permissions:
+  contents: read
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      ASSET: ${{ inputs.asset }}
+      AS: ${{ inputs.as }}
+      FOLDER: ${{ inputs.folder }}
+    steps:
+      - name: Install rclone
+        run: curl -fsSL https://rclone.org/install.sh | sudo bash > /dev/null
+
+      - name: Get the file from the media release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          case "$ASSET" in *[!a-zA-Z0-9._-]*|"") echo "asset must be a simple file name"; exit 1;; esac
+          gh release download media -R "$GITHUB_REPOSITORY" -p "$ASSET" -D dl
+
+      - name: Upload to Drive
+        env:
+          RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
+        run: |
+          mkdir -p ~/.config/rclone
+          printf '%s\n' "$RCLONE_CONF" > ~/.config/rclone/rclone.conf
+          rclone copyto "dl/$ASSET" "gdrive:${AS:-$ASSET}" --drive-root-folder-id "$FOLDER"
+          rclone ls gdrive: --drive-root-folder-id "$FOLDER" | grep -F "${AS:-$ASSET}"

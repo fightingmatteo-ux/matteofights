@@ -89,7 +89,9 @@ Cover: copy `worst-decision/thumb/` (HyperFrames snapshot at 0.5 s). Keep text i
 (y 285–1635). Real photos beat stills from the talking head.
 
 ## 7. Deliver + trial-test
-- Upload the 3 renders + covers to Drive output (`drive.sh put`, or drag-and-drop if rclone isn't authed).
+- Upload the 3 renders + covers to Drive output. Laptop: `rclone copyto <file> gdrive:<name> --drive-root-folder-id
+  1bHwCLpkK2w9e9BN22dXWgQnn8_CLYpR2`. Cloud: `bash tools/video/media.sh push <file>` then run the **Upload to Drive**
+  Action (`gh workflow run drive-upload.yml -f asset=<file>`; secret `RCLONE_CONF`).
 - Matteo posts all 3 as **Instagram trial reels** himself, the SAME day, back to back (~15 min). Trial reels
   only reach non-followers, so spacing protects nobody and adds day-to-day noise. Auto-share OFF.
   (The Windsor `instagram` connector can't post trial reels.)
