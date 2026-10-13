@@ -1,0 +1,25 @@
+language: en
+[   0.0-   3.4] Most people don't realize that the insane AI motion graphics videos all over your feet
+[   3.4-   4.3] are not just one prompt.
+[   4.5-   7.3] It's rather a studio that you set up once and started to start paying $2,000 to $3,000
+[   7.3-   8.0] for these videos.
+[   8.2-   9.2] Here's exactly how you build it.
+[   9.3-  11.3] Start by building the headless render engine loop system.
+[  11.5-  13.2] You have to understand that Claude does not make a video.
+[  13.3-  14.9] It writes code that paints every single frame.
+[  15.0-  18.9] Install Node, ffmpeg, and playwright with Claude Opus 5.5 set at an extra high.
+[  19.0-  22.1] The playwright browser captures every frame in Chrome and that ffmpeg stitches them
+[  22.1-  23.7] together to make the final MP4.
+[  23.8-  26.9] Then you need to give it a reference in real assets because on its own, Claude
+[  26.9-  30.7] will default to all cap-centered text on a gradient which really looks like AI slob.
+[  30.7-  32.7] Make sure to enforce real spring physics in audio.
+[  33.0-  36.8] Ban basic CSS so Claude has to actually use closed form springs so it actually makes the
+[  36.8-  37.4] UI look good.
+[  37.6-  40.1] Tell it to synthesize the sound and code and lock every cut to the beat.
+[  40.1-  41.2] This next part is the real secret.
+[  41.3-  43.3] You may Claude watch his own frames and critique them.
+[  43.4-  46.8] Tell it to hunt down dent frames and re-render them so every frame grades it at 8 out of
+[  46.8-  47.0] 10.
+[  47.1-  49.6] I created the Outstep as a guide to build this out for your own business.
+[  49.8-  52.2] If you want it, just like the video and comment motion and I'll send it to you.
+[  52.3-  54.5] Follow firm ways to make money and run your business with tech and AI.
