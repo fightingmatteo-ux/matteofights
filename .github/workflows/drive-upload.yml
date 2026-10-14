@@ -3,7 +3,7 @@
 #   bash tools/video/media.sh push renders/<file>.mp4   ->   run this workflow with that file name.
 # Cloud sessions can't write release assets (binary uploads are blocked), so the alternative is a temp branch:
 #   commit the render under renders/ on a throwaway branch, run this workflow on that branch with path=renders/<file>,
-#   then delete the branch.
+#   the workflow deletes that renders/* branch itself once the upload is verified.
 # Needs repo secret RCLONE_CONF: the [gdrive] section of a working rclone.conf (set 2026-10-13).
 name: Upload to Drive
 
@@ -26,7 +26,7 @@ on:
         default: 1bHwCLpkK2w9e9BN22dXWgQnn8_CLYpR2
 
 permissions:
-  contents: read
+  contents: write   # to delete the throwaway renders/ branch afterwards
 
 jobs:
   upload:
@@ -67,3 +67,7 @@ jobs:
           printf '%s\n' "$RCLONE_CONF" > ~/.config/rclone/rclone.conf
           rclone copyto "dl/$ASSET" "gdrive:${AS:-$ASSET}" --drive-root-folder-id "$FOLDER"
           rclone ls gdrive: --drive-root-folder-id "$FOLDER" | grep -F "${AS:-$ASSET}"
+
+      - name: Delete the throwaway renders branch
+        if: inputs.path != '' && startsWith(github.ref_name, 'renders/')
+        run: git push origin --delete "$GITHUB_REF_NAME" || echo "branch already gone"
