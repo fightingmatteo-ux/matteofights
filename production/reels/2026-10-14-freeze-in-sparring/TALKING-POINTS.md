@@ -12,21 +12,21 @@ One sentence per beat. Full energy on the first word. Say each line 2–3 times;
 **Full read-through (variant A). Only the hook line is word for word.**
 1. HOOK: "If you freeze when you spar, it's not your technique. It's your head."
 2. TURN: "Three things fix it."
-3. ONE: "One. Expect to get hit. A punch isn't failure, it's information."
-4. TWO: "Two. Give yourself one job per round. Only the jab. Nothing else."
-5. THREE: "Three. When you get caught, step back, breathe out, and reset."
+3. ONE (shock): "One. You're scared of getting hit. Accept you will, before you walk in. Then it can't shock you."
+4. TWO (overload): "Two. You're thinking about everything. Pick one thing per round. Just the jab. Your head goes quiet."
+5. THREE (spiral): "Three. You got caught, and now you want it back. Don't. Step out, breathe out, reset."
 6. LOOP (same breath as THREE): "Because if you freeze when you spar, it's not your technique..." (replay starts)
 
 **Swap only the hook (and the loop line) for B and C:**
 - B: "Fighters and beginners think completely differently in sparring." → TURN: "Here's the difference."
-  Loop: "…and reset. Because fighters and beginners think completely differently in sparring."
+  Loop: "…breathe out, reset. Because fighters and beginners think completely differently in sparring."
 - C: "Beginners try to win every exchange. Fighters don't." → TURN: "Here's what they do instead."
-  Loop: "…and reset. Because beginners try to win every exchange. Fighters don't."
+  Loop: "…breathe out, reset. Because beginners try to win every exchange. Fighters don't."
 
 The loop works because THREE ends on "reset" and "Because…" turns the hook into the reason, so the replay
 reads as one sentence.
 
-**On screen (edit):** big red 1 / 2 / 3 cards with 2–3 word key phrase; b-roll under every point; a cut or
+**On screen (edit):** big red 1 / 2 / 3 cards labelled SHOCK / OVERLOAD / SPIRAL; b-roll under every point; a cut or
 punch-in every 1.5–2 s; "WHICH ONE DO YOU NEED? ⬇️" from point 3 to the end. No dead air after the hook.
 
 **Caption CTA:** "Comment the number you struggle with. Follow for the mental side of fighting."
@@ -40,12 +40,12 @@ slate in the transcript, so file names and order don't matter.
 | 1 | "Hook A" | If you freeze when you spar, it's not your technique. It's your head. Three things fix it. | 3 |
 | 2 | "Hook B" | Fighters and beginners think completely differently in sparring. Here's the difference. | 3 |
 | 3 | "Hook C" | Beginners try to win every exchange. Fighters don't. Here's what they do instead. | 3 |
-| 4 | "Point one" | One. Expect to get hit. A punch isn't failure, it's information. | 2–3 |
-| 5 | "Point two" | Two. One job per round. Only the jab. Nothing else. | 2–3 |
-| 6 | "Point three" | Three. When you get caught, step back, breathe out, and reset. | 2–3 |
-| 7 | "Loop A" | (point three) …and reset. Because if you freeze when you spar, it's not your technique. | 2 |
-| 8 | "Loop B" | (point three) …and reset. Because fighters and beginners think completely differently in sparring. | 2 |
-| 9 | "Loop C" | (point three) …and reset. Because beginners try to win every exchange. Fighters don't. | 2 |
+| 4 | "Point one" | One. You're scared of getting hit. Accept you will, before you walk in. Then it can't shock you. | 2–3 |
+| 5 | "Point two" | Two. You're thinking about everything. Pick one thing per round. Just the jab. Your head goes quiet. | 2–3 |
+| 6 | "Point three" | Three. You got caught, and now you want it back. Don't. Step out, breathe out, reset. | 2–3 |
+| 7 | "Loop A" | (point three) …breathe out, reset. Because if you freeze when you spar, it's not your technique. | 2 |
+| 8 | "Loop B" | (point three) …breathe out, reset. Because fighters and beginners think completely differently in sparring. | 2 |
+| 9 | "Loop C" | (point three) …breathe out, reset. Because beginners try to win every exchange. Fighters don't. | 2 |
 
 Same spot, light, framing and phone distance for every clip (the loop only works if they match).
 B-roll (optional, 3–5 s each, no talking): shadowboxing · pads · sparring · a deep exhale stepping back.
