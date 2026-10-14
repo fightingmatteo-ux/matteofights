@@ -12,7 +12,8 @@
       "not_before": "2026-10-14T16:10:00Z",
       "min_gap_hours": 3,
       "approved": true,
-      "status": "queued"
+      "status": "failed",
+      "error": "POST https://graph.instagram.com/v23.0/17841465098113052/media -> 400: {\"error\":{\"message\":\"The parameter video_url is required\",\"type\":\"IGApiException\",\"code\":100,\"fbtrace_id\":\"AXoRtpCOZerfosho0GTOkCw\"}}"
     },
     {
       "id": "freeze-B",
