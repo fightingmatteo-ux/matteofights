@@ -19,6 +19,13 @@ numbered list living in the caption. No talking, so it renders headless.
 6. **Track.** At 72 h, pull metrics (Buzzfy → Windsor) and log a row in `production/reels/LEDGER.md`.
    Winner metric: follows per 1k views, then shares. Winners get shared to the grid in the app.
 
+## Smoothness (render.py)
+- Hook + subhook sit on one black plate from frame 0 (it's the cover). They never animate.
+- Clip window chosen by motion: the busiest steady stretch, skipping the first/last second and camera jolts.
+- Seamless loop: the end crossfades into the window's own start (seam measured = a normal frame step).
+- Slow push-in to 4.5% and back, sub-pixel (perspective filter, cubic), zero speed at the loop point. No jitter.
+- READ CAPTION rises and fades in at about 4.6 s, fades out before the loop. Music fades in and out, -14 LUFS.
+
 ## Local
 ```bash
 python -P tools/listicle/render.py <clip> <hook id> out.mp4 --cover cover.jpg   # one reel

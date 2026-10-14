@@ -3,8 +3,14 @@
 
     python -P tools/listicle/render.py <clip> <hook id> <out.mp4> [--cover cover.jpg] [--seconds 8]
 
-The hook text comes from production/listicles/hooks.json. Colour handling matches
-production/editing/reel-kit/scripts/prep_footage.sh (iPhone HDR -> SDR, full range -> tv range, neutral grade).
+Smoothness rules (from Matteo's feedback on earlier reels):
+- Frame 0 already shows the hook (it is the thumbnail); the hook never animates.
+- The clip window is picked by motion: the busiest steady stretch, never the walk to/from the phone.
+- Seamless loop: the end crossfades into the window's own start, and the slow push-in returns to 1.0x
+  with zero velocity at both ends, so the replay has no jump.
+- Push-in uses the perspective filter (sub-pixel, cubic) - zoompan/scale zooms snap to whole pixels and jitter.
+- READ CAPTION eases in (rise + fade) and fades out before the loop point; no hard pops.
+Colour handling matches production/editing/reel-kit/scripts/prep_footage.sh (HDR -> SDR, full -> tv range, neutral).
 """
 import argparse, json, subprocess, tempfile
 from pathlib import Path
@@ -15,23 +21,53 @@ HOOKS = ROOT / "production" / "listicles" / "hooks.json"
 BEBAS = Path(__file__).parent / "fonts" / "BebasNeue-Regular.ttf"
 EMOJI = Path("/usr/share/fonts/truetype/noto/NotoColorEmoji.ttf")
 MUSIC = sorted((ROOT / "production/reels/five-signs-real-fighter/assets/music").glob("*.mp3"))
-W, H = 1080, 1920
+W, H, FPS = 1080, 1920, 30
 RED, WHITE, BLACK = (232, 17, 45), (255, 255, 255), (11, 11, 13)
 # Instagram's grid crop keeps y 285-1635; the UI covers the bottom ~320 px. Text stays inside both.
-TOP, TEXT_W = 300, 960
+TOP, TEXT_W, PAD = 300, 940, 40
+LOOP_X = 0.5      # seconds of end -> start crossfade
+ZOOM = 0.045      # peak push-in (4.5%), mid-reel
+
+
+# ---------------------------------------------------------------- probing + clip window
+def ff(args):
+    return subprocess.run(["ffprobe", "-v", "error", *args], capture_output=True, text=True).stdout.strip()
 
 
 def probe(clip, entry):
-    out = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries", entry,
-                          "-of", "csv=p=0", str(clip)], capture_output=True, text=True).stdout.strip()
+    out = ff(["-select_streams", "v:0", "-show_entries", entry, "-of", "csv=p=0", str(clip)])
     return out.split(",")[0] if out else ""
 
 
 def has_audio(clip):
-    return bool(subprocess.run(["ffprobe", "-v", "error", "-select_streams", "a", "-show_entries",
-                                "stream=index", "-of", "csv=p=0", str(clip)], capture_output=True, text=True).stdout.strip())
+    return bool(ff(["-select_streams", "a", "-show_entries", "stream=index", "-of", "csv=p=0", str(clip)]))
 
 
+def best_window(clip, dur, length):
+    """Start time of the most active, steady `length`-second stretch.
+
+    Motion = mean frame difference on a tiny greyscale copy at 5 fps. Whole-frame jolts (phone picked up,
+    someone walking past the lens) are clipped so they can't win; the first/last second is avoided."""
+    w, h, rate = 36, 64, 5
+    raw = subprocess.run(["ffmpeg", "-v", "error", "-i", str(clip), "-vf",
+                          f"fps={rate},scale={w}:{h},format=gray", "-f", "rawvideo", "-"],
+                         capture_output=True).stdout
+    n = w * h
+    frames = [raw[i:i + n] for i in range(0, len(raw) - n + 1, n)]
+    if len(frames) < 3 or dur <= length + 2:
+        return max(0.0, (dur - length) / 2)
+    diff = [sum(abs(a - b) for a, b in zip(f1, f2)) / n for f1, f2 in zip(frames, frames[1:])]
+    cap = sorted(diff)[int(len(diff) * 0.9)]           # 90th percentile = ceiling for "normal" action
+    diff = [min(d, cap) - (d - cap) * 2 if d > cap else d for d in diff]  # punish jolts above it
+    win = max(1, int(length * rate))
+    lo, hi = int(1.0 * rate), len(diff) - win - int(1.0 * rate)
+    if hi <= lo:
+        return max(0.0, (dur - length) / 2)
+    best = max(range(lo, hi + 1), key=lambda i: sum(diff[i:i + win]))
+    return best / rate
+
+
+# ---------------------------------------------------------------- text layers
 def wrap(draw, text, font, width):
     lines, cur = [], ""
     for w in text.split():
@@ -57,62 +93,73 @@ def fit(draw, text, max_lines, size, width=TEXT_W):
     return f, wrap(draw, text, f, w)
 
 
-def text_block(draw, lines, font, y, fill, plate=True, gap=0.02):
-    """Centred lines on a solid black plate (fight-poster look: no gradients, no shadows)."""
-    asc, desc = font.getmetrics()
-    lh = int((asc + desc) * (0.92 + gap))
-    if plate:
-        pw = max(draw.textlength(l, font=font) for l in lines) + 56
-        draw.rectangle([(W - pw) / 2, y - 18, (W + pw) / 2, y + lh * len(lines) + 6], fill=BLACK)
-    for i, l in enumerate(lines):
-        draw.text((W / 2, y + i * lh), l, font=font, fill=fill, anchor="ma")
-    return y + lh * len(lines)
+def cap_h(font):
+    b = font.getbbox("H")
+    return b[3] - b[1]
 
 
 def hook_layer(hook, subhook):
+    """One black plate: red hook, then the white subhook. Padding measured on cap height, so it's even."""
     img = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     d = ImageDraw.Draw(img)
-    f, lines = fit(d, hook.upper(), 4, 150)
-    y = text_block(d, lines, f, TOP, RED)
-    size = 64  # one sentence per line when it fits at a readable size, else balanced wrap
-    while size > 48 and max(d.textlength(s.upper(), font=ImageFont.truetype(str(BEBAS), size)) for s in subhook) > TEXT_W - 40:
+    fh, hl = fit(d, hook.upper(), 4, 156)
+    size = 62  # one sentence per line when it fits at a readable size, else balanced wrap
+    while size > 56 and max(d.textlength(s.upper(), font=ImageFont.truetype(str(BEBAS), size)) for s in subhook) > TEXT_W:
         size -= 2
-    sub = [l for s in subhook for l in fit(d, s.upper(), 2, size, TEXT_W - 40)[1]]
     fs = ImageFont.truetype(str(BEBAS), size)
-    text_block(d, sub, fs, y + 46, WHITE, gap=0.08)
+    sl = [l for s in subhook for l in fit(d, s.upper(), 2, size, TEXT_W)[1]]
+
+    hc, sc = cap_h(fh), cap_h(fs)
+    h_step, s_step = round(hc * 1.22), round(sc * 1.55)
+    rule_gap = round(hc * 0.55)
+    width = max([d.textlength(l, font=fh) for l in hl] + [d.textlength(l, font=fs) for l in sl]) + 2 * PAD
+    y = TOP + PAD + hc                          # first hook baseline
+    h_last = y + h_step * (len(hl) - 1)
+    rule_y = h_last + rule_gap
+    s_first = rule_y + rule_gap + sc
+    bottom = s_first + s_step * (len(sl) - 1) + PAD
+    x0, x1 = (W - width) / 2, (W + width) / 2
+    d.rectangle([x0, TOP, x1, bottom], fill=BLACK)
+    for i, l in enumerate(hl):
+        d.text((W / 2, y + i * h_step), l, font=fh, fill=RED, anchor="ms")
+    d.rectangle([W / 2 - 60, rule_y - 2, W / 2 + 60, rule_y + 2], fill=RED)   # thin divider
+    for i, l in enumerate(sl):
+        d.text((W / 2, s_first + i * s_step), l, font=fs, fill=WHITE, anchor="ms")
     return img
 
 
 def cta_layer():
     img = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     d = ImageDraw.Draw(img)
-    f = ImageFont.truetype(str(BEBAS), 96)
-    label, y = "READ CAPTION", 1360
-    tw = d.textlength(label, font=f)
-    em = 96
-    x0 = (W - tw - em - 20) / 2
-    d.rectangle([x0 - 30, y - 22, x0 + tw + em + 50, y + 112], fill=BLACK)
-    d.text((x0, y), label, font=f, fill=WHITE)
+    f = ImageFont.truetype(str(BEBAS), 88)
+    label, base = "READ CAPTION", 1440
+    tw, em, gap = d.textlength(label, font=f), 76, 18
+    c = cap_h(f)
+    x0 = (W - tw - gap - em) / 2
+    d.rectangle([x0 - 34, base - c - 30, x0 + tw + gap + em + 34, base + 30], fill=BLACK)
+    d.text((x0, base), label, font=f, fill=WHITE, anchor="ls")
+    ey = base - c + (c - em) // 2
     try:  # Noto Color Emoji only renders at its bitmap size (109); scale it down
         e = Image.new("RGBA", (136, 128), (0, 0, 0, 0))
         ImageDraw.Draw(e).text((0, 0), "⬇️", font=ImageFont.truetype(str(EMOJI), 109), embedded_color=True)
-        e = e.crop(e.getbbox()).resize((em, em))
-        img.alpha_composite(e, (int(x0 + tw + 20), y + 2))
+        e = e.crop(e.getbbox()).resize((em, em), Image.LANCZOS)
+        img.alpha_composite(e, (int(x0 + tw + gap), int(ey)))
     except OSError:  # no emoji font: plain red arrow
-        cx, top = x0 + tw + 20 + em / 2, y + 8
-        d.polygon([(cx - 40, top + 40), (cx + 40, top + 40), (cx, top + 90)], fill=RED)
-        d.rectangle([cx - 14, top, cx + 14, top + 42], fill=RED)
+        cx = x0 + tw + gap + em / 2
+        d.polygon([(cx - 34, ey + 36), (cx + 34, ey + 36), (cx, ey + em)], fill=RED)
+        d.rectangle([cx - 12, ey, cx + 12, ey + 38], fill=RED)
     return img
 
 
+# ---------------------------------------------------------------- render
 def render(clip, hook_id, out, seconds=8.0, cover=None, music_i=0):
     hooks = {h["id"]: h for h in json.loads(HOOKS.read_text(encoding="utf-8"))["hooks"]}
     h = hooks[hook_id]
-    dur = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0",
-                                str(clip)], capture_output=True, text=True).stdout.strip() or 0)
-    seconds = min(seconds, dur) if dur else seconds
-    start = max(0.0, (dur - seconds) * 0.4)  # skip the walk-to-the-bag start of most phone clips
-    cta_at = max(0.0, seconds - 3.2)
+    dur = float(ff(["-show_entries", "format=duration", "-of", "csv=p=0", str(clip)]) or 0)
+    S = min(seconds, max(1.0, dur - LOOP_X)) if dur else seconds
+    X = min(LOOP_X, S / 4)
+    start = best_window(clip, dur, S + X)
+    cta_in, cta_out = max(0.0, S - 3.4), S - 0.35
 
     trc, rng = probe(clip, "stream=color_transfer"), probe(clip, "stream=color_range")
     tm = ""
@@ -122,35 +169,52 @@ def render(clip, hook_id, out, seconds=8.0, cover=None, music_i=0):
     elif rng == "pc":
         tm = "scale=in_range=pc:out_range=tv,"
 
+    N = round(S * FPS)
+    a = f"{ZOOM / 2:.4f}*pow(sin(PI*in/{N})\\,2)"   # per-side margin, 0 at both ends -> loop-safe
+    zoom = (f"perspective=x0=W*{a}:y0=H*{a}:x1=W-W*{a}:y1=H*{a}:x2=W*{a}:y2=H-H*{a}:x3=W-W*{a}:y3=H-H*{a}"
+            f":interpolation=cubic:eval=frame")
+    rise = f"if(lt(t\\,{cta_in:.2f})\\,0\\,22*pow(max(0\\,1-(t-{cta_in:.2f})/0.45)\\,3))"
+
     with tempfile.TemporaryDirectory() as tmp:
         hp, cp = Path(tmp, "hook.png"), Path(tmp, "cta.png")
         hook_layer(h["hook"], h["subhook"]).save(hp)
         cta_layer().save(cp)
         music = MUSIC[music_i % len(MUSIC)] if MUSIC else None
-        cmd = ["ffmpeg", "-v", "error", "-y", "-ss", f"{start:.2f}", "-t", f"{seconds:.2f}", "-i", str(clip),
-               "-loop", "1", "-i", str(hp), "-loop", "1", "-i", str(cp)]
-        # Footage darkened a touch so red text reads on it ("red on dark training footage").
-        vf = (f"[0:v]{tm}scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},fps=30,"
-              f"eq=brightness=-0.06:saturation=0.9,format=yuv420p[bg];"
-              f"[bg][1:v]overlay=0:0:shortest=1[a];"
-              f"[a][2:v]overlay=0:0:shortest=1:enable='gte(t,{cta_at:.2f})',format=yuv420p[v]")
+        cmd = ["ffmpeg", "-v", "error", "-y", "-ss", f"{start:.3f}", "-t", f"{S + X:.3f}", "-i", str(clip),
+               "-loop", "1", "-framerate", str(FPS), "-i", str(hp),
+               "-loop", "1", "-framerate", str(FPS), "-i", str(cp)]
+        vf = (
+            # footage: colour-correct, fill 9:16, 30 fps, a touch darker so red text reads on it
+            f"[0:v]{tm}scale={W}:{H}:force_original_aspect_ratio=increase:flags=lanczos,crop={W}:{H},fps={FPS},"
+            f"eq=brightness=-0.06:saturation=0.92,format=yuv420p,setpts=PTS-STARTPTS,split[s1][s2];"
+            # seamless loop: body = [X, S+X); its tail crossfades into the window's first X seconds
+            f"[s1]trim=start={X:.3f}:duration={S:.3f},setpts=PTS-STARTPTS[body];"
+            f"[s2]trim=start=0:duration={X:.3f},setpts=PTS-STARTPTS[head];"
+            f"[body][head]xfade=transition=fade:duration={X:.3f}:offset={S - X:.3f},{zoom},format=yuv420p[bg];"
+            f"[1:v]format=rgba,trim=duration={S:.3f}[hook];"
+            f"[2:v]format=rgba,trim=duration={S:.3f},fade=t=in:st={cta_in:.2f}:d=0.4:alpha=1,"
+            f"fade=t=out:st={cta_out:.2f}:d=0.3:alpha=1[cta];"
+            f"[bg][hook]overlay=0:0[a];"
+            f"[a][cta]overlay=x=0:y='{rise}':eval=frame,format=yuv420p[v]")
+        af = None
         if music:
             cmd += ["-i", str(music)]
-            mi = 3
             if has_audio(clip):  # music on top, the gym sound (bag, breathing) underneath
-                af = f"[{mi}:a]volume=0.9[m];[0:a]volume=0.35[g];[m][g]amix=inputs=2:duration=first:normalize=0,"
+                af = (f"[3:a]volume=0.9[m];[0:a]atrim=start={X:.3f},asetpts=PTS-STARTPTS,volume=0.35[g];"
+                      f"[m][g]amix=inputs=2:duration=first:normalize=0,")
             else:
-                af = f"[{mi}:a]"
-            af += f"atrim=0:{seconds:.2f},afade=t=out:st={max(0, seconds - 0.6):.2f}:d=0.6,loudnorm=I=-14:TP=-1.5[au]"
-            fc, amap = vf + ";" + af, ["-map", "[au]"]
+                af = "[3:a]"
         elif has_audio(clip):
-            fc, amap = vf, ["-map", "0:a:0"]
-        else:
-            fc, amap = vf, []
-        cmd += ["-filter_complex", fc, "-map", "[v]", *amap, "-t", f"{seconds:.2f}",
+            af = f"[0:a]atrim=start={X:.3f},asetpts=PTS-STARTPTS,"
+        fc, amap = vf, []
+        if af:
+            fc += ";" + af + (f"atrim=0:{S:.3f},afade=t=in:d=0.08,afade=t=out:st={max(0, S - 0.5):.3f}:d=0.5,"
+                              f"loudnorm=I=-14:TP=-1.5,aresample=48000[au]")
+            amap = ["-map", "[au]"]
+        cmd += ["-filter_complex", fc, "-map", "[v]", *amap, "-t", f"{S:.3f}", "-r", str(FPS),
                 "-color_primaries", "bt709", "-color_trc", "bt709", "-colorspace", "bt709", "-color_range", "tv",
-                "-c:v", "libx264", "-preset", "slow", "-crf", "18", "-c:a", "aac", "-b:a", "192k", "-ar", "48000",
-                "-movflags", "+faststart", str(out)]
+                "-c:v", "libx264", "-preset", "slow", "-crf", "17", "-profile:v", "high", "-g", str(FPS),
+                "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", str(out)]
         subprocess.run(cmd, check=True)
     if cover:  # frame 0.5 s = the cover Instagram uses (thumb_offset 500)
         subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", "0.5", "-i", str(out), "-frames:v", "1",
