@@ -7,20 +7,24 @@ a NUMBER promised up front, identity (beginner vs fighter), a usable payoff. No 
 and comment asks live on screen + in the caption, and the video ends on the payoff and loops into the hook.
 One sentence per beat. Full energy on the first word. Say each line 2–3 times; I cut the fastest take.
 
-**Hook (verbatim, 3 angles for the A/B/C test):**
-- A (pain): "If you freeze in sparring, it's not your technique."
-- B (identity): "3 things fighters do in their head that beginners never do."
-- C (contrast): "Beginners try to win every exchange. Fighters don't."
+**Theme:** you freeze in sparring because of what's in your head, not your technique. 3 mental fixes.
 
-**Then (verbatim-ish, one breath each):**
-1. "One: expect to get hit. It's information, not failure."
-2. "Two: one job per round. Only the jab. Nothing else."
-3. "Three: get caught, step back, breathe out, reset."
+**Full read-through (variant A). Only the hook line is word for word.**
+1. HOOK: "If you freeze when you spar, it's not your technique. It's your head."
+2. TURN: "Three things fix it."
+3. ONE: "One. Expect to get hit. A punch isn't failure, it's information."
+4. TWO: "Two. Give yourself one job per round. Only the jab. Nothing else."
+5. THREE: "Three. When you get caught, step back, breathe out, and reset."
+6. LOOP (same breath as THREE): "Because if you freeze when you spar, it's not your technique..." (replay starts)
 
-**Loop takes (one continuous take each, don't stop at the dash):**
-- A: "…step back, breathe out, reset. — If you freeze in sparring, it's not your technique."
-- B: "…step back, breathe out, reset. — 3 things fighters do in their head that beginners never do."
-- C: "…step back, breathe out, reset. — Beginners try to win every exchange. Fighters don't."
+**Swap only the hook (and the loop line) for B and C:**
+- B: "Fighters and beginners think completely differently in sparring." → TURN: "Here's the difference."
+  Loop: "…and reset. Because fighters and beginners think completely differently in sparring."
+- C: "Beginners try to win every exchange. Fighters don't." → TURN: "Here's what they do instead."
+  Loop: "…and reset. Because beginners try to win every exchange. Fighters don't."
+
+The loop works because THREE ends on "reset" and "Because…" turns the hook into the reason, so the replay
+reads as one sentence.
 
 **On screen (edit):** big red 1 / 2 / 3 cards with 2–3 word key phrase; b-roll under every point; a cut or
 punch-in every 1.5–2 s; "WHICH ONE DO YOU NEED? ⬇️" from point 3 to the end. No dead air after the hook.
