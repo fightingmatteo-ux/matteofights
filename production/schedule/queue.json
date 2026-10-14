@@ -29,7 +29,10 @@
       "not_before": "2026-10-14T18:40:00Z",
       "min_gap_hours": 2.5,
       "approved": true,
-      "status": "queued"
+      "status": "posted",
+      "media_id": "18167111158483588",
+      "permalink": "https://www.instagram.com/reel/DefWU45CpKI/",
+      "posted_at": "2026-10-14T21:28:39Z"
     },
     {
       "id": "freeze-C",
