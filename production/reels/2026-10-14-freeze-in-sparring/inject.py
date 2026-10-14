@@ -21,6 +21,8 @@ def W(n, word, k=1):
     return hits[k - 1]["s"]
 
 
+TITLE_END = W("hook", "AND") if V == "A" else W("hook", "HERE'S")
+
 src = open("work/template.html", encoding="utf-8").read()
 src = re.sub(r"<!--@only ([A-Z,]+)-->(.*?)<!--@end-->",
              lambda m: m.group(2) if V in m.group(1).split(",") else "", src, flags=re.S)

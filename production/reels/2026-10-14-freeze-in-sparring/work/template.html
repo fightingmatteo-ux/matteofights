@@ -32,6 +32,23 @@
       .cw { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 0; font-family: "Tinos", serif; font-weight: 700; font-size: 124px; line-height: 1; letter-spacing: -0.01em; color: #FFFFFF; -webkit-text-stroke: 9px #000; paint-order: stroke fill; }
       .cw.red { color: #E8112D; }
       #flash { position: absolute; inset: 0; background: #F2F0EA; opacity: 0; pointer-events: none; }
+      /* ===== v3 scenes: full-screen animated cutaways ===== */
+      .scene { position: absolute; inset: 0; overflow: hidden; background: radial-gradient(120% 80% at 50% 32%, #2A0B0E 0%, #120708 38%, #0B0B0D 70%); }
+      .scene .grid { position: absolute; inset: -200px; opacity: 0.09; background-image: linear-gradient(#F2F0EA 1px, transparent 1px), linear-gradient(90deg, #F2F0EA 1px, transparent 1px); background-size: 90px 90px; }
+      .scene .vig { position: absolute; inset: 0; background: radial-gradient(90% 70% at 50% 40%, transparent 55%, rgba(0,0,0,0.75) 100%); }
+      .scene .tag { position: absolute; left: 70px; top: 190px; font-family: "Geist Mono", monospace; font-weight: 700; font-size: 32px; letter-spacing: 0.16em; color: var(--hot); }
+      .big { position: absolute; left: 0; right: 0; text-align: center; font-size: 260px; line-height: 0.88; color: var(--ivory); }
+      .mono { font-family: "Geist Mono", monospace; font-weight: 700; }
+      .tile { position: absolute; left: 110px; right: 110px; height: 250px; background: rgba(11,11,13,0.9); border: 2px solid #2E2E33; display: flex; align-items: center; gap: 40px; padding: 0 44px; }
+      .tile .tn { font-family: "Geist Mono", monospace; font-weight: 700; font-size: 130px; color: var(--hot); }
+      .tile .tl { font-size: 150px; color: var(--ivory); }
+      .pill { position: absolute; padding: 18px 30px; border-radius: 60px; background: #17171A; border: 2px solid #3A3A40; font-family: "Geist Mono", monospace; font-weight: 700; font-size: 44px; letter-spacing: 0.06em; color: var(--ivory); white-space: nowrap; }
+      .pill.hot { border-color: var(--hot); color: var(--hot); }
+      .meter { position: absolute; left: 110px; right: 110px; top: 300px; height: 34px; border: 2px solid #3A3A40; }
+      .meter .fill { position: absolute; inset: 4px; background: var(--hot); transform-origin: 0 50%; }
+      .term { position: absolute; left: 110px; right: 80px; font-family: "Geist Mono", monospace; font-weight: 700; font-size: 46px; letter-spacing: 0.04em; color: var(--ivory); white-space: nowrap; }
+      .term .k { color: var(--hot); }
+      .brk { position: absolute; width: 90px; height: 90px; border-color: var(--hot); border-style: solid; border-width: 0; }
       /* motion graphics */
       #slash { position: absolute; left: -1900px; top: -300px; width: 1500px; height: 2600px; background: var(--hot); transform: skewX(-16deg); pointer-events: none; }
       .strike { position: absolute; left: -10px; right: -10px; top: 46%; height: 10px; background: var(--hot); transform-origin: 0 50%; }
@@ -102,6 +119,115 @@
       <div id="title" class="clip title" data-start="0" data-duration="{{W('hook','HERE\'S')}}" data-track-index="5"><span>BEGINNERS TRY</span><span>TO WIN EVERY</span><span>EXCHANGE.</span><span class="r">FIGHTERS DON'T.</span></div>
       <!--@end-->
 
+      <!-- ===== v3 SCENES ===== -->
+      <!-- T: three fixes preview -->
+      <div id="scT" class="clip scene" data-start="{{TITLE_END}}" data-duration="{{E('hook')-TITLE_END}}" data-track-index="6">
+        <div class="grid"></div><div class="vig"></div>
+        <div class="tag">3 FIXES · IN YOUR HEAD</div>
+        <div class="tile" id="t1" style="top:330px"><span class="tn">01</span><span class="tl">SHOCK</span></div>
+        <div class="tile" id="t2" style="top:620px"><span class="tn">02</span><span class="tl">OVERLOAD</span></div>
+        <div class="tile" id="t3" style="top:910px"><span class="tn">03</span><span class="tl">SPIRAL</span></div>
+      </div>
+
+      <!-- S1a: the punch is coming -->
+      <div id="sc1a" class="clip scene" data-start="{{W('p1','EXPECT')-0.25}}" data-duration="{{W('p1','GETTING')-W('p1','EXPECT')+0.25}}" data-track-index="7">
+        <div class="grid"></div><div class="vig"></div>
+        <div class="tag">01 · SHOCK</div>
+        <svg width="1080" height="1920" viewBox="0 0 1080 1920" style="position:absolute;inset:0">
+          <defs>
+            <radialGradient id="glv" cx="38%" cy="32%" r="75%"><stop offset="0" stop-color="#FF4A4A"/><stop offset="0.55" stop-color="#C81E1E"/><stop offset="1" stop-color="#5E0A0A"/></radialGradient>
+            <linearGradient id="cuf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F6F2EA"/><stop offset="1" stop-color="#B9B3A8"/></linearGradient>
+          </defs>
+          <g id="cracks" stroke="#F2F0EA" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0">
+            <polyline points="540,700 610,610 600,520 690,420 700,300"/><polyline points="540,700 660,720 760,660 900,700 1040,640"/>
+            <polyline points="540,700 590,820 700,880 720,1010 820,1120"/><polyline points="540,700 450,800 470,920 360,1020 340,1160"/>
+            <polyline points="540,700 420,660 330,700 200,630 40,680"/><polyline points="540,700 480,580 380,520 390,390 300,270"/>
+          </g>
+          <g id="glove-wrap" transform="translate(540 700)"><g id="glove">
+            <g transform="translate(-200 -200)">
+              <rect x="125" y="268" width="160" height="120" rx="22" fill="url(#cuf)"/>
+              <rect x="125" y="292" width="160" height="20" fill="#C81E1E"/>
+              <path d="M88 188 C 78 92, 170 38, 252 52 C 334 66, 356 150, 334 222 C 318 278, 262 302, 200 298 C 138 294, 92 262, 88 188 Z" fill="url(#glv)"/>
+              <ellipse cx="128" cy="236" rx="58" ry="40" transform="rotate(-24 128 236)" fill="#9E1414"/>
+              <path d="M150 120 C 200 96, 270 104, 306 150" stroke="#7A0E0E" stroke-width="6" fill="none" stroke-linecap="round"/>
+              <ellipse cx="226" cy="104" rx="62" ry="22" transform="rotate(-14 226 104)" fill="#FFFFFF" opacity="0.32"/>
+            </g>
+          </g></g>
+        </svg>
+        <div class="big" id="shockT" style="top:1120px;opacity:0;color:var(--hot);font-size:300px">SHOCK</div>
+        <div class="mono" id="shockS" style="position:absolute;left:0;right:0;top:1400px;text-align:center;font-size:44px;letter-spacing:0.14em;opacity:0">EXPECT IT. THEN IT CAN'T.</div>
+      </div>
+
+      <!-- S1b: failure -> information -->
+      <div id="sc1b" class="clip scene" data-start="{{W('p1','FAILURE')-0.15}}" data-duration="{{E('p1')-W('p1','FAILURE')+0.15}}" data-track-index="8">
+        <div class="grid"></div><div class="vig"></div>
+        <div class="tag">01 · REFRAME</div>
+        <div class="big" id="failT" style="top:330px">FAILURE<div id="failX" style="position:absolute;left:150px;right:150px;top:44%;height:26px;background:var(--hot);transform-origin:0 50%"></div></div>
+        <div class="big" id="infoT" style="top:330px;color:var(--hot);font-size:200px;opacity:0">INFORMATION</div>
+        <div id="scan" style="position:absolute;left:0;right:0;top:560px;height:4px;background:var(--hot);opacity:0;box-shadow:0 0 30px 8px rgba(255,30,30,0.5)"></div>
+        <div class="term" id="tm1" style="top:620px"><span class="k">&gt; </span>HIT RECEIVED</div>
+        <div class="term" id="tm2" style="top:700px"><span class="k">&gt; </span>FROM: RIGHT HAND</div>
+        <div class="term" id="tm3" style="top:780px"><span class="k">&gt; </span>WHY: GUARD DROPPED</div>
+        <div class="term" id="tm4" style="top:860px"><span class="k">&gt; </span>FIX: <span class="k">HANDS UP</span></div>
+      </div>
+
+      <!-- S2: overload -> one job -->
+      <div id="sc2" class="clip scene" data-start="{{W('p2','THINKING')-0.12}}" data-duration="{{W('p2','HEAD')-W('p2','THINKING')+0.07}}" data-track-index="9">
+        <div class="grid"></div><div class="vig"></div>
+        <div class="tag" id="s2tag">02 · YOUR HEAD</div>
+        <div class="mono" style="position:absolute;left:110px;top:250px;font-size:30px;letter-spacing:0.14em;color:#8A8A90">MENTAL LOAD</div>
+        <div class="mono" id="loadN" style="position:absolute;right:110px;top:236px;font-size:52px;color:var(--hot)">0%</div>
+        <div class="meter"><div class="fill" id="loadF"></div></div>
+        <div id="pills">
+          <div class="pill" style="left:110px;top:420px">HOOK</div><div class="pill" style="left:400px;top:440px">CHIN DOWN</div><div class="pill hot" style="left:790px;top:410px">SLIP</div>
+          <div class="pill" style="left:160px;top:560px">FEINT</div><div class="pill hot" style="left:450px;top:580px">FOOTWORK</div>
+          <div class="pill" style="left:90px;top:700px">GUARD UP</div><div class="pill" style="left:700px;top:690px">ANGLES</div>
+          <div class="pill" style="left:200px;top:980px">COUNTER</div><div class="pill hot" style="left:640px;top:830px">BREATHE</div>
+          <div class="pill" style="left:110px;top:840px">PRESSURE</div><div class="pill" style="left:560px;top:980px">UPPERCUT</div>
+          <div class="pill" style="left:330px;top:1110px">DON'T GET HIT</div>
+          <div class="pill hot" id="jabP" style="left:430px;top:830px">JAB</div>
+        </div>
+        <div class="brk" id="bk1" style="left:330px;top:640px;border-left-width:10px;border-top-width:10px"></div>
+        <div class="brk" id="bk2" style="left:660px;top:640px;border-right-width:10px;border-top-width:10px"></div>
+        <div class="brk" id="bk3" style="left:330px;top:960px;border-left-width:10px;border-bottom-width:10px"></div>
+        <div class="brk" id="bk4" style="left:660px;top:960px;border-right-width:10px;border-bottom-width:10px"></div>
+        <div class="mono" id="oneJob" style="position:absolute;left:0;right:0;top:1130px;text-align:center;font-size:52px;letter-spacing:0.12em;opacity:0">ONE JOB · ONE ROUND</div>
+      </div>
+
+      <!-- S3a: the spiral -->
+      <div id="sc3a" class="clip scene" data-start="{{W('p3','CAUGHT')-0.25}}" data-duration="{{W('p3','TAKE')-W('p3','CAUGHT')+0.25}}" data-track-index="10">
+        <div class="grid"></div><div class="vig"></div>
+        <div class="tag">03 · THE SPIRAL</div>
+        <svg width="1080" height="1920" viewBox="0 0 1080 1920" style="position:absolute;inset:0">
+          <g id="spWrap" transform="translate(540 760)"><g id="spRot"><path id="spiral" d="" fill="none" stroke="#FF1E1E" stroke-width="12" stroke-linecap="round"/></g></g>
+        </svg>
+        <div class="mono pill" id="sl1" style="left:120px;top:350px">GET CAUGHT</div>
+        <div class="mono pill" id="sl2" style="left:640px;top:560px">GET MAD</div>
+        <div class="mono pill" id="sl3" style="left:110px;top:980px">CHASE IT</div>
+        <div class="mono pill hot" id="sl4" style="left:560px;top:1120px">CAUGHT AGAIN</div>
+        <div id="backA" style="position:absolute;left:0;right:0;top:600px;text-align:center;opacity:0">
+          <svg width="420" height="200" viewBox="0 0 420 200"><path d="M400 100 H70 M150 20 L60 100 L150 180" stroke="#F2F0EA" stroke-width="26" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="big" style="position:static;font-size:230px">STEP BACK</div>
+        </div>
+      </div>
+
+      <!-- S3b: breathe -> reset -->
+      <div id="sc3b" class="clip scene" data-start="{{W('p3','TAKE')}}" data-duration="{{E('p3')-W('p3','TAKE')}}" data-track-index="11">
+        <div class="grid"></div><div class="vig"></div>
+        <div class="tag">03 · RESET</div>
+        <svg width="1080" height="1920" viewBox="0 0 1080 1920" style="position:absolute;inset:0">
+          <g transform="translate(540 760)">
+            <circle id="br3" r="380" fill="none" stroke="#FF1E1E" stroke-width="3" opacity="0.25"/>
+            <circle id="br2" r="300" fill="none" stroke="#FF1E1E" stroke-width="5" opacity="0.45"/>
+            <circle id="br1" r="220" fill="rgba(255,30,30,0.08)" stroke="#FF1E1E" stroke-width="10"/>
+            <circle id="arc" r="300" fill="none" stroke="#F2F0EA" stroke-width="14" stroke-linecap="round" transform="rotate(-90)" stroke-dasharray="1885" stroke-dashoffset="1885"/>
+          </g>
+        </svg>
+        <div class="mono" id="inhale" style="position:absolute;left:0;right:0;top:730px;text-align:center;font-size:64px;letter-spacing:0.3em;color:var(--ivory)">INHALE</div>
+        <div class="big" id="resetT" style="top:640px;font-size:280px;opacity:0">RESET</div>
+        <div class="mono" id="resetS" style="position:absolute;left:0;right:0;top:1180px;text-align:center;font-size:44px;letter-spacing:0.16em;color:var(--hot);opacity:0">BACK TO ZERO</div>
+      </div>
+
       <div id="caps"></div>
       <div id="slash"></div>
       <div id="flash"></div>
@@ -114,9 +240,17 @@
       <audio id="sfx-d3" src="assets/sfx/digital_click.mp3" data-start="{{S('p3')}}" data-duration="1" data-track-index="17" data-volume="0.5"></audio>
       <audio id="sfx-hit-1" src="assets/sfx/hit.mp3" data-start="{{W('p1','PUNCHED')}}" data-duration="1" data-track-index="13" data-volume="0.55"></audio>
       <audio id="sfx-line-3" src="assets/sfx/red_line.mp3" data-start="{{W('p3','CAUGHT')}}" data-duration="1" data-track-index="15" data-volume="0.4"></audio>
-      <audio id="sfx-storm" src="assets/sfx/digital_click.mp3" data-start="{{W('p2','EVERYTHING')}}" data-duration="1" data-track-index="21" data-volume="0.4"></audio>
+      <audio id="sfx-storm" src="assets/sfx/digital_click.mp3" data-start="{{W('p2','THINKING')-0.12}}" data-duration="1" data-track-index="21" data-volume="0.4"></audio>
       <audio id="sfx-jab" src="assets/sfx/hit.mp3" data-start="{{W('p2','JAB')}}" data-duration="1" data-track-index="22" data-volume="0.4"></audio>
       <audio id="sfx-reset" src="assets/sfx/lib_impact-bass-1.wav" data-start="{{W('p3','RESET')}}" data-duration="1.5" data-track-index="16" data-volume="0.45"></audio>
+      <audio id="sfx-wT" src="assets/sfx/click.mp3" data-start="{{TITLE_END}}" data-duration="1" data-track-index="23" data-volume="0.35"></audio>
+      <audio id="sfx-w1" src="assets/sfx/click.mp3" data-start="{{W('p1','EXPECT')-0.25}}" data-duration="1" data-track-index="24" data-volume="0.35"></audio>
+      <audio id="sfx-riser" src="assets/sfx/riser.mp3" data-start="{{W('p1','PUNCHED')-0.85}}" data-duration="0.85" data-media-start="1.15" data-track-index="18" data-volume="0.4"></audio>
+      <audio id="sfx-w1b" src="assets/sfx/click.mp3" data-start="{{W('p1','FAILURE')-0.15}}" data-duration="1" data-track-index="23" data-volume="0.35"></audio>
+      <audio id="sfx-line-f" src="assets/sfx/red_line.mp3" data-start="{{W('p1','FAILURE')+0.22}}" data-duration="1" data-track-index="15" data-volume="0.4"></audio>
+      <audio id="sfx-d-info" src="assets/sfx/digital_click.mp3" data-start="{{W('p1','INFORMATION')}}" data-duration="1" data-track-index="17" data-volume="0.4"></audio>
+      <audio id="sfx-w3a" src="assets/sfx/click.mp3" data-start="{{W('p3','CAUGHT')-0.25}}" data-duration="1" data-track-index="24" data-volume="0.35"></audio>
+      <audio id="sfx-back" src="assets/sfx/lib_pop.wav" data-start="{{W('p3','STEP')+0.04}}" data-duration="0.72" data-track-index="25" data-volume="0.45"></audio>
       <audio id="sfx-pop-cta" src="assets/sfx/lib_pop.wav" data-start="{{W('p3','STEP')}}" data-duration="0.72" data-track-index="20" data-volume="0.55"></audio>
     </div>
 
@@ -168,39 +302,136 @@
       });
       tl.fromTo("#cta .chip", { opacity: 0, x: -60, scale: 0.9 }, { opacity: 1, x: 0, scale: 1, ...SP(0.5, 0.4, 22) }, W("p3", "STEP"));
 
-      // ---- 01 SHOCK: the punch lands -> impact burst + camera hit; FAILURE struck -> INFORMATION ----
-      const hit = W("p1", "PUNCHED");
-      shake(hit, 16); flash(hit, 0.35);
-      tl.fromTo("#ring1", { attr: { r: 60 }, opacity: 1 }, { immediateRender: false, attr: { r: 330 }, opacity: 0, duration: 0.5, ease: "expo.out" }, hit);
-      tl.fromTo("#ring2", { attr: { r: 40 }, opacity: 0.9 }, { immediateRender: false, attr: { r: 260 }, opacity: 0, duration: 0.42, ease: "expo.out" }, hit + 0.04);
-      tl.fromTo("#rays", { scale: 0.6, opacity: 1, transformOrigin: "0px 0px" }, { immediateRender: false, scale: 1.35, opacity: 0, duration: 0.35, ease: "power3.out" }, hit);
-      [16, -12, 8, -4, 0].forEach((x, j) => tl.set("#n1", { x }, hit + j * 0.035));
-      const fl = W("p1", "FAILURE"), inf = W("p1", "INFORMATION");
-      tl.to("#s1", { opacity: 0, y: -16, duration: 0.12 }, fl - 0.12);
-      tl.fromTo("#s1x", { opacity: 0, y: 20 }, { opacity: 1, y: 0, ...SP(0.4, 0.5, 24) }, fl - 0.04);
-      tl.fromTo("#s1k", { scaleX: 0 }, { scaleX: 1, duration: 0.2, ease: "power3.out" }, fl + 0.18);
-      tl.fromTo("#s1y", { opacity: 0, x: -30 }, { opacity: 1, x: 0, ...SP(0.45, 0.4, 24) }, inf - 0.04);
-
-      // ---- 02 OVERLOAD: everything floods in, collapses to the one job: JAB ----
-      const ev = W("p2", "EVERYTHING"), jb = W("p2", "JAB"), rl = W("p2", "RELAX");
-      tl.to("#pn2 .panel", { opacity: 0.1, duration: 0.15 }, ev);
-      gsap.utils.toArray("#storm .storm").forEach((el, j) => {
-        tl.fromTo(el, { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, ...SP(0.45, 0.38, 24) }, ev + j * 0.045);
-        if (el.id !== "jab") tl.to(el, { y: 900, rotation: (j % 2 ? 1 : -1) * 35, opacity: 0, duration: 0.4, ease: "power2.in" }, jb - 0.25 + (j % 4) * 0.03);
+      // =================== v3 SCENES ===================
+      const win = (id) => { const el = document.getElementById(id); const a = +el.dataset.start; return [a, a + +el.dataset.duration]; };
+      const IDS = ["scT", "sc1a", "sc1b", "sc2", "sc3a", "sc3b"];
+      // captions drop below the graphics while a scene is up (merged windows so back-to-back scenes don't flicker)
+      const wins = IDS.map(win).sort((x, y) => x[0] - y[0]).reduce((m, w) => { const l = m[m.length - 1];
+        if (l && w[0] <= l[1] + 0.01) l[1] = Math.max(l[1], w[1]); else m.push([...w]); return m; }, []);
+      wins.forEach(([a, b]) => { tl.set("#caps", { y: 640 }, a); tl.set("#caps", { y: 0 }, b);
+        tl.set(["#pn1", "#pn2", "#pn3", "#cta"], { autoAlpha: 0 }, a + 0.3); tl.set(["#pn1", "#pn2", "#pn3", "#cta"], { autoAlpha: 1 }, b - 0.2); });
+      IDS.forEach((id, k) => {
+        const [a, b] = win(id);
+        tl.fromTo("#" + id, { y: 1920 }, { y: 0, ...SP(0.6, 0.82, 14) }, a);
+        tl.fromTo("#" + id + " .grid", { y: 0 }, { y: 90, duration: b - a, ease: "none" }, a);
+        tl.fromTo("#" + id + " .tag", { x: -60, opacity: 0 }, { x: 0, opacity: 1, ...SP(0.5, 0.6, 20) }, a + 0.12);
+        const next = IDS[k + 1] && win(IDS[k + 1])[0];
+        if (!(next && next <= b + 0.01)) tl.to("#" + id, { scale: 1.12, opacity: 0, duration: 0.2, ease: "power2.in" }, b - 0.2);
       });
-      tl.to("#jab", { x: -20, y: -20, scale: 2.6, rotation: 0, ...SP(0.6, 0.45, 18) }, jb - 0.08);
-      tl.to("#jab", { opacity: 0, scale: 1.8, duration: 0.18 }, rl - 0.1);
-      tl.to("#pn2 .panel", { opacity: 1, duration: 0.2 }, rl - 0.05);
+      // deterministic jitter
+      let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+      const float = (sel, a, b, amp = 10, per = 1.6) => tl.fromTo(sel, { y: 0 }, { y: -amp, duration: Math.max(0.1, b - a), ease: `sine.inOut` }, a);
 
-      // ---- 03 SPIRAL: caught -> step back -> inhale ring -> RESET snaps ----
-      const ct = W("p3", "CAUGHT"), sb = W("p3", "STEP"), br = W("p3", "DEEP"), rs = W("p3", "RESET");
-      shake(ct, 9);
-      tl.to("#pn3 .panel", { scale: 0.93, y: -14, ...SP(0.5, 0.5, 18) }, sb);
-      tl.fromTo("#breath", { attr: { r: 120 }, opacity: 0 }, { attr: { r: 420 }, opacity: 0.55, duration: rs - br, ease: "sine.inOut" }, br);
-      tl.to("#breath", { attr: { r: 60 }, opacity: 0, duration: 0.25, ease: "power3.in" }, rs);
-      tl.to("#pn3 .panel", { scale: 1, y: 0, ...SP(0.5, 0.35, 24) }, rs);
-      tl.to("#l3", { opacity: 0, y: -50, duration: 0.12 }, rs - 0.02);
-      tl.fromTo("#l3b", { opacity: 0, y: 60, scale: 1.2 }, { opacity: 1, y: 0, scale: 1, ...SP(0.45, 0.35, 26) }, rs + 0.04);
+      // ---- T: the three fixes, preview ----
+      { const [a, b] = win("scT");
+        [1, 2, 3].forEach((k) => {
+          tl.fromTo("#t" + k, { x: k % 2 ? -1100 : 1100, rotation: k % 2 ? -5 : 5, opacity: 0 },
+            { x: 0, rotation: 0, opacity: 1, ...SP(0.7, 0.55, 15) }, a + 0.08 + (k - 1) * 0.14);
+          tl.fromTo("#t" + k + " .tn", { scale: 1.6 }, { scale: 1, ...SP(0.5, 0.35, 24) }, a + 0.2 + (k - 1) * 0.14);
+        });
+        if (b - a > 1.4) {
+          tl.to(["#t2", "#t3"], { opacity: 0.3, duration: 0.25 }, b - 0.6);
+          tl.to("#t1", { scale: 1.06, ...SP(0.5, 0.45, 18) }, b - 0.6);
+        } }
+
+      // ---- S1a: the punch comes at you -> impact ----
+      { const [a, b] = win("sc1a"), hit = W("p1", "PUNCHED");
+        tl.fromTo("#glove", { scale: 0.38, rotation: -16, opacity: 0 }, { scale: 0.5, rotation: -10, opacity: 1, duration: 0.25, ease: "power2.out" }, a);
+        tl.to("#glove", { scale: 1.25, rotation: 8, duration: hit - a - 0.25, ease: "power3.in" }, a + 0.25);
+        tl.to("#glove", { scale: 3.6, opacity: 0, duration: 0.14, ease: "power2.in" }, hit);
+        document.querySelectorAll("#cracks polyline").forEach((pl, j) => {
+          const L = pl.getTotalLength(); pl.style.strokeDasharray = L;
+          tl.fromTo(pl, { strokeDashoffset: L }, { strokeDashoffset: 0, duration: 0.22, ease: "power3.out" }, hit + 0.04 + j * 0.015);
+        });
+        tl.fromTo("#cracks", { opacity: 0 }, { immediateRender: false, opacity: 1, duration: 0.01 }, hit + 0.03);
+        tl.to("#cracks", { opacity: 0.25, duration: b - hit - 0.3 }, hit + 0.3);
+        flash(hit + 0.02, 0.85);
+        [26, -20, 14, -8, 4, 0].forEach((x, j) => tl.set("#sc1a svg", { x, y: -x * 0.6 }, hit + 0.03 + j * 0.035));
+        tl.fromTo("#shockT", { scale: 1.9, opacity: 0 }, { scale: 1, opacity: 1, ...SP(0.55, 0.32, 24) }, hit + 0.08);
+        tl.fromTo("#shockS", { y: 30, opacity: 0 }, { y: 0, opacity: 1, ...SP(0.5, 0.6, 20) }, hit + 0.3);
+      }
+
+      // ---- S1b: FAILURE struck -> INFORMATION, a fight log types itself ----
+      { const [a, b] = win("sc1b"), fl = W("p1", "FAILURE"), inf = W("p1", "INFORMATION");
+        tl.fromTo("#failT", { scale: 1.35, opacity: 0 }, { scale: 1, opacity: 1, ...SP(0.5, 0.5, 20) }, a + 0.05);
+        tl.fromTo("#failX", { scaleX: 0 }, { scaleX: 1, duration: 0.22, ease: "expo.out" }, fl + 0.22);
+        [10, -8, 5, 0].forEach((x, j) => tl.set("#failT", { x }, fl + 0.24 + j * 0.035));
+        tl.to("#failT", { y: -120, opacity: 0, duration: 0.16, ease: "power2.in" }, inf - 0.16);
+        tl.fromTo("#infoT", { scale: 0.55, opacity: 0 }, { scale: 1, opacity: 1, ...SP(0.6, 0.42, 20) }, inf - 0.06);
+        tl.fromTo("#scan", { y: 0, opacity: 1 }, { immediateRender: false, y: 380, opacity: 0, duration: 0.7, ease: "power1.inOut" }, inf);
+        document.querySelectorAll("#sc1b .term").forEach((t, j) => {
+          const wrap = (node) => [...node.childNodes].forEach((c) => {
+            if (c.nodeType === 3) { const f = document.createDocumentFragment();
+              [...c.textContent].forEach((ch) => { const sp = document.createElement("span"); sp.className = "c"; sp.textContent = ch; f.appendChild(sp); });
+              node.replaceChild(f, c); } else wrap(c); });
+          wrap(t);
+          const cs = t.querySelectorAll(".c"), t0 = inf + 0.06 + j * 0.13;
+          cs.forEach((c, i) => tl.fromTo(c, { opacity: 0 }, { opacity: 1, duration: 0.01 }, t0 + i * 0.008));
+          tl.fromTo(t, { x: -24 }, { x: 0, ...SP(0.4, 0.6, 22) }, t0);
+        });
+      }
+
+      // ---- S2: your head overloads -> everything collapses to one job ----
+      { const [a, b] = win("sc2"), pk = W("p2", "PICK"), jb = W("p2", "JAB"), job = W("p2", "JOB");
+        const load = { v: 0 }, out = document.getElementById("loadN");
+        const setN = () => { out.textContent = Math.round(load.v) + "%"; };
+        tl.fromTo("#loadF", { scaleX: 0 }, { scaleX: 1, duration: pk - a - 0.1, ease: "power1.in" }, a);
+        tl.fromTo(load, { v: 0 }, { v: 100, duration: pk - a - 0.1, ease: "power1.in", onUpdate: setN }, a);
+        const pills = [...document.querySelectorAll("#pills .pill")];
+        pills.forEach((el, j) => {
+          const t = a + 0.1 + j * 0.07;
+          tl.fromTo(el, { scale: 0, opacity: 0, rotation: (rnd() - 0.5) * 30 }, { scale: 1, opacity: 1, rotation: (rnd() - 0.5) * 10, ...SP(0.5, 0.4, 22) }, t);
+          if (el.id !== "jabP") for (let q = t + 0.45; q < pk - 0.05; q += 0.09) tl.set(el, { x: (rnd() - 0.5) * 14, y: (rnd() - 0.5) * 14 }, q);
+        });
+        [8, -6, 4, 0].forEach((x, j) => tl.set("#loadN", { x }, pk - 0.4 + j * 0.04));
+        // collapse
+        const cx = 540, cy = 845;
+        pills.forEach((el) => {
+          const ex = el.offsetLeft + el.offsetWidth / 2, ey = el.offsetTop + el.offsetHeight / 2;
+          if (el.id === "jabP") {
+            tl.to(el, { x: cx - ex, y: cy - ey, scale: 2.4, rotation: 0, ...SP(0.65, 0.5, 16) }, pk + 0.02);
+            tl.to(el, { scale: 2.75, duration: 0.08, ease: "power2.out" }, jb - 0.02);
+            tl.to(el, { scale: 2.4, ...SP(0.45, 0.35, 24) }, jb + 0.06);
+          } else tl.to(el, { x: (ex - cx) * 2.4, y: (ey - cy) * 2.4, scale: 0.4, opacity: 0, duration: 0.32, ease: "power3.in" }, pk - 0.04 + rnd() * 0.08);
+        });
+        tl.to("#loadF", { scaleX: 0.12, ...SP(0.7, 0.6, 14) }, pk);
+        tl.to(load, { v: 12, duration: 0.5, ease: "power3.out", onUpdate: setN }, pk);
+        [["#bk1", -1, -1], ["#bk2", 1, -1], ["#bk3", -1, 1], ["#bk4", 1, 1]].forEach(([id, sx, sy]) =>
+          tl.fromTo(id, { x: sx * 260, y: sy * 260, opacity: 0 }, { x: 0, y: 0, opacity: 1, ...SP(0.6, 0.5, 18) }, pk + 0.12));
+        tl.fromTo("#oneJob", { y: 40, opacity: 0 }, { y: 0, opacity: 1, ...SP(0.5, 0.55, 20) }, job);
+      }
+
+      // ---- S3a: getting caught spirals -> step back ----
+      { const [a, b] = win("sc3a"), st = W("p3", "STEP"), bk = W("p3", "BACK");
+        let d = ""; for (let th = 0; th <= 5.6 * Math.PI; th += 0.05) { const r = 380 - th * 20.5;
+          d += (th ? " L" : "M") + (r * Math.cos(th)).toFixed(1) + " " + (r * Math.sin(th)).toFixed(1); }
+        const sp = document.getElementById("spiral"); sp.setAttribute("d", d);
+        const L = sp.getTotalLength(); sp.style.strokeDasharray = L;
+        tl.fromTo(sp, { strokeDashoffset: L }, { strokeDashoffset: 0, duration: st - a - 0.05, ease: "power1.inOut" }, a);
+        tl.fromTo("#spRot", { rotation: 0, svgOrigin: "0 0" }, { rotation: -150, duration: b - a, ease: "none" }, a);
+        ["#sl1", "#sl2", "#sl3", "#sl4"].forEach((id, j) =>
+          tl.fromTo(id, { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, ...SP(0.5, 0.42, 22) }, a + 0.12 + j * 0.16));
+        tl.to("#spWrap", { scale: 0.5, opacity: 0.2, svgOrigin: "540 760", ...SP(0.7, 0.6, 14) }, st);
+        tl.to(["#sl1", "#sl2", "#sl3", "#sl4"], { opacity: 0, scale: 0.6, duration: 0.2, stagger: 0.03 }, st - 0.02);
+        tl.fromTo("#backA", { x: 380, opacity: 0 }, { x: 0, opacity: 1, ...SP(0.6, 0.48, 18) }, st + 0.04);
+        tl.to("#backA", { x: -50, duration: 0.12, ease: "power2.out" }, bk);
+        tl.to("#backA", { x: 0, ...SP(0.5, 0.4, 20) }, bk + 0.12);
+      }
+
+      // ---- S3b: inhale (rings grow, the clock fills) -> RESET snaps ----
+      { const [a, b] = win("sc3b"), rs = W("p3", "RESET");
+        ["#br1", "#br2", "#br3"].forEach((id, j) =>
+          tl.fromTo(id, { scale: 0.55 - j * 0.05, transformOrigin: "50% 50%" }, { scale: 1.12 + j * 0.04, duration: rs - a, ease: "sine.inOut" }, a));
+        tl.fromTo("#arc", { strokeDashoffset: 1885 }, { strokeDashoffset: 0, duration: rs - a, ease: "sine.inOut" }, a);
+        tl.fromTo("#inhale", { scale: 0.8, opacity: 0 }, { scale: 1.12, opacity: 1, duration: rs - a, ease: "sine.inOut" }, a);
+        tl.to("#inhale", { opacity: 0, duration: 0.1 }, rs - 0.05);
+        ["#br1", "#br2"].forEach((id) => tl.to(id, { scale: 0.7, ...SP(0.6, 0.38, 20) }, rs));
+        tl.to("#br3", { scale: 2.2, opacity: 0, duration: 0.5, ease: "expo.out" }, rs);
+        tl.to("#arc", { opacity: 0, duration: 0.3 }, rs + 0.1);
+        flash(rs, 0.55);
+        tl.fromTo("#resetT", { scale: 1.7, opacity: 0 }, { scale: 1, opacity: 1, ...SP(0.6, 0.34, 24) }, rs + 0.02);
+        tl.fromTo("#resetS", { y: 30, opacity: 0 }, { y: 0, opacity: 1, ...SP(0.5, 0.6, 20) }, rs + 0.22);
+      }
 
       // ---- subtitles: one word at a time, bold serif ----
       const hidden = (t) => t < TITLE_END;

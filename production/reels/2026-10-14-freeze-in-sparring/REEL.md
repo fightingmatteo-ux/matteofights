@@ -36,6 +36,18 @@ All entrances use a closed-form damped spring (`spring()` in the template), no C
 - 03 SPIRAL: card springs back on "step back", breathing ring grows over "deep breath", snaps on "reset";
   label SPIRAL -> RESET.
 
+## Motion graphics v3 (2026-10-14): full-screen animated cutaways
+Matteo: v2 "too basic". v3 cuts from the face to six illustrated scenes (voice continues, captions drop to y1440,
+cards hidden while a scene is up). Scenes slide up on a spring, exit with a zoom-fade; dark red radial bg + drifting grid.
+- T (turn line): 01 SHOCK / 02 OVERLOAD / 03 SPIRAL tiles spring in from alternating sides, then 01 is focused.
+- S1a: a glove flies at the lens and lands on "punched": flash, crack lines draw, shake, SHOCK slams.
+- S1b: FAILURE struck through -> INFORMATION, scan line + a fight log types (hit / from / why / fix).
+- S2: mental-load meter fills to 100% while 13 skill pills flood and jitter; on "pick" they blow out, JAB locks
+  in a bracket reticle, meter drops to 12%, "ONE JOB · ONE ROUND".
+- S3a: a red spiral draws inward with GET CAUGHT -> GET MAD -> CHASE IT -> CAUGHT AGAIN; "step back" recedes it,
+  STEP BACK arrow springs in.
+- S3b: breathing rings grow with INHALE while a clock arc fills; RESET snaps, shockwave, BACK TO ZERO.
+
 ## Caption
 Your freeze isn't a technique problem.
 
