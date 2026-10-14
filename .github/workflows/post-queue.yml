@@ -1,0 +1,38 @@
+# Posts the next due, APPROVED item from production/schedule/queue.json (tools/instagram/run_queue.py).
+# Runs every 30 min (GitHub cron can run late) and on demand. One post per run, never two runs at once.
+# To post something: add it to queue.json, then set "approved": true only after Matteo's explicit yes.
+name: Post queue
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write   # commit the queue status back
+
+concurrency:
+  group: post-queue
+  cancel-in-progress: false
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - name: Post next due item
+        id: run
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
+        run: python3 -P tools/instagram/run_queue.py
+      - name: Save queue status
+        if: always()
+        run: |
+          git diff --quiet production/schedule/queue.json && exit 0
+          git config user.name "post-queue[bot]"
+          git config user.email "post-queue@users.noreply.github.com"
+          git add production/schedule/queue.json
+          git commit -m "queue: $(python3 -c "import json;q=json.load(open('production/schedule/queue.json'));print(', '.join(i['id']+' '+i['status'] for i in q['items'] if i['status']!='queued'))")"
+          for n in 1 2 3; do git pull --rebase -q && git push -q && break; sleep 5; done

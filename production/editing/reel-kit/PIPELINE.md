@@ -97,6 +97,8 @@ Cover: copy `worst-decision/thumb/` (HyperFrames snapshot at 0.5 s). Keep text i
   (The Windsor `instagram` connector can't post trial reels.)
 - Or Claude posts them through our own Meta app: `tools/instagram/ig.py trial` (setup + usage in
   `tools/instagram/README.md`). Flow: preview → Matteo's explicit yes → `--confirm`. Never skip the yes.
+  Remote: add the variants to `production/schedule/queue.json` (renders on the media release), set
+  `approved: true` after the yes; the **Post queue** Action posts them 2.5 h+ apart.
 - Log every variant in the reel's `REEL.md` + `production/reels/LEDGER.md`.
 
 ## 8. Track

@@ -1,0 +1,44 @@
+{
+  "_how": "The Post queue workflow posts the earliest approved+queued item once not_before has passed and the latest post is min_gap_hours old. Set approved to true only after Matteo's explicit yes to that exact preview. Videos live on the 'media' release.",
+  "items": [
+    {
+      "id": "freeze-A",
+      "reel": "2026-10-14-freeze-in-sparring",
+      "variant": "A",
+      "video_asset": "freeze-in-sparring-A.mp4",
+      "caption_file": "production/reels/2026-10-14-freeze-in-sparring/caption-A.txt",
+      "strategy": "MANUAL",
+      "thumb_offset_ms": 500,
+      "not_before": "2026-10-14T16:10:00Z",
+      "min_gap_hours": 3,
+      "approved": false,
+      "status": "queued"
+    },
+    {
+      "id": "freeze-B",
+      "reel": "2026-10-14-freeze-in-sparring",
+      "variant": "B",
+      "video_asset": "freeze-in-sparring-B.mp4",
+      "caption_file": "production/reels/2026-10-14-freeze-in-sparring/caption-B.txt",
+      "strategy": "MANUAL",
+      "thumb_offset_ms": 500,
+      "not_before": "2026-10-14T18:40:00Z",
+      "min_gap_hours": 2.5,
+      "approved": false,
+      "status": "queued"
+    },
+    {
+      "id": "freeze-C",
+      "reel": "2026-10-14-freeze-in-sparring",
+      "variant": "C",
+      "video_asset": "freeze-in-sparring-C.mp4",
+      "caption_file": "production/reels/2026-10-14-freeze-in-sparring/caption-C.txt",
+      "strategy": "MANUAL",
+      "thumb_offset_ms": 500,
+      "not_before": "2026-10-14T21:10:00Z",
+      "min_gap_hours": 2.5,
+      "approved": false,
+      "status": "queued"
+    }
+  ]
+}

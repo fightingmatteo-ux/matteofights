@@ -46,3 +46,12 @@ Secrets `IG_ACCESS_TOKEN` and `IG_USER_ID` are set on the repo (Actions). Push t
 release (`tools/video/media.sh push <file>`), commit the caption file, then run the **Post trial reel**
 workflow: preview first, `confirm=true` only after Matteo's yes. After `ig.py refresh`, update the secret:
 `gh secret set -f secrets/meta.env`.
+
+## Post queue (remote, no laptop needed)
+`production/schedule/queue.json` lists posts; the **Post queue** workflow runs every 30 min and posts the
+earliest item that is `approved: true`, `status: queued`, past `not_before`, and at least `min_gap_hours`
+after the account's latest post. It writes `status`, `media_id` and `permalink` back into the file.
+- Videos go on the `media` release first: `bash tools/video/media.sh push <file>`.
+- `approved: true` is set only after Matteo's explicit yes to the exact preview (`ig.py trial` without `--confirm`).
+- A failed item gets `status: failed` + `error`; fix it and set it back to `queued`.
+- Double-post guard: a post from the last 24 h starting with the same caption line counts as already posted.
