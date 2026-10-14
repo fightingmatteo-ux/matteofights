@@ -11,7 +11,7 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-10-14T16:10:00Z",
       "min_gap_hours": 3,
-      "approved": false,
+      "approved": true,
       "status": "queued"
     },
     {
@@ -24,7 +24,7 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-10-14T18:40:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued"
     },
     {
@@ -37,7 +37,7 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-10-14T21:10:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued"
     }
   ]
