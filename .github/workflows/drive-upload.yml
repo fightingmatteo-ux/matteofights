@@ -1,6 +1,9 @@
 # Push a finished render from the "media" release into Google Drive (Talking Head Reel Production System/output).
 # Cloud sessions can't reach Drive; GitHub Actions can. Flow from the cloud:
 #   bash tools/video/media.sh push renders/<file>.mp4   ->   run this workflow with that file name.
+# Cloud sessions can't write release assets (binary uploads are blocked), so the alternative is a temp branch:
+#   commit the render under renders/ on a throwaway branch, run this workflow on that branch with path=renders/<file>,
+#   then delete the branch.
 # Needs repo secret RCLONE_CONF: the [gdrive] section of a working rclone.conf (set 2026-10-13).
 name: Upload to Drive
 
@@ -8,8 +11,12 @@ on:
   workflow_dispatch:
     inputs:
       asset:
-        description: File name on the media release, e.g. origin-A.mp4
+        description: File name on the media release, e.g. origin-A.mp4 (or the Drive name when using path)
         required: true
+      path:
+        description: Optional repo path to upload instead of a release asset (run on the branch holding it)
+        required: false
+        default: ""
       as:
         description: Name in Drive (optional, defaults to the asset name)
         required: false
@@ -29,16 +36,28 @@ jobs:
       ASSET: ${{ inputs.asset }}
       AS: ${{ inputs.as }}
       FOLDER: ${{ inputs.folder }}
+      SRC_PATH: ${{ inputs.path }}
     steps:
+      - uses: actions/checkout@v4
+        if: inputs.path != ''
+
       - name: Install rclone
         run: curl -fsSL https://rclone.org/install.sh | sudo bash > /dev/null
 
       - name: Get the file from the media release
+        if: inputs.path == ''
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           case "$ASSET" in *[!a-zA-Z0-9._-]*|"") echo "asset must be a simple file name"; exit 1;; esac
           gh release download media -R "$GITHUB_REPOSITORY" -p "$ASSET" -D dl
+
+      - name: Or take it from the repo
+        if: inputs.path != ''
+        run: |
+          case "$SRC_PATH" in renders/*) ;; *) echo "path must be under renders/"; exit 1;; esac
+          case "$ASSET" in *[!a-zA-Z0-9._-]*|"") echo "asset must be a simple file name"; exit 1;; esac
+          mkdir -p dl && cp "$SRC_PATH" "dl/$ASSET"
 
       - name: Upload to Drive
         env:

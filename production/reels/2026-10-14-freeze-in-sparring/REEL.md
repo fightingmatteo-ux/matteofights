@@ -48,6 +48,12 @@ cards hidden while a scene is up). Scenes slide up on a spring, exit with a zoom
   STEP BACK arrow springs in.
 - S3b: breathing rings grow with INHALE while a clock arc fills; RESET snaps, shockwave, BACK TO ZERO.
 
+## Loop fix (2026-10-14)
+The first cuts clipped "because" (A/B mid-word, C before "-cause"), so the replay stuttered. Takes now end in the
+silence after "because" and start on the hook's first sound (picked from 10 ms RMS of the source). The RESET scene
+leaves 0.12 s before "because", the card stays hidden, and the camera holds 1.0x, the hook's opening framing, so the
+last shot and frame 0 match. SFX scaled to 0.7x (HyperFrames refused A on true peak).
+
 ## Caption
 Your freeze isn't a technique problem.
 

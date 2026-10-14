@@ -212,7 +212,7 @@
       </div>
 
       <!-- S3b: breathe -> reset -->
-      <div id="sc3b" class="clip scene" data-start="{{W('p3','TAKE')}}" data-duration="{{E('p3')-W('p3','TAKE')}}" data-track-index="11">
+      <div id="sc3b" class="clip scene" data-start="{{W('p3','TAKE')}}" data-duration="{{W('p3','BECAUSE')-0.12-W('p3','TAKE')}}" data-track-index="11">
         <div class="grid"></div><div class="vig"></div>
         <div class="tag">03 · RESET</div>
         <svg width="1080" height="1920" viewBox="0 0 1080 1920" style="position:absolute;inset:0">
@@ -234,24 +234,24 @@
 
       <!-- ===== AUDIO ===== -->
       <audio id="vo" src="assets/media/aroll_{{V}}.mp4" data-start="0" data-duration="{{d['duration']}}" data-track-index="10" data-volume="1"></audio>
-      <audio id="sfx-hit-0" src="assets/sfx/hit.mp3" data-start="0" data-duration="1" data-track-index="13" data-volume="0.45"></audio>
-      <audio id="sfx-d1" src="assets/sfx/digital_click.mp3" data-start="{{S('p1')}}" data-duration="1" data-track-index="17" data-volume="0.5"></audio>
-      <audio id="sfx-d2" src="assets/sfx/digital_click.mp3" data-start="{{S('p2')}}" data-duration="1" data-track-index="17" data-volume="0.5"></audio>
-      <audio id="sfx-d3" src="assets/sfx/digital_click.mp3" data-start="{{S('p3')}}" data-duration="1" data-track-index="17" data-volume="0.5"></audio>
-      <audio id="sfx-hit-1" src="assets/sfx/hit.mp3" data-start="{{W('p1','PUNCHED')}}" data-duration="1" data-track-index="13" data-volume="0.55"></audio>
-      <audio id="sfx-line-3" src="assets/sfx/red_line.mp3" data-start="{{W('p3','CAUGHT')}}" data-duration="1" data-track-index="15" data-volume="0.4"></audio>
-      <audio id="sfx-storm" src="assets/sfx/digital_click.mp3" data-start="{{W('p2','THINKING')-0.12}}" data-duration="1" data-track-index="21" data-volume="0.4"></audio>
-      <audio id="sfx-jab" src="assets/sfx/hit.mp3" data-start="{{W('p2','JAB')}}" data-duration="1" data-track-index="22" data-volume="0.4"></audio>
-      <audio id="sfx-reset" src="assets/sfx/lib_impact-bass-1.wav" data-start="{{W('p3','RESET')}}" data-duration="1.5" data-track-index="16" data-volume="0.45"></audio>
-      <audio id="sfx-wT" src="assets/sfx/click.mp3" data-start="{{TITLE_END}}" data-duration="1" data-track-index="23" data-volume="0.35"></audio>
-      <audio id="sfx-w1" src="assets/sfx/click.mp3" data-start="{{W('p1','EXPECT')-0.25}}" data-duration="1" data-track-index="24" data-volume="0.35"></audio>
-      <audio id="sfx-riser" src="assets/sfx/riser.mp3" data-start="{{W('p1','PUNCHED')-0.85}}" data-duration="0.85" data-media-start="1.15" data-track-index="18" data-volume="0.4"></audio>
-      <audio id="sfx-w1b" src="assets/sfx/click.mp3" data-start="{{W('p1','FAILURE')-0.15}}" data-duration="1" data-track-index="23" data-volume="0.35"></audio>
-      <audio id="sfx-line-f" src="assets/sfx/red_line.mp3" data-start="{{W('p1','FAILURE')+0.22}}" data-duration="1" data-track-index="15" data-volume="0.4"></audio>
-      <audio id="sfx-d-info" src="assets/sfx/digital_click.mp3" data-start="{{W('p1','INFORMATION')}}" data-duration="1" data-track-index="17" data-volume="0.4"></audio>
-      <audio id="sfx-w3a" src="assets/sfx/click.mp3" data-start="{{W('p3','CAUGHT')-0.25}}" data-duration="1" data-track-index="24" data-volume="0.35"></audio>
-      <audio id="sfx-back" src="assets/sfx/lib_pop.wav" data-start="{{W('p3','STEP')+0.04}}" data-duration="0.72" data-track-index="25" data-volume="0.45"></audio>
-      <audio id="sfx-pop-cta" src="assets/sfx/lib_pop.wav" data-start="{{W('p3','STEP')}}" data-duration="0.72" data-track-index="20" data-volume="0.55"></audio>
+      <audio id="sfx-hit-0" src="assets/sfx/hit.mp3" data-start="0" data-duration="1" data-track-index="13" data-volume="0.32"></audio>
+      <audio id="sfx-d1" src="assets/sfx/digital_click.mp3" data-start="{{S('p1')}}" data-duration="1" data-track-index="17" data-volume="0.35"></audio>
+      <audio id="sfx-d2" src="assets/sfx/digital_click.mp3" data-start="{{S('p2')}}" data-duration="1" data-track-index="17" data-volume="0.35"></audio>
+      <audio id="sfx-d3" src="assets/sfx/digital_click.mp3" data-start="{{S('p3')}}" data-duration="1" data-track-index="17" data-volume="0.35"></audio>
+      <audio id="sfx-hit-1" src="assets/sfx/hit.mp3" data-start="{{W('p1','PUNCHED')}}" data-duration="1" data-track-index="13" data-volume="0.39"></audio>
+      <audio id="sfx-line-3" src="assets/sfx/red_line.mp3" data-start="{{W('p3','CAUGHT')}}" data-duration="1" data-track-index="15" data-volume="0.28"></audio>
+      <audio id="sfx-storm" src="assets/sfx/digital_click.mp3" data-start="{{W('p2','THINKING')-0.12}}" data-duration="1" data-track-index="21" data-volume="0.28"></audio>
+      <audio id="sfx-jab" src="assets/sfx/hit.mp3" data-start="{{W('p2','JAB')}}" data-duration="1" data-track-index="22" data-volume="0.28"></audio>
+      <audio id="sfx-reset" src="assets/sfx/lib_impact-bass-1.wav" data-start="{{W('p3','RESET')}}" data-duration="1.5" data-track-index="16" data-volume="0.32"></audio>
+      <audio id="sfx-wT" src="assets/sfx/click.mp3" data-start="{{TITLE_END}}" data-duration="1" data-track-index="23" data-volume="0.24"></audio>
+      <audio id="sfx-w1" src="assets/sfx/click.mp3" data-start="{{W('p1','EXPECT')-0.25}}" data-duration="1" data-track-index="24" data-volume="0.24"></audio>
+      <audio id="sfx-riser" src="assets/sfx/riser.mp3" data-start="{{W('p1','PUNCHED')-0.85}}" data-duration="0.85" data-media-start="1.15" data-track-index="18" data-volume="0.28"></audio>
+      <audio id="sfx-w1b" src="assets/sfx/click.mp3" data-start="{{W('p1','FAILURE')-0.15}}" data-duration="1" data-track-index="23" data-volume="0.24"></audio>
+      <audio id="sfx-line-f" src="assets/sfx/red_line.mp3" data-start="{{W('p1','FAILURE')+0.22}}" data-duration="1" data-track-index="15" data-volume="0.28"></audio>
+      <audio id="sfx-d-info" src="assets/sfx/digital_click.mp3" data-start="{{W('p1','INFORMATION')}}" data-duration="1" data-track-index="17" data-volume="0.28"></audio>
+      <audio id="sfx-w3a" src="assets/sfx/click.mp3" data-start="{{W('p3','CAUGHT')-0.25}}" data-duration="1" data-track-index="24" data-volume="0.24"></audio>
+      <audio id="sfx-back" src="assets/sfx/lib_pop.wav" data-start="{{W('p3','STEP')+0.04}}" data-duration="0.72" data-track-index="25" data-volume="0.32"></audio>
+      <audio id="sfx-pop-cta" src="assets/sfx/lib_pop.wav" data-start="{{W('p3','STEP')}}" data-duration="0.72" data-track-index="20" data-volume="0.39"></audio>
     </div>
 
     <script>
@@ -275,7 +275,9 @@
       shot(S("p2"), W("p2", "PICK"), 1.0, 1.02);
       shot(W("p2", "PICK"), E("p2"), 1.06, 1.08);
       shot(S("p3"), W("p3", "STEP"), 1.0, 1.02);
-      shot(W("p3", "STEP"), E("p3"), 1.06, 1.03);   // eases back toward the hook's framing for the loop
+      const LOOP_IN = W("p3", "BECAUSE") - 0.12;
+      shot(W("p3", "STEP"), LOOP_IN, 1.06, 1.03);
+      shot(LOOP_IN, E("p3"), 1.0, 1.0);            // same framing as frame 0 of the hook: the replay is one shot
 
       // ---- closed-form damped spring (no CSS easing): x(t) = 1 - e^(-zw t)(cos wd t + zw/wd sin wd t) ----
       const spring = (T, z = 0.42, w = 22) => { const wd = w * Math.sqrt(1 - z * z);
@@ -308,8 +310,10 @@
       // captions drop below the graphics while a scene is up (merged windows so back-to-back scenes don't flicker)
       const wins = IDS.map(win).sort((x, y) => x[0] - y[0]).reduce((m, w) => { const l = m[m.length - 1];
         if (l && w[0] <= l[1] + 0.01) l[1] = Math.max(l[1], w[1]); else m.push([...w]); return m; }, []);
-      wins.forEach(([a, b]) => { tl.set("#caps", { y: 640 }, a); tl.set("#caps", { y: 0 }, b);
-        tl.set(["#pn1", "#pn2", "#pn3", "#cta"], { autoAlpha: 0 }, a + 0.3); tl.set(["#pn1", "#pn2", "#pn3", "#cta"], { autoAlpha: 1 }, b - 0.2); });
+      wins.forEach(([a, b], k) => { tl.set("#caps", { y: 640 }, a); tl.set("#caps", { y: 0 }, b);
+        tl.set(["#pn1", "#pn2", "#pn3", "#cta"], { autoAlpha: 0 }, a + 0.3);
+        // after the last scene the face stays clean (no card) so the loop back into the hook is seamless
+        if (k < wins.length - 1) tl.set(["#pn1", "#pn2", "#pn3", "#cta"], { autoAlpha: 1 }, b - 0.2); });
       IDS.forEach((id, k) => {
         const [a, b] = win(id);
         tl.fromTo("#" + id, { y: 1920 }, { y: 0, ...SP(0.6, 0.82, 14) }, a);
