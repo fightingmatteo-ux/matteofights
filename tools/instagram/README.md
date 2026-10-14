@@ -40,3 +40,9 @@ python -P tools/instagram/ig.py trial ... --confirm                             
 
 ## Rule
 Never run `--confirm` without showing Matteo the exact preview and getting an explicit yes in that conversation.
+
+## From the cloud
+Secrets `IG_ACCESS_TOKEN` and `IG_USER_ID` are set on the repo (Actions). Push the render to the media
+release (`tools/video/media.sh push <file>`), commit the caption file, then run the **Post trial reel**
+workflow: preview first, `confirm=true` only after Matteo's yes. After `ig.py refresh`, update the secret:
+`gh secret set -f secrets/meta.env`.
