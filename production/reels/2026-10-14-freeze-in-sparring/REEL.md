@@ -54,16 +54,49 @@ silence after "because" and start on the hook's first sound (picked from 10 ms R
 leaves 0.12 s before "because", the card stays hidden, and the camera holds 1.0x, the hook's opening framing, so the
 last shot and frame 0 match. SFX scaled to 0.7x (HyperFrames refused A on true peak).
 
-## Caption
-Your freeze isn't a technique problem.
+## Captions (one per variant; the opener matches that variant's hook)
+### A
+```
+Your freeze isn't a technique problem. It's your head.
+Most fighters never figure out #3.
 
-1. Shock: expect to get hit. It's information, not failure.
-2. Overload: one job per round. Just the jab.
-3. Spiral: got caught? Step back, breathe out, reset.
+1. Shock 🥊 Expect to get hit → a punch isn't failure, it's information.
+2. Overload 🧠 One job per round → just the jab. Your head goes quiet.
+3. Spiral 🔁 Got caught? Don't chase it back → step back, breathe, reset.
 
-Comment the number you struggle with. Follow for the mental side of fighting.
+Which one do you need? Comment 1, 2 or 3 👇
+Follow for the mental side of fighting.
 
 #sparring #boxing #muaythai #fightermindset
+```
+### B
+```
+Fighters and beginners spar with the same hands. Not the same head.
+Most fighters never figure out #3.
+
+1. Shock 🥊 Expect to get hit → a punch isn't failure, it's information.
+2. Overload 🧠 One job per round → just the jab. Your head goes quiet.
+3. Spiral 🔁 Got caught? Don't chase it back → step back, breathe, reset.
+
+Which one do you need? Comment 1, 2 or 3 👇
+Follow for the mental side of fighting.
+
+#sparring #boxing #muaythai #fightermindset
+```
+### C
+```
+Beginners try to win every exchange. Fighters don't.
+Here's what they do instead (most never figure out #3):
+
+1. Shock 🥊 Expect to get hit → a punch isn't failure, it's information.
+2. Overload 🧠 One job per round → just the jab. Your head goes quiet.
+3. Spiral 🔁 Got caught? Don't chase it back → step back, breathe, reset.
+
+Which one do you need? Comment 1, 2 or 3 👇
+Follow for the mental side of fighting.
+
+#sparring #boxing #muaythai #fightermindset
+```
 
 ## Results (fill at 72 h)
 | V | Views | Follows | Shares | Saves | Comments | Avg watch |
