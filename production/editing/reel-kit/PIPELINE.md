@@ -4,6 +4,8 @@ The @matteofights reel pipeline. Runs from this repo on the laptop or in a Claud
 **Goal (since 2026-10-12): followers + engaged, high-quality fighter audience.** Content = combat sport
 psychology and fighter mindset. No Stance plug in reels for now. Nothing is ever posted automatically.
 
+Headless daily listicles (old 331k format, no filming): `tools/listicle/README.md`.
+
 Reference builds:
 - `production/reels/worst-decision/` — latest standard: multi-take assembly, beats/J-cuts, serif one-word
   subtitles, bottom-anchored zoom, templated timings (`work/template.html` + `inject.py`), cover in `thumb/`

@@ -1,0 +1,159 @@
+{
+  "_how": "Backlog for the daily listicle factory (tools/listicle/factory.py). Claude writes hooks here; status ready -> rendered (with clip + queue id). The factory takes the next 'ready' hooks in order.",
+  "hooks": [
+    {
+      "id": "built-for-fight-night",
+      "archetype": "identity",
+      "hook": "6 SIGNS YOU WERE BUILT FOR FIGHT NIGHT",
+      "subhook": [
+        "Some people get nervous before a fight.",
+        "Some people get hungry."
+      ],
+      "caption": "Some people get nervous before a fight.\nSome people get hungry.\n\n6 signs you were built for fight night:\n\n1. You feel the nerves and walk out anyway\n2. The quieter the room gets, the calmer you get\n3. You want the best opponent, not the easiest one\n4. You forget the crowd the second the bell goes\n5. Getting hit wakes you up instead of shutting you down\n6. Win or lose, you're already thinking about the next one\n\nRepost this so the fighters who live for fight night find it.\n\n#boxing #fightermindset #muaythai #fightnight",
+      "status": "ready"
+    },
+    {
+      "id": "mindset-without-a-fight",
+      "archetype": "tactical",
+      "hook": "7 WAYS TO BUILD A FIGHTER'S MINDSET WITHOUT A SINGLE FIGHT",
+      "subhook": [
+        "Some people wait for fight night to get tough.",
+        "Some people build it every session."
+      ],
+      "caption": "Some people wait for fight night to get tough.\nSome people build it every session.\n\nHere are 7 ways to build a fighter's mindset without a single fight:\n\n1. Hard rounds first 🔥 Do the round you dread first → your head learns hard comes and goes\n\n2. One promise a day ✅ Pick one thing and never skip it → discipline is kept promises\n\n3. Breathe under fire 🌬️ Nose breathing on the last round → calm is a skill you rep\n\n4. Film yourself 🎥 Watch it the same day → your ego lies, the tape doesn't\n\n5. Train tired 🥊 Clean technique in the final minute → that's where fights are decided\n\n6. Kill the excuse early ⏰ Bag packed the night before → you never negotiate with yourself\n\n7. Lose on purpose 🧠 Spar people better than you → being okay with losing makes you dangerous\n\nDrop a 🥊 if you're building it before anyone's watching\nDM me \"HELP\" if you want help building yours.\n\n#boxing #fightermindset #muaythai #discipline",
+      "status": "ready"
+    },
+    {
+      "id": "mentally-tougher",
+      "archetype": "identity",
+      "hook": "6 SIGNS YOU'RE MENTALLY TOUGHER THAN YOU THINK",
+      "subhook": [
+        "Some people quit when it gets hard.",
+        "Some people just get quieter."
+      ],
+      "caption": "Some people quit when it gets hard.\nSome people just get quieter.\n\n6 signs you're mentally tougher than you think:\n\n1. You show up on the days you don't feel like it\n2. You don't need anyone watching you train\n3. You've lost and come back the next day\n4. You'd rather be exhausted than wonder\n5. Pain makes you focus, not panic\n6. You never tell anyone how hard it actually is\n\nRepost this so the quiet ones find out what they've got.\n\n#fightermindset #boxing #muaythai #discipline",
+      "status": "ready"
+    },
+    {
+      "id": "calm-without-experience",
+      "archetype": "tactical",
+      "hook": "8 WAYS TO STAY CALM IN A FIGHT WITHOUT YEARS OF EXPERIENCE",
+      "subhook": [
+        "Some people panic when it gets messy.",
+        "Some people get calmer."
+      ],
+      "caption": "Some people panic when it gets messy.\nSome people get calmer.\n\nHere are 8 ways to stay calm in a fight without years of experience:\n\n1. Exhale on every punch 💨 Breathe out with the shot → you can't panic and breathe at the same time\n\n2. One job per round 🎯 Just the jab, just the feet → a quiet head moves faster\n\n3. Expect to get hit 🥊 It's information, not failure → the shock goes away\n\n4. Slow your feet first 👣 Calm feet → calm head\n\n5. One word in your head 🗣️ \"Reset\" after every exchange → it cuts the noise\n\n6. Tie up when it's chaos 🔒 Clinch and breathe → buy two seconds to think\n\n7. Rehearse the bad moments 🧠 Picture getting rocked and recovering → your body's seen it before\n\n8. Smile when it hurts 😤 It settles you → and it gets in their head\n\nDrop a 🥊 if you've frozen in there before\nDM me \"HELP\" if you want me to look at what's freezing you.\n\n#boxing #sparring #fightermindset #muaythai",
+      "status": "ready"
+    },
+    {
+      "id": "made-for-combat-sports",
+      "archetype": "identity",
+      "hook": "7 SIGNS YOU WERE MADE FOR COMBAT SPORTS",
+      "subhook": [
+        "Some people like watching fights.",
+        "Some people need to be in one."
+      ],
+      "caption": "Some people like watching fights.\nSome people need to be in one.\n\n7 signs you were made for combat sports:\n\n1. You shadowbox in the kitchen without thinking\n2. You watch fights and see the mistakes, not the knockout\n3. A bad session ruins your whole day\n4. You remember every round you lost\n5. Rest days feel like punishment\n6. You'd fight the best guy in the gym just to know\n7. You've never once asked if it's worth it\n\nRepost this so the ones who were made for this find it.\n\n#boxing #muaythai #fightlife #fightermindset",
+      "status": "ready"
+    },
+    {
+      "id": "dangerous-without-a-partner",
+      "archetype": "tactical",
+      "hook": "8 WAYS TO GET DANGEROUS WITHOUT A TRAINING PARTNER",
+      "subhook": [
+        "Some people wait for a partner.",
+        "Some people get dangerous alone."
+      ],
+      "caption": "Some people wait for a partner.\nSome people get dangerous alone.\n\nHere are 8 ways to get dangerous without a training partner:\n\n1. Shadowbox with intent 🥊 Fight a real opponent in your head → every round has a plan\n\n2. Mirror work 🪞 Check your guard on every shot → bad habits die alone\n\n3. Bag rounds with a rule 🎯 Only counters this round → you build reactions, not just punches\n\n4. Footwork every day 👣 10 minutes → angles become automatic\n\n5. Study your tape 🎥 Yours next to a pro's → you see the gap\n\n6. Slip line drills 🔁 A rope and your head → defence without a partner\n\n7. Train at fight pace ⏱️ 3-minute rounds, 1 minute rest → your body learns the rhythm\n\n8. Visualise the fight 🧠 Round by round, before bed → your mind gets the reps too\n\nDrop a 🥊 if you train alone more than you'd like\nDM me \"HELP\" if you want a solo session plan.\n\n#boxing #boxingtraining #shadowboxing #muaythai",
+      "status": "ready"
+    },
+    {
+      "id": "started-late",
+      "archetype": "identity",
+      "hook": "6 SIGNS YOU STARTED LATE AND ARE STILL GOING TO MAKE IT",
+      "subhook": [
+        "Some people think they started too late.",
+        "Some people just started."
+      ],
+      "caption": "Some people think they started too late.\nSome people just started.\n\n6 signs you started late and are still going to make it:\n\n1. You train like you're making up for lost time, because you are\n2. You ask more questions than anyone in the gym\n3. You don't care who's been there longer\n4. You'd rather be bad now than never know\n5. You study fights on the way home\n6. Every year you're better than the one before\n\nRepost this so the late starters find it.\n\n#boxing #muaythai #fightermindset #neverlate",
+      "status": "ready"
+    },
+    {
+      "id": "technique-without-a-coach",
+      "archetype": "tactical",
+      "hook": "7 WAYS TO BUILD REAL TECHNIQUE WITHOUT A COACH",
+      "subhook": [
+        "Some people wait for someone to fix them.",
+        "Some people fix themselves."
+      ],
+      "caption": "Some people wait for someone to fix them.\nSome people fix themselves.\n\nHere are 7 ways to build real technique without a coach:\n\n1. Film every session 🎥 → you can't fix what you can't see\n\n2. Copy one fighter 🧠 Pick one style and steal it → depth beats variety\n\n3. Slow it down 🐢 Half speed, perfect form → speed comes from clean reps\n\n4. One fix per week 🎯 Just the guard. Just the hips → small fixes stack\n\n5. Drill the boring stuff 🔁 Jab, step, reset → the basics win fights\n\n6. Ask the best guy in the gym 💬 One question a session → most will help\n\n7. Test it live 🥊 Sparring is the exam → if it breaks under pressure, it isn't yours yet\n\nDrop a 🥊 if you're mostly self-taught\nDM me \"HELP\" if you want me to look at your technique.\n\n#boxing #boxingtraining #technique #muaythai",
+      "status": "ready"
+    },
+    {
+      "id": "fighter-without-a-record",
+      "archetype": "identity",
+      "hook": "6 SIGNS YOU'RE A FIGHTER EVEN IF YOU'VE NEVER HAD A FIGHT",
+      "subhook": [
+        "Some people need a record to call themselves a fighter.",
+        "Some people just live like one."
+      ],
+      "caption": "Some people need a record to call themselves a fighter.\nSome people just live like one.\n\n6 signs you're a fighter even if you've never had a fight:\n\n1. You train when no fight is booked\n2. You keep going after getting dropped in sparring\n3. You treat your body like it's your job\n4. You'd rather be respected than liked in the gym\n5. You know exactly what scares you, and you train it\n6. You've never needed a crowd to show up\n\nRepost this so the fighters without a record find it.\n\n#boxing #muaythai #fightermindset #fightlife",
+      "status": "ready"
+    },
+    {
+      "id": "power-without-weights",
+      "archetype": "tactical",
+      "hook": "8 WAYS TO HIT HARDER WITHOUT LIFTING A SINGLE WEIGHT",
+      "subhook": [
+        "Some people chase power in the weight room.",
+        "Some people find it in their hips."
+      ],
+      "caption": "Some people chase power in the weight room.\nSome people find it in their hips.\n\nHere are 8 ways to hit harder without lifting a single weight:\n\n1. Turn the back foot 👟 Power starts on the floor → no pivot, no punch\n\n2. Relax until impact 💨 Loose arm, tight fist at the end → tension kills speed\n\n3. Exhale sharp 🌬️ On every shot → your core locks at the right moment\n\n4. Sit down on it ⬇️ Drop your weight an inch → body behind the punch\n\n5. Punch through the target 🎯 Aim behind the bag → don't stop at the surface\n\n6. Med ball throws 🔥 Rotational slams → explosive hips without a barbell\n\n7. Short shots 🔨 Close range, no wind-up → they don't see it coming\n\n8. Timing over strength ⏱️ Catch them stepping in → the hardest shot is the one they walk into\n\nDrop a 🥊 if you want to hit like a truck\nDM me \"HELP\" if you want my power drills.\n\n#boxing #punchingpower #boxingtraining #muaythai",
+      "status": "ready"
+    },
+    {
+      "id": "fighters-mindset",
+      "archetype": "identity",
+      "hook": "7 SIGNS YOU HAVE A FIGHTER'S MINDSET",
+      "subhook": [
+        "Some people train to look good.",
+        "Some people train to be ready."
+      ],
+      "caption": "Some people train to look good.\nSome people train to be ready.\n\n7 signs you have a fighter's mindset:\n\n1. You don't need motivation, you have a schedule\n2. A bad round is data, not a disaster\n3. You train the thing you're worst at first\n4. The hardest sparring days are the ones you remember\n5. You're calm when everyone else is loud\n6. You never blame the ref, the cut or the judges\n7. You're training for a fight that isn't booked yet\n\nRepost this so the ones who are always ready find it.\n\n#fightermindset #boxing #muaythai #discipline",
+      "status": "ready"
+    },
+    {
+      "id": "nerves-without-faking",
+      "archetype": "tactical",
+      "hook": "7 WAYS TO KILL FIGHT NERVES WITHOUT FAKING CONFIDENCE",
+      "subhook": [
+        "Some people try to stop the nerves.",
+        "Some people use them."
+      ],
+      "caption": "Some people try to stop the nerves.\nSome people use them.\n\nHere are 7 ways to kill fight nerves without faking confidence:\n\n1. Name it 🧠 \"This is adrenaline\" → nerves are fuel your body handed you early\n\n2. Slow exhale ⏱️ 4 in, 8 out before you walk → your heart rate drops on command\n\n3. Warm up hard 🔥 Break a real sweat → shakes turn into speed\n\n4. Plan the first 30 seconds 🎯 Exactly what you'll throw → certainty kills doubt\n\n5. Stop scrolling 📵 No opponent highlights fight week → you fight them, not their reel\n\n6. Same routine every time 🔁 Same music, same wraps → your body knows what's coming\n\n7. Remember the work ✅ Every round you put in → confidence is evidence\n\nDrop a 🥊 if your nerves have ever beaten you before the bell\nDM me \"HELP\" if you've got a fight coming up.\n\n#fightnight #boxing #fightermindset #muaythai",
+      "status": "ready"
+    },
+    {
+      "id": "about-to-level-up",
+      "archetype": "identity",
+      "hook": "6 SIGNS YOU'RE ABOUT TO LEVEL UP AS A FIGHTER",
+      "subhook": [
+        "Some people think they're stuck.",
+        "Some people are about to break through."
+      ],
+      "caption": "Some people think they're stuck.\nSome people are about to break through.\n\n6 signs you're about to level up as a fighter:\n\n1. Training feels harder, not easier\n2. You notice mistakes you never used to see\n3. The guys who used to beat you are struggling now\n4. You're frustrated, but you keep showing up\n5. Sparring feels slower than it used to\n6. You stopped caring how it looks and started caring if it works\n\nRepost this so the fighters who feel stuck see this.\n\n#boxing #muaythai #fightermindset #sparring",
+      "status": "ready"
+    },
+    {
+      "id": "fit-without-running",
+      "archetype": "tactical",
+      "hook": "8 WAYS TO GET FIGHT FIT WITHOUT RUNNING EVERY MORNING",
+      "subhook": [
+        "Some people run miles they'll never fight.",
+        "Some people train the way fights actually go."
+      ],
+      "caption": "Some people run miles they'll never fight.\nSome people train the way fights actually go.\n\nHere are 8 ways to get fight fit without running every morning:\n\n1. Rounds, not miles ⏱️ 3 on, 1 off → train the rhythm of a fight\n\n2. Bag sprints 🥊 30 seconds all-out, 30 easy → fights are bursts, not jogs\n\n3. Skip rope 🪢 10 minutes → feet and lungs at once\n\n4. Clinch rounds 🔒 2 minutes of pummelling → the most tiring position in the sport\n\n5. Nose breathing 💨 Easy work through the nose → you recover faster between rounds\n\n6. Hill sprints ⛰️ Short and brutal, once a week → power that lasts\n\n7. Spar short and fast 🎯 Shorter rounds, higher pace → a gas tank that matters\n\n8. Sleep 😴 8 hours → the conditioning nobody films\n\nDrop a 🥊 if you hate running\nDM me \"HELP\" if you want my fight-conditioning week.\n\n#boxing #muaythai #fightconditioning #boxingtraining",
+      "status": "ready"
+    }
+  ]
+}

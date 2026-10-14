@@ -68,6 +68,7 @@ Other connected MCPs (see `context/apps.md`): Higgsfield (`virality_predictor`, 
 | Carousel look — locked | [production/carousels/BRAND.md](production/carousels/BRAND.md) | **Any carousel work. Read first.** |
 | Carousel copy procedure | [production/carousels/COPY-ENGINE.md](production/carousels/COPY-ENGINE.md) | Writing carousel hooks and slide copy |
 | **Make a reel (watch → plan → edit → test)** | [production/editing/reel-kit/PIPELINE.md](production/editing/reel-kit/PIPELINE.md) | **Any reel/video work. Read first.** |
+| Daily listicle trial reels (auto-rendered, approve weekly) | [tools/listicle/README.md](tools/listicle/README.md) | Hooks backlog, approving the week's listicles |
 | Reel results + test history | [production/reels/LEDGER.md](production/reels/LEDGER.md) | Choosing hooks/formats; logging a posted variant |
 | Reference reels (watched) | [content-bank/references/](content-bank/references/) | Before planning a new format |
 | Watch a video from the cloud | [tools/video/README.md](tools/video/README.md) | Cloud session needs to watch/download a reel |
