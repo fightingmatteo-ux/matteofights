@@ -54,7 +54,9 @@ jobs:
           case "$NAME" in *[!a-zA-Z0-9._-]*|"") echo "name must be a simple slug"; exit 1;; esac
           mkdir -p dl
           if [[ "$URL" == *drive.google.com* ]]; then
-            gdown --fuzzy "$URL" -O dl/video
+            # gdown >= 6 dropped --fuzzy; pass the bare file id
+            id=$(printf '%s' "$URL" | sed -nE 's#.*/d/([^/?]+).*#\1#p; s#.*[?&]id=([^&]+).*#\1#p' | head -1)
+            gdown "${id:-$URL}" -O dl/video
           else
             args=()
             if [ -n "$IG_COOKIES" ]; then printf '%s\n' "$IG_COOKIES" > cookies.txt; args+=(--cookies cookies.txt); fi
