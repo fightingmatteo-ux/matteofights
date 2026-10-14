@@ -48,3 +48,22 @@ Footage: own (ring photo, fight clips cleaned + 2x upscaled, KO from "Muay Thai 
 starting after the elbows, freeze on the right hand; Impact MMA Zurich; Essaouira pads; Super 8 Samui;
 Audace Rome; Bangkok = Matteo talking) + stock (Mixkit chess 5339; Wikimedia CC0 São Paulo Sé cathedral).
 Music: launch soundtrack bed, cut to silence on "The result? A draw.", back in on the lesson.
+
+## Posted (trial reels, Matteo, manual)
+| V | Posted (UTC) | Media id | Link |
+|---|---|---|---|
+| A | 2026-10-12 18:03 | 18134120356678360 | https://www.instagram.com/reel/DeZ1ClETXec/ |
+| B | 2026-10-13 16:12 | 18088237382285254 | https://www.instagram.com/reel/DecCFynzIk9/ |
+| C | 2026-10-14 13:07 | 17970008451158320 | https://www.instagram.com/reel/Deec0NpKVRz/ |
+
+Posted on three different days, so compare each variant at the same age (24 h / 72 h / 7 d), not on the same date.
+Reels expose no follows in the API: follows come from Matteo's insights screen at 72 h.
+
+## Results (Buzzfy `ig_post_stats`)
+| V | Age | Views | Reach | Shares | Saves | Likes | Avg watch | Skip | Follows |
+|---|---|---|---|---|---|---|---|---|---|
+| A | 44 h | 1678 | 1448 | 3 | 4 | 26 | 15.8 s | 32.4% | ? |
+| B | 22 h | 2276 | 1982 | 1 | 4 | 37 | 13.1 s | 32.3% | ? |
+| C | 1 h | 132 | 94 | 0 | 0 | 1 | 6.3 s | 38.4% | ? |
+
+Winner (at 72 h each): follows per 1k views → shares → avg watch. Undecided.

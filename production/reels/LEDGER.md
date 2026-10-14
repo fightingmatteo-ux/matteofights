@@ -3,8 +3,11 @@
 One row per posted variant. Fill from each reel's `REEL.md`. All variants posted as trial reels the same day; compare at 72 h.
 Sort by follows per 1k views when looking for what grows the account.
 
-| Date | Reel (slug) | V | Hook | Format | Credibility | Type | Views 72h | Follows 72h | Shares | Saves | Comments | Winner? | Learning |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Date | Reel (slug) | V | Media id | Hook | Format | Credibility | Type | Views 72h | Follows 72h | Shares | Saves | Comments | Winner? | Learning |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 2026-10-12 | 2026-10-12-origin-story | A | 18134120356678360 | My first fight, I knocked the guy out. It was still a draw. | story, paradox | own experience | story | pending | ? | | | | | |
+| 2026-10-13 | 2026-10-12-origin-story | B | 18088237382285254 | Someone told me, if you don't knock him out, you're gonna lose. | story, paradox | own experience | story | pending | ? | | | | | |
+| 2026-10-14 | 2026-10-12-origin-story | C | 17970008451158320 | People think combat sports is just about violence. My first fight is how I know that's not true. | story, paradox | own experience | story | pending | ? | | | | | |
 
 ## Patterns so far
 - _Add a line whenever a test is decided. Keep it to what the numbers showed._
