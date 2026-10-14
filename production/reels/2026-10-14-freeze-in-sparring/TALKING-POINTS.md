@@ -30,3 +30,25 @@ reads as one sentence.
 punch-in every 1.5–2 s; "WHICH ONE DO YOU NEED? ⬇️" from point 3 to the end. No dead air after the hook.
 
 **Caption CTA:** "Comment the number you struggle with. Follow for the mental side of fighting."
+
+## Shot list (filmed in the Edits app, many takes)
+Say the **slate** out loud at the start of every clip, pause 1 s, then deliver. Claude finds takes by the
+slate in the transcript, so file names and order don't matter.
+
+| # | Slate (say it) | Then say | Takes |
+|---|---|---|---|
+| 1 | "Hook A" | If you freeze when you spar, it's not your technique. It's your head. Three things fix it. | 3 |
+| 2 | "Hook B" | Fighters and beginners think completely differently in sparring. Here's the difference. | 3 |
+| 3 | "Hook C" | Beginners try to win every exchange. Fighters don't. Here's what they do instead. | 3 |
+| 4 | "Point one" | One. Expect to get hit. A punch isn't failure, it's information. | 2–3 |
+| 5 | "Point two" | Two. One job per round. Only the jab. Nothing else. | 2–3 |
+| 6 | "Point three" | Three. When you get caught, step back, breathe out, and reset. | 2–3 |
+| 7 | "Loop A" | (point three) …and reset. Because if you freeze when you spar, it's not your technique. | 2 |
+| 8 | "Loop B" | (point three) …and reset. Because fighters and beginners think completely differently in sparring. | 2 |
+| 9 | "Loop C" | (point three) …and reset. Because beginners try to win every exchange. Fighters don't. | 2 |
+
+Same spot, light, framing and phone distance for every clip (the loop only works if they match).
+B-roll (optional, 3–5 s each, no talking): shadowboxing · pads · sparring · a deep exhale stepping back.
+
+**Export + send:** in Edits, export each clip raw (no captions, music, filters, speed), highest quality.
+Upload all to the Drive input folder `19PgWfSa9nwzBcn7JD24EY7QEr12IONbL` (or one zip). Tell Claude when done.
