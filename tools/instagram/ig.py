@@ -116,6 +116,7 @@ def trial(a):
 
 
 def main():
+    sys.stdout.reconfigure(encoding="utf-8")  # captions carry emoji; Windows consoles default to cp1252
     p = argparse.ArgumentParser()
     sub = p.add_subparsers(dest="cmd", required=True)
     sub.add_parser("whoami")
