@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "buzzfy": {
+      "type": "http",
+      "url": "https://mcp.buzzfy.co/mcp"
+    }
+  }
+}

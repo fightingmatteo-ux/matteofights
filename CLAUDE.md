@@ -46,7 +46,7 @@ analytics. Build it in phases; don't try to do everything at once.
 |---|---|---|---|
 | `instagram` | Matteo (matteofights) | 17841465098113052 | Followers, reach, views, per-reel metrics, captions |
 
-Other connected MCPs (see `context/apps.md`): Higgsfield (`virality_predictor`, image/video gen).
+Other connected MCPs (see `context/apps.md`): Higgsfield (`virality_predictor`, image/video gen), Buzzfy (reel tracking + viral research, project `.mcp.json`).
 
 ---
 

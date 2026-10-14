@@ -7,6 +7,7 @@ _What's wired up and what each is for._
 | **Windsor.ai** | joinstance@gmail.com | Instagram analytics (`instagram` connector, matteofights, ID 17841465098113052) | Connected |
 | **Windsor.ai** | joinstance@gmail.com | Facebook Organic analytics (`facebook_organic` connector, "Matteo Fights" Page, ID 1070947222779004) | Connected (confirmed 2026-06-16 — previously miscategorized as not connected, that was wrong) |
 | **Higgsfield** | — | Image/video generation; `virality_predictor` to score reels before posting | Available |
+| **Buzzfy** | — | Reel tracking + viral research for @matteofights and boxing/combat accounts (`.mcp.json` → `https://mcp.buzzfy.co/mcp`) | Added 2026-10-14 — sign in on first use; tools not yet verified |
 
 ## Windsor field quirk (facebook_organic)
 `get_fields` errors on this connector (pydantic validation bug) — field discovery is broken. Use
