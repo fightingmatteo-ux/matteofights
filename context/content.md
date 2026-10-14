@@ -47,7 +47,9 @@ saveable) still works — it is the *hook frame* that is spent.
 Do NOT repeat "born to be a fighter" — find new identity framing.
 
 **Identity and contrast beat instruction.** Re-read live 2026-08-13. The account's best-performing
-hook is four words and gives no advice at all (likes + comments):
+post is the `6 SIGNS YOU WERE BORN TO BE A FIGHTER` reel (331k views). Its **caption** opens with four
+words that give no advice at all. Figures below are likes + comments keyed by caption first line, so
+7413 is that same 6-signs post, not a separate hook (corrected by Matteo 2026-10-14):
 
 ```
 7413   Some people train for fun.

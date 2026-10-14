@@ -33,8 +33,9 @@ analytics. Build it in phases; don't try to do everything at once.
 - **Secrets never get committed:** `secrets/` (gitignored) holds `ig_cookies.txt` (Instagram login, for
   yt-dlp). Cloud equivalent: Actions secret `IG_COOKIES`. Raw footage/renders: `media/` (gitignored)
   locally; Drive input/output or the `media` GitHub release remotely.
-- **Identity and contrast beat instruction.** Verified live 2026-08-12: the top hook is
-  `Some people train for fun.` at 7410. Barrier-removal (`You don't need X`) has decayed from 2814
+- **Identity and contrast beat instruction.** Best reel ever = `6 SIGNS YOU WERE BORN TO BE A FIGHTER`
+  (331k views); its caption opens `Some people train for fun.` (7410 = that post, not a separate hook).
+  #2 = `8 WAYS TO FIGHT LIKE A KILLER WITHOUT SPARRING 5X/WEEK` (161k). Both listicles. Barrier-removal (`You don't need X`) has decayed from 2814
   to 20 over seven months — it is spent.
 
 ---
