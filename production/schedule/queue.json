@@ -12,8 +12,11 @@
       "not_before": "2026-10-14T16:10:00Z",
       "min_gap_hours": 3,
       "approved": true,
-      "status": "queued",
-      "last_error": "POST https://graph.instagram.com/v23.0/17841465098113052/media -> 400: {\"error\":{\"message\":\"The parameter video_url is required\",\"type\":\"IGApiException\",\"code\":100,\"fbtrace_id\":\"AXoRtpCOZerfosho0GTOkCw\"}}"
+      "status": "posted",
+      "last_error": "POST https://graph.instagram.com/v23.0/17841465098113052/media -> 400: {\"error\":{\"message\":\"The parameter video_url is required\",\"type\":\"IGApiException\",\"code\":100,\"fbtrace_id\":\"AXoRtpCOZerfosho0GTOkCw\"}}",
+      "media_id": "18131444773684044",
+      "permalink": "https://www.instagram.com/reel/Dee3EmfE--u/",
+      "posted_at": "2026-10-14T16:55:34Z"
     },
     {
       "id": "freeze-B",
