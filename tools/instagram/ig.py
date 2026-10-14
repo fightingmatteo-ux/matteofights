@@ -7,17 +7,22 @@ Nothing goes out without --confirm. Without it, `trial` only prints the preview.
     python -P tools/instagram/ig.py trial --video media/x/x-A.mp4 --caption-file production/reels/<slug>/caption-A.txt
     python -P tools/instagram/ig.py trial ... --confirm         # only after Matteo said yes to the preview
     python -P tools/instagram/ig.py status <container_id>
+    python -P tools/instagram/ig.py insights                    # per-reel metrics -> analytics/snapshots/<date>-graph.json
 
 Token: secrets/meta.env (IG_ACCESS_TOKEN=..., IG_USER_ID=...), or the same names as env vars
 (GitHub Actions secrets). Upload is resumable straight to Meta, so the video needs no public URL.
 """
 import argparse, json, os, sys, time, urllib.error, urllib.parse, urllib.request
+from datetime import datetime, timezone
 from pathlib import Path
 
 API = "v23.0"
 GRAPH = f"https://graph.instagram.com/{API}"
 RUPLOAD = f"https://rupload.facebook.com/ig-api-upload/{API}"
-ENV_FILE = Path(__file__).resolve().parents[2] / "secrets" / "meta.env"
+ROOT = Path(__file__).resolve().parents[2]
+ENV_FILE = ROOT / "secrets" / "meta.env"
+# Reel insights (Instagram Login, needs instagram_business_manage_insights). Skip rate is newer; asked separately.
+REEL_METRICS = "reach,views,likes,comments,shares,saved,total_interactions,ig_reels_avg_watch_time,ig_reels_video_view_total_time"
 
 
 def load_env():
@@ -30,17 +35,19 @@ def load_env():
         sys.exit(f"No IG_ACCESS_TOKEN (put it in {ENV_FILE} or the environment).")
 
 
-def call(method, url, params=None, data=None, headers=None):
+def call(method, url, params=None, data=None, headers=None, fatal=True):
     params = dict(params or {})
     if "graph.instagram.com" in url:
         params["access_token"] = os.environ["IG_ACCESS_TOKEN"]
     if params:
-        url += "?" + urllib.parse.urlencode(params)
+        url += ("&" if "?" in url else "?") + urllib.parse.urlencode(params)
     req = urllib.request.Request(url, data=data, method=method, headers=headers or {})
     try:
         with urllib.request.urlopen(req, timeout=600) as r:
             return json.loads(r.read() or b"{}")
     except urllib.error.HTTPError as e:
+        if not fatal:
+            return {"error": e.read().decode(errors="replace")}
         sys.exit(f"{method} {url.split('?')[0]} -> {e.code}: {e.read().decode(errors='replace')}")
 
 
@@ -113,6 +120,56 @@ def trial(a):
     media_id = call("POST", f"{GRAPH}/{user_id}/media_publish", {"creation_id": cid})["id"]
     link = call("GET", f"{GRAPH}/{media_id}", {"fields": "permalink"}).get("permalink")
     print(f"PUBLISHED trial reel: media id {media_id}  {link}")
+    if a.slug and a.variant:
+        sys.path.insert(0, str(ROOT / "tools" / "analytics"))
+        import ledger
+        ledger.link(media_id, a.slug, a.variant, None)
+
+
+def insights(a):
+    """Per-reel metrics in the Buzzfy snapshot shape, for tools/analytics/ledger.py."""
+    me = call("GET", f"{GRAPH}/me", {"fields": "user_id,username,followers_count"})
+    user_id = os.environ.get("IG_USER_ID") or me["user_id"]
+    pulled = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    url, params, media = f"{GRAPH}/{user_id}/media", {"fields": "id,caption,media_product_type,timestamp,permalink", "limit": 50}, []
+    while url and len(media) < a.limit:
+        page = call("GET", url, params)
+        media += page.get("data", [])
+        nxt = page.get("paging", {}).get("next")
+        if nxt:  # keep its cursor, drop its token (call() adds ours)
+            u = urllib.parse.urlsplit(nxt)
+            url, params = f"{u.scheme}://{u.netloc}{u.path}", {k: v for k, v in urllib.parse.parse_qsl(u.query) if k != "access_token"}
+        else:
+            url = None
+    posts = []
+    for m in media[: a.limit]:
+        if m.get("media_product_type") != "REELS":
+            continue
+        r = call("GET", f"{GRAPH}/{m['id']}/insights", {"metric": REEL_METRICS}, fatal=False)
+        if "error" in r:
+            print(f"  {m['id']}: no insights ({r['error'][:120]})")
+            continue
+        v = {d["name"]: (d.get("values") or [{}])[0].get("value") for d in r.get("data", [])}
+        skip = call("GET", f"{GRAPH}/{m['id']}/insights", {"metric": "reels_skip_rate"}, fatal=False)
+        skip = None if "error" in skip else (skip.get("data") or [{}])[0].get("values", [{}])[0].get("value")
+        watch, total = v.get("ig_reels_avg_watch_time"), v.get("ig_reels_video_view_total_time")
+        posts.append({
+            "id": m["id"], "kind": "reel", "posted_at": m["timestamp"].replace("+0000", "Z"),
+            "on_grid": None,  # the API doesn't say whether a trial was shared; Buzzfy pulls fill it in
+            "permalink": m.get("permalink"),
+            "caption_first_line": (m.get("caption") or "").strip().split("\n")[0][:200],
+            "reach": v.get("reach"), "views": v.get("views"), "likes": v.get("likes"),
+            "comments": v.get("comments"), "shares": v.get("shares"), "saves": v.get("saved"),
+            "interactions": v.get("total_interactions"),
+            "avg_watch_time_s": round(watch / 1000, 1) if watch is not None else None,
+            "total_watch_time_min": round(total / 60000, 1) if total is not None else None,
+            "skip_rate_pct": skip,
+        })
+    out = Path(a.out or ROOT / "analytics" / "snapshots" / f"{pulled[:10]}-graph.json")
+    out.write_text(json.dumps({
+        "source": "own Meta app (graph.instagram.com)", "pulled_at": pulled,
+        "account": {"followers": me.get("followers_count")}, "posts": posts}, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
+    print(f"{len(posts)} reels -> {out}")
 
 
 def main():
@@ -128,11 +185,17 @@ def main():
     t.add_argument("--strategy", choices=["MANUAL", "SS_PERFORMANCE"], default="MANUAL")
     t.add_argument("--thumb-offset", type=int, help="cover frame, ms from start")
     t.add_argument("--confirm", action="store_true", help="actually publish (only after an explicit yes)")
+    t.add_argument("--slug", help="reel folder, e.g. 2026-10-14-freeze-in-sparring (links the post in the ledger)")
+    t.add_argument("--variant", help="A, B or C")
+    i = sub.add_parser("insights")
+    i.add_argument("--limit", type=int, default=60, help="newest N posts")
+    i.add_argument("--out", help="snapshot path (default analytics/snapshots/<date>-graph.json)")
     a = p.parse_args()
     load_env()
     if a.cmd == "whoami": whoami()
     elif a.cmd == "refresh": refresh()
     elif a.cmd == "status": print(status(a.container_id))
+    elif a.cmd == "insights": insights(a)
     else: trial(a)
 
 

@@ -1,0 +1,53 @@
+# Daily per-reel metrics from our own Meta app -> analytics/reel-metrics.jsonl -> production/reels/LEDGER.md
+# (winner calls at 72 h, "share to grid" nudges). Free: the Graph API and Actions minutes cost nothing here.
+#
+# Needs repo secrets IG_ACCESS_TOKEN + IG_USER_ID (tools/instagram/README.md) with the
+# instagram_business_manage_insights permission. Without them the run skips quietly.
+# The token lasts 60 days: run `ig.py refresh` locally and update the secret monthly.
+name: Reel ledger
+
+on:
+  schedule:
+    - cron: "17 6 * * *"   # 13:17 Bangkok, daily
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: reel-ledger
+  cancel-in-progress: false
+
+jobs:
+  ledger:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+      IG_USER_ID: ${{ secrets.IG_USER_ID }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Pull insights
+        id: pull
+        run: |
+          if [ -z "$IG_ACCESS_TOKEN" ]; then
+            echo "::notice::No IG_ACCESS_TOKEN secret yet; skipping (see tools/instagram/README.md)."
+            exit 0
+          fi
+          python -P tools/instagram/ig.py insights --out "$RUNNER_TEMP/graph.json"
+          python -P tools/analytics/ledger.py ingest "$RUNNER_TEMP/graph.json"
+          python -P tools/analytics/ledger.py build | tee "$RUNNER_TEMP/report.txt"
+          cat "$RUNNER_TEMP/report.txt" >> "$GITHUB_STEP_SUMMARY"
+          echo "ran=1" >> "$GITHUB_OUTPUT"
+
+      - name: Commit
+        if: steps.pull.outputs.ran == '1'
+        run: |
+          git config user.name "reel-ledger"
+          git config user.email "actions@users.noreply.github.com"
+          git add analytics/reel-metrics.jsonl production/reels/LEDGER.md
+          git diff --cached --quiet && exit 0
+          git commit -m "ledger: daily reel metrics $(date -u +%F)"
+          for i in 1 2 3; do git pull --rebase -q && git push && exit 0; sleep 5; done
+          exit 1

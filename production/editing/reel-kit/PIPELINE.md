@@ -31,7 +31,10 @@ Output: `content-bank/references/videos/<slug>/` — read `contact.jpg` + `trans
 ## 2. Plan: talking points, not a script
 Copy `production/reels/_TEMPLATE/` to `production/reels/<yyyy-mm-dd-slug>/`. Fill `TALKING-POINTS.md`:
 3 verbatim hook versions (the A/B/C test), one verifiable credibility beat (legend / system), 2–3 points
-Matteo talks through freely, one real example, a growth CTA. Start `REEL.md`.
+Matteo talks through freely, one real example, a **share trigger** (the line someone sends to a friend:
+story reels hold 13–17 s but get 0–3 shares without one), a growth CTA. Score the hooks with the
+**hook gate** at the bottom of the template; replace any under 4/5 before filming. Start `REEL.md`.
+Batch it: plan 3–4 reels at once so one filming session covers a week.
 
 ## 3. Footage in
 Drive input `19PgWfSa9nwzBcn7JD24EY7QEr12IONbL` · output `1bHwCLpkK2w9e9BN22dXWgQnn8_CLYpR2`
@@ -97,11 +100,17 @@ Cover: copy `worst-decision/thumb/` (HyperFrames snapshot at 0.5 s). Keep text i
   (The Windsor `instagram` connector can't post trial reels.)
 - Or Claude posts them through our own Meta app: `tools/instagram/ig.py trial` (setup + usage in
   `tools/instagram/README.md`). Flow: preview → Matteo's explicit yes → `--confirm`. Never skip the yes.
-- Log every variant in the reel's `REEL.md` + `production/reels/LEDGER.md`.
+- Link every variant: `ig.py trial ... --slug <slug> --variant <V>` does it on publish; posted from the app,
+  run `python -P tools/analytics/ledger.py link <media_id> <slug> <V>`. The ledger table is generated, never hand-edited.
 
-## 8. Track
-Pull per-media metrics via **Buzzfy** (MCP; skills `reel-checkup`, `instagram-audit`) at 24 h / 72 h / 7 d;
-fallback Windsor (`instagram`, account `17841465098113052`). Before posting, run Buzzfy `reel-checkup` on the hook.
-Compare at 72 h. Winner metric: follows per 1k views, then shares, then avg watch time. Winner → shared
-to the grid (and pinned if it's a profile reel). Write the one-line learning into
-`LEDGER.md` "Patterns so far". If trial reels don't show in the API, ask Matteo for the insights screenshot.
+## 8. Track (automatic) and ship the winner
+- The **Reel ledger** Action pulls every reel daily through our Meta app and rebuilds `LEDGER.md`
+  (`tools/analytics/ledger.py`). In a session, a Buzzfy pull works too: save it as
+  `analytics/snapshots/<date>-buzzfy.json` (same shape as 2026-10-14), then `ledger.py ingest <file>` + `ledger.py build`.
+  Buzzfy pulls also record which reels are on the grid.
+- Winner at 72 h = most views (Instagram's verdict on non-followers; reels expose no follows), unless one
+  variant clearly out-shares the others; a < 15 % view gap goes to watch time. The ledger prints the call.
+- **The grid never goes quiet:** the winner is shared to the grid within 24 h of the call. Trial reels reach
+  only non-followers; follower spikes (Aug 23 +32, Sep 21–23 +44) all came from grid reels. The ledger's Status
+  flags 3+ days without a grid post.
+- Write the one-line learning into `LEDGER.md` "Patterns so far".

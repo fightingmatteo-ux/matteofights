@@ -32,11 +32,9 @@ Shared body: <beats in order>. Edit: subtitles <style>, music <track>, pacing no
 |---|---|---|---|---|
 | A | | trial | | |
 
-## Results (pull via Windsor `instagram`, account 17841465098113052; compare at the SAME age)
-| V | Age | Views | Reach | Avg watch | Likes | Comments | Saves | Shares | Follows | Profile visits |
-|---|---|---|---|---|---|---|---|---|---|---|
-| A | 24h | | | | | | | | | |
-| A | 72h | | | | | | | | | |
+## Results
+Generated in `production/reels/LEDGER.md` (daily pull, 72 h call). Link each post after it goes up:
+`python -P tools/analytics/ledger.py link <media_id> <slug> <V>` (or `ig.py trial --slug --variant`).
 
-**Winner:** <V> because <metric, margin>.  **Shared to grid:** <date>.
+**Winner:** <V> (from LEDGER.md).  **Shared to grid:** <date, within 24 h of the call>.
 **Learning (one line, also add to LEDGER.md):**
