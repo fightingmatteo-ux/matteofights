@@ -1,42 +1,44 @@
 ---
 slug: 2026-10-14-freeze-in-sparring
-status: idea | talking-points | filmed | edited | testing | winner-posted | archived
-pillar: mindset | psychology | training | story
-format: <legend-credibility | contrast | listicle | story | rant>
-credibility: <legend / system cited, or "own experience">
-cta: <follow + comment question | keyword "X" -> free guide>
-test_variable: hook            # ONE variable per test
+status: edited
+pillar: psychology
+format: talking-head listicle (3 numbered fixes), loops into the hook
+credibility: own experience
+cta: on-screen "COMMENT 1, 2 OR 3?" + caption (no spoken CTA: last reel lost viewers before it)
+test_variable: hook
 ---
 
-# <Working title>
+# Why you freeze in sparring (3 fixes)
 
-## Talking points (what Matteo was given)
-_Link or paste `TALKING-POINTS.md`. Only the hook is verbatim._
+Talking points: `TALKING-POINTS.md`. Talking-head take on the two proven listicles (6 signs = 331k, 8 ways = 161k):
+number promised up front, beginner-vs-fighter identity, usable payoff. ~22–25 s, no personal story.
 
 ## Variants
-| V | Hook (spoken, verbatim) | On-screen hook text | Cover | Length | Render (Drive output) |
-|---|---|---|---|---|---|
-| A | | | | | |
-| B | | | | | |
-| C | | | | | |
-
-Shared body: <beats in order>. Edit: subtitles <style>, music <track>, pacing notes.
-
-## Caption + hashtags
-```
-<caption>
-```
-
-## Posting log (Matteo posts all 3 trial reels the same day, 2–3 h apart; auto-share OFF)
-| V | Posted (local time) | Type | IG media id | Notes |
+| V | Hook (spoken) | On-screen hook text | Length | Render |
 |---|---|---|---|---|
-| A | | trial | | |
+| A | If you freeze when you spar, it's not your technique, it's your head. And there are three things you can do to fix it. | FREEZE / IN SPARRING? / IT'S YOUR HEAD. | 24.6 s | media/2026-10-14-freeze-in-sparring/freeze-A.mp4 |
+| B | Fighters and beginners think completely differently in sparring. Here's the difference. | FIGHTERS / & BEGINNERS / THINK / DIFFERENTLY | 23.3 s | freeze-B.mp4 |
+| C | Beginners try to win every exchange. Fighters don't. Here's what they do instead. | BEGINNERS TRY / TO WIN EVERY / EXCHANGE. / FIGHTERS DON'T. | 22.1 s | freeze-C.mp4 |
 
-## Results (pull via Windsor `instagram`, account 17841465098113052; compare at the SAME age)
-| V | Age | Views | Reach | Avg watch | Likes | Comments | Saves | Shares | Follows | Profile visits |
-|---|---|---|---|---|---|---|---|---|---|---|
-| A | 24h | | | | | | | | | |
-| A | 72h | | | | | | | | | |
+## Edit (2026-10-14)
+One 3-min Edits-app recording (Drive `1qCY0cgJ_W7AhY34gKJu5602sveTPPzSu`), no slates; takes picked by order in
+`work/takes.json`. Each variant ends on "...and reset. Because" and replays into its hook ("Because if you freeze..."),
+so the loop is one sentence. Fix cards SHOCK / OVERLOAD / SPIRAL; captions moved up to y800 (face fills the frame).
+No music bed (none in the cloud session): add a trending track at low volume in the IG app.
+Words from the Fetch-video workflow transcript (cloud can't download Whisper models). GSAP bundled locally in
+`assets/lib/` (render browser can't reach the CDN).
 
-**Winner:** <V> because <metric, margin>.  **Shared to grid:** <date>.
-**Learning (one line, also add to LEDGER.md):**
+## Caption
+Your freeze isn't a technique problem.
+
+1. Shock: expect to get hit. It's information, not failure.
+2. Overload: one job per round. Just the jab.
+3. Spiral: got caught? Step back, breathe out, reset.
+
+Comment the number you struggle with. Follow for the mental side of fighting.
+
+#sparring #boxing #muaythai #fightermindset
+
+## Results (fill at 72 h)
+| V | Views | Follows | Shares | Saves | Comments | Avg watch |
+|---|---|---|---|---|---|---|

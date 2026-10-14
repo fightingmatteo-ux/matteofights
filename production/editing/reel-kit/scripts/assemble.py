@@ -76,7 +76,7 @@ def build(cfg, variant):
     fc.append(f"[vc]setpts=PTS/{speed},fps=30,format=yuv420p[vo];[ac]{tempo}highpass=f=70,loudnorm=I=-14:TP=-1.5:LRA=11[ao]")
     Path("assets/media").mkdir(parents=True, exist_ok=True)
     subprocess.run(["ffmpeg", "-loglevel", "error", "-y", *inputs, "-filter_complex", "".join(fc),
-                    "-map", "[vo]", "-map", "[ao]", "-c:v", "libx264", "-crf", "17", "-preset", "medium",
+                    "-map", "[vo]", "-map", "[ao]", "-c:v", "libx264", "-crf", "17", "-preset", "medium", "-g", "30", "-keyint_min", "30",
                     "-pix_fmt", "yuv420p", "-color_range", "tv", "-colorspace", "bt709", "-color_primaries", "bt709",
                     "-color_trc", "bt709", "-c:a", "aac", "-b:a", "192k", "-ar", "48000",
                     f"assets/media/aroll_{variant}.mp4"], check=True)

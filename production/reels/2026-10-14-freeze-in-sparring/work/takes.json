@@ -1,0 +1,22 @@
+{
+  "src": "assets/raw.mp4",
+  "words": "work/words.json",
+  "speed": 1.0,
+  "takes": {
+    "hookA": [13.85, 19.95],
+    "hookB": [20.38, 25.2],
+    "hookC": [46.25, 50.25],
+    "p1": [64.22, 69.5],
+    "p2": [76.82, 83.95],
+    "p3A": [122.0, 128.05],
+    "p3B": [152.1, 158.2],
+    "p3C": [161.33, 167.03]
+  },
+  "variants": {
+    "A": ["hookA", "p1", "p2", "p3A"],
+    "B": ["hookB", "p1", "p2", "p3B"],
+    "C": ["hookC", "p1", "p2", "p3C"]
+  },
+  "fix": {"COLD": "CAUGHT"},
+  "audio_src": "../../../media/2026-10-14-freeze-in-sparring/raw.mp4"
+}

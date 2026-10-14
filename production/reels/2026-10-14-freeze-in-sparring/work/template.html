@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/lib/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Bebas Neue"; src: url("assets/fonts/BebasNeue-Regular.woff2") format("woff2"); font-weight: 400; font-display: block; }
+      @font-face { font-family: "Geist Mono"; src: url("assets/fonts/GeistMono.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+      @font-face { font-family: "Tinos"; src: url("assets/fonts/Tinos-Bold.woff2") format("woff2"); font-weight: 700; font-display: block; }
+      :root { --ink: #0B0B0D; --ivory: #F2F0EA; --red: #C82020; --hot: #FF1E1E; --line: #242428; }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: var(--ink); }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; background: var(--ink); font-family: "Bebas Neue", sans-serif; color: var(--ivory); }
+      .layer { position: absolute; inset: 0; }
+      .full { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+      #cam { position: absolute; inset: 0; overflow: hidden; }
+      #cam-inner { position: absolute; inset: 0; transform-origin: 50% 100%; }
+      .title { position: absolute; left: 50px; right: 50px; top: 230px; text-align: center; }
+      .title span { display: block; font-size: 150px; line-height: 0.92; color: var(--ivory); -webkit-text-stroke: 14px var(--ink); paint-order: stroke fill; }
+      .title span.r { color: var(--hot); }
+      .panel { position: absolute; left: 60px; right: 60px; top: 170px; height: 520px; background: rgba(11,11,13,0.92); border: 1px solid var(--line); overflow: hidden; }
+      .kicker { position: absolute; left: 36px; top: 30px; font-family: "Geist Mono", monospace; font-weight: 600; font-size: 28px; letter-spacing: 0.14em; color: var(--red); text-transform: uppercase; }
+      .num { position: absolute; left: 30px; top: 70px; font-family: "Geist Mono", monospace; font-weight: 700; font-size: 250px; line-height: 1; color: var(--hot); }
+      .lab { position: absolute; left: 380px; right: 30px; top: 110px; font-size: 200px; line-height: 0.9; color: var(--ivory); }
+      .sub { position: absolute; left: 36px; right: 36px; bottom: 34px; font-family: "Geist Mono", monospace; font-weight: 700; font-size: 38px; letter-spacing: 0.1em; color: var(--ivory); }
+      .bar { position: absolute; left: 0; top: 0; height: 8px; width: 100%; background: var(--hot); transform-origin: 0 50%; }
+      .chip { position: absolute; left: 60px; top: 706px; display: flex; align-items: center; gap: 14px; font-family: "Geist Mono", monospace; font-weight: 700; font-size: 38px; letter-spacing: 0.12em; }
+      .chip .tag { background: var(--red); color: var(--ivory); padding: 12px 20px; }
+      .chip .val { background: var(--ink); color: var(--ivory); padding: 12px 20px; }
+      #caps { position: absolute; left: 60px; right: 60px; top: 800px; height: 160px; }   /* face fills the frame: captions sit over the hair, not the mouth */
+      .cw { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 0; font-family: "Tinos", serif; font-weight: 700; font-size: 124px; line-height: 1; letter-spacing: -0.01em; color: #FFFFFF; -webkit-text-stroke: 9px #000; paint-order: stroke fill; }
+      .cw.red { color: #E8112D; }
+      #flash { position: absolute; inset: 0; background: #F2F0EA; opacity: 0; pointer-events: none; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="{{d['duration']}}" data-width="1080" data-height="1920">
+
+      <div id="cam"><div id="cam-inner">
+        <video id="aroll" class="clip full" src="assets/media/aroll_{{V}}.mp4" data-start="0" data-duration="{{d['duration']}}" data-track-index="0" muted playsinline></video>
+      </div></div>
+
+      <!-- ===== THE THREE FIXES ===== -->
+      <div id="pn1" class="clip layer" data-start="{{S('p1')}}" data-duration="{{E('p1')-S('p1')}}" data-track-index="2">
+        <div class="panel"><div class="bar" id="bar1"></div><div class="kicker">FIX 01 / 03</div><div class="num" id="n1">01</div><div class="lab" id="l1">SHOCK</div><div class="sub" id="s1">EXPECT TO GET HIT</div></div>
+      </div>
+      <div id="pn2" class="clip layer" data-start="{{S('p2')}}" data-duration="{{E('p2')-S('p2')}}" data-track-index="2">
+        <div class="panel"><div class="bar" id="bar2"></div><div class="kicker">FIX 02 / 03</div><div class="num" id="n2">02</div><div class="lab" id="l2" style="font-size:150px;top:140px">OVERLOAD</div><div class="sub" id="s2">ONE JOB PER ROUND</div></div>
+      </div>
+      <div id="pn3" class="clip layer" data-start="{{S('p3')}}" data-duration="{{E('p3')-S('p3')}}" data-track-index="2">
+        <div class="panel"><div class="bar" id="bar3"></div><div class="kicker">FIX 03 / 03</div><div class="num" id="n3">03</div><div class="lab" id="l3">SPIRAL</div><div class="sub" id="s3">STEP BACK · BREATHE · RESET</div></div>
+      </div>
+      <div id="cta" class="clip layer" data-start="{{W('p3','STEP')}}" data-duration="{{E('p3')-W('p3','STEP')}}" data-track-index="4">
+        <div class="chip"><span class="tag">COMMENT</span><span class="val">1, 2 OR 3?</span></div>
+      </div>
+
+      <!-- ===== HOOK TITLE (frame 0 = thumbnail) ===== -->
+      <!--@only A-->
+      <div id="title" class="clip title" data-start="0" data-duration="{{W('hook','AND')}}" data-track-index="5"><span class="r">FREEZE</span><span>IN SPARRING?</span><span>IT'S YOUR HEAD.</span></div>
+      <!--@end-->
+      <!--@only B-->
+      <div id="title" class="clip title" data-start="0" data-duration="{{W('hook','HERE\'S')}}" data-track-index="5"><span>FIGHTERS</span><span>&amp; BEGINNERS</span><span>THINK</span><span class="r">DIFFERENTLY</span></div>
+      <!--@end-->
+      <!--@only C-->
+      <div id="title" class="clip title" data-start="0" data-duration="{{W('hook','HERE\'S')}}" data-track-index="5"><span>BEGINNERS TRY</span><span>TO WIN EVERY</span><span>EXCHANGE.</span><span class="r">FIGHTERS DON'T.</span></div>
+      <!--@end-->
+
+      <div id="caps"></div>
+      <div id="flash"></div>
+
+      <!-- ===== AUDIO ===== -->
+      <audio id="vo" src="assets/media/aroll_{{V}}.mp4" data-start="0" data-duration="{{d['duration']}}" data-track-index="10" data-volume="1"></audio>
+      <audio id="sfx-hit-0" src="assets/sfx/hit.mp3" data-start="0" data-duration="1" data-track-index="13" data-volume="0.45"></audio>
+      <audio id="sfx-d1" src="assets/sfx/digital_click.mp3" data-start="{{S('p1')}}" data-duration="1" data-track-index="17" data-volume="0.5"></audio>
+      <audio id="sfx-d2" src="assets/sfx/digital_click.mp3" data-start="{{S('p2')}}" data-duration="1" data-track-index="17" data-volume="0.5"></audio>
+      <audio id="sfx-d3" src="assets/sfx/digital_click.mp3" data-start="{{S('p3')}}" data-duration="1" data-track-index="17" data-volume="0.5"></audio>
+      <audio id="sfx-hit-1" src="assets/sfx/hit.mp3" data-start="{{W('p1','PUNCHED')}}" data-duration="1" data-track-index="13" data-volume="0.55"></audio>
+      <audio id="sfx-line-3" src="assets/sfx/red_line.mp3" data-start="{{W('p3','CAUGHT')}}" data-duration="1" data-track-index="15" data-volume="0.4"></audio>
+      <audio id="sfx-pop-cta" src="assets/sfx/lib_pop.wav" data-start="{{W('p3','STEP')}}" data-duration="0.72" data-track-index="20" data-volume="0.55"></audio>
+    </div>
+
+    <script>
+      const EDL = {{d}};
+      const ALIAS = { hookA: "hook", hookB: "hook", hookC: "hook", p3A: "p3", p3B: "p3", p3C: "p3" };
+      const SEG = {};
+      EDL.segments.forEach((s) => { SEG[s.name] = s; SEG[ALIAS[s.name] || s.name] = s; });
+      const WORDS = EDL.words;
+      const S = (n) => SEG[n].start, E = (n) => SEG[n].end;
+      const W = (n, w, k = 1) => WORDS.filter((x) => x.seg === SEG[n].i && x.w === w)[k - 1].s;
+      const tl = gsap.timeline({ paused: true });
+      const cam = "#cam-inner";
+      const TITLE_END = +document.getElementById("title").dataset.duration;
+
+      // ---- camera: hard punch-ins on every sentence turn (<=1.08, bottom-anchored), slow drift between ----
+      const shot = (a, b, from, to) => tl.fromTo(cam, { scale: from }, { immediateRender: false, scale: to, duration: b - a, ease: "none" }, a);
+      shot(0, TITLE_END, 1.0, 1.03);
+      shot(TITLE_END, E("hook"), 1.07, 1.08);
+      shot(S("p1"), W("p1", "GETTING"), 1.0, 1.02);
+      shot(W("p1", "GETTING"), E("p1"), 1.07, 1.08);
+      shot(S("p2"), W("p2", "PICK"), 1.0, 1.02);
+      shot(W("p2", "PICK"), E("p2"), 1.06, 1.08);
+      shot(S("p3"), W("p3", "STEP"), 1.0, 1.02);
+      shot(W("p3", "STEP"), E("p3"), 1.06, 1.03);   // eases back toward the hook's framing for the loop
+
+      // ---- flashes on the big beats ----
+      const flash = (t, a = 0.6) => { tl.set("#flash", { opacity: a }, t); tl.to("#flash", { opacity: 0, duration: 0.2, ease: "power2.out" }, t + 0.01); };
+      flash(S("p1"), 0.5); flash(S("p2"), 0.4); flash(S("p3"), 0.5);
+
+      // ---- hook title ----
+      tl.fromTo("#title .r", { scale: 1.12 }, { scale: 1, duration: 0.25, ease: "power3.out" }, 0);
+
+      // ---- fix cards: bar wipe, number slams, label rises, subline types on ----
+      [1, 2, 3].forEach((k) => {
+        const seg = k === 3 ? "p3" : "p" + k, t = S(seg);
+        tl.fromTo("#bar" + k, { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: "power3.out" }, t);
+        tl.fromTo("#n" + k, { scale: 1.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.18, ease: "power4.out" }, t + 0.02);
+        tl.fromTo("#l" + k, { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.22, ease: "expo.out" }, t + 0.12);
+        tl.fromTo("#s" + k, { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.2, ease: "power3.out" }, t + 0.3);
+        [10, -8, 5, -2, 0].forEach((x, j) => tl.set("#n" + k, { x }, t + 0.2 + j * 0.035));
+      });
+      tl.fromTo("#cta .chip", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.22, ease: "back.out(1.8)" }, W("p3", "STEP"));
+
+      // ---- subtitles: one word at a time, bold serif ----
+      const hidden = (t) => t < TITLE_END;
+      const RED = new Set(["FREEZE", "TECHNIQUE", "HEAD", "THREE", "PUNCHED", "FAILURE", "INFORMATION", "EVERYTHING", "JOB", "JAB", "RELAX",
+        "CAUGHT", "BREATH", "RESET", "FIGHTERS", "BEGINNERS", "DIFFERENTLY", "EXCHANGE", "DIFFERENCE", "INSTEAD"]);
+      const KEEP = { "I": "I", "IT'S": "it's", "ISN'T": "isn't", "YOU'RE": "you're", "HERE'S": "here's", "DON'T": "don't" };
+      const caps = document.getElementById("caps");
+      EDL.segments.forEach((seg) => {
+        const ws = WORDS.filter((w) => w.seg === seg.i);
+        ws.forEach((w, wi) => {
+          if (hidden(w.s)) return;
+          let txt = KEEP[w.w] || w.w.toLowerCase();
+          if ((wi === 0 || hidden(ws[wi - 1].s)) && !KEEP[w.w]) txt = txt.charAt(0).toUpperCase() + txt.slice(1);
+          const el = document.createElement("div");
+          const red = RED.has(w.w);
+          el.className = "cw" + (red ? " red" : "");
+          el.textContent = txt; caps.appendChild(el);
+          const tIn = Math.max(0, w.s - 0.03);
+          const nextIn = wi < ws.length - 1 ? Math.max(0, ws[wi + 1].s - 0.03) : Infinity;
+          const OUT = 0.06;
+          const tOut = Number.isFinite(nextIn) ? Math.min(nextIn - OUT, w.e + 0.45) : Math.min(seg.end, w.e + 0.3) - OUT;
+          const dIn = Math.max(0.05, Math.min(red ? 0.2 : 0.15, tOut - tIn - 0.03));
+          tl.fromTo(el, { opacity: 0, y: red ? 0 : 38, scale: red ? 1.35 : 1.1, filter: "blur(12px)" },
+                        { opacity: 1, y: 0, scale: 1, filter: "blur(0px)", duration: dIn, ease: red ? "back.out(1.8)" : "expo.out" }, tIn);
+          tl.to(el, { opacity: 0, y: -22, filter: "blur(8px)", duration: OUT, ease: "power1.in" }, Math.max(tOut, tIn + dIn));
+        });
+      });
+
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
