@@ -53,12 +53,7 @@ def main():
     if posts and now() - posts[0]["at"] < gap:
         print(f"{item['id']}: waiting, latest post {posts[0]['timestamp']} is under {gap} old"); return
 
-    video = ROOT / "media" / item["video_asset"]
-    if not video.exists():
-        video.parent.mkdir(parents=True, exist_ok=True)
-        subprocess.run(["gh", "release", "download", "media", "-p", item["video_asset"], "-D", str(video.parent)],
-                       cwd=ROOT, check=True)
-    cmd = [sys.executable, "-P", "tools/instagram/ig.py", "trial", "--video", str(video),
+    cmd = [sys.executable, "-P", "tools/instagram/ig.py", "trial", "--asset", item["video_asset"],
            "--caption-file", item["caption_file"], "--strategy", item.get("strategy", "MANUAL"), "--confirm"]
     if item.get("thumb_offset_ms") is not None:
         cmd += ["--thumb-offset", str(item["thumb_offset_ms"])]

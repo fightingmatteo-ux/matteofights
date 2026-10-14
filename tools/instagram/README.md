@@ -28,13 +28,14 @@ The token lasts 60 days. `ig.py refresh` extends it (do it monthly).
 ## Posting a trial reel
 
 ```bash
-python -P tools/instagram/ig.py trial --video media/<slug>/<slug>-A.mp4 \
+python -P tools/instagram/ig.py trial --asset <slug>-A.mp4 \
     --caption-file production/reels/<slug>/caption-A.txt --thumb-offset 500       # preview only
 python -P tools/instagram/ig.py trial ... --confirm                               # after Matteo's yes
 ```
 - Default `--strategy MANUAL`: the reel stays a trial until Matteo shares it in the app. `SS_PERFORMANCE`
   lets Instagram graduate it automatically.
-- The video is uploaded directly to Meta (resumable upload), so no public link is needed.
+- The video must be on the `media` release (`tools/video/media.sh push <file>`); ig.py hands Meta a signed
+  GitHub download link (valid minutes). Direct upload is refused for this app ("video_url is required").
 - The script prints the media id; log it in the reel's `REEL.md` and `LEDGER.md` (media id column).
 - Limit: Instagram's 100 API posts per 24 h (shared with Buzzfy).
 

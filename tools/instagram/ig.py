@@ -4,19 +4,21 @@ Nothing goes out without --confirm. Without it, `trial` only prints the preview.
 
     python -P tools/instagram/ig.py whoami
     python -P tools/instagram/ig.py refresh                     # extend the 60-day token
-    python -P tools/instagram/ig.py trial --video media/x/x-A.mp4 --caption-file production/reels/<slug>/caption-A.txt
+    python -P tools/instagram/ig.py trial --asset freeze-in-sparring-A.mp4 --caption-file production/reels/<slug>/caption-A.txt
     python -P tools/instagram/ig.py trial ... --confirm         # only after Matteo said yes to the preview
     python -P tools/instagram/ig.py status <container_id>
 
 Token: secrets/meta.env (IG_ACCESS_TOKEN=..., IG_USER_ID=...), or the same names as env vars
-(GitHub Actions secrets). Upload is resumable straight to Meta, so the video needs no public URL.
+(GitHub Actions secrets). This app can't take direct uploads (Meta answers "video_url is required"), so the
+video must be on the repo's "media" release (tools/video/media.sh push): GitHub gives a signed download link
+valid for a few minutes, which Meta fetches. Needs GH_TOKEN (Actions: github.token).
 """
 import argparse, json, os, sys, time, urllib.error, urllib.parse, urllib.request
 from pathlib import Path
 
 API = "v23.0"
 GRAPH = f"https://graph.instagram.com/{API}"
-RUPLOAD = f"https://rupload.facebook.com/ig-api-upload/{API}"
+REPO = os.environ.get("GITHUB_REPOSITORY", "fightingmatteo-ux/matteofights")
 ENV_FILE = Path(__file__).resolve().parents[2] / "secrets" / "meta.env"
 
 
@@ -30,18 +32,50 @@ def load_env():
         sys.exit(f"No IG_ACCESS_TOKEN (put it in {ENV_FILE} or the environment).")
 
 
-def call(method, url, params=None, data=None, headers=None):
+def call(method, url, params=None):
     params = dict(params or {})
     if "graph.instagram.com" in url:
         params["access_token"] = os.environ["IG_ACCESS_TOKEN"]
-    if params:
+    body = None
+    if method == "POST":
+        body = urllib.parse.urlencode(params).encode()
+    elif params:
         url += "?" + urllib.parse.urlencode(params)
-    req = urllib.request.Request(url, data=data, method=method, headers=headers or {})
     try:
-        with urllib.request.urlopen(req, timeout=600) as r:
+        with urllib.request.urlopen(urllib.request.Request(url, data=body, method=method), timeout=120) as r:
             return json.loads(r.read() or b"{}")
     except urllib.error.HTTPError as e:
         sys.exit(f"{method} {url.split('?')[0]} -> {e.code}: {e.read().decode(errors='replace')}")
+
+
+def gh(path):
+    req = urllib.request.Request(f"https://api.github.com/{path}", headers={
+        "Authorization": f"Bearer {os.environ['GH_TOKEN']}", "Accept": "application/vnd.github+json"})
+    return json.load(urllib.request.urlopen(req, timeout=60))
+
+
+class NoRedirect(urllib.request.HTTPRedirectHandler):
+    def redirect_request(self, *a, **k):
+        return None
+
+
+def release_asset(name):
+    """(size, signed public download URL valid for a few minutes) of a file on the media release."""
+    if not os.environ.get("GH_TOKEN"):
+        sys.exit("GH_TOKEN needed to read the media release.")
+    assets = gh(f"repos/{REPO}/releases/tags/media")["assets"]
+    a = next((a for a in assets if a["name"] == name), None)
+    if not a:
+        sys.exit(f"{name} is not on the media release (tools/video/media.sh push it first).")
+    req = urllib.request.Request(f"https://api.github.com/repos/{REPO}/releases/assets/{a['id']}", headers={
+        "Authorization": f"Bearer {os.environ['GH_TOKEN']}", "Accept": "application/octet-stream"})
+    try:
+        urllib.request.build_opener(NoRedirect).open(req, timeout=60)
+    except urllib.error.HTTPError as e:
+        if e.code in (301, 302, 307) and e.headers.get("Location"):
+            return a["size"], e.headers["Location"]
+        raise
+    sys.exit("GitHub gave no download link.")
 
 
 def whoami():
@@ -64,18 +98,15 @@ def status(cid):
 
 
 def trial(a):
-    video = Path(a.video)
-    if not video.is_file():
-        sys.exit(f"Video not found: {video}")
     caption = Path(a.caption_file).read_text(encoding="utf-8").strip() if a.caption_file else (a.caption or "")
-    size = video.stat().st_size
+    size, url = release_asset(a.asset)
     me = call("GET", f"{GRAPH}/me", {"fields": "user_id,username"})
     user_id = os.environ.get("IG_USER_ID") or me["user_id"]
 
     print("=" * 60)
     print("PREVIEW: trial reel (nothing is sent without --confirm)")
     print(f"  account   @{me['username']} ({user_id})")
-    print(f"  video     {video} ({size / 1e6:.1f} MB)")
+    print(f"  video     {a.asset} on the media release ({size / 1e6:.1f} MB)")
     print(f"  trial     {a.strategy} ({'you share it to followers in the app' if a.strategy == 'MANUAL' else 'Instagram shares it if it performs'})")
     if a.thumb_offset is not None:
         print(f"  cover     frame at {a.thumb_offset} ms")
@@ -88,20 +119,15 @@ def trial(a):
 
     params = {
         "media_type": "REELS",
-        "upload_type": "resumable",
+        "video_url": url,
         "caption": caption,
         "trial_params": json.dumps({"graduation_strategy": a.strategy}),
     }
     if a.thumb_offset is not None:
         params["thumb_offset"] = a.thumb_offset
     cid = call("POST", f"{GRAPH}/{user_id}/media", params)["id"]
-    print(f"container {cid}, uploading...")
-    call("POST", f"{RUPLOAD}/{cid}", data=video.read_bytes(), headers={
-        "Authorization": f"OAuth {os.environ['IG_ACCESS_TOKEN']}",
-        "offset": "0",
-        "file_size": str(size),
-    })
-    for _ in range(60):  # Meta processes the video; up to ~10 min
+    print(f"container {cid}, Meta is fetching the video...")
+    for _ in range(60):  # up to ~10 min
         s = status(cid)
         if s.get("status_code") == "FINISHED":
             break
@@ -123,7 +149,7 @@ def main():
     sub.add_parser("refresh")
     s = sub.add_parser("status"); s.add_argument("container_id")
     t = sub.add_parser("trial")
-    t.add_argument("--video", required=True)
+    t.add_argument("--asset", required=True, help="file name on the media release")
     t.add_argument("--caption-file")
     t.add_argument("--caption")
     t.add_argument("--strategy", choices=["MANUAL", "SS_PERFORMANCE"], default="MANUAL")
