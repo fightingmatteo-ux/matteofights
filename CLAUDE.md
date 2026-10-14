@@ -46,6 +46,9 @@ analytics. Build it in phases; don't try to do everything at once.
 |---|---|---|---|
 | `instagram` | Matteo (matteofights) | 17841465098113052 | Followers, reach, views, per-reel metrics, captions |
 
+| `buzzfy` (MCP, plugin `buzzfy@anthropic-plugin-directory`) | @matteofights via Instagram official API | — | **Primary for per-reel analytics**, audits, reel checkups, comments/DMs; publishing/scheduling on paid plan (trial-reel support unverified) |
+
+Analytics order: Buzzfy first (per-reel, incl. trial reels if exposed) → Windsor `instagram` as fallback/history.
 Other connected MCPs (see `context/apps.md`): Higgsfield (`virality_predictor`, image/video gen).
 
 ---

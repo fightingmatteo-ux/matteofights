@@ -98,7 +98,8 @@ Cover: copy `worst-decision/thumb/` (HyperFrames snapshot at 0.5 s). Keep text i
 - Log every variant in the reel's `REEL.md` + `production/reels/LEDGER.md`.
 
 ## 8. Track
-Pull per-media metrics via Windsor (`instagram`, account `17841465098113052`) at 24 h / 72 h / 7 d.
+Pull per-media metrics via **Buzzfy** (MCP; skills `reel-checkup`, `instagram-audit`) at 24 h / 72 h / 7 d;
+fallback Windsor (`instagram`, account `17841465098113052`). Before posting, run Buzzfy `reel-checkup` on the hook.
 Compare at 72 h. Winner metric: follows per 1k views, then shares, then avg watch time. Winner → shared
 to the grid (and pinned if it's a profile reel). Write the one-line learning into
 `LEDGER.md` "Patterns so far". If trial reels don't show in the API, ask Matteo for the insights screenshot.
