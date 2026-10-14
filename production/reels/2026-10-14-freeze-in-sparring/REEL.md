@@ -28,6 +28,14 @@ No music bed (none in the cloud session): add a trending track at low volume in 
 Words from the Fetch-video workflow transcript (cloud can't download Whisper models). GSAP bundled locally in
 `assets/lib/` (render browser can't reach the CDN).
 
+## Motion graphics (v2, 2026-10-14)
+All entrances use a closed-form damped spring (`spring()` in the template), no CSS easing.
+- Red skewed slash wipe into every fix (replaces white flashes).
+- 01 SHOCK: impact rings + rays + camera hit on "punched"; FAILURE struck through -> "= INFORMATION".
+- 02 OVERLOAD: 13 fight words flood the card on "everything", fall away on "jab", JAB springs to hero size.
+- 03 SPIRAL: card springs back on "step back", breathing ring grows over "deep breath", snaps on "reset";
+  label SPIRAL -> RESET.
+
 ## Caption
 Your freeze isn't a technique problem.
 
