@@ -50,3 +50,16 @@ the upper third. Hook only on screen (subhook opens the caption). Footage bright
 - `statement`: one bold line on screen (THERE'S NO SUCH THING AS AN EX-FIGHTER, 13k), short list in the caption.
 - `iykyk`: insider gym moment, one-line caption + tag-a-friend. No READ DESCRIPTION pill.
 Weekly mix while testing: 4 listicles, 2 statements, 1 iykyk. Second daily slot: run the factory with `--slot 20:00`.
+
+## Footage agent (footage_agent.py, needs repo secret ANTHROPIC_API_KEY)
+Every run, before rendering:
+1. **Catalog**: any Drive clip it hasn't seen gets 6 frames looked at by Claude (activity, setting, is the fighter
+   in frame, face visible, rotation needed, quality, energy, usable or not). Cached in `production/listicles/clips.json`,
+   so only new clips cost anything. Clips removed from Drive stop being candidates.
+2. **Match**: for each hook, Claude ranks the best-fitting clips out of the whole catalog (fit to the words first,
+   then framing/quality, then least used). Clips used within 2 days of the reel are skipped.
+3. **Review**: after each render Claude looks at the cover + 4 frames of the finished reel. Fails on: fighter not
+   clearly in the cover, text over face/upper body, sideways footage, floor/empty/phone-handling frames, poor fit.
+   A fail renders the next candidate (max 3); if none pass, the best-scored one is kept. Verdicts land in the queue item (`review`).
+`--rerender` reviews the current clip first and only swaps it on a fail; `--rerender --rematch` re-picks from scratch.
+Model: Claude Opus 5.5 (structured JSON output, fallbacks on). Cost: about a few cents per clip catalogued, ~10 cents per reel.
