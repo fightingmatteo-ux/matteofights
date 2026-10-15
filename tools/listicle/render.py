@@ -21,6 +21,26 @@ HOOKS = ROOT / "production" / "listicles" / "hooks.json"
 BEBAS = Path(__file__).parent / "fonts" / "BebasNeue-Regular.ttf"
 SERIF = Path(__file__).parent / "fonts" / "LiberationSerif-Bold.ttf"  # Times-metric, like IG's Classic
 EMOJI = Path("/usr/share/fonts/truetype/noto/NotoColorEmoji.ttf")
+ANTON = ROOT / "production/reels/five-signs-real-fighter/assets/fonts/Anton-Regular.ttf"
+# Hook text looks (hooks.json "style" per hook, else production/listicles/look.json "hook_style", else "native"):
+#   native  the 331k / 161k look: Instagram's own text style, red bold serif on black highlights
+#   poster  brand: Bebas Neue, white caps on a red block per line (fight-poster)
+#   anton   brand-heavy: Anton, red caps on black highlights (the native layout in a condensed display face)
+#   split   Bebas Neue on black highlights, white, with the last line in red
+HOOK_STYLES = {
+    "native": {"font": SERIF, "fg": "RED", "bg": "BLACK", "start": 112, "width": 900},
+    "poster": {"font": BEBAS, "fg": "WHITE", "bg": "RED", "start": 132, "width": 820},
+    "anton": {"font": ANTON, "fg": "RED", "bg": "BLACK", "start": 108, "width": 820},
+    "split": {"font": BEBAS, "fg": "WHITE", "bg": "BLACK", "start": 132, "width": 820, "last": "RED"},
+}
+LOOK = ROOT / "production" / "listicles" / "look.json"
+
+
+def hook_style(h):
+    if h.get("style") in HOOK_STYLES:
+        return h["style"]
+    look = json.loads(LOOK.read_text(encoding="utf-8")) if LOOK.exists() else {}
+    return look.get("hook_style", "native") if look.get("hook_style") in HOOK_STYLES else "native"
 # Music library: production/listicles/music/ (tracks.json = title, artist, vibe, license) once it has tracks,
 # else the original 4 tracks. Each reel uses the track's strongest stretch (its drop), cut on a beat.
 MUSIC_DIR = ROOT / "production" / "listicles" / "music"
@@ -207,16 +227,19 @@ def cap_h(font):
     return b[3] - b[1]
 
 
-def hook_layer(hook, top=TOP):
-    """The 398k / 162k look: Instagram's native text style. Red bold serif, each line on its own rounded
-    black highlight hugging the text, centred. Only the hook is on screen; the subhook lives in the caption."""
+def hook_layer(hook, top=TOP, style="native"):
+    """Each line on its own rounded highlight hugging the text, centred (HOOK_STYLES picks font + colours;
+    "native" = Instagram's own text style, the 331k / 161k look). Only the hook is on screen; the subhook
+    lives in the caption."""
+    st = HOOK_STYLES.get(style, HOOK_STYLES["native"])
+    col = {"RED": RED, "WHITE": WHITE, "BLACK": BLACK}
     img = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     d = ImageDraw.Draw(img)
     words = hook.upper()
-    size = 112
+    size = st["start"]
     while True:  # biggest size that fits in 3 lines (4 for long hooks) inside ~84% of the width
-        f = ImageFont.truetype(str(SERIF), size)
-        lines = fit_lines(d, words, f, 900)
+        f = ImageFont.truetype(str(st["font"]), size)
+        lines = fit_lines(d, words, f, st["width"])
         if len(lines) <= (3 if len(words) < 44 else 4):
             break
         size -= 4
@@ -226,9 +249,10 @@ def hook_layer(hook, top=TOP):
     for i, l in enumerate(lines):
         tw = d.textlength(l, font=f)
         b = y + i * step
-        d.rounded_rectangle([(W - tw) / 2 - px, b - c - py, (W + tw) / 2 + px, b + py + 6], r, fill=BLACK)
+        d.rounded_rectangle([(W - tw) / 2 - px, b - c - py, (W + tw) / 2 + px, b + py + 6], r, fill=col[st["bg"]])
     for i, l in enumerate(lines):
-        d.text((W / 2, y + i * step), l, font=f, fill=RED, anchor="ms")
+        fg = col[st["last"]] if st.get("last") and i == len(lines) - 1 else col[st["fg"]]
+        d.text((W / 2, y + i * step), l, font=f, fill=fg, anchor="ms")
     return img, y + (len(lines) - 1) * step + py + 6
 
 
@@ -304,9 +328,11 @@ def render(clip, hook_id, out, seconds=8.0, cover=None, music_i=0, rotate=0):
 
     with tempfile.TemporaryDirectory() as tmp:
         hp, cp = Path(tmp, "hook.png"), Path(tmp, "cta.png")
-        _, bottom = hook_layer(h["hook"])
+        style = hook_style(h)
+        _, bottom = hook_layer(h["hook"], style=style)
         top = place_plate(row_motion, bottom - TOP)
-        hook_layer(h["hook"], top)[0].save(hp)
+        hook_layer(h["hook"], top, style)[0].save(hp)
+        print(f"hook style {style}", flush=True)
         if h.get("format") == "iykyk":  # one-line caption: nothing to send people to
             Image.new("RGBA", (W, H), (0, 0, 0, 0)).save(cp)
         else:
