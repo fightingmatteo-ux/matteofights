@@ -8,7 +8,8 @@
       "slots": [
         "12:30",
         "19:30"
-      ]
+      ],
+      "last_slot": "2026-10-15T23:30:00Z"
     },
     "youtube": {
       "enabled": true,
@@ -46,5 +47,20 @@
       "approved_note": "Matteo: 'let's start doing all of that' (per-platform plan, 2026-10-16); each week's posts still need his approval"
     }
   },
-  "posts": {}
+  "posts": {
+    "lst-2026-10-15-built-for-fight-night": {
+      "facebook": {
+        "status": "posted",
+        "at": "2026-10-15T23:50:38Z",
+        "id": "29282185481389743",
+        "url": "https://www.facebook.com/reel/29282185481389743"
+      },
+      "youtube": {
+        "status": "failed",
+        "error": "POST https://www.googleapis.com/upload/youtube/v3/videos -> 401: {\n  \"error\": {\n    \"code\": 401,\n    \"message\": \"Unauthorized\",\n    \"errors\": [\n      {\n        \"message\": \"Unauthorized\",\n        \"domain\": \"youtube.header\",\n        \"reason\": \"youtubeSignupRequired\",\n        \"location\": \"Authorization\",\n        \"locationType\": \"header\"\n      }\n    ]\n  }\n}\n",
+        "tries": 1,
+        "at": "2026-10-15T23:50:39Z"
+      }
+    }
+  }
 }
