@@ -84,6 +84,10 @@ def main():
         "questions": load(CTL / "questions.json", []),
         "ideas": load(CTL / "ideas.json", [])[-50:],
         "log": load(CTL / "log.json", [])[-60:],
+        # other platforms (tools/crosspost): per-reel results + written Threads posts (approved weekly)
+        "crosspost": {k: v for k, v in load(ROOT / "production/schedule/crosspost.json", {}).items() if k != "_how"},
+        "threads_posts": sorted(load(ROOT / "production/threads/posts.json", {"posts": []})["posts"],
+                                key=lambda p: p["at"])[-60:],
         "health": {
             "hooks_ready": sum(1 for h in hooks if h.get("status") == "ready"),
             "clips_live": len(live), "clips_catalogued": len([k for k in clips if k in live]) if live else len(clips),

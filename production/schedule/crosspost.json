@@ -1,21 +1,46 @@
 {
-  "_how": "tools/crosspost/crosspost.py: after a reel posts on Instagram, the Cross-post workflow sends the same video + caption to every enabled platform. enabled = Matteo's yes to posting there. since = only reels posted on Instagram from then on.",
+  "_how": "tools/crosspost/crosspost.py: reels that posted on Instagram go to every enabled platform in that platform's New York time slots (one per slot, oldest first). facebook_slides = the listicle as a photo album. threads_text = written posts from production/threads/posts.json (approved weekly). enabled = Matteo's yes; since = no backfill.",
   "platforms": {
     "facebook": {
       "enabled": true,
       "since": "2026-10-15T17:15:17Z",
-      "approved_note": "Matteo: 'yes enable facebook' in chat 2026-10-16"
+      "approved_note": "Matteo: 'yes enable facebook' in chat 2026-10-16",
+      "slots": [
+        "12:30",
+        "19:30"
+      ]
     },
     "youtube": {
       "enabled": true,
       "since": "2026-10-15T17:32:28Z",
       "privacy": "private",
-      "approved_note": "Matteo: 'yes enable youtube' in chat 2026-10-16"
+      "approved_note": "Matteo: 'yes enable youtube' in chat 2026-10-16",
+      "slots": [
+        "12:30",
+        "19:00"
+      ]
     },
     "threads": {
       "enabled": true,
       "since": "2026-10-15T17:50:38Z",
-      "approved_note": "Matteo: 'yes enable threads' in chat 2026-10-16"
+      "approved_note": "Matteo: 'yes enable threads' in chat 2026-10-16",
+      "slots": [
+        "10:00",
+        "15:30"
+      ],
+      "topic": "Fight Psychology"
+    },
+    "facebook_slides": {
+      "enabled": false,
+      "since": null,
+      "slots": [
+        "09:00"
+      ]
+    },
+    "threads_text": {
+      "enabled": false,
+      "min_gap_hours": 2,
+      "max_late_hours": 6
     }
   },
   "posts": {}

@@ -1,0 +1,241 @@
+{
+  "_how": "Written Threads posts, posted by the Cross-post workflow at 'at' (UTC) once approved. Written weekly by the Sunday Claude routine from that week's listicles (tools/crosspost/README.md). Never repeat a text.",
+  "posts": [
+    {
+      "id": "th-1016-1",
+      "at": "2026-10-16T11:30:00Z",
+      "kind": "take",
+      "topic": "Fight Psychology",
+      "text": "Nerves before a fight don't mean you're not ready.\n\nThey mean your body knows it matters.\n\nThe fighters who look calm aren't fearless. They just stopped reading fear as a stop sign.",
+      "chain": [],
+      "from": "built-for-fight-night",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1016-2",
+      "at": "2026-10-16T16:30:00Z",
+      "kind": "question",
+      "topic": "Fight Psychology",
+      "text": "Honest question for the fighters here.\n\nWhat's the round you dread most in training?\n\nFirst round cold, the middle grind, or the last one when everything's gone?",
+      "chain": [],
+      "from": "mindset-without-a-fight",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1016-3",
+      "at": "2026-10-16T21:30:00Z",
+      "kind": "tip",
+      "topic": "Combat Sports",
+      "text": "No coach? Film every session.\n\nYou can't fix what you can't see. Watch it the same day, pick one thing, fix only that this week.\n\nOne fix a week is 52 fixes a year.",
+      "chain": [],
+      "from": "technique-without-a-coach",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1017-1",
+      "at": "2026-10-17T11:30:00Z",
+      "kind": "take",
+      "topic": "Fight Psychology",
+      "text": "Discipline isn't motivation.\n\nIt's kept promises.\n\nPick one thing you do every single day. Keep it for 30 days. That's where the mindset actually comes from.",
+      "chain": [],
+      "from": "mindset-without-a-fight",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1017-2",
+      "at": "2026-10-17T16:30:00Z",
+      "kind": "question",
+      "topic": "Fight Psychology",
+      "text": "Which one is you?\n\n1. You train when no fight is booked\n2. You keep going after getting dropped in sparring\n3. You've never needed a crowd to show up\n\nDrop the number.",
+      "chain": [],
+      "from": "fighter-without-a-record",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1017-3",
+      "at": "2026-10-17T21:30:00Z",
+      "kind": "story",
+      "topic": "Fight Psychology",
+      "text": "The sparring session you lose to someone better is worth more than ten you win.\n\nGetting picked apart shows you every hole at once.\n\nWatch it back the same night. Every mistake is right there.",
+      "chain": [],
+      "from": "mindset-without-a-fight",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1018-1",
+      "at": "2026-10-18T11:30:00Z",
+      "kind": "take",
+      "topic": "Fight Psychology",
+      "text": "You're mentally tougher than you think if you've lost and come back the next day.\n\nNot the next week. The next day.\n\nThat's the whole test.",
+      "chain": [],
+      "from": "mentally-tougher",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1018-2",
+      "at": "2026-10-18T16:30:00Z",
+      "kind": "question",
+      "topic": "Fight Psychology",
+      "text": "What do you say in your head when you get hit clean?\n\nOne word beats a speech. Something like: reset.\n\nWhat's yours?",
+      "chain": [],
+      "from": "calm-without-experience",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1018-3",
+      "at": "2026-10-18T21:30:00Z",
+      "kind": "chain",
+      "topic": "Fight Psychology",
+      "text": "How to stay calm in a fight when you don't have years of experience. A thread.",
+      "chain": [
+        "1. Exhale on every punch.\nYou can't panic and breathe at the same time.",
+        "2. One job per round.\nJust the jab. Just the feet. A quiet head moves faster.",
+        "3. Expect to get hit.\nIt's information, not failure. The shock goes away.",
+        "4. Calm feet, calm head.\nWhen it gets chaotic, slow your feet first. The rest follows."
+      ],
+      "from": "calm-without-experience",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1019-1",
+      "at": "2026-10-19T11:30:00Z",
+      "kind": "take",
+      "topic": "Fight Psychology",
+      "text": "A bad session ruining your whole day isn't weakness.\n\nIt means you care more than most people in the gym.\n\nJust don't let it ruin tomorrow's session too.",
+      "chain": [],
+      "from": "made-for-combat-sports",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1019-2",
+      "at": "2026-10-19T16:30:00Z",
+      "kind": "question",
+      "topic": "Fight Psychology",
+      "text": "Rest days.\n\nDo they feel like recovery or like punishment?\n\nBe honest.",
+      "chain": [],
+      "from": "made-for-combat-sports",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1019-3",
+      "at": "2026-10-19T21:30:00Z",
+      "kind": "tip",
+      "topic": "Combat Sports",
+      "text": "You don't need weights to hit harder.\n\nTurn the back foot. Relax until impact. Exhale sharp on every shot.\n\nPower starts on the floor. No pivot, no punch.",
+      "chain": [],
+      "from": "power-without-weights",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1020-1",
+      "at": "2026-10-20T11:30:00Z",
+      "kind": "take",
+      "topic": "Fight Psychology",
+      "text": "The hardest punch isn't the strongest one.\n\nIt's the one they walk into.\n\nTiming beats strength every time.",
+      "chain": [],
+      "from": "power-without-weights",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1020-2",
+      "at": "2026-10-20T16:30:00Z",
+      "kind": "question",
+      "topic": "Fight Psychology",
+      "text": "Training alone this week?\n\nWhat's your go-to solo session?\n\nShadowboxing, bag rounds, footwork, or tape study?",
+      "chain": [],
+      "from": "dangerous-without-a-partner",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1020-3",
+      "at": "2026-10-20T21:30:00Z",
+      "kind": "tip",
+      "topic": "Combat Sports",
+      "text": "No partner? Give every bag round a rule.\n\nOnly counters this round. Only body shots the next.\n\nYou build reactions, not just punches.",
+      "chain": [],
+      "from": "dangerous-without-a-partner",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1021-1",
+      "at": "2026-10-21T11:30:00Z",
+      "kind": "take",
+      "topic": "Fight Psychology",
+      "text": "Fear before a fight isn't the problem.\n\nFeel it. Name it. Walk out anyway.\n\nThat's the entire skill.",
+      "chain": [],
+      "from": "go-anyway",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1021-2",
+      "at": "2026-10-21T16:30:00Z",
+      "kind": "question",
+      "topic": "Fight Psychology",
+      "text": "Started combat sports late?\n\nHow old were you when you walked into your first gym?\n\nCurious how many of you are out there.",
+      "chain": [],
+      "from": "started-late",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1021-3",
+      "at": "2026-10-21T21:30:00Z",
+      "kind": "story",
+      "topic": "Fight Psychology",
+      "text": "When training suddenly feels harder, most people think they're getting worse.\n\nUsually it's the opposite.\n\nYou're starting to notice mistakes you couldn't see before. That's what leveling up feels like from the inside.",
+      "chain": [],
+      "from": "about-to-level-up",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1022-1",
+      "at": "2026-10-22T11:30:00Z",
+      "kind": "take",
+      "topic": "Fight Psychology",
+      "text": "Stop caring how it looks.\n\nStart caring if it works.\n\nThat switch is when you actually start getting good.",
+      "chain": [],
+      "from": "about-to-level-up",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1022-2",
+      "at": "2026-10-22T16:30:00Z",
+      "kind": "question",
+      "topic": "Fight Psychology",
+      "text": "Which one is you?\n\n1. Training feels harder, not easier\n2. The guys who used to beat you are struggling now\n3. Sparring feels slower than it used to\n\nDrop the number.",
+      "chain": [],
+      "from": "about-to-level-up",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1022-3",
+      "at": "2026-10-22T21:30:00Z",
+      "kind": "tip",
+      "topic": "Combat Sports",
+      "text": "Started late? Ask more questions than anyone in the gym.\n\nOne question a session to the best person there.\n\nMost will help. Nobody's ever annoyed by someone who wants to learn.",
+      "chain": [],
+      "from": "started-late",
+      "status": "queued",
+      "approved": false
+    }
+  ]
+}

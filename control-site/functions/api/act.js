@@ -1,7 +1,7 @@
 // POST /api/act {action: "approve_week" | "answer" | "idea", ...} from the dashboard.
 import { accessEmail, dispatch, json } from "../../lib/shared.js";
 
-const ACTIONS = new Set(["approve_week", "answer", "idea"]);
+const ACTIONS = new Set(["approve_week", "approve_threads", "answer", "idea"]);
 
 export async function onRequestPost({ request, env }) {
   const email = await accessEmail(request, env);

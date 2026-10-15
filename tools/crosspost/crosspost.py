@@ -20,11 +20,17 @@ import argparse, datetime as dt, json, os, re, secrets as rnd, sys, time, urllib
 import urllib.request, uuid, webbrowser
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from pathlib import Path
+from zoneinfo import ZoneInfo
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import captions  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
 QUEUE = ROOT / "production" / "schedule" / "queue.json"
 STATE = ROOT / "production" / "schedule" / "crosspost.json"
 NOTES = ROOT / "production" / "control" / "notes.json"
+THREADS_POSTS = ROOT / "production" / "threads" / "posts.json"
+NY = ZoneInfo("America/New_York")
 ENVF = ROOT / "secrets" / "crosspost.env"
 REPO = "fightingmatteo-ux/matteofights"
 MAX_TRIES = 3
@@ -131,8 +137,9 @@ def yt_access():
 
 
 def post_youtube(item, cfg):
-    cap = caption(item)
-    meta = {"snippet": {"title": title(item, cap), "description": shorten(cap, 4900), "categoryId": "17",
+    cap, hook = caption(item), item.get("hook", "")
+    meta = {"snippet": {"title": captions.youtube_title(cap, hook),
+                        "description": shorten(captions.youtube_description(cap, hook), 4900), "categoryId": "17",
                         "tags": ["fighter", "mma", "boxing", "muay thai", "fight mindset"]},
             "status": {"privacyStatus": cfg.get("privacy", "private"), "selfDeclaredMadeForKids": False}}
     video = download(item["video_asset"])
@@ -191,23 +198,52 @@ def youtube_auth():
 TH = "https://graph.threads.net/v1.0"
 
 
-def post_threads(item, cfg):
+def th_publish(params, wait=False):
+    """Create a Threads container (text, video or reply) and publish it. Returns (post id, permalink)."""
     uid, tok = os.environ["THREADS_USER_ID"], os.environ["THREADS_ACCESS_TOKEN"]
-    text = shorten(without_hashtags(caption(item)), 500)
-    _, _, c = http("POST", f"{TH}/{uid}/threads", {"media_type": "VIDEO", "video_url": signed_url(item["video_asset"]),
-                                                   "text": text, "access_token": tok})
-    for _ in range(60):  # Threads processes the video before it can be published
-        time.sleep(10)
-        _, _, s = http("GET", f"{TH}/{c['id']}?fields=status,error_message&access_token={tok}")
-        if s.get("status") == "FINISHED":
-            break
-        if s.get("status") in ("ERROR", "EXPIRED"):
-            raise RuntimeError(f"Threads processing {s.get('status')}: {s.get('error_message')}")
+    params = {**params, "access_token": tok}
+    try:
+        _, _, c = http("POST", f"{TH}/{uid}/threads", params)
+    except RuntimeError as e:
+        if "topic_tag" not in params:
+            raise
+        print(f"topic tag rejected, retrying without: {str(e)[:120]}")
+        params.pop("topic_tag")
+        _, _, c = http("POST", f"{TH}/{uid}/threads", params)
+    if wait:  # video: Threads processes it before it can be published
+        for _ in range(60):
+            time.sleep(10)
+            _, _, st = http("GET", f"{TH}/{c['id']}?fields=status,error_message&access_token={tok}")
+            if st.get("status") == "FINISHED":
+                break
+            if st.get("status") in ("ERROR", "EXPIRED"):
+                raise RuntimeError(f"Threads processing {st.get('status')}: {st.get('error_message')}")
+        else:
+            raise RuntimeError("Threads processing timed out")
     else:
-        raise RuntimeError("Threads processing timed out")
+        time.sleep(3)
     _, _, p = http("POST", f"{TH}/{uid}/threads_publish", {"creation_id": c["id"], "access_token": tok})
     _, _, m = http("GET", f"{TH}/{p['id']}?fields=permalink&access_token={tok}")
-    return {"id": p["id"], "url": m.get("permalink")}
+    return p["id"], m.get("permalink")
+
+
+def post_threads(item, cfg):
+    text = captions.threads(caption(item), item.get("hook", ""))
+    pid, url = th_publish({"media_type": "VIDEO", "video_url": signed_url(item["video_asset"]), "text": text,
+                           "topic_tag": cfg.get("topic", captions.TOPIC)}, wait=True)
+    return {"id": pid, "url": url}
+
+
+def post_threads_text(post):
+    """One written post (+ optional chain of replies under it) from production/threads/posts.json."""
+    params = {"media_type": "TEXT", "text": post["text"][:500]}
+    if post.get("topic"):
+        params["topic_tag"] = post["topic"]
+    pid, url = th_publish(params)
+    parent = pid
+    for reply in post.get("chain") or []:
+        parent, _ = th_publish({"media_type": "TEXT", "text": reply[:500], "reply_to_id": parent})
+    return {"id": pid, "url": url}
 
 
 def threads_check():
@@ -249,7 +285,8 @@ def post_facebook(item, cfg):
     http("POST", f"https://rupload.facebook.com/video-upload/v21.0/{vid}", raw=b"",
          headers={"Authorization": f"OAuth {tok}", "file_url": signed_url(item["video_asset"])})
     http("POST", f"{FB}/{page}/video_reels", {"upload_phase": "finish", "video_id": vid, "video_state": "PUBLISHED",
-                                              "description": shorten(caption(item), 2000), "access_token": tok})
+                                              "description": shorten(captions.facebook(caption(item), item.get("hook", "")), 2000),
+                                              "access_token": tok})
     for _ in range(60):
         time.sleep(10)
         _, _, st = http("GET", f"{FB}/{vid}?fields=status&access_token={tok}")
@@ -259,6 +296,31 @@ def post_facebook(item, cfg):
         if status.get("video_status") == "error":
             raise RuntimeError(f"Facebook processing error: {json.dumps(status)[:300]}")
     return {"id": vid, "url": f"https://www.facebook.com/reel/{vid}"}
+
+
+def post_facebook_slides(item, cfg):
+    """The listicle as a photo album on the Page (title slide, one slide per item, question)."""
+    import slides
+    content = captions.slides(caption(item), item.get("hook", ""))
+    if not content:
+        return {"skipped": "not a list"}
+    tok, page = os.environ["FB_PAGE_TOKEN"], os.environ.get("FB_PAGE_ID", FB_PAGE)
+    cover = ROOT / Path(item.get("caption_file", "x/x")).parent / "cover.jpg"
+    ids = []
+    for k, jpg in enumerate(slides.render(*content, cover)):
+        boundary = uuid.uuid4().hex
+        body = (f"--{boundary}\r\nContent-Disposition: form-data; name=\"published\"\r\n\r\nfalse\r\n"
+                f"--{boundary}\r\nContent-Disposition: form-data; name=\"source\"; filename=\"s{k}.jpg\"\r\n"
+                f"Content-Type: image/jpeg\r\n\r\n").encode() + jpg + f"\r\n--{boundary}--\r\n".encode()
+        _, _, ph = http("POST", f"{FB}/{page}/photos?access_token={tok}", raw=body,
+                        headers={"Content-Type": f"multipart/form-data; boundary={boundary}"})
+        ids.append(ph["id"])
+    hook, items, cta = content
+    head = hook[0].upper() + hook[1:].lower() if hook.isupper() else hook
+    data = {"message": f"{head}\n\nSwipe through all {len(items)}. {cta}", "access_token": tok}
+    data.update({f"attached_media[{i}]": json.dumps({"media_fbid": x}) for i, x in enumerate(ids)})
+    _, _, post = http("POST", f"{FB}/{page}/feed", data)
+    return {"id": post["id"], "url": f"https://www.facebook.com/{post['id']}"}
 
 
 def facebook_setup():
@@ -282,8 +344,10 @@ def facebook_setup():
 # ---------------------------------------------------------------- run
 POSTERS = {"youtube": (post_youtube, ("YT_CLIENT_ID", "YT_CLIENT_SECRET", "YT_REFRESH_TOKEN")),
            "threads": (post_threads, ("THREADS_ACCESS_TOKEN", "THREADS_USER_ID")),
-           "facebook": (post_facebook, ("FB_PAGE_TOKEN",))}
-LABEL = {"youtube": "YouTube Shorts", "threads": "Threads", "facebook": "Facebook Reels"}
+           "facebook": (post_facebook, ("FB_PAGE_TOKEN",)),
+           "facebook_slides": (post_facebook_slides, ("FB_PAGE_TOKEN",))}
+LABEL = {"youtube": "YouTube Shorts", "threads": "Threads", "facebook": "Facebook Reels",
+         "facebook_slides": "Facebook slides", "threads_text": "Threads post"}
 
 
 def note(text):
@@ -293,44 +357,130 @@ def note(text):
     NOTES.write_text(json.dumps(notes[-200:], indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
 
+def iso(t):
+    return t.astimezone(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
+def parse_iso(s):
+    return dt.datetime.fromisoformat(s.replace("Z", "+00:00"))
+
+
+def next_slot(after, slots):
+    """First New York slot time ("HH:MM") at or after `after` (aware datetime)."""
+    t = after.astimezone(NY)
+    for day in range(8):
+        d = (t + dt.timedelta(days=day)).date()
+        for hm in sorted(slots):
+            c = dt.datetime(d.year, d.month, d.day, *map(int, hm.split(":")), tzinfo=NY)
+            if c >= t:
+                return c
+    raise ValueError("no slot")
+
+
+def save_state(state):
+    STATE.write_text(json.dumps(state, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+
+def run_platform(name, cfg, state, items, done, dry):
+    """Post at most one reel to this platform per run, in its own New York time slots, oldest reel first."""
+    poster, keys = POSTERS[name]
+    if missing := [k for k in keys if not os.environ.get(k)]:
+        print(f"{name}: enabled but secrets missing ({', '.join(missing)}), skipped")
+        return
+    t_now = dt.datetime.now(dt.timezone.utc)
+    since = max(cfg.get("since") or now(), iso(t_now - dt.timedelta(days=LOOKBACK_DAYS)))
+    last = parse_iso(cfg["last_slot"]) + dt.timedelta(minutes=1) if cfg.get("last_slot") else None
+    for it in sorted(items, key=lambda x: x.get("posted_at", "")):
+        if it.get("status") != "posted" or (it.get("posted_at") or "") < since or not it.get("video_asset"):
+            continue
+        rec = state["posts"].setdefault(it["id"], {}).get(name, {})
+        if rec.get("status") in ("posted", "skipped") or rec.get("tries", 0) >= MAX_TRIES:
+            continue
+        after = parse_iso(it["posted_at"]) + dt.timedelta(minutes=cfg.get("min_delay_min", 0))
+        after = max(after, last) if last else after
+        slot = next_slot(after, cfg["slots"]) if cfg.get("slots") else after
+        if slot > t_now:
+            print(f"{name}: next is {it['id']} at {slot.astimezone(NY).strftime('%a %H:%M')} NY")
+            return
+        if dry:
+            print(f"would post {it['id']} to {name} (slot {slot.astimezone(NY).strftime('%a %H:%M')} NY)")
+            return
+        try:
+            out = poster(it, cfg)
+        except Exception as e:
+            tries = rec.get("tries", 0) + 1
+            state["posts"][it["id"]][name] = {"status": "failed", "error": str(e)[:500], "tries": tries, "at": now()}
+            print(f"{name}: FAILED {it['id']} ({tries}/{MAX_TRIES}): {e}")
+            if tries >= MAX_TRIES:
+                note(f"⚠️ {LABEL[name]} gave up on: {it.get('hook', it['id'])}\n{str(e)[:300]}")
+            save_state(state)
+            return
+        if out.get("skipped"):
+            state["posts"][it["id"]][name] = {"status": "skipped", "at": now(), **out}
+            save_state(state)
+            continue  # e.g. a talking-head reel has no list for slides: try the next reel
+        state["posts"][it["id"]][name] = {"status": "posted", "at": now(), **out}
+        cfg["last_slot"] = iso(slot)
+        done.append((name, it.get("hook", it["id"]), out))
+        print(f"{name}: posted {it['id']} -> {out.get('url')}")
+        save_state(state)
+        return
+
+
+def run_threads_text(cfg, done, dry):
+    """Approved written Threads posts whose time has come; one per run, at least min_gap_hours apart."""
+    if not THREADS_POSTS.exists() or not os.environ.get("THREADS_ACCESS_TOKEN"):
+        return
+    data = json.loads(THREADS_POSTS.read_text(encoding="utf-8"))
+    t_now = dt.datetime.now(dt.timezone.utc)
+    posted = [parse_iso(p["posted_at"]) for p in data["posts"] if p.get("posted_at")]
+    if posted and t_now - max(posted) < dt.timedelta(hours=cfg.get("min_gap_hours", 2)):
+        return
+    changed = False
+    for p in sorted(data["posts"], key=lambda x: x["at"]):
+        if p.get("status") != "queued" or not p.get("approved") or parse_iso(p["at"]) > t_now:
+            continue
+        changed = True
+        if t_now - parse_iso(p["at"]) > dt.timedelta(hours=cfg.get("max_late_hours", 6)):
+            p["status"] = "missed"
+            continue
+        if dry:
+            print(f"would post Threads text {p['id']}")
+            return
+        try:
+            out = post_threads_text(p)
+            p.update(status="posted", posted_at=now(), **out)
+            done.append(("threads_text", p["text"].splitlines()[0][:80], out))
+            print(f"threads_text: posted {p['id']} -> {out.get('url')}")
+        except Exception as e:
+            p["tries"] = p.get("tries", 0) + 1
+            p["error"] = str(e)[:500]
+            print(f"threads_text: FAILED {p['id']}: {e}")
+            if p["tries"] >= MAX_TRIES:
+                p["status"] = "failed"
+                note(f"⚠️ Threads post failed: {p['text'][:80]}\n{str(e)[:300]}")
+        break
+    if changed and not dry:
+        THREADS_POSTS.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+
 def run(dry=False):
     load_env()
     state = json.loads(STATE.read_text(encoding="utf-8"))
     items = json.loads(QUEUE.read_text(encoding="utf-8"))["items"]
-    oldest = (dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=LOOKBACK_DAYS)).strftime("%Y-%m-%dT%H:%M:%SZ")
     done = []
     for name, cfg in state["platforms"].items():
-        poster, keys = POSTERS[name]
         if not cfg.get("enabled"):
             continue
-        if missing := [k for k in keys if not os.environ.get(k)]:
-            print(f"{name}: enabled but secrets missing ({', '.join(missing)}), skipped")
-            continue
-        since = max(cfg.get("since") or now(), oldest)
-        for it in sorted(items, key=lambda x: x.get("posted_at", "")):
-            if it.get("status") != "posted" or (it.get("posted_at") or "") < since or not it.get("video_asset"):
-                continue
-            rec = state["posts"].setdefault(it["id"], {}).get(name, {})
-            if rec.get("status") == "posted" or rec.get("tries", 0) >= MAX_TRIES:
-                continue
-            if dry:
-                print(f"would post {it['id']} to {name}")
-                continue
-            try:
-                out = poster(it, cfg)
-                state["posts"][it["id"]][name] = {"status": "posted", "at": now(), **out}
-                done.append((name, it, out))
-                print(f"{name}: posted {it['id']} -> {out.get('url')}")
-            except Exception as e:
-                tries = rec.get("tries", 0) + 1
-                state["posts"][it["id"]][name] = {"status": "failed", "error": str(e)[:500], "tries": tries, "at": now()}
-                print(f"{name}: FAILED {it['id']} ({tries}/{MAX_TRIES}): {e}")
-                if tries >= MAX_TRIES:
-                    note(f"⚠️ {LABEL[name]} gave up on: {it.get('hook', it['id'])}\n{str(e)[:300]}")
-            STATE.write_text(json.dumps(state, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    for name, it, out in done:
+        if name == "threads_text":
+            run_threads_text(cfg, done, dry)
+        else:
+            run_platform(name, cfg, state, items, done, dry)
+    for name, label, out in done:
+        if name == "threads_text":
+            continue  # written posts were approved as a batch; no ping for each one
         extra = " (private until the YouTube API audit passes: tap to make it public)" if out.get("privacy") == "private" else ""
-        note(f"📤 {LABEL[name]}: {it.get('hook', it['id'])}\n{out.get('url') or ''}{extra}")
+        note(f"📤 {LABEL[name]}: {label}\n{out.get('url') or ''}{extra}")
 
 
 def main():

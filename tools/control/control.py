@@ -19,6 +19,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 CTL = ROOT / "production" / "control"
 QUEUE = ROOT / "production" / "schedule" / "queue.json"
+THREADS = ROOT / "production" / "threads" / "posts.json"  # written Threads posts (tools/crosspost), approved weekly
 TG = "https://api.telegram.org/bot{token}/{method}"
 NY = None
 
@@ -70,6 +71,31 @@ def approve(ids, via):
     return done
 
 
+def pending_threads():
+    """Written Threads posts waiting for a yes (still in the future), oldest first."""
+    if not THREADS.exists():
+        return []
+    stamp = now()
+    posts = json.loads(THREADS.read_text(encoding="utf-8"))["posts"]
+    return sorted((p for p in posts if p.get("status") == "queued" and not p.get("approved") and p["at"] > stamp),
+                  key=lambda p: p["at"])
+
+
+def approve_threads(ids, via):
+    if not THREADS.exists():
+        return []
+    data = json.loads(THREADS.read_text(encoding="utf-8"))
+    stamp, done = now(), []
+    for p in data["posts"]:
+        if p["id"] in ids and p.get("status") == "queued" and not p.get("approved"):
+            p.update(approved=True, approved_note=f"Matteo: approved via {via} ({stamp})")
+            done.append(p["id"])
+    THREADS.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    if done:
+        log(f"Approved {len(done)} Threads posts via {via}", "Matteo")
+    return done
+
+
 def answer(qid, choice, via):
     qs = load("questions.json", [])
     for x in qs:
@@ -92,9 +118,13 @@ def idea(text, via):
 
 def act(payload, via):
     a = payload.get("action")
-    if a == "approve_week":
+    if a == "approve_week":  # the whole week: reels + written Threads posts
         ids = payload.get("ids") or [i["id"] for i in pending_week()]
-        return {"approved": approve(set(ids), via)}
+        return {"approved": approve(set(ids), via),
+                "threads": approve_threads({p["id"] for p in pending_threads()}, via) if not payload.get("ids") else []}
+    if a == "approve_threads":
+        ids = payload.get("ids") or [p["id"] for p in pending_threads()]
+        return {"threads": approve_threads(set(ids), via)}
     if a == "answer":
         return {"answered": bool(answer(payload["id"], str(payload["choice"])[:500], via))}
     if a == "idea":
@@ -167,6 +197,18 @@ def send_new(chat, state):
                            "reply_markup": buttons([[("✅ Approve the week", f"aw:{batch}")]])})
         state["announced_week"] = key
         log(f"Sent the week ({len(ids)} reels) to Telegram")
+    posts = pending_threads()
+    tkey = ",".join(p["id"] for p in posts)
+    if posts and tkey != state.get("announced_threads"):
+        lines = [f"• {ny(p['at'])}: {p['text'].splitlines()[0][:90]}" for p in posts]
+        text = f"🧵 {len(posts)} Threads posts written for the week\n\n" + "\n".join(lines)
+        text += "\n\nFull text on the dashboard. Approving = your yes for exactly these; they post at the times above."
+        batch = uuid.uuid4().hex[:8]
+        state.setdefault("batches", {})[batch] = [p["id"] for p in posts]
+        tg("sendMessage", {"chat_id": chat, "text": text[:4000],
+                           "reply_markup": buttons([[("✅ Approve Threads posts", f"at:{batch}")]])})
+        state["announced_threads"] = tkey
+        log(f"Sent {len(posts)} Threads posts to Telegram")
     for x in load("questions.json", []):
         if x["status"] == "open" and x["id"] not in state.setdefault("sent_questions", []):
             opts = x.get("options") or []
@@ -199,6 +241,10 @@ def handle_update(u, chat, state):
             ids = state.get("batches", {}).get(data[3:], [])
             done = approve(set(ids), "Telegram")
             reply = f"✅ Approved {len(done)} reels. They post automatically at the New York times." if done else "Already approved."
+        elif data.startswith("at:"):
+            ids = state.get("batches", {}).get(data[3:], [])
+            done = approve_threads(set(ids), "Telegram")
+            reply = f"✅ Approved {len(done)} Threads posts." if done else "Already approved."
         elif data.startswith("q:"):
             _, qid, k = data.split(":", 2)
             qx = next((x for x in load("questions.json", []) if x["id"] == qid), None)
