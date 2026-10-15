@@ -3,34 +3,38 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#0b0b0d">
+<meta name="theme-color" content="#0B0B0D">
 <meta name="robots" content="noindex,nofollow">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="icon.svg">
 <title>Matteo Fights Control</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="top">
-  <div class="brand"><span class="dot"></span>MATTEO<span class="red">FIGHTS</span> <span class="sub">CONTROL</span></div>
-  <div id="fresh" class="fresh"></div>
+<a class="skip" href="#view">Skip to content</a>
+<header class="bar">
+  <a class="mark" href="#" data-tab="home" aria-label="Matteo Fights control, home">MATTEO FIGHTS</a>
+  <p id="fresh" class="fresh" aria-live="off"></p>
 </header>
 
-<nav class="tabs" id="tabs">
-  <button data-tab="home" class="on"><span class="ico">◉</span>Home</button>
-  <button data-tab="reels"><span class="ico">▶</span>Reels</button>
-  <button data-tab="results"><span class="ico">▲</span>Results</button>
-  <button data-tab="decide"><span class="ico">✦</span>Decide<span id="badge" class="badge" hidden></span></button>
-  <button data-tab="activity"><span class="ico">≡</span>Activity</button>
+<nav class="nav" aria-label="Sections">
+  <button data-tab="home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11.5 12 5l8 6.5V20h-5.5v-5h-5v5H4z"/></svg><span>Home</span></button>
+  <button data-tab="reels"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/></svg><span>Reels</span></button>
+  <button data-tab="results"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V12M12 20V5M19 20v-5"/></svg><span>Results</span></button>
+  <button data-tab="decide"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h14v10H9l-4 4z"/></svg><span>Decide</span><b id="badge" class="badge" hidden></b></button>
+  <button data-tab="activity"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h4l3-7 4 14 3-7h4"/></svg><span>Activity</span></button>
 </nav>
 
-<main id="view" aria-live="polite"><div class="loading">Loading…</div></main>
+<main id="view" tabindex="-1"><p class="quiet pad">Loading…</p></main>
 
-
-<div id="toast" class="toast" hidden></div>
+<dialog id="sheet" aria-labelledby="sheet-title"></dialog>
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
 <script src="app.js"></script>
 </body>
 </html>

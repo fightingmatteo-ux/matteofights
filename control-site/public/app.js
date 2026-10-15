@@ -2,196 +2,351 @@
 "use strict";
 const $ = (s, el = document) => el.querySelector(s);
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
-const NY = new Intl.DateTimeFormat("en-US", { timeZone: "America/New_York", weekday: "short", month: "short", day: "numeric", hour: "numeric", minute: "2-digit" });
-const ny = (iso) => (iso ? NY.format(new Date(iso)) + " NY" : "–");
-const n = (x) => (x == null ? "–" : x >= 10000 ? (x / 1000).toFixed(1) + "k" : x.toLocaleString("en-US"));
-const ago = (iso) => {
-  if (!iso) return "–";
-  const m = Math.round((Date.now() - new Date(iso)) / 60000);
-  return m < 60 ? `${m}m ago` : m < 1440 ? `${Math.round(m / 60)}h ago` : `${Math.round(m / 1440)}d ago`;
+const TZ = "America/New_York";
+const fmt = (o) => new Intl.DateTimeFormat("en-US", { timeZone: TZ, ...o });
+const F = {
+  time: fmt({ hour: "numeric", minute: "2-digit" }),
+  wday: fmt({ weekday: "short" }),
+  day: fmt({ weekday: "long", month: "short", day: "numeric" }),
+  key: fmt({ year: "numeric", month: "2-digit", day: "2-digit" }),
+  full: fmt({ weekday: "short", month: "short", day: "numeric", hour: "numeric", minute: "2-digit" }),
 };
-const STATE = { needs_yes: "needs your yes", scheduled: "scheduled", posted: "posted", failed: "failed" };
+const t12 = (iso) => F.time.format(new Date(iso)).replace(" AM", "am").replace(" PM", "pm");
+const dayKey = (d) => F.key.format(d);
+const n = (x) => (x == null ? "–" : x >= 10000 ? (x / 1000).toFixed(x >= 100000 ? 0 : 1) + "k" : Math.round(x).toLocaleString("en-US"));
+const ago = (iso) => {
+  if (!iso) return "never";
+  const m = Math.round((Date.now() - new Date(iso)) / 60000);
+  return m < 1 ? "just now" : m < 60 ? `${m} min ago` : m < 1440 ? `${Math.round(m / 60)} h ago` : `${Math.round(m / 1440)} d ago`;
+};
+const until = (iso) => {
+  const m = Math.round((new Date(iso) - Date.now()) / 60000);
+  if (m <= 0) return "posting now";
+  const h = Math.floor(m / 60), d = Math.floor(h / 24);
+  return d >= 1 ? `in ${d} d ${h % 24} h` : h ? `in ${h} h ${m % 60} min` : `in ${m} min`;
+};
+const dayWord = (iso) => {
+  const k = dayKey(new Date(iso)), today = dayKey(new Date()), tmr = dayKey(new Date(Date.now() + 864e5));
+  return k === today ? "Tonight" : k === tmr ? "Tomorrow" : F.wday.format(new Date(iso));
+};
+// listicle hooks are written in caps for the video; read them in sentence case here
+const calm = (h) => {
+  h = String(h ?? "");
+  if (h !== h.toUpperCase()) return h;
+  return h.toLowerCase().replace(/^\w/, (c) => c.toUpperCase()).replace(/\bi\b/g, "I").replace(/\bi'/g, "I'").replace(/\b(\d+)x\b/g, "$1×");
+};
+const LABEL = { needs_yes: "Needs your yes", scheduled: "Scheduled", posted: "Posted", failed: "Failed", win: "Winner" };
+const FORMAT = { listicle: "Listicle", statement: "Statement", iykyk: "IYKYK", builder: "Builder", lifestyle: "Lifestyle", "talking head": "Talking head" };
 
 let D = null;
 let tab = (() => { try { return localStorage.getItem("tab") || "home"; } catch { return "home"; } })();
-let reelFilter = "all";
-const sent = new Set(); // optimistic: actions sent this session
+let filter = "all";
+const sent = new Set(); // decisions sent this session (the repo catches up within a minute)
+
+const isWin = (r) => (r.metrics?.vs_median_x || 0) >= 2;
+const stateOf = (r) => (isWin(r) ? "win" : r.state);
+const cover = (r, cls = "") => (r.cover ? `<img class="${cls}" src="${esc(r.cover)}" alt="" loading="lazy" decoding="async">` : "");
 
 function toast(msg) {
   const t = $("#toast");
   t.textContent = msg; t.hidden = false;
-  clearTimeout(toast.t); toast.t = setTimeout(() => (t.hidden = true), 3200);
+  clearTimeout(toast.t); toast.t = setTimeout(() => (t.hidden = true), 4000);
 }
 
 async function act(body, key, okMsg) {
   try {
     const r = await fetch("api/act", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(body) });
-    if (!r.ok) throw new Error((await r.json().catch(() => ({}))).error || r.status);
+    if (!r.ok) throw Object.assign(new Error((await r.json().catch(() => ({}))).error || `error ${r.status}`), { server: true });
     sent.add(key);
-    toast(okMsg + " · updates here in about a minute");
+    toast(okMsg);
     render();
+    return true;
   } catch (e) {
-    toast("Didn't go through: " + e.message);
+    toast(e.server ? `Not sent (${e.message}). Try again in a minute, or send it on Telegram.` : "Not sent: no connection. Try again when you're back online.");
+    return false;
   }
 }
 
-// ---------------------------------------------------------------- views
-function stat(v, l, cls = "") { return `<div class="card stat"><div class="v ${cls}">${v}</div><div class="l">${l}</div></div>`; }
+// ---------------------------------------------------------------- home
+function pending() {
+  return D.reels.filter((r) => r.state === "needs_yes" && r.id.startsWith("lst-")).sort((a, b) => (a.time > b.time ? 1 : -1));
+}
+
+function decision() {
+  const P = pending();
+  if (!P.length) return "";
+  const done = sent.has("approve_week");
+  const first = new Date(P[0].time), last = new Date(P[P.length - 1].time);
+  return `<section class="decision" aria-labelledby="d-h">
+    <h2 class="h2" id="d-h">${P.length} reels need your yes</h2>
+    <p class="lede">${F.day.format(first)} to ${F.day.format(last)}, at 6:30pm and 9:30pm New York. Approving is your yes for exactly these; they post on their own.</p>
+    <div class="covers" role="list">${P.map((r) => `<button role="listitem" data-open="${esc(r.id)}" aria-label="${esc(calm(r.hook))}">${cover(r)}</button>`).join("")}</div>
+    <div class="actions">
+      <button class="btn hold wide" data-hold="approve" ${done ? "disabled" : ""} aria-describedby="hold-hint">${done ? "Approved" : `Hold to approve ${P.length} reels`}</button>
+      <button class="btn line" data-goto="reels" data-filter="needs_yes">Check them first</button>
+    </div>
+    <p class="hint" id="hold-hint" style="margin-top:10px">${done ? "Sent. This page updates in about a minute." : "Press and hold for a second, so nothing goes out by accident."}</p>
+  </section>`;
+}
+
+function poster() {
+  const next = D.reels.filter((r) => r.state === "scheduled" && r.time && new Date(r.time) > Date.now() - 6e5)
+    .sort((a, b) => (a.time > b.time ? 1 : -1))[0];
+  if (!next) {
+    return `<article class="poster empty"><div class="copy">
+      <p class="label">Next post</p><p class="when">Nothing scheduled</p>
+      <p class="quiet">${pending().length ? "Approve the week above and the next reel shows up here." : "The factory makes next week's reels on Sunday morning."}</p></div></article>`;
+  }
+  return `<article class="poster" aria-label="Next post">
+    <div class="copy">
+      <p class="label">Next post</p>
+      <p class="when">${dayWord(next.time)}<br>${t12(next.time)}</p>
+      <p class="count" data-until="${esc(next.time)}">${until(next.time)}</p>
+      <p class="hookline">${esc(calm(next.hook))}</p>
+      <p class="meta">${FORMAT[next.format] || esc(next.format)}, New York time</p>
+    </div>
+    <button class="shot" data-open="${esc(next.id)}" aria-label="Open this reel">${cover(next)}</button>
+  </article>`;
+}
+
+function score() {
+  const posted = D.reels.filter((r) => r.state === "posted");
+  const wins = posted.filter(isWin).length;
+  const us = D.baseline.audience?.us_reach_pct;
+  return `<div class="score">
+    <div><b>${n(D.baseline.median_views)}</b><span>views on a normal reel</span></div>
+    <div><b>${us != null ? Math.round(us) + "%" : "–"}</b><span>of reach from the US</span></div>
+    <div><b class="${wins ? "gold" : ""}">${wins}</b><span>${wins === 1 ? "winner" : "winners"} at 2× normal</span></div>
+  </div>`;
+}
+
+function bout(r) {
+  const s = stateOf(r), m = r.metrics || {};
+  let line = FORMAT[r.format] || r.format;
+  if (m.views != null) line += ` · <span class="x ${s === "win" ? "win" : ""}">${n(m.views)} views</span>${m.vs_median_x != null ? `, ${m.vs_median_x.toFixed(1)}× normal` : ""}`;
+  else if (r.state === "posted") line += ` · numbers after 72 h`;
+  return `<li class="bout"><button data-open="${esc(r.id)}">
+    <span class="thumb">${cover(r)}</span>
+    <time datetime="${esc(r.time)}">${r.time ? t12(r.time) : ""}</time>
+    <span class="what"><p>${esc(calm(r.hook))}</p><p>${line}</p></span>
+    <span class="tag ${s}">${LABEL[s]}</span>
+  </button></li>`;
+}
+
+function fightCard() {
+  const from = Date.now() - 3 * 864e5, to = Date.now() + 8 * 864e5;
+  const R = D.reels.filter((r) => r.time && +new Date(r.time) > from && +new Date(r.time) < to).sort((a, b) => (a.time > b.time ? 1 : -1));
+  if (!R.length) return `<p class="empty-note">No reels this week yet. The factory makes them every Sunday, and you approve them here.</p>`;
+  const today = dayKey(new Date());
+  let h = "", cur = "";
+  for (const r of R) {
+    const k = dayKey(new Date(r.time));
+    if (k !== cur) {
+      if (cur) h += `</ul>`;
+      h += `<p class="day ${k === today ? "today" : ""}">${k === today ? "Today, " : ""}${F.day.format(new Date(r.time))}</p><ul class="bouts">`;
+      cur = k;
+    }
+    h += bout(r);
+  }
+  return h + `</ul>`;
+}
 
 function home() {
-  const R = D.reels, lst = R.filter((r) => r.id.startsWith("lst-"));
-  const needs = lst.filter((r) => r.state === "needs_yes").sort((a, b) => (a.time > b.time ? 1 : -1));
-  const posted = R.filter((r) => r.state === "posted");
-  const wins = posted.filter((r) => (r.metrics.vs_median_x || 0) >= 2);
-  const openQ = D.questions.filter((q) => q.status === "open");
-  const us = D.baseline.audience && D.baseline.audience.us_reach_pct;
-  let h = "";
-  if (needs.length) {
-    const done = sent.has("approve_week");
-    h += `<div class="card cta"><h3>Next week is ready</h3>
-      <div class="strip">${needs.map((r) => (r.cover ? `<img src="${esc(r.cover)}" alt="${esc(r.hook)}" loading="lazy">` : "")).join("")}</div>
-      <p><b>${needs.length} trial reels</b> from ${ny(needs[0].time)}. Approving is your yes for exactly these; they post automatically.</p>
-      <button class="btn block" ${done ? "disabled" : ""} data-act="approve">${done ? "✓ Approval sent" : "✅ Approve the week"}</button>
-      <div style="margin-top:8px"><button class="btn ghost block" data-goto="reels" data-filter="needs_yes">Look at them first</button></div></div>`;
-  }
-  h += `<h2>Right <span class="k">now</span></h2><div class="grid stats">
-    ${stat(D.health.next_post ? ny(D.health.next_post).replace(" NY", "") : "–", "next post (New York)", "gold")}
-    ${stat(lst.filter((r) => r.state === "scheduled").length, "scheduled")}
-    ${stat(posted.length, "posted")}
-    ${stat(wins.length, "winners (2x+)", wins.length ? "gold" : "")}
-    ${stat(n(D.baseline.median_views), "your normal views")}
-    ${stat(us != null ? us + "%" : "–", "US share of reach", "green")}
-    ${stat(openQ.length, "questions for you", openQ.length ? "red" : "")}
-    ${stat(D.health.failed.length, "failed posts", D.health.failed.length ? "red" : "")}
+  return `${decision()}<div class="home">
+    <div>${poster()}${score()}</div>
+    <section aria-labelledby="fc-h"><div class="card-head"><h2 class="h2" id="fc-h">This week</h2><span class="hint">New York time</span></div>${fightCard()}</section>
   </div>`;
-  if (wins.length) {
-    h += `<h2>Winners <span class="k">→ repost with a trending sound</span></h2><div class="grid reels">${wins.slice(0, 5).map(reel).join("")}</div>`;
-  }
-  const recent = posted.slice(0, 5);
-  if (recent.length) h += `<h2>Latest <span class="k">posts</span></h2><div class="grid reels">${recent.map(reel).join("")}</div>`;
-  return h;
 }
 
-function reel(r) {
-  const m = r.metrics || {}, x = m.vs_median_x;
-  const win = (x || 0) >= 2;
-  const nums = m.views != null
-    ? `<div class="nums"><span><b>${n(m.views)}</b> views</span>${x != null ? `<span><b>${x.toFixed(1)}x</b> normal</span>` : ""}
-       <span><b>${n(m.shares)}</b> shares</span><span><b>${n(m.saves)}</b> saves</span>${m.follows != null ? `<span><b>${n(m.follows)}</b> follows</span>` : ""}</div>`
-    : "";
-  return `<div class="reel">
-    <div class="img" style="${r.cover ? `background-image:url('${esc(r.cover)}')` : ""}">
-      <span class="chip ${win ? "win" : r.state}">${win ? "winner" : STATE[r.state] || r.state}</span></div>
-    <div class="body"><div class="hook">${esc(r.hook)}</div>
-      <div class="meta"><span class="fmt">${esc(r.format)}</span> · ${r.state === "posted" ? "posted " + ago(r.posted_at) : ny(r.time)}</div>
-      ${nums}
-      ${r.review ? `<div class="meta">footage check ${r.review.score}/10</div>` : ""}
-      ${r.error ? `<div class="meta warn">${esc(r.error).slice(0, 140)}</div>` : ""}
-      ${r.permalink ? `<a class="meta" href="${esc(r.permalink)}" target="_blank" rel="noopener">open on Instagram ↗</a>` : ""}
-    </div></div>`;
+// ---------------------------------------------------------------- reels
+function tile(r) {
+  const s = stateOf(r), m = r.metrics || {};
+  const left = m.views != null ? `▶ ${n(m.views)}` : r.time ? `${F.wday.format(new Date(r.time))} ${t12(r.time)}` : "";
+  const right = m.vs_median_x != null ? `${m.vs_median_x.toFixed(1)}×` : "";
+  return `<button class="tile" data-open="${esc(r.id)}" aria-label="${esc(calm(r.hook))}, ${LABEL[s]}">
+    ${r.cover ? cover(r) : `<span class="fallback">${esc(calm(r.hook))}</span>`}
+    <span class="flag ${s}">${s === "failed" ? "Failed" : ""}</span>
+    <span class="over"><span>${left}</span><span>${right}</span></span>
+  </button>`;
 }
 
 function reels() {
-  const list = D.reels.filter((r) => reelFilter === "all" || r.state === reelFilter);
-  const f = (k, l) => `<button data-filter="${k}" class="${reelFilter === k ? "on" : ""}">${l}</button>`;
-  return `<h2>All <span class="k">reels</span></h2>
-    <div class="filters">${f("all", "All")}${f("needs_yes", "Needs yes")}${f("scheduled", "Scheduled")}${f("posted", "Posted")}${f("failed", "Failed")}</div>
-    ${list.length ? `<div class="grid reels">${list.map(reel).join("")}</div>` : `<div class="empty">Nothing here.</div>`}`;
+  const counts = { all: D.reels.length };
+  D.reels.forEach((r) => { counts[r.state] = (counts[r.state] || 0) + 1; });
+  const list = D.reels.filter((r) => filter === "all" || r.state === filter);
+  const b = (k, l) => (k === "all" || counts[k] ? `<button data-filter="${k}" aria-pressed="${filter === k}">${l}${k !== "all" ? ` ${counts[k]}` : ""}</button>` : "");
+  return `<h1 class="h1" style="margin-bottom:16px">Reels</h1>
+    <div class="seg" role="group" aria-label="Filter reels">${b("all", "All")}${b("needs_yes", "Needs your yes")}${b("scheduled", "Scheduled")}${b("posted", "Posted")}${b("failed", "Failed")}</div>
+    ${list.length ? `<div class="grid">${list.map(tile).join("")}</div>` : `<p class="empty-note">No reels with this status.</p>`}`;
 }
 
+// ---------------------------------------------------------------- results
 function results() {
-  const F = Object.entries(D.formats);
-  if (!F.length) return `<h2>Results</h2><div class="empty">Numbers appear 72 hours after the first reels post. Claude logs them every morning.</div>`;
-  const rows = F.map(([k, v]) => ({ k, ...v, avg: Math.round(v.views / v.reels), fpk: v.views ? (1000 * v.follows) / v.views : 0 }))
+  const rows = Object.entries(D.formats).map(([k, v]) => ({ k, ...v, avg: v.views / v.reels, fpk: v.views ? (1000 * v.follows) / v.views : 0 }))
     .sort((a, b) => b.avg - a.avg);
-  const max = Math.max(...rows.map((r) => r.avg)) || 1;
-  const maxF = Math.max(...rows.map((r) => r.fpk)) || 1;
-  return `<h2>What's <span class="k">working</span></h2>
-    <div class="card"><h3>Average views per reel, by format</h3><div class="bars">
-      ${rows.map((r) => `<div class="row"><span>${esc(r.k)}</span><div class="track"><div class="fill" style="width:${(100 * r.avg) / max}%"></div></div><span class="n">${n(r.avg)}</span></div>`).join("")}
-    </div></div>
-    <div class="card" style="margin-top:10px"><h3>Follows per 1,000 views (what grows the account)</h3><div class="bars">
-      ${rows.map((r) => `<div class="row"><span>${esc(r.k)}</span><div class="track"><div class="fill gold" style="width:${(100 * r.fpk) / maxF}%"></div></div><span class="n">${r.fpk.toFixed(1)}</span></div>`).join("")}
-    </div></div>
-    <div class="card" style="margin-top:10px;overflow-x:auto"><table><tr><th>Format</th><th>Reels</th><th>Avg views</th><th>Shares</th><th>Saves</th><th>Winners</th></tr>
-      ${rows.map((r) => `<tr><td class="fmt">${esc(r.k)}</td><td class="num">${r.reels}</td><td class="num">${n(r.avg)}</td><td class="num">${n(r.shares)}</td><td class="num">${n(r.saves)}</td><td class="num">${r.winners}</td></tr>`).join("")}
-    </table></div>
-    ${D.baseline.updated ? `<p class="meta" style="color:var(--muted);font-size:12px">Numbers from Instagram via Buzzfy, updated ${ago(D.baseline.updated)}.</p>` : ""}`;
+  if (!rows.length) {
+    return `<h1 class="h1">Results</h1>
+      <p class="empty-note" style="margin-top:24px">Results show up 72 hours after a reel posts. Claude pulls the numbers from Instagram every morning and compares each reel with your normal ${n(D.baseline.median_views)} views.</p>`;
+  }
+  const max = Math.max(...rows.map((r) => r.avg)) || 1, maxF = Math.max(...rows.map((r) => r.fpk)) || 1;
+  const bars = (key, max, cls, val) => rows.slice().sort((a, b) => b[key] - a[key]).map((r, i) =>
+    `<div class="row"><span class="k">${esc(FORMAT[r.k] || r.k)}</span><span class="track"><span class="fill ${i === 0 ? cls : ""}" style="width:${Math.max(2, (100 * r[key]) / max)}%"></span></span><span class="v">${val(r)}</span></div>`).join("");
+  return `<h1 class="h1">Results</h1>
+    <p class="lede" style="margin:12px 0 32px">Which formats earn views, and which turn views into followers. Your normal reel gets ${n(D.baseline.median_views)} views.</p>
+    <div class="two">
+      <section class="panel"><h2 class="h2">Views per reel</h2><div class="bars">${bars("avg", max, "top", (r) => n(r.avg))}</div></section>
+      <section class="panel"><h2 class="h2">Follows per 1,000 views</h2><div class="bars">${bars("fpk", maxF, "gold", (r) => r.fpk.toFixed(1))}</div></section>
+    </div>
+    <section class="panel"><h2 class="h2">By format</h2><div class="scroll"><table>
+      <thead><tr><th scope="col">Format</th><th scope="col">Reels</th><th scope="col">Views per reel</th><th scope="col">Shares</th><th scope="col">Saves</th><th scope="col">Winners</th></tr></thead>
+      <tbody>${rows.map((r) => `<tr><td>${esc(FORMAT[r.k] || r.k)}</td><td>${r.reels}</td><td>${n(r.avg)}</td><td>${n(r.shares)}</td><td>${n(r.saves)}</td><td>${r.winners}</td></tr>`).join("")}</tbody>
+    </table></div></section>
+    ${D.baseline.updated ? `<p class="hint">From Instagram, updated ${ago(D.baseline.updated)}.</p>` : ""}`;
 }
 
+// ---------------------------------------------------------------- decide
 function decide() {
   const open = D.questions.filter((q) => q.status === "open");
   const done = D.questions.filter((q) => q.status !== "open").slice(-8).reverse();
-  let h = `<h2>Your <span class="k">calls</span></h2>`;
+  let h = `<h1 class="h1">Your calls</h1><p class="lede" style="margin:12px 0 24px">Claude asks here and on Telegram when it needs a decision from you.</p>`;
   h += open.length
-    ? open.map((q) => `<div class="card q"><div class="text">${esc(q.question)}</div>${q.context ? `<div class="ctx">${esc(q.context)}</div>` : ""}
-        ${sent.has("q:" + q.id) ? `<div class="ans">✓ Sent</div>` : `<div class="opts">${(q.options || []).map((o, k) => `<button class="btn" data-q="${esc(q.id)}" data-k="${k}">${esc(o)}</button>`).join("")}</div>`}</div>`).join("")
-    : `<div class="card empty">No open questions. Claude asks here (and on Telegram) when it needs a call from you.</div>`;
-  h += `<h2>Ideas <span class="k">for Claude</span></h2><div class="card">
-    <textarea id="idea" placeholder="Anything: a hook idea, a format you saw, 'more nutrition', 'stop using clip X'…"></textarea>
-    <div style="margin-top:10px"><button class="btn gold block" data-act="idea">Send to Claude</button></div>
-    ${D.ideas.slice().reverse().map((i) => `<div class="idea"><div class="t">${esc(i.text)}</div><div class="m">${ago(i.at)} · via ${esc(i.via)}${i.status === "new" ? " · not picked up yet" : ""}</div>${i.reply ? `<div class="reply">${esc(i.reply)}</div>` : ""}</div>`).join("")}
-  </div>`;
-  if (done.length) h += `<h2>Decided</h2><div class="card">${done.map((q) => `<div class="idea"><div class="t">${esc(q.question)}</div><div class="m">→ <span style="color:var(--green)">${esc(q.answer)}</span> · ${ago(q.answered_at)} · ${esc(q.via || "")}</div></div>`).join("")}</div>`;
+    ? open.map((q) => {
+        const picked = [...sent].find((k) => k.startsWith(`q:${q.id}:`));
+        return `<section class="q" aria-labelledby="q-${esc(q.id)}"><h3 id="q-${esc(q.id)}">${esc(q.question)}</h3>${q.context ? `<p class="ctx">${esc(q.context)}</p>` : ""}
+          <div class="opts">${(q.options || []).map((o, k) => `<button class="opt ${picked === `q:${q.id}:${k}` ? "picked" : ""}" data-q="${esc(q.id)}" data-k="${k}" ${picked ? "disabled" : ""}>${esc(o)}</button>`).join("")}</div>
+          ${picked ? `<p class="hint" style="margin-top:10px">Answer sent.</p>` : ""}</section>`;
+      }).join("")
+    : `<p class="empty-note">Nothing to decide right now.</p>`;
+  h += `<section class="section" aria-labelledby="i-h"><h2 class="h2" id="i-h">Ideas for Claude</h2>
+    <label class="field" for="idea">What should Claude try?</label>
+    <textarea id="idea" placeholder="A hook you thought of, a format you saw, more nutrition, stop using a clip…"></textarea>
+    <div class="actions" style="margin-top:12px"><button class="btn" data-act="idea">Send idea</button><span class="hint">Claude replies on its next morning check.</span></div>
+    <div style="margin-top:16px">${D.ideas.slice().reverse().map((i) => `<div class="idea"><p class="t">${esc(i.text)}</p>
+      <p class="m">${ago(i.at)}, from ${esc(i.via)}${i.status === "new" ? ". Waiting for Claude" : ""}</p>
+      ${i.reply ? `<div class="reply"><b>Claude</b>${esc(i.reply)}</div>` : ""}</div>`).join("")}</div></section>`;
+  if (done.length) {
+    h += `<section class="section"><h2 class="h2">Decided</h2>${done.map((q) => `<div class="idea"><p class="t">${esc(q.question)}</p>
+      <p class="m"><span class="answered">${esc(q.answer)}</span>, ${ago(q.answered_at)}${q.via ? ` from ${esc(q.via)}` : ""}</p></div>`).join("")}</section>`;
+  }
   return h;
 }
 
+// ---------------------------------------------------------------- activity
 function activity() {
   const H = D.health;
-  return `<h2>System <span class="k">health</span></h2><div class="card kv">
-      <span>Last post</span><span class="val">${ago(H.last_post)}</span>
-      <span>Next post</span><span class="val">${ny(H.next_post)}</span>
-      <span>Hooks written, waiting</span><span class="val ${H.hooks_ready < 14 ? "warn" : ""}">${H.hooks_ready}</span>
-      <span>Clips in Drive</span><span class="val">${H.clips_live || "–"}</span>
-      <span>Clips Claude has looked at</span><span class="val">${H.clips_catalogued}</span>
-      <span>Usable clips</span><span class="val">${H.clips_usable}</span>
-      <span>Failed posts</span><span class="val ${H.failed.length ? "warn" : ""}">${H.failed.length}</span>
-    </div>
-    <h2>What's <span class="k">happening</span></h2><div class="card log">
-      ${D.log.length ? D.log.slice().reverse().map((e) => `<div class="e"><span class="when">${ago(e.at)}</span><span><span class="who">${esc(e.who)}</span> ${esc(e.text)}</span></div>`).join("") : `<div class="empty">Nothing logged yet.</div>`}
+  const row = (k, v, warn) => `<dt>${k}</dt><dd class="${warn ? "warn" : ""}">${v}</dd>`;
+  return `<h1 class="h1">Activity</h1>
+    <div class="two" style="margin-top:24px">
+      <section class="panel"><h2 class="h2">System</h2><dl class="facts">
+        ${row("Last post", ago(H.last_post))}
+        ${row("Next post", H.next_post ? F.full.format(new Date(H.next_post)) : "Nothing scheduled")}
+        ${row("Hooks ready for next week", H.hooks_ready, H.hooks_ready < 14)}
+        ${row("Clips in your Drive folder", H.clips_live || "–")}
+        ${row("Clips Claude has watched", H.clips_catalogued)}
+        ${row("Clips good enough to use", H.clips_usable)}
+        ${row("Failed posts", H.failed.length, H.failed.length)}
+      </dl></section>
+      <section class="panel"><h2 class="h2">Log</h2>
+        ${D.log.length ? `<ol class="log" reversed>${D.log.slice().reverse().map((e) => `<li><time datetime="${esc(e.at)}">${ago(e.at)}</time><p><span class="who ${e.who === "Matteo" ? "matteo" : ""}">${esc(e.who === "system" ? "System" : e.who)}</span> ${esc(e.text)}</p></li>`).join("")}</ol>`
+          : `<p class="empty-note">Nothing logged yet. Approvals, posts, answers and Claude's changes show up here.</p>`}
+      </section>
     </div>`;
 }
 
+// ---------------------------------------------------------------- reel sheet
+function openSheet(id) {
+  const r = D.reels.find((x) => x.id === id);
+  if (!r) return;
+  const s = stateOf(r), m = r.metrics || {};
+  const stat = (l, v) => `<div><dt>${l}</dt><dd>${v}</dd></div>`;
+  const when = r.state === "posted" && r.posted_at ? `Posted ${ago(r.posted_at)}` : r.time ? `${F.full.format(new Date(r.time))} New York` : "";
+  const dlg = $("#sheet");
+  dlg.innerHTML = `<div class="sheet">
+    <div class="cover">${cover(r)}</div>
+    <div><span class="tag ${s}">${LABEL[s]}</span><h2 id="sheet-title">${esc(calm(r.hook))}</h2>
+      <p class="meta">${FORMAT[r.format] || esc(r.format)}${when ? `<br>${when}` : ""}${r.clip ? `<br>Clip: ${esc(r.clip)}` : ""}</p></div>
+    ${m.views != null ? `<dl>${stat("Views", n(m.views))}${stat("vs normal", m.vs_median_x != null ? m.vs_median_x.toFixed(1) + "×" : "–")}${stat("Follows", n(m.follows))}${stat("Shares", n(m.shares))}${stat("Saves", n(m.saves))}${stat("Skip rate", m.skip_rate != null ? Math.round(m.skip_rate) + "%" : "–")}</dl>` : ""}
+    ${s === "win" ? `<p class="err" style="color:var(--gold)">Winner. Repost it to your grid from the Instagram app with a trending sound; Claude sent suggestions on Telegram.</p>` : ""}
+    ${r.error ? `<p class="err">Failed to post: ${esc(r.error).slice(0, 220)}. Claude looks at it on the next morning check.</p>` : ""}
+    <div class="foot">${r.permalink ? `<a class="btn" href="${esc(r.permalink)}" target="_blank" rel="noopener">Open on Instagram</a>` : ""}<button class="btn line" data-close>Close</button></div>
+  </div>`;
+  dlg.showModal();
+}
+$("#sheet").addEventListener("click", (e) => { if (e.target === e.currentTarget || e.target.closest("[data-close]")) e.currentTarget.close(); });
+
+// ---------------------------------------------------------------- render + events
 const VIEWS = { home, reels, results, decide, activity };
 
 function render() {
   if (!D) return;
   $("#view").innerHTML = VIEWS[tab]();
-  document.querySelectorAll("#tabs button").forEach((b) => b.classList.toggle("on", b.dataset.tab === tab));
-  const open = D.questions.filter((q) => q.status === "open" && !sent.has("q:" + q.id)).length;
+  document.querySelectorAll(".nav button").forEach((b) => (b.dataset.tab === tab ? b.setAttribute("aria-current", "page") : b.removeAttribute("aria-current")));
+  const open = D.questions.filter((q) => q.status === "open" && ![...sent].some((k) => k.startsWith(`q:${q.id}:`))).length;
   const badge = $("#badge"); badge.hidden = !open; badge.textContent = open;
-  $("#fresh").innerHTML = `updated ${ago(D.generated_at)}`;
+  badge.closest("button").setAttribute("aria-label", open ? `Decide, ${open} waiting` : "Decide");
+  $("#fresh").textContent = `Updated ${ago(D.generated_at)}`;
+}
+
+function go(next, f) {
+  tab = next; if (f) filter = f;
+  try { localStorage.setItem("tab", tab); } catch {}
+  render(); window.scrollTo(0, 0); $("#view").focus({ preventScroll: true });
 }
 
 document.addEventListener("click", (ev) => {
   const t = ev.target.closest("button,a");
   if (!t) return;
-  if (t.dataset.tab) { tab = t.dataset.tab; try { localStorage.setItem("tab", tab); } catch {} window.scrollTo(0, 0); return render(); }
-  if (t.dataset.goto) { tab = t.dataset.goto; reelFilter = t.dataset.filter || "all"; return render(); }
-  if (t.dataset.filter && tab === "reels") { reelFilter = t.dataset.filter; return render(); }
-  if (t.dataset.act === "approve") {
-    const ids = D.reels.filter((r) => r.state === "needs_yes" && r.id.startsWith("lst-")).map((r) => r.id);
-    if (confirm(`Approve ${ids.length} reels? They'll post automatically at the New York times shown.`))
-      act({ action: "approve_week", ids }, "approve_week", "✅ Week approved");
-  }
+  if (t.dataset.tab) { ev.preventDefault(); return go(t.dataset.tab); }
+  if (t.dataset.goto) return go(t.dataset.goto, t.dataset.filter);
+  if (t.dataset.filter && tab === "reels") { filter = t.dataset.filter; return render(); }
+  if (t.dataset.open) return openSheet(t.dataset.open);
   if (t.dataset.act === "idea") {
-    const text = $("#idea").value.trim();
-    if (!text) return toast("Type an idea first");
-    act({ action: "idea", text }, "idea:" + text, "💡 Sent to Claude").then(() => { const el = $("#idea"); if (el) el.value = ""; });
+    const el = $("#idea"), text = el.value.trim();
+    if (!text) { el.focus(); return toast("Write the idea first, then send it."); }
+    t.disabled = true;
+    act({ action: "idea", text }, "idea:" + text, "Idea sent. Claude replies on its next morning check.").then((ok) => { if (ok) { const e2 = $("#idea"); if (e2) e2.value = ""; } else t.disabled = false; });
   }
   if (t.dataset.q) {
-    const q = D.questions.find((x) => x.id === t.dataset.q);
-    act({ action: "answer", id: q.id, choice: q.options[+t.dataset.k] }, "q:" + q.id, "Answer sent");
+    const q = D.questions.find((x) => x.id === t.dataset.q), k = +t.dataset.k;
+    act({ action: "answer", id: q.id, choice: q.options[k] }, `q:${q.id}:${k}`, `Answer sent: ${q.options[k]}`);
   }
 });
+
+// press-and-hold to approve the week (pointer and keyboard)
+const HOLD_MS = 1200;
+let holdTimer = null;
+function holdStart(b) {
+  if (b.disabled || holdTimer) return;
+  b.classList.add("holding"); b.textContent = "Keep holding…";
+  holdTimer = setTimeout(() => {
+    holdTimer = null; b.classList.remove("holding"); b.classList.add("done"); b.textContent = "Approving…";
+    navigator.vibrate?.(30);
+    const ids = pending().map((r) => r.id);
+    act({ action: "approve_week", ids }, "approve_week", `Approved ${ids.length} reels. They post on their own.`).then((ok) => { if (!ok) render(); });
+  }, HOLD_MS);
+}
+function holdStop(b) {
+  if (!holdTimer) return;
+  clearTimeout(holdTimer); holdTimer = null;
+  b.classList.remove("holding"); b.textContent = `Hold to approve ${pending().length} reels`;
+}
+document.addEventListener("pointerdown", (e) => { const b = e.target.closest("[data-hold]"); if (b) { e.preventDefault(); holdStart(b); } });
+["pointerup", "pointercancel", "pointerleave"].forEach((ev) => document.addEventListener(ev, (e) => { const b = $("[data-hold]"); if (b) holdStop(b); }, true));
+document.addEventListener("keydown", (e) => { const b = e.target.closest?.("[data-hold]"); if (b && (e.key === " " || e.key === "Enter") && !e.repeat) { e.preventDefault(); holdStart(b); } });
+document.addEventListener("keyup", (e) => { const b = e.target.closest?.("[data-hold]"); if (b && (e.key === " " || e.key === "Enter")) holdStop(b); });
+document.addEventListener("contextmenu", (e) => { if (e.target.closest("[data-hold]")) e.preventDefault(); });
+
+// live countdown on the poster
+setInterval(() => document.querySelectorAll("[data-until]").forEach((el) => (el.textContent = until(el.dataset.until))), 30000);
 
 async function load() {
   try {
     const r = await fetch("data.json?" + Date.now(), { cache: "no-store" });
+    if (!r.ok) throw new Error(r.status);
     D = await r.json();
-    render();
+    if (!$("#sheet").open) render();
   } catch {
-    $("#view").innerHTML = `<div class="empty">Couldn't load the data. Pull to refresh.</div>`;
+    if (!D) $("#view").innerHTML = `<p class="empty-note">Couldn't load the latest data. Check your connection; this page retries every minute.</p>`;
   }
 }
 load();

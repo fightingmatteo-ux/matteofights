@@ -51,7 +51,7 @@ def main():
         if not label and (ROOT / i.get("caption_file", "x")).is_file():
             first = (ROOT / i["caption_file"]).read_text(encoding="utf-8").strip().splitlines()
             label = first[0][:90] if first else None
-        if label and i.get("variant"):
+        if label and (i.get("variant") or "") .isalpha():
             label = f"{i['variant']}: {label}"
         reels.append({
             "id": i["id"], "hook": label or i.get("reel", i["id"]),
