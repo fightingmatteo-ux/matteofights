@@ -49,6 +49,7 @@ the upper third. Hook only on screen (subhook opens the caption). Footage bright
 ## Formats (field `format` in hooks.json, copied to the queue for the ledger)
 - `listicle`: N SIGNS / N WAYS hook, numbered list in the caption (the 398k / 162k format).
 - `statement`: one bold line on screen (THERE'S NO SUCH THING AS AN EX-FIGHTER, 13k), short list in the caption.
+- `builder`: fighter-who-builds lane (approved 2026-10-15), ~2/week, no Stance plug.
 - `iykyk`: insider gym moment, one-line caption + tag-a-friend. No READ DESCRIPTION pill.
 Weekly mix while testing: 4 listicles, 2 statements, 1 iykyk. Second daily slot: run the factory with `--slot 20:00`.
 
