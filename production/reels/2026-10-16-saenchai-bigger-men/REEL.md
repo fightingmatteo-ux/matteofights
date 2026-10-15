@@ -4,7 +4,7 @@ status: talking-points
 pillar: psychology
 format: legend-credibility
 credibility: Saenchai (fought heavier opponents; widely reported)
-cta: comment question ("Who's the fighter whose mind you'd steal?")
+cta: save + share ("Save this for your next spar. And send it to the smallest guy in your gym."), comment question in caption
 test_variable: hook
 ---
 
@@ -20,7 +20,7 @@ See TALKING-POINTS.md (reading script this time, hooks verbatim).
 | B | If you always spar someone bigger than you, steal this from Saenchai. | ALWAYS SPARRING SOMEONE BIGGER? | | ~35 s | |
 | C | Bigger guys win the trade. Saenchai never traded. | SAENCHAI NEVER TRADED | | ~35 s | |
 
-Shared body: beats 1-6 in TALKING-POINTS.md. Edit: word-pop subtitles, SAENCHAI name card on beat 1, no fight footage.
+Shared body: beats 1-6 in TALKING-POINTS.md, then the variant's own loop line (beat 7), hard cut into the hook for a seamless loop. Edit: word-pop subtitles, SAENCHAI name card on beat 1, no fight footage.
 
 ## Caption + hashtags (Instagram source; crosspost adapts it for Facebook, YouTube, Threads)
 ```
@@ -32,6 +32,8 @@ He didn't out-muscle them. He made them start over.
 Step off the line. Catch the kick. Sweep. Reset.
 
 Next time you spar someone bigger, don't win the exchange. Win the reset.
+
+Save this before your next spar. Send it to the smallest guy in your gym.
 
 Who's the fighter whose mind you'd steal?
 
