@@ -55,3 +55,6 @@ production/reels/*/node_modules/
 # control center build output (made by tools/control/build_data.py at deploy time)
 control-site/public/data.json
 control-site/public/covers/
+control-site/.impeccable/review/
+control-site/.impeccable/mocks/
+control-site/.impeccable/questions/

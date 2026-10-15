@@ -1,0 +1,477 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-15T15:54:27+00:00",
+  "title": "Design System: Matteo Fights Control",
+  "extensions": {
+    "colorMeta": {
+      "canvas": {
+        "role": "neutral",
+        "displayName": "Gym Wall Black",
+        "canonical": "oklch(14% 0.004 285)",
+        "tonalRamp": [
+          "oklch(15% 0.001 285)",
+          "oklch(25% 0.002 285)",
+          "oklch(35% 0.003 285)",
+          "oklch(45% 0.003 285)",
+          "oklch(55% 0.004 285)",
+          "oklch(65% 0.003 285)",
+          "oklch(80% 0.002 285)",
+          "oklch(95% 0.001 285)"
+        ]
+      },
+      "housing": {
+        "role": "neutral",
+        "displayName": "Housing",
+        "canonical": "oklch(17% 0.004 285)",
+        "tonalRamp": [
+          "oklch(15% 0.001 285)",
+          "oklch(25% 0.002 285)",
+          "oklch(35% 0.003 285)",
+          "oklch(45% 0.003 285)",
+          "oklch(55% 0.004 285)",
+          "oklch(65% 0.003 285)",
+          "oklch(80% 0.002 285)",
+          "oklch(95% 0.001 285)"
+        ]
+      },
+      "face": {
+        "role": "neutral",
+        "displayName": "Inset Face",
+        "canonical": "oklch(12% 0.004 285)",
+        "tonalRamp": [
+          "oklch(15% 0.001 285)",
+          "oklch(25% 0.002 285)",
+          "oklch(35% 0.003 285)",
+          "oklch(45% 0.003 285)",
+          "oklch(55% 0.004 285)",
+          "oklch(65% 0.003 285)",
+          "oklch(80% 0.002 285)",
+          "oklch(95% 0.001 285)"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "oklch(26% 0.008 290)",
+        "tonalRamp": [
+          "oklch(15% 0.003 290)",
+          "oklch(25% 0.004 290)",
+          "oklch(35% 0.005 290)",
+          "oklch(45% 0.007 290)",
+          "oklch(55% 0.008 290)",
+          "oklch(65% 0.007 290)",
+          "oklch(80% 0.005 290)",
+          "oklch(95% 0.003 290)"
+        ]
+      },
+      "rule-hi": {
+        "role": "neutral",
+        "displayName": "Bezel Highlight",
+        "canonical": "oklch(33% 0.012 295)",
+        "tonalRamp": [
+          "oklch(15% 0.004 295)",
+          "oklch(25% 0.006 295)",
+          "oklch(35% 0.008 295)",
+          "oklch(45% 0.010 295)",
+          "oklch(55% 0.012 295)",
+          "oklch(65% 0.010 295)",
+          "oklch(80% 0.007 295)",
+          "oklch(95% 0.004 295)"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Lit Paper",
+        "canonical": "oklch(93% 0.015 80)",
+        "tonalRamp": [
+          "oklch(15% 0.005 80)",
+          "oklch(25% 0.007 80)",
+          "oklch(35% 0.010 80)",
+          "oklch(45% 0.013 80)",
+          "oklch(55% 0.015 80)",
+          "oklch(65% 0.013 80)",
+          "oklch(80% 0.009 80)",
+          "oklch(95% 0.005 80)"
+        ]
+      },
+      "dust": {
+        "role": "neutral",
+        "displayName": "Chalk Dust",
+        "canonical": "oklch(66% 0.013 75)",
+        "tonalRamp": [
+          "oklch(15% 0.004 75)",
+          "oklch(25% 0.006 75)",
+          "oklch(35% 0.009 75)",
+          "oklch(45% 0.011 75)",
+          "oklch(55% 0.013 75)",
+          "oklch(65% 0.011 75)",
+          "oklch(80% 0.008 75)",
+          "oklch(95% 0.004 75)"
+        ]
+      },
+      "red": {
+        "role": "primary",
+        "displayName": "Combat Red",
+        "canonical": "oklch(52% 0.19 27)",
+        "tonalRamp": [
+          "oklch(15% 0.063 27)",
+          "oklch(25% 0.095 27)",
+          "oklch(35% 0.127 27)",
+          "oklch(45% 0.158 27)",
+          "oklch(55% 0.190 27)",
+          "oklch(65% 0.158 27)",
+          "oklch(80% 0.111 27)",
+          "oklch(95% 0.063 27)"
+        ]
+      },
+      "red-ink": {
+        "role": "primary",
+        "displayName": "Warning Ink",
+        "canonical": "oklch(66% 0.17 25)",
+        "tonalRamp": [
+          "oklch(15% 0.057 25)",
+          "oklch(25% 0.085 25)",
+          "oklch(35% 0.113 25)",
+          "oklch(45% 0.142 25)",
+          "oklch(55% 0.170 25)",
+          "oklch(65% 0.142 25)",
+          "oklch(80% 0.099 25)",
+          "oklch(95% 0.057 25)"
+        ]
+      },
+      "red-lamp": {
+        "role": "primary",
+        "displayName": "Lit Lamp Red",
+        "canonical": "oklch(60% 0.20 27)",
+        "tonalRamp": [
+          "oklch(15% 0.067 27)",
+          "oklch(25% 0.100 27)",
+          "oklch(35% 0.133 27)",
+          "oklch(45% 0.167 27)",
+          "oklch(55% 0.200 27)",
+          "oklch(65% 0.167 27)",
+          "oklch(80% 0.117 27)",
+          "oklch(95% 0.067 27)"
+        ]
+      },
+      "red-deep": {
+        "role": "primary",
+        "displayName": "Pressed Red",
+        "canonical": "oklch(33% 0.13 27)",
+        "tonalRamp": [
+          "oklch(15% 0.043 27)",
+          "oklch(25% 0.065 27)",
+          "oklch(35% 0.087 27)",
+          "oklch(45% 0.108 27)",
+          "oklch(55% 0.130 27)",
+          "oklch(65% 0.108 27)",
+          "oklch(80% 0.076 27)",
+          "oklch(95% 0.043 27)"
+        ]
+      },
+      "gold": {
+        "role": "secondary",
+        "displayName": "Belt Gold",
+        "canonical": "oklch(68% 0.11 75)",
+        "tonalRamp": [
+          "oklch(15% 0.037 75)",
+          "oklch(25% 0.055 75)",
+          "oklch(35% 0.073 75)",
+          "oklch(45% 0.092 75)",
+          "oklch(55% 0.110 75)",
+          "oklch(65% 0.092 75)",
+          "oklch(80% 0.064 75)",
+          "oklch(95% 0.037 75)"
+        ]
+      },
+      "gold-lamp": {
+        "role": "secondary",
+        "displayName": "Lit Lamp Gold",
+        "canonical": "oklch(75% 0.11 75)",
+        "tonalRamp": [
+          "oklch(15% 0.037 75)",
+          "oklch(25% 0.055 75)",
+          "oklch(35% 0.073 75)",
+          "oklch(45% 0.092 75)",
+          "oklch(55% 0.110 75)",
+          "oklch(65% 0.092 75)",
+          "oklch(80% 0.064 75)",
+          "oklch(95% 0.037 75)"
+        ]
+      },
+      "unlit": {
+        "role": "neutral",
+        "displayName": "Unlit",
+        "canonical": "oklch(22% 0.006 290)",
+        "tonalRamp": [
+          "oklch(15% 0.002 290)",
+          "oklch(25% 0.003 290)",
+          "oklch(35% 0.004 290)",
+          "oklch(45% 0.005 290)",
+          "oklch(55% 0.006 290)",
+          "oklch(65% 0.005 290)",
+          "oklch(80% 0.003 290)",
+          "oklch(95% 0.002 290)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Page titles; verdict words at 52px."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Day word and time on the clock face; 40px from 960px."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Section heads, wordmark, waiting count."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running text, 60ch cap on ledes."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Row labels, day headers, lamp text, meta."
+      },
+      "figure": {
+        "displayName": "Figure",
+        "purpose": "Headline numbers such as split views; same face for table and metric values."
+      },
+      "unit": {
+        "displayName": "Unit",
+        "purpose": "HRS / MIN units under the segment readout."
+      }
+    },
+    "shadows": [
+      {
+        "name": "housing-edge",
+        "value": "inset 0 0 0 1px var(--rule), inset 0 1px 0 var(--rule-hi)",
+        "purpose": "Clock housing edge and top catch light; sheets use the catch light alone."
+      },
+      {
+        "name": "inset-face",
+        "value": "inset 0 0 0 1px #000, inset 0 10px 30px rgba(0,0,0,.6)",
+        "purpose": "Recessed clock face."
+      },
+      {
+        "name": "lit-bulb",
+        "value": "inset 0 -2px 2px rgba(0,0,0,.35), inset 0 1px 1px rgba(255,255,255,.35)",
+        "purpose": "A lit phase lamp bulb."
+      },
+      {
+        "name": "off-bulb",
+        "value": "inset 0 1px 1px rgba(0,0,0,.6)",
+        "purpose": "An unlit lamp."
+      },
+      {
+        "name": "transient-lift",
+        "value": "0 12px 32px rgba(0,0,0,.55)",
+        "purpose": "Undo bar and toast only."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(.16, 1, .3, 1)",
+        "purpose": "Default easing for state transitions (.15s press, .2s color, .25s rewind, .32s sheet rise)."
+      },
+      {
+        "name": "hold",
+        "value": "1.2s linear",
+        "purpose": "Hold-to-approve fill, gold progress bar and bezel conic sweep; early release rewinds in .25s."
+      },
+      {
+        "name": "ring",
+        "value": ".9s; opacity 1, .35, 1, 0",
+        "purpose": "The bezel rings and fades when the hold completes."
+      },
+      {
+        "name": "colon-blink",
+        "value": "2s steps(1) infinite; 15% opacity",
+        "purpose": "Seven-segment colon heartbeat."
+      },
+      {
+        "name": "undo-window",
+        "value": "4s; one segment digit per second",
+        "purpose": "Answers wait out a counted undo before sending."
+      },
+      {
+        "name": "sheet-rise",
+        "value": ".32s; translateY(28px) to 0",
+        "purpose": "Dialog entrance."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "animations off; hold fill keeps 1.2s linear",
+        "purpose": "Hold progress is information, so it survives reduced motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "phone-narrow",
+        "value": "420px"
+      },
+      {
+        "name": "tablet",
+        "value": "720px"
+      },
+      {
+        "name": "desktop",
+        "value": "960px"
+      },
+      {
+        "name": "grid-wide",
+        "value": "1100px"
+      },
+      {
+        "name": "content-max",
+        "value": "1240px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Round Clock",
+      "kind": "custom",
+      "refersTo": "clock-housing",
+      "description": "Housing plus inset face with phase lamp, seven-segment countdown, units and day word; the signature container.",
+      "html": "<article class=\"ds-clock\"><div class=\"ds-face\"><div class=\"ds-phase\"><span class=\"ds-lamp ds-red\"><i></i>Yes waiting</span></div><div><svg class=\"ds-seg\" viewBox=\"0 0 236 100\" role=\"img\" aria-label=\"Posts in 2 hours 47 minutes\"><g transform=\"skewX(-6) translate(6 0)\"><rect class=\"on\" x=\"18\" y=\"0\" width=\"36\" height=\"9\" rx=\"3\"/><rect class=\"on\" x=\"55\" y=\"9\" width=\"9\" height=\"37\" rx=\"3\"/><rect class=\"off\" x=\"55\" y=\"54\" width=\"9\" height=\"37\" rx=\"3\"/><rect class=\"on\" x=\"18\" y=\"91\" width=\"36\" height=\"9\" rx=\"3\"/><rect class=\"on\" x=\"8\" y=\"54\" width=\"9\" height=\"37\" rx=\"3\"/><rect class=\"off\" x=\"8\" y=\"9\" width=\"9\" height=\"37\" rx=\"3\"/><rect class=\"on\" x=\"18\" y=\"45.5\" width=\"36\" height=\"9\" rx=\"3\"/><g class=\"ds-colon\"><rect class=\"on\" x=\"80\" y=\"26\" width=\"9\" height=\"9\" rx=\"2\"/><rect class=\"on\" x=\"74\" y=\"66\" width=\"9\" height=\"9\" rx=\"2\"/></g><rect class=\"off\" x=\"112\" y=\"0\" width=\"36\" height=\"9\" rx=\"3\"/><rect class=\"on\" x=\"149\" y=\"9\" width=\"9\" height=\"37\" rx=\"3\"/><rect class=\"on\" x=\"149\" y=\"54\" width=\"9\" height=\"37\" rx=\"3\"/><rect class=\"off\" x=\"112\" y=\"91\" width=\"36\" height=\"9\" rx=\"3\"/><rect class=\"off\" x=\"102\" y=\"54\" width=\"9\" height=\"37\" rx=\"3\"/><rect class=\"on\" x=\"102\" y=\"9\" width=\"9\" height=\"37\" rx=\"3\"/><rect class=\"on\" x=\"112\" y=\"45.5\" width=\"36\" height=\"9\" rx=\"3\"/><rect class=\"on\" x=\"182\" y=\"0\" width=\"36\" height=\"9\" rx=\"3\"/><rect class=\"on\" x=\"219\" y=\"9\" width=\"9\" height=\"37\" rx=\"3\"/><rect class=\"on\" x=\"219\" y=\"54\" width=\"9\" height=\"37\" rx=\"3\"/><rect class=\"off\" x=\"182\" y=\"91\" width=\"36\" height=\"9\" rx=\"3\"/><rect class=\"off\" x=\"172\" y=\"54\" width=\"9\" height=\"37\" rx=\"3\"/><rect class=\"off\" x=\"172\" y=\"9\" width=\"9\" height=\"37\" rx=\"3\"/><rect class=\"off\" x=\"182\" y=\"45.5\" width=\"36\" height=\"9\" rx=\"3\"/></g></svg><p class=\"ds-units\"><span>HRS</span><span>MIN</span></p><p class=\"ds-when\">TONIGHT 6:30 PM</p><p class=\"ds-meta\">Listicle, New York time</p></div></div></article>",
+      "css": ".ds-clock { --led: var(--red-ink, #F0605A); max-width:390px; border-radius: var(--r-housing, 18px); padding:6px; background: var(--housing, #121214); box-shadow: inset 0 0 0 1px var(--rule, #26252A), inset 0 1px 0 var(--rule-hi, #3A3840); } .ds-face { display:grid; gap:6px; padding:14px 16px; border-radius:12px; background: var(--face, #08080A); box-shadow: inset 0 0 0 1px #000, inset 0 10px 30px rgba(0,0,0,.6); color: var(--paper, #EEE7DC); font-family: Geist, system-ui, sans-serif; } .ds-phase { display:flex; justify-content:flex-end; } .ds-lamp { display:inline-flex; align-items:center; gap:8px; font-size:13px; font-weight:600; color: var(--dust, #9C958B); } .ds-lamp i { width:10px; height:10px; border-radius:50%; background:#2b2a2e; box-shadow: inset 0 1px 1px rgba(0,0,0,.6); } .ds-lamp.ds-red { color: var(--red-ink, #F0605A); } .ds-lamp.ds-red i { background:#E43A33; box-shadow: inset 0 -2px 2px rgba(0,0,0,.35), inset 0 1px 1px rgba(255,255,255,.35); } .ds-lamp.ds-gold { color: var(--gold, #C49040); } .ds-lamp.ds-gold i { background:#D9A552; box-shadow: inset 0 -2px 2px rgba(0,0,0,.35), inset 0 1px 1px rgba(255,255,255,.35); } .ds-seg { display:block; width:100%; max-width:236px; height:auto; overflow:visible; } .ds-seg .on { fill: var(--led); } .ds-seg .off { fill: color-mix(in srgb, var(--led) 7%, transparent); } .ds-colon { animation: ds-blink 2s steps(1) infinite; } @keyframes ds-blink { 50% { opacity:.15; } } .ds-units { display:flex; gap:16px; margin:6px 0 0; font: 500 11px/1 'Geist Mono', ui-monospace, monospace; letter-spacing:.12em; color: var(--dust, #9C958B); } .ds-when { margin:6px 0 0; font: 30px/1 'Bebas Neue', 'Arial Narrow', sans-serif; letter-spacing:.02em; } .ds-meta { margin:0; font-size:13px; color: var(--dust, #9C958B); }"
+    },
+    {
+      "name": "Phase Lamps",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "The three phase lights: off (all clear), red (yes waiting or failed), gold (winner).",
+      "html": "<div class=\"ds-lamps\"><span class=\"ds-lamp\"><i></i>All clear</span><span class=\"ds-lamp ds-red\"><i></i>Yes waiting</span><span class=\"ds-lamp ds-gold\"><i></i>Winner this week</span></div>",
+      "css": ".ds-lamps { display:flex; flex-wrap:wrap; gap:20px; padding:16px; border-radius:12px; background: var(--face, #08080A); font-family: Geist, system-ui, sans-serif; } .ds-lamp { display:inline-flex; align-items:center; gap:8px; font-size:13px; font-weight:600; color: var(--dust, #9C958B); } .ds-lamp i { width:10px; height:10px; border-radius:50%; background:#2b2a2e; box-shadow: inset 0 1px 1px rgba(0,0,0,.6); } .ds-lamp.ds-red { color: var(--red-ink, #F0605A); } .ds-lamp.ds-red i { background:#E43A33; box-shadow: inset 0 -2px 2px rgba(0,0,0,.35), inset 0 1px 1px rgba(255,255,255,.35); } .ds-lamp.ds-gold { color: var(--gold, #C49040); } .ds-lamp.ds-gold i { background:#D9A552; box-shadow: inset 0 -2px 2px rgba(0,0,0,.35), inset 0 1px 1px rgba(255,255,255,.35); }"
+    },
+    {
+      "name": "Program Strip",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "The week as seven day columns of round cells; each reel state lit differently.",
+      "html": "<div class=\"ds-program\"><p class=\"ds-row1\"><span>This week</span><span>Round <b>5</b> of <b>14</b></span></p><ol class=\"ds-rounds\"><li><span class=\"ds-c ds-posted\"></span><span class=\"ds-c ds-posted\"></span><span class=\"ds-d\">Mo</span></li><li><span class=\"ds-c ds-win\"></span><span class=\"ds-c ds-posted\"></span><span class=\"ds-d\">Tu</span></li><li><span class=\"ds-c ds-next\"></span><span class=\"ds-c ds-scheduled\"></span><span class=\"ds-d ds-today\">We</span></li><li><span class=\"ds-c ds-scheduled\"></span><span class=\"ds-c ds-failed\"></span><span class=\"ds-d\">Th</span></li><li><span class=\"ds-c ds-needs\"></span><span class=\"ds-c ds-needs\"></span><span class=\"ds-d\">Fr</span></li><li><span class=\"ds-c ds-needs\"></span><span class=\"ds-c ds-needs\"></span><span class=\"ds-d\">Sa</span></li><li><span class=\"ds-c\"></span><span class=\"ds-c\"></span><span class=\"ds-d\">Su</span></li></ol></div>",
+      "css": ".ds-program { display:grid; gap:6px; max-width:360px; padding:14px 16px; border-radius:12px; background: var(--face, #08080A); font-family: Geist, system-ui, sans-serif; } .ds-row1 { display:flex; justify-content:space-between; margin:0; font-size:13px; color: var(--dust, #9C958B); } .ds-row1 b { font: 600 13px 'Geist Mono', monospace; color: var(--paper, #EEE7DC); } .ds-rounds { display:grid; grid-template-columns: repeat(7, 1fr); gap:6px; list-style:none; margin:0; padding:0; } .ds-rounds li { display:grid; gap:3px; } .ds-c { height:10px; border-radius:3px; background:#1D1C20; } .ds-posted { background: var(--dust, #9C958B); } .ds-scheduled { background:transparent; box-shadow: inset 0 0 0 1.5px var(--dust, #9C958B); } .ds-needs { background: rgba(200,32,32,.12); box-shadow: inset 0 0 0 1.5px var(--red, #C82020); } .ds-failed { background: var(--red, #C82020); } .ds-win { background: var(--gold, #C49040); } .ds-next { background: var(--paper, #EEE7DC); } .ds-d { font: 500 11px/1 'Geist Mono', monospace; color: var(--dust, #9C958B); text-align:center; } .ds-d.ds-today { color: var(--paper, #EEE7DC); }"
+    },
+    {
+      "name": "Hold To Approve",
+      "kind": "button",
+      "refersTo": "button-hold",
+      "description": "Press and hold 1.2s: a darker red sweeps across, a gold bar runs along the bottom; the done state turns gold.",
+      "html": "<button class=\"ds-hold\"><span class=\"ds-fill\"></span><span>Hold to approve 12</span><span class=\"ds-prog\"></span></button>",
+      "css": ".ds-hold { position:relative; display:inline-flex; align-items:center; justify-content:center; width:100%; max-width:320px; min-height:52px; padding:0 24px; border:0; border-radius: var(--r-ctl, 10px); background: var(--red, #C82020); color:#fff; font: 600 16px Geist, system-ui, sans-serif; overflow:hidden; isolation:isolate; cursor:pointer; user-select:none; } .ds-hold:hover { background:#D42626; } .ds-hold:focus-visible { outline:2px solid var(--gold, #C49040); outline-offset:3px; } .ds-hold .ds-fill { position:absolute; inset:0; z-index:-1; background:#6E0E0E; transform-origin:left; transform:scaleX(0); transition: transform .25s cubic-bezier(.16,1,.3,1); } .ds-hold .ds-prog { position:absolute; left:0; right:0; bottom:0; height:4px; background: var(--gold, #C49040); transform-origin:left; transform:scaleX(0); transition: transform .25s cubic-bezier(.16,1,.3,1); } .ds-hold:active .ds-fill, .ds-hold:active .ds-prog { transform:scaleX(1); transition: transform 1.2s linear; }"
+    },
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Lit paper fill with black text; the default action.",
+      "html": "<button class=\"ds-btn\">Send idea</button>",
+      "css": ".ds-btn { display:inline-flex; align-items:center; justify-content:center; min-height:52px; padding:0 24px; border:0; border-radius: var(--r-ctl, 10px); background: var(--paper, #EEE7DC); color: var(--canvas, #0B0B0D); font: 600 16px Geist, system-ui, sans-serif; cursor:pointer; transition: transform .15s cubic-bezier(.16,1,.3,1), background-color .2s cubic-bezier(.16,1,.3,1); } .ds-btn:hover { background:#fff; } .ds-btn:active { transform:scale(.98); } .ds-btn:focus-visible { outline:2px solid var(--gold, #C49040); outline-offset:3px; }"
+    },
+    {
+      "name": "Line Button",
+      "kind": "button",
+      "refersTo": "button-line",
+      "description": "Transparent with a bezel hairline; secondary actions such as Review.",
+      "html": "<button class=\"ds-btn-line\">Review</button>",
+      "css": ".ds-btn-line { display:inline-flex; align-items:center; justify-content:center; min-height:52px; padding:0 24px; border:0; border-radius: var(--r-ctl, 10px); background:transparent; color: var(--paper, #EEE7DC); box-shadow: inset 0 0 0 1px var(--rule-hi, #3A3840); font: 600 16px Geist, system-ui, sans-serif; cursor:pointer; transition: box-shadow .2s cubic-bezier(.16,1,.3,1), transform .15s cubic-bezier(.16,1,.3,1); } .ds-btn-line:hover { box-shadow: inset 0 0 0 1px var(--dust, #9C958B); } .ds-btn-line:active { transform:scale(.98); } .ds-btn-line:focus-visible { outline:2px solid var(--gold, #C49040); outline-offset:3px; }"
+    },
+    {
+      "name": "Filter Chip",
+      "kind": "chip",
+      "refersTo": "filter-chip",
+      "description": "Hairline chip with a mono count; the active chip is lit paper.",
+      "html": "<div class=\"ds-chips\"><button class=\"ds-chip\" aria-pressed=\"true\">All <span>42</span></button><button class=\"ds-chip\">Listicle <span>18</span></button><button class=\"ds-chip\">Builder <span>4</span></button></div>",
+      "css": ".ds-chips { display:flex; flex-wrap:wrap; gap:6px; } .ds-chip { min-height:40px; padding:0 14px; border:0; border-radius: var(--r-ctl, 10px); background:transparent; color: var(--dust, #9C958B); box-shadow: inset 0 0 0 1px var(--rule, #26252A); font: 500 14px Geist, system-ui, sans-serif; cursor:pointer; transition: color .2s cubic-bezier(.16,1,.3,1), box-shadow .2s cubic-bezier(.16,1,.3,1); } .ds-chip span { margin-left:4px; font-family:'Geist Mono', monospace; } .ds-chip:hover { color: var(--paper, #EEE7DC); box-shadow: inset 0 0 0 1px var(--dust, #9C958B); } .ds-chip[aria-pressed=\"true\"] { background: var(--paper, #EEE7DC); color: var(--canvas, #0B0B0D); box-shadow:none; } .ds-chip:focus-visible { outline:2px solid var(--gold, #C49040); outline-offset:3px; }"
+    },
+    {
+      "name": "Idea Field",
+      "kind": "input",
+      "refersTo": "",
+      "description": "Text well sunk to the face color with a bezel border and a gold focus ring.",
+      "html": "<label class=\"ds-field\"><span>Send Claude an idea</span><textarea placeholder=\"A reel about the first time you got dropped\"></textarea></label>",
+      "css": ".ds-field { display:grid; gap:8px; max-width:420px; color: var(--paper, #EEE7DC); font: 600 16px Geist, system-ui, sans-serif; } .ds-field textarea { min-height:112px; padding:16px; border-radius: var(--r-ctl, 10px); background: var(--face, #08080A); border:1px solid var(--rule-hi, #3A3840); color: var(--paper, #EEE7DC); font: 400 16px/1.5 Geist, system-ui, sans-serif; caret-color: var(--gold, #C49040); resize:vertical; } .ds-field textarea::placeholder { color: var(--dust, #9C958B); } .ds-field textarea:focus { outline:2px solid var(--gold, #C49040); outline-offset:1px; border-color:transparent; }"
+    },
+    {
+      "name": "LED Meter",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "24-segment result meter with a red normal line at the 2.6k median; the best row lights gold.",
+      "html": "<div class=\"ds-metric\"><div class=\"ds-meter\"><i class=\"on\"></i><i class=\"on\"></i><i class=\"on\"></i><i class=\"on\"></i><i class=\"on\"></i><i class=\"on\"></i><i class=\"on\"></i><i class=\"on\"></i><i class=\"on\"></i><i class=\"on\"></i><i class=\"on\"></i><i class=\"on\"></i><i class=\"on\"></i><i class=\"on\"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><b class=\"ds-norm\" style=\"left:33%\"></b></div><span class=\"ds-v\">4.1k<small>9 reels</small></span></div>",
+      "css": ".ds-metric { display:grid; grid-template-columns: 1fr 92px; gap:12px; align-items:center; max-width:420px; font-family: Geist, system-ui, sans-serif; } .ds-meter { position:relative; display:grid; grid-template-columns: repeat(24, 1fr); gap:2px; height:14px; } .ds-meter i { border-radius:2px; background:#1D1C20; } .ds-meter i.on { background: var(--gold, #C49040); } .ds-norm { position:absolute; top:-5px; bottom:-5px; width:2px; margin-left:-1px; border-radius:1px; background: var(--red, #C82020); } .ds-v { text-align:right; font: 600 14px 'Geist Mono', monospace; font-variant-numeric: tabular-nums; color: var(--gold, #C49040); } .ds-v small { display:block; font-size:12px; font-weight:400; color: var(--dust, #9C958B); }"
+    },
+    {
+      "name": "Undo Bar",
+      "kind": "custom",
+      "refersTo": "undo-bar",
+      "description": "Transient bar with a gold seven-segment countdown digit and a line Undo button.",
+      "html": "<div class=\"ds-undo\"><span class=\"ds-count\"><svg class=\"ds-digit\" viewBox=\"0 0 72 100\" aria-hidden=\"true\"><g transform=\"skewX(-6) translate(6 0)\"><rect class=\"on\" x=\"18\" y=\"0\" width=\"36\" height=\"9\" rx=\"3\"/><rect class=\"on\" x=\"55\" y=\"9\" width=\"9\" height=\"37\" rx=\"3\"/><rect class=\"on\" x=\"55\" y=\"54\" width=\"9\" height=\"37\" rx=\"3\"/><rect class=\"on\" x=\"18\" y=\"91\" width=\"36\" height=\"9\" rx=\"3\"/><rect class=\"off\" x=\"8\" y=\"54\" width=\"9\" height=\"37\" rx=\"3\"/><rect class=\"off\" x=\"8\" y=\"9\" width=\"9\" height=\"37\" rx=\"3\"/><rect class=\"on\" x=\"18\" y=\"45.5\" width=\"36\" height=\"9\" rx=\"3\"/></g></svg></span><p>Sending <b>Keep the listicle</b></p><button class=\"ds-undo-btn\">Undo</button></div>",
+      "css": ".ds-undo { display:flex; align-items:center; gap:12px; max-width:420px; padding:8px 8px 8px 16px; border-radius:14px; background: var(--housing, #121214); box-shadow: inset 0 0 0 1px var(--rule-hi, #3A3840), 0 12px 32px rgba(0,0,0,.55); color: var(--paper, #EEE7DC); font-family: Geist, system-ui, sans-serif; } .ds-count { flex:none; width:16px; } .ds-digit { display:block; width:16px; height:auto; overflow:visible; } .ds-digit .on { fill: var(--gold, #C49040); } .ds-digit .off { fill: color-mix(in srgb, var(--gold, #C49040) 7%, transparent); } .ds-undo p { flex:1; margin:0; font-size:14px; } .ds-undo b { font-weight:600; } .ds-undo-btn { min-height:44px; padding:0 16px; border:0; border-radius: var(--r-ctl, 10px); background:transparent; color: var(--paper, #EEE7DC); box-shadow: inset 0 0 0 1px var(--rule-hi, #3A3840); font: 600 16px Geist, system-ui, sans-serif; cursor:pointer; } .ds-undo-btn:hover { box-shadow: inset 0 0 0 1px var(--dust, #9C958B); } .ds-undo-btn:focus-visible { outline:2px solid var(--gold, #C49040); outline-offset:3px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Gym Round Clock",
+    "overview": "The control center is the round clock bolted to the gym wall. It is read in a glance between rounds, from across the room, with gloves half on. A matte black housing holds an inset, slightly recessed face; on the face, seven-segment numerals count down to the next post with their unlit segments ghosted, a single phase lamp says whether anything needs attention, and a strip of fourteen cells shows the week as a program of rounds. Everything else in the product is the same hardware seen up close: LED meters for results, state lights on schedule rows, a segment digit counting down an undo.\n\nThe system is dark, dense where it reports and sparse where it asks. It speaks in light, not in fills: color appears as a lit lamp, a lit segment or a lit cell, almost never as a painted panel. Red means a yes is waiting or something failed, gold means a win or a milestone, paper means all clear. The one decisive act, approving a week, is a physical gesture: you hold START and the bezel fills around the clock until it rings.\n\nIt refuses the creator-scheduler default: no KPI tile rows, no calendar grid, no card stacks. Brand stays binding from the fight-poster side: brand black, combat red, gold for wins, Bebas headlines, premium and serious, never playful or pastel.",
+    "keyCharacteristics": [
+      "Housing plus inset face as the one container idea; depth is carved inward, not lifted outward.",
+      "Seven-segment SVG numerals with ghosted unlit segments for the hero figure and the undo count.",
+      "Three phase colors (red, gold, paper) carried by lamps, segments and cells.",
+      "Every number in Geist Mono with tabular figures.",
+      "Press-and-hold and timed undo as the two guards on any action that changes what gets posted."
+    ],
+    "rules": [
+      {
+        "name": "The Three Lights Rule",
+        "body": "Only red, gold and paper may glow. Red is attention (a yes is waiting, something failed), gold is a win or a confirmation, paper is all clear or \"this one\". No other hue enters the interface.",
+        "section": "colors"
+      },
+      {
+        "name": "The Light, Not Paint Rule",
+        "body": "State color is carried by lamps, lit segments, cells, outlines and short ink, not by filled panels. The waiting block is the one tinted surface, and only as a faint red wash (10% to 4%) under a red hairline.",
+        "section": "colors"
+      },
+      {
+        "name": "The Ink Split Rule",
+        "body": "Brand red (`red`) is for fills and marks; any red text under 18px uses `red-ink`.",
+        "section": "colors"
+      },
+      {
+        "name": "The Scoreboard Rule",
+        "body": "Every figure (counts, times, views, x-normal, percentages) is Geist Mono with tabular numerals. Words are never set in mono except clock-face units.",
+        "section": "typography"
+      },
+      {
+        "name": "The Poster Words Rule",
+        "body": "Bebas only announces: titles, the day word, the verdict word. It never sets a sentence, a button or a number that has to be compared.",
+        "section": "typography"
+      },
+      {
+        "name": "The Carved-In Rule",
+        "body": "Resting surfaces never cast drop shadows. Depth comes from inset edges and the recessed face; only layers that appear and go away may lift.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** draw hero numerals as seven-segment SVG with unlit segments ghosted at 7% of the lit color.",
+      "**Do** keep color to the three lights: red for a waiting yes or a failure, gold for a win or confirmation, paper for all clear.",
+      "**Do** set every figure in Geist Mono with tabular numerals, and compare views against the 2.6k normal line, not raw numbers alone.",
+      "**Do** guard any action that changes what posts with a 1.2s hold or a 4s timed undo.",
+      "**Do** keep depth carved in: housing edge plus inset face; drop shadows only on undo bar and toast.",
+      "**Do** use the radius family exactly: 18px housing, 12px face, 10px controls.",
+      "**Do** label every time as New York time."
+    ],
+    "donts": [
+      "**Don't** build KPI tile rows, calendar grids or card stacks; report in rows, cells and meters.",
+      "**Don't** introduce any hue beyond black, red, gold and the neutrals; no pastel, no wellness softness.",
+      "**Don't** fill panels with state color; light a lamp, a segment or an outline instead.",
+      "**Don't** set red text under 18px in `red`; use `red-ink`.",
+      "**Don't** set sentences, buttons or comparable numbers in Bebas.",
+      "**Don't** add a light theme; the wall is black."
+    ]
+  }
+}
