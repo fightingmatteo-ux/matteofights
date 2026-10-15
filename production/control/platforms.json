@@ -1,14 +1,14 @@
 {
-  "updated": "2026-10-15T18:40:05Z",
+  "updated": "2026-10-15T23:07:01Z",
   "platforms": {
     "instagram": {
       "followers": 2030,
-      "last_post": "2026-10-15T00:40:07Z",
+      "last_post": "2026-10-15T22:32:25Z",
       "failed": [],
-      "next_slot": "2026-10-15T22:30:00Z",
+      "next_slot": "2026-10-16T01:30:00Z",
       "plan_per_day": 2,
       "plan_mix": "2 trial reels",
-      "posted_7d": 3,
+      "posted_7d": 4,
       "token_expires": "2026-12-13",
       "warn": null
     },
@@ -31,7 +31,7 @@
       "last_post": null,
       "failed": [],
       "errors": [],
-      "next_slot": "2026-10-15T19:30:00Z",
+      "next_slot": "2026-10-16T14:00:00Z",
       "plan_per_day": 5,
       "plan_mix": "2 reels + 3 written posts",
       "posted_7d": 0,
@@ -43,7 +43,7 @@
       "last_post": null,
       "failed": [],
       "errors": [],
-      "next_slot": "2026-10-15T23:00:00Z",
+      "next_slot": "2026-10-16T16:30:00Z",
       "privacy": "public",
       "plan_per_day": 2,
       "plan_mix": "2 Shorts",
@@ -55,7 +55,7 @@
   "posts": {
     "freeze-A": {
       "instagram": {
-        "views": 2648,
+        "views": 2651,
         "likes": 61,
         "comments": 0,
         "shares": 13,
@@ -65,7 +65,7 @@
     },
     "freeze-B": {
       "instagram": {
-        "views": 2998,
+        "views": 3004,
         "likes": 59,
         "comments": 0,
         "shares": 2,
@@ -75,12 +75,22 @@
     },
     "freeze-C": {
       "instagram": {
-        "views": 4013,
-        "likes": 86,
+        "views": 4102,
+        "likes": 89,
         "comments": 0,
-        "shares": 7,
-        "saves": 44,
+        "shares": 8,
+        "saves": 48,
         "url": "https://www.instagram.com/reel/DefsPO_ih7V/"
+      }
+    },
+    "lst-2026-10-15-built-for-fight-night": {
+      "instagram": {
+        "views": 189,
+        "likes": 2,
+        "comments": 0,
+        "shares": 0,
+        "saves": 0,
+        "url": "https://www.instagram.com/reel/DeiCa-risSs/"
       }
     }
   },

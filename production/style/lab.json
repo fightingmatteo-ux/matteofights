@@ -15,7 +15,15 @@
       "status": "testing",
       "proposed_at": "2026-10-15T19:55:17Z",
       "b": "split",
-      "started": "2026-10-15T19:58:29Z"
+      "started": "2026-10-15T19:58:29Z",
+      "n": {
+        "a": 0,
+        "b": 0
+      },
+      "median_vs_normal": {
+        "a": null,
+        "b": null
+      }
     }
   ]
 }
