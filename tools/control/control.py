@@ -236,6 +236,10 @@ def send_new(chat, state):
         if x["status"] == "open" and x["id"] not in state.setdefault("sent_questions", []):
             opts = x.get("options") or []
             rows = [[(o[:40], f"q:{x['id']}:{k}")] for k, o in enumerate(opts)]
+            img = ROOT / x["image"] if x.get("image") else None
+            if img and img.exists():  # style lab: the options side by side
+                tg("sendPhoto", {"chat_id": chat, "caption": x["question"][:1000]},
+                   {"photo": (img.name, img.read_bytes(), "image/jpeg")})
             tg("sendMessage", {"chat_id": chat, "text": f"❓ {x['question']}" + (f"\n\n{x['context']}" if x.get("context") else ""),
                                **({"reply_markup": buttons(rows)} if rows else {})})
             state["sent_questions"].append(x["id"])

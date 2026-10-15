@@ -18,6 +18,19 @@ def load(p, default):
     return json.loads(p.read_text(encoding="utf-8")) if p.exists() else default
 
 
+def style_images(questions):
+    """Style lab comparison images go next to the page so the Decide tab can show them."""
+    out = OUT / "style"
+    shutil.rmtree(out, ignore_errors=True)
+    for q in questions:
+        src = ROOT / q["image"] if q.get("image") else None
+        if src and src.exists():
+            out.mkdir(parents=True, exist_ok=True)
+            shutil.copy(src, out / src.name)
+            q["image"] = f"style/{src.name}"
+    return questions
+
+
 def fetch_videos(queue):
     """Copy the videos of reels waiting, scheduled or posted in the last 3 days next to the page (behind the Access
     login) so the dashboard can play them. Needs GH_TOKEN + gh (the deploy workflow); skipped locally."""
@@ -107,7 +120,8 @@ def main():
         "baseline": {k: metrics.get(k) for k in ("median_views", "updated", "audience")},
         "reels": sorted(reels, key=lambda r: r["time"] or "", reverse=True),
         "formats": fmt,
-        "questions": load(CTL / "questions.json", []),
+        "questions": style_images(load(CTL / "questions.json", [])),
+        "lab": load(ROOT / "production/style/lab.json", {"experiments": []}),
         "ideas": load(CTL / "ideas.json", [])[-50:],
         "log": load(CTL / "log.json", [])[-60:],
         "platforms": load(CTL / "platforms.json", {}),

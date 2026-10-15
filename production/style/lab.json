@@ -1,0 +1,19 @@
+{
+  "experiments": [
+    {
+      "id": "exp-1016-hook_style",
+      "aspect": "hook_style",
+      "control": "native",
+      "options": [
+        "poster",
+        "anton",
+        "split"
+      ],
+      "why": "Your brand font (Bebas Neue / Anton) vs the Instagram-native serif your two biggest reels (331k, 161k) used. Big fight pages mostly use bold condensed caps; native text may be part of why your listicles went viral. Only a test settles it.",
+      "image": "production/style/exp-1016-hook_style.jpg",
+      "question": "q-12d88f",
+      "status": "proposed",
+      "proposed_at": "2026-10-15T19:55:17Z"
+    }
+  ]
+}

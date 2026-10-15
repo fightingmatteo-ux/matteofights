@@ -1,0 +1,17 @@
+[
+  {
+    "id": "q-12d88f",
+    "kind": "style",
+    "exp": "exp-1016-hook_style",
+    "image": "production/style/exp-1016-hook_style.jpg",
+    "question": "Which hook text look should we test against the current one?",
+    "context": "Your brand font (Bebas Neue / Anton) vs the Instagram-native serif your two biggest reels (331k, 161k) used. Big fight pages mostly use bold condensed caps; native text may be part of why your listicles went viral. Only a test settles it.\n\n1 is the current look. Your pick runs on every other reel until both have 6+ reels with numbers; the better one becomes the default.",
+    "options": [
+      "2. Poster (Bebas, white on red)",
+      "3. Anton (red on black)",
+      "4. Split (Bebas white, last line red)",
+      "Keep the current one"
+    ],
+    "status": "open"
+  }
+]

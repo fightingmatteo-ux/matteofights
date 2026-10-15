@@ -28,7 +28,9 @@ jobs:
           FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
           THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
           THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
-        run: python3 -P tools/crosspost/stats.py
+        run: |
+          python3 -P tools/crosspost/stats.py
+          python3 -P tools/style/lab.py results   # style tests: decide once both sides have enough reels
       - name: Keep Threads post results for good (tools/threads/collect.py)
         run: python3 -P tools/threads/collect.py
       - name: Save and tell Matteo (login warnings only)
@@ -38,7 +40,7 @@ jobs:
         run: |
           git config user.name "stats[bot]"
           git config user.email "stats@users.noreply.github.com"
-          git add production/control
+          git add production/control production/style production/listicles/look.json 2>/dev/null || git add production/control
           if [ -f production/threads/results.json ]; then git add production/threads/results.json; fi
           git diff --cached --quiet && exit 0
           git commit -qm "stats: platforms"

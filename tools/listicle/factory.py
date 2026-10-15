@@ -18,6 +18,8 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 from render import render, candidate_windows  # noqa: E402
 import footage_agent as agent  # noqa: E402
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "style"))
+from lab import assign as lab_assign  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
 HOOKS = ROOT / "production" / "listicles" / "hooks.json"
@@ -277,6 +279,10 @@ def main():
         folder = ROOT / "production" / "listicles" / f"{day}-{h['id']}"
         folder.mkdir(parents=True, exist_ok=True)
         avoid = nearby_clips(queue, day) | ({state["last_clip"]} if state.get("last_clip") else set())
+        test = lab_assign(h["id"])  # style lab A/B: render reads hooks.json, so the variant goes there first
+        if test and test[0] == "hook_style":
+            h["style"] = test[1]
+            save(HOOKS, hooks)
         picked = {c["ID"]: c for c in clips}.get(h.get("clip_id"))
         if picked and cat is None:  # Claude chose this clip from the sheets: render it as chosen
             rot = cat_rotate(manual_catalog(), picked["ID"])
@@ -301,6 +307,7 @@ def main():
             "not_before": slot.strftime("%Y-%m-%dT%H:%M:%SZ"), "min_gap_hours": 2.5,
             "approved": False, "status": "queued", **({"rotate": rot} if rot else {}),
             **({"review": rv} if rv else {}),
+            **({"test": test[2]} if test else {}),
             **({"app_audio": f"{a.audio} (add in the Instagram app)"} if a.audio else {})})
         h.update(status="rendered", clip=f"{clip['Name']} ({clip['ID']})", queue_id=qid,
                  rendered_at=dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%MZ"))

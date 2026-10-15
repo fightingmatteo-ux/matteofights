@@ -370,7 +370,20 @@ function resultsYou(sw) {
       <tbody>${rows.map((r) => `<tr><td>${fmtName(r.k)}</td><td>${r.reels}</td><td>${n(r.avg)}</td><td>${med ? (r.avg / med).toFixed(1) + "×" : "n/a"}</td><td>${r.fpk.toFixed(1)}</td><td>${n(r.shares)}</td><td>${n(r.saves)}</td><td>${r.winners}</td></tr>`).join("")}</tbody>
     </table></div></section>
     ${D.baseline.updated ? `<p class="hint">From Instagram, updated ${ago(D.baseline.updated)}.</p>` : ""}
-    ${crossResults()}`;
+    ${crossResults()}
+    ${styleTests()}`;
+}
+
+function styleTests() {
+  const ex = (D.lab?.experiments || []).filter((e) => e.status !== "proposed").slice(-6).reverse();
+  if (!ex.length) return "";
+  const st = { testing: "Testing", decided: "Decided", rejected: "Kept current" };
+  return `<section class="section" aria-labelledby="sl-h"><div class="head"><h2 class="h2" id="sl-h">Style tests</h2></div>
+    <div class="scroll"><table><thead><tr><th>Test</th><th>A (current)</th><th>B (your pick)</th><th>Reels A / B</th><th>vs normal A / B</th><th>Status</th></tr></thead>
+    <tbody>${ex.map((e) => `<tr><td>${esc(e.aspect.replace("_", " "))}</td><td>${esc(e.control)}</td><td>${esc(e.b || "–")}</td>
+      <td>${e.n ? `${e.n.a} / ${e.n.b}` : "0 / 0"}</td><td>${e.median_vs_normal ? `${e.median_vs_normal.a ?? "–"} / ${e.median_vs_normal.b ?? "–"}` : "–"}</td>
+      <td>${st[e.status] || esc(e.status)}${e.winner ? `: ${esc(e.winner)}` : ""}</td></tr>`).join("")}</tbody></table></div>
+    <p class="hint">Every other new reel uses B until both sides have 6 reels with numbers; the winner becomes the default.</p></section>`;
 }
 
 function crossResults() {
@@ -396,7 +409,7 @@ function decide() {
     ? open.map((q) => {
         const sentK = [...sent].find((k) => k.startsWith(`q:${q.id}:`));
         const pick = sentK ? +sentK.split(":").pop() : pa && pa.id === q.id ? pa.k : -1;
-        return `<section class="q" aria-labelledby="q-${esc(q.id)}"><h3 id="q-${esc(q.id)}">${esc(q.question)}</h3>${q.context ? `<p class="ctx">${esc(q.context)}</p>` : ""}
+        return `<section class="q" aria-labelledby="q-${esc(q.id)}"><h3 id="q-${esc(q.id)}">${esc(q.question)}</h3>${q.image ? `<img class="qimg" src="${esc(q.image)}" alt="The options side by side, numbered" loading="lazy">` : ""}${q.context ? `<p class="ctx">${esc(q.context)}</p>` : ""}
           <div class="opts" role="group" aria-labelledby="q-${esc(q.id)}">${(q.options || []).map((o, k) => `<button class="opt ${pick === k ? "picked" : ""}" data-q="${esc(q.id)}" data-k="${k}" aria-pressed="${pick === k}" ${sentK ? "disabled" : ""}>${esc(o)}</button>`).join("")}</div>
           ${sentK ? `<p class="sent-note">Answer sent.</p>` : ""}</section>`;
       }).join("")

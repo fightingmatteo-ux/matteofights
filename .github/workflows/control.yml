@@ -36,7 +36,8 @@ jobs:
           for n in 1 2 3 4; do
             git fetch -q origin master && git reset -q --hard origin/master
             python3 -P tools/control/control.py act "$PAYLOAD" --via "$VIA" --no-notify
-            git add production/control production/schedule/queue.json production/threads
+            python3 -P tools/style/lab.py apply
+            git add production/control production/schedule/queue.json production/threads production/style production/listicles/look.json
             git diff --cached --quiet && break
             git commit -qm "control: $VIA decision"
             git push -q origin HEAD:master && break
