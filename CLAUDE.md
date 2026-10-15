@@ -64,6 +64,10 @@ Other connected MCPs (see `context/apps.md`): Higgsfield (`virality_predictor`, 
 | Who Matteo is — story, angles | [context/founder.md](context/founder.md) | Any copy, caption, or narrative work |
 | Visual + verbal identity | [context/brand.md](context/brand.md) | Designing posts, thumbnails, the dashboard |
 | Caption voice; words to avoid | [context/voice.md](context/voice.md) | Writing any caption or script |
+| Sound like a creator, not a quote page; what grows the account | [context/creator-voice.md](context/creator-voice.md) | **Any Threads post, caption, hook or carousel copy** |
+| Write Threads posts (weekly batch) | skill `threads-writer` (`.claude/skills/threads-writer/`) | Sunday batch, any Threads post |
+| Write hooks + captions (all platforms) | skill `platform-captions` (`.claude/skills/platform-captions/`) | Saturday hook batch, any new caption |
+| What is working, from our own numbers | `python3 -P tools/threads/report.py` | Before writing posts or captions; strategy questions |
 | Who's watching | [context/audience.md](context/audience.md) | Targeting, hook psychology, copy |
 | Growth plan & funnel | [context/strategy.md](context/strategy.md) | Strategic decisions, cadence, CTAs |
 | Pillars, formats, cadence | [context/content.md](context/content.md) | Planning what to post |

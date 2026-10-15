@@ -35,6 +35,13 @@ appends 21 new posts to `production/threads/posts.json` (`status: queued`, `appr
 notify sends them to Telegram for one-tap approval. Rules: voice.md (no em dashes, short lines, second person), never
 invent Matteo's personal stories, never repeat an earlier text, ≤500 characters per post.
 
+Since 2026-10-16 the routine follows the repo skill **`threads-writer`** (`.claude/skills/threads-writer/SKILL.md`):
+it reads `tools/threads/report.py` (the account's own numbers: replies, shares and likes per 1k views by kind,
+length, question vs statement), plans the week from them, writes in the voice of `context/creator-voice.md`, and
+must pass `tools/threads/lint.py` before pushing. Results are kept for good in `production/threads/results.json`
+(`tools/threads/collect.py`, run by the Platform stats workflow after `stats.py`). Hooks and captions follow the
+**`platform-captions`** skill.
+
 ## One-time setup per platform (done 2026-10-16 except TikTok)
 
 ### Facebook (Page "Matteo Fights")
