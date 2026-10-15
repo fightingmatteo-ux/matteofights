@@ -63,8 +63,9 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-10-15T22:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
-      "status": "queued"
+      "approved": true,
+      "status": "queued",
+      "approved_note": "Matteo: yes to the week, as long as posting is optimized to the USA (in chat 2026-10-15) (recorded 2026-10-15T12:43Z)"
     },
     {
       "id": "lst-2026-10-16-mindset-without-a-fight",
@@ -79,9 +80,10 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-10-16T22:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
-      "rotate": 90
+      "rotate": 90,
+      "approved_note": "Matteo: yes to the week, as long as posting is optimized to the USA (in chat 2026-10-15) (recorded 2026-10-15T12:43Z)"
     },
     {
       "id": "lst-2026-10-17-mentally-tougher",
@@ -96,9 +98,10 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-10-17T22:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
-      "rotate": -90
+      "rotate": -90,
+      "approved_note": "Matteo: yes to the week, as long as posting is optimized to the USA (in chat 2026-10-15) (recorded 2026-10-15T12:43Z)"
     },
     {
       "id": "lst-2026-10-18-calm-without-experience",
@@ -113,8 +116,9 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-10-18T22:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
-      "status": "queued"
+      "approved": true,
+      "status": "queued",
+      "approved_note": "Matteo: yes to the week, as long as posting is optimized to the USA (in chat 2026-10-15) (recorded 2026-10-15T12:43Z)"
     },
     {
       "id": "lst-2026-10-19-made-for-combat-sports",
@@ -129,8 +133,9 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-10-19T22:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
-      "status": "queued"
+      "approved": true,
+      "status": "queued",
+      "approved_note": "Matteo: yes to the week, as long as posting is optimized to the USA (in chat 2026-10-15) (recorded 2026-10-15T12:43Z)"
     },
     {
       "id": "lst-2026-10-20-dangerous-without-a-partner",
@@ -145,8 +150,9 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-10-20T22:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
-      "status": "queued"
+      "approved": true,
+      "status": "queued",
+      "approved_note": "Matteo: yes to the week, as long as posting is optimized to the USA (in chat 2026-10-15) (recorded 2026-10-15T12:43Z)"
     },
     {
       "id": "lst-2026-10-21-started-late",
@@ -161,8 +167,9 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-10-21T22:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
-      "status": "queued"
+      "approved": true,
+      "status": "queued",
+      "approved_note": "Matteo: yes to the week, as long as posting is optimized to the USA (in chat 2026-10-15) (recorded 2026-10-15T12:43Z)"
     },
     {
       "id": "lst-2026-10-15-technique-without-a-coach",
@@ -178,8 +185,9 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-10-16T01:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
-      "status": "queued"
+      "approved": true,
+      "status": "queued",
+      "approved_note": "Matteo: yes to the week, as long as posting is optimized to the USA (in chat 2026-10-15) (recorded 2026-10-15T12:43Z)"
     },
     {
       "id": "lst-2026-10-16-no-ex-fighter",
@@ -195,8 +203,9 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-10-17T01:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
-      "status": "queued"
+      "approved": true,
+      "status": "queued",
+      "approved_note": "Matteo: yes to the week, as long as posting is optimized to the USA (in chat 2026-10-15) (recorded 2026-10-15T12:43Z)"
     },
     {
       "id": "lst-2026-10-17-fighter-without-a-record",
@@ -212,8 +221,9 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-10-18T01:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
-      "status": "queued"
+      "approved": true,
+      "status": "queued",
+      "approved_note": "Matteo: yes to the week, as long as posting is optimized to the USA (in chat 2026-10-15) (recorded 2026-10-15T12:43Z)"
     },
     {
       "id": "lst-2026-10-18-last-round",
@@ -229,8 +239,9 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-10-19T01:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
-      "status": "queued"
+      "approved": true,
+      "status": "queued",
+      "approved_note": "Matteo: yes to the week, as long as posting is optimized to the USA (in chat 2026-10-15) (recorded 2026-10-15T12:43Z)"
     },
     {
       "id": "lst-2026-10-19-power-without-weights",
@@ -246,8 +257,9 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-10-20T01:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
-      "status": "queued"
+      "approved": true,
+      "status": "queued",
+      "approved_note": "Matteo: yes to the week, as long as posting is optimized to the USA (in chat 2026-10-15) (recorded 2026-10-15T12:43Z)"
     },
     {
       "id": "lst-2026-10-20-go-anyway",
@@ -263,8 +275,9 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-10-21T01:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
-      "status": "queued"
+      "approved": true,
+      "status": "queued",
+      "approved_note": "Matteo: yes to the week, as long as posting is optimized to the USA (in chat 2026-10-15) (recorded 2026-10-15T12:43Z)"
     },
     {
       "id": "lst-2026-10-21-about-to-level-up",
@@ -280,8 +293,9 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-10-22T01:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
-      "status": "queued"
+      "approved": true,
+      "status": "queued",
+      "approved_note": "Matteo: yes to the week, as long as posting is optimized to the USA (in chat 2026-10-15) (recorded 2026-10-15T12:43Z)"
     }
   ]
 }
