@@ -96,6 +96,27 @@ def approve_threads(ids, via):
     return done
 
 
+def edit_thread(action, pid, text, via):
+    """Skip one written Threads post, or replace its text (Matteo's own words; stays as approved or not as before)."""
+    if not THREADS.exists():
+        return False
+    data = json.loads(THREADS.read_text(encoding="utf-8"))
+    p = next((x for x in data["posts"] if x["id"] == pid and x.get("status") == "queued"), None)
+    if not p:
+        return False
+    if action == "threads_skip":
+        p.update(status="skipped", skipped_note=f"Matteo via {via} ({now()})")
+        log(f"Skipped a Threads post: {p['text'][:60]}", "Matteo")
+    else:
+        text = text.strip()[:500]
+        if not text:
+            return False
+        p.update(text=text, chain=[], edited_note=f"Matteo via {via} ({now()})")
+        log(f"Edited a Threads post: {text[:60]}", "Matteo")
+    THREADS.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    return True
+
+
 def answer(qid, choice, via):
     qs = load("questions.json", [])
     for x in qs:
@@ -125,6 +146,8 @@ def act(payload, via):
     if a == "approve_threads":
         ids = payload.get("ids") or [p["id"] for p in pending_threads()]
         return {"threads": approve_threads(set(ids), via)}
+    if a in ("threads_skip", "threads_edit"):
+        return {"changed": edit_thread(a, str(payload["id"]), str(payload.get("text", "")), via)}
     if a == "answer":
         return {"answered": bool(answer(payload["id"], str(payload["choice"])[:500], via))}
     if a == "idea":

@@ -1,0 +1,48 @@
+# Every 2 hours: followers, per-reel numbers, login expiry and new comments from Instagram, Facebook and Threads
+# (tools/crosspost/stats.py -> production/control/platforms.json, shown on the control center). Read-only.
+name: Platform stats
+
+on:
+  schedule:
+    - cron: "20 */2 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: platform-stats
+  cancel-in-progress: false
+
+jobs:
+  stats:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: master
+      - name: Collect
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+          THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
+        run: python3 -P tools/crosspost/stats.py
+      - name: Save and tell Matteo (login warnings only)
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          git config user.name "stats[bot]"
+          git config user.email "stats@users.noreply.github.com"
+          git add production/control
+          git diff --cached --quiet && exit 0
+          git commit -qm "stats: platforms"
+          for n in 1 2 3; do git pull --rebase -q origin master && git push -q origin HEAD:master && break; sleep 5; done
+          python3 -m pip install -q pillow 2>/dev/null || true
+          python3 -P tools/control/control.py notify || echo "telegram notify failed (non-fatal)"
+          git add production/control
+          git diff --cached --quiet && exit 0
+          git commit -qm "control: telegram sent"
+          for n in 1 2 3; do git pull --rebase -q origin master && git push -q origin HEAD:master && break; sleep 5; done

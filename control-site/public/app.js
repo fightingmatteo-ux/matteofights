@@ -41,6 +41,9 @@ const calm = (h) => {
 const LABEL = { needs_yes: "Needs yes", scheduled: "Set", posted: "Posted", failed: "Failed", win: "Winner" };
 const FORMAT = { listicle: "Listicle", statement: "Statement", iykyk: "IYKYK", builder: "Builder", lifestyle: "Lifestyle", "talking head": "Talking head" };
 const fmtName = (f) => FORMAT[f] || esc(f);
+const PLAT = { instagram: "Instagram", facebook: "Facebook", facebook_slides: "Facebook slides", youtube: "YouTube", threads: "Threads", tiktok: "TikTok" };
+const hidden = (() => { try { return new Set(JSON.parse(localStorage.getItem("inboxDone") || "[]")); } catch { return new Set(); } })();
+const saveHidden = () => { try { localStorage.setItem("inboxDone", JSON.stringify([...hidden].slice(-400))); } catch {} };
 
 let D = null;
 let tab = (() => { try { return localStorage.getItem("tab") || "home"; } catch { return "home"; } })();
@@ -109,7 +112,7 @@ function pending() {
 }
 // written Threads posts (tools/crosspost) waiting for a yes, still in the future
 function pendingThreads() {
-  return (D.threads_posts || []).filter((p) => p.status === "queued" && !p.approved && new Date(p.at) > Date.now()).sort((a, b) => (a.at > b.at ? 1 : -1));
+  return (D.threads_posts || []).filter((p) => p.status === "queued" && !p.approved && !sent.has("skip:" + p.id) && new Date(p.at) > Date.now()).sort((a, b) => (a.at > b.at ? 1 : -1));
 }
 function nextPost() {
   return D.reels.filter((r) => r.state === "scheduled" && r.time && new Date(r.time) > Date.now() - 6e5).sort(byTime)[0];
@@ -313,7 +316,22 @@ function results() {
       <thead><tr><th scope="col">Format</th><th scope="col">Reels</th><th scope="col">Views/reel</th><th scope="col">vs normal</th><th scope="col">Follows/1k</th><th scope="col">Shares</th><th scope="col">Saves</th><th scope="col">Winners</th></tr></thead>
       <tbody>${rows.map((r) => `<tr><td>${fmtName(r.k)}</td><td>${r.reels}</td><td>${n(r.avg)}</td><td>${med ? (r.avg / med).toFixed(1) + "×" : "n/a"}</td><td>${r.fpk.toFixed(1)}</td><td>${n(r.shares)}</td><td>${n(r.saves)}</td><td>${r.winners}</td></tr>`).join("")}</tbody>
     </table></div></section>
-    ${D.baseline.updated ? `<p class="hint">From Instagram, updated ${ago(D.baseline.updated)}.</p>` : ""}`;
+    ${D.baseline.updated ? `<p class="hint">From Instagram, updated ${ago(D.baseline.updated)}.</p>` : ""}
+    ${crossResults()}`;
+}
+
+function crossResults() {
+  const posts = D.platforms?.posts || {};
+  const ids = Object.keys(posts);
+  if (!ids.length) return "";
+  const hook = (id) => calm(D.reels.find((r) => r.id === id)?.hook || id);
+  const cols = ["instagram", "facebook", "youtube", "threads"].filter((k) => ids.some((id) => posts[id][k]));
+  const tot = Object.fromEntries(cols.map((k) => [k, ids.reduce((a, id) => a + (posts[id][k]?.views || 0), 0)]));
+  return `<section class="section" aria-labelledby="xr-h"><div class="head"><h2 class="h2" id="xr-h">Views per platform</h2></div>
+    <div class="scroll"><table><thead><tr><th>Reel</th>${cols.map((k) => `<th>${PLAT[k]}</th>`).join("")}</tr></thead>
+    <tbody>${ids.map((id) => `<tr><td>${esc(hook(id))}</td>${cols.map((k) => { const m = posts[id][k]; return `<td>${m ? (m.url ? `<a href="${esc(m.url)}" target="_blank" rel="noopener">${n(m.views)}</a>` : n(m.views)) : "–"}</td>`; }).join("")}</tr>`).join("")}
+      <tr class="tot"><td>Total</td>${cols.map((k) => `<td>${n(tot[k])}</td>`).join("")}</tr></tbody></table></div>
+    <p class="hint">Last 10 days, checked every 2 hours. Followers per platform are on the Activity tab.</p></section>`;
 }
 
 // ---------------------------------------------------------------- decide
@@ -331,6 +349,7 @@ function decide() {
       }).join("")
     : pendingThreads().length ? "" : `<p class="empty-note">Nothing to decide right now.</p>`;
   h += threadsSection();
+  h += inboxSection();
   h += `<section class="section" aria-labelledby="i-h"><div class="head"><h2 class="h2" id="i-h">Ideas for Claude</h2></div>
     <label class="field" for="idea">What should Claude try?</label>
     <textarea id="idea" placeholder="A hook you thought of, a format you saw, more nutrition, stop using a clip"></textarea>
@@ -345,15 +364,28 @@ function decide() {
   return h;
 }
 
+function inboxSection() {
+  const all = (D.platforms?.inbox || []).filter((c) => !hidden.has(c.platform + ":" + c.id));
+  const open = all.filter((c) => !c.answered), answered = all.filter((c) => c.answered).slice(0, 5);
+  const row = (c) => `<li><div><p class="t">${esc(c.text)}</p>
+      <p class="m"><b>${esc(c.who || "someone")}</b> on ${PLAT[c.platform] || esc(c.platform)}, <time datetime="${esc(c.at)}">${ago(c.at)}</time>${c.on ? ` · ${esc(calm(c.on)).slice(0, 70)}` : ""}</p></div>
+      <span class="iacts">${c.url ? `<a class="btn line" href="${esc(c.url)}" target="_blank" rel="noopener">Reply</a>` : ""}<button class="link" data-done="${esc(c.platform + ":" + c.id)}">Done</button></span></li>`;
+  return `<section class="section inbox" aria-labelledby="ib-h"><div class="head"><h2 class="h2" id="ib-h">Comments to answer</h2></div>
+    <p class="lede">New comments on Instagram, Facebook and Threads from the last 4 days. Replying in the first hour is the biggest growth lever, and it stays yours: nothing here replies for you.</p>
+    ${open.length ? `<ul class="cmts">${open.map(row).join("")}</ul>` : `<p class="empty-note">No open comments. ${D.platforms?.updated ? `Checked ${ago(D.platforms.updated)}.` : ""}</p>`}
+    ${answered.length ? `<p class="label" style="margin-top:16px">You already replied</p><ul class="cmts done">${answered.map(row).join("")}</ul>` : ""}</section>`;
+}
+
 const KIND = { take: "Hot take", question: "Question", tip: "Tip", story: "Lesson", chain: "Thread" };
 function threadsSection() {
   const T = pendingThreads();
-  const set = (D.threads_posts || []).filter((p) => p.status === "queued" && p.approved && new Date(p.at) > Date.now());
+  const set = (D.threads_posts || []).filter((p) => p.status === "queued" && p.approved && !sent.has("skip:" + p.id) && new Date(p.at) > Date.now());
   if (!T.length && !set.length) return "";
   const done = sent.has("approve_threads");
-  const post = (p, st) => `<li><time datetime="${esc(p.at)}">${t12(p.at)}</time><div><p class="t">${esc(p.text)}</p>
+  const post = (p, st) => `<li><time datetime="${esc(p.at)}">${t12(p.at)}</time><div><p class="t">${esc(D.edits?.[p.id] ?? p.text)}</p>
       ${(p.chain || []).length ? `<ol class="chain">${p.chain.map((c) => `<li>${esc(c)}</li>`).join("")}</ol>` : ""}
-      <p class="m">${KIND[p.kind] || esc(p.kind)}${p.topic ? `, ${esc(p.topic)}` : ""} <span class="st ${st}">${LABEL[st]}</span></p></div></li>`;
+      <p class="m">${KIND[p.kind] || esc(p.kind)}${p.topic ? `, ${esc(p.topic)}` : ""} <span class="st ${st}">${LABEL[st]}</span>
+        <span class="tacts"><button class="link" data-tedit="${esc(p.id)}">Edit</button><button class="link" data-tskip="${esc(p.id)}">Skip</button></span></p></div></li>`;
   const byDay = (list, st) => {
     const days = [];
     for (const p of list) {
@@ -411,6 +443,19 @@ function undoAnswer() {
   toast("Not sent. Pick again when you're ready.");
 }
 
+// ---------------------------------------------------------------- platforms
+function platformsPanel() {
+  const P = D.platforms?.platforms;
+  if (!P) return "";
+  const when = (iso) => (iso ? F.full.format(new Date(iso)).replace(" AM", "am").replace(" PM", "pm") : "n/a");
+  const order = ["instagram", "facebook", "youtube", "threads"].filter((k) => P[k]);
+  return `<section aria-labelledby="pf-h"><div class="head"><h2 class="h2" id="pf-h">Platforms</h2></div>
+    <div class="scroll"><table><thead><tr><th>Platform</th><th>Followers</th><th>Last post</th><th>Next slot</th><th>Status</th></tr></thead>
+    <tbody>${order.map((k) => { const p = P[k]; return `<tr><td>${PLAT[k]}</td><td>${n(p.followers)}</td><td>${p.last_post ? ago(p.last_post) : "none yet"}</td><td>${p.enabled === false ? "off" : when(p.next_slot)}</td>
+      <td class="${p.warn ? "warn" : ""}">${esc(p.warn || "OK")}${p.errors?.length ? `<br><small>${esc(p.errors[0])}</small>` : ""}</td></tr>`; }).join("")}</tbody></table></div>
+    <p class="hint" style="margin-top:12px">Checked ${ago(D.platforms.updated)}. Logins: ${order.filter((k) => P[k].token_expires).map((k) => `${PLAT[k]} until ${F.short.format(new Date(P[k].token_expires + "T12:00:00"))}`).join(", ") || "no expiry"}.</p></section>`;
+}
+
 // ---------------------------------------------------------------- activity
 function activity() {
   const H = D.health;
@@ -426,6 +471,7 @@ function activity() {
         ${row("Clips good enough to use", H.clips_usable)}
         ${row("Failed posts", H.failed.length, H.failed.length)}
       </dl><p class="hint" style="margin-top:12px">Times are New York time.</p></section>
+      ${platformsPanel()}
       <section aria-labelledby="lg-h"><div class="head"><h2 class="h2" id="lg-h">Log</h2></div>
         ${D.log.length ? `<ol class="log" reversed>${D.log.slice().reverse().map((e) => `<li><time datetime="${esc(e.at)}" title="${F.full.format(new Date(e.at))} New York">${ago(e.at)}</time><p><span class="who ${e.who === "Matteo" ? "matteo" : ""}">${esc(e.who === "system" ? "System" : e.who)}</span> ${esc(e.text)}</p></li>`).join("")}</ol>`
           : `<p class="empty-note">Nothing logged yet. Approvals, posts, answers and Claude's changes show up here.</p>`}
@@ -442,13 +488,13 @@ function openSheet(id) {
   const when = r.state === "posted" && r.posted_at ? `Posted ${ago(r.posted_at)}` : r.time ? `${F.full.format(new Date(r.time)).replace(" AM", "am").replace(" PM", "pm")} New York` : "";
   const dlg = $("#sheet");
   dlg.innerHTML = `<div class="sheet">
-    <div class="cover">${cover(r)}</div>
+    <div class="cover">${r.video ? `<video src="${esc(r.video)}" poster="${esc(r.cover || "")}" controls playsinline preload="metadata"></video>` : cover(r)}</div>
     <div><span class="st ${s}">${LABEL[s]}</span><h2 id="sheet-title">${esc(calm(r.hook))}</h2>
       <p class="meta">${fmtName(r.format)}${when ? `<br>${when}` : ""}${r.clip ? `<br>Clip: ${esc(r.clip)}` : ""}</p></div>
     ${m.views != null ? `<dl>${stat("Views", n(m.views))}${stat("vs normal", m.vs_median_x != null ? xTxt(m.vs_median_x) : "n/a", isWin(r) ? "gold" : "")}${stat("Follows", n(m.follows))}${stat("Shares", n(m.shares))}${stat("Saves", n(m.saves))}${stat("Skip rate", m.skip_rate != null ? Math.round(m.skip_rate) + "%" : "n/a")}</dl>` : ""}
     ${s === "win" ? `<p class="note">Winner. Repost it to your grid from the Instagram app with a trending sound; Claude sent suggestions on Telegram.</p>` : ""}
     ${r.error ? `<p class="err">Failed to post: ${esc(r.error).slice(0, 220)}. Claude looks at it on the next morning check.</p>` : ""}
-    <div class="foot">${r.permalink ? `<a class="btn" href="${esc(r.permalink)}" target="_blank" rel="noopener">Open on Instagram</a>` : ""}<button class="btn line" data-close>Close</button></div>
+    <div class="foot">${r.permalink ? `<a class="btn" href="${esc(r.permalink)}" target="_blank" rel="noopener">Instagram</a>` : ""}${Object.entries(r.links || {}).map(([k, u]) => `<a class="btn line" href="${esc(u)}" target="_blank" rel="noopener">${PLAT[k] || esc(k)}</a>`).join("")}${r.video ? `<a class="btn line" href="${esc(r.video)}" download>Download</a>` : ""}<button class="btn line" data-close>Close</button></div>
   </div>`;
   dlg.showModal(); markLoaded(dlg);
 }
@@ -472,6 +518,15 @@ function openReview() {
       <p class="hint" id="rv-hint">Hold for a second. Nothing goes out by accident.</p></footer>
   </div>`;
   dlg.showModal(); markLoaded(dlg);
+}
+function openEdit(id) {
+  const p = (D.threads_posts || []).find((x) => x.id === id);
+  if (!p) return;
+  const dlg = $("#sheet");
+  dlg.innerHTML = `<div class="sheet edit"><div><h2 id="sheet-title">Edit Threads post</h2><p class="meta">${F.full.format(new Date(p.at)).replace(" AM", "am").replace(" PM", "pm")} New York${(p.chain || []).length ? ". Saving removes its follow-up replies." : ""}</p></div>
+    <label class="field" for="tedit">Text (max 500 characters)</label><textarea id="tedit" maxlength="500" rows="8">${esc(D.edits?.[id] ?? p.text)}</textarea>
+    <div class="foot"><button class="btn" data-tsave="${esc(id)}">Save</button><button class="btn line" data-close>Cancel</button></div></div>`;
+  dlg.showModal(); $("#tedit").focus();
 }
 $("#sheet").addEventListener("click", (e) => { if (e.target === e.currentTarget || e.target.closest("[data-close]")) e.currentTarget.close(); });
 
@@ -515,6 +570,20 @@ document.addEventListener("click", (ev) => {
     act({ action: "idea", text }, "idea:" + text, "Idea sent. Claude replies on its next morning check.").then((ok) => { if (ok) { const e2 = $("#idea"); if (e2) e2.value = ""; } });
   }
   if (t.dataset.q && !t.disabled) pickAnswer(t.dataset.q, +t.dataset.k);
+  if (t.dataset.done) { hidden.add(t.dataset.done); saveHidden(); return render(); }
+  if (t.dataset.tskip) {
+    const id = t.dataset.tskip;
+    return act({ action: "threads_skip", id }, "skip:" + id, "Skipped. It won't be posted.");
+  }
+  if (t.dataset.tedit) return openEdit(t.dataset.tedit);
+  if (t.dataset.tsave) {
+    const id = t.dataset.tsave, text = $("#tedit").value.trim();
+    if (!text) return toast("Write the post first.");
+    if (text.length > 500) return toast(`Threads allows 500 characters; this is ${text.length}.`);
+    act({ action: "threads_edit", id, text }, "edit:" + id + ":" + text.length, "Saved. The new text posts at the same time.").then((ok) => {
+      if (ok) { D.edits = { ...(D.edits || {}), [id]: text }; $("#sheet").close(); render(); }
+    });
+  }
 });
 document.addEventListener("keydown", (e) => { if (e.key === "Escape" && pa && !$("#sheet").open) undoAnswer(); });
 document.addEventListener("visibilitychange", () => { if (document.visibilityState === "hidden") commitAnswer(); });

@@ -449,7 +449,7 @@ def run_threads_text(cfg, done, dry):
             return
         try:
             out = post_threads_text(p)
-            p.update(status="posted", posted_at=now(), **out)
+            p.update(status="posted", posted_at=now(), thread_id=out["id"], url=out["url"])
             done.append(("threads_text", p["text"].splitlines()[0][:80], out))
             print(f"threads_text: posted {p['id']} -> {out.get('url')}")
         except Exception as e:

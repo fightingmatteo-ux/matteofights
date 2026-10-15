@@ -1,0 +1,78 @@
+{
+  "updated": "2026-10-15T18:21:53Z",
+  "platforms": {
+    "instagram": {
+      "followers": 2030,
+      "last_post": "2026-10-15T00:40:07Z",
+      "failed": [],
+      "next_slot": "2026-10-15T22:30:00Z",
+      "token_expires": "2026-12-13",
+      "warn": null
+    },
+    "facebook": {
+      "followers": 1296,
+      "enabled": true,
+      "last_post": null,
+      "failed": [],
+      "errors": [],
+      "next_slot": "2026-10-15T23:30:00Z",
+      "token_expires": null,
+      "warn": null
+    },
+    "threads": {
+      "followers": 39,
+      "enabled": true,
+      "last_post": null,
+      "failed": [],
+      "errors": [],
+      "next_slot": "2026-10-15T19:30:00Z",
+      "token_expires": "2026-12-14",
+      "warn": null
+    },
+    "youtube": {
+      "enabled": true,
+      "last_post": null,
+      "failed": [],
+      "errors": [],
+      "next_slot": "2026-10-15T23:00:00Z",
+      "privacy": "private",
+      "token_expires": null,
+      "warn": "Uploads are private until the YouTube audit passes"
+    }
+  },
+  "posts": {
+    "freeze-A": {
+      "instagram": {
+        "views": 2647,
+        "likes": 61,
+        "comments": 0,
+        "shares": 13,
+        "saves": 39,
+        "url": "https://www.instagram.com/reel/Dee3EmfE--u/"
+      }
+    },
+    "freeze-B": {
+      "instagram": {
+        "views": 2998,
+        "likes": 59,
+        "comments": 0,
+        "shares": 2,
+        "saves": 19,
+        "url": "https://www.instagram.com/reel/DefWU45CpKI/"
+      }
+    },
+    "freeze-C": {
+      "instagram": {
+        "views": 4003,
+        "likes": 86,
+        "comments": 0,
+        "shares": 7,
+        "saves": 44,
+        "url": "https://www.instagram.com/reel/DefsPO_ih7V/"
+      }
+    }
+  },
+  "inbox": [],
+  "threads_written": {},
+  "warned": []
+}

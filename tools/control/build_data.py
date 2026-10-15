@@ -5,7 +5,7 @@ Runs as the Cloudflare Pages build command on every push, so the site always sho
 Sources: production/schedule/queue.json, production/listicles/{hooks,clips}.json, production/control/*.json
 (metrics.json is written by Claude's daily check from Buzzfy).
 """
-import datetime as dt, json, shutil
+import datetime as dt, json, os, shutil, subprocess
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -18,6 +18,28 @@ def load(p, default):
     return json.loads(p.read_text(encoding="utf-8")) if p.exists() else default
 
 
+def fetch_videos(queue):
+    """Copy the videos of reels waiting, scheduled or posted in the last 3 days next to the page (behind the Access
+    login) so the dashboard can play them. Needs GH_TOKEN + gh (the deploy workflow); skipped locally."""
+    if not os.environ.get("GH_TOKEN"):
+        return {}
+    vdir = OUT / "videos"
+    shutil.rmtree(vdir, ignore_errors=True)
+    vdir.mkdir(parents=True)
+    cutoff = (dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=3)).strftime("%Y-%m-%dT%H:%M:%SZ")
+    want = {i["id"]: i["video_asset"] for i in queue if i.get("video_asset") and
+            (i["status"] == "queued" or (i["status"] == "posted" and (i.get("posted_at") or "") >= cutoff))}
+    got = {}
+    for qid, asset in want.items():
+        r = subprocess.run(["gh", "release", "download", "media", "-p", asset, "-D", str(vdir), "--clobber"],
+                           capture_output=True, text=True)
+        if r.returncode == 0 and (vdir / asset).exists():
+            got[qid] = f"videos/{asset}"
+        else:
+            print(f"video {asset}: {r.stderr.strip()[:120]}")
+    return got
+
+
 def main():
     queue = load(ROOT / "production/schedule/queue.json", {"items": []})["items"]
     hooks = load(ROOT / "production/listicles/hooks.json", {"hooks": []})["hooks"]
@@ -27,6 +49,8 @@ def main():
     per = metrics.get("reels", {})
     hook_fmt = {h.get("queue_id"): h for h in hooks}
 
+    xpost = load(ROOT / "production/schedule/crosspost.json", {}).get("posts", {})
+    videos = fetch_videos(queue)
     covers = OUT / "covers"
     shutil.rmtree(covers, ignore_errors=True)
     covers.mkdir(parents=True, exist_ok=True)
@@ -60,6 +84,8 @@ def main():
             "clip": (i.get("clip") or "").split(" (")[0], "review": i.get("review"),
             "permalink": i.get("permalink"), "posted_at": i.get("posted_at"), "error": i.get("error"),
             "metrics": m,
+            "video": videos.get(i["id"]),
+            "links": {k: v.get("url") for k, v in xpost.get(i["id"], {}).items() if v.get("status") == "posted" and v.get("url")},
         })
 
     # per-format results (posted reels with numbers)
@@ -84,6 +110,7 @@ def main():
         "questions": load(CTL / "questions.json", []),
         "ideas": load(CTL / "ideas.json", [])[-50:],
         "log": load(CTL / "log.json", [])[-60:],
+        "platforms": load(CTL / "platforms.json", {}),
         # other platforms (tools/crosspost): per-reel results + written Threads posts (approved weekly)
         "crosspost": {k: v for k, v in load(ROOT / "production/schedule/crosspost.json", {}).items() if k != "_how"},
         "threads_posts": sorted(load(ROOT / "production/threads/posts.json", {"posts": []})["posts"],
