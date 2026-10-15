@@ -1,3 +1,10 @@
 {
-  "hook_style": "native"
+  "hook_style": "native",
+  "test": {
+    "exp": "exp-1016-hook_style",
+    "aspect": "hook_style",
+    "a": "native",
+    "b": "split",
+    "n": 0
+  }
 }
