@@ -15,6 +15,10 @@ on:
       slot:
         description: Daily post time, UTC HH:MM
         default: "17:00"
+      rerender:
+        description: Re-render the queued, unapproved listicles in place (after a render change)
+        type: boolean
+        default: false
 
 permissions:
   contents: write   # commit hooks/state/queue + captions/covers
@@ -44,7 +48,8 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           COUNT: ${{ inputs.count || '7' }}
           SLOT: ${{ inputs.slot || '17:00' }}
-        run: python3 -P tools/listicle/factory.py --count "$COUNT" --slot "$SLOT"
+          RERENDER: ${{ inputs.rerender && '--rerender' || '' }}
+        run: python3 -P tools/listicle/factory.py --count "$COUNT" --slot "$SLOT" $RERENDER
       - name: Commit
         if: always()
         run: |
@@ -52,5 +57,5 @@ jobs:
           git diff --cached --quiet && exit 0
           git config user.name "listicle-factory[bot]"
           git config user.email "listicle-factory@users.noreply.github.com"
-          git commit -qm "listicles: $(python3 -c "import json;q=json.load(open('production/schedule/queue.json'));print(', '.join(i['id'] for i in q['items'] if i['id'].startswith('lst-') and not i['approved'] and i['status']=='queued'))") awaiting yes"
+          git commit -qm "listicles: ${{ inputs.rerender && 're-rendered ' || '' }}$(python3 -c "import json;q=json.load(open('production/schedule/queue.json'));print(', '.join(i['id'] for i in q['items'] if i['id'].startswith('lst-') and not i['approved'] and i['status']=='queued'))") awaiting yes"
           for n in 1 2 3; do git pull --rebase -q && git push -q && break; sleep 5; done

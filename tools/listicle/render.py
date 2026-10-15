@@ -24,7 +24,7 @@ MUSIC = sorted((ROOT / "production/reels/five-signs-real-fighter/assets/music").
 W, H, FPS = 1080, 1920, 30
 RED, WHITE, BLACK = (232, 17, 45), (255, 255, 255), (11, 11, 13)
 # Instagram's grid crop keeps y 285-1635; the UI covers the bottom ~320 px. Text stays inside both.
-TOP, TEXT_W, PAD = 300, 940, 40
+TOP, BOTTOM, TEXT_W, PAD = 300, 1600, 940, 40
 LOOP_X = 0.5      # seconds of end -> start crossfade
 ZOOM = 0.045      # peak push-in (4.5%), mid-reel
 
@@ -44,27 +44,47 @@ def has_audio(clip):
 
 
 def best_window(clip, dur, length):
-    """Start time of the most active, steady `length`-second stretch.
+    """(start time, row motion) of the most active, steady `length`-second stretch.
+
+    Row motion = how much movement each of 64 horizontal bands of the OUTPUT frame has in that window;
+    the layout uses it to keep the text off the fighter.
 
     Motion = mean frame difference on a tiny greyscale copy at 5 fps. Whole-frame jolts (phone picked up,
     someone walking past the lens) are clipped so they can't win; the first/last second is avoided."""
     w, h, rate = 36, 64, 5
     raw = subprocess.run(["ffmpeg", "-v", "error", "-i", str(clip), "-vf",
-                          f"fps={rate},scale={w}:{h},format=gray", "-f", "rawvideo", "-"],
+                          f"fps={rate},scale={w}:{h}:force_original_aspect_ratio=increase,crop={w}:{h},format=gray", "-f", "rawvideo", "-"],
                          capture_output=True).stdout
     n = w * h
     frames = [raw[i:i + n] for i in range(0, len(raw) - n + 1, n)]
-    if len(frames) < 3 or dur <= length + 2:
-        return max(0.0, (dur - length) / 2)
-    diff = [sum(abs(a - b) for a, b in zip(f1, f2)) / n for f1, f2 in zip(frames, frames[1:])]
+    if len(frames) < 3:
+        return max(0.0, (dur - length) / 2), [1.0] * h
+    pix = [[abs(a - b) for a, b in zip(f1, f2)] for f1, f2 in zip(frames, frames[1:])]
+    diff = [sum(p) / n for p in pix]
+
+    def rows(i0, i1):
+        return [sum(sum(p[r * w:(r + 1) * w]) for p in pix[i0:i1]) for r in range(h)]
+
+    if dur <= length + 2:
+        return max(0.0, (dur - length) / 2), rows(0, len(pix))
     cap = sorted(diff)[int(len(diff) * 0.9)]           # 90th percentile = ceiling for "normal" action
     diff = [min(d, cap) - (d - cap) * 2 if d > cap else d for d in diff]  # punish jolts above it
     win = max(1, int(length * rate))
     lo, hi = int(1.0 * rate), len(diff) - win - int(1.0 * rate)
     if hi <= lo:
-        return max(0.0, (dur - length) / 2)
+        return max(0.0, (dur - length) / 2), rows(0, len(pix))
     best = max(range(lo, hi + 1), key=lambda i: sum(diff[i:i + win]))
-    return best / rate
+    return best / rate, rows(best, best + win)
+
+
+def place_plate(row_motion, height):
+    """Top of the hook plate: the upper slot unless the fighter's movement sits there and the lower slot is
+    clearly quieter. Both slots stay inside Instagram's grid crop (y 285-1635) and above its UI."""
+    def load(y0):
+        r0, r1 = int(y0 / H * len(row_motion)), int((y0 + height) / H * len(row_motion)) + 1
+        return sum(row_motion[r0:r1])
+    top, low = TOP, BOTTOM - height
+    return low if load(low) < 0.7 * load(top) else top
 
 
 # ---------------------------------------------------------------- text layers
@@ -98,11 +118,11 @@ def cap_h(font):
     return b[3] - b[1]
 
 
-def hook_layer(hook, subhook):
+def hook_layer(hook, subhook, top=TOP):
     """One black plate: red hook, then the white subhook. Padding measured on cap height, so it's even."""
     img = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     d = ImageDraw.Draw(img)
-    fh, hl = fit(d, hook.upper(), 4, 156)
+    fh, hl = fit(d, hook.upper(), 4, 144)
     size = 62  # one sentence per line when it fits at a readable size, else balanced wrap
     while size > 56 and max(d.textlength(s.upper(), font=ImageFont.truetype(str(BEBAS), size)) for s in subhook) > TEXT_W:
         size -= 2
@@ -113,26 +133,27 @@ def hook_layer(hook, subhook):
     h_step, s_step = round(hc * 1.22), round(sc * 1.55)
     rule_gap = round(hc * 0.55)
     width = max([d.textlength(l, font=fh) for l in hl] + [d.textlength(l, font=fs) for l in sl]) + 2 * PAD
-    y = TOP + PAD + hc                          # first hook baseline
+    y = top + PAD + hc                          # first hook baseline
     h_last = y + h_step * (len(hl) - 1)
     rule_y = h_last + rule_gap
     s_first = rule_y + rule_gap + sc
     bottom = s_first + s_step * (len(sl) - 1) + PAD
     x0, x1 = (W - width) / 2, (W + width) / 2
-    d.rectangle([x0, TOP, x1, bottom], fill=BLACK)
+    d.rectangle([x0, top, x1, bottom], fill=BLACK)
     for i, l in enumerate(hl):
         d.text((W / 2, y + i * h_step), l, font=fh, fill=RED, anchor="ms")
     d.rectangle([W / 2 - 60, rule_y - 2, W / 2 + 60, rule_y + 2], fill=RED)   # thin divider
     for i, l in enumerate(sl):
         d.text((W / 2, s_first + i * s_step), l, font=fs, fill=WHITE, anchor="ms")
-    return img
+    return img, bottom
 
 
-def cta_layer():
+def cta_layer(base=1440):
+    """READ CAPTION pill; `base` = text baseline (low by default, high when the hook plate sits low)."""
     img = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     d = ImageDraw.Draw(img)
     f = ImageFont.truetype(str(BEBAS), 88)
-    label, base = "READ CAPTION", 1440
+    label = "READ CAPTION"
     tw, em, gap = d.textlength(label, font=f), 76, 18
     c = cap_h(f)
     x0 = (W - tw - gap - em) / 2
@@ -158,7 +179,7 @@ def render(clip, hook_id, out, seconds=8.0, cover=None, music_i=0):
     dur = float(ff(["-show_entries", "format=duration", "-of", "csv=p=0", str(clip)]) or 0)
     S = min(seconds, max(1.0, dur - LOOP_X)) if dur else seconds
     X = min(LOOP_X, S / 4)
-    start = best_window(clip, dur, S + X)
+    start, row_motion = best_window(clip, dur, S + X)
     cta_in, cta_out = max(0.0, S - 3.4), S - 0.35
 
     trc, rng = probe(clip, "stream=color_transfer"), probe(clip, "stream=color_range")
@@ -177,8 +198,11 @@ def render(clip, hook_id, out, seconds=8.0, cover=None, music_i=0):
 
     with tempfile.TemporaryDirectory() as tmp:
         hp, cp = Path(tmp, "hook.png"), Path(tmp, "cta.png")
-        hook_layer(h["hook"], h["subhook"]).save(hp)
-        cta_layer().save(cp)
+        _, bottom = hook_layer(h["hook"], h["subhook"])
+        top = place_plate(row_motion, bottom - TOP)
+        hook_layer(h["hook"], h["subhook"], top)[0].save(hp)
+        cta_layer(1440 if top == TOP else top - 60).save(cp)  # low plate: pill sits just above it
+        print(f"plate {'top' if top == TOP else 'low'} (y {top})", flush=True)
         music = MUSIC[music_i % len(MUSIC)] if MUSIC else None
         cmd = ["ffmpeg", "-v", "error", "-y", "-ss", f"{start:.3f}", "-t", f"{S + X:.3f}", "-i", str(clip),
                "-loop", "1", "-framerate", str(FPS), "-i", str(hp),

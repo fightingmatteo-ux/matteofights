@@ -66,7 +66,11 @@ def main():
     p.add_argument("--count", type=int, default=7)
     p.add_argument("--slot", default="17:00", help="daily post time, UTC HH:MM")
     p.add_argument("--seconds", type=float, default=8.0)
+    p.add_argument("--rerender", action="store_true",
+                   help="re-render the queued, not-yet-approved listicles in place (same hook, clip and day)")
     a = p.parse_args()
+    if a.rerender:
+        return rerender(a.seconds)
 
     hooks, state, queue = load(HOOKS, None), load(STATE, {"clip_uses": {}, "last_clip": None, "music_i": 0}), load(QUEUE, None)
     todo = [h for h in hooks["hooks"] if h.get("status") == "ready"][: a.count]
@@ -114,6 +118,26 @@ def main():
         state["music_i"] += 1
         save(HOOKS, hooks); save(STATE, state); save(QUEUE, queue)  # after each one: a crash keeps the finished ones
         print(f"{qid}: {h['hook']} | clip {clip['Name']} | posts {slot:%a %d %b %H:%M} UTC once approved", flush=True)
+
+
+def rerender(seconds):
+    """After a render.py change: rebuild every queued, unapproved lst-* item with its own hook and clip."""
+    hooks, queue = load(HOOKS, None), load(QUEUE, None)
+    by_q = {h.get("queue_id"): h for h in hooks["hooks"]}
+    work = ROOT / "media" / "listicles"
+    work.mkdir(parents=True, exist_ok=True)
+    items = [i for i in queue["items"] if i["id"].startswith("lst-") and not i.get("approved") and i["status"] == "queued"]
+    for n, item in enumerate(items):
+        h, clip_id = by_q[item["id"]], item["clip"].rsplit("(", 1)[1].rstrip(")")
+        local = work / f"{clip_id}{Path(item['clip'].split(' (')[0]).suffix}"
+        if not local.exists():
+            run("rclone", "backend", "copyid", "gdrive:", clip_id, str(local))
+        folder = ROOT / Path(item["caption_file"]).parent
+        render(local, h["id"], work / item["video_asset"], seconds, folder / "cover.jpg", n)
+        run("gh", "release", "upload", "media", str(work / item["video_asset"]), "--clobber", "-R", REPO)
+        run("rclone", "copyto", str(work / item["video_asset"]), f"gdrive:listicles/{item['video_asset']}",
+            "--drive-root-folder-id", OUT_FOLDER)
+        print(f"{item['id']}: re-rendered", flush=True)
 
 
 if __name__ == "__main__":
