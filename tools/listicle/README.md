@@ -39,3 +39,8 @@ link the reel to the sound's page (and risks a mute). So by default the factory 
 (gym sound only) and marks each queue item `app_audio`. The Post queue skips those: Matteo posts them in the app
 as a trial reel, adds the sound (`--audio`, default Echo Sax by Caleb Arredondo), and turns the original audio down.
 `--audio ''` brings back the old behaviour (our own music, auto-posted).
+
+## Look (since 2026-10-15, copied from the 398k / 162k reels)
+Instagram's native text style: red bold serif hook, each line on its own rounded black highlight, centred in
+the upper third. Hook only on screen (subhook opens the caption). Footage bright and neutral, not darkened.
+`READ DESCRIPTION ⬇️` on a rounded black pill in the last ~3 s.

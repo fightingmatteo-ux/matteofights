@@ -19,10 +19,11 @@ from PIL import Image, ImageDraw, ImageFont
 ROOT = Path(__file__).resolve().parents[2]
 HOOKS = ROOT / "production" / "listicles" / "hooks.json"
 BEBAS = Path(__file__).parent / "fonts" / "BebasNeue-Regular.ttf"
+SERIF = Path(__file__).parent / "fonts" / "LiberationSerif-Bold.ttf"  # Times-metric, like IG's Classic
 EMOJI = Path("/usr/share/fonts/truetype/noto/NotoColorEmoji.ttf")
 MUSIC = sorted((ROOT / "production/reels/five-signs-real-fighter/assets/music").glob("*.mp3"))
 W, H, FPS = 1080, 1920, 30
-RED, WHITE, BLACK = (232, 17, 45), (255, 255, 255), (11, 11, 13)
+RED, WHITE, BLACK = (227, 27, 35), (255, 255, 255), (8, 8, 10)
 # Instagram's grid crop keeps y 285-1635; the UI covers the bottom ~320 px. Text stays inside both.
 TOP, BOTTOM, TEXT_W, PAD = 300, 1600, 940, 40
 LOOP_X = 0.5      # seconds of end -> start crossfade
@@ -118,34 +119,38 @@ def cap_h(font):
     return b[3] - b[1]
 
 
-def hook_layer(hook, subhook, top=TOP):
-    """One black plate: red hook, then the white subhook. Padding measured on cap height, so it's even."""
+def hook_layer(hook, top=TOP):
+    """The 398k / 162k look: Instagram's native text style. Red bold serif, each line on its own rounded
+    black highlight hugging the text, centred. Only the hook is on screen; the subhook lives in the caption."""
     img = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     d = ImageDraw.Draw(img)
-    fh, hl = fit(d, hook.upper(), 4, 144)
-    size = 62  # one sentence per line when it fits at a readable size, else balanced wrap
-    while size > 56 and max(d.textlength(s.upper(), font=ImageFont.truetype(str(BEBAS), size)) for s in subhook) > TEXT_W:
-        size -= 2
-    fs = ImageFont.truetype(str(BEBAS), size)
-    sl = [l for s in subhook for l in fit(d, s.upper(), 2, size, TEXT_W)[1]]
+    words = hook.upper()
+    size = 112
+    while True:  # biggest size that fits in 3 lines (4 for long hooks) inside ~84% of the width
+        f = ImageFont.truetype(str(SERIF), size)
+        lines = fit_lines(d, words, f, 900)
+        if len(lines) <= (3 if len(words) < 44 else 4):
+            break
+        size -= 4
+    c = cap_h(f)
+    step, px, py, r = round(c * 1.5), 28, round(c * 0.36), 18  # highlights overlap into one shape
+    y = top + py + c
+    for i, l in enumerate(lines):
+        tw = d.textlength(l, font=f)
+        b = y + i * step
+        d.rounded_rectangle([(W - tw) / 2 - px, b - c - py, (W + tw) / 2 + px, b + py + 6], r, fill=BLACK)
+    for i, l in enumerate(lines):
+        d.text((W / 2, y + i * step), l, font=f, fill=RED, anchor="ms")
+    return img, y + (len(lines) - 1) * step + py + 6
 
-    hc, sc = cap_h(fh), cap_h(fs)
-    h_step, s_step = round(hc * 1.22), round(sc * 1.55)
-    rule_gap = round(hc * 0.55)
-    width = max([d.textlength(l, font=fh) for l in hl] + [d.textlength(l, font=fs) for l in sl]) + 2 * PAD
-    y = top + PAD + hc                          # first hook baseline
-    h_last = y + h_step * (len(hl) - 1)
-    rule_y = h_last + rule_gap
-    s_first = rule_y + rule_gap + sc
-    bottom = s_first + s_step * (len(sl) - 1) + PAD
-    x0, x1 = (W - width) / 2, (W + width) / 2
-    d.rectangle([x0, top, x1, bottom], fill=BLACK)
-    for i, l in enumerate(hl):
-        d.text((W / 2, y + i * h_step), l, font=fh, fill=RED, anchor="ms")
-    d.rectangle([W / 2 - 60, rule_y - 2, W / 2 + 60, rule_y + 2], fill=RED)   # thin divider
-    for i, l in enumerate(sl):
-        d.text((W / 2, s_first + i * s_step), l, font=fs, fill=WHITE, anchor="ms")
-    return img, bottom
+
+def fit_lines(draw, text, font, width):
+    """Wrap, then narrow the box while the line count holds, so lines come out balanced."""
+    lines = wrap(draw, text, font, width)
+    w = width
+    while w > 300 and len(wrap(draw, text, font, w - 10)) == len(lines):
+        w -= 10
+    return wrap(draw, text, font, w)
 
 
 def cta_layer(base=1440):
@@ -153,11 +158,11 @@ def cta_layer(base=1440):
     img = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     d = ImageDraw.Draw(img)
     f = ImageFont.truetype(str(BEBAS), 88)
-    label = "READ CAPTION"
+    label = "READ DESCRIPTION"
     tw, em, gap = d.textlength(label, font=f), 76, 18
     c = cap_h(f)
     x0 = (W - tw - gap - em) / 2
-    d.rectangle([x0 - 34, base - c - 30, x0 + tw + gap + em + 34, base + 30], fill=BLACK)
+    d.rounded_rectangle([x0 - 30, base - c - 28, x0 + tw + gap + em + 30, base + 28], 18, fill=BLACK)
     d.text((x0, base), label, font=f, fill=WHITE, anchor="ls")
     ey = base - c + (c - em) // 2
     try:  # Noto Color Emoji only renders at its bitmap size (109); scale it down
@@ -203,10 +208,10 @@ def render(clip, hook_id, out, seconds=8.0, cover=None, music_i=0, rotate=0):
 
     with tempfile.TemporaryDirectory() as tmp:
         hp, cp = Path(tmp, "hook.png"), Path(tmp, "cta.png")
-        _, bottom = hook_layer(h["hook"], h["subhook"])
+        _, bottom = hook_layer(h["hook"])
         top = place_plate(row_motion, bottom - TOP)
-        hook_layer(h["hook"], h["subhook"], top)[0].save(hp)
-        cta_layer(1440 if top == TOP else top - 60).save(cp)  # low plate: pill sits just above it
+        hook_layer(h["hook"], top)[0].save(hp)
+        cta_layer(1300 if top == TOP else top - 60).save(cp)  # low plate: pill sits just above it
         print(f"plate {'top' if top == TOP else 'low'} (y {top})", flush=True)
         # music_i=None: no music bed - the trending sound gets added in the Instagram app
         music = MUSIC[music_i % len(MUSIC)] if MUSIC and music_i is not None else None
@@ -216,7 +221,7 @@ def render(clip, hook_id, out, seconds=8.0, cover=None, music_i=0, rotate=0):
         vf = (
             # footage: colour-correct, fill 9:16, 30 fps, a touch darker so red text reads on it
             f"[0:v]{turn}{tm}scale={W}:{H}:force_original_aspect_ratio=increase:flags=lanczos,crop={W}:{H},fps={FPS},"
-            f"eq=brightness=-0.06:saturation=0.92,format=yuv420p,setpts=PTS-STARTPTS,split[s1][s2];"
+            f"format=yuv420p,setpts=PTS-STARTPTS,split[s1][s2];"
             # seamless loop: body = [X, S+X); its tail crossfades into the window's first X seconds
             f"[s1]trim=start={X:.3f}:duration={S:.3f},setpts=PTS-STARTPTS[body];"
             f"[s2]trim=start=0:duration={X:.3f},setpts=PTS-STARTPTS[head];"
