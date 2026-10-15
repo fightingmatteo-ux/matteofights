@@ -450,10 +450,10 @@ function platformsPanel() {
   const when = (iso) => (iso ? F.full.format(new Date(iso)).replace(" AM", "am").replace(" PM", "pm") : "n/a");
   const order = ["instagram", "facebook", "youtube", "threads"].filter((k) => P[k]);
   return `<section aria-labelledby="pf-h"><div class="head"><h2 class="h2" id="pf-h">Platforms</h2></div>
-    <div class="scroll"><table><thead><tr><th>Platform</th><th>Followers</th><th>Last post</th><th>Next slot</th><th>Status</th></tr></thead>
-    <tbody>${order.map((k) => { const p = P[k]; return `<tr><td>${PLAT[k]}</td><td>${n(p.followers)}</td><td>${p.last_post ? ago(p.last_post) : "none yet"}</td><td>${p.enabled === false ? "off" : when(p.next_slot)}</td>
+    <div class="scroll"><table><thead><tr><th>Platform</th><th>Followers</th><th>Plan / day</th><th>Last 7 days</th><th>Next slot</th><th>Status</th></tr></thead>
+    <tbody>${order.map((k) => { const p = P[k]; return `<tr><td>${PLAT[k]}</td><td>${n(p.followers)}</td><td title="${esc(p.plan_mix || "")}">${p.plan_per_day ?? "n/a"}</td><td class="${p.plan_per_day && p.posted_7d < p.plan_per_day * 7 * 0.7 && p.last_post ? "warn" : ""}">${p.posted_7d ?? 0} of ${(p.plan_per_day || 0) * 7}</td><td>${p.enabled === false ? "off" : when(p.next_slot)}</td>
       <td class="${p.warn ? "warn" : ""}">${esc(p.warn || "OK")}${p.errors?.length ? `<br><small>${esc(p.errors[0])}</small>` : ""}</td></tr>`; }).join("")}</tbody></table></div>
-    <p class="hint" style="margin-top:12px">Checked ${ago(D.platforms.updated)}. Logins: ${order.filter((k) => P[k].token_expires).map((k) => `${PLAT[k]} until ${F.short.format(new Date(P[k].token_expires + "T12:00:00"))}`).join(", ") || "no expiry"}.</p></section>`;
+    <p class="hint" style="margin-top:12px">Plan per day: ${order.map((k) => `${PLAT[k]} ${esc(P[k].plan_mix || "")}`).join(", ")}. Checked ${ago(D.platforms.updated)}. Logins: ${order.filter((k) => P[k].token_expires).map((k) => `${PLAT[k]} until ${F.short.format(new Date(P[k].token_expires + "T12:00:00"))}`).join(", ") || "no expiry"}.</p></section>`;
 }
 
 // ---------------------------------------------------------------- activity

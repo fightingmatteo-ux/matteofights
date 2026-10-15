@@ -170,6 +170,22 @@ def main():
             p["next_slot"] = xp.iso(xp.next_slot(t_now, cfg["slots"]))
         if name == "youtube":
             p["privacy"] = cfg.get("privacy")
+
+    # posting plan vs what actually went out in the last 7 days (plan = research 2026-10-16, tools/crosspost/README.md)
+    week = recent_iso(7)
+    slots = lambda k: len(state["platforms"].get(k, {}).get("slots") or []) if state["platforms"].get(k, {}).get("enabled") else 0
+    written = json.loads(xp.THREADS_POSTS.read_text(encoding="utf-8"))["posts"] if xp.THREADS_POSTS.exists() else []
+    sent = lambda k: sum(1 for r in state["posts"].values() if (r.get(k) or {}).get("status") == "posted" and r[k].get("at", "") >= week)
+    plan = {
+        "instagram": (2, sum(1 for i in queue if (i.get("posted_at") or "") >= week), "2 trial reels"),
+        "facebook": (slots("facebook") + slots("facebook_slides"), sent("facebook") + sent("facebook_slides"), "2 reels + 1 slide album"),
+        "youtube": (slots("youtube"), sent("youtube"), "2 Shorts"),
+        "threads": (slots("threads") + (3 if state["platforms"].get("threads_text", {}).get("enabled") else 0),
+                    sent("threads") + sum(1 for x in written if (x.get("posted_at") or "") >= week), "2 reels + 3 written posts"),
+    }
+    for name, (per_day, done7, mix) in plan.items():
+        p = out["platforms"].setdefault(name, {})
+        p.update(plan_per_day=per_day, plan_mix=mix, posted_7d=done7)
     for name, p in out["platforms"].items():
         p["token_expires"] = KNOWN_EXPIRY.get(name)
         left = days_left(p["token_expires"])

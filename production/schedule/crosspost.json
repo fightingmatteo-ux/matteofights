@@ -13,12 +13,13 @@
     "youtube": {
       "enabled": true,
       "since": "2026-10-15T17:32:28Z",
-      "privacy": "private",
+      "privacy": "public",
       "approved_note": "Matteo: 'yes enable youtube' in chat 2026-10-16",
       "slots": [
         "12:30",
         "19:00"
-      ]
+      ],
+      "privacy_note": "Matteo: 'youtube approved' (2026-10-16). If YouTube still forces private, the audit isn't through yet."
     },
     "threads": {
       "enabled": true,

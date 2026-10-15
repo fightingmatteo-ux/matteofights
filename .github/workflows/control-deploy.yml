@@ -31,6 +31,8 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: python3 -P tools/control/build_data.py
+      - name: Version the app files (so a refresh always loads the latest code)
+        run: sed -i "s/app\.js\"/app.js?v=${GITHUB_SHA::7}-${GITHUB_RUN_NUMBER}\"/; s/style\.css\"/style.css?v=${GITHUB_SHA::7}-${GITHUB_RUN_NUMBER}\"/" control-site/public/index.html
       - name: Upload to Cloudflare Pages
         working-directory: control-site
         env:
