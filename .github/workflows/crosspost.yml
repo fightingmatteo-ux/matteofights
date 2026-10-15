@@ -1,0 +1,53 @@
+# After each Post queue run, sends newly posted Instagram reels to the enabled platforms (Facebook Reels, YouTube
+# Shorts, Threads): tools/crosspost/crosspost.py run. State + results: production/schedule/crosspost.json.
+name: Cross-post
+
+on:
+  workflow_run:
+    workflows: [Post queue]
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: crosspost
+  cancel-in-progress: false
+
+jobs:
+  crosspost:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: master
+      - name: Cross-post
+        env:
+          GH_TOKEN: ${{ github.token }}
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+          THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
+        run: python3 -P tools/crosspost/crosspost.py run
+      - name: Save results and tell Matteo
+        if: always()
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          git config user.name "crosspost[bot]"
+          git config user.email "crosspost@users.noreply.github.com"
+          git add production/schedule/crosspost.json production/control
+          git diff --cached --quiet && exit 0
+          git commit -qm "crosspost: results"
+          for n in 1 2 3; do git pull --rebase -q origin master && git push -q origin HEAD:master && break; sleep 5; done
+          python3 -m pip install -q pillow 2>/dev/null || true
+          python3 -P tools/control/control.py notify || echo "telegram notify failed (non-fatal)"
+          git add production/control
+          git diff --cached --quiet && exit 0
+          git commit -qm "control: telegram sent"
+          for n in 1 2 3; do git pull --rebase -q origin master && git push -q origin HEAD:master && break; sleep 5; done

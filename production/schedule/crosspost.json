@@ -1,0 +1,9 @@
+{
+  "_how": "tools/crosspost/crosspost.py: after a reel posts on Instagram, the Cross-post workflow sends the same video + caption to every enabled platform. enabled = Matteo's yes to posting there. since = only reels posted on Instagram from then on.",
+  "platforms": {
+    "facebook": {"enabled": false, "since": null},
+    "youtube": {"enabled": false, "since": null, "privacy": "private"},
+    "threads": {"enabled": false, "since": null}
+  },
+  "posts": {}
+}

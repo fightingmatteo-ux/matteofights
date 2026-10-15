@@ -7,7 +7,7 @@ on:
   push:
     branches: [master]
   workflow_run:
-    workflows: [Control, Post queue, Listicle factory, Post trial reel]
+    workflows: [Control, Post queue, Listicle factory, Post trial reel, Cross-post]
     types: [completed]
   workflow_dispatch:
 
