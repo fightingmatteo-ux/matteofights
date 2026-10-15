@@ -49,10 +49,11 @@ def list_clips():
 
 
 def next_slots(queue, n, hour, minute):
-    """Daily slots after the last listicle already in the queue (or from tomorrow if today's slot is gone)."""
+    """Daily slots after the last listicle already queued at this time of day (or from tomorrow if today's slot is gone)."""
     now = dt.datetime.now(dt.timezone.utc)
-    taken = [dt.datetime.fromisoformat(i["not_before"].replace("Z", "+00:00"))
-             for i in queue["items"] if i["id"].startswith("lst-") and i.get("status") == "queued"]
+    taken = [t for t in (dt.datetime.fromisoformat(i["not_before"].replace("Z", "+00:00"))
+             for i in queue["items"] if i["id"].startswith("lst-") and i.get("status") == "queued")
+             if (t.hour, t.minute) == (hour, minute)]  # each daily slot (17:00, 20:00...) fills its own days
     day = now.replace(hour=hour, minute=minute, second=0, microsecond=0)
     if taken:
         day = max(max(taken) + dt.timedelta(days=1), day)
@@ -108,7 +109,7 @@ def main():
         qid = f"lst-{day}-{h['id']}"
         queue["items"].append({
             "id": qid, "reel": f"listicles/{day}-{h['id']}", "variant": "-", "hook": h["hook"],
-            "archetype": h["archetype"], "clip": f"{clip['Name']} ({clip['ID']})", "video_asset": asset,
+            "archetype": h["archetype"], "format": h.get("format", "listicle"), "clip": f"{clip['Name']} ({clip['ID']})", "video_asset": asset,
             "caption_file": str((folder / "caption.txt").relative_to(ROOT)).replace("\\", "/"),
             "strategy": "MANUAL", "thumb_offset_ms": 500,
             "not_before": slot.strftime("%Y-%m-%dT%H:%M:%SZ"), "min_gap_hours": 2.5,

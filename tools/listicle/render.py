@@ -211,7 +211,10 @@ def render(clip, hook_id, out, seconds=8.0, cover=None, music_i=0, rotate=0):
         _, bottom = hook_layer(h["hook"])
         top = place_plate(row_motion, bottom - TOP)
         hook_layer(h["hook"], top)[0].save(hp)
-        cta_layer(1300 if top == TOP else top - 60).save(cp)  # low plate: pill sits just above it
+        if h.get("format") == "iykyk":  # one-line caption: nothing to send people to
+            Image.new("RGBA", (W, H), (0, 0, 0, 0)).save(cp)
+        else:
+            cta_layer(1300 if top == TOP else top - 60).save(cp)  # low plate: pill sits just above it
         print(f"plate {'top' if top == TOP else 'low'} (y {top})", flush=True)
         # music_i=None: no music bed - the trending sound gets added in the Instagram app
         music = MUSIC[music_i % len(MUSIC)] if MUSIC and music_i is not None else None
