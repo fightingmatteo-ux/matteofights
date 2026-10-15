@@ -98,7 +98,7 @@
       "min_gap_hours": 2.5,
       "approved": false,
       "status": "queued",
-      "rotate": 90
+      "rotate": -90
     },
     {
       "id": "lst-2026-10-18-calm-without-experience",
