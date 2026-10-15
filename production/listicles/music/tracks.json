@@ -1,0 +1,109 @@
+{
+  "_how": "Royalty-free music for the listicle factory (tools/listicle/render.py rotates *.mp3 here, from each track's drop). Pixabay Content License: commercial social use, no attribution. content_id_registered tracks may get a Content ID claim: dispute it with the source page + license (Pixabay FAQ). Approved by Matteo 2026-10-16.",
+  "tracks": [
+    {
+      "file": "phonk-the-mountain.mp3",
+      "title": "Phonk – Phonk Music",
+      "artist": "The_Mountain",
+      "vibe": "dark drift phonk",
+      "source": "https://pixabay.com/music/phonk-phonk-phonk-music-496450/",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "content_id_registered": true,
+      "downloaded": "2026-10-16",
+      "sha256": "9c0b3552ce71824f8660a5b15ff4591c981ca3c8946314c517c503fb619635a7",
+      "drop_8s_at": 84.3
+    },
+    {
+      "file": "phonk-brazilian-alex-morgan.mp3",
+      "title": "Phonk – Brazilian Phonk – Phonk Music",
+      "artist": "alex-morgan",
+      "vibe": "aggressive Brazilian phonk",
+      "source": "https://pixabay.com/music/phonk-phonk-brazilian-phonk-phonk-music-545509/",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "content_id_registered": true,
+      "downloaded": "2026-10-16",
+      "sha256": "9f2220adbbe84c08d6e99f673d501bf44d3a7daa1e0d83c1f74899d31a69cae4",
+      "drop_8s_at": 30.6
+    },
+    {
+      "file": "epic-bold-drums-alex-morgan.mp3",
+      "title": "Epic Cinematic Bold Drums",
+      "artist": "alex-morgan",
+      "vibe": "cinematic trailer drums",
+      "source": "https://pixabay.com/music/orchestral-epic-cinematic-bold-drums-573877/",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "content_id_registered": false,
+      "downloaded": "2026-10-16",
+      "sha256": "aabe28c52fde91e213b7f309b7743cae4bcb5bbab4c003cc5e335c8f69efed4f",
+      "drop_8s_at": 112.85
+    },
+    {
+      "file": "phonk-drift-night-alex-morgan.mp3",
+      "title": "Phonk Aggressive Drift Night",
+      "artist": "alex-morgan",
+      "vibe": "dark aggressive phonk",
+      "source": "https://pixabay.com/music/phonk-phonk-aggressive-drift-night-573644/",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "content_id_registered": true,
+      "downloaded": "2026-10-16",
+      "sha256": "1ceea192ba6d1e9d1a139ab042b1ae3cdf66711d5db947924cebd97d2900ce79",
+      "drop_8s_at": 91.7
+    },
+    {
+      "file": "phonk-solarflex.mp3",
+      "title": "Phonk",
+      "artist": "SolarFLEX",
+      "vibe": "hard phonk",
+      "source": "https://pixabay.com/music/phonk-phonk-577924/",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "content_id_registered": true,
+      "downloaded": "2026-10-16",
+      "sha256": "652df2354a3c8b0734d8b5b7cc87923e3ffd020eea13a0790adacfa6c8d95bf4",
+      "drop_8s_at": 16.85
+    },
+    {
+      "file": "drill-london-echoes.mp3",
+      "title": "Drill Beat London",
+      "artist": "echoes_of_lumen",
+      "vibe": "dark UK drill",
+      "source": "https://pixabay.com/music/trap-drill-beat-london-583428/",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "content_id_registered": true,
+      "downloaded": "2026-10-16",
+      "sha256": "83c2a01bd9c162871bf2a7eff465ca11c4917242d1bf11c8611d30b6f58517ba",
+      "drop_8s_at": 107.9
+    },
+    {
+      "file": "drill-hard-vaitsez.mp3",
+      "title": "Hard – Hard Drill Beat",
+      "artist": "vaitsez",
+      "vibe": "hard drill / trap",
+      "source": "https://pixabay.com/music/trap-hard-hard-drill-beat-564474/",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "content_id_registered": true,
+      "downloaded": "2026-10-16",
+      "sha256": "2fee0e55a4eea896409fe2aa43df0a38d6539e3d584e4dc956177c4bb43c59d4",
+      "drop_8s_at": 50.0
+    },
+    {
+      "file": "boombap-groove-alex-morgan.mp3",
+      "title": "Boom Bap Old School Groove",
+      "artist": "alex-morgan",
+      "vibe": "gritty boom-bap",
+      "source": "https://pixabay.com/music/electronic-boom-bap-old-school-groove-573879/",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "content_id_registered": true,
+      "downloaded": "2026-10-16",
+      "sha256": "51d47d1e462128e2145f0df02b25aba380e88905bae80e4534eb03cb51cf1dce",
+      "drop_8s_at": 83.1
+    }
+  ]
+}
