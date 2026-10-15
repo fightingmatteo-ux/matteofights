@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-15T18:55:24Z",
+ "updated": "2026-10-15T19:05:20Z",
  "rule": ">= 3x the creator's own median",
  "accounts": [
   {
@@ -10,7 +10,7 @@
    "followers": 206562,
    "posts_n": 41,
    "median_views": 60207,
-   "max_views": 491097
+   "max_views": 491101
   },
   {
    "platform": "instagram",
@@ -27,7 +27,7 @@
    "handle": "themuaythaiguy",
    "name": "The Muay Thai Guy",
    "why": "Muay Thai education built for beginners; proven listicle and 'starter pack' formats (1.5M outlier)",
-   "followers": 288309,
+   "followers": 288311,
    "posts_n": 49,
    "median_views": 50282,
    "max_views": 1550154
@@ -37,7 +37,7 @@
    "handle": "tinapham.co",
    "name": "Tina Pham",
    "why": "Former MMA fighter turned comedian: fighter psychology told through stories, not tips",
-   "followers": 29786,
+   "followers": 29789,
    "posts_n": 50,
    "median_views": 3120,
    "max_views": 57628
@@ -50,27 +50,27 @@
    "followers": 13927,
    "posts_n": 49,
    "median_views": 2286,
-   "max_views": 306532
+   "max_views": 306533
   },
   {
    "platform": "instagram",
    "handle": "radu_rewers",
    "name": "Radu Rewers",
    "why": "Boxer and business founder (barbershop): the fighter-who-builds lane, lifestyle formats",
-   "followers": 87421,
-   "posts_n": 49,
-   "median_views": 14708,
-   "max_views": 339636
+   "followers": 87422,
+   "posts_n": 50,
+   "median_views": 14519,
+   "max_views": 339705
   },
   {
    "platform": "instagram",
    "handle": "brezojr",
    "name": "Brezo Jr",
    "why": "Young fighter personal brand: relatable humour and lifestyle around training",
-   "followers": 95866,
+   "followers": 95867,
    "posts_n": 45,
    "median_views": 4150,
-   "max_views": 286288
+   "max_views": 286299
   },
   {
    "platform": "instagram",
@@ -87,10 +87,10 @@
    "handle": "_coachdino_",
    "name": "Coach Dino",
    "why": "Coach in Phuket, Thailand: training-in-Thailand stories and advice clips",
-   "followers": 27755,
+   "followers": 27756,
    "posts_n": 46,
    "median_views": 2182,
-   "max_views": 1108356
+   "max_views": 1108482
   },
   {
    "platform": "youtube",
@@ -167,22 +167,22 @@
   {
    "id": "DeMfujGhnOJ",
    "url": "https://www.instagram.com/reel/DeMfujGhnOJ/",
-   "views": 1108356,
-   "likes": 30975,
+   "views": 1108482,
+   "likes": 30979,
    "comments": 1181,
    "hook": "That 2 week vacation has been the best 5 years of my life.",
    "posted_at": "2026-10-07T13:45:49Z",
    "platform": "instagram",
    "handle": "_coachdino_",
    "name": "Coach Dino",
-   "x": 507.8,
+   "x": 507.9,
    "median_views": 2182,
    "first_seen": "2026-10-16"
   },
   {
    "id": "DceGoxuqpHX",
    "url": "https://www.instagram.com/reel/DceGoxuqpHX/",
-   "views": 306532,
+   "views": 306533,
    "likes": 4948,
    "comments": 31,
    "hook": "The man who fixes dead bedrooms getnaturaljackson",
@@ -210,7 +210,7 @@
   {
    "id": "DePWxnjo4Hh",
    "url": "https://www.instagram.com/reel/DePWxnjo4Hh/",
-   "views": 286288,
+   "views": 286299,
    "likes": 16588,
    "comments": 48,
    "hook": "For real😂☝🏻",
@@ -251,7 +251,7 @@
   {
    "id": "DcW78QEKGZv",
    "url": "https://www.instagram.com/reel/DcW78QEKGZv/",
-   "views": 97142,
+   "views": 97146,
    "likes": 1975,
    "comments": 18,
    "hook": "theminaelias with goated advice",
@@ -266,8 +266,8 @@
   {
    "id": "DeR5MELIcoZ",
    "url": "https://www.instagram.com/reel/DeR5MELIcoZ/",
-   "views": 165874,
-   "likes": 8103,
+   "views": 165892,
+   "likes": 8105,
    "comments": 46,
    "hook": "Haha real😂💪🏼",
    "posted_at": "2026-10-09T16:04:13Z",
@@ -348,31 +348,31 @@
   {
    "id": "Deeh1pBhWfM",
    "url": "https://www.instagram.com/reel/Deeh1pBhWfM/",
-   "views": 53350,
-   "likes": 1098,
-   "comments": 15,
+   "views": 53654,
+   "likes": 1106,
+   "comments": 16,
    "hook": "Comment “guide” for a free passes and discounts to all your favorite spots in Phuket",
    "posted_at": "2026-10-14T13:50:15Z",
    "platform": "instagram",
    "handle": "_coachdino_",
    "name": "Coach Dino",
-   "x": 24.4,
+   "x": 24.6,
    "median_views": 2182,
    "first_seen": "2026-10-16"
   },
   {
    "id": "DeW6qEeK1ku",
    "url": "https://www.instagram.com/reel/DeW6qEeK1ku/",
-   "views": 339636,
-   "likes": 9140,
+   "views": 339705,
+   "likes": 9141,
    "comments": 86,
    "hook": "",
    "posted_at": "2026-10-11T14:52:53Z",
    "platform": "instagram",
    "handle": "radu_rewers",
    "name": "Radu Rewers",
-   "x": 23.1,
-   "median_views": 14708,
+   "x": 23.4,
+   "median_views": 14519,
    "first_seen": "2026-10-16"
   },
   {
@@ -430,8 +430,8 @@
   {
    "id": "DecQdBsjJNy",
    "url": "https://www.instagram.com/reel/DecQdBsjJNy/",
-   "views": 44926,
-   "likes": 1377,
+   "views": 44935,
+   "likes": 1378,
    "comments": 1,
    "hook": "I’m gonna run a marathon",
    "posted_at": "2026-10-13T16:39:29Z",
@@ -445,8 +445,8 @@
   {
    "id": "DeaFHlTIbv0",
    "url": "https://www.instagram.com/reel/DeaFHlTIbv0/",
-   "views": 80561,
-   "likes": 3822,
+   "views": 80573,
+   "likes": 3823,
    "comments": 19,
    "hook": "Fear god,not his creation💆‍♂️",
    "posted_at": "2026-10-12T20:22:00Z",
@@ -475,7 +475,7 @@
   {
    "id": "DecWJc-Ipo8",
    "url": "https://www.instagram.com/reel/DecWJc-Ipo8/",
-   "views": 75788,
+   "views": 75820,
    "likes": 3299,
    "comments": 82,
    "hook": "Fear god,not his creation💆‍♂️",
@@ -518,7 +518,7 @@
   {
    "id": "DecJogUn94T",
    "url": "https://www.instagram.com/reel/DecJogUn94T/",
-   "views": 51526,
+   "views": 51531,
    "likes": 3666,
    "comments": 66,
    "hook": "I miss cigarette smokers. They had a system: pack, lighter, pocket.",
@@ -645,7 +645,7 @@
   {
    "id": "DeRZOjXIgfC",
    "url": "https://www.instagram.com/reel/DeRZOjXIgfC/",
-   "views": 53816,
+   "views": 53827,
    "likes": 3208,
    "comments": 8,
    "hook": "🙏🏻🙏🏻",
@@ -660,7 +660,7 @@
   {
    "id": "DeRF7bRo8ep",
    "url": "https://www.instagram.com/reel/DeRF7bRo8ep/",
-   "views": 53717,
+   "views": 53726,
    "likes": 2565,
    "comments": 1,
    "hook": "Hahaha😂",
@@ -690,7 +690,7 @@
   {
    "id": "DeU_HKfoAtC",
    "url": "https://www.instagram.com/reel/DeU_HKfoAtC/",
-   "views": 49676,
+   "views": 49689,
    "likes": 451,
    "comments": 457,
    "hook": "Tag him in the comments 🫡",
@@ -705,7 +705,7 @@
   {
    "id": "DeJmkWWqT_C",
    "url": "https://www.instagram.com/reel/DeJmkWWqT_C/",
-   "views": 160656,
+   "views": 160661,
    "likes": 7050,
    "comments": 24,
    "hook": "",
@@ -713,14 +713,14 @@
    "platform": "instagram",
    "handle": "radu_rewers",
    "name": "Radu Rewers",
-   "x": 10.9,
-   "median_views": 14708,
+   "x": 11.1,
+   "median_views": 14519,
    "first_seen": "2026-10-16"
   },
   {
    "id": "DedjnvUtE9y",
    "url": "https://www.instagram.com/reel/DedjnvUtE9y/",
-   "views": 21814,
+   "views": 21830,
    "likes": 446,
    "comments": 11,
    "hook": "Would you like to train for free?",
@@ -748,7 +748,7 @@
   {
    "id": "DcjMummNmYK",
    "url": "https://www.instagram.com/reel/DcjMummNmYK/",
-   "views": 197845,
+   "views": 197846,
    "likes": 5544,
    "comments": 102,
    "hook": "At some point in your BJJ you’ll find a position or technique that just “feels” rights.",
@@ -763,16 +763,16 @@
   {
    "id": "DePfKI5MVDs",
    "url": "https://www.instagram.com/reel/DePfKI5MVDs/",
-   "views": 131837,
-   "likes": 6511,
+   "views": 131865,
+   "likes": 6512,
    "comments": 5,
    "hook": "",
    "posted_at": "2026-10-08T17:38:17Z",
    "platform": "instagram",
    "handle": "radu_rewers",
    "name": "Radu Rewers",
-   "x": 9.0,
-   "median_views": 14708,
+   "x": 9.1,
+   "median_views": 14519,
    "first_seen": "2026-10-16"
   },
   {
@@ -832,7 +832,7 @@
   {
    "id": "DPWfDVTjn7j",
    "url": "https://www.instagram.com/reel/DPWfDVTjn7j/",
-   "views": 491097,
+   "views": 491101,
    "likes": 14235,
    "comments": 420,
    "hook": "The cross block is one of my favourite defensive technique. It’s really useful in mma, boxing and even street altercation.",
@@ -847,16 +847,16 @@
   {
    "id": "DecID_9qpYn",
    "url": "https://www.instagram.com/reel/DecID_9qpYn/",
-   "views": 115315,
-   "likes": 5966,
+   "views": 115438,
+   "likes": 5973,
    "comments": 16,
    "hook": "",
    "posted_at": "2026-10-13T15:26:28Z",
    "platform": "instagram",
    "handle": "radu_rewers",
    "name": "Radu Rewers",
-   "x": 7.8,
-   "median_views": 14708,
+   "x": 8.0,
+   "median_views": 14519,
    "first_seen": "2026-10-16"
   },
   {
@@ -875,7 +875,7 @@
   {
    "id": "DeKJV-UJ77V",
    "url": "https://www.instagram.com/reel/DeKJV-UJ77V/",
-   "views": 358624,
+   "views": 358637,
    "likes": 6263,
    "comments": 12,
    "hook": "What’s your go to technique when you’re looking to land?",
@@ -929,16 +929,16 @@
   {
    "id": "DePHOhAKit2",
    "url": "https://www.instagram.com/reel/DePHOhAKit2/",
-   "views": 98717,
-   "likes": 6499,
+   "views": 98764,
+   "likes": 6503,
    "comments": 24,
    "hook": "",
    "posted_at": "2026-10-08T14:09:21Z",
    "platform": "instagram",
    "handle": "radu_rewers",
    "name": "Radu Rewers",
-   "x": 6.7,
-   "median_views": 14708,
+   "x": 6.8,
+   "median_views": 14519,
    "first_seen": "2026-10-16"
   },
   {
@@ -987,8 +987,8 @@
   {
    "id": "DeRygFjkcU2",
    "url": "https://www.instagram.com/reel/DeRygFjkcU2/",
-   "views": 19960,
-   "likes": 1215,
+   "views": 19962,
+   "likes": 1217,
    "comments": 14,
    "hook": "Send this to your vaper friends.",
    "posted_at": "2026-10-09T15:05:31Z",
@@ -1030,8 +1030,8 @@
   {
    "id": "DeZzWCBoKDb",
    "url": "https://www.instagram.com/reel/DeZzWCBoKDb/",
-   "views": 24550,
-   "likes": 1170,
+   "views": 24573,
+   "likes": 1173,
    "comments": 32,
    "hook": "Same feeling but diferent time🙏🏻",
    "posted_at": "2026-10-12T17:48:23Z",
@@ -1099,9 +1099,24 @@
    "first_seen": "2026-10-16"
   },
   {
+   "id": "DeZvDWKMvs7",
+   "url": "https://www.instagram.com/reel/DeZvDWKMvs7/",
+   "views": 77132,
+   "likes": 3188,
+   "comments": 18,
+   "hook": "",
+   "posted_at": "2026-10-12T17:09:15Z",
+   "platform": "instagram",
+   "handle": "radu_rewers",
+   "name": "Radu Rewers",
+   "x": 5.3,
+   "median_views": 14519,
+   "first_seen": "2026-10-16"
+  },
+  {
    "id": "DeOf3aFhIoZ",
    "url": "https://www.instagram.com/reel/DeOf3aFhIoZ/",
-   "views": 11617,
+   "views": 11618,
    "likes": 184,
    "comments": 26,
    "hook": "Great day out",
@@ -1127,25 +1142,10 @@
    "first_seen": "2026-10-16"
   },
   {
-   "id": "DeZvDWKMvs7",
-   "url": "https://www.instagram.com/reel/DeZvDWKMvs7/",
-   "views": 77097,
-   "likes": 3186,
-   "comments": 18,
-   "hook": "",
-   "posted_at": "2026-10-12T17:09:15Z",
-   "platform": "instagram",
-   "handle": "radu_rewers",
-   "name": "Radu Rewers",
-   "x": 5.2,
-   "median_views": 14708,
-   "first_seen": "2026-10-16"
-  },
-  {
    "id": "DecTjuukTsd",
    "url": "https://www.instagram.com/reel/DecTjuukTsd/",
-   "views": 76090,
-   "likes": 2296,
+   "views": 76114,
+   "likes": 2298,
    "comments": 11,
    "hook": "",
    "posted_at": "2026-10-13T17:06:37Z",
@@ -1153,13 +1153,13 @@
    "handle": "radu_rewers",
    "name": "Radu Rewers",
    "x": 5.2,
-   "median_views": 14708,
+   "median_views": 14519,
    "first_seen": "2026-10-16"
   },
   {
    "id": "DO_QxFVjvu2",
    "url": "https://www.instagram.com/reel/DO_QxFVjvu2/",
-   "views": 305274,
+   "views": 305275,
    "likes": 8760,
    "comments": 53,
    "hook": "The ruotolobrothersjiujitsu showed me this half guard trick to fight pressure, I’ve been loving using it ever since. This is by far my favou",
@@ -1204,7 +1204,7 @@
   {
    "id": "DbdjpxKuUBp",
    "url": "https://www.instagram.com/reel/DbdjpxKuUBp/",
-   "views": 249737,
+   "views": 249762,
    "likes": 380,
    "comments": 102,
    "hook": "This is what I wish I knew when I first started… 👇",
@@ -1219,7 +1219,7 @@
   {
    "id": "DZpZcsSR5Pz",
    "url": "https://www.instagram.com/reel/DZpZcsSR5Pz/",
-   "views": 244146,
+   "views": 244154,
    "likes": 379,
    "comments": 31,
    "hook": "Here’s what a Muay Thai Vacations retreat looks like 👇",
@@ -1286,7 +1286,7 @@
   {
    "id": "DeUQczqgRKZ",
    "url": "https://www.instagram.com/reel/DeUQczqgRKZ/",
-   "views": 14350,
+   "views": 14351,
    "likes": 732,
    "comments": 45,
    "hook": "My dad built a kayak with a lawn-mower engine and drove it around False Creek. I thought it was embarrassing. Now I kind of get it.",
@@ -1314,8 +1314,8 @@
   {
    "id": "Dee52LqIgAW",
    "url": "https://www.instagram.com/reel/Dee52LqIgAW/",
-   "views": 18559,
-   "likes": 588,
+   "views": 18591,
+   "likes": 589,
    "comments": 27,
    "hook": "🥲🥲",
    "posted_at": "2026-10-14T17:19:56Z",
@@ -1400,7 +1400,7 @@
   {
    "id": "DePd8d1Iwoi",
    "url": "https://www.instagram.com/reel/DePd8d1Iwoi/",
-   "views": 17342,
+   "views": 17346,
    "likes": 776,
    "comments": 43,
    "hook": "Let go of whatever was and walk into what is🙏🏻☝🏻",
@@ -1430,7 +1430,7 @@
   {
    "id": "DeXE0_GhWYB",
    "url": "https://www.instagram.com/reel/DeXE0_GhWYB/",
-   "views": 8966,
+   "views": 8968,
    "likes": 149,
    "comments": 24,
    "hook": "WESTERN BOXING HAS FOUND ITS NEW HOME!",
@@ -1514,7 +1514,7 @@
   {
    "id": "DeUlld0IAuu",
    "url": "https://www.instagram.com/reel/DeUlld0IAuu/",
-   "views": 14489,
+   "views": 14490,
    "likes": 499,
    "comments": 22,
    "hook": "When the whole gym wants to test you😂",
@@ -1544,8 +1544,8 @@
   {
    "id": "DeW8QcojZ-t",
    "url": "https://www.instagram.com/reel/DeW8QcojZ-t/",
-   "views": 10683,
-   "likes": 507,
+   "views": 10684,
+   "likes": 508,
    "comments": 7,
    "hook": "Send this to your vaper friends.",
    "posted_at": "2026-10-11T15:06:57Z",
@@ -1587,6 +1587,21 @@
    "first_seen": "2026-10-16"
   },
   {
+   "id": "DehVOqBoB2K",
+   "url": "https://www.instagram.com/reel/DehVOqBoB2K/",
+   "views": 13632,
+   "likes": 283,
+   "comments": 11,
+   "hook": "Being nervous before your first fight is completely normal. I still get nervous myself, and honestly, that’s not a bad thing.",
+   "posted_at": "2026-10-15T15:57:39Z",
+   "platform": "instagram",
+   "handle": "brezojr",
+   "name": "Brezo Jr",
+   "x": 3.3,
+   "median_views": 4150,
+   "first_seen": "2026-10-16"
+  },
+  {
    "id": "WGOL4wvj3Fs",
    "url": "https://www.youtube.com/shorts/WGOL4wvj3Fs",
    "views": 142000,
@@ -1602,7 +1617,7 @@
   {
    "id": "DecYte7qkOy",
    "url": "https://www.instagram.com/reel/DecYte7qkOy/",
-   "views": 47076,
+   "views": 47084,
    "likes": 2020,
    "comments": 17,
    "hook": "",
@@ -1611,28 +1626,13 @@
    "handle": "radu_rewers",
    "name": "Radu Rewers",
    "x": 3.2,
-   "median_views": 14708,
-   "first_seen": "2026-10-16"
-  },
-  {
-   "id": "DehVOqBoB2K",
-   "url": "https://www.instagram.com/reel/DehVOqBoB2K/",
-   "views": 13127,
-   "likes": 272,
-   "comments": 11,
-   "hook": "Being nervous before your first fight is completely normal. I still get nervous myself, and honestly, that’s not a bad thing.",
-   "posted_at": "2026-10-15T15:57:39Z",
-   "platform": "instagram",
-   "handle": "brezojr",
-   "name": "Brezo Jr",
-   "x": 3.2,
-   "median_views": 4150,
+   "median_views": 14519,
    "first_seen": "2026-10-16"
   },
   {
    "id": "DeOowEOtt4j",
    "url": "https://www.instagram.com/reel/DeOowEOtt4j/",
-   "views": 6912,
+   "views": 6913,
    "likes": 81,
    "comments": 8,
    "hook": "I checked out the brand new UNMISSABLE ludus.gymfitness complex on the world famous fitness street (Soi ta-eid) to see if I could do 5 class",
