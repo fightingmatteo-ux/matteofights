@@ -1,11 +1,14 @@
 {
-  "updated": "2026-10-15T18:25:38Z",
+  "updated": "2026-10-15T18:40:05Z",
   "platforms": {
     "instagram": {
       "followers": 2030,
       "last_post": "2026-10-15T00:40:07Z",
       "failed": [],
       "next_slot": "2026-10-15T22:30:00Z",
+      "plan_per_day": 2,
+      "plan_mix": "2 trial reels",
+      "posted_7d": 3,
       "token_expires": "2026-12-13",
       "warn": null
     },
@@ -16,6 +19,9 @@
       "failed": [],
       "errors": [],
       "next_slot": "2026-10-15T23:30:00Z",
+      "plan_per_day": 3,
+      "plan_mix": "2 reels + 1 slide album",
+      "posted_7d": 0,
       "token_expires": null,
       "warn": null
     },
@@ -26,6 +32,9 @@
       "failed": [],
       "errors": [],
       "next_slot": "2026-10-15T19:30:00Z",
+      "plan_per_day": 5,
+      "plan_mix": "2 reels + 3 written posts",
+      "posted_7d": 0,
       "token_expires": "2026-12-14",
       "warn": null
     },
@@ -35,15 +44,18 @@
       "failed": [],
       "errors": [],
       "next_slot": "2026-10-15T23:00:00Z",
-      "privacy": "private",
+      "privacy": "public",
+      "plan_per_day": 2,
+      "plan_mix": "2 Shorts",
+      "posted_7d": 0,
       "token_expires": null,
-      "warn": "Uploads are private until the YouTube audit passes"
+      "warn": null
     }
   },
   "posts": {
     "freeze-A": {
       "instagram": {
-        "views": 2647,
+        "views": 2648,
         "likes": 61,
         "comments": 0,
         "shares": 13,
@@ -63,7 +75,7 @@
     },
     "freeze-C": {
       "instagram": {
-        "views": 4003,
+        "views": 4013,
         "likes": 86,
         "comments": 0,
         "shares": 7,
