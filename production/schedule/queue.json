@@ -80,7 +80,8 @@
       "not_before": "2026-10-16T17:00:00Z",
       "min_gap_hours": 2.5,
       "approved": false,
-      "status": "queued"
+      "status": "queued",
+      "rotate": 90
     },
     {
       "id": "lst-2026-10-17-mentally-tougher",
@@ -96,7 +97,8 @@
       "not_before": "2026-10-17T17:00:00Z",
       "min_gap_hours": 2.5,
       "approved": false,
-      "status": "queued"
+      "status": "queued",
+      "rotate": 90
     },
     {
       "id": "lst-2026-10-18-calm-without-experience",

@@ -43,7 +43,7 @@ def has_audio(clip):
     return bool(ff(["-select_streams", "a", "-show_entries", "stream=index", "-of", "csv=p=0", str(clip)]))
 
 
-def best_window(clip, dur, length):
+def best_window(clip, dur, length, turn=""):
     """(start time, row motion) of the most active, steady `length`-second stretch.
 
     Row motion = how much movement each of 64 horizontal bands of the OUTPUT frame has in that window;
@@ -53,7 +53,7 @@ def best_window(clip, dur, length):
     someone walking past the lens) are clipped so they can't win; the first/last second is avoided."""
     w, h, rate = 36, 64, 5
     raw = subprocess.run(["ffmpeg", "-v", "error", "-i", str(clip), "-vf",
-                          f"fps={rate},scale={w}:{h}:force_original_aspect_ratio=increase,crop={w}:{h},format=gray", "-f", "rawvideo", "-"],
+                          f"{turn}fps={rate},scale={w}:{h}:force_original_aspect_ratio=increase,crop={w}:{h},format=gray", "-f", "rawvideo", "-"],
                          capture_output=True).stdout
     n = w * h
     frames = [raw[i:i + n] for i in range(0, len(raw) - n + 1, n)]
@@ -173,13 +173,18 @@ def cta_layer(base=1440):
 
 
 # ---------------------------------------------------------------- render
-def render(clip, hook_id, out, seconds=8.0, cover=None, music_i=0):
+TURN = {0: "", 90: "transpose=1,", -90: "transpose=2,", 180: "hflip,vflip,"}
+
+
+def render(clip, hook_id, out, seconds=8.0, cover=None, music_i=0, rotate=0):
+    """rotate: extra clockwise turn for phone clips saved sideways without rotation metadata (90, -90, 180)."""
     hooks = {h["id"]: h for h in json.loads(HOOKS.read_text(encoding="utf-8"))["hooks"]}
     h = hooks[hook_id]
     dur = float(ff(["-show_entries", "format=duration", "-of", "csv=p=0", str(clip)]) or 0)
     S = min(seconds, max(1.0, dur - LOOP_X)) if dur else seconds
     X = min(LOOP_X, S / 4)
-    start, row_motion = best_window(clip, dur, S + X)
+    turn = TURN[rotate]
+    start, row_motion = best_window(clip, dur, S + X, turn)
     cta_in, cta_out = max(0.0, S - 3.4), S - 0.35
 
     trc, rng = probe(clip, "stream=color_transfer"), probe(clip, "stream=color_range")
@@ -209,7 +214,7 @@ def render(clip, hook_id, out, seconds=8.0, cover=None, music_i=0):
                "-loop", "1", "-framerate", str(FPS), "-i", str(cp)]
         vf = (
             # footage: colour-correct, fill 9:16, 30 fps, a touch darker so red text reads on it
-            f"[0:v]{tm}scale={W}:{H}:force_original_aspect_ratio=increase:flags=lanczos,crop={W}:{H},fps={FPS},"
+            f"[0:v]{turn}{tm}scale={W}:{H}:force_original_aspect_ratio=increase:flags=lanczos,crop={W}:{H},fps={FPS},"
             f"eq=brightness=-0.06:saturation=0.92,format=yuv420p,setpts=PTS-STARTPTS,split[s1][s2];"
             # seamless loop: body = [X, S+X); its tail crossfades into the window's first X seconds
             f"[s1]trim=start={X:.3f}:duration={S:.3f},setpts=PTS-STARTPTS[body];"
@@ -251,5 +256,6 @@ if __name__ == "__main__":
     p.add_argument("clip"); p.add_argument("hook_id"); p.add_argument("out")
     p.add_argument("--cover"); p.add_argument("--seconds", type=float, default=8.0)
     p.add_argument("--music", type=int, default=0, help="index into the music tracks")
+    p.add_argument("--rotate", type=int, default=0, choices=sorted(TURN), help="clockwise fix for sideways clips")
     a = p.parse_args()
-    print(render(a.clip, a.hook_id, a.out, a.seconds, a.cover, a.music))
+    print(render(a.clip, a.hook_id, a.out, a.seconds, a.cover, a.music, a.rotate))

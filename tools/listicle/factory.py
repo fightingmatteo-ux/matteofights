@@ -133,7 +133,7 @@ def rerender(seconds):
         if not local.exists():
             run("rclone", "backend", "copyid", "gdrive:", clip_id, str(local))
         folder = ROOT / Path(item["caption_file"]).parent
-        render(local, h["id"], work / item["video_asset"], seconds, folder / "cover.jpg", n)
+        render(local, h["id"], work / item["video_asset"], seconds, folder / "cover.jpg", n, item.get("rotate", 0))
         run("gh", "release", "upload", "media", str(work / item["video_asset"]), "--clobber", "-R", REPO)
         run("rclone", "copyto", str(work / item["video_asset"]), f"gdrive:listicles/{item['video_asset']}",
             "--drive-root-folder-id", OUT_FOLDER)
