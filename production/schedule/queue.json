@@ -64,8 +64,7 @@
       "not_before": "2026-10-15T17:00:00Z",
       "min_gap_hours": 2.5,
       "approved": false,
-      "status": "queued",
-      "app_audio": "Echo Sax - Caleb Arredondo (add in the Instagram app)"
+      "status": "queued"
     },
     {
       "id": "lst-2026-10-16-mindset-without-a-fight",
@@ -82,8 +81,7 @@
       "min_gap_hours": 2.5,
       "approved": false,
       "status": "queued",
-      "rotate": 90,
-      "app_audio": "Echo Sax - Caleb Arredondo (add in the Instagram app)"
+      "rotate": 90
     },
     {
       "id": "lst-2026-10-17-mentally-tougher",
@@ -100,8 +98,7 @@
       "min_gap_hours": 2.5,
       "approved": false,
       "status": "queued",
-      "rotate": -90,
-      "app_audio": "Echo Sax - Caleb Arredondo (add in the Instagram app)"
+      "rotate": -90
     },
     {
       "id": "lst-2026-10-18-calm-without-experience",
@@ -117,8 +114,7 @@
       "not_before": "2026-10-18T17:00:00Z",
       "min_gap_hours": 2.5,
       "approved": false,
-      "status": "queued",
-      "app_audio": "Echo Sax - Caleb Arredondo (add in the Instagram app)"
+      "status": "queued"
     },
     {
       "id": "lst-2026-10-19-made-for-combat-sports",
@@ -134,8 +130,7 @@
       "not_before": "2026-10-19T17:00:00Z",
       "min_gap_hours": 2.5,
       "approved": false,
-      "status": "queued",
-      "app_audio": "Echo Sax - Caleb Arredondo (add in the Instagram app)"
+      "status": "queued"
     },
     {
       "id": "lst-2026-10-20-dangerous-without-a-partner",
@@ -151,8 +146,7 @@
       "not_before": "2026-10-20T17:00:00Z",
       "min_gap_hours": 2.5,
       "approved": false,
-      "status": "queued",
-      "app_audio": "Echo Sax - Caleb Arredondo (add in the Instagram app)"
+      "status": "queued"
     },
     {
       "id": "lst-2026-10-21-started-late",
@@ -168,8 +162,7 @@
       "not_before": "2026-10-21T17:00:00Z",
       "min_gap_hours": 2.5,
       "approved": false,
-      "status": "queued",
-      "app_audio": "Echo Sax - Caleb Arredondo (add in the Instagram app)"
+      "status": "queued"
     },
     {
       "id": "lst-2026-10-15-technique-without-a-coach",
@@ -186,8 +179,7 @@
       "not_before": "2026-10-15T20:00:00Z",
       "min_gap_hours": 2.5,
       "approved": false,
-      "status": "queued",
-      "app_audio": "Echo Sax - Caleb Arredondo (add in the Instagram app)"
+      "status": "queued"
     },
     {
       "id": "lst-2026-10-16-no-ex-fighter",
@@ -204,8 +196,7 @@
       "not_before": "2026-10-16T20:00:00Z",
       "min_gap_hours": 2.5,
       "approved": false,
-      "status": "queued",
-      "app_audio": "Echo Sax - Caleb Arredondo (add in the Instagram app)"
+      "status": "queued"
     },
     {
       "id": "lst-2026-10-17-fighter-without-a-record",
@@ -222,8 +213,7 @@
       "not_before": "2026-10-17T20:00:00Z",
       "min_gap_hours": 2.5,
       "approved": false,
-      "status": "queued",
-      "app_audio": "Echo Sax - Caleb Arredondo (add in the Instagram app)"
+      "status": "queued"
     },
     {
       "id": "lst-2026-10-18-last-round",
@@ -240,8 +230,7 @@
       "not_before": "2026-10-18T20:00:00Z",
       "min_gap_hours": 2.5,
       "approved": false,
-      "status": "queued",
-      "app_audio": "Echo Sax - Caleb Arredondo (add in the Instagram app)"
+      "status": "queued"
     },
     {
       "id": "lst-2026-10-19-power-without-weights",
@@ -258,8 +247,7 @@
       "not_before": "2026-10-19T20:00:00Z",
       "min_gap_hours": 2.5,
       "approved": false,
-      "status": "queued",
-      "app_audio": "Echo Sax - Caleb Arredondo (add in the Instagram app)"
+      "status": "queued"
     },
     {
       "id": "lst-2026-10-20-go-anyway",
@@ -276,8 +264,7 @@
       "not_before": "2026-10-20T20:00:00Z",
       "min_gap_hours": 2.5,
       "approved": false,
-      "status": "queued",
-      "app_audio": "Echo Sax - Caleb Arredondo (add in the Instagram app)"
+      "status": "queued"
     },
     {
       "id": "lst-2026-10-21-about-to-level-up",
@@ -294,8 +281,7 @@
       "not_before": "2026-10-21T20:00:00Z",
       "min_gap_hours": 2.5,
       "approved": false,
-      "status": "queued",
-      "app_audio": "Echo Sax - Caleb Arredondo (add in the Instagram app)"
+      "status": "queued"
     }
   ]
 }

@@ -33,12 +33,13 @@ python -P tools/listicle/render.py <clip> <hook id> out.mp4 --cover cover.jpg   
 Music: the tracks in `production/reels/five-signs-real-fighter/assets/music/`, rotated. Gym sound stays underneath at 35%.
 When the backlog has no `ready` hooks left, the factory stops and says so. Ask Claude for the next batch.
 
-## Trending audio (default since 2026-10-15)
-The API can't attach a sound from Instagram's library, and burning a commercial track into the file doesn't
-link the reel to the sound's page (and risks a mute). So by default the factory renders **without a music bed**
-(gym sound only) and marks each queue item `app_audio`. The Post queue skips those: Matteo posts them in the app
-as a trial reel, adds the sound (`--audio`, default Echo Sax by Caleb Arredondo), and turns the original audio down.
-`--audio ''` brings back the old behaviour (our own music, auto-posted).
+## Audio + posting (since 2026-10-15)
+The API can't attach Instagram library sounds, so trial reels carry royalty-free music in the file and the
+**Post queue posts them automatically** (after Matteo's one weekly yes via approve.py). Trending sounds are used
+where they matter: when a trial reel hits ~2x the account's normal views at 72 h, Claude flags it and suggests a
+fitting trending sound; Matteo re-posts that winner to the grid from the app with the sound (1-2 a week).
+`--audio "<sound>"` still exists for the manual route (renders without music, Post queue skips the item).
+Two factory runs every Sunday: 09:00 UTC for the 17:00 slot, 09:40 UTC for the 20:00 slot (14 reels/week).
 
 ## Look (since 2026-10-15, copied from the 398k / 162k reels)
 Instagram's native text style: red bold serif hook, each line on its own rounded black highlight, centred in
