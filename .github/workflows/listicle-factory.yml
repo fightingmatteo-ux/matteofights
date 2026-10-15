@@ -19,6 +19,9 @@ on:
         description: Re-render the queued, unapproved listicles in place (after a render change)
         type: boolean
         default: false
+      only:
+        description: With rerender, only these queue ids (comma-separated)
+        default: ""
 
 permissions:
   contents: write   # commit hooks/state/queue + captions/covers
@@ -49,7 +52,8 @@ jobs:
           COUNT: ${{ inputs.count || '7' }}
           SLOT: ${{ inputs.slot || '17:00' }}
           RERENDER: ${{ inputs.rerender && '--rerender' || '' }}
-        run: python3 -P tools/listicle/factory.py --count "$COUNT" --slot "$SLOT" $RERENDER
+          ONLY: ${{ inputs.only || '' }}
+        run: python3 -P tools/listicle/factory.py --count "$COUNT" --slot "$SLOT" --only "$ONLY" $RERENDER
       - name: Commit
         if: always()
         run: |

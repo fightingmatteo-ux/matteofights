@@ -69,11 +69,12 @@ def main():
     p.add_argument("--seconds", type=float, default=8.0)
     p.add_argument("--audio", default="Echo Sax - Caleb Arredondo",
                    help="Instagram library sound Matteo adds in the app ('' = burn in our own music and auto-post)")
+    p.add_argument("--only", default="", help="with --rerender: comma-separated queue ids to rebuild")
     p.add_argument("--rerender", action="store_true",
                    help="re-render the queued, not-yet-approved listicles in place (same hook, clip and day)")
     a = p.parse_args()
     if a.rerender:
-        return rerender(a.seconds)
+        return rerender(a.seconds, {x.strip() for x in a.only.split(',') if x.strip()})
 
     hooks, state, queue = load(HOOKS, None), load(STATE, {"clip_uses": {}, "last_clip": None, "music_i": 0}), load(QUEUE, None)
     todo = [h for h in hooks["hooks"] if h.get("status") == "ready"][: a.count]
@@ -124,13 +125,14 @@ def main():
         print(f"{qid}: {h['hook']} | clip {clip['Name']} | posts {slot:%a %d %b %H:%M} UTC once approved", flush=True)
 
 
-def rerender(seconds):
+def rerender(seconds, only=()):
     """After a render.py change: rebuild every queued, unapproved lst-* item with its own hook and clip."""
     hooks, queue = load(HOOKS, None), load(QUEUE, None)
     by_q = {h.get("queue_id"): h for h in hooks["hooks"]}
     work = ROOT / "media" / "listicles"
     work.mkdir(parents=True, exist_ok=True)
-    items = [i for i in queue["items"] if i["id"].startswith("lst-") and not i.get("approved") and i["status"] == "queued"]
+    items = [i for i in queue["items"] if i["id"].startswith("lst-") and not i.get("approved") and i["status"] == "queued"
+             and (not only or i["id"] in only)]
     for n, item in enumerate(items):
         h, clip_id = by_q[item["id"]], item["clip"].rsplit("(", 1)[1].rstrip(")")
         local = work / f"{clip_id}{Path(item['clip'].split(' (')[0]).suffix}"
