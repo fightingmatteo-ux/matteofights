@@ -1,47 +1,72 @@
-# Control center setup (one time, ~20 min, free)
+# Control center: how it is set up
 
-Site: `control.matteofights.me` (Cloudflare Pages, login-protected). Bot: Telegram. Both drive the
-`Control` GitHub workflow; nothing runs on your laptop. Tokens go into Cloudflare/GitHub settings, never into chat.
+Live since 2026-10-15. Site `https://control.matteofights.me` (Cloudflare Pages + Access login), bot
+`@matteofights_control_bot` (Telegram). Both start the `Control` GitHub workflow; nothing runs on the laptop.
+Tokens live in Cloudflare / GitHub secrets and in `secrets/control.env` (gitignored), never in the repo or chat.
 
-## 1. Cloudflare + domain
-1. Sign up at dash.cloudflare.com (free plan) → **Add a domain** → `matteofights.me`.
-2. Cloudflare imports your DNS records. Check the GitHub Pages ones are there (the `A` records
-   185.199.108–111.153 and/or the `CNAME` for `www`). Set them to **DNS only** (grey cloud).
-3. At your domain registrar, replace the nameservers with the two Cloudflare gives you. Wait for "Active".
+## How the pieces connect
 
-## 2. Telegram bot
-1. In Telegram, open **@BotFather** → `/newbot` → name it (e.g. *Matteo Control*) → copy the **bot token**.
-2. Make up a long random **webhook secret** (letters/numbers only, 30+ chars). Keep it for step 3 and 5.
+```
+dashboard button ─► /api/act (Pages Function, checks Access JWT + OWNER_EMAIL) ─┐
+Telegram message ─► /api/telegram (checks secret header + TELEGRAM_CHAT_ID) ────┴► GitHub "Control" workflow
+   └─ control.py act → commits production/control + queue.json → control.py notify → Telegram reply
+push to master / Control / Post queue / Listicle factory / Post trial reel finished
+   └─► "Deploy control center" workflow: build_data.py → wrangler pages deploy (site + Functions)
+```
 
-## 3. Pages project
-1. Cloudflare → **Workers & Pages → Create → Pages → Connect to Git** → pick `matteofights`.
-2. Production branch `master`. Root directory `control-site`. Build command
-   `python3 ../tools/control/build_data.py`. Output directory `public`.
-3. **Settings → Variables and secrets** (Production), add:
+Deploys come from `.github/workflows/control-deploy.yml`, not from Cloudflare's Git integration, so the data
+(`data.json`, covers) is rebuilt from the repo on every push and after every workflow that changes `production/`.
+Manual redeploy: Actions → **Deploy control center** → Run workflow (or `gh workflow run control-deploy.yml`).
+
+## Cloudflare (account `849fbd13419572f8d5e345f23dd3de11`, fightingmatteo@gmail.com)
+
+- **DNS:** `matteofights.me` zone on Cloudflare (nameservers `derek`/`melinda.ns.cloudflare.com`, set at
+  Namecheap). GitHub Pages records are **DNS only**: apex A 185.199.108–111.153, `www` CNAME
+  `fightingmatteo-ux.github.io`. Namecheap mail-forwarding MX + SPF copied over. `control` CNAME
+  `matteo-control.pages.dev` (proxied).
+- **Pages project `matteo-control`**, production branch `master`, custom domain `control.matteofights.me`.
+  Secrets (Settings → Variables and secrets):
 
 | Name | Value |
 |---|---|
-| `GITHUB_TOKEN` | Fine-grained token (github.com → Settings → Developer settings): only repo `matteofights`, permission **Actions: Read and write** |
+| `GITHUB_TOKEN` | fine-grained PAT `matteo-control`: only repo `matteofights`, **Actions: Read and write** |
 | `GITHUB_REPO` | `fightingmatteo-ux/matteofights` |
-| `OWNER_EMAIL` | your login email |
-| `ACCESS_TEAM` | your Zero Trust team name (step 4), e.g. `matteo` |
-| `ACCESS_AUD` | the Application Audience (AUD) tag (step 4) |
-| `TELEGRAM_BOT_TOKEN` | bot token from step 2 |
-| `TELEGRAM_WEBHOOK_SECRET` | secret from step 2 |
-| `TELEGRAM_CHAT_ID` | leave empty for now (step 5) |
+| `OWNER_EMAIL` | `fightingmatteo@gmail.com` |
+| `ACCESS_TEAM` | `small-pond-1c50` |
+| `ACCESS_AUD` | AUD tag of the "Matteo control center" Access app |
+| `TELEGRAM_BOT_TOKEN` | bot token |
+| `TELEGRAM_WEBHOOK_SECRET` | random secret, also sent by Telegram as `X-Telegram-Bot-Api-Secret-Token` |
+| `TELEGRAM_CHAT_ID` | `6698804992` |
 
-4. **Custom domains** → add `control.matteofights.me`. Redeploy.
+  Pages secrets only apply to the next deployment: redeploy after changing one.
+- **Zero Trust / Access** (team `small-pond-1c50`, Free plan), login method **One-time PIN**:
+  - App **Matteo control center**: `control.matteofights.me`, `matteo-control.pages.dev`,
+    `*.matteo-control.pages.dev`; policy Allow, email `fightingmatteo@gmail.com`; 30-day session.
+  - App **Matteo control: Telegram webhook**: `control.matteofights.me/api/telegram`, policy **Bypass** (Everyone).
+    Telegram can't log in; the function rejects requests without the secret header (403).
 
-## 4. Login (Cloudflare Access, free up to 50 users)
-1. Cloudflare → **Zero Trust** → pick a team name → free plan.
-2. **Access → Applications → Add → Self-hosted**: domain `control.matteofights.me`, policy **Allow**,
-   include **Emails** = your email (one-time code login). Copy the **AUD tag** into `ACCESS_AUD`.
-3. Add a second self-hosted application for `control.matteofights.me/api/telegram` with policy
-   action **Bypass**, include **Everyone** (Telegram can't log in; that endpoint checks the secret instead).
+## GitHub Actions secrets
 
-## 5. Connect Telegram
-1. In a browser open (fill in your values):
-   `https://api.telegram.org/bot<BOT_TOKEN>/setWebhook?url=https://control.matteofights.me/api/telegram&secret_token=<WEBHOOK_SECRET>`
-2. Message your bot `/start`. It replies with your **chat id**. Put it in Pages `TELEGRAM_CHAT_ID` and redeploy.
-3. GitHub repo → Settings → Secrets → Actions: add `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID` (same values).
-4. Send the bot any text: it becomes an idea, and the bot confirms after the Control workflow saves it.
+`CLOUDFLARE_API_TOKEN` (deploy-only token, **Pages: Edit** on this account), `CLOUDFLARE_ACCOUNT_ID`,
+`TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`.
+
+## Local `secrets/control.env`
+
+`TELEGRAM_BOT_TOKEN`, `TELEGRAM_WEBHOOK_SECRET`, `TELEGRAM_CHAT_ID`, `GITHUB_TOKEN`,
+`CLOUDFLARE_API_TOKEN` (admin token `matteo-control-setup`: Pages, Access apps/policies + orgs/IdPs, Zone, DNS,
+API Tokens; used for setup and changes, never stored in GitHub), `CLOUDFLARE_DEPLOY_TOKEN` (same value as the
+GitHub secret).
+
+## Common jobs
+
+- **Re-register the Telegram webhook** (new bot token or secret): call
+  `https://api.telegram.org/bot<TOKEN>/setWebhook` with `url=https://control.matteofights.me/api/telegram`,
+  `secret_token=<TELEGRAM_WEBHOOK_SECRET>`, `allowed_updates=["message","callback_query"]`; check
+  `getWebhookInfo` shows no `last_error_message`.
+- **Rotate the bot token** (@BotFather → `/revoke`): update it in `secrets/control.env`, the Pages secret and the
+  GitHub secret, redeploy, then re-register the webhook.
+- **Rotate `GITHUB_TOKEN`**: new fine-grained PAT with the same scope → Pages secret → redeploy.
+- **Change the chat**: clear `TELEGRAM_CHAT_ID` in Pages and redeploy; `/start` then replies with the new chat id.
+- **Check it works**: logged out, `control.matteofights.me` redirects to `small-pond-1c50.cloudflareaccess.com`;
+  `POST /api/telegram` without the header answers 403; a text to the bot runs **Control** green and replies
+  "💡 Saved…".
