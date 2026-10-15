@@ -433,3 +433,15 @@ body:has(.undo:not([hidden])) .toast { bottom: 96px; } }
   .hold .fill, .hold .prog { transition: transform .25s linear; }
   .hold.holding .fill, .hold.holding .prog { transition: transform 1.2s linear; }
 }
+
+/* Threads posts waiting for a yes (Decide) */
+.threads .lede { margin-bottom: var(--s2); }
+.threads .rd { font-size: 13px; font-weight: 600; color: var(--dust); padding: var(--s4) 0 var(--s2); }
+.tposts { list-style: none; margin: 0; padding: 0; }
+.tposts > li { display: grid; grid-template-columns: 64px 1fr; gap: var(--s3); padding: var(--s3) 0; border-top: 1px solid color-mix(in srgb, var(--rule) 70%, transparent); }
+.tposts time { font-size: 13px; color: var(--dust); padding-top: 2px; font-variant-numeric: tabular-nums; }
+.tposts .t { white-space: pre-wrap; max-width: 60ch; }
+.tposts .m { display: flex; flex-wrap: wrap; gap: var(--s3); align-items: center; font-size: 13px; color: var(--dust); margin-top: var(--s2); }
+.tposts .chain { margin: var(--s2) 0 0; padding-left: var(--s4); border-left: 2px solid var(--rule-hi); list-style: none; display: grid; gap: var(--s2); }
+.tposts .chain li { white-space: pre-wrap; color: var(--dust); max-width: 58ch; }
+@media (max-width: 480px) { .tposts > li { grid-template-columns: 1fr; gap: var(--s1, 4px); } }

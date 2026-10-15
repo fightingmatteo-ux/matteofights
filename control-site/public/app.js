@@ -107,6 +107,10 @@ const countdown = (iso) => {
 function pending() {
   return D.reels.filter((r) => r.state === "needs_yes" && r.id.startsWith("lst-")).sort(byTime);
 }
+// written Threads posts (tools/crosspost) waiting for a yes, still in the future
+function pendingThreads() {
+  return (D.threads_posts || []).filter((p) => p.status === "queued" && !p.approved && new Date(p.at) > Date.now()).sort((a, b) => (a.at > b.at ? 1 : -1));
+}
 function nextPost() {
   return D.reels.filter((r) => r.state === "scheduled" && r.time && new Date(r.time) > Date.now() - 6e5).sort(byTime)[0];
 }
@@ -119,15 +123,19 @@ function phase() {
   const P = pending().length && !sent.has("approve_week");
   const recentFail = D.reels.some((r) => r.state === "failed" && r.time && Date.now() - new Date(r.time) < 3 * 864e5);
   const recentWin = D.reels.some((r) => isWin(r) && Date.now() - new Date(r.posted_at || r.time) < 7 * 864e5);
-  if (P) return { cls: "red", txt: "Yes waiting" };
+  if (P || (pendingThreads().length && !sent.has("approve_threads"))) return { cls: "red", txt: "Yes waiting" };
   if (recentFail) return { cls: "red", txt: "A post failed" };
   if (recentWin) return { cls: "gold", txt: "Winner this week" };
   return { cls: "", txt: "All clear" };
 }
 
-function holdBtn(count, hint) {
-  const done = sent.has("approve_week");
-  return `<button class="btn hold ${done ? "done" : ""}" data-hold ${done ? "disabled" : ""} aria-describedby="${hint}"><span class="fill"></span><span class="lbl">${done ? "Approved" : `Hold to approve ${count}`}</span><span class="prog"></span></button>`;
+const HOLD = {
+  week: { key: "approve_week", count: () => pending().length },
+  threads: { key: "approve_threads", count: () => pendingThreads().length },
+};
+function holdBtn(count, hint, kind = "week") {
+  const done = sent.has(HOLD[kind].key);
+  return `<button class="btn hold ${done ? "done" : ""}" data-hold="${kind}" ${done ? "disabled" : ""} aria-describedby="${hint}"><span class="fill"></span><span class="lbl">${done ? "Approved" : `Hold to approve ${count}`}</span><span class="prog"></span></button>`;
 }
 
 function clock() {
@@ -220,8 +228,18 @@ function weekList() {
   return h + `</ul>`;
 }
 
+function threadsWaiting() {
+  const T = pendingThreads();
+  if (!T.length || sent.has("approve_threads")) return "";
+  return `<section class="waiting" aria-labelledby="tw-h">
+    <div class="top"><h2 class="h2" id="tw-h">${T.length} Threads posts need your yes</h2></div>
+    <p class="range">${F.short.format(new Date(T[0].at))} to ${F.short.format(new Date(T[T.length - 1].at))}, New York time</p>
+    <div class="row"><button class="btn line" data-goto="decide">Read and approve</button></div>
+  </section>`;
+}
+
 function home() {
-  return `<div class="home"><div class="left">${clock()}${waiting()}${splits()}</div><section class="right" aria-labelledby="fc-h">${weekList()}</section></div>`;
+  return `<div class="home"><div class="left">${clock()}${waiting()}${threadsWaiting()}${splits()}</div><section class="right" aria-labelledby="fc-h">${weekList()}</section></div>`;
 }
 
 // ---------------------------------------------------------------- reels
@@ -311,7 +329,8 @@ function decide() {
           <div class="opts" role="group" aria-labelledby="q-${esc(q.id)}">${(q.options || []).map((o, k) => `<button class="opt ${pick === k ? "picked" : ""}" data-q="${esc(q.id)}" data-k="${k}" aria-pressed="${pick === k}" ${sentK ? "disabled" : ""}>${esc(o)}</button>`).join("")}</div>
           ${sentK ? `<p class="sent-note">Answer sent.</p>` : ""}</section>`;
       }).join("")
-    : `<p class="empty-note">Nothing to decide right now.</p>`;
+    : pendingThreads().length ? "" : `<p class="empty-note">Nothing to decide right now.</p>`;
+  h += threadsSection();
   h += `<section class="section" aria-labelledby="i-h"><div class="head"><h2 class="h2" id="i-h">Ideas for Claude</h2></div>
     <label class="field" for="idea">What should Claude try?</label>
     <textarea id="idea" placeholder="A hook you thought of, a format you saw, more nutrition, stop using a clip"></textarea>
@@ -324,6 +343,35 @@ function decide() {
       <p class="m"><span class="answered">${esc(q.answer)}</span>, ${ago(q.answered_at)}${q.via ? ` from ${esc(q.via)}` : ""}</p></div>`).join("")}</section>`;
   }
   return h;
+}
+
+const KIND = { take: "Hot take", question: "Question", tip: "Tip", story: "Lesson", chain: "Thread" };
+function threadsSection() {
+  const T = pendingThreads();
+  const set = (D.threads_posts || []).filter((p) => p.status === "queued" && p.approved && new Date(p.at) > Date.now());
+  if (!T.length && !set.length) return "";
+  const done = sent.has("approve_threads");
+  const post = (p, st) => `<li><time datetime="${esc(p.at)}">${t12(p.at)}</time><div><p class="t">${esc(p.text)}</p>
+      ${(p.chain || []).length ? `<ol class="chain">${p.chain.map((c) => `<li>${esc(c)}</li>`).join("")}</ol>` : ""}
+      <p class="m">${KIND[p.kind] || esc(p.kind)}${p.topic ? `, ${esc(p.topic)}` : ""} <span class="st ${st}">${LABEL[st]}</span></p></div></li>`;
+  const byDay = (list, st) => {
+    const days = [];
+    for (const p of list) {
+      const k = dayKey(new Date(p.at));
+      if (!days.length || days[days.length - 1].k !== k) days.push({ k, t: p.at, posts: [] });
+      days[days.length - 1].posts.push(p);
+    }
+    return days.map((d) => `<p class="rd">${F.day.format(new Date(d.t))}</p><ul class="tposts">${d.posts.map((p) => post(p, st)).join("")}</ul>`).join("");
+  };
+  let h = `<section class="section threads" aria-labelledby="th-h"><div class="head"><h2 class="h2" id="th-h">Threads posts</h2></div>`;
+  if (T.length) {
+    h += `<p class="lede">${T.length} written posts for ${F.short.format(new Date(T[0].at))} to ${F.short.format(new Date(T[T.length - 1].at))}, New York time. Approving is your yes for exactly these; they post on their own at these times. Not happy with one? Send it as an idea below and Claude rewrites it.</p>
+      <div class="row-actions">${holdBtn(T.length, "th-hint", "threads")}</div>
+      <p class="hint" id="th-hint">${done ? "Sent. This page updates in about a minute." : "Hold for a second. Nothing goes out by accident."}</p>
+      ${byDay(T, "needs_yes")}`;
+  }
+  if (set.length) h += `<p class="label" style="margin-top:20px">Approved, coming up</p>${byDay(set.slice(0, 9), "scheduled")}`;
+  return h + `</section>`;
 }
 
 // answers wait out a 4 second undo window, then send
@@ -437,7 +485,8 @@ function render() {
   markLoaded();
   if (keep != null && $("#idea")) { $("#idea").value = keep; $("#idea").focus(); }
   document.querySelectorAll(".nav button").forEach((b) => (b.dataset.tab === tab ? b.setAttribute("aria-current", "page") : b.removeAttribute("aria-current")));
-  const open = D.questions.filter((q) => q.status === "open" && ![...sent].some((k) => k.startsWith(`q:${q.id}:`))).length;
+  const open = D.questions.filter((q) => q.status === "open" && ![...sent].some((k) => k.startsWith(`q:${q.id}:`))).length
+    + (pendingThreads().length && !sent.has("approve_threads") ? 1 : 0);
   const badge = $("#badge"); badge.hidden = !open; badge.textContent = open;
   badge.closest("button").setAttribute("aria-label", open ? `Decide, ${open} waiting` : "Decide");
   $("#fresh").textContent = `Updated ${ago(D.generated_at)}`;
@@ -484,6 +533,11 @@ function holdStart(b) {
     holdTimer = null; holdEl = null; b.classList.remove("holding"); b.classList.add("done"); holdLabel(b, "Approving");
     document.body.classList.remove("holding"); document.body.classList.add("rung"); setTimeout(() => document.body.classList.remove("rung"), 900);
     navigator.vibrate?.([30, 60, 30]);
+    if (b.dataset.hold === "threads") {
+      const tids = pendingThreads().map((p) => p.id);
+      act({ action: "approve_threads", ids: tids }, "approve_threads", `Approved ${tids.length} Threads posts. They post at their times.`);
+      return;
+    }
     const ids = pending().map((r) => r.id);
     act({ action: "approve_week", ids }, "approve_week", `Approved ${ids.length} reels. They post on their own.`).then((ok) => {
       const dlg = $("#sheet");
@@ -497,7 +551,7 @@ function holdStop() {
   clearTimeout(holdTimer); holdTimer = null;
   document.body.classList.remove("holding");
   const b = holdEl; holdEl = null;
-  if (b) { b.classList.remove("holding"); holdLabel(b, `Hold to approve ${pending().length}`); }
+  if (b) { b.classList.remove("holding"); holdLabel(b, `Hold to approve ${(HOLD[b.dataset.hold] || HOLD.week).count()}`); }
 }
 document.addEventListener("pointerdown", (e) => { const b = e.target.closest("[data-hold]"); if (b) { e.preventDefault(); holdStart(b); } });
 ["pointerup", "pointercancel"].forEach((ev) => document.addEventListener(ev, holdStop, true));
