@@ -64,8 +64,11 @@
       "not_before": "2026-10-15T22:30:00Z",
       "min_gap_hours": 2.5,
       "approved": true,
-      "status": "queued",
-      "approved_note": "Matteo: yes to the week, as long as posting is optimized to the USA (in chat 2026-10-15) (recorded 2026-10-15T12:43Z)"
+      "status": "posted",
+      "approved_note": "Matteo: yes to the week, as long as posting is optimized to the USA (in chat 2026-10-15) (recorded 2026-10-15T12:43Z)",
+      "media_id": "18099839348637902",
+      "permalink": "https://www.instagram.com/reel/DeiCa-risSs/",
+      "posted_at": "2026-10-15T22:32:25Z"
     },
     {
       "id": "lst-2026-10-16-mindset-without-a-fight",
