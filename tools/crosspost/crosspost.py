@@ -16,8 +16,9 @@ The same video file and caption as Instagram (production/schedule/queue.json -> 
 Secrets (env, or secrets/crosspost.env locally): YT_CLIENT_ID, YT_CLIENT_SECRET, YT_REFRESH_TOKEN,
 FB_PAGE_TOKEN, THREADS_ACCESS_TOKEN, THREADS_USER_ID (+ THREADS_APP_SECRET locally, only to make a token long-lived), GH_TOKEN.
 """
-import argparse, datetime as dt, http.server, json, os, re, secrets as rnd, sys, time, urllib.error, urllib.parse
+import argparse, datetime as dt, json, os, re, secrets as rnd, sys, time, urllib.error, urllib.parse
 import urllib.request, uuid, webbrowser
+from http.server import BaseHTTPRequestHandler, HTTPServer
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -153,7 +154,7 @@ def youtube_auth():
             sys.exit(f"{k} missing in secrets/crosspost.env")
     got = {}
 
-    class H(http.server.BaseHTTPRequestHandler):
+    class H(BaseHTTPRequestHandler):
         def do_GET(self):
             q = urllib.parse.parse_qs(urllib.parse.urlparse(self.path).query)
             got.update({k: v[0] for k, v in q.items()})
@@ -165,7 +166,7 @@ def youtube_auth():
         def log_message(self, *a):
             pass
 
-    srv = http.server.HTTPServer(("127.0.0.1", 0), H)
+    srv = HTTPServer(("127.0.0.1", 0), H)
     redirect = f"http://127.0.0.1:{srv.server_port}"
     state = rnd.token_urlsafe(16)
     url = "https://accounts.google.com/o/oauth2/v2/auth?" + urllib.parse.urlencode({
