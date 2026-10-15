@@ -1,4 +1,5 @@
 {
+ "_version": 2,
  "1atfSW2vTwqb15ayPvrPOEyOer7PxIpvv": {
   "A": 49.4,
   "B": 22.2,
@@ -12,7 +13,9 @@
   "C": 10.2,
   "D": 34.6,
   "E": 44.2,
-  "F": 59.0
+  "F": 59.0,
+  "G": 69.4,
+  "H": 81.4
  },
  "1kEs8ZXQ85WJH8jfj61AWmQ2cVammGHLG": {
   "A": 53.4,
@@ -20,7 +23,9 @@
   "C": 100.2,
   "D": 37.8,
   "E": 77.0,
-  "F": 28.6
+  "F": 28.6,
+  "G": 86.2,
+  "H": 61.8
  },
  "1s6cTlqvp0W7YDXDmH8r6z1ZLs6jC0h7T": {
   "A": 15.8,
@@ -39,7 +44,8 @@
   "C": 44.2,
   "D": 1.0,
   "E": 27.4,
-  "F": 16.6
+  "F": 16.6,
+  "G": 35.8
  },
  "1x_zg9B392R2uYXJrd8it7QbctQaK650h": {
   "A": 1.4
@@ -50,7 +56,9 @@
   "C": 94.6,
   "D": 63.8,
   "E": 103.0,
-  "F": 76.6
+  "F": 76.6,
+  "G": 20.6,
+  "H": 40.6
  },
  "1jDHxrjde9bZ4aWlA2BqIfwFLqYdfEqCR": {
   "A": 42.6,
@@ -90,7 +98,9 @@
   "C": 109.4,
   "D": 150.2,
   "E": 131.4,
-  "F": 13.8
+  "F": 13.8,
+  "G": 78.2,
+  "H": 32.2
  },
  "1GSm8g1PfirwqzAUncyaRW0tFO2t3_yla": {
   "A": 0.0
@@ -117,7 +127,9 @@
   "C": 61.0,
   "D": 96.6,
   "E": 81.4,
-  "F": 118.2
+  "F": 118.2,
+  "G": 51.0,
+  "H": 35.8
  },
  "1xTvs7IEQqOvFcqFfSpYzz83gC_vscdld": {
   "A": 37.0,
@@ -125,6 +137,255 @@
   "C": 11.8,
   "D": 3.4,
   "E": 45.8,
-  "F": 65.0
+  "F": 65.0,
+  "G": 54.2
+ },
+ "1bgdKz9UyOvtpbWcNgASpJ77QWIygU_rx": {
+  "A": 47.4,
+  "B": 24.6,
+  "C": 38.6,
+  "D": 9.0
+ },
+ "1_RUgWcGiKe6oIPwqotDGVnUmwKkufiV8": {
+  "A": 7.8,
+  "B": 20.6,
+  "C": 35.0,
+  "D": 54.2,
+  "E": 43.4,
+  "F": 62.6
+ },
+ "1lAtkpgK12-kQvyz-w9QeNIEqPxqrXWZ6": {
+  "A": 31.8,
+  "B": 50.2,
+  "C": 58.6,
+  "D": 69.0,
+  "E": 87.8,
+  "F": 23.4,
+  "G": 41.8,
+  "H": 77.8
+ },
+ "1-XaH84HgvgRKgajbc1F15GxBakWA7oO_": {
+  "A": 51.8,
+  "B": 60.2,
+  "C": 194.6,
+  "D": 246.2,
+  "E": 114.2,
+  "F": 93.0,
+  "G": 36.2,
+  "H": 76.6
+ },
+ "1i9iXjD3ZNLP9o_TUUsOUsiz8CROpoTEW": {
+  "A": 28.2,
+  "B": 97.8,
+  "C": 40.2,
+  "D": 245.0,
+  "E": 169.0,
+  "F": 66.2,
+  "G": 19.0,
+  "H": 124.6
+ },
+ "1vBV91hZz8OBFh2bAdw1Z7j1WC_aFJR-p": {
+  "A": 39.4,
+  "B": 21.0,
+  "C": 29.8,
+  "D": 10.6,
+  "E": 1.0
+ },
+ "1vvGOk3cdrvHissbzTmh5tZFjMu425Qdh": {
+  "A": 51.4,
+  "B": 41.4,
+  "C": 30.2,
+  "D": 13.0,
+  "E": 70.6,
+  "F": 1.0,
+  "G": 97.8,
+  "H": 87.0
+ },
+ "1Pv7SyBa3lziNPzto9P3WN7GR59GXEnnp": {
+  "A": 131.8,
+  "B": 86.6,
+  "C": 376.2,
+  "D": 193.4,
+  "E": 477.8,
+  "F": 287.0,
+  "G": 148.6,
+  "H": 167.8
+ },
+ "1kY_fR5PwN07yk9dasbW4Q_5k39muHf-T": {
+  "A": 15.4,
+  "B": 7.0
+ },
+ "1XuCyrSD0uTCX5HOf_r-_L_KZCm-mVUSE": {
+  "A": 367.4,
+  "B": 129.0,
+  "C": 140.6,
+  "D": 451.4,
+  "E": 323.4,
+  "F": 359.0,
+  "G": 376.6,
+  "H": 41.0
+ },
+ "1dydRhSqH8ZDmLQrfCRPfkAGBkB-Ur_YW": {
+  "A": 222.2,
+  "B": 267.4,
+  "C": 205.4,
+  "D": 341.4,
+  "E": 231.0,
+  "F": 175.0,
+  "G": 59.4,
+  "H": 8.6
+ },
+ "1HwvYUojYUMftZfNlofwE3qDwK2ggLCa5": {
+  "A": 1.8,
+  "B": 15.0
+ },
+ "18iDzmS4CkW7JY4-rS7SMarVaJuQblC3T": {
+  "A": 1.0,
+  "B": 28.2,
+  "C": 9.4,
+  "D": 19.4
+ },
+ "10SOLCvEv283OA3GSmymq4xU6CTY9fXBK": {
+  "A": 117.8,
+  "B": 39.8,
+  "C": 131.0,
+  "D": 16.2,
+  "E": 143.8,
+  "F": 48.2,
+  "G": 94.6,
+  "H": 69.8
+ },
+ "1Pipo9qyf7LoVjbYn1pu4BAFWRke92UEB": {
+  "A": 147.0,
+  "B": 89.4,
+  "C": 17.4,
+  "D": 47.8,
+  "E": 76.6,
+  "F": 138.6,
+  "G": 104.2,
+  "H": 62.2
+ },
+ "1pEV6_Yyfz1n9hAaJg7USfvPZgDpvG6He": {
+  "A": 160.2,
+  "B": 30.2,
+  "C": 83.8,
+  "D": 168.6,
+  "E": 119.4,
+  "F": 145.0,
+  "G": 47.8,
+  "H": 38.6
+ },
+ "1JNyxytmJVJzKi16oC24uJgOABUOTEBdg": {
+  "A": 30.2,
+  "B": 44.2,
+  "C": 1.0,
+  "D": 14.6
+ },
+ "1xe9w_fIMcK3o6Nbxauu3Vgqd1Phhnwev": {
+  "A": 0.0
+ },
+ "1TvIhoAsluCfJNG6Z-14q3Ku0KuSRCaiw": {
+  "A": 0.0
+ },
+ "1DThONEtMg2kkNRUTXViJTdtMdctgdpNz": {
+  "A": 0.7549999999999999
+ },
+ "178bHaKfm8NJSSRd-dJGuSn2MqtKu4FHz": {
+  "A": 0.0
+ },
+ "1rf6iJDQQxO_wMjYeGYuB81z9JUvXRQPc": {
+  "A": 0.0
+ },
+ "1tkm5LMhiOBgsU74CYx-qCe4noWsEBKiq": {
+  "A": 0.0
+ },
+ "1FGVFg9sFlwI2s6lK6B4dXBRXonE21gho": {
+  "A": 0.0
+ },
+ "1vj6GxY875E36-_u9yC84tWzqDm4-9SIc": {
+  "A": 24.2,
+  "B": 15.8,
+  "C": 40.2,
+  "D": 6.6,
+  "E": 50.2
+ },
+ "17K00x6WgdwsldO84Bw0EtkuvvyJ-pNuL": {
+  "A": 0.0
+ },
+ "1pOXUnXXddedR9PfNCeqZVkPTEgj4xxGo": {
+  "A": 0.0
+ },
+ "13Fpb4OmZofzoHqDrcw04W_F3Ye7q41KC": {
+  "A": 5.0,
+  "B": 13.4
+ },
+ "1yC5EhTYD5HXOFB4SqB7G5uXDGR1KIYSh": {
+  "A": 32.6,
+  "B": 23.4,
+  "C": 53.4,
+  "D": 10.6,
+  "E": 1.0,
+  "F": 45.0
+ },
+ "10ZOgp_5ZZjc-djf0ZVNkQTZGHbn6kEE_": {
+  "A": 26.2,
+  "B": 42.6,
+  "C": 54.6,
+  "D": 17.8,
+  "E": 1.0,
+  "F": 9.4
+ },
+ "1j93MWwaj2S4Z5vA37ExXOBgFkTwon7ec": {
+  "A": 1.0
+ },
+ "16okcYZwmHByyNzsNAHp9rNuXtowASZwH": {
+  "A": 15.8,
+  "B": 4.2
+ },
+ "1tmnkEzhQByAoVomRPOWm0Qk2bCYDIH1Q": {
+  "A": 10.6,
+  "B": 19.0,
+  "C": 2.2
+ },
+ "1XdNHNatOJN-fPteT9x80O5CZemaNomJC": {
+  "A": 5.4
+ },
+ "1jeOZ9e9A7YvPVaZJxqiODbbenf_Y0Nli": {
+  "A": 21.4,
+  "B": 13.0,
+  "C": 2.6
+ },
+ "1H8B7An-cG24a0CeSV6311HAZh7hj0ZXR": {
+  "A": 12.6,
+  "B": 1.8,
+  "C": 25.0
+ },
+ "12nHOhQPcIngi6oZS5cDoaB2BJv0eQ8UE": {
+  "A": 24.6,
+  "B": 15.0,
+  "C": 3.4
+ },
+ "1EJLYUTVLVkSWxisIHwaqeks07lNocugQ": {
+  "A": 1.4,
+  "B": 30.2,
+  "C": 17.4
+ },
+ "1jBm4yTfXbQ1e4rjKYlIG7oj2THU0dJcf": {
+  "A": 29.8,
+  "B": 3.0,
+  "C": 21.4,
+  "D": 11.4
+ },
+ "1yFn7JVPSORuthE3aWGdbcEV7JwIv3sRy": {
+  "A": 13.0,
+  "B": 31.4,
+  "C": 21.4,
+  "D": 3.0
+ },
+ "1b3IQeREF5ASjqyoLeO7yRYTvb1sIOTM3": {
+  "A": 12.2,
+  "B": 33.0,
+  "C": 1.8,
+  "D": 20.6
  }
 }
