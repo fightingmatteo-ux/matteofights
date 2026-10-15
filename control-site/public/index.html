@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b0b0d">
+<meta name="robots" content="noindex,nofollow">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon.svg">
+<title>Matteo Fights Control</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><span class="dot"></span>MATTEO<span class="red">FIGHTS</span> <span class="sub">CONTROL</span></div>
+  <div id="fresh" class="fresh"></div>
+</header>
+
+<nav class="tabs" id="tabs">
+  <button data-tab="home" class="on"><span class="ico">◉</span>Home</button>
+  <button data-tab="reels"><span class="ico">▶</span>Reels</button>
+  <button data-tab="results"><span class="ico">▲</span>Results</button>
+  <button data-tab="decide"><span class="ico">✦</span>Decide<span id="badge" class="badge" hidden></span></button>
+  <button data-tab="activity"><span class="ico">≡</span>Activity</button>
+</nav>
+
+<main id="view" aria-live="polite"><div class="loading">Loading…</div></main>
+
+
+<div id="toast" class="toast" hidden></div>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+# Control center actions: one run per decision Matteo makes on the dashboard (control.matteofights.me) or
+# Telegram. Started by the Cloudflare functions in control-site/functions/ (GitHub token, Actions: write).
+# Runs tools/control/control.py, commits production/control + queue.json, then sends anything new to Telegram.
+name: Control
+
+on:
+  workflow_dispatch:
+    inputs:
+      payload:
+        description: JSON action, e.g. {"action":"approve_week"} or {"action":"idea","text":"..."}
+        required: true
+      via:
+        description: dashboard | Telegram | manual
+        default: manual
+
+permissions:
+  contents: write
+
+# No concurrency group: GitHub would drop queued decisions. Each run re-applies on a fresh checkout if a push races.
+
+jobs:
+  act:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m pip install -q pillow
+      - name: Apply the decision and push
+        env:
+          PAYLOAD: ${{ inputs.payload }}
+          VIA: ${{ inputs.via }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          git config user.name "control[bot]"
+          git config user.email "control@users.noreply.github.com"
+          for n in 1 2 3 4; do
+            git fetch -q origin master && git reset -q --hard origin/master
+            python3 -P tools/control/control.py act "$PAYLOAD" --via "$VIA" --no-notify
+            git add production/control production/schedule/queue.json
+            git diff --cached --quiet && break
+            git commit -qm "control: $VIA decision"
+            git push -q origin HEAD:master && break
+            sleep $((n * 3))
+          done
+      - name: Send what's new to Telegram
+        if: always()
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          python3 -P tools/control/control.py notify
+          git add production/control
+          git diff --cached --quiet && exit 0
+          git commit -qm "control: telegram sent"
+          for n in 1 2 3; do git pull --rebase -q origin master && git push -q origin HEAD:master && break; sleep 5; done

@@ -51,3 +51,7 @@ production/reels/*/assets/media/
 production/reels/*/assets/aroll*
 production/reels/*/snapshots/
 production/reels/*/node_modules/
+
+# control center build output (made by tools/control/build_data.py at deploy time)
+control-site/public/data.json
+control-site/public/covers/

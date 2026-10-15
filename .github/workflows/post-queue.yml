@@ -36,3 +36,18 @@ jobs:
           git add production/schedule/queue.json
           git commit -m "queue: $(python3 -c "import json;q=json.load(open('production/schedule/queue.json'));print(', '.join(i['id']+' '+i['status'] for i in q['items'] if i['status']!='queued'))")"
           for n in 1 2 3; do git pull --rebase -q && git push -q && break; sleep 5; done
+      - name: Telegram (anything new for Matteo)
+        if: always()
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          python3 -m pip install -q pillow 2>/dev/null || true
+          git pull -q --rebase origin master || true
+          python3 -P tools/control/control.py notify || echo "telegram notify failed (non-fatal)"
+          git add production/control
+          git diff --cached --quiet && exit 0
+          git config user.name "control[bot]"
+          git config user.email "control@users.noreply.github.com"
+          git commit -qm "control: telegram sent"
+          for n in 1 2 3; do git pull --rebase -q && git push -q && break; sleep 5; done
