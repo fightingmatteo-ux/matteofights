@@ -29,7 +29,8 @@
       "clip": "padwork success gym.mov (1atfSW2vTwqb15ayPvrPOEyOer7PxIpvv)",
       "queue_id": "lst-2026-10-16-mindset-without-a-fight",
       "rendered_at": "2026-10-15T04:42Z",
-      "format": "listicle"
+      "format": "listicle",
+      "style": "native"
     },
     {
       "id": "mentally-tougher",
@@ -44,7 +45,8 @@
       "clip": "sparring hero success gym.mov (14FI6N5qWI7__IS40ii1DpUcrxnnVMmKT)",
       "queue_id": "lst-2026-10-17-mentally-tougher",
       "rendered_at": "2026-10-15T04:44Z",
-      "format": "listicle"
+      "format": "listicle",
+      "style": "native"
     },
     {
       "id": "calm-without-experience",
@@ -59,7 +61,8 @@
       "clip": "padwork morocco 2.mov (1HwvYUojYUMftZfNlofwE3qDwK2ggLCa5)",
       "queue_id": "lst-2026-10-18-calm-without-experience",
       "rendered_at": "2026-10-15T04:46Z",
-      "format": "listicle"
+      "format": "listicle",
+      "style": "native"
     },
     {
       "id": "made-for-combat-sports",
@@ -74,7 +77,8 @@
       "clip": "IMG_1230.MOV (10IHPzw-ET_GpEOXfftLwgAkLu0b7bSSh)",
       "queue_id": "lst-2026-10-19-made-for-combat-sports",
       "rendered_at": "2026-10-15T04:48Z",
-      "format": "listicle"
+      "format": "listicle",
+      "style": "native"
     },
     {
       "id": "dangerous-without-a-partner",
@@ -89,7 +93,8 @@
       "clip": "IMG_1374.MOV (1wBC5fpAotAMKUQu6NnC7m3dH6w4yjxB_)",
       "queue_id": "lst-2026-10-20-dangerous-without-a-partner",
       "rendered_at": "2026-10-15T04:50Z",
-      "format": "listicle"
+      "format": "listicle",
+      "style": "native"
     },
     {
       "id": "started-late",
@@ -101,10 +106,12 @@
       ],
       "caption": "Some people think they started too late.\nSome people just started.\n\n6 signs you started late and are still going to make it:\n\n1. You train like you're making up for lost time, because you are\n2. You ask more questions than anyone in the gym\n3. You don't care who's been there longer\n4. You'd rather be bad now than never know\n5. You study fights on the way home\n6. Every year you're better than the one before\n\nRepost this so the late starters find it.\n\n#boxing #muaythai #fightermindset #neverlate",
       "status": "rendered",
-      "clip": "sunrise skipping rome.mp4 (1kEs8ZXQ85WJH8jfj61AWmQ2cVammGHLG)",
+      "clip": "padwork morocco 2.mov (1HwvYUojYUMftZfNlofwE3qDwK2ggLCa5)",
       "queue_id": "lst-2026-10-21-started-late",
       "rendered_at": "2026-10-15T04:52Z",
-      "format": "listicle"
+      "format": "listicle",
+      "style": "native",
+      "moment": 15.0
     },
     {
       "id": "technique-without-a-coach",
@@ -119,7 +126,8 @@
       "format": "listicle",
       "clip": "IMG_1228.MOV (1J8mHxp5EZj0v1cEodM1GSZq6b7oE4UH-)",
       "queue_id": "lst-2026-10-15-technique-without-a-coach",
-      "rendered_at": "2026-10-15T10:35Z"
+      "rendered_at": "2026-10-15T10:35Z",
+      "style": "split"
     },
     {
       "id": "no-ex-fighter",
@@ -134,7 +142,8 @@
       "status": "rendered",
       "clip": "boxing rome simba.mp4 (1-GxiwEjn1oJCJKUEkPb9W_lIXsOMsAAw)",
       "queue_id": "lst-2026-10-16-no-ex-fighter",
-      "rendered_at": "2026-10-15T10:36Z"
+      "rendered_at": "2026-10-15T10:36Z",
+      "style": "split"
     },
     {
       "id": "fighter-without-a-record",
@@ -149,7 +158,8 @@
       "format": "listicle",
       "clip": "IMG_1544.MOV (1b3IQeREF5ASjqyoLeO7yRYTvb1sIOTM3)",
       "queue_id": "lst-2026-10-17-fighter-without-a-record",
-      "rendered_at": "2026-10-15T10:38Z"
+      "rendered_at": "2026-10-15T10:38Z",
+      "style": "split"
     },
     {
       "id": "last-round",
@@ -164,7 +174,8 @@
       "status": "rendered",
       "clip": "IMG_1229.MOV (1yFn7JVPSORuthE3aWGdbcEV7JwIv3sRy)",
       "queue_id": "lst-2026-10-18-last-round",
-      "rendered_at": "2026-10-15T10:40Z"
+      "rendered_at": "2026-10-15T10:40Z",
+      "style": "split"
     },
     {
       "id": "power-without-weights",
@@ -179,7 +190,8 @@
       "format": "listicle",
       "clip": "IMG_1548.MOV (1jBm4yTfXbQ1e4rjKYlIG7oj2THU0dJcf)",
       "queue_id": "lst-2026-10-19-power-without-weights",
-      "rendered_at": "2026-10-15T10:41Z"
+      "rendered_at": "2026-10-15T10:41Z",
+      "style": "split"
     },
     {
       "id": "go-anyway",
@@ -194,7 +206,8 @@
       "status": "rendered",
       "clip": "pads chaiya.MOV (1NIGqz7ZgwDky9Ri9fLtQXE8U4jzWicJK)",
       "queue_id": "lst-2026-10-20-go-anyway",
-      "rendered_at": "2026-10-15T10:43Z"
+      "rendered_at": "2026-10-15T10:43Z",
+      "style": "split"
     },
     {
       "id": "about-to-level-up",
@@ -209,7 +222,8 @@
       "format": "listicle",
       "clip": "IMG_1551.MOV (12nHOhQPcIngi6oZS5cDoaB2BJv0eQ8UE)",
       "queue_id": "lst-2026-10-21-about-to-level-up",
-      "rendered_at": "2026-10-15T10:44Z"
+      "rendered_at": "2026-10-15T10:44Z",
+      "style": "split"
     },
     {
       "id": "fighters-mindset",

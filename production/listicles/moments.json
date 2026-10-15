@@ -1,0 +1,137 @@
+{
+  "1-GxiwEjn1oJCJKUEkPb9W_lIXsOMsAAw": {
+    "good": [
+      14.6,
+      23.0,
+      37.4
+    ],
+    "bad": [
+      46.2,
+      4.6,
+      55.0
+    ],
+    "notes": "garden bag: C/F/D clean combos; A messy kick, B dog, E walks to camera",
+    "graded": "2026-10-15T20:00:47Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "1atfSW2vTwqb15ayPvrPOEyOer7PxIpvv": {
+    "good": [
+      22.2,
+      31.8,
+      40.6
+    ],
+    "bad": [
+      49.4,
+      7.8
+    ],
+    "notes": "ring pad work: B/E/C good; A ends close walking at camera, D tiny behind ropes",
+    "graded": "2026-10-15T20:00:47Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "14FI6N5qWI7__IS40ii1DpUcrxnnVMmKT": {
+    "good": [
+      37.0
+    ],
+    "bad": [
+      50.2,
+      2.6,
+      25.8,
+      14.6
+    ],
+    "notes": "ring sparring through ropes; phone rotates mid-clip, only B holds; others tiny or flip orientation",
+    "graded": "2026-10-15T20:00:47Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "1b3IQeREF5ASjqyoLeO7yRYTvb1sIOTM3": {
+    "good": [
+      20.6
+    ],
+    "bad": [
+      12.2,
+      33.0,
+      1.8
+    ],
+    "notes": "rooftop agility ladder: D steady; others walk at camera or from behind",
+    "graded": "2026-10-15T20:00:47Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "1HwvYUojYUMftZfNlofwE3qDwK2ggLCa5": {
+    "good": [
+      1.8,
+      15.0
+    ],
+    "bad": [],
+    "notes": "pad work with coach in boxing gym: both good",
+    "graded": "2026-10-15T20:00:47Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "1yFn7JVPSORuthE3aWGdbcEV7JwIv3sRy": {
+    "good": [
+      13.0,
+      21.4
+    ],
+    "bad": [
+      31.4,
+      3.0
+    ],
+    "notes": "gym shadowboxing, guard up: A/C; B ends walking at camera, D walking away",
+    "graded": "2026-10-15T20:00:47Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "1jBm4yTfXbQ1e4rjKYlIG7oj2THU0dJcf": {
+    "good": [
+      21.4
+    ],
+    "bad": [
+      29.8,
+      3.0,
+      11.4
+    ],
+    "notes": "rooftop shadowboxing: C ok but small; A ends walking at camera",
+    "graded": "2026-10-15T20:00:47Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "1NIGqz7ZgwDky9Ri9fLtQXE8U4jzWicJK": {
+    "good": [
+      22.6,
+      31.4,
+      9.4,
+      56.6,
+      41.4
+    ],
+    "bad": [
+      1.0
+    ],
+    "notes": "Muay Thai pads: kick D, combos E/A, F, C all good; B mostly back to camera. Best clip so far",
+    "graded": "2026-10-15T20:00:47Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "1kEs8ZXQ85WJH8jfj61AWmQ2cVammGHLG": {
+    "good": [],
+    "bad": [
+      53.4,
+      109.0,
+      100.2,
+      37.8,
+      77.0,
+      28.6,
+      86.2,
+      61.8
+    ],
+    "notes": "sunset silhouette, fighter tiny in every moment: not for fight hooks",
+    "graded": "2026-10-15T20:00:47Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "12nHOhQPcIngi6oZS5cDoaB2BJv0eQ8UE": {
+    "good": [
+      15.0,
+      24.6
+    ],
+    "bad": [
+      3.4
+    ],
+    "notes": "rooftop silhouette shadowboxing: B good, A good but exits frame at end; C walks away",
+    "graded": "2026-10-15T20:00:47Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  }
+}

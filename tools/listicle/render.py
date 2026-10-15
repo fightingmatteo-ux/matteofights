@@ -302,7 +302,7 @@ def render(clip, hook_id, out, seconds=8.0, cover=None, music_i=0, rotate=0):
     X = min(LOOP_X, S / 4)
     turn = TURN[rotate]
     start, row_motion = best_window(clip, dur, S + X, turn)
-    graded = graded_start(clip, dur, S + X)
+    graded = h["moment"] if h.get("moment") is not None else graded_start(clip, dur, S + X)  # hook "moment" = manual pick
     if graded is not None:
         start = graded
         pix = _motion(clip, turn)
