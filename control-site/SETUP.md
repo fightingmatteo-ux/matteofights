@@ -70,3 +70,6 @@ GitHub secret).
 - **Check it works**: logged out, `control.matteofights.me` redirects to `small-pond-1c50.cloudflareaccess.com`;
   `POST /api/telegram` without the header answers 403; a text to the bot runs **Control** green and replies
   "💡 Saved…".
+- **404 on `/cdn-cgi/access/authorized` right after login**: the Access app was created before the zone was
+  active. Re-save the "Matteo control center" app (Zero Trust → Access → Applications → Edit → Save, or a `PUT`
+  with the same config). Fixed this way on 2026-10-15.
