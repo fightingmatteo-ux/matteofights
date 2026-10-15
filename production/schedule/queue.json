@@ -45,7 +45,10 @@
       "not_before": "2026-10-14T21:10:00Z",
       "min_gap_hours": 2.5,
       "approved": true,
-      "status": "queued"
+      "status": "posted",
+      "media_id": "17949258072324239",
+      "permalink": "https://www.instagram.com/reel/DefsPO_ih7V/",
+      "posted_at": "2026-10-15T00:40:07Z"
     }
   ]
 }
