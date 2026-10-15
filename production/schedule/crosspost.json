@@ -7,9 +7,10 @@
       "approved_note": "Matteo: 'yes enable facebook' in chat 2026-10-16"
     },
     "youtube": {
-      "enabled": false,
-      "since": null,
-      "privacy": "private"
+      "enabled": true,
+      "since": "2026-10-15T17:32:28Z",
+      "privacy": "private",
+      "approved_note": "Matteo: 'yes enable youtube' in chat 2026-10-16"
     },
     "threads": {
       "enabled": false,
