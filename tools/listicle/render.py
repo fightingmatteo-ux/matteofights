@@ -21,7 +21,14 @@ HOOKS = ROOT / "production" / "listicles" / "hooks.json"
 BEBAS = Path(__file__).parent / "fonts" / "BebasNeue-Regular.ttf"
 SERIF = Path(__file__).parent / "fonts" / "LiberationSerif-Bold.ttf"  # Times-metric, like IG's Classic
 EMOJI = Path("/usr/share/fonts/truetype/noto/NotoColorEmoji.ttf")
-MUSIC = sorted((ROOT / "production/reels/five-signs-real-fighter/assets/music").glob("*.mp3"))
+# Music library: production/listicles/music/ (tracks.json = title, artist, vibe, license) once it has tracks,
+# else the original 4 tracks. Each reel uses the track's strongest stretch (its drop), cut on a beat.
+MUSIC_DIR = ROOT / "production" / "listicles" / "music"
+MUSIC = sorted(MUSIC_DIR.glob("*.mp3")) or sorted((ROOT / "production/reels/five-signs-real-fighter/assets/music").glob("*.mp3"))
+# Coach-graded moments per clip (Claude's daily check grades the moment sheets the factory makes):
+# {clip_id: {"good": [start s, best first], "bad": [start s], "graded": iso}}
+MOMENTS = ROOT / "production" / "listicles" / "moments.json"
+GYM_LEVEL = 0.18   # gym sound (bag, breathing) under the music
 W, H, FPS = 1080, 1920, 30
 RED, WHITE, BLACK = (227, 27, 35), (255, 255, 255), (8, 8, 10)
 # Instagram's grid crop keeps y 285-1635; the UI covers the bottom ~320 px. Text stays inside both.
@@ -42,6 +49,50 @@ def probe(clip, entry):
 
 def has_audio(clip):
     return bool(ff(["-select_streams", "a", "-show_entries", "stream=index", "-of", "csv=p=0", str(clip)]))
+
+
+def _motion(clip, turn, w=36, h=64, rate=5):
+    raw = subprocess.run(["ffmpeg", "-v", "error", "-i", str(clip), "-vf",
+                          f"{turn}fps={rate},scale={w}:{h}:force_original_aspect_ratio=increase,crop={w}:{h},format=gray", "-f", "rawvideo", "-"],
+                         capture_output=True).stdout
+    n = w * h
+    frames = [raw[i:i + n] for i in range(0, len(raw) - n + 1, n)]
+    return [[abs(a - b) for a, b in zip(f1, f2)] for f1, f2 in zip(frames, frames[1:])]
+
+
+def candidate_windows(clip, dur, length, turn="", k=6):
+    """Up to k non-overlapping `length`-second stretches with real movement, busiest first. Movement alone can't
+    tell skill from messing around; the moment sheet lets Claude grade these like a coach (moments.json)."""
+    rate = 5
+    pix = _motion(clip, turn, rate=rate)
+    if len(pix) < 3 or dur <= length + 2:
+        return [max(0.0, (dur - length) / 2)]
+    diff = [sum(p) / len(p) for p in pix]
+    cap = sorted(diff)[int(len(diff) * 0.9)]
+    diff = [min(d, cap) - (d - cap) * 2 if d > cap else d for d in diff]
+    win = max(1, int(length * rate))
+    lo, hi = int(1.0 * rate), len(diff) - win - int(1.0 * rate)
+    if hi <= lo:
+        return [max(0.0, (dur - length) / 2)]
+    score = {i: sum(diff[i:i + win]) for i in range(lo, hi + 1, max(1, rate // 2))}
+    picked = []
+    for i in sorted(score, key=score.get, reverse=True):
+        if all(abs(i - j) >= win for j in picked):
+            picked.append(i)
+        if len(picked) == k:
+            break
+    return [round(i / rate, 1) for i in picked]
+
+
+def graded_start(clip, dur, length):
+    """The best coach-graded moment of this clip that fits, or None (then the busiest stretch is used)."""
+    if not MOMENTS.exists():
+        return None
+    g = json.loads(MOMENTS.read_text(encoding="utf-8")).get(Path(clip).stem) or {}
+    for t in g.get("good") or []:
+        if 0 <= t <= max(0.0, dur - length):
+            return float(t)
+    return None
 
 
 def best_window(clip, dur, length, turn=""):
@@ -76,6 +127,34 @@ def best_window(clip, dur, length, turn=""):
         return max(0.0, (dur - length) / 2), rows(0, len(pix))
     best = max(range(lo, hi + 1), key=lambda i: sum(diff[i:i + win]))
     return best / rate, rows(best, best + win)
+
+
+def music_start(track, length):
+    """Start of the track's strongest `length`-second stretch (the drop / hook, not the intro), snapped to the
+    loudest onset near it so the loop starts on a beat. Energy = RMS per 50 ms of a mono 8 kHz decode."""
+    sr, hop = 8000, 400
+    raw = subprocess.run(["ffmpeg", "-v", "error", "-i", str(track), "-ac", "1", "-ar", str(sr), "-f", "s16le", "-"],
+                         capture_output=True).stdout
+    import array
+    a = array.array("h", raw)
+    rms = [(sum(x * x for x in a[i:i + hop]) / hop) ** 0.5 for i in range(0, len(a) - hop, hop)]
+    if len(rms) * hop / sr <= length + 4:
+        return 0.0
+    win = int(length * sr / hop)
+    lo = int(4 * sr / hop)                                   # never the first 4 s (intro)
+    hi = len(rms) - win - int(2 * sr / hop)
+    if hi <= lo:
+        return 0.0
+    run = sum(rms[lo:lo + win])
+    best, best_i = run, lo
+    for i in range(lo + 1, hi):
+        run += rms[i + win - 1] - rms[i - 1]
+        if run > best:
+            best, best_i = run, i
+    onset = [max(0.0, rms[i] - rms[i - 1]) for i in range(1, len(rms))]
+    near = range(max(1, best_i - 10), min(len(onset), best_i + 10))  # +-0.5 s
+    j = max(near, key=lambda i: onset[i - 1])
+    return round(j * hop / sr, 3)
 
 
 def place_plate(row_motion, height):
@@ -190,6 +269,14 @@ def render(clip, hook_id, out, seconds=8.0, cover=None, music_i=0, rotate=0):
     X = min(LOOP_X, S / 4)
     turn = TURN[rotate]
     start, row_motion = best_window(clip, dur, S + X, turn)
+    graded = graded_start(clip, dur, S + X)
+    if graded is not None:
+        start = graded
+        pix = _motion(clip, turn)
+        i0 = int(start * 5)
+        seg = pix[i0:i0 + int((S + X) * 5)] or pix
+        row_motion = [sum(sum(p[r * 36:(r + 1) * 36]) for p in seg) for r in range(64)]
+        print(f"moment {start:.1f}s (coach-graded)", flush=True)
     cta_in, cta_out = max(0.0, S - 3.4), S - 0.35
 
     trc, rng = probe(clip, "stream=color_transfer"), probe(clip, "stream=color_range")
@@ -236,18 +323,20 @@ def render(clip, hook_id, out, seconds=8.0, cover=None, music_i=0, rotate=0):
             f"[a][cta]overlay=x=0:y='{rise}':eval=frame,format=yuv420p[v]")
         af = None
         if music:
-            cmd += ["-i", str(music)]
-            if has_audio(clip):  # music on top, the gym sound (bag, breathing) underneath
-                af = (f"[3:a]volume=0.9[m];[0:a]atrim=start={X:.3f},asetpts=PTS-STARTPTS,volume=0.35[g];"
-                      f"[m][g]amix=inputs=2:duration=first:normalize=0,")
+            m0 = music_start(music, S)
+            print(f"music {music.name} from {m0:.2f}s", flush=True)
+            cmd += ["-ss", f"{m0:.3f}", "-i", str(music)]
+            if has_audio(clip):  # music on top, the gym sound (bag, breathing) quietly underneath
+                af = (f"[3:a]volume=1.0[m];[0:a]atrim=start={X:.3f},asetpts=PTS-STARTPTS,highpass=f=120,"
+                      f"volume={GYM_LEVEL}[g];[m][g]amix=inputs=2:duration=first:normalize=0,")
             else:
                 af = "[3:a]"
         elif has_audio(clip):
             af = f"[0:a]atrim=start={X:.3f},asetpts=PTS-STARTPTS,"
         fc, amap = vf, []
         if af:
-            fc += ";" + af + (f"atrim=0:{S:.3f},afade=t=in:d=0.08,afade=t=out:st={max(0, S - 0.5):.3f}:d=0.5,"
-                              f"loudnorm=I=-14:TP=-1.5,aresample=48000[au]")
+            fc += ";" + af + (f"atrim=0:{S:.3f},afade=t=in:d=0.03,afade=t=out:st={max(0, S - 0.25):.3f}:d=0.25,"
+                              f"loudnorm=I=-15:LRA=9:TP=-1.5,aresample=48000[au]")
             amap = ["-map", "[au]"]
         cmd += ["-filter_complex", fc, "-map", "[v]", *amap, "-t", f"{S:.3f}", "-r", str(FPS),
                 "-color_primaries", "bt709", "-color_trc", "bt709", "-colorspace", "bt709", "-color_range", "tv",

@@ -30,7 +30,16 @@ numbered list living in the caption. No talking, so it renders headless.
 ```bash
 python -P tools/listicle/render.py <clip> <hook id> out.mp4 --cover cover.jpg   # one reel
 ```
-Music: the tracks in `production/reels/five-signs-real-fighter/assets/music/`, rotated. Gym sound stays underneath at 35%.
+Music: `production/listicles/music/*.mp3` (with `tracks.json`: title, artist, vibe, license, source) once it has
+tracks, else the original 4 in `production/reels/five-signs-real-fighter/assets/music/`; rotated. Each reel uses the
+track's **strongest 8 s (its drop), cut on a beat** (`render.music_start`), never the intro. Gym sound underneath at
+18% (high-passed), loudness -15 LUFS. Only royalty-free tracks whose license allows social posts go in the folder.
+
+Moments (since 2026-10-16): motion alone can't tell skilled boxing from messing around, so for every clip the
+Saturday sheets run also writes `production/listicles/moment-sheets/<id>.jpg` (rows A-F = the busiest
+non-overlapping 8 s stretches, 3 frames each; start seconds in `moment-sheets/index.json`). The daily Claude check
+grades them like a coach into `production/listicles/moments.json` `{clip_id: {good: [s...], bad: [s...]}}` and every
+render starts at the clip's first good moment (`render.graded_start`); ungraded clips fall back to the busiest stretch.
 When the backlog has no `ready` hooks left, the factory stops and says so. Ask Claude for the next batch.
 
 ## Audio + posting (since 2026-10-15)

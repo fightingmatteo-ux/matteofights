@@ -16,7 +16,7 @@ from zoneinfo import ZoneInfo
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from render import render  # noqa: E402
+from render import render, candidate_windows  # noqa: E402
 import footage_agent as agent  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -26,6 +26,7 @@ QUEUE = ROOT / "production" / "schedule" / "queue.json"
 CLIPS_FOLDER = "1EkBaa-a9m1lX5KQZnmNXQNj-E8E8hCKk"   # Matteo's raw training clips (top level only)
 OUT_FOLDER = "1bHwCLpkK2w9e9BN22dXWgQnn8_CLYpR2"     # Drive output; previews go in output/listicles/
 VIDEO_EXT = (".mov", ".mp4", ".m4v")
+MOMENT_SHEETS = ROOT / "production" / "listicles" / "moment-sheets"  # candidate 8 s moments per clip, graded by Claude
 SHEETS = ROOT / "production" / "listicles" / "clip-sheets"   # 6-frame contact sheet per Drive clip, for Claude to look at
 MAX_BYTES = 700 * 1024 * 1024   # skip the 1 GB+ sparring masters: slow to pull, and one 8 s window is enough
 REPO = os.environ.get("GITHUB_REPOSITORY", "fightingmatteo-ux/matteofights")
@@ -123,22 +124,52 @@ def cat_rotate(cat, clip_id):
     return (cat or {}).get(clip_id, {}).get("rotate_fix", 0)
 
 
+def moment_sheet(path, out, seconds=8.5):
+    """Rows A-F = the clip's busiest non-overlapping moments, 3 frames each (start, middle, end), labelled with
+    the start time. Claude grades them like a coach (moments.json); the render uses the best one."""
+    from PIL import Image, ImageDraw
+    d = agent._duration(path)
+    starts = candidate_windows(path, d, seconds)
+    tw, th = 216, 384
+    sheet = Image.new("RGB", (tw * 3 + 70, th * len(starts)), "black")
+    draw = ImageDraw.Draw(sheet)
+    for r, t in enumerate(starts):
+        for k, off in enumerate((0.4, seconds / 2, seconds - 0.4)):
+            f = WORK / "_m.jpg"
+            subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{t + off:.2f}", "-i", str(path), "-frames:v", "1",
+                            "-vf", f"scale={tw}:{th}:force_original_aspect_ratio=decrease,pad={tw}:{th}:(ow-iw)/2:(oh-ih)/2",
+                            "-q:v", "5", str(f)], check=True)
+            sheet.paste(Image.open(f).convert("RGB"), (70 + k * tw, r * th))
+        draw.text((8, r * th + 8), f"{'ABCDEF'[r]}\n{t:.1f}s", fill=(255, 255, 0))
+    sheet.save(out, "JPEG", quality=78)
+    return {"ABCDEF"[r]: t for r, t in enumerate(starts)}
+
+
 def make_sheets(clips):
-    """One small contact sheet per clip that doesn't have one yet. Claude (scheduled session, Matteo's account)
-    reads them, describes each clip in clips.json and picks a clip per hook (hooks.json clip_id)."""
+    """Per clip that doesn't have them yet: a 6-frame contact sheet (what the clip is) and a moment sheet (which
+    8 s stretch looks best). Claude (scheduled session, Matteo's account) reads them, describes each clip in
+    clips.json, grades the moments in moments.json and picks a clip per hook (hooks.json clip_id)."""
     SHEETS.mkdir(parents=True, exist_ok=True)
+    MOMENT_SHEETS.mkdir(parents=True, exist_ok=True)
+    idx_path = MOMENT_SHEETS / "index.json"
+    moments_idx = load(idx_path, {})
     for c in clips:
         out = SHEETS / f"{c['ID']}.jpg"
-        if out.exists():
+        mout = MOMENT_SHEETS / f"{c['ID']}.jpg"
+        if out.exists() and mout.exists():
             continue
         local = WORK / f"{c['ID']}{Path(c['Name']).suffix}"
         temp = not local.exists()
         try:
             path = fetch(c["ID"], c["Name"])
             d = agent._duration(path)
-            lo, hi = min(1.0, d * 0.1), max(d - 1.0, d * 0.9)
-            agent.sheet(path, [lo + (hi - lo) * k / 5 for k in range(6)], out)
-            print(f"sheet: {c['Name']} ({d:.0f}s)", flush=True)
+            if not out.exists():
+                lo, hi = min(1.0, d * 0.1), max(d - 1.0, d * 0.9)
+                agent.sheet(path, [lo + (hi - lo) * k / 5 for k in range(6)], out)
+            if not mout.exists():
+                moments_idx[c["ID"]] = moment_sheet(path, mout)
+                idx_path.write_text(json.dumps(moments_idx, indent=1) + "\n", encoding="utf-8")
+            print(f"sheets: {c['Name']} ({d:.0f}s)", flush=True)
         except Exception as e:  # one broken clip must not stop the run
             print(f"sheet: {c['Name']}: {e}", flush=True)
         finally:
