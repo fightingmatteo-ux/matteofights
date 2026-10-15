@@ -13,8 +13,9 @@
       "approved_note": "Matteo: 'yes enable youtube' in chat 2026-10-16"
     },
     "threads": {
-      "enabled": false,
-      "since": null
+      "enabled": true,
+      "since": "2026-10-15T17:50:38Z",
+      "approved_note": "Matteo: 'yes enable threads' in chat 2026-10-16"
     }
   },
   "posts": {}
