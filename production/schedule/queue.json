@@ -64,7 +64,8 @@
       "not_before": "2026-10-15T17:00:00Z",
       "min_gap_hours": 2.5,
       "approved": false,
-      "status": "queued"
+      "status": "queued",
+      "app_audio": "Echo Sax - Caleb Arredondo (add in the Instagram app)"
     },
     {
       "id": "lst-2026-10-16-mindset-without-a-fight",
@@ -81,7 +82,8 @@
       "min_gap_hours": 2.5,
       "approved": false,
       "status": "queued",
-      "rotate": 90
+      "rotate": 90,
+      "app_audio": "Echo Sax - Caleb Arredondo (add in the Instagram app)"
     },
     {
       "id": "lst-2026-10-17-mentally-tougher",
@@ -98,7 +100,8 @@
       "min_gap_hours": 2.5,
       "approved": false,
       "status": "queued",
-      "rotate": -90
+      "rotate": -90,
+      "app_audio": "Echo Sax - Caleb Arredondo (add in the Instagram app)"
     },
     {
       "id": "lst-2026-10-18-calm-without-experience",
@@ -114,7 +117,8 @@
       "not_before": "2026-10-18T17:00:00Z",
       "min_gap_hours": 2.5,
       "approved": false,
-      "status": "queued"
+      "status": "queued",
+      "app_audio": "Echo Sax - Caleb Arredondo (add in the Instagram app)"
     },
     {
       "id": "lst-2026-10-19-made-for-combat-sports",
@@ -130,7 +134,8 @@
       "not_before": "2026-10-19T17:00:00Z",
       "min_gap_hours": 2.5,
       "approved": false,
-      "status": "queued"
+      "status": "queued",
+      "app_audio": "Echo Sax - Caleb Arredondo (add in the Instagram app)"
     },
     {
       "id": "lst-2026-10-20-dangerous-without-a-partner",
@@ -146,7 +151,8 @@
       "not_before": "2026-10-20T17:00:00Z",
       "min_gap_hours": 2.5,
       "approved": false,
-      "status": "queued"
+      "status": "queued",
+      "app_audio": "Echo Sax - Caleb Arredondo (add in the Instagram app)"
     },
     {
       "id": "lst-2026-10-21-started-late",
@@ -162,7 +168,8 @@
       "not_before": "2026-10-21T17:00:00Z",
       "min_gap_hours": 2.5,
       "approved": false,
-      "status": "queued"
+      "status": "queued",
+      "app_audio": "Echo Sax - Caleb Arredondo (add in the Instagram app)"
     }
   ]
 }

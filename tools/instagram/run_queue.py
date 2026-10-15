@@ -34,7 +34,8 @@ def main():
             if "=" in line:
                 k, v = line.split("=", 1); os.environ.setdefault(k.strip(), v.strip())
     q = json.loads(QUEUE.read_text(encoding="utf-8"))
-    due = [i for i in q["items"] if i.get("approved") is True and i.get("status") == "queued"
+    # app_audio items need a sound from Instagram's library (the API can't add one): Matteo posts those in the app
+    due = [i for i in q["items"] if i.get("approved") is True and i.get("status") == "queued" and not i.get("app_audio")
            and dt.datetime.fromisoformat(i["not_before"].replace("Z", "+00:00")) <= now()]
     if not due:
         print("nothing due"); return

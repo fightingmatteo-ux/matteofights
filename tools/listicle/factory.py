@@ -66,6 +66,8 @@ def main():
     p.add_argument("--count", type=int, default=7)
     p.add_argument("--slot", default="17:00", help="daily post time, UTC HH:MM")
     p.add_argument("--seconds", type=float, default=8.0)
+    p.add_argument("--audio", default="Echo Sax - Caleb Arredondo",
+                   help="Instagram library sound Matteo adds in the app ('' = burn in our own music and auto-post)")
     p.add_argument("--rerender", action="store_true",
                    help="re-render the queued, not-yet-approved listicles in place (same hook, clip and day)")
     a = p.parse_args()
@@ -97,7 +99,7 @@ def main():
         asset = f"lst-{day}-{h['id']}.mp4"
         folder = ROOT / "production" / "listicles" / f"{day}-{h['id']}"
         folder.mkdir(parents=True, exist_ok=True)
-        render(local, h["id"], work / asset, a.seconds, folder / "cover.jpg", state["music_i"])
+        render(local, h["id"], work / asset, a.seconds, folder / "cover.jpg", None if a.audio else state["music_i"])
         (folder / "caption.txt").write_text(h["caption"].strip() + "\n", encoding="utf-8")
 
         run("gh", "release", "upload", "media", str(work / asset), "--clobber", "-R", REPO)
@@ -110,7 +112,8 @@ def main():
             "caption_file": str((folder / "caption.txt").relative_to(ROOT)).replace("\\", "/"),
             "strategy": "MANUAL", "thumb_offset_ms": 500,
             "not_before": slot.strftime("%Y-%m-%dT%H:%M:%SZ"), "min_gap_hours": 2.5,
-            "approved": False, "status": "queued"})
+            "approved": False, "status": "queued",
+            **({"app_audio": f"{a.audio} (add in the Instagram app)"} if a.audio else {})})
         h.update(status="rendered", clip=f"{clip['Name']} ({clip['ID']})", queue_id=qid,
                  rendered_at=dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%MZ"))
         uses[clip["ID"]] = uses.get(clip["ID"], 0) + 1
@@ -133,7 +136,8 @@ def rerender(seconds):
         if not local.exists():
             run("rclone", "backend", "copyid", "gdrive:", clip_id, str(local))
         folder = ROOT / Path(item["caption_file"]).parent
-        render(local, h["id"], work / item["video_asset"], seconds, folder / "cover.jpg", n, item.get("rotate", 0))
+        render(local, h["id"], work / item["video_asset"], seconds, folder / "cover.jpg",
+               None if item.get("app_audio") else n, item.get("rotate", 0))
         run("gh", "release", "upload", "media", str(work / item["video_asset"]), "--clobber", "-R", REPO)
         run("rclone", "copyto", str(work / item["video_asset"]), f"gdrive:listicles/{item['video_asset']}",
             "--drive-root-folder-id", OUT_FOLDER)

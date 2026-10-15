@@ -32,3 +32,10 @@ python -P tools/listicle/render.py <clip> <hook id> out.mp4 --cover cover.jpg   
 ```
 Music: the tracks in `production/reels/five-signs-real-fighter/assets/music/`, rotated. Gym sound stays underneath at 35%.
 When the backlog has no `ready` hooks left, the factory stops and says so. Ask Claude for the next batch.
+
+## Trending audio (default since 2026-10-15)
+The API can't attach a sound from Instagram's library, and burning a commercial track into the file doesn't
+link the reel to the sound's page (and risks a mute). So by default the factory renders **without a music bed**
+(gym sound only) and marks each queue item `app_audio`. The Post queue skips those: Matteo posts them in the app
+as a trial reel, adds the sound (`--audio`, default Echo Sax by Caleb Arredondo), and turns the original audio down.
+`--audio ''` brings back the old behaviour (our own music, auto-posted).
