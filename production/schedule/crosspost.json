@@ -31,16 +31,18 @@
       "topic": "Fight Psychology"
     },
     "facebook_slides": {
-      "enabled": false,
-      "since": null,
+      "enabled": true,
+      "since": "2026-10-15T18:05:56Z",
       "slots": [
         "09:00"
-      ]
+      ],
+      "approved_note": "Matteo: 'let's start doing all of that' (per-platform plan, 2026-10-16)"
     },
     "threads_text": {
-      "enabled": false,
+      "enabled": true,
       "min_gap_hours": 2,
-      "max_late_hours": 6
+      "max_late_hours": 6,
+      "approved_note": "Matteo: 'let's start doing all of that' (per-platform plan, 2026-10-16); each week's posts still need his approval"
     }
   },
   "posts": {}
