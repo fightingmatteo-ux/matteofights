@@ -124,25 +124,39 @@ def cat_rotate(cat, clip_id):
     return (cat or {}).get(clip_id, {}).get("rotate_fix", 0)
 
 
+SHEET_VERSION = 2  # 2 = 6 frames per moment + pose check
+
+
 def moment_sheet(path, out, seconds=8.5):
-    """Rows A-F = the clip's busiest non-overlapping moments, 3 frames each (start, middle, end), labelled with
-    the start time. Claude grades them like a coach (moments.json); the render uses the best one."""
+    """Rows A-H = the clip's busiest non-overlapping moments, 6 frames each across the 8 s, labelled with the start
+    time and the pose check (technique.py: guard, strikes, stance, in frame; or why it's vetoed). Claude grades
+    them against context/boxing-technique.md (moments.json); the render uses the best one."""
     from PIL import Image, ImageDraw
+    import technique
     d = agent._duration(path)
-    starts = candidate_windows(path, d, seconds)
-    tw, th = 216, 384
-    sheet = Image.new("RGB", (tw * 3 + 70, th * len(starts)), "black")
+    starts = candidate_windows(path, d, seconds, k=8)
+    poses = {}
+    for t in starts:
+        try:
+            poses[t] = technique.score(path, t, seconds)
+        except Exception as e:  # pose is a helper; never block the sheet
+            poses[t] = {"score": None, "veto": None, "error": str(e)[:80]}
+    tw, th = 160, 284
+    sheet = Image.new("RGB", (tw * 6 + 150, th * len(starts)), "black")
     draw = ImageDraw.Draw(sheet)
     for r, t in enumerate(starts):
-        for k, off in enumerate((0.4, seconds / 2, seconds - 0.4)):
+        p = poses[t]
+        label = (f"{'ABCDEFGH'[r]}  {t:.1f}s\n\npose {p.get('score')}\n" +
+                 (f"VETO:\n{p['veto']}" if p.get("veto") else f"guard {p.get('guard')}\nstrikes {p.get('strikes')}\nstance {p.get('stance')}"))
+        draw.text((8, r * th + 8), label, fill=(255, 80, 80) if p.get("veto") else (255, 255, 0))
+        for k, off in enumerate([0.3 + (seconds - 0.6) * i / 5 for i in range(6)]):
             f = WORK / "_m.jpg"
             subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{t + off:.2f}", "-i", str(path), "-frames:v", "1",
                             "-vf", f"scale={tw}:{th}:force_original_aspect_ratio=decrease,pad={tw}:{th}:(ow-iw)/2:(oh-ih)/2",
                             "-q:v", "5", str(f)], check=True)
-            sheet.paste(Image.open(f).convert("RGB"), (70 + k * tw, r * th))
-        draw.text((8, r * th + 8), f"{'ABCDEF'[r]}\n{t:.1f}s", fill=(255, 255, 0))
+            sheet.paste(Image.open(f).convert("RGB"), (150 + k * tw, r * th))
     sheet.save(out, "JPEG", quality=78)
-    return {"ABCDEF"[r]: t for r, t in enumerate(starts)}
+    return {"ABCDEFGH"[r]: t for r, t in enumerate(starts)}, {"ABCDEFGH"[r]: poses[t] for r, t in enumerate(starts)}
 
 
 def make_sheets(clips):
@@ -151,8 +165,12 @@ def make_sheets(clips):
     clips.json, grades the moments in moments.json and picks a clip per hook (hooks.json clip_id)."""
     SHEETS.mkdir(parents=True, exist_ok=True)
     MOMENT_SHEETS.mkdir(parents=True, exist_ok=True)
-    idx_path = MOMENT_SHEETS / "index.json"
-    moments_idx = load(idx_path, {})
+    idx_path, pose_path = MOMENT_SHEETS / "index.json", MOMENT_SHEETS / "pose.json"
+    moments_idx, pose_idx = load(idx_path, {}), load(pose_path, {})
+    if moments_idx.get("_version") != SHEET_VERSION:  # older sheets: make them again with the current layout
+        for f in MOMENT_SHEETS.glob("*.jpg"):
+            f.unlink()
+        moments_idx, pose_idx = {"_version": SHEET_VERSION}, {}
     for c in clips:
         out = SHEETS / f"{c['ID']}.jpg"
         mout = MOMENT_SHEETS / f"{c['ID']}.jpg"
@@ -167,8 +185,9 @@ def make_sheets(clips):
                 lo, hi = min(1.0, d * 0.1), max(d - 1.0, d * 0.9)
                 agent.sheet(path, [lo + (hi - lo) * k / 5 for k in range(6)], out)
             if not mout.exists():
-                moments_idx[c["ID"]] = moment_sheet(path, mout)
+                moments_idx[c["ID"]], pose_idx[c["ID"]] = moment_sheet(path, mout)
                 idx_path.write_text(json.dumps(moments_idx, indent=1) + "\n", encoding="utf-8")
+                pose_path.write_text(json.dumps(pose_idx, indent=1) + "\n", encoding="utf-8")
             print(f"sheets: {c['Name']} ({d:.0f}s)", flush=True)
         except Exception as e:  # one broken clip must not stop the run
             print(f"sheet: {c['Name']}: {e}", flush=True)

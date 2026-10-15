@@ -86,12 +86,21 @@ def candidate_windows(clip, dur, length, turn="", k=6):
 
 def graded_start(clip, dur, length):
     """The best coach-graded moment of this clip that fits, or None (then the busiest stretch is used)."""
-    if not MOMENTS.exists():
-        return None
-    g = json.loads(MOMENTS.read_text(encoding="utf-8")).get(Path(clip).stem) or {}
+    cid = Path(clip).stem
+    g = (json.loads(MOMENTS.read_text(encoding="utf-8")) if MOMENTS.exists() else {}).get(cid) or {}
     for t in g.get("good") or []:
         if 0 <= t <= max(0.0, dur - length):
             return float(t)
+    # not graded yet: the best moment that passed the pose check (moment-sheets/pose.json), if any
+    idx, pose = (ROOT / "production/listicles/moment-sheets" / n for n in ("index.json", "pose.json"))
+    if idx.exists() and pose.exists():
+        starts = json.loads(idx.read_text(encoding="utf-8")).get(cid) or {}
+        scores = json.loads(pose.read_text(encoding="utf-8")).get(cid) or {}
+        bad = set(g.get("bad") or [])
+        ok = [(p.get("score") or 0, starts[k]) for k, p in scores.items()
+              if k in starts and not p.get("veto") and starts[k] not in bad and 0 <= starts[k] <= max(0.0, dur - length)]
+        if ok:
+            return float(max(ok)[1])
     return None
 
 
