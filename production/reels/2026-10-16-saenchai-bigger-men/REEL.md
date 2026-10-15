@@ -48,3 +48,18 @@ Threads (written post): Saenchai spent years fighting bigger men. He never tried
 | A | | trial | | |
 | B | | trial | | |
 | C | | trial | | |
+
+## Saenchai B-roll (Matteo's call 2026-10-16: commentary over short clips; keep each clip <= 3.5 s, always under his voice + subtitles)
+Local only (gitignored): `media/saenchai-broll/clips/`. Sources downloaded with yt-dlp:
+YOKKAO "Saenchai sparring in Canada" (aW6ew2j1ZmQ), Liam Harrison vs Saenchai 2, April 2011 (_sWmii41j-8);
+also on disk for more cuts: Samkor vs Saenchai (XlLvvN4OfaM), Saenchai vs Thongthai (FTYRm8Z_t-k).
+
+| Clip | Source + time | Under the line |
+|---|---|---|
+| 00-intro-saenchai | YOKKAO 0:00-0:03 | beat 1 + SAENCHAI name card |
+| 01-step-off-line | YOKKAO 0:29.5-0:31.8 (bigger guy kicks, Saenchai slides off) | "He'd step off the line" |
+| 02-catch-and-sweep | YOKKAO 0:31.5-0:34.8 (catches the kick, dumps him) | "Catch the kick. Sweep them." |
+| 03-dumped-to-floor | YOKKAO 0:16.0-0:18.8 | "And make them start over" |
+| 04-reset-to-stance | YOKKAO 0:35.0-0:37.5 (both back to stance) | "Every reset costs the bigger guy energy" |
+| 05/06-harrison-down | Harrison 12:55.5-12:58, 13:03.5-13:05.5 | "Do that ten times" |
+Transform each: 9:16 crop on the fighters, slight zoom or slow-mo on the key frame, subtitles on top.
