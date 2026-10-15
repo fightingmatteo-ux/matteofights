@@ -14,7 +14,7 @@ const F = {
 };
 const t12 = (iso) => F.time.format(new Date(iso)).replace(" AM", "am").replace(" PM", "pm");
 const dayKey = (d) => F.key.format(d);
-const n = (x) => (x == null ? "n/a" : x >= 10000 ? (x / 1000).toFixed(x >= 100000 ? 0 : 1) + "k" : Math.round(x).toLocaleString("en-US"));
+const n = (x) => (x == null ? "n/a" : x >= 1e6 ? (x / 1e6).toFixed(x >= 1e7 ? 0 : 1).replace(/\.0$/, "") + "M" : x >= 10000 ? (x / 1000).toFixed(x >= 100000 ? 0 : 1) + "k" : Math.round(x).toLocaleString("en-US"));
 const ago = (iso) => {
   if (!iso) return "never";
   const m = Math.round((Date.now() - new Date(iso)) / 60000);
@@ -49,6 +49,8 @@ let D = null;
 let tab = (() => { try { return localStorage.getItem("tab") || "home"; } catch { return "home"; } })();
 let filter = "all";
 let by = "views"; // results ranking: views per reel or follows per 1k
+let rview = (() => { try { return localStorage.getItem("rview") || "you"; } catch { return "you"; } })(); // Results: you | rivals
+let rplat = "all"; // Rivals platform filter
 const sent = new Set(); // decisions sent this session (the repo catches up within a minute)
 let pa = null; // pending answer, waiting out its undo window: {id, k, choice, left, timer}
 
@@ -274,11 +276,62 @@ function meter(value, max, norm, cls) {
   return `<span class="meter ${cls}" aria-hidden="true">${[...Array(CELLS)].map((_, i) => `<i class="${i < on ? "on" : ""}"></i>`).join("")}${norm != null ? `<span class="norm" style="left:${(100 * norm) / max}%"></span>` : ""}</span>`;
 }
 function results() {
+  const sw = `<span class="toggle" role="group" aria-label="Results for"><button data-rview="you" aria-pressed="${rview === "you"}">You</button><button data-rview="rivals" aria-pressed="${rview === "rivals"}">Rivals</button></span>`;
+  return rview === "rivals" ? rivals(sw) : resultsYou(sw);
+}
+
+// ---------------------------------------------------------------- results > rivals (competitor outliers + idea cards)
+const MEASURED = ["instagram", "youtube"];
+const ADAPTED = { tiktok: "TikTok", facebook: "Facebook", threads: "Threads" };
+function rivals(sw) {
+  const C = D.competitors || {};
+  const ideas = C.ideas || [], outs = C.outliers || [], accs = C.accounts || [];
+  const head = `<div class="page-head"><div class="head"><h1 class="h1">Results</h1>${sw}</div>
+    <p class="lede">Posts from creators close to you that did at least 3× their own normal, and what you'd make from them.</p></div>`;
+  if (!ideas.length && !outs.length) return head + `<p class="empty-note">No competitor data yet. The Competitors workflow measures the creators in production/competitors/accounts.json every Monday.</p>`;
+  const chips = ["all", "instagram", "youtube", "tiktok", "facebook", "threads"].map((k) =>
+    `<button data-rplat="${k}" aria-pressed="${rplat === k}">${k === "all" ? "All" : PLAT[k]}</button>`).join("");
+  const adapted = ADAPTED[rplat];
+  const pv = (c) => (c.platforms || {})[rplat === "all" ? "instagram" : rplat] || "";
+  const best = (c) => (c.evidence || []).slice().sort((a, b) => b.x - a.x)[0];
+  const card = (c) => {
+    const e = best(c), used = sent.has("rival:" + c.id), more = (c.evidence || []).length - 1;
+    return `<article class="rcard" aria-labelledby="rc-${esc(c.id)}">
+      <h3 id="rc-${esc(c.id)}">${esc(c.title)}</h3>
+      ${e ? `<p class="proof"><span class="num xbig">${e.x}×</span><span><a href="${esc(e.url)}" target="_blank" rel="noopener">${n(e.views)} views on @${esc(e.handle)}</a>${more > 0 ? `, ${more} more like it` : ""}<br><small>${esc(c.pattern)}</small></span></p>` : ""}
+      <p class="yhook">${esc(c.version?.hook || "")}</p>
+      <ol class="beats">${(c.version?.beats || []).map((b) => `<li>${esc(b)}</li>`).join("")}</ol>
+      ${pv(c) ? `<p class="pv"><b>${rplat === "all" ? "Instagram" : PLAT[rplat]}</b>${esc(pv(c))}</p>` : ""}
+      <details class="why"><summary>Why it worked, what you need</summary><p>${esc(c.why)}${c.version?.needs ? ` <b>Needs:</b> ${esc(c.version.needs)}` : ""}</p></details>
+      <div class="row-actions"><button class="btn ${used ? "" : "line"}" data-useidea="${esc(c.id)}" ${used ? "disabled" : ""}>${used ? "Sent to your ideas" : "Use this idea"}</button></div>
+    </article>`;
+  };
+  const skip = new Set(C.skip || []);
+  const shown = outs.filter((o) => !skip.has(o.id) && (rplat === "all" || o.platform === rplat)).slice(0, 24);
+  const orow = (o) => `<li><a href="${esc(o.url)}" target="_blank" rel="noopener">
+      <span class="num ox ${o.x >= 10 ? "hot" : ""}">${o.x}×</span>
+      <span class="ot"><b>${esc(o.hook || "(no caption)")}</b><small>@${esc(o.handle)} on ${PLAT[o.platform]}, ${n(o.views)} views (normal ${n(o.median_views)})</small></span></a></li>`;
+  const counts = Object.fromEntries(accs.map((a) => [a.platform + a.handle, outs.filter((o) => o.handle === a.handle && o.platform === a.platform).length]));
+  const accRows = accs.filter((a) => rplat === "all" || a.platform === rplat || adapted).map((a) =>
+    `<tr><td><b>${esc(a.name)}</b><small>${esc(a.why)}</small></td><td>${PLAT[a.platform]}</td><td>${n(a.followers)}</td><td>${a.median_views ? n(a.median_views) : "n/a"}</td><td>${counts[a.platform + a.handle] || 0}</td></tr>`).join("");
+  return head + `<div class="filters" role="group" aria-label="Platform">${chips}</div>
+    ${adapted ? `<p class="note-adapted">${adapted} doesn't let anyone read other creators' posts, so these ideas come from proven Instagram and YouTube outliers, rewritten for ${adapted}.</p>` : ""}
+    <section aria-labelledby="ri-h"><div class="head"><h2 class="h2" id="ri-h">Ideas for you</h2><span class="label">${ideas.length} from real outliers</span></div>
+      <div class="rcards">${ideas.map(card).join("")}</div></section>
+    ${adapted ? "" : `<section class="section" aria-labelledby="ro-h"><div class="head"><h2 class="h2" id="ro-h">Outliers</h2><span class="label">${C.rule || ""}</span></div>
+      ${shown.length ? `<ol class="outliers">${shown.map(orow).join("")}</ol>` : `<p class="empty-note">No outliers on this platform yet.</p>`}</section>`}
+    <section class="section" aria-labelledby="ra-h"><div class="head"><h2 class="h2" id="ra-h">Who we watch</h2></div>
+      <div class="scroll"><table class="accs"><thead><tr><th scope="col">Creator</th><th scope="col">Platform</th><th scope="col">Followers</th><th scope="col">Normal</th><th scope="col">Outliers</th></tr></thead>
+      <tbody>${accRows}</tbody></table></div>
+      <p class="hint">Measured every Monday${C.updated ? `, last ${ago(C.updated)}` : ""}. Add creators in production/competitors/accounts.json.</p></section>`;
+}
+
+function resultsYou(sw) {
   const med = D.baseline.median_views;
   const rows = Object.entries(D.formats).map(([k, v]) => ({ k, ...v, avg: v.views / v.reels, fpk: v.views ? (1000 * v.follows) / v.views : 0 }))
     .sort((a, b) => b.avg - a.avg);
   if (!rows.length) {
-    return `<div class="page-head"><h1 class="h1">Results</h1></div>
+    return `<div class="page-head"><div class="head"><h1 class="h1">Results</h1>${sw}</div></div>
       <p class="empty-note">Results show up 72 hours after a reel posts. Claude pulls the numbers from Instagram every morning and compares each reel with your normal${med ? ` ${n(med)}` : ""} views.</p>`;
   }
   const tot = rows.reduce((a, r) => ({ v: a.v + r.views, f: a.f + r.follows }), { v: 0, f: 0 });
@@ -296,7 +349,7 @@ function results() {
         <p class="meta">From ${sample(bestV)}. Your normal is ${n(med)} views; your average is ${avgF.toFixed(1)} follows per 1k.</p></article></div>`
     : `<div class="verdicts split"><article class="verdict"><h2 class="big">${fmtName(bestV.k)} wins views</h2>${figV(bestV)}<p class="meta">From ${sample(bestV)}. Your normal is ${n(med)}.</p></article>
         <article class="verdict"><h2 class="big">${fmtName(bestF.k)} wins follows</h2>${figF(bestF)}<p class="meta">From ${sample(bestF)}. Your average is ${avgF.toFixed(1)}.</p></article></div>`;
-  return `<div class="page-head"><h1 class="h1">Results</h1><p class="lede">Which formats earn views, and which turn views into followers.</p></div>
+  return `<div class="page-head"><div class="head"><h1 class="h1">Results</h1>${sw}</div><p class="lede">Which formats earn views, and which turn views into followers.</p></div>
     ${verdicts}
     <section aria-labelledby="l-h"><div class="head"><h2 class="h2" id="l-h">Every format</h2>
         <span class="toggle" role="group" aria-label="Rank formats by"><button data-by="views" aria-pressed="${by === "views"}">Views</button><button data-by="fpk" aria-pressed="${by === "fpk"}">Follows per 1k</button></span></div>
@@ -560,6 +613,16 @@ document.addEventListener("click", (ev) => {
   if (t.dataset.goto) return go(t.dataset.goto, t.dataset.filter);
   if (t.dataset.filter && tab === "reels") { filter = t.dataset.filter; return render(); }
   if (t.dataset.by) { by = t.dataset.by; return render(); }
+  if (t.dataset.rview) { rview = t.dataset.rview; try { localStorage.setItem("rview", rview); } catch {} return render(); }
+  if (t.dataset.rplat) { rplat = t.dataset.rplat; return render(); }
+  if (t.dataset.useidea) {
+    const c = (D.competitors?.ideas || []).find((x) => x.id === t.dataset.useidea);
+    if (!c) return;
+    const plat = rplat === "all" ? "instagram" : rplat;
+    const text = `From Rivals: ${c.title}. Hook: ${c.version?.hook || ""}. Beats: ${(c.version?.beats || []).join(" / ")}. ${PLAT[plat]}: ${(c.platforms || {})[plat] || ""}`.slice(0, 1500);
+    t.disabled = true;
+    return act({ action: "idea", text }, "rival:" + c.id, "Sent to your ideas. Claude picks it up on the next check.");
+  }
   if (t.dataset.open) return openSheet(t.dataset.open);
   if ("review" in t.dataset) return openReview();
   if ("undo" in t.dataset) return undoAnswer();

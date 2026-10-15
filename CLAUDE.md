@@ -68,6 +68,7 @@ Other connected MCPs (see `context/apps.md`): Higgsfield (`virality_predictor`, 
 | Write Threads posts (weekly batch) | skill `threads-writer` (`.claude/skills/threads-writer/`) | Sunday batch, any Threads post |
 | Write hooks + captions (all platforms) | skill `platform-captions` (`.claude/skills/platform-captions/`) | Saturday hook batch, any new caption |
 | What is working, from our own numbers | `python3 -P tools/threads/report.py` | Before writing posts or captions; strategy questions |
+| Competitor outliers + video ideas from them | skill `competitor-ideas`; data `production/competitors/` (`tools/competitors/scout.py`, weekly) | Next video ideas, "what are competitors doing", adding competitors |
 | Who's watching | [context/audience.md](context/audience.md) | Targeting, hook psychology, copy |
 | Growth plan & funnel | [context/strategy.md](context/strategy.md) | Strategic decisions, cadence, CTAs |
 | Pillars, formats, cadence | [context/content.md](context/content.md) | Planning what to post |

@@ -1,0 +1,21 @@
+{
+  "_how": "Creators close to @matteofights, per platform. tools/competitors/scout.py measures every account here weekly (Competitors workflow) and writes outliers.json. Instagram needs a creator/business account (Business Discovery); YouTube reads public Shorts with yt-dlp. TikTok, Threads and Facebook can't be read for other accounts, so their ideas are adapted from these measured outliers. Verified 2026-10-16. Add an account: same shape, then run the workflow.",
+  "accounts": [
+    {"platform": "instagram", "handle": "firas_zahabi", "name": "Firas Zahabi", "why": "Fight philosophy and mindset from a top coach: the 'thinking fighter' lane, closest to the psychology pivot"},
+    {"platform": "instagram", "handle": "chewjitsu", "name": "Chewjitsu (Nick Albin)", "why": "BJJ plus life and business lessons from the mat (e.g. 'Lesson from BJJ I Apply to Fatherhood, Business and Life'): martial arts as a lens for life"},
+    {"platform": "instagram", "handle": "themuaythaiguy", "name": "The Muay Thai Guy", "why": "Muay Thai education built for beginners; proven listicle and 'starter pack' formats (1.5M outlier)"},
+    {"platform": "instagram", "handle": "tinapham.co", "name": "Tina Pham", "why": "Former MMA fighter turned comedian: fighter psychology told through stories, not tips"},
+    {"platform": "instagram", "handle": "deepaksharma.co", "name": "Deepak Sharma", "why": "Mindset coach for UFC fighters: the mental-performance side, interview clips"},
+    {"platform": "instagram", "handle": "radu_rewers", "name": "Radu Rewers", "why": "Boxer and business founder (barbershop): the fighter-who-builds lane, lifestyle formats"},
+    {"platform": "instagram", "handle": "brezojr", "name": "Brezo Jr", "why": "Young fighter personal brand: relatable humour and lifestyle around training"},
+    {"platform": "instagram", "handle": "ramseydewey", "name": "Ramsey Dewey", "why": "MMA coach in Shanghai, blunt opinions and rants: the talking-head take format"},
+    {"platform": "instagram", "handle": "_coachdino_", "name": "Coach Dino", "why": "Coach in Phuket, Thailand: training-in-Thailand stories and advice clips"},
+    {"platform": "youtube", "handle": "PsychologyOfTheFight", "name": "Psychology of The Fight", "why": "Analyses the minds of top fighters so viewers apply it to their own life: the exact mindset niche"},
+    {"platform": "youtube", "handle": "LawrenceKenshin", "name": "Lawrence Kenshin", "why": "Striking breakdowns with 4M-view Shorts: fight IQ explained simply"},
+    {"platform": "youtube", "handle": "FightTips", "name": "fightTIPS (Shane Fazen)", "why": "3.4M subs of practical fight tips; the biggest beginner-tips Shorts channel in combat sports"},
+    {"platform": "youtube", "handle": "Chewjitsu", "name": "Chewjitsu", "why": "BJJ and life lessons; long-form talks clipped into Shorts"},
+    {"platform": "youtube", "handle": "RamseyDewey", "name": "Ramsey Dewey", "why": "Coach opinions and myth-busting, 2M-view Shorts"},
+    {"platform": "youtube", "handle": "Hamza97", "name": "Hamza", "why": "Self-improvement for young men with boxing as a pillar: the discipline/mindset crossover audience"},
+    {"platform": "youtube", "handle": "SenseiSeth", "name": "Sensei Seth", "why": "Martial arts entertainment and myth tests, huge reach with simple premises"}
+  ]
+}

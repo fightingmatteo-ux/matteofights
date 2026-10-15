@@ -1,0 +1,483 @@
+{
+ "_how": "Idea cards from competitor outliers (production/competitors/outliers.json), written by the competitor-ideas skill. Shown in the control center under Results > Rivals; 'Use this' sends the idea to production/control/ideas.json. 'skip' lists off-topic outlier ids hidden from the list (not combat sports or not makeable by Matteo).",
+ "updated": "2026-10-16",
+ "ideas": [
+  {
+   "id": "legend-principle",
+   "title": "A legend, one principle",
+   "evidence": [
+    {
+     "id": "duNzmZRA9DE",
+     "platform": "youtube",
+     "handle": "LawrenceKenshin",
+     "name": "Lawrence Kenshin",
+     "views": 4000000,
+     "x": 54.1,
+     "url": "https://www.youtube.com/shorts/duNzmZRA9DE",
+     "hook": "Saenchai vs Giant - How to Reverse Momentum"
+    },
+    {
+     "id": "DZy3gvg-yTU",
+     "platform": "youtube",
+     "handle": "LawrenceKenshin",
+     "name": "Lawrence Kenshin",
+     "views": 2200000,
+     "x": 29.7,
+     "url": "https://www.youtube.com/shorts/DZy3gvg-yTU",
+     "hook": "Lerdsila - Bruce Lee’s “Water”"
+    },
+    {
+     "id": "eFmUY_vUvXs",
+     "platform": "youtube",
+     "handle": "LawrenceKenshin",
+     "name": "Lawrence Kenshin",
+     "views": 1300000,
+     "x": 17.6,
+     "url": "https://www.youtube.com/shorts/eFmUY_vUvXs",
+     "hook": "Good strategy defeats size"
+    },
+    {
+     "id": "pW2QnpB_MUA",
+     "platform": "youtube",
+     "handle": "PsychologyOfTheFight",
+     "name": "Psychology of The Fight",
+     "views": 286000,
+     "x": 39.2,
+     "url": "https://www.youtube.com/shorts/pW2QnpB_MUA",
+     "hook": "Why Israel Adesanya Is Called \"The Last Stylebender\" #shorts"
+    }
+   ],
+   "pattern": "Name a famous fighter, then explain one idea behind what he does. The name stops the scroll, the principle is what people share.",
+   "why": "Likely why: borrowed credibility plus a lesson that works outside the ring (size, momentum, calm). Four of these did 17x to 54x their channel's normal.",
+   "version": {
+    "format": "talking head or text-on-clip, 20-35 s",
+    "hook": "SAENCHAI FOUGHT BIGGER MEN FOR YEARS. THIS IS HOW HE THOUGHT ABOUT IT.",
+    "beats": [
+     "Name the fighter and the problem (always the smaller man)",
+     "The one idea: make the big man reset, don't trade with him",
+     "Where you use it: any time you're outsized, in sparring or in life",
+     "Question: who's the fighter whose mind you'd steal?"
+    ],
+    "needs": "Your own training footage under the text; never their fight footage (copyright). Names and facts must be checked."
+   },
+   "platforms": {
+    "instagram": "Reel, identity/mindset lane, 3 hook variants (name first / problem first / question)",
+    "facebook": "Same reel",
+    "tiktok": "Same reel",
+    "youtube": "Short titled '<Fighter> vs Bigger Opponents: The Mindset' (name first, keyword-rich)",
+    "threads": "Take: 'Saenchai spent years fighting bigger men. He never tried to out-muscle them. He made them reset, over and over. Most beginners do the opposite. Who's the fighter whose mind you'd steal?'"
+   },
+   "status": "new"
+  },
+  {
+   "id": "starter-pack",
+   "title": "The first-year fighter starter pack",
+   "evidence": [
+    {
+     "id": "DX_6NzTAbzQ",
+     "platform": "instagram",
+     "handle": "themuaythaiguy",
+     "name": "The Muay Thai Guy",
+     "views": 1550154,
+     "x": 30.8,
+     "url": "https://www.instagram.com/reel/DX_6NzTAbzQ/",
+     "hook": "The Muay Thai newb starter pack..."
+    },
+    {
+     "id": "DYPVmxjD64s",
+     "platform": "instagram",
+     "handle": "themuaythaiguy",
+     "name": "The Muay Thai Guy",
+     "views": 440527,
+     "x": 8.8,
+     "url": "https://www.instagram.com/reel/DYPVmxjD64s/",
+     "hook": "Nobody warned me about any of this... especially the last few 👇"
+    },
+    {
+     "id": "DaS0ZqoRLRN",
+     "platform": "instagram",
+     "handle": "themuaythaiguy",
+     "name": "The Muay Thai Guy",
+     "views": 627079,
+     "x": 12.5,
+     "url": "https://www.instagram.com/reel/DaS0ZqoRLRN/",
+     "hook": "Honestly, how many of these do you do 👇"
+    }
+   ],
+   "pattern": "A 'starter pack' or 'nobody warned me' list of things every beginner goes through.",
+   "why": "Likely why: pure recognition. Beginners see themselves, veterans laugh and tag friends. 1.55M views, 31x normal; the 'how many of these do you do' variant hit 12.5x.",
+   "version": {
+    "format": "listicle in the factory format (red hook, list in the caption)",
+    "hook": "THE FIRST-YEAR FIGHTER STARTER PACK",
+    "beats": [
+     "Shin bruises you show people unprompted",
+     "Hand wraps that never dry",
+     "Watching fight breakdowns instead of sleeping",
+     "Telling everyone it's 'just light sparring'",
+     "Repost this for the one who just started"
+    ],
+    "needs": "Nothing: fits the listicle factory as is."
+   },
+   "platforms": {
+    "instagram": "Listicle trial reel, identity archetype, share CTA",
+    "facebook": "Same reel + slide album version",
+    "tiktok": "Same reel or photo carousel",
+    "youtube": "Short 'Every Beginner Fighter Has These 🥊'",
+    "threads": "Question: 'First-year fighter starter pack. I'll start: shin bruises you show people without being asked. What's yours?'"
+   },
+   "status": "new"
+  },
+  {
+   "id": "looks-lazy",
+   "title": "Looks lazy, makes you better",
+   "evidence": [
+    {
+     "id": "DYKM9qhEb_2",
+     "platform": "instagram",
+     "handle": "themuaythaiguy",
+     "name": "The Muay Thai Guy",
+     "views": 700381,
+     "x": 13.9,
+     "url": "https://www.instagram.com/reel/DYKM9qhEb_2/",
+     "hook": "These look like you're slacking... but they are the smartest things you can do 👇"
+    },
+    {
+     "id": "DZsT6qjx3Oa",
+     "platform": "instagram",
+     "handle": "themuaythaiguy",
+     "name": "The Muay Thai Guy",
+     "views": 327910,
+     "x": 6.5,
+     "url": "https://www.instagram.com/reel/DZsT6qjx3Oa/",
+     "hook": "Try these “secrets” 👇"
+    }
+   ],
+   "pattern": "Contrast frame: things that look like slacking but are the smartest work you can do.",
+   "why": "Likely why: it flips guilt into permission, and it's the account's own winning shape (contrast beats instruction about 7x). 700k views, 13.9x normal.",
+   "version": {
+    "format": "listicle, tactical archetype (saves)",
+    "hook": "5 THINGS THAT LOOK LAZY BUT MAKE FIGHTERS DANGEROUS",
+    "beats": [
+     "Slow shadowboxing",
+     "Watching fights with the sound off",
+     "A real rest day",
+     "Light, technical sparring",
+     "Sleeping 8 hours before hard days"
+    ],
+    "needs": "Nothing: fits the listicle factory."
+   },
+   "platforms": {
+    "instagram": "Listicle trial reel, save CTA",
+    "facebook": "Reel + slide album",
+    "tiktok": "Same reel",
+    "youtube": "Short '5 Lazy-Looking Habits That Make Fighters Better'",
+    "threads": "Take: 'Slow shadowboxing looks lazy. It's where you actually fix your mistakes. Fast rounds just let you repeat them faster.'"
+   },
+   "status": "new"
+  },
+  {
+   "id": "street-vs-mat",
+   "title": "The mat vs real life (your story)",
+   "evidence": [
+    {
+     "id": "8P8RlkrdvyA",
+     "platform": "youtube",
+     "handle": "RamseyDewey",
+     "name": "Ramsey Dewey",
+     "views": 468000,
+     "x": 22.3,
+     "url": "https://www.youtube.com/shorts/8P8RlkrdvyA",
+     "hook": "Instagram jiu-jitsu vs Real Life"
+    },
+    {
+     "id": "S-Ov9oqSRzk",
+     "platform": "youtube",
+     "handle": "RamseyDewey",
+     "name": "Ramsey Dewey",
+     "views": 2000000,
+     "x": 95.2,
+     "url": "https://www.youtube.com/shorts/S-Ov9oqSRzk",
+     "hook": "Fake kungfu master gets KO’d again"
+    },
+    {
+     "id": "ciQTabEWHHY",
+     "platform": "youtube",
+     "handle": "FightTips",
+     "name": "fightTIPS (Shane Fazen)",
+     "views": 1500000,
+     "x": 66.7,
+     "url": "https://www.youtube.com/shorts/ciQTabEWHHY",
+     "hook": "Surely This Ain’t a Legit Fight Tactic? (Hopping on One Leg, Spamming Side Kicks - Mona Kimura)"
+    },
+    {
+     "id": "aAVMWszGBbY",
+     "platform": "youtube",
+     "handle": "FightTips",
+     "name": "fightTIPS (Shane Fazen)",
+     "views": 489000,
+     "x": 21.7,
+     "url": "https://www.youtube.com/shorts/aAVMWszGBbY",
+     "hook": "Yeah, “Just Punch the Body” in a Muay Thai Clinch 😂"
+    }
+   ],
+   "pattern": "Myth vs reality: what works in the gym vs what happens for real.",
+   "why": "Likely why: everyone has an opinion, so the comments fight. 'Instagram jiu-jitsu vs real life' did 22x, the fake-master KO 95x, 'surely this ain't a legit tactic' 67x.",
+   "version": {
+    "format": "talking head, story, 30-45 s",
+    "hook": "BJJ WORKED. UNTIL THE MAT WAS PAVEMENT.",
+    "beats": [
+     "Three years of BJJ, good on the mat",
+     "Street fight: took him down like a BJJ guy",
+     "Tore a knee ligament on the pavement",
+     "The lesson: train for where the fight actually happens",
+     "Question: what does your style not prepare you for?"
+    ],
+    "needs": "Your real story (founder.md). Talking points, not a script."
+   },
+   "platforms": {
+    "instagram": "Talking-head reel, 3 hook variants",
+    "facebook": "Same reel",
+    "tiktok": "Same reel",
+    "youtube": "Short 'I Used BJJ in a Street Fight. It Cost Me My Knee.'",
+    "threads": "Story (first person, real): 'Three years of BJJ. First street fight, I took him down like a grappler. Won the position, tore my knee ligament on the pavement. The mat isn't the street.'"
+   },
+   "status": "new"
+  },
+  {
+   "id": "gym-inside-joke",
+   "title": "Gym inside jokes",
+   "evidence": [
+    {
+     "id": "DVwNtnJjcln",
+     "platform": "instagram",
+     "handle": "chewjitsu",
+     "name": "Chewjitsu (Nick Albin)",
+     "views": 361659,
+     "x": 16.6,
+     "url": "https://www.instagram.com/reel/DVwNtnJjcln/",
+     "hook": "It’s ok. Your buddies in the gym will still love you. 😂"
+    },
+    {
+     "id": "DV_nzIgjevC",
+     "platform": "instagram",
+     "handle": "chewjitsu",
+     "name": "Chewjitsu (Nick Albin)",
+     "views": 318934,
+     "x": 14.6,
+     "url": "https://www.instagram.com/reel/DV_nzIgjevC/",
+     "hook": "Tomorrow will probably be a rest day 😂"
+    },
+    {
+     "id": "DePWxnjo4Hh",
+     "platform": "instagram",
+     "handle": "brezojr",
+     "name": "Brezo Jr",
+     "views": 286288,
+     "x": 69.0,
+     "url": "https://www.instagram.com/reel/DePWxnjo4Hh/",
+     "hook": "For real😂☝🏻"
+    }
+   ],
+   "pattern": "A tiny relatable gym moment, no lesson, just recognition and a laugh.",
+   "why": "Likely why: sent to training partners. Chewjitsu's simple gym jokes did 15x to 17x his normal (360k).",
+   "version": {
+    "format": "iykyk (one-line caption + tag a partner)",
+    "hook": "WHEN HE SAYS \"LIGHT SPARRING\" AND THROWS THE FIRST JAB AT 100%",
+    "beats": [
+     "One clip, one line",
+     "Tag the training partner who does this"
+    ],
+    "needs": "A sparring or pad clip from the folder."
+   },
+   "platforms": {
+    "instagram": "iykyk trial reel",
+    "facebook": "Same reel",
+    "tiktok": "Same reel (TikTok's home format)",
+    "youtube": "Short 'Every Gym Has This Guy'",
+    "threads": "Question: 'Every gym has the guy who says light sparring and means title fight. Who is he at yours?'"
+   },
+   "status": "new"
+  },
+  {
+   "id": "thailand-cost",
+   "title": "What training in Thailand really costs",
+   "evidence": [
+    {
+     "id": "DaLP8_Wus1p",
+     "platform": "instagram",
+     "handle": "themuaythaiguy",
+     "name": "The Muay Thai Guy",
+     "views": 656189,
+     "x": 13.1,
+     "url": "https://www.instagram.com/reel/DaLP8_Wus1p/",
+     "hook": "Here’s a complete cost breakdown 🇹🇭"
+    },
+    {
+     "id": "Deeh1pBhWfM",
+     "platform": "instagram",
+     "handle": "_coachdino_",
+     "name": "Coach Dino",
+     "views": 53350,
+     "x": 24.4,
+     "url": "https://www.instagram.com/reel/Deeh1pBhWfM/",
+     "hook": "Comment “guide” for a free passes and discounts to all your favorite spots in Phuket"
+    },
+    {
+     "id": "DedjnvUtE9y",
+     "platform": "instagram",
+     "handle": "_coachdino_",
+     "name": "Coach Dino",
+     "views": 21814,
+     "x": 10.0,
+     "url": "https://www.instagram.com/reel/DedjnvUtE9y/",
+     "hook": "Would you like to train for free?"
+    }
+   ],
+   "pattern": "A concrete money or logistics breakdown for training in Thailand.",
+   "why": "Likely why: high-intent, saved and shared by people planning a trip. 656k views, 13x normal; a Phuket coach's free-pass offer hit 24x.",
+   "version": {
+    "format": "voiceover + b-roll or talking head, numbers on screen",
+    "hook": "WHAT TRAINING MUAY THAI IN THAILAND ACTUALLY COSTS",
+    "beats": [
+     "Gym per month",
+     "Room",
+     "Food per day",
+     "What people waste money on",
+     "Save this before you book"
+    ],
+    "needs": "Your real numbers (Bangkok and Koh Samui). Never estimate them."
+   },
+   "platforms": {
+    "instagram": "Reel, save CTA",
+    "facebook": "Reel + slide album with the numbers",
+    "tiktok": "Photo carousel with the numbers",
+    "youtube": "Short 'Muay Thai in Thailand: Real Monthly Cost'",
+    "threads": "Chain: opener 'What a month of Muay Thai in Thailand actually costs', then one reply per cost"
+   },
+   "status": "new"
+  },
+  {
+   "id": "fighter-routine",
+   "title": "A fighter's morning, POV",
+   "evidence": [
+    {
+     "id": "2GrMGAvJCE8",
+     "platform": "youtube",
+     "handle": "Hamza97",
+     "name": "Hamza",
+     "views": 640000,
+     "x": 14.5,
+     "url": "https://www.youtube.com/shorts/2GrMGAvJCE8",
+     "hook": "POV: Curry Hall morning routine"
+    },
+    {
+     "id": "B5VJWZsTP6g",
+     "platform": "youtube",
+     "handle": "Hamza97",
+     "name": "Hamza",
+     "views": 288000,
+     "x": 6.5,
+     "url": "https://www.youtube.com/shorts/B5VJWZsTP6g",
+     "hook": "How Successful People Eat"
+    },
+    {
+     "id": "nZkcoQ2XkEk",
+     "platform": "youtube",
+     "handle": "Hamza97",
+     "name": "Hamza",
+     "views": 320000,
+     "x": 7.3,
+     "url": "https://www.youtube.com/shorts/nZkcoQ2XkEk",
+     "hook": "Getting Addicted to 75 Hard"
+    }
+   ],
+   "pattern": "POV routine or 'how X people eat' in quick cuts.",
+   "why": "Likely why: aspirational and easy to watch to the end. Hamza's routine POV did 14.5x (640k), 'how successful people eat' 6.5x.",
+   "version": {
+    "format": "vlog POV, 15-25 s quick cuts",
+    "hook": "POV: A FIGHTER'S MORNING IN BANGKOK",
+    "beats": [
+     "Wake, water, roadwork",
+     "Breakfast before training",
+     "Pads, sparring, ice",
+     "One line on why the routine matters more than motivation"
+    ],
+    "needs": "Real footage of your morning (lifestyle lane)."
+   },
+   "platforms": {
+    "instagram": "Lifestyle-lane reel",
+    "facebook": "Same reel",
+    "tiktok": "Same reel",
+    "youtube": "Short 'Pro Fighter Morning Routine in Bangkok'",
+    "threads": "Tip: 'Don't wait to feel like training. Roadwork before breakfast, every day, then decide how you feel. The routine makes the call, not the mood.'"
+   },
+   "status": "new"
+  },
+  {
+   "id": "rule-take",
+   "title": "The hot take on how sports treat each other",
+   "evidence": [
+    {
+     "id": "XtpwYyiDa5g",
+     "platform": "youtube",
+     "handle": "RamseyDewey",
+     "name": "Ramsey Dewey",
+     "views": 331000,
+     "x": 15.8,
+     "url": "https://www.youtube.com/shorts/XtpwYyiDa5g",
+     "hook": "If boxing treated kickboxing the same way BJJ treats MMA"
+    },
+    {
+     "id": "xd1DWVkUGjc",
+     "platform": "youtube",
+     "handle": "RamseyDewey",
+     "name": "Ramsey Dewey",
+     "views": 179000,
+     "x": 8.5,
+     "url": "https://www.youtube.com/shorts/xd1DWVkUGjc",
+     "hook": "If you can’t grapple you don’t know how to fight - sad this still needs to be said in 2022"
+    },
+    {
+     "id": "D21kqfG93n4",
+     "platform": "youtube",
+     "handle": "RamseyDewey",
+     "name": "Ramsey Dewey",
+     "views": 480000,
+     "x": 22.9,
+     "url": "https://www.youtube.com/shorts/D21kqfG93n4",
+     "hook": "The only illegal throw in the UFC"
+    }
+   ],
+   "pattern": "A blunt opinion about combat sports culture or rules that people will argue with.",
+   "why": "Likely why: a clear side to take drives comments. Ramsey Dewey's takes did 8x to 23x his normal.",
+   "version": {
+    "format": "talking head, 20-30 s",
+    "hook": "PEOPLE THINK COMBAT SPORTS IS JUST VIOLENCE.",
+    "beats": [
+     "The misconception",
+     "What it really is: balance, technique, flow, chess under pressure",
+     "Your first fight at 16 as the proof",
+     "Question: what did people say when you started?"
+    ],
+    "needs": "Your words (founder.md core belief). Talking points."
+   },
+   "platforms": {
+    "instagram": "Talking-head reel",
+    "facebook": "Same reel",
+    "tiktok": "Same reel",
+    "youtube": "Short 'Combat Sports Isn't Violence. It's Chess.'",
+    "threads": "Take: 'People think fighting is just violence. It's chess where the wrong move gets you punched. The calm ones win more than the angry ones.'"
+   },
+   "status": "new"
+  }
+ ],
+ "skip": [
+  "DeMfujGhnOJ",
+  "DceGoxuqpHX",
+  "DeHjDOjiYSe",
+  "DecJogUn94T",
+  "DeGPxsvktxy",
+  "DeMpGhdEu3J",
+  "DeRygFjkcU2"
+ ]
+}

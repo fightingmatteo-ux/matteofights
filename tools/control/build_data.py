@@ -115,6 +115,11 @@ def main():
         "crosspost": {k: v for k, v in load(ROOT / "production/schedule/crosspost.json", {}).items() if k != "_how"},
         "threads_posts": sorted(load(ROOT / "production/threads/posts.json", {"posts": []})["posts"],
                                 key=lambda p: p["at"])[-60:],
+        # Results > Rivals: competitor outliers (tools/competitors/scout.py) + idea cards (competitor-ideas skill)
+        "competitors": {**{k: v for k, v in load(ROOT / "production/competitors/outliers.json", {}).items() if k != "outliers"},
+                        "outliers": load(ROOT / "production/competitors/outliers.json", {}).get("outliers", [])[:80],
+                        "ideas": load(ROOT / "production/competitors/ideas.json", {}).get("ideas", []),
+                        "skip": load(ROOT / "production/competitors/ideas.json", {}).get("skip", [])},
         "health": {
             "hooks_ready": sum(1 for h in hooks if h.get("status") == "ready"),
             "clips_live": len(live), "clips_catalogued": len([k for k in clips if k in live]) if live else len(clips),

@@ -327,6 +327,42 @@ th:first-child, td:first-child { text-align: left; padding-left: 0; font-family:
 th { font-weight: 500; font-size: 12px; color: var(--dust); border-bottom-color: var(--rule); }
 .scroll { overflow-x: auto; }
 
+/* ------------------------------------------------------------ results > rivals */
+.page-head .head { margin-bottom: 0; align-items: center; flex-wrap: wrap; }
+.note-adapted { color: var(--dust); font-size: 14px; max-width: 62ch; margin: -4px 0 var(--s4); }
+.rcards { display: grid; gap: 0 var(--s6); }
+@media (min-width: 960px) { .rcards { grid-template-columns: 1fr 1fr; } }
+.rcard { display: grid; gap: 10px; align-content: start; padding: var(--s5) 0; border-top: 1px solid var(--rule); }
+.rcard h3 { font: 26px/1 var(--display); letter-spacing: .03em; }
+.rcard .proof { display: flex; gap: var(--s3); align-items: flex-start; font-size: 14px; }
+.rcard .proof a { font-weight: 600; text-decoration: none; }
+.rcard .proof a:hover { text-decoration: underline; }
+.rcard .proof small { display: block; color: var(--dust); font-size: 13px; margin-top: 2px; }
+.xbig { font: 600 28px/1 var(--mono); color: var(--gold); letter-spacing: -.02em; flex: none; white-space: nowrap; }
+.rcard .yhook { font: 22px/1.05 var(--display); letter-spacing: .03em; color: var(--red-ink); }
+.rcard .beats { margin: 0; padding-left: 1.3em; color: var(--paper); font-size: 15px; display: grid; gap: 2px; }
+.rcard .beats li::marker { font-family: var(--mono); color: var(--dust); font-size: 12px; }
+.rcard .pv { font-size: 14px; background: var(--housing); border-radius: var(--r-ctl); padding: 10px 12px; }
+.rcard .pv b { display: block; font-size: 12px; color: var(--dust); font-weight: 600; margin-bottom: 2px; }
+.rcard .why { font-size: 13px; color: var(--dust); max-width: 62ch; }
+.rcard .why summary { cursor: pointer; min-height: 32px; display: flex; align-items: center; color: var(--paper); font-weight: 500; list-style: none; }
+.rcard .why summary::-webkit-details-marker { display: none; }
+.rcard .why summary::after { content: "+"; font-family: var(--mono); margin-left: 8px; color: var(--dust); }
+.rcard .why[open] summary::after { content: "-"; }
+.rcard .why p { margin-top: 4px; }
+.rcard .why b { color: var(--paper); font-weight: 600; }
+.outliers { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
+.outliers li + li { border-top: 1px solid color-mix(in srgb, var(--rule) 60%, transparent); }
+.outliers a { display: grid; grid-template-columns: 64px 1fr; gap: var(--s3); align-items: center; padding: 10px 0; min-height: 56px; text-decoration: none; transition: background-color .2s var(--ease); }
+.outliers a:hover { background: linear-gradient(90deg, transparent, var(--housing) 20%, var(--housing) 80%, transparent); }
+.ox { font-size: 18px; font-weight: 600; color: var(--paper); }
+.ox.hot { color: var(--gold); }
+.ot { min-width: 0; }
+.ot b { display: block; font-weight: 500; line-height: 1.3; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ot small { display: block; font-size: 12px; color: var(--dust); margin-top: 2px; }
+table.accs td:first-child { white-space: normal; min-width: 220px; }
+table.accs td small { display: block; color: var(--dust); font-size: 12px; font-family: var(--body); max-width: 46ch; white-space: normal; }
+
 /* ------------------------------------------------------------ decide */
 .q { display: grid; gap: var(--s3); padding: var(--s5) 0; border-top: 1px solid var(--rule); }
 .q h3 { font-size: 19px; line-height: 1.35; font-weight: 600; max-width: 42ch; text-wrap: balance; }
