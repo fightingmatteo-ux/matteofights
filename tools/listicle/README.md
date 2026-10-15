@@ -39,7 +39,7 @@ The API can't attach Instagram library sounds, so trial reels carry royalty-free
 where they matter: when a trial reel hits ~2x the account's normal views at 72 h, Claude flags it and suggests a
 fitting trending sound; Matteo re-posts that winner to the grid from the app with the sound (1-2 a week).
 `--audio "<sound>"` still exists for the manual route (renders without music, Post queue skips the item).
-Two factory runs every Sunday: 09:00 UTC for the 17:00 slot, 09:40 UTC for the 20:00 slot (14 reels/week).
+Two factory runs every Sunday (09:00 and 09:40 UTC) fill the 18:30 and 21:30 New York slots: US evening, 3-7am in India (reach was skewing Indian at the old 17:00 UTC slot = 22:30 IST). 14 reels/week.
 
 ## Look (since 2026-10-15, copied from the 398k / 162k reels)
 Instagram's native text style: red bold serif hook, each line on its own rounded black highlight, centred in

@@ -12,6 +12,7 @@ Nothing posts until the item is approved (tools/instagram/approve.py) after Matt
 Needs: rclone remote "gdrive" (secret RCLONE_CONF), gh CLI (GH_TOKEN), ffmpeg, Pillow.
 """
 import argparse, datetime as dt, json, os, subprocess, sys
+from zoneinfo import ZoneInfo
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
@@ -124,24 +125,34 @@ def load_catalog(clips):
     return agent.catalog(clips, get)
 
 
+TZ = ZoneInfo("America/New_York")  # slots are US Eastern evening: US prime time, India asleep (3-7am IST)
+
+
 def next_slots(queue, n, hour, minute):
-    """Daily slots after the last listicle already queued at this time of day (or from tomorrow if today's slot is gone)."""
+    """Daily slots (New York time, DST-safe) after the last listicle already queued at this local time of day."""
     now = dt.datetime.now(dt.timezone.utc)
-    taken = [t for t in (dt.datetime.fromisoformat(i["not_before"].replace("Z", "+00:00"))
-             for i in queue["items"] if i["id"].startswith("lst-") and i.get("status") == "queued")
-             if (t.hour, t.minute) == (hour, minute)]  # each daily slot (17:00, 20:00...) fills its own days
-    day = now.replace(hour=hour, minute=minute, second=0, microsecond=0)
+    taken = []
+    for i in queue["items"]:
+        if i["id"].startswith("lst-") and i.get("status") == "queued":
+            t = dt.datetime.fromisoformat(i["not_before"].replace("Z", "+00:00")).astimezone(TZ)
+            if (t.hour, t.minute) == (hour, minute):  # each daily slot fills its own days
+                taken.append(t.date())
+    day = now.astimezone(TZ).date()
     if taken:
         day = max(max(taken) + dt.timedelta(days=1), day)
-    if day <= now + dt.timedelta(hours=2):  # leave time for the yes
+    slots = []
+    while len(slots) < n:
+        t = dt.datetime(day.year, day.month, day.day, hour, minute, tzinfo=TZ).astimezone(dt.timezone.utc)
+        if t > now + dt.timedelta(hours=2):  # leave time for the yes
+            slots.append(t)
         day += dt.timedelta(days=1)
-    return [day + dt.timedelta(days=k) for k in range(n)]
+    return slots
 
 
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--count", type=int, default=7)
-    p.add_argument("--slot", default="17:00", help="daily post time, UTC HH:MM")
+    p.add_argument("--slot", default="18:30", help="daily post time, New York HH:MM")
     p.add_argument("--seconds", type=float, default=8.0)
     p.add_argument("--audio", default="",
                    help="Instagram library sound Matteo adds by hand in the app (manual posting); default '' = "
@@ -172,7 +183,7 @@ def main():
 
     for h, slot in zip(todo, slots):
         uses = state["clip_uses"]
-        day = slot.strftime("%Y-%m-%d")
+        day = slot.astimezone(TZ).strftime("%Y-%m-%d")
         asset = f"lst-{day}-{h['id']}.mp4"
         folder = ROOT / "production" / "listicles" / f"{day}-{h['id']}"
         folder.mkdir(parents=True, exist_ok=True)
@@ -200,7 +211,7 @@ def main():
         state["last_clip"] = clip["ID"]
         state["music_i"] += 1
         save(HOOKS, hooks); save(STATE, state); save(QUEUE, queue)  # after each one: a crash keeps the finished ones
-        print(f"{qid}: {h['hook']} | clip {clip['Name']} | posts {slot:%a %d %b %H:%M} UTC once approved", flush=True)
+        print(f"{qid}: {h['hook']} | clip {clip['Name']} | posts {slot.astimezone(TZ):%a %d %b %H:%M} New York once approved", flush=True)
 
 
 def rerender(seconds, only=(), rematch=False):
