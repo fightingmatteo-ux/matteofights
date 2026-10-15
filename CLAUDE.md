@@ -26,7 +26,8 @@ analytics. Build it in phases; don't try to do everything at once.
   account is **unproven**, not disproven. See [context/content.md](context/content.md).
 - **Content direction (2026-10-12):** combat sport psychology + fighter mindset, not injury stories.
   Goal = followers and engaged fighters; no Stance plug in reels unless Matteo asks. Matteo films from
-  **talking points**, not scripts. Every reel = 3 hook variants, posted by Matteo as trial reels 48 h
+  **talking points**, not scripts. Since 2026-10-15 also an adjacent lifestyle lane (nutrition, recovery,
+  routine), always framed for fighters; daily listicle trial reels run themselves (`tools/listicle/README.md`). Every reel = 3 hook variants, posted by Matteo as trial reels 48 h
   apart, logged in `production/reels/LEDGER.md`. Pipeline: `production/editing/reel-kit/PIPELINE.md`.
 - **Stance (the app/business) lives in a separate folder:** `C:\Users\matte\Documents\Claude\Projects\Stance`
   (brand, audience, business, launch reel). Go there when Matteo says "Stance stuff". Not in this repo.

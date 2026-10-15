@@ -26,7 +26,7 @@ QUEUE = ROOT / "production" / "schedule" / "queue.json"
 CLIPS_FOLDER = "1EkBaa-a9m1lX5KQZnmNXQNj-E8E8hCKk"   # Matteo's raw training clips (top level only)
 OUT_FOLDER = "1bHwCLpkK2w9e9BN22dXWgQnn8_CLYpR2"     # Drive output; previews go in output/listicles/
 VIDEO_EXT = (".mov", ".mp4", ".m4v")
-NOT_TRAINING = ("grocery", "view", "motorbike", "driving", "eth.mov", "clip eth", "landmine", "pull ups")
+SHEETS = ROOT / "production" / "listicles" / "clip-sheets"   # 6-frame contact sheet per Drive clip, for Claude to look at
 MAX_BYTES = 700 * 1024 * 1024   # skip the 1 GB+ sparring masters: slow to pull, and one 8 s window is enough
 REPO = os.environ.get("GITHUB_REPOSITORY", "fightingmatteo-ux/matteofights")
 WORK = ROOT / "media" / "listicles"
@@ -50,7 +50,7 @@ def list_clips():
     out = subprocess.run(["rclone", "lsjson", "gdrive:", "--drive-root-folder-id", CLIPS_FOLDER, "--files-only"],
                          capture_output=True, text=True, check=True).stdout
     keep = [c for c in json.loads(out) if c["Name"].lower().endswith(VIDEO_EXT) and c.get("Size", 0) <= MAX_BYTES
-            and not any(w in c["Name"].lower() for w in NOT_TRAINING)]
+            ]
     return sorted(keep, key=lambda c: c["ModTime"])
 
 
@@ -81,7 +81,7 @@ def produce(h, out, cover, music_i, seconds, clips, cat, uses, avoid, first=None
         pool = [c for c in clips if c["ID"] not in avoid] or clips
         clip = first or min(pool, key=lambda c: (uses.get(c["ID"], 0), -dt.datetime.fromisoformat(
             c["ModTime"].replace("Z", "+00:00")).timestamp()))
-        rot = cat_rotate(cat, clip["ID"])
+        rot = cat_rotate(manual_catalog(), clip["ID"])
         render(fetch(clip["ID"], clip["Name"]), h["id"], out, seconds, cover, music_i, rot)
         return clip, rot, None
     cands = ([first] if first else []) + [by_id[m["id"]] for m in
@@ -109,8 +109,43 @@ def produce(h, out, cover, music_i, seconds, clips, cat, uses, avoid, first=None
     return clip, rot, rv
 
 
+def manual_catalog():
+    return load(agent.CATALOG, {})
+
+
+def review_sheet(video, out):
+    """Cover + 4 frames of the finished reel, committed so Claude can review it in the scheduled session."""
+    d = agent._duration(video)
+    agent.sheet(video, [0.5, d * 0.3, d * 0.5, d * 0.7, max(0.5, d - 0.6)], out)
+
+
 def cat_rotate(cat, clip_id):
     return (cat or {}).get(clip_id, {}).get("rotate_fix", 0)
+
+
+def make_sheets(clips):
+    """One small contact sheet per clip that doesn't have one yet. Claude (scheduled session, Matteo's account)
+    reads them, describes each clip in clips.json and picks a clip per hook (hooks.json clip_id)."""
+    SHEETS.mkdir(parents=True, exist_ok=True)
+    for c in clips:
+        out = SHEETS / f"{c['ID']}.jpg"
+        if out.exists():
+            continue
+        local = WORK / f"{c['ID']}{Path(c['Name']).suffix}"
+        temp = not local.exists()
+        try:
+            path = fetch(c["ID"], c["Name"])
+            d = agent._duration(path)
+            lo, hi = min(1.0, d * 0.1), max(d - 1.0, d * 0.9)
+            agent.sheet(path, [lo + (hi - lo) * k / 5 for k in range(6)], out)
+            print(f"sheet: {c['Name']} ({d:.0f}s)", flush=True)
+        except Exception as e:  # one broken clip must not stop the run
+            print(f"sheet: {c['Name']}: {e}", flush=True)
+        finally:
+            if temp:
+                local.unlink(missing_ok=True)
+    live = {c["ID"]: c["Name"] for c in clips}
+    (SHEETS / "index.json").write_text(json.dumps(live, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
 
 def load_catalog(clips):
@@ -162,11 +197,14 @@ def main():
                    help="re-render the queued, not-yet-approved listicles in place (same hook and day)")
     p.add_argument("--rematch", action="store_true",
                    help="with --rerender: let the footage agent pick the clip again from the whole folder")
-    p.add_argument("--catalog-only", action="store_true", help="just describe new Drive clips")
+    p.add_argument("--catalog-only", action="store_true", help="just describe new Drive clips (needs API key)")
+    p.add_argument("--sheets-only", action="store_true", help="just make contact sheets for new Drive clips")
     a = p.parse_args()
     WORK.mkdir(parents=True, exist_ok=True)
     if a.catalog_only:
         return load_catalog(list_clips())
+    if a.sheets_only:
+        return make_sheets(list_clips())
     if a.rerender:
         return rerender(a.seconds, {x.strip() for x in a.only.split(',') if x.strip()}, a.rematch)
 
@@ -178,6 +216,7 @@ def main():
     if not clips:
         sys.exit(f"no video clips in Drive folder {CLIPS_FOLDER}")
     slots = next_slots(queue, len(todo), *map(int, a.slot.split(":")))
+    make_sheets(clips)
     cat = load_catalog(clips)
     work = WORK
 
@@ -188,8 +227,16 @@ def main():
         folder = ROOT / "production" / "listicles" / f"{day}-{h['id']}"
         folder.mkdir(parents=True, exist_ok=True)
         avoid = nearby_clips(queue, day) | ({state["last_clip"]} if state.get("last_clip") else set())
-        clip, rot, rv = produce(h, work / asset, folder / "cover.jpg", None if a.audio else state["music_i"],
-                                a.seconds, clips, cat, uses, avoid)
+        picked = {c["ID"]: c for c in clips}.get(h.get("clip_id"))
+        if picked and cat is None:  # Claude chose this clip from the sheets: render it as chosen
+            rot = cat_rotate(manual_catalog(), picked["ID"])
+            render(fetch(picked["ID"], picked["Name"]), h["id"], work / asset, a.seconds, folder / "cover.jpg",
+                   None if a.audio else state["music_i"], rot)
+            clip, rv = picked, None
+        else:
+            clip, rot, rv = produce(h, work / asset, folder / "cover.jpg", None if a.audio else state["music_i"],
+                                    a.seconds, clips, cat, uses, avoid, picked)
+        review_sheet(work / asset, folder / "review.jpg")
         (folder / "caption.txt").write_text(h["caption"].strip() + "\n", encoding="utf-8")
 
         run("gh", "release", "upload", "media", str(work / asset), "--clobber", "-R", REPO)
@@ -230,14 +277,16 @@ def rerender(seconds, only=(), rematch=False):
         folder = ROOT / Path(item["caption_file"]).parent
         avoid = nearby_clips(queue, item["not_before"][:10], skip_id=item["id"]) | {cur_id}
         if cat is None:  # no agent: plain re-render, keep any manual rotate
+            rot = item.get("rotate") or cat_rotate(manual_catalog(), cur_id)
             render(fetch(cur_id, cur["Name"]), h["id"], WORK / item["video_asset"], seconds, folder / "cover.jpg",
-                   None if item.get("app_audio") else n, item.get("rotate", 0))
-            clip, rot, rv = cur, item.get("rotate", 0), None
+                   None if item.get("app_audio") else n, rot)
+            clip, rv = cur, None
         else:
             # The current clip is reviewed first and only swapped if it fails; --rematch starts from scratch.
             clip, rot, rv = produce(h, WORK / item["video_asset"], folder / "cover.jpg",
                                     None if item.get("app_audio") else n, seconds, clips, cat,
                                     state["clip_uses"], avoid, None if rematch else cur)
+        review_sheet(WORK / item["video_asset"], folder / "review.jpg")
         item["clip"] = f"{clip['Name']} ({clip['ID']})"
         item.pop("rotate", None)
         if rot:

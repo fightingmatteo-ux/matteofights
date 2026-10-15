@@ -6,6 +6,7 @@ name: Listicle factory
 
 on:
   schedule:
+    - cron: "0 7 * * 6"    # Saturday: contact sheets for new Drive clips (Claude picks clips from them)
     - cron: "0 9 * * 0"    # Sunday: next week's 18:30 New York slot
     - cron: "40 9 * * 0"   # Sunday: next week's 21:30 New York slot
   workflow_dispatch:
@@ -23,6 +24,10 @@ on:
       only:
         description: With rerender, only these queue ids (comma-separated)
         default: ""
+      sheets:
+        description: Only make contact sheets for new Drive clips
+        type: boolean
+        default: false
       rematch:
         description: With rerender, let the footage agent re-pick every clip from the whole folder
         type: boolean
@@ -58,9 +63,10 @@ jobs:
           SLOT: ${{ github.event.schedule == '40 9 * * 0' && '21:30' || inputs.slot || '18:30' }}
           RERENDER: ${{ inputs.rerender && '--rerender' || '' }}
           REMATCH: ${{ inputs.rematch && '--rematch' || '' }}
+          SHEETS: ${{ (inputs.sheets || github.event.schedule == '0 7 * * 6') && '--sheets-only' || '' }}
           ONLY: ${{ inputs.only || '' }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}   # footage agent; without it: least-used clips
-        run: python3 -P tools/listicle/factory.py --count "$COUNT" --slot "$SLOT" --only "$ONLY" $RERENDER $REMATCH
+        run: python3 -P tools/listicle/factory.py --count "$COUNT" --slot "$SLOT" --only "$ONLY" $RERENDER $REMATCH $SHEETS
       - name: Commit
         if: always()
         run: |
@@ -68,5 +74,5 @@ jobs:
           git diff --cached --quiet && exit 0
           git config user.name "listicle-factory[bot]"
           git config user.email "listicle-factory@users.noreply.github.com"
-          git commit -qm "listicles: ${{ inputs.rerender && 're-rendered ' || '' }}$(python3 -c "import json;q=json.load(open('production/schedule/queue.json'));print(', '.join(i['id'] for i in q['items'] if i['id'].startswith('lst-') and not i['approved'] and i['status']=='queued'))") awaiting yes"
+          git commit -qm "listicles: ${{ (inputs.sheets || github.event.schedule == '0 7 * * 6') && 'clip sheets; ' || '' }}${{ inputs.rerender && 're-rendered ' || '' }}$(python3 -c "import json;q=json.load(open('production/schedule/queue.json'));print(', '.join(i['id'] for i in q['items'] if i['id'].startswith('lst-') and not i['approved'] and i['status']=='queued'))") awaiting yes"
           for n in 1 2 3; do git pull --rebase -q && git push -q && break; sleep 5; done

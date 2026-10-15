@@ -64,3 +64,19 @@ Every run, before rendering:
    A fail renders the next candidate (max 3); if none pass, the best-scored one is kept. Verdicts land in the queue item (`review`).
 `--rerender` reviews the current clip first and only swaps it on a fail; `--rerender --rematch` re-picks from scratch.
 Model: Claude Opus 5.5 (structured JSON output, fallbacks on). Cost: about a few cents per clip catalogued, ~10 cents per reel.
+
+## No API key: Claude works from the scheduled session (Matteo's account)
+The footage agent's API path is off without `ANTHROPIC_API_KEY`. Instead:
+- **Saturday 07:00 UTC**: the factory makes a 6-frame contact sheet for every new Drive clip
+  (`production/listicles/clip-sheets/<drive id>.jpg`, live list in `index.json`).
+- **Saturday daily check**: Claude looks at new sheets and writes `production/listicles/clips.json` (same fields as
+  footage_agent.CLIP_SCHEMA: activity, setting, fighter_visible, rotate_fix, quality, usable...), writes next week's
+  14 hooks, and sets `clip_id` on each hook to the best-fitting clip from the whole folder.
+- **Sunday**: the factory renders each hook on its `clip_id` (rotation from clips.json) and saves a `review.jpg` next to
+  each cover. Claude's Sunday check reviews them, swaps any bad clip (`clip` in queue.json + `--rerender --only`), then
+  sends Matteo the week for his yes.
+
+## Lifestyle lane (since 2026-10-15)
+Not only training clips: food, recovery, routine, travel clips in the folder can carry adjacent fighter topics
+(nutrition, sleep, recovery, discipline outside the gym). Rule: the hook still speaks to fighters
+("WHAT I EAT BEFORE A FIGHT", "5 RECOVERY HABITS..."), never generic lifestyle. About 2-3 of 14 per week.
