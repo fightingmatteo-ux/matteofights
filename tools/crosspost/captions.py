@@ -33,11 +33,16 @@ def sentence_case(s):
     return s[0].upper() + s[1:].lower() if s.isupper() else s
 
 
+def prose(text):
+    """A talking-head caption (no list) keeps its paragraphs: drop hashtags and IG-only lines, nothing else."""
+    lines = [l for l in text.strip().splitlines() if not re.fullmatch(r"\s*(#\S+\s*)+", l) and not IG_ONLY.search(l)]
+    return re.sub(r"\n{3,}", "\n\n", "\n".join(lines)).strip()
+
+
 def facebook(text, hook=""):
     p = parse(text, hook)
     if not p["items"]:
-        keep = [l for l in p["opener"] + p["after"] if not IG_ONLY.search(l)]
-        return "\n".join(keep[:4] + ["", FB_TAGS]).strip()
+        return prose(text) + "\n\n" + FB_TAGS
     out = p["opener"][:2] + [""] + ([p["title"]] if p["title"] else []) + p["items"] + ["", QUESTION, "", FB_TAGS]
     return "\n".join(out).strip()
 
@@ -54,14 +59,14 @@ def youtube_description(text, hook=""):
     p = parse(text, hook)
     lines = p["opener"][:2] + [""] + ([p["title"]] if p["title"] else []) + p["items"]
     if not p["items"]:
-        lines = [l for l in p["opener"] + p["after"] if not IG_ONLY.search(l)]
+        lines = [prose(text)]
     return "\n".join(lines + ["", "New fighter mindset Shorts every day. Subscribe.", "", YT_TAGS]).strip()
 
 
 def threads(text, hook=""):
     p = parse(text, hook)
     if not p["items"]:
-        return "\n".join(l for l in p["opener"] + p["after"] if not IG_ONLY.search(l))[:500]
+        return prose(text)[:500]
     head = sentence_case(hook) if hook else (p["opener"][0] if p["opener"] else p["title"])
     body = [head, ""] + p["items"] + ["", QUESTION]
     out = "\n".join(body)

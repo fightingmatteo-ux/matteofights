@@ -396,6 +396,8 @@ def run_platform(name, cfg, state, items, done, dry):
         rec = state["posts"].setdefault(it["id"], {}).get(name, {})
         if rec.get("status") in ("posted", "skipped") or rec.get("tries", 0) >= MAX_TRIES:
             continue
+        if "crosspost_to" in it and name not in it["crosspost_to"]:
+            continue  # hook variants of one video: each goes to its own platform, never the same clip twice
         after = parse_iso(it["posted_at"]) + dt.timedelta(minutes=cfg.get("min_delay_min", 0))
         after = max(after, last) if last else after
         slot = next_slot(after, cfg["slots"]) if cfg.get("slots") else after

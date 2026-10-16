@@ -1,0 +1,51 @@
+hookA       1.60-   8.20 pen  4.57 sim 0.85 hes 0 rep 0 fill 0 low 1 | Sentry fought bigger men his entire career. Here's how he thought about it.
+hookA       8.90-  13.90 pen  3.60 sim 0.92 hes 0 rep 0 fill 0 low 1 | Senshi fought bigger men his whole career. Here's how he thought about it.
+hookA      14.35-  19.25 pen  4.34 sim 0.85 hes 0 rep 0 fill 0 low 1 | Sentry, four bigger men, his whole career. Here's how he thought about it.
+hookA      19.70-  24.60 pen  4.27 sim 0.85 hes 0 rep 0 fill 0 low 1 | Senshi for bigger men, his whole career. Here's how he thought about it.
+hookA      24.68-  28.82 pen  2.14 sim 0.85 hes 0 rep 0 fill 0 low 0 | Sentry for bigger men his whole career. Here's how he thought about it.
+hookB      28.84-  33.40 pen  4.01 sim 0.88 hes 0 rep 0 fill 0 low 1 | If you always spar someone bigger than you, steal this from Sen 'Chai.
+hookB      34.68-  39.05 pen  1.80 sim 0.92 hes 0 rep 0 fill 0 low 0 | If you always spar someone bigger than you, steal this from Senchai.
+hookB      39.86-  43.95 pen  3.81 sim 0.88 hes 0 rep 0 fill 0 low 1 | If you always spar someone bigger than you, steal this from Sen 'Chai.
+hookB      44.62-  48.80 pen  3.93 sim 0.88 hes 0 rep 0 fill 0 low 1 | If you always spar someone bigger than you, steal this from Sen 'Chai.
+hookB      50.78-  55.30 pen  3.74 sim 0.88 hes 0 rep 0 fill 0 low 1 | If you always spar someone bigger than you, steal this from Sen 'Chai.
+hookB      56.74-  60.85 pen  3.62 sim 0.92 hes 0 rep 0 fill 0 low 1 | If you always spar someone bigger than you, steal this from Senchai.
+hookC      62.50-  66.30 pen  6.02 sim 0.71 hes 0 rep 0 fill 0 low 1 | Bigger guys win the trade, but Sunshine never trades.
+hookC      72.45-  76.50 pen  4.28 sim 0.82 hes 0 rep 0 fill 0 low 1 | Bigger guys win the trade, but Senshi never traded.
+hookC      77.84-  80.90 pen  5.02 sim 0.82 hes 0 rep 0 fill 0 low 1 | Bigger guys win the trade, but Sunshine never traded.
+heavier    82.10-  91.30 pen  7.79 sim 0.51 hes 0 rep 0 fill 0 low 1 | Sentrye spent most of his career fighting bigger guys because no one his size could even g
+heavier    91.30- 100.90 pen  9.06 sim 0.55 hes 0 rep 0 fill 0 low 2 | This guy spent most of his career fighting bigger men, usually by more than several kilos,
+heavier   101.55- 109.30 pen  3.12 sim 0.78 hes 0 rep 0 fill 0 low 0 | Sentrye spent most of his career fighting bigger guys, often by several kilos, because no 
+heavier   109.30- 118.20 pen  3.44 sim 0.73 hes 0 rep 0 fill 0 low 0 | Sentry spent most of his career fighting bigger guys, often by more than several kilos, be
+heavier   118.20- 126.90 pen  6.24 sim 0.68 hes 0 rep 0 fill 0 low 1 | Sentrye spent most of his career fighting bigger guys, often by several kilos, because no 
+heavier   124.50- 134.40 pen  5.41 sim 0.76 hes 0 rep 0 fill 0 low 1 | Sentry spent most of his career fighting bigger guys, often by several kilos. Because no o
+muscle    134.90- 140.35 pen  1.65 sim 0.89 hes 0 rep 0 fill 0 low 0 | He didn't try to outmuscle them and he never stood in front of them long enough to trade.
+muscle    141.48- 146.95 pen  1.75 sim 0.89 hes 0 rep 0 fill 0 low 0 | He didn't try to outmuscle them and he never stood in front of them long enough to trade.
+step      147.76- 152.50 pen  1.61 sim 0.90 hes 0 rep 0 fill 0 low 0 | He would step off the line, catch the kick, sweep them and make them start over.
+step      152.86- 158.35 pen  4.98 sim 0.85 hes 0 rep 0 fill 0 low 1 | He would just step off the line, catch the kick, sweep them, and make them start over agai
+step      158.92- 163.85 pen  2.20 sim 0.85 hes 0 rep 0 fill 0 low 0 | He would just step off the line, catch the kick, sweep them and make them start over again
+step      164.50- 168.45 pen  4.04 sim 0.85 hes 0 rep 0 fill 0 low 1 | He would just step off the line, catch the kick, sweep them and make them start over again
+step      168.68- 174.50 pen 11.02 sim 0.76 hes 0 rep 0 fill 2 low 1 | Okay, so he would just step off the line, catch the kick, sweep them and make them start a
+reset     181.00- 189.90 pen 10.35 sim 0.59 hes 0 rep 0 fill 0 low 3 | Sweep them, and make them start all over again. Every single reset costs the bigger guy en
+reset     192.50- 201.50 pen  1.32 sim 0.95 hes 0 rep 0 fill 0 low 0 | Every reset costs the bigger guy energy and a little confidence. Do that 10 times and he's
+reset     202.52- 209.85 pen  0.92 sim 0.95 hes 0 rep 0 fill 0 low 0 | Every reset costs the bigger guy energy and a little confidence. Do that 10 times and he's
+reset     210.54- 218.80 pen  0.93 sim 0.95 hes 0 rep 0 fill 0 low 0 | Every reset costs the bigger guy energy and a little confidence. Do that 10 times and he's
+win       220.20- 226.35 pen  3.25 sim 0.94 hes 0 rep 0 fill 0 low 1 | So next time you try to spar someone bigger, don't try to win the exchange, win the reset.
+win       227.40- 233.05 pen  3.49 sim 0.94 hes 0 rep 0 fill 0 low 1 | So next time YOU try to spar someone bigger, don't try to win the exchange. Win the reset.
+win       233.80- 238.75 pen  1.44 sim 0.88 hes 0 rep 0 fill 0 low 0 | So next time you try to spar someone bigger, don't win the exchange, win the reset.
+win       239.48- 244.30 pen  1.61 sim 0.88 hes 0 rep 0 fill 0 low 0 | So next time you try to spar someone bigger, don't win the exchange. Win the reset.
+cta       245.16- 249.35 pen  0.96 sim 0.94 hes 0 rep 0 fill 0 low 0 | Save this for your next bar and send it to the smallest guy in your gym.
+cta       250.46- 255.50 pen  2.78 sim 1.00 hes 0 rep 0 fill 0 low 1 | Save this for your next spar and send it to the smallest guy in your gym.
+cta       256.26- 261.20 pen  3.45 sim 0.94 hes 0 rep 0 fill 0 low 1 | Save this for your next sport and send it to the smallest guy in your gym.
+loopA     261.72- 265.40 pen  0.49 sim 1.00 hes 0 rep 0 fill 0 low 0 | So next time someone tells you size wins, remember?
+loopA     266.94- 270.10 pen  0.76 sim 1.00 hes 0 rep 0 fill 0 low 0 | So, next time someone tells you size wins, remember?
+loopA     271.40- 275.05 pen  0.44 sim 1.00 hes 0 rep 0 fill 0 low 0 | So, next time someone tells you size wins, remember?
+loopA     276.12- 279.75 pen  0.47 sim 1.00 hes 0 rep 0 fill 0 low 0 | So, next time someone tells you size wins, remember?
+loopA     280.52- 284.15 pen  0.56 sim 1.00 hes 0 rep 0 fill 0 low 0 | So, next time someone tells you size wins, remember?
+loopA     285.10- 288.82 pen  0.42 sim 1.00 hes 0 rep 0 fill 0 low 0 | So, next time someone tells you size wins, remember?
+loopB     289.40- 291.66 pen  0.29 sim 1.00 hes 0 rep 0 fill 0 low 0 | So, remember this one.
+loopB     292.20- 294.76 pen  0.33 sim 1.00 hes 0 rep 0 fill 0 low 0 | So, remember this one.
+loopB     295.20- 297.86 pen  0.34 sim 1.00 hes 0 rep 0 fill 0 low 0 | So, remember this one.
+loopC     297.86- 300.06 pen  4.47 sim 0.89 hes 0 rep 0 fill 0 low 1 | Because, in the end, in.
+loopC     300.30- 303.08 pen  2.51 sim 1.00 hes 0 rep 0 fill 0 low 1 | Because, in the end...
+loopC     303.10- 305.60 pen 17.78 sim 0.47 hes 0 rep 0 fill 1 low 5 | Because, in the end, So, that's it. I'll see you guys next time.
+best: {'hookA': [24.68, 28.82], 'hookB': [34.68, 39.05], 'hookC': [72.45, 76.5], 'heavier': [101.55, 109.3], 'muscle': [134.9, 140.35], 'step': [147.76, 152.5], 'reset': [202.52, 209.85], 'win': [233.8, 238.75], 'cta': [245.16, 249.35], 'loopA': [285.1, 288.82], 'loopB': [289.4, 291.66], 'loopC': [300.3, 303.08]}

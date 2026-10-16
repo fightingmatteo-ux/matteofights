@@ -1,0 +1,726 @@
+{
+ "hookA": [
+  {
+   "take": [
+    24.68,
+    28.82
+   ],
+   "text": "Sentry for bigger men his whole career. Here's how he thought about it.",
+   "sim": 0.846,
+   "hesitations": 0,
+   "repeats": 0,
+   "fillers": 0,
+   "low_conf_words": 0,
+   "min_prob": 0.7,
+   "penalty": 2.14
+  },
+  {
+   "take": [
+    8.9,
+    13.9
+   ],
+   "text": "Senshi fought bigger men his whole career. Here's how he thought about it.",
+   "sim": 0.923,
+   "hesitations": 0,
+   "repeats": 0,
+   "fillers": 0,
+   "low_conf_words": 1,
+   "min_prob": 0.34,
+   "penalty": 3.6
+  },
+  {
+   "take": [
+    19.7,
+    24.6
+   ],
+   "text": "Senshi for bigger men, his whole career. Here's how he thought about it.",
+   "sim": 0.846,
+   "hesitations": 0,
+   "repeats": 0,
+   "fillers": 0,
+   "low_conf_words": 1,
+   "min_prob": 0.38,
+   "penalty": 4.27
+  },
+  {
+   "take": [
+    14.35,
+    19.25
+   ],
+   "text": "Sentry, four bigger men, his whole career. Here's how he thought about it.",
+   "sim": 0.846,
+   "hesitations": 0,
+   "repeats": 0,
+   "fillers": 0,
+   "low_conf_words": 1,
+   "min_prob": 0.35,
+   "penalty": 4.34
+  },
+  {
+   "take": [
+    1.6,
+    8.2
+   ],
+   "text": "Sentry fought bigger men his entire career. Here's how he thought about it.",
+   "sim": 0.846,
+   "hesitations": 0,
+   "repeats": 0,
+   "fillers": 0,
+   "low_conf_words": 1,
+   "min_prob": 0.24,
+   "penalty": 4.57
+  }
+ ],
+ "hookB": [
+  {
+   "take": [
+    34.68,
+    39.05
+   ],
+   "text": "If you always spar someone bigger than you, steal this from Senchai.",
+   "sim": 0.917,
+   "hesitations": 0,
+   "repeats": 0,
+   "fillers": 0,
+   "low_conf_words": 0,
+   "min_prob": 0.52,
+   "penalty": 1.8
+  },
+  {
+   "take": [
+    56.74,
+    60.85
+   ],
+   "text": "If you always spar someone bigger than you, steal this from Senchai.",
+   "sim": 0.917,
+   "hesitations": 0,
+   "repeats": 0,
+   "fillers": 0,
+   "low_conf_words": 1,
+   "min_prob": 0.36,
+   "penalty": 3.62
+  },
+  {
+   "take": [
+    50.78,
+    55.3
+   ],
+   "text": "If you always spar someone bigger than you, steal this from Sen 'Chai.",
+   "sim": 0.88,
+   "hesitations": 0,
+   "repeats": 0,
+   "fillers": 0,
+   "low_conf_words": 1,
+   "min_prob": 0.48,
+   "penalty": 3.74
+  },
+  {
+   "take": [
+    39.86,
+    43.95
+   ],
+   "text": "If you always spar someone bigger than you, steal this from Sen 'Chai.",
+   "sim": 0.88,
+   "hesitations": 0,
+   "repeats": 0,
+   "fillers": 0,
+   "low_conf_words": 1,
+   "min_prob": 0.44,
+   "penalty": 3.81
+  },
+  {
+   "take": [
+    44.62,
+    48.8
+   ],
+   "text": "If you always spar someone bigger than you, steal this from Sen 'Chai.",
+   "sim": 0.88,
+   "hesitations": 0,
+   "repeats": 0,
+   "fillers": 0,
+   "low_conf_words": 1,
+   "min_prob": 0.39,
+   "penalty": 3.93
+  },
+  {
+   "take": [
+    28.84,
+    33.4
+   ],
+   "text": "If you always spar someone bigger than you, steal this from Sen 'Chai.",
+   "sim": 0.88,
+   "hesitations": 0,
+   "repeats": 0,
+   "fillers": 0,
+   "low_conf_words": 1,
+   "min_prob": 0.35,
+   "penalty": 4.01
+  }
+ ],
+ "hookC": [
+  {
+   "take": [
+    72.45,
+    76.5
+   ],
+   "text": "Bigger guys win the trade, but Senshi never traded.",
+   "sim": 0.824,
+   "hesitations": 0,
+   "repeats": 0,
+   "fillers": 0,
+   "low_conf_words": 1,
+   "min_prob": 0.49,
+   "penalty": 4.28
+  },
+  {
+   "take": [
+    77.84,
+    80.9
+   ],
+   "text": "Bigger guys win the trade, but Sunshine never traded.",
+   "sim": 0.824,
+   "hesitations": 0,
+   "repeats": 0,
+   "fillers": 0,
+   "low_conf_words": 1,
+   "min_prob": 0.12,
+   "penalty": 5.02
+  },
+  {
+   "take": [
+    62.5,
+    66.3
+   ],
+   "text": "Bigger guys win the trade, but Sunshine never trades.",
+   "sim": 0.706,
+   "hesitations": 0,
+   "repeats": 0,
+   "fillers": 0,
+   "low_conf_words": 1,
+   "min_prob": 0.21,
+   "penalty": 6.02
+  }
+ ],
+ "heavier": [
+  {
+   "take": [
+    101.55,
+    109.3
+   ],
+   "text": "Sentrye spent most of his career fighting bigger guys, often by several kilos, because no one his size could beat him.",
+   "sim": 0.78,
+   "hesitations": 0,
+   "repeats": 0,
+   "fillers": 0,
+   "low_conf_words": 0,
+   "min_prob": 0.54,
+   "penalty": 3.12
+  },
+  {
+   "take": [
+    109.3,
+    118.2
+   ],
+   "text": "Sentry spent most of his career fighting bigger guys, often by more than several kilos, because no one his own size could beat him.",
+   "sim": 0.727,
+   "hesitations": 0,
+   "repeats": 0,
+   "fillers": 0,
+   "low_conf_words": 0,
+   "min_prob": 0.64,
+   "penalty": 3.44
+  },
+  {
+   "take": [
+    124.5,
+    134.4
+   ],
+   "text": "Sentry spent most of his career fighting bigger guys, often by several kilos. Because no one his own size could beat him.",
+   "sim": 0.762,
+   "hesitations": 0,
+   "repeats": 0,
+   "fillers": 0,
+   "low_conf_words": 1,
+   "min_prob": 0.23,
+   "penalty": 5.41
+  },
+  {
+   "take": [
+    118.2,
+    126.9
+   ],
+   "text": "Sentrye spent most of his career fighting bigger guys, often by several kilos, because no one his own size could beat him. century spent most of it",
+   "sim": 0.681,
+   "hesitations": 0,
+   "repeats": 0,
+   "fillers": 0,
+   "low_conf_words": 1,
+   "min_prob": 0.22,
+   "penalty": 6.24
+  },
+  {
+   "take": [
+    82.1,
+    91.3
+   ],
+   "text": "Sentrye spent most of his career fighting bigger guys because no one his size could even get close to beating him. Sentry spin",
+   "sim": 0.512,
+   "hesitations": 0,
+   "repeats": 0,
+   "fillers": 0,
+   "low_conf_words": 1,
+   "min_prob": 0.3,
+   "penalty": 7.79
+  },
+  {
+   "take": [
+    91.3,
+    100.9
+   ],
+   "text": "This guy spent most of his career fighting bigger men, usually by more than several kilos, because none of the guy's his own weight could even get close to beating him.",
+   "sim": 0.549,
+   "hesitations": 0,
+   "repeats": 0,
+   "fillers": 0,
+   "low_conf_words": 2,
+   "min_prob": 0.22,
+   "penalty": 9.06
+  }
+ ],
+ "muscle": [
+  {
+   "take": [
+    134.9,
+    140.35
+   ],
+   "text": "He didn't try to outmuscle them and he never stood in front of them long enough to trade.",
+   "sim": 0.889,
+   "hesitations": 0,
+   "repeats": 0,
+   "fillers": 0,
+   "low_conf_words": 0,
+   "min_prob": 0.73,
+   "penalty": 1.65
+  },
+  {
+   "take": [
+    141.48,
+    146.95
+   ],
+   "text": "He didn't try to outmuscle them and he never stood in front of them long enough to trade.",
+   "sim": 0.889,
+   "hesitations": 0,
+   "repeats": 0,
+   "fillers": 0,
+   "low_conf_words": 0,
+   "min_prob": 0.68,
+   "penalty": 1.75
+  }
+ ],
+ "step": [
+  {
+   "take": [
+    147.76,
+    152.5
+   ],
+   "text": "He would step off the line, catch the kick, sweep them and make them start over.",
+   "sim": 0.903,
+   "hesitations": 0,
+   "repeats": 0,
+   "fillers": 0,
+   "low_conf_words": 0,
+   "min_prob": 0.68,
+   "penalty": 1.61
+  },
+  {
+   "take": [
+    158.92,
+    163.85
+   ],
+   "text": "He would just step off the line, catch the kick, sweep them and make them start over again.",
+   "sim": 0.848,
+   "hesitations": 0,
+   "repeats": 0,
+   "fillers": 0,
+   "low_conf_words": 0,
+   "min_prob": 0.66,
+   "penalty": 2.2
+  },
+  {
+   "take": [
+    164.5,
+    168.45
+   ],
+   "text": "He would just step off the line, catch the kick, sweep them and make them start over again.",
+   "sim": 0.848,
+   "hesitations": 0,
+   "repeats": 0,
+   "fillers": 0,
+   "low_conf_words": 1,
+   "min_prob": 0.49,
+   "penalty": 4.04
+  },
+  {
+   "take": [
+    152.86,
+    158.35
+   ],
+   "text": "He would just step off the line, catch the kick, sweep them, and make them start over again.",
+   "sim": 0.848,
+   "hesitations": 0,
+   "repeats": 0,
+   "fillers": 0,
+   "low_conf_words": 1,
+   "min_prob": 0.02,
+   "penalty": 4.98
+  },
+  {
+   "take": [
+    168.68,
+    174.5
+   ],
+   "text": "Okay, so he would just step off the line, catch the kick, sweep them and make them start all",
+   "sim": 0.765,
+   "hesitations": 0,
+   "repeats": 0,
+   "fillers": 2,
+   "low_conf_words": 1,
+   "min_prob": 0.42,
+   "penalty": 11.02
+  }
+ ],
+ "reset": [
+  {
+   "take": [
+    202.52,
+    209.85
+   ],
+   "text": "Every reset costs the bigger guy energy and a little confidence. Do that 10 times and he's the one getting frustrated.",
+   "sim": 0.952,
+   "hesitations": 0,
+   "repeats": 0,
+   "fillers": 0,
+   "low_conf_words": 0,
+   "min_prob": 0.78,
+   "penalty": 0.92
+  },
+  {
+   "take": [
+    210.54,
+    218.8
+   ],
+   "text": "Every reset costs the bigger guy energy and a little confidence. Do that 10 times and he's the one getting frustrated.",
+   "sim": 0.952,
+   "hesitations": 0,
+   "repeats": 0,
+   "fillers": 0,
+   "low_conf_words": 0,
+   "min_prob": 0.78,
+   "penalty": 0.93
+  },
+  {
+   "take": [
+    192.5,
+    201.5
+   ],
+   "text": "Every reset costs the bigger guy energy and a little confidence. Do that 10 times and he's the one getting frustrated.",
+   "sim": 0.952,
+   "hesitations": 0,
+   "repeats": 0,
+   "fillers": 0,
+   "low_conf_words": 0,
+   "min_prob": 0.58,
+   "penalty": 1.32
+  },
+  {
+   "take": [
+    181.0,
+    189.9
+   ],
+   "text": "Sweep them, and make them start all over again. Every single reset costs the bigger guy energy. Do that ten times and he's -",
+   "sim": 0.591,
+   "hesitations": 0,
+   "repeats": 0,
+   "fillers": 0,
+   "low_conf_words": 3,
+   "min_prob": 0.12,
+   "penalty": 10.35
+  }
+ ],
+ "win": [
+  {
+   "take": [
+    233.8,
+    238.75
+   ],
+   "text": "So next time you try to spar someone bigger, don't win the exchange, win the reset.",
+   "sim": 0.875,
+   "hesitations": 0,
+   "repeats": 0,
+   "fillers": 0,
+   "low_conf_words": 0,
+   "min_prob": 0.9,
+   "penalty": 1.44
+  },
+  {
+   "take": [
+    239.48,
+    244.3
+   ],
+   "text": "So next time you try to spar someone bigger, don't win the exchange. Win the reset.",
+   "sim": 0.875,
+   "hesitations": 0,
+   "repeats": 0,
+   "fillers": 0,
+   "low_conf_words": 0,
+   "min_prob": 0.82,
+   "penalty": 1.61
+  },
+  {
+   "take": [
+    220.2,
+    226.35
+   ],
+   "text": "So next time you try to spar someone bigger, don't try to win the exchange, win the reset.",
+   "sim": 0.941,
+   "hesitations": 0,
+   "repeats": 0,
+   "fillers": 0,
+   "low_conf_words": 1,
+   "min_prob": 0.42,
+   "penalty": 3.25
+  },
+  {
+   "take": [
+    227.4,
+    233.05
+   ],
+   "text": "So next time YOU try to spar someone bigger, don't try to win the exchange. Win the reset.",
+   "sim": 0.941,
+   "hesitations": 0,
+   "repeats": 0,
+   "fillers": 0,
+   "low_conf_words": 1,
+   "min_prob": 0.3,
+   "penalty": 3.49
+  }
+ ],
+ "cta": [
+  {
+   "take": [
+    245.16,
+    249.35
+   ],
+   "text": "Save this for your next bar and send it to the smallest guy in your gym.",
+   "sim": 0.938,
+   "hesitations": 0,
+   "repeats": 0,
+   "fillers": 0,
+   "low_conf_words": 0,
+   "min_prob": 0.83,
+   "penalty": 0.96
+  },
+  {
+   "take": [
+    250.46,
+    255.5
+   ],
+   "text": "Save this for your next spar and send it to the smallest guy in your gym.",
+   "sim": 1.0,
+   "hesitations": 0,
+   "repeats": 0,
+   "fillers": 0,
+   "low_conf_words": 1,
+   "min_prob": 0.36,
+   "penalty": 2.78
+  },
+  {
+   "take": [
+    256.26,
+    261.2
+   ],
+   "text": "Save this for your next sport and send it to the smallest guy in your gym.",
+   "sim": 0.938,
+   "hesitations": 0,
+   "repeats": 0,
+   "fillers": 0,
+   "low_conf_words": 1,
+   "min_prob": 0.34,
+   "penalty": 3.45
+  }
+ ],
+ "loopA": [
+  {
+   "take": [
+    285.1,
+    288.82
+   ],
+   "text": "So, next time someone tells you size wins, remember?",
+   "sim": 1.0,
+   "hesitations": 0,
+   "repeats": 0,
+   "fillers": 0,
+   "low_conf_words": 0,
+   "min_prob": 0.79,
+   "penalty": 0.42
+  },
+  {
+   "take": [
+    271.4,
+    275.05
+   ],
+   "text": "So, next time someone tells you size wins, remember?",
+   "sim": 1.0,
+   "hesitations": 0,
+   "repeats": 0,
+   "fillers": 0,
+   "low_conf_words": 0,
+   "min_prob": 0.78,
+   "penalty": 0.44
+  },
+  {
+   "take": [
+    276.12,
+    279.75
+   ],
+   "text": "So, next time someone tells you size wins, remember?",
+   "sim": 1.0,
+   "hesitations": 0,
+   "repeats": 0,
+   "fillers": 0,
+   "low_conf_words": 0,
+   "min_prob": 0.77,
+   "penalty": 0.47
+  },
+  {
+   "take": [
+    261.72,
+    265.4
+   ],
+   "text": "So next time someone tells you size wins, remember?",
+   "sim": 1.0,
+   "hesitations": 0,
+   "repeats": 0,
+   "fillers": 0,
+   "low_conf_words": 0,
+   "min_prob": 0.75,
+   "penalty": 0.49
+  },
+  {
+   "take": [
+    280.52,
+    284.15
+   ],
+   "text": "So, next time someone tells you size wins, remember?",
+   "sim": 1.0,
+   "hesitations": 0,
+   "repeats": 0,
+   "fillers": 0,
+   "low_conf_words": 0,
+   "min_prob": 0.72,
+   "penalty": 0.56
+  },
+  {
+   "take": [
+    266.94,
+    270.1
+   ],
+   "text": "So, next time someone tells you size wins, remember?",
+   "sim": 1.0,
+   "hesitations": 0,
+   "repeats": 0,
+   "fillers": 0,
+   "low_conf_words": 0,
+   "min_prob": 0.62,
+   "penalty": 0.76
+  }
+ ],
+ "loopB": [
+  {
+   "take": [
+    289.4,
+    291.66
+   ],
+   "text": "So, remember this one.",
+   "sim": 1.0,
+   "hesitations": 0,
+   "repeats": 0,
+   "fillers": 0,
+   "low_conf_words": 0,
+   "min_prob": 0.85,
+   "penalty": 0.29
+  },
+  {
+   "take": [
+    292.2,
+    294.76
+   ],
+   "text": "So, remember this one.",
+   "sim": 1.0,
+   "hesitations": 0,
+   "repeats": 0,
+   "fillers": 0,
+   "low_conf_words": 0,
+   "min_prob": 0.83,
+   "penalty": 0.33
+  },
+  {
+   "take": [
+    295.2,
+    297.86
+   ],
+   "text": "So, remember this one.",
+   "sim": 1.0,
+   "hesitations": 0,
+   "repeats": 0,
+   "fillers": 0,
+   "low_conf_words": 0,
+   "min_prob": 0.83,
+   "penalty": 0.34
+  }
+ ],
+ "loopC": [
+  {
+   "take": [
+    300.3,
+    303.08
+   ],
+   "text": "Because, in the end...",
+   "sim": 1.0,
+   "hesitations": 0,
+   "repeats": 0,
+   "fillers": 0,
+   "low_conf_words": 1,
+   "min_prob": 0.49,
+   "penalty": 2.51
+  },
+  {
+   "take": [
+    297.86,
+    300.06
+   ],
+   "text": "Because, in the end, in.",
+   "sim": 0.889,
+   "hesitations": 0,
+   "repeats": 0,
+   "fillers": 0,
+   "low_conf_words": 1,
+   "min_prob": 0.07,
+   "penalty": 4.47
+  },
+  {
+   "take": [
+    303.1,
+    305.6
+   ],
+   "text": "Because, in the end, So, that's it. I'll see you guys next time.",
+   "sim": 0.471,
+   "hesitations": 0,
+   "repeats": 0,
+   "fillers": 1,
+   "low_conf_words": 5,
+   "min_prob": 0.0,
+   "penalty": 17.78
+  }
+ ]
+}

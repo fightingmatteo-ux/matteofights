@@ -1,26 +1,94 @@
 {
-  "src": "assets/raw.mp4",
-  "audio_src": "../../../media/2026-10-16-saenchai-bigger-men/E9BED2C4-670F-40B2-AE30-8779A53976EE.mp4",
-  "words": "work/words.json",
-  "speed": 1.0,
-  "takes": {
-    "hookA": [19.62, 24.64],
-    "hookB": [44.55, 48.98],
-    "hookC": [77.76, 81.2],
-    "heavier": [101.5, 109.42],
-    "muscle": [141.42, 147.12],
-    "step": [164.44, 168.5],
-    "reset": [210.45, 218.95],
-    "win": [239.4, 244.48],
-    "cta": [256.18, 261.32],
-    "loopA": [285.02, 288.8],
-    "loopB": [292.3, 294.72],
-    "loopC": [303.2, 305.62]
-  },
-  "variants": {
-    "A": ["hookA", "heavier", "muscle", "step", "reset", "win", "cta", "loopA"],
-    "B": ["hookB", "heavier", "muscle", "step", "reset", "win", "cta", "loopB"],
-    "C": ["hookC", "heavier", "muscle", "step", "reset", "win", "cta", "loopC"]
-  },
-  "fix": {"SENTAI": "SAENCHAI", "SENGAI": "SAENCHAI", "SENCHAI": "SAENCHAI", "10": "TEN"}
+ "src": "assets/raw.mp4",
+ "audio_src": "assets/voice.wav",
+ "words": "work/words.json",
+ "speed": 1.0,
+ "takes": {
+  "hookA": [
+   8.84,
+   14.12
+  ],
+  "hookB": [
+   34.56,
+   39.3
+  ],
+  "hookC": [
+   72.34,
+   76.74
+  ],
+  "heavier": [
+   101.48,
+   109.46
+  ],
+  "muscle": [
+   134.78,
+   140.56
+  ],
+  "step": [
+   147.64,
+   152.72
+  ],
+  "reset": [
+   210.36,
+   218.98
+  ],
+  "win": [
+   233.3,
+   238.96
+  ],
+  "cta": [
+   250.34,
+   255.72
+  ],
+  "loopA": [
+   284.98,
+   288.74
+  ],
+  "loopB": [
+   292.15,
+   294.85
+  ],
+  "loopC": [
+   300.12,
+   302.98
+  ]
+ },
+ "variants": {
+  "A": [
+   "hookA",
+   "heavier",
+   "muscle",
+   "step",
+   "reset",
+   "win",
+   "cta",
+   "loopA"
+  ],
+  "B": [
+   "hookB",
+   "heavier",
+   "muscle",
+   "step",
+   "reset",
+   "win",
+   "cta",
+   "loopB"
+  ],
+  "C": [
+   "hookC",
+   "heavier",
+   "muscle",
+   "step",
+   "reset",
+   "win",
+   "cta",
+   "loopC"
+  ]
+ },
+ "fix": {
+  "SENTAI": "SAENCHAI",
+  "SENGAI": "SAENCHAI",
+  "SENCHAI": "SAENCHAI",
+  "10": "TEN"
+ }
 }

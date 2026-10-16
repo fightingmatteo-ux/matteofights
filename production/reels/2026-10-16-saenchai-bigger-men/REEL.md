@@ -70,3 +70,13 @@ also on disk for more cuts: Samkor vs Saenchai (XlLvvN4OfaM), Saenchai vs Thongt
 | 04-reset-to-stance | YOKKAO 0:35.0-0:37.5 (both back to stance) | "Every reset costs the bigger guy energy" |
 | 05/06-harrison-down | Harrison 12:55.5-12:58, 13:03.5-13:05.5 | "Do that ten times" |
 Transform each: 9:16 crop on the fighters, slight zoom or slow-mo on the key frame, subtitles on top.
+
+## Edit v2 (2026-10-16, after "you didn't pick the best takes ... double cut ... freeze frames")
+Takes chosen by `reel-kit/scripts/score_takes.py` (re-transcribe each candidate with a disfluency prompt, penalise
+hesitations, repeats, fillers, low-confidence words), every cut checked with `verify_cut.py`; voice cut from
+`assets/voice.wav` (sample accurate). Final takes in `work/takes.json`. B-roll is cut per line by `make_broll.py`
+(slot-fitted, slow-mo up to 2x, never freezes): Riddick Bowe x Saenchai @ 13 Coins Gym (EXPvZzeb5cE) for size,
+sweep, start over, frustration; YOKKAO Toronto for trade, teep, step/catch, dump, stance; Harrison 2011 for "ten
+times". Look: late-night film study, RESETS counter 01 -> 02 -> 10, Bowe heavyweight callout, WIN THE RESET card.
+Cross-post: one hook per platform, never the same clip twice (`crosspost_to` in queue.json): A -> YouTube Shorts,
+B -> Threads, C -> Facebook. Talking-head captions keep their full body on every platform (`captions.prose`).

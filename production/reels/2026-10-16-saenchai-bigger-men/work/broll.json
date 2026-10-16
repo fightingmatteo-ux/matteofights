@@ -1,0 +1,112 @@
+{
+ "size": {
+  "start": 5.16,
+  "dur": 3.4,
+  "speed": 1.08,
+  "src": "B",
+  "range": [
+   95.6,
+   98.9
+  ]
+ },
+ "trade": {
+  "start": 8.56,
+  "dur": 1.96,
+  "speed": 1.0,
+  "src": "T",
+  "range": [
+   22.0,
+   25.2
+  ]
+ },
+ "teep": {
+  "start": 15.7,
+  "dur": 3.34,
+  "speed": 1.03,
+  "src": "T",
+  "range": [
+   7.4,
+   10.8
+  ]
+ },
+ "step": {
+  "start": 19.38,
+  "dur": 1.46,
+  "speed": 1.01,
+  "src": "T",
+  "range": [
+   29.3,
+   30.9
+  ]
+ },
+ "catch": {
+  "start": 20.84,
+  "dur": 1.04,
+  "speed": 1.0,
+  "src": "T",
+  "range": [
+   30.7,
+   32.4
+  ]
+ },
+ "sweep": {
+  "start": 21.88,
+  "dur": 1.16,
+  "speed": 1.0,
+  "src": "B",
+  "range": [
+   98.9,
+   101.3
+  ]
+ },
+ "over": {
+  "start": 23.04,
+  "dur": 0.96,
+  "speed": 1.0,
+  "src": "B",
+  "range": [
+   102.6,
+   105.4
+  ]
+ },
+ "dump": {
+  "start": 24.0,
+  "dur": 4.18,
+  "speed": 1.44,
+  "src": "T",
+  "range": [
+   15.9,
+   18.9
+  ]
+ },
+ "stance": {
+  "start": 28.18,
+  "dur": 1.64,
+  "speed": 1.0,
+  "src": "T",
+  "range": [
+   34.9,
+   37.6
+  ]
+ },
+ "harr": {
+  "start": 29.82,
+  "dur": 0.92,
+  "speed": 1.0,
+  "src": "H",
+  "range": [
+   0.55,
+   2.5
+  ]
+ },
+ "frust": {
+  "start": 30.74,
+  "dur": 2.0,
+  "speed": 1.0,
+  "src": "B",
+  "range": [
+   105.2,
+   108.2
+  ]
+ }
+}

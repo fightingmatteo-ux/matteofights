@@ -112,6 +112,10 @@ const countdown = (iso) => {
 function pending() {
   return D.reels.filter((r) => r.state === "needs_yes" && r.id.startsWith("lst-")).sort(byTime);
 }
+// filmed reels (talking-head A/B/C trial variants) waiting for a yes
+function pendingTrials() {
+  return D.reels.filter((r) => r.state === "needs_yes" && !r.id.startsWith("lst-")).sort(byTime);
+}
 // written Threads posts (tools/crosspost) waiting for a yes, still in the future
 function pendingThreads() {
   return (D.threads_posts || []).filter((p) => p.status === "queued" && !p.approved && !sent.has("skip:" + p.id) && new Date(p.at) > Date.now()).sort((a, b) => (a.at > b.at ? 1 : -1));
@@ -128,7 +132,7 @@ function phase() {
   const P = pending().length && !sent.has("approve_week");
   const recentFail = D.reels.some((r) => r.state === "failed" && r.time && Date.now() - new Date(r.time) < 3 * 864e5);
   const recentWin = D.reels.some((r) => isWin(r) && Date.now() - new Date(r.posted_at || r.time) < 7 * 864e5);
-  if (P || (pendingThreads().length && !sent.has("approve_threads"))) return { cls: "red", txt: "Yes waiting" };
+  if (P || (pendingThreads().length && !sent.has("approve_threads")) || (pendingTrials().length && !sent.has("approve_trials"))) return { cls: "red", txt: "Yes waiting" };
   if (recentFail) return { cls: "red", txt: "A post failed" };
   if (recentWin) return { cls: "gold", txt: "Winner this week" };
   return { cls: "", txt: "All clear" };
@@ -137,6 +141,7 @@ function phase() {
 const HOLD = {
   week: { key: "approve_week", count: () => pending().length },
   threads: { key: "approve_threads", count: () => pendingThreads().length },
+  trials: { key: "approve_trials", count: () => pendingTrials().length },
 };
 function holdBtn(count, hint, kind = "week") {
   const done = sent.has(HOLD[kind].key);
@@ -243,8 +248,22 @@ function threadsWaiting() {
   </section>`;
 }
 
+function trialsWaiting() {
+  const T = pendingTrials();
+  if (!T.length) return "";
+  const done = sent.has("approve_trials");
+  return `<section class="waiting trials" aria-labelledby="tr-h">
+    <div class="top"><h2 class="h2" id="tr-h">${T.length} trial reels need your yes</h2></div>
+    <p class="range">One video, ${T.length} hooks. Tap one to watch it.</p>
+    <ul class="trial-list">${T.map((r) => `<li><button data-open="${esc(r.id)}"><span class="thumb">${cover(r)}</span>
+      <span class="what"><p>${esc(calm(r.hook))}</p><p><span class="num">${r.time ? `${F.wday.format(new Date(r.time))} ${t12(r.time)}` : ""}</span>, ${r.variant ? "version " + esc(r.variant) : "trial reel"}</p></span></button></li>`).join("")}</ul>
+    <div class="row">${holdBtn(T.length, "trial-hint", "trials")}</div>
+    <p class="hint" id="trial-hint">${done ? "Sent. This page updates in about a minute." : "Hold for a second. They post as trial reels, 2.5 hours apart."}</p>
+  </section>`;
+}
+
 function home() {
-  return `<div class="home"><div class="left">${clock()}${waiting()}${threadsWaiting()}${splits()}</div><section class="right" aria-labelledby="fc-h">${weekList()}</section></div>`;
+  return `<div class="home"><div class="left">${clock()}${waiting()}${trialsWaiting()}${threadsWaiting()}${splits()}</div><section class="right" aria-labelledby="fc-h">${weekList()}</section></div>`;
 }
 
 // ---------------------------------------------------------------- reels
@@ -607,7 +626,8 @@ function render() {
   if (keep != null && $("#idea")) { $("#idea").value = keep; $("#idea").focus(); }
   document.querySelectorAll(".nav button").forEach((b) => (b.dataset.tab === tab ? b.setAttribute("aria-current", "page") : b.removeAttribute("aria-current")));
   const open = D.questions.filter((q) => q.status === "open" && ![...sent].some((k) => k.startsWith(`q:${q.id}:`))).length
-    + (pendingThreads().length && !sent.has("approve_threads") ? 1 : 0);
+    + (pendingThreads().length && !sent.has("approve_threads") ? 1 : 0)
+    + (pendingTrials().length && !sent.has("approve_trials") ? 1 : 0);
   const badge = $("#badge"); badge.hidden = !open; badge.textContent = open;
   badge.closest("button").setAttribute("aria-label", open ? `Decide, ${open} waiting` : "Decide");
   $("#fresh").textContent = `Updated ${ago(D.generated_at)}`;
@@ -678,6 +698,11 @@ function holdStart(b) {
     holdTimer = null; holdEl = null; b.classList.remove("holding"); b.classList.add("done"); holdLabel(b, "Approving");
     document.body.classList.remove("holding"); document.body.classList.add("rung"); setTimeout(() => document.body.classList.remove("rung"), 900);
     navigator.vibrate?.([30, 60, 30]);
+    if (b.dataset.hold === "trials") {
+      const rids = pendingTrials().map((r) => r.id);
+      act({ action: "approve_week", ids: rids }, "approve_trials", `Approved ${rids.length} trial reels. They post on their own.`);
+      return;
+    }
     if (b.dataset.hold === "threads") {
       const tids = pendingThreads().map((p) => p.id);
       act({ action: "approve_threads", ids: tids }, "approve_threads", `Approved ${tids.length} Threads posts. They post at their times.`);
