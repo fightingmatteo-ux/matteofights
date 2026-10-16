@@ -34,7 +34,7 @@
         "21:00"
       ],
       "topic": "Fight Psychology",
-      "last_slot": "2026-10-16T01:00:00Z"
+      "last_slot": "2026-10-16T14:00:00Z"
     },
     "facebook_slides": {
       "enabled": true,
@@ -79,6 +79,13 @@
         "url": "https://www.facebook.com/1070947222779004_122155114917352578"
       }
     },
-    "lst-2026-10-15-technique-without-a-coach": {}
+    "lst-2026-10-15-technique-without-a-coach": {
+      "threads": {
+        "status": "posted",
+        "at": "2026-10-16T14:06:46Z",
+        "id": "18640151869055509",
+        "url": "https://www.threads.com/@matteofights/post/DejtWAPAWBB"
+      }
+    }
   }
 }
