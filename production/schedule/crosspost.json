@@ -33,7 +33,8 @@
         "15:30",
         "21:00"
       ],
-      "topic": "Fight Psychology"
+      "topic": "Fight Psychology",
+      "last_slot": "2026-10-16T01:00:00Z"
     },
     "facebook_slides": {
       "enabled": true,
@@ -63,6 +64,12 @@
         "error": "POST https://www.googleapis.com/upload/youtube/v3/videos -> 401: {\n  \"error\": {\n    \"code\": 401,\n    \"message\": \"Unauthorized\",\n    \"errors\": [\n      {\n        \"message\": \"Unauthorized\",\n        \"domain\": \"youtube.header\",\n        \"reason\": \"youtubeSignupRequired\",\n        \"location\": \"Authorization\",\n        \"locationType\": \"header\"\n      }\n    ]\n  }\n}\n",
         "tries": 3,
         "at": "2026-10-16T02:30:57Z"
+      },
+      "threads": {
+        "status": "posted",
+        "at": "2026-10-16T04:25:30Z",
+        "id": "18127960309647038",
+        "url": "https://www.threads.com/@matteofights/post/Deiq0zHj6q0"
       }
     },
     "lst-2026-10-15-technique-without-a-coach": {}

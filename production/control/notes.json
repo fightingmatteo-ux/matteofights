@@ -6,5 +6,9 @@
   {
     "id": "xp-6e45236b",
     "text": "⚠️ YouTube Shorts gave up on: 6 SIGNS YOU WERE BUILT FOR FIGHT NIGHT\nPOST https://www.googleapis.com/upload/youtube/v3/videos -> 401: {\n  \"error\": {\n    \"code\": 401,\n    \"message\": \"Unauthorized\",\n    \"errors\": [\n      {\n        \"message\": \"Unauthorized\",\n        \"domain\": \"youtube.header\",\n        \"reason\": \"youtubeSignupRequired\",\n        \"location\": \"Authorization"
+  },
+  {
+    "id": "xp-cec8f650",
+    "text": "📤 Threads: 6 SIGNS YOU WERE BUILT FOR FIGHT NIGHT\nhttps://www.threads.com/@matteofights/post/Deiq0zHj6q0"
   }
 ]
