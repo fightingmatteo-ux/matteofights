@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      /* "Late-night film study": lamp-lit A-roll, Saenchai as game tape with coach marks, a reset counter. */
+      @font-face { font-family: "Bebas Neue"; src: url("assets/fonts/BebasNeue-Regular.woff2") format("woff2"); font-weight: 400; font-display: block; }
+      @font-face { font-family: "Geist"; src: url("assets/fonts/Geist-latin.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+      @font-face { font-family: "Geist Mono"; src: url("assets/fonts/GeistMono.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+      :root { --ink: #0B0B0D; --paper: #F2EDE3; --red: #E5322D; --gold: #D9A552; --dim: rgba(242,237,227,0.62); }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--ink); }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; background: var(--ink); color: var(--paper); font-family: "Geist", sans-serif; }
+      .layer { position: absolute; inset: 0; }
+      .full { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+      #cam { position: absolute; inset: 0; overflow: hidden; }
+      #cam-inner { position: absolute; inset: 0; transform-origin: 50% 100%; }
+      /* lamp-light finish: soft vignette keeps the eye on the face */
+      #lamp { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(120% 80% at 50% 42%, rgba(0,0,0,0) 45%, rgba(0,0,0,0.55) 100%); }
+
+      /* game tape */
+            .ov .rule { position: absolute; left: 0; right: 0; height: 2px; background: rgba(242,237,227,0.22); }
+      .ov .meta { position: absolute; left: 48px; right: 48px; top: 486px; display: flex; justify-content: space-between; align-items: baseline;
+        font-family: "Geist Mono", monospace; font-weight: 600; font-size: 28px; letter-spacing: 0.16em; color: var(--dim); text-transform: uppercase; }
+      .ov .meta b { color: var(--paper); font-weight: 600; }
+      .rec { display: inline-block; width: 14px; height: 14px; border-radius: 50%; background: var(--red); margin-right: 12px; vertical-align: 2px; }
+      .mark { position: absolute; inset: 0; width: 1080px; height: 1920px; }
+      .label { position: absolute; left: 48px; top: 1196px; display: flex; gap: 0; align-items: stretch;
+        font-family: "Bebas Neue", sans-serif; font-size: 96px; line-height: 1; letter-spacing: 0.02em; }
+      .label span { padding: 14px 24px 6px; }
+      .label .k { background: var(--red); color: var(--paper); }
+
+      /* reset counter, the signature */
+      #counter { position: absolute; right: 48px; top: 230px; text-align: right; }
+      #counter .lbl { font-family: "Geist Mono", monospace; font-weight: 600; font-size: 26px; letter-spacing: 0.2em; color: var(--dim); }
+      #counter .num { font-family: "Geist Mono", monospace; font-weight: 700; font-size: 150px; line-height: 0.95; letter-spacing: -0.04em; color: var(--paper); }
+      #counter.gold .num { color: var(--gold); }
+
+      /* hook */
+      #title { position: absolute; left: 56px; right: 56px; top: 200px; }
+      #title .t { display: block; font-family: "Bebas Neue", sans-serif; font-size: 150px; line-height: 0.88; letter-spacing: 0.005em; color: var(--paper);
+        text-shadow: 0 6px 30px rgba(0,0,0,0.55); }
+      #title .t.red { color: var(--red); }
+
+      /* name card */
+      #name { position: absolute; left: 56px; top: 200px; }
+      #name .n { font-family: "Bebas Neue", sans-serif; font-size: 210px; line-height: 0.85; color: var(--paper); text-shadow: 0 6px 30px rgba(0,0,0,0.6); }
+      #name .s { margin-top: 14px; font-family: "Geist Mono", monospace; font-weight: 600; font-size: 30px; letter-spacing: 0.16em; color: var(--gold); }
+
+      /* win the reset */
+      #win { position: absolute; inset: 0; background: var(--ink); display: flex; flex-direction: column; justify-content: center; padding: 0 70px; }
+      #win .a { font-family: "Bebas Neue", sans-serif; font-size: 200px; line-height: 0.86; color: var(--dim); }
+      #win .b { font-family: "Bebas Neue", sans-serif; font-size: 250px; line-height: 0.86; color: var(--gold); }
+      #win .line { height: 10px; width: 100%; background: var(--red); margin-top: 40px; transform-origin: 0 50%; }
+
+      /* CTA */
+      .cta { position: absolute; left: 56px; right: 56px; top: 210px; display: flex; align-items: center; gap: 34px; }
+      .cta .ic { width: 150px; height: 150px; flex: none; border-radius: 34px; background: rgba(11,11,13,0.78); border: 2px solid rgba(242,237,227,0.18); display: flex; align-items: center; justify-content: center; }
+      .cta .tx { font-family: "Bebas Neue", sans-serif; font-size: 108px; line-height: 0.9; color: var(--paper); text-shadow: 0 6px 30px rgba(0,0,0,0.6); }
+      .cta .tx small { display: block; font-family: "Geist", sans-serif; font-weight: 700; font-size: 40px; line-height: 1.15; color: var(--gold); text-shadow: 0 4px 18px rgba(0,0,0,0.7); }
+
+      /* subtitles: 1-3 word phrases, heavy sans, gold/red emphasis */
+      #caps { position: absolute; left: 50px; right: 50px; top: 1430px; height: 190px; }
+      .cw { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; text-align: center; opacity: 0;
+        font-family: "Geist", sans-serif; font-weight: 800; font-size: 92px; line-height: 1.02; letter-spacing: -0.03em; color: #fff;
+        text-shadow: 0 0 2px #000, 0 4px 14px rgba(0,0,0,0.85), 0 0 40px rgba(0,0,0,0.5); }
+      .cw em { font-style: normal; color: var(--gold); }
+      .cw i { font-style: normal; color: var(--red); }
+      #flash { position: absolute; inset: 0; background: #FFF6E6; opacity: 0; pointer-events: none; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="{{E('loop')}}" data-width="1080" data-height="1920">
+
+      <!-- A-ROLL -->
+      <div id="cam"><div id="cam-inner">
+        <video id="aroll" class="clip full" src="assets/media/aroll.mp4" data-start="0" data-duration="{{E('loop')}}" data-track-index="0" muted playsinline></video>
+      </div></div>
+      <div id="lamp"></div>
+      <div id="scrim" class="clip layer" data-start="0" data-duration="{{W('heavier','NO')}}" data-track-index="2" style="background:linear-gradient(180deg, rgba(5,5,7,0.82) 0%, rgba(5,5,7,0.55) 28%, rgba(5,5,7,0) 46%)"></div>
+      <div id="scrim2" class="clip layer" data-start="{{S('cta')}}" data-duration="{{E('cta')-S('cta')}}" data-track-index="2" style="background:linear-gradient(180deg, rgba(5,5,7,0.8) 0%, rgba(5,5,7,0.5) 24%, rgba(5,5,7,0) 40%)"></div>
+
+      <!-- GAME TAPE (enters ~0.12 s before its line) -->
+      <video id="tp-intro" class="clip full" src="assets/media/t_intro.mp4" data-start="{{S('heavier')-0.12}}" data-duration="{{W('heavier','NO')-S('heavier')+0.12}}" data-track-index="1" muted playsinline></video>
+      <div id="ov-intro" class="clip layer ov" data-start="{{S('heavier')-0.12}}" data-duration="{{W('heavier','NO')-S('heavier')+0.12}}" data-track-index="3">
+        <div class="meta"><span><i class="rec"></i><b>TAPE</b> &nbsp;SAENCHAI</span><span>SEMINAR</span></div>
+      </div>      <video id="tp-step" class="clip full" src="assets/media/t_step.mp4" data-start="{{W('step','STEP')-0.12}}" data-duration="{{W('step','SWEEP')-W('step','STEP')+0.12}}" data-track-index="1" muted playsinline></video>
+      <div id="ov-step" class="clip layer ov" data-start="{{W('step','STEP')-0.12}}" data-duration="{{W('step','SWEEP')-W('step','STEP')+0.12}}" data-track-index="3">
+        <div class="meta"><span><i class="rec"></i><b>TAPE</b> &nbsp;01</span><span>VS BIGGER</span></div>
+        <svg class="mark" viewBox="0 0 1080 1920">
+          <path id="mk-step" d="M 470 1060 C 520 1000, 600 990, 660 1020" fill="none" stroke="#E5322D" stroke-width="10" stroke-linecap="round" stroke-dasharray="320" stroke-dashoffset="320" />
+          <path id="mk-step-h" d="M 630 990 L 668 1022 L 622 1044" fill="none" stroke="#E5322D" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" opacity="0" />
+          <ellipse id="mk-catch" cx="320" cy="900" rx="120" ry="90" fill="none" stroke="#E5322D" stroke-width="9" stroke-dasharray="680" stroke-dashoffset="680" />
+        </svg>
+        <div id="lb-step" class="label"><span class="k">STEP OFF</span></div>
+        <div id="lb-catch" class="label"><span class="k">CATCH</span></div>
+      </div>      <video id="tp-sweep" class="clip full" src="assets/media/t_dump.mp4" data-start="{{W('step','SWEEP')-0.12}}" data-duration="{{S('reset')-W('step','SWEEP')+0.12}}" data-track-index="1" muted playsinline></video>
+      <div id="ov-sweep" class="clip layer ov" data-start="{{W('step','SWEEP')-0.12}}" data-duration="{{S('reset')-W('step','SWEEP')+0.12}}" data-track-index="3">
+        <div class="meta"><span><i class="rec"></i><b>TAPE</b> &nbsp;02</span><span>VS BIGGER</span></div>
+        <div id="lb-sweep" class="label"><span class="k">SWEEP</span></div>
+        <div id="lb-over" class="label"><span class="k">START OVER</span></div>
+      </div>      <video id="tp-flip" class="clip full" src="assets/media/t_sweep.mp4" data-start="{{S('reset')-0.12}}" data-duration="{{W('reset','TEN')-S('reset')+0.12}}" data-track-index="1" muted playsinline></video>
+      <div id="ov-flip" class="clip layer ov" data-start="{{S('reset')-0.12}}" data-duration="{{W('reset','TEN')-S('reset')+0.12}}" data-track-index="3">
+        <div class="meta"><span><i class="rec"></i><b>TAPE</b> &nbsp;03</span><span>VS BIGGER</span></div>
+      </div>      <video id="tp-harr" class="clip full" src="assets/media/t_harr1.mp4" data-start="{{W('reset','TEN')-0.08}}" data-duration="{{E('reset')-W('reset','TEN')+0.08}}" data-track-index="1" muted playsinline></video>
+      <div id="ov-harr" class="clip layer ov" data-start="{{W('reset','TEN')-0.08}}" data-duration="{{E('reset')-W('reset','TEN')+0.08}}" data-track-index="3">
+        <div class="meta"><span><i class="rec"></i><b>TAPE</b> &nbsp;04</span><span>VS L. HARRISON, 2011</span></div>
+      </div>
+      <!-- RESET COUNTER: visible from the first reset until the win card -->
+      <div id="counter" class="clip" data-start="{{W('step','SWEEP')}}" data-duration="{{S('win')-W('step','SWEEP')}}" data-track-index="4">
+        <div class="lbl">RESETS</div><div class="num" id="cnum">01</div>
+      </div>
+
+      <!-- NAME CARD on the first "Saenchai" of the body -->
+      <div id="name" class="clip" data-start="{{W('heavier','SAENCHAI')}}" data-duration="{{W('heavier','NO')-W('heavier','SAENCHAI')}}" data-track-index="5">
+        <div class="n">SAENCHAI</div><div class="s">MUAY THAI LEGEND · LUMPINEE CHAMPION</div>
+      </div>
+
+      <!-- WIN THE RESET -->
+      <div id="win" class="clip" data-start="{{W('win','WIN',2)-0.06}}" data-duration="{{E('win')-W('win','WIN',2)+0.06}}" data-track-index="2">
+        <div class="a">DON'T WIN THE EXCHANGE.</div>
+        <div class="b">WIN THE RESET.</div>
+        <div class="line" id="win-line"></div>
+      </div>
+
+      <!-- CTA -->
+      <div id="cta-save" class="clip cta" data-start="{{W('cta','SAVE')-0.05}}" data-duration="{{W('cta','SEND')-W('cta','SAVE')+0.05}}" data-track-index="5">
+        <div class="ic"><svg width="84" height="96" viewBox="0 0 84 96"><path id="bm" d="M 8 6 H 76 V 90 L 42 66 L 8 90 Z" fill="none" stroke="#F2EDE3" stroke-width="7" stroke-linejoin="round" /></svg></div>
+        <div class="tx">SAVE THIS<small>for your next spar</small></div>
+      </div>
+      <div id="cta-send" class="clip cta" data-start="{{W('cta','SEND')-0.05}}" data-duration="{{E('cta')-W('cta','SEND')+0.05}}" data-track-index="5">
+        <div class="ic"><svg width="96" height="96" viewBox="0 0 96 96"><path id="plane" d="M 8 46 L 88 10 L 64 88 L 46 56 Z M 46 56 L 88 10" fill="none" stroke="#F2EDE3" stroke-width="7" stroke-linejoin="round" /></svg></div>
+        <div class="tx">SEND IT<small>to the smallest guy in your gym</small></div>
+      </div>
+
+      <!-- HOOK (frame 0 = thumbnail) -->
+      <div id="title" class="clip" data-start="0" data-duration="{{E('hook')}}" data-track-index="5">{{HOOK_HTML}}</div>
+
+      <div id="caps"></div>
+      <div id="flash"></div>
+
+      <!-- AUDIO -->
+      <audio id="vo" src="assets/media/aroll.mp4" data-start="0" data-duration="{{E('loop')}}" data-track-index="10" data-volume="1"></audio>
+      <audio id="music-bed" src="assets/media/bgm.mp3" data-start="{{W('reset','TEN')-21.6}}" data-duration="{{E('loop')-(W('reset','TEN')-21.6)}}" data-media-start="0" data-track-index="11" data-volume="0.22"
+        data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":0},{"t":1.2,"v":0.5},{"t":{{21.0}},"v":0.6},{"t":{{21.6}},"v":1},{"t":{{S('win')-(W('reset','TEN')-21.6)}},"v":0.9},{"t":{{W('win','WIN',2)-0.12-(W('reset','TEN')-21.6)}},"v":0},{"t":{{E('win')+0.3-(W('reset','TEN')-21.6)}},"v":0},{"t":{{S('cta')+0.6-(W('reset','TEN')-21.6)}},"v":0.55},{"t":{{S('loop')-(W('reset','TEN')-21.6)}},"v":0.4},{"t":{{E('loop')-(W('reset','TEN')-21.6)}},"v":0}]}]}'></audio>
+      <audio id="sfx-hit-0" src="assets/sfx/hit.mp3" data-start="0" data-duration="1" data-track-index="13" data-volume="0.55"></audio>
+      <audio id="sfx-tape-in" src="assets/sfx/digital_click.mp3" data-start="{{S('heavier')-0.12}}" data-duration="1" data-track-index="14" data-volume="0.4"></audio>
+      <audio id="sfx-name" src="assets/sfx/lib_impact-bass-1.wav" data-start="{{W('heavier','SAENCHAI')}}" data-duration="1.5" data-track-index="16" data-volume="0.45"></audio>
+      <audio id="sfx-step" src="assets/sfx/red_line.mp3" data-start="{{W('step','STEP')}}" data-duration="1" data-track-index="15" data-volume="0.45"></audio>
+      <audio id="sfx-catch" src="assets/sfx/red_line.mp3" data-start="{{W('step','CATCH')}}" data-duration="1" data-track-index="21" data-volume="0.45"></audio>
+      <audio id="sfx-sweep" src="assets/sfx/hit.mp3" data-start="{{W('step','SWEEP')+0.25}}" data-duration="1" data-track-index="13" data-volume="0.7"></audio>
+      <audio id="sfx-c1" src="assets/sfx/digital_click.mp3" data-start="{{W('step','SWEEP')+0.25}}" data-duration="1" data-track-index="17" data-volume="0.5"></audio>
+      <audio id="sfx-c2" src="assets/sfx/digital_click.mp3" data-start="{{S('reset')+0.9}}" data-duration="1" data-track-index="17" data-volume="0.5"></audio>
+      <audio id="sfx-riser" src="assets/sfx/riser.mp3" data-start="{{W('reset','TEN')-2}}" data-duration="2" data-track-index="18" data-volume="0.4"></audio>
+      <audio id="sfx-ten" src="assets/sfx/lib_impact-bass-1.wav" data-start="{{W('reset','TEN')}}" data-duration="1.5" data-track-index="16" data-volume="0.7"></audio>
+      <audio id="sfx-win" src="assets/sfx/lib_impact-bass-1.wav" data-start="{{W('win','WIN',2)-0.06}}" data-duration="1.5" data-track-index="19" data-volume="0.75"></audio>
+      <audio id="sfx-save" src="assets/sfx/lib_pop.wav" data-start="{{W('cta','SAVE')}}" data-duration="0.72" data-track-index="20" data-volume="0.55"></audio>
+      <audio id="sfx-send" src="assets/sfx/lib_pop.wav" data-start="{{W('cta','SEND')}}" data-duration="0.72" data-track-index="20" data-volume="0.55"></audio>
+    </div>
+
+    <script>
+      const EDL = {{d}};
+      const SEG = Object.fromEntries(EDL.segments.map((s) => [s.name, s]));
+      const WORDS = EDL.words;
+      const S = (n) => SEG[n].start, E = (n) => SEG[n].end;
+      const W = (n, w, k = 1) => WORDS.filter((x) => x.seg === SEG[n].i && x.w === w)[k - 1].s;
+      const tl = gsap.timeline({ paused: true });
+      const cam = "#cam-inner";
+
+      // ---- camera: slow push while talking, settles back for the loop ----
+      tl.fromTo(cam, { scale: 1.0 }, { scale: 1.05, duration: E("hook"), ease: "none" }, 0);
+      const push = (from, to, a, b) => tl.fromTo(cam, { scale: from }, { immediateRender: false, scale: to, duration: b - a, ease: "none" }, a);
+      push(1.02, 1.05, S("muscle"), E("muscle"));
+      push(1.03, 1.08, W("reset", "TEN"), E("reset"));
+      push(1.0, 1.04, E("win"), E("cta"));
+      push(1.04, 1.0, S("loop"), E("loop"));
+
+      // ---- tape: enters like a cut-in on film, never a hard pop ----
+      const tapeIn = (sel, at) => {
+        tl.fromTo(sel, { opacity: 0, scale: 1.06, filter: "blur(10px) brightness(1.5)" }, { opacity: 1, scale: 1, filter: "blur(0px) brightness(1)", duration: 0.22, ease: "expo.out" }, at);
+      };
+      [["#tp-intro", S("heavier") - 0.12], ["#tp-step", W("step", "STEP") - 0.12], ["#tp-sweep", W("step", "SWEEP") - 0.12],
+       ["#tp-flip", S("reset") - 0.12], ["#tp-harr", W("reset", "TEN") - 0.08]].forEach(([s, t]) => tapeIn(s, t));
+
+      // coach marks drawn on the words
+      tl.to("#mk-step", { strokeDashoffset: 0, duration: 0.32, ease: "power2.out" }, W("step", "STEP") + 0.05);
+      tl.to("#mk-step-h", { opacity: 1, duration: 0.05 }, W("step", "STEP") + 0.35);
+      tl.to("#mk-catch", { strokeDashoffset: 0, duration: 0.3, ease: "power2.out" }, W("step", "CATCH") - 0.02);
+      const label = (sel, a, b) => {
+        tl.fromTo(sel, { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.18, ease: "expo.out" }, a);
+        tl.to(sel, { opacity: 0, duration: 0.08 }, b);
+      };
+      label("#lb-step", W("step", "STEP"), W("step", "CATCH") - 0.04);
+      label("#lb-catch", W("step", "CATCH"), W("step", "SWEEP") - 0.04);
+      label("#lb-sweep", W("step", "SWEEP"), W("step", "START") - 0.04);
+      label("#lb-over", W("step", "START"), E("step"));
+
+      // ---- reset counter: ticks on each knockdown, spins to 10 on "ten" ----
+      const c = { v: 1 }, cnum = document.getElementById("cnum");
+      const show = () => { cnum.textContent = String(Math.round(c.v)).padStart(2, "0"); };
+      tl.fromTo("#counter", { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.2, ease: "expo.out" }, W("step", "SWEEP"));
+      tl.set(c, { v: 1, onUpdate: show, onComplete: show }, W("step", "SWEEP"));
+      tl.call(() => { c.v = 1; show(); }, null, W("step", "SWEEP") + 0.01);
+      tl.to(c, { v: 2, duration: 0.01, onUpdate: show }, S("reset") + 0.9);
+      tl.fromTo("#counter .num", { scale: 1.25 }, { scale: 1, duration: 0.25, ease: "back.out(2)", transformOrigin: "100% 50%" }, S("reset") + 0.9);
+      tl.to(c, { v: 10, duration: 0.7, ease: "power2.in", onUpdate: show }, W("reset", "TEN") - 0.45);
+      tl.set("#counter", { className: "clip gold" }, W("reset", "TEN") + 0.25);
+      tl.fromTo("#counter .num", { scale: 1.4 }, { immediateRender: false, scale: 1, duration: 0.3, ease: "back.out(2.4)", transformOrigin: "100% 50%" }, W("reset", "TEN") + 0.25);
+
+      // ---- name card ----
+      tl.fromTo("#name .n", { opacity: 0, y: 30, filter: "blur(8px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.28, ease: "expo.out" }, W("heavier", "SAENCHAI"));
+      tl.fromTo("#name .s", { opacity: 0 }, { opacity: 1, duration: 0.25 }, W("heavier", "SAENCHAI") + 0.2);
+
+      // ---- hook ----
+      tl.fromTo("#title .t", { opacity: 1, y: 0 }, { opacity: 1, y: 0, duration: 0.01 }, 0);
+      tl.fromTo("#title .t.red", { scale: 1.08, transformOrigin: "0% 50%" }, { scale: 1, duration: 0.3, ease: "expo.out" }, 0);
+
+      // ---- win card: the quiet beat, then the slam ----
+      const wt = W("win", "WIN", 2) - 0.06;
+      tl.fromTo("#win .a", { opacity: 0 }, { opacity: 1, duration: 0.12 }, wt);
+      tl.fromTo("#win .b", { opacity: 0, scale: 1.25, transformOrigin: "0% 50%" }, { opacity: 1, scale: 1, duration: 0.2, ease: "power4.out" }, wt + 0.05);
+      tl.fromTo("#win-line", { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "expo.out" }, wt + 0.2);
+      const flash = (t, a = 0.7) => { tl.set("#flash", { opacity: a }, t); tl.to("#flash", { opacity: 0, duration: 0.25, ease: "power2.out" }, t + 0.01); };
+      flash(wt, 0.55);
+      flash(W("reset", "TEN") + 0.25, 0.4);
+
+      // ---- CTA icons ----
+      tl.fromTo("#cta-save", { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.25, ease: "expo.out" }, W("cta", "SAVE") - 0.05);
+      tl.to("#bm", { fill: "#D9A552", stroke: "#D9A552", duration: 0.2 }, W("cta", "SAVE") + 0.25);
+      tl.fromTo("#bm", { scale: 1, transformOrigin: "50% 50%" }, { immediateRender: false, scale: 1.18, duration: 0.15, yoyo: true, repeat: 1 }, W("cta", "SAVE") + 0.25);
+      tl.fromTo("#cta-send", { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.25, ease: "expo.out" }, W("cta", "SEND") - 0.05);
+      tl.fromTo("#plane", { x: 0, y: 0 }, { x: 10, y: -10, duration: 0.35, ease: "back.out(3)" }, W("cta", "SEND") + 0.1);
+
+      // ---- subtitles: phrases of up to 3 words, emphasis in gold (wins) / red (moves) ----
+      const GOLD = new Set(["RESET", "WIN", "SAVE", "SEND", "SMALLEST", "TEN", "FRUSTRATED"]);
+      const RED = new Set(["SAENCHAI", "BIGGER", "HEAVIER", "STEP", "CATCH", "SWEEP", "TRADE", "TRADED", "SIZE", "OVER", "OUT-MUSCLE", "MUSCLE"]);
+      const KEEP = { "I": "I", "SAENCHAI": "Saenchai", "SAENCHAI'S": "Saenchai's", "HERE'S": "here's" };
+      const HIDE = [[0, E("hook")], [W("win", "WIN", 2) - 0.06, E("win")], [W("cta", "SAVE") - 0.05, E("cta")]];
+      const hidden = (t) => HIDE.some(([a, b]) => t >= a && t < b);
+      const caps = document.getElementById("caps");
+      const fmt = (w, first) => {
+        let t = KEEP[w.w] || w.w.toLowerCase();
+        if (first && !KEEP[w.w]) t = t.charAt(0).toUpperCase() + t.slice(1);
+        return GOLD.has(w.w) ? `<em>${t}</em>` : RED.has(w.w) ? `<i>${t}</i>` : t;
+      };
+      EDL.segments.forEach((seg) => {
+        const ws = WORDS.filter((w) => w.seg === seg.i && !hidden(w.s));
+        const groups = [];
+        ws.forEach((w, k) => {
+          const g = groups[groups.length - 1];
+          const gap = g ? w.s - g[g.length - 1].e : 1;
+          const strong = GOLD.has(w.w) || RED.has(w.w);
+          if (!g || g.length >= 3 || gap > 0.28 || strong || (g.some((x) => GOLD.has(x.w) || RED.has(x.w)))) groups.push([w]); else g.push(w);
+        });
+        groups.forEach((g, gi) => {
+          const el = document.createElement("div");
+          el.className = "cw";
+          el.innerHTML = g.map((w, k) => fmt(w, gi === 0 && k === 0)).join(" ");
+          caps.appendChild(el);
+          const tIn = Math.max(0, g[0].s - 0.04);
+          const next = groups[gi + 1];
+          const tOut = next ? Math.max(tIn + 0.12, next[0].s - 0.08) : Math.min(seg.end, g[g.length - 1].e + 0.35);
+          const strong = g.some((w) => GOLD.has(w.w) || RED.has(w.w));
+          tl.fromTo(el, { opacity: 0, y: strong ? 0 : 26, scale: strong ? 1.18 : 1, filter: "blur(10px)" },
+                        { opacity: 1, y: 0, scale: 1, filter: "blur(0px)", duration: Math.min(0.2, tOut - tIn - 0.04), ease: strong ? "back.out(1.6)" : "expo.out" }, tIn);
+          tl.to(el, { opacity: 0, filter: "blur(6px)", duration: 0.06, ease: "power1.in" }, tOut);
+        });
+      });
+
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

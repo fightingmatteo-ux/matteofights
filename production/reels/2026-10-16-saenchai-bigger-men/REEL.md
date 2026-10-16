@@ -1,6 +1,6 @@
 ---
 slug: 2026-10-16-saenchai-bigger-men
-status: talking-points
+status: edited
 pillar: psychology
 format: legend-credibility
 credibility: Saenchai (fought heavier opponents; widely reported)
@@ -14,11 +14,18 @@ test_variable: hook
 See TALKING-POINTS.md (reading script this time, hooks verbatim).
 
 ## Variants
-| V | Hook (spoken, verbatim) | On-screen hook text | Cover | Length | Render (Drive output) |
+| V | Hook (spoken, verbatim) | On-screen hook text | Length | Render (Drive output + media release) | Queue (NY) |
 |---|---|---|---|---|---|
-| A | Saenchai fought bigger men his whole career. Here's how he thought about it. | SAENCHAI FOUGHT BIGGER MEN HIS WHOLE CAREER | | ~35 s | |
-| B | If you always spar someone bigger than you, steal this from Saenchai. | ALWAYS SPARRING SOMEONE BIGGER? | | ~35 s | |
-| C | Bigger guys win the trade. Saenchai never traded. | SAENCHAI NEVER TRADED | | ~35 s | |
+| A | Saenchai fought bigger men his whole career. Here's how he thought about it. | SAENCHAI FOUGHT / BIGGER MEN / HIS WHOLE CAREER | 45.2 s | saenchai-bigger-men-A.mp4 | Oct 16 09:30 |
+| B | If you always spar someone bigger than you, steal this from Saenchai. | ALWAYS SPARRING / SOMEONE BIGGER? | 43.2 s | saenchai-bigger-men-B.mp4 | Oct 16 12:00 |
+| C | Bigger guys win the trade, but Saenchai never traded. | BIGGER GUYS WIN THE TRADE. / SAENCHAI NEVER TRADED. | 42.3 s | saenchai-bigger-men-C.mp4 | Oct 16 14:30 |
+
+Edit ("late-night film study", 2026-10-16): lamp-lit A-roll; Saenchai clips as game tape (letterboxed over a blurred
+copy, grain, TAPE labels); coach marks (STEP OFF arrow, CATCH circle, SWEEP / START OVER labels); a RESETS counter
+01 -> 02 -> spins to a gold 10 on "ten times" over the Harrison clinch throw; WIN THE RESET card; save + send icons;
+loop line into the hook. Music: epic-bold-drums (Pixabay, not Content ID registered), enters with the first tape, its
+break re-enters on "ten". Build: `python -P build_variant.py <V>` then `npx hyperframes@0.8.147 render -q delivery`.
+Dropped: Harrison 13:03 clip (it was Saenchai on the canvas, not Harrison).
 
 Shared body: beats 1-6 in TALKING-POINTS.md, then the variant's own loop line (beat 7), hard cut into the hook for a seamless loop. Edit: word-pop subtitles, SAENCHAI name card on beat 1, no fight footage.
 

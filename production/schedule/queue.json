@@ -367,6 +367,51 @@
         "variant": "b",
         "value": "split"
       }
+    },
+    {
+      "id": "saenchai-A",
+      "reel": "2026-10-16-saenchai-bigger-men",
+      "variant": "A",
+      "video_asset": "saenchai-bigger-men-A.mp4",
+      "caption_file": "production/reels/2026-10-16-saenchai-bigger-men/caption-A.txt",
+      "hook": "Saenchai fought bigger men his whole career",
+      "format": "talking head",
+      "strategy": "MANUAL",
+      "thumb_offset_ms": 300,
+      "not_before": "2026-10-16T13:30:00Z",
+      "min_gap_hours": 2.5,
+      "approved": false,
+      "status": "queued"
+    },
+    {
+      "id": "saenchai-B",
+      "reel": "2026-10-16-saenchai-bigger-men",
+      "variant": "B",
+      "video_asset": "saenchai-bigger-men-B.mp4",
+      "caption_file": "production/reels/2026-10-16-saenchai-bigger-men/caption-B.txt",
+      "hook": "Always sparring someone bigger? Steal this from Saenchai",
+      "format": "talking head",
+      "strategy": "MANUAL",
+      "thumb_offset_ms": 300,
+      "not_before": "2026-10-16T16:00:00Z",
+      "min_gap_hours": 2.5,
+      "approved": false,
+      "status": "queued"
+    },
+    {
+      "id": "saenchai-C",
+      "reel": "2026-10-16-saenchai-bigger-men",
+      "variant": "C",
+      "video_asset": "saenchai-bigger-men-C.mp4",
+      "caption_file": "production/reels/2026-10-16-saenchai-bigger-men/caption-C.txt",
+      "hook": "Bigger guys win the trade. Saenchai never traded",
+      "format": "talking head",
+      "strategy": "MANUAL",
+      "thumb_offset_ms": 300,
+      "not_before": "2026-10-16T18:30:00Z",
+      "min_gap_hours": 2.5,
+      "approved": false,
+      "status": "queued"
     }
   ]
 }

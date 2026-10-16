@@ -27,7 +27,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-MERGE = {("COME", "IN"): "COMMENT", ("ROAD", "WORK"): "ROADWORK", ("WAIT", "LIST"): "WAITLIST"}
+MERGE = {("SEN", "CHAI"): "SAENCHAI", ("COME", "IN"): "COMMENT", ("ROAD", "WORK"): "ROADWORK", ("WAIT", "LIST"): "WAITLIST"}
 
 
 def norm(text, fix):
