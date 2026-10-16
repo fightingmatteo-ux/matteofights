@@ -7,6 +7,7 @@
       "approved_note": "Matteo: 'yes enable facebook' in chat 2026-10-16",
       "slots": [
         "12:30",
+        "16:00",
         "19:30"
       ],
       "last_slot": "2026-10-15T23:30:00Z"
@@ -18,6 +19,7 @@
       "approved_note": "Matteo: 'yes enable youtube' in chat 2026-10-16",
       "slots": [
         "12:30",
+        "16:00",
         "19:00"
       ],
       "privacy_note": "Matteo: 'youtube approved' (2026-10-16). If YouTube still forces private, the audit isn't through yet."
@@ -28,7 +30,8 @@
       "approved_note": "Matteo: 'yes enable threads' in chat 2026-10-16",
       "slots": [
         "10:00",
-        "15:30"
+        "15:30",
+        "21:00"
       ],
       "topic": "Fight Psychology"
     },

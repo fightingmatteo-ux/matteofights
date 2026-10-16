@@ -9,6 +9,7 @@ on:
     - cron: "0 7 * * 6"    # Saturday: contact sheets for new Drive clips (Claude picks clips from them)
     - cron: "0 9 * * 0"    # Sunday: next week's 18:30 New York slot
     - cron: "40 9 * * 0"   # Sunday: next week's 21:30 New York slot
+    - cron: "20 10 * * 0"  # Sunday: next week's 12:30 New York slot (3 a day since 2026-10-16)
   workflow_dispatch:
     inputs:
       count:
@@ -60,7 +61,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           COUNT: ${{ inputs.count || '7' }}
-          SLOT: ${{ github.event.schedule == '40 9 * * 0' && '21:30' || inputs.slot || '18:30' }}
+          SLOT: ${{ github.event.schedule == '40 9 * * 0' && '21:30' || github.event.schedule == '20 10 * * 0' && '12:30' || inputs.slot || '18:30' }}
           RERENDER: ${{ inputs.rerender && '--rerender' || '' }}
           REMATCH: ${{ inputs.rematch && '--rematch' || '' }}
           SHEETS: ${{ (inputs.sheets || github.event.schedule == '0 7 * * 6') && '--sheets-only' || '' }}

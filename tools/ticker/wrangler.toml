@@ -1,0 +1,13 @@
+name = "matteo-ticker"
+main = "worker.js"
+compatibility_date = "2026-09-01"
+workers_dev = false
+
+[triggers]
+crons = ["*/5 * * * *"]
+
+[vars]
+GITHUB_REPO = "fightingmatteo-ux/matteofights"
+# New York times. Post queue: listicle slots (+5 min retry). Cross-post: crosspost.json slots + Threads text.
+POST_SLOTS = "12:31,12:41,18:31,18:41,21:31,21:41"
+XPOST_SLOTS = "07:31,09:01,10:01,12:36,15:31,16:01,17:31,19:01,19:31,21:01"

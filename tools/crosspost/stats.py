@@ -177,11 +177,11 @@ def main():
     written = json.loads(xp.THREADS_POSTS.read_text(encoding="utf-8"))["posts"] if xp.THREADS_POSTS.exists() else []
     sent = lambda k: sum(1 for r in state["posts"].values() if (r.get(k) or {}).get("status") == "posted" and r[k].get("at", "") >= week)
     plan = {
-        "instagram": (2, sum(1 for i in queue if (i.get("posted_at") or "") >= week), "2 trial reels"),
-        "facebook": (slots("facebook") + slots("facebook_slides"), sent("facebook") + sent("facebook_slides"), "2 reels + 1 slide album"),
-        "youtube": (slots("youtube"), sent("youtube"), "2 Shorts"),
+        "instagram": (3, sum(1 for i in queue if (i.get("posted_at") or "") >= week), "3 trial reels"),
+        "facebook": (slots("facebook") + slots("facebook_slides"), sent("facebook") + sent("facebook_slides"), "3 reels + 1 slide album"),
+        "youtube": (slots("youtube"), sent("youtube"), "3 Shorts"),
         "threads": (slots("threads") + (3 if state["platforms"].get("threads_text", {}).get("enabled") else 0),
-                    sent("threads") + sum(1 for x in written if (x.get("posted_at") or "") >= week), "2 reels + 3 written posts"),
+                    sent("threads") + sum(1 for x in written if (x.get("posted_at") or "") >= week), "3 reels + 3 written posts"),
     }
     for name, (per_day, done7, mix) in plan.items():
         p = out["platforms"].setdefault(name, {})
