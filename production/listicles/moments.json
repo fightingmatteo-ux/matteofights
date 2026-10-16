@@ -133,5 +133,657 @@
     "notes": "rooftop silhouette shadowboxing: B good, A good but exits frame at end; C walks away",
     "graded": "2026-10-15T20:00:47Z",
     "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "1VQckuhsKET3bhVHRsVsgANM797wcP7dM": {
+    "good": [
+      1.0,
+      20.2,
+      44.2,
+      34.6
+    ],
+    "bad": [
+      10.2,
+      59.0,
+      69.4,
+      81.4
+    ],
+    "notes": "Super8 pads: A/B/E clean kicks and combos, D a bit far; C walks to camera, F/G far, H trainer in front",
+    "graded": "2026-10-16T11:05:38Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "1s6cTlqvp0W7YDXDmH8r6z1ZLs6jC0h7T": {
+    "good": [],
+    "bad": [
+      15.8,
+      24.2,
+      39.0,
+      48.6,
+      7.4
+    ],
+    "notes": "Success ring from the floor: fighter tiny behind ropes in every stretch, bags in foreground",
+    "graded": "2026-10-16T11:05:38Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "1c_WHGX8b9Dre-VW9T2rcFZeQMAdy9tvl": {
+    "good": [],
+    "bad": [
+      16.6,
+      8.2
+    ],
+    "notes": "blue mat, letterboxed and tiny",
+    "graded": "2026-10-16T11:05:38Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "1cO7ZS2vB0GficgdhERknFjIt1zkldbU6": {
+    "good": [
+      60.6,
+      76.2,
+      1.0,
+      27.4,
+      16.6
+    ],
+    "bad": [
+      44.2,
+      35.8
+    ],
+    "notes": "Super8 pads close: B/A kick and knee combos, D/E/F clean; C turns away, G dark and blocked",
+    "graded": "2026-10-16T11:05:38Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "1x_zg9B392R2uYXJrd8it7QbctQaK650h": {
+    "good": [],
+    "bad": [
+      1.4
+    ],
+    "notes": "blue mat drill filmed from behind, dim and tilted",
+    "graded": "2026-10-16T11:05:38Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "1F9m6uLPye-yt2Pki8gNMmh5IUlWn5cId": {
+    "good": [],
+    "bad": [
+      12.2,
+      85.8,
+      94.6,
+      63.8,
+      103.0,
+      76.6,
+      20.6,
+      40.6
+    ],
+    "notes": "rooftop sunset rope skipping in silhouette: atmospheric but tiny and no fighting; lifestyle b-roll only",
+    "graded": "2026-10-16T11:05:38Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "1jDHxrjde9bZ4aWlA2BqIfwFLqYdfEqCR": {
+    "good": [
+      24.6,
+      9.0
+    ],
+    "bad": [
+      42.6,
+      34.2
+    ],
+    "notes": "Success ring sparring through the ropes: C/B clean exchanges; A partner fills frame, D ropes cut through him",
+    "graded": "2026-10-16T11:05:38Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "1A9Awnno2e_KHq52e4PWWnRp9GUEEDY9V": {
+    "good": [
+      22.2
+    ],
+    "bad": [
+      7.8,
+      30.6,
+      50.2,
+      40.2
+    ],
+    "notes": "Success ring from the corner: A exchange is readable; the rest small, partner walks into frame in D",
+    "graded": "2026-10-16T11:05:38Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "1wJFCCvUAxt_Ox0uzVc0b_e3pQiZy98Pl": {
+    "good": [],
+    "bad": [
+      0.0
+    ],
+    "notes": "bag on the floor and ceiling, no fighter",
+    "graded": "2026-10-16T11:05:38Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "1K-Cxh098CeWlYSNMCo7H5AQLXAEaXfpB": {
+    "good": [],
+    "bad": [
+      1.4,
+      28.2,
+      9.8,
+      19.8
+    ],
+    "notes": "blue mat drill shot sideways: two small figures in every stretch, no clear skill",
+    "graded": "2026-10-16T11:05:38Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "1ZrxtlNeYg5rHFo5ME4JEmCSUlXBhVqDf": {
+    "good": [],
+    "bad": [
+      0.0
+    ],
+    "notes": "holding a rifle, never use",
+    "graded": "2026-10-16T11:05:38Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "1oVEdYjTgppKfNtH5xykXcXyQOu03TCVO": {
+    "good": [
+      150.2,
+      123.0,
+      131.4
+    ],
+    "bad": [
+      96.6,
+      109.4,
+      13.8,
+      78.2,
+      32.2
+    ],
+    "notes": "big Thai camp sparring: D/A/E clean exchanges with a kick; B back to camera, C/H someone in front, F starts wide, G pole in the way",
+    "graded": "2026-10-16T11:05:38Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "1GSm8g1PfirwqzAUncyaRW0tFO2t3_yla": {
+    "good": [],
+    "bad": [
+      0.0
+    ],
+    "notes": "scooter traffic, no training",
+    "graded": "2026-10-16T11:05:38Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "1dhTH0QynPgwnao6gG9stMknnucO89drM": {
+    "good": [
+      107.0,
+      61.0,
+      96.6,
+      126.6,
+      118.2
+    ],
+    "bad": [
+      81.4,
+      51.0,
+      35.8
+    ],
+    "notes": "red bag gym bag work: B/C/D sharp combos with the bag moving, A/F good but hands drop at the end; E starts far, G/H smaller",
+    "graded": "2026-10-16T11:05:38Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "1xTvs7IEQqOvFcqFfSpYzz83gC_vscdld": {
+    "good": [
+      37.0
+    ],
+    "bad": [
+      26.6,
+      11.8,
+      3.4,
+      45.8,
+      65.0,
+      54.2
+    ],
+    "notes": "landmine lifts (strength, not fight): A clean press head to toe; others cut off, walking or bent over",
+    "graded": "2026-10-16T11:05:38Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "1bgdKz9UyOvtpbWcNgASpJ77QWIygU_rx": {
+    "good": [
+      24.6
+    ],
+    "bad": [
+      47.4,
+      38.6,
+      9.0
+    ],
+    "notes": "landmine press and push-ups: B clean press; A ends on a foot at the lens, C walks at camera, D hand over lens",
+    "graded": "2026-10-16T11:05:38Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "1_RUgWcGiKe6oIPwqotDGVnUmwKkufiV8": {
+    "good": [
+      20.6,
+      35.0,
+      54.2
+    ],
+    "bad": [
+      7.8,
+      43.4,
+      62.6
+    ],
+    "notes": "rope skipping between the red bags, back to camera (conditioning, lifestyle lane): B/C/D steady; A walking in, E cut off, F walks to camera",
+    "graded": "2026-10-16T11:05:38Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "1lAtkpgK12-kQvyz-w9QeNIEqPxqrXWZ6": {
+    "good": [
+      50.2,
+      58.6,
+      31.8,
+      23.4,
+      77.8
+    ],
+    "bad": [
+      69.0,
+      87.8,
+      41.8
+    ],
+    "notes": "red BOX bag work: B/C/A sharp combos with the bag moving, F/H fine; D turns his back, E walks to camera, G someone walks past the lens",
+    "graded": "2026-10-16T11:05:38Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "1-XaH84HgvgRKgajbc1F15GxBakWA7oO_": {
+    "good": [
+      194.6,
+      114.2,
+      93.0,
+      36.2,
+      246.2
+    ],
+    "bad": [
+      51.8,
+      60.2,
+      76.6
+    ],
+    "notes": "red bag work: C/E/F/G clean combos and hooks, D good; A and B turn away, H starts walking in",
+    "graded": "2026-10-16T11:05:38Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "1i9iXjD3ZNLP9o_TUUsOUsiz8CROpoTEW": {
+    "good": [
+      40.2,
+      97.8,
+      28.2,
+      169.0,
+      124.6,
+      66.2
+    ],
+    "bad": [
+      245.0,
+      19.0
+    ],
+    "notes": "red bag work: C/B/A/E sharp combos with full extension, H/F fine; D faces camera hands low, G someone walks through",
+    "graded": "2026-10-16T11:05:38Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "1vBV91hZz8OBFh2bAdw1Z7j1WC_aFJR-p": {
+    "good": [
+      21.0,
+      29.8,
+      1.0,
+      10.6
+    ],
+    "bad": [
+      39.4
+    ],
+    "notes": "Thai camp pads: B head kick, C knee off a combo, E/D clean; A trainer's back fills the frame",
+    "graded": "2026-10-16T11:05:38Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "1vvGOk3cdrvHissbzTmh5tZFjMu425Qdh": {
+    "good": [],
+    "bad": [
+      51.4,
+      41.4,
+      30.2,
+      13.0,
+      70.6,
+      1.0,
+      97.8,
+      87.0
+    ],
+    "notes": "ring sparring filmed letterboxed: tiny strip of picture, partner's back in front",
+    "graded": "2026-10-16T11:05:38Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "1Pv7SyBa3lziNPzto9P3WN7GR59GXEnnp": {
+    "good": [
+      131.8,
+      193.4,
+      477.8
+    ],
+    "bad": [
+      86.6,
+      376.2,
+      287.0,
+      148.6,
+      167.8
+    ],
+    "notes": "light sparring with partner in red, wide (he is in the black tank): A/D/E he leads with clean combos; B/C partner does the work, F/G flat, H someone at the edge",
+    "graded": "2026-10-16T11:05:38Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "1kY_fR5PwN07yk9dasbW4Q_5k39muHf-T": {
+    "good": [
+      15.4,
+      7.0
+    ],
+    "bad": [],
+    "notes": "low-angle bag kicks and knees in red shirt: both stretches explosive with full hip turn",
+    "graded": "2026-10-16T11:05:38Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "1XuCyrSD0uTCX5HOf_r-_L_KZCm-mVUSE": {
+    "good": [],
+    "bad": [
+      367.4,
+      129.0,
+      140.6,
+      451.4,
+      323.4,
+      359.0,
+      376.6,
+      41.0
+    ],
+    "notes": "blue mat sparring filmed letterboxed: tiny strip, unusable",
+    "graded": "2026-10-16T11:05:38Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "1dydRhSqH8ZDmLQrfCRPfkAGBkB-Ur_YW": {
+    "good": [
+      222.2,
+      231.0,
+      267.4
+    ],
+    "bad": [
+      205.4,
+      341.4,
+      175.0,
+      59.4,
+      8.6
+    ],
+    "notes": "old gym with the older coach (he is in black): A/E guard up and sharp punches, B ok; C/F/G/H coach in front or his back to camera, D coach walks at the lens",
+    "graded": "2026-10-16T11:05:38Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "18iDzmS4CkW7JY4-rS7SMarVaJuQblC3T": {
+    "good": [],
+    "bad": [
+      1.0,
+      28.2,
+      9.4,
+      19.4
+    ],
+    "notes": "blue mat drill shot sideways (duplicate clip): two small figures, no clear skill",
+    "graded": "2026-10-16T11:05:38Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "10SOLCvEv283OA3GSmymq4xU6CTY9fXBK": {
+    "good": [
+      16.2
+    ],
+    "bad": [
+      117.8,
+      39.8,
+      131.0,
+      143.8,
+      48.2,
+      94.6,
+      69.8
+    ],
+    "notes": "wide light sparring with partner in red: figures small in every stretch; D clean teep and combo is the only standout",
+    "graded": "2026-10-16T11:05:38Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "1Pipo9qyf7LoVjbYn1pu4BAFWRke92UEB": {
+    "good": [
+      147.0,
+      17.4
+    ],
+    "bad": [
+      89.4,
+      47.8,
+      76.6,
+      138.6,
+      104.2,
+      62.2
+    ],
+    "notes": "wide light sparring with partner in red: small figures; A and C he lands a clean kick and resets, the rest flat or partner leads",
+    "graded": "2026-10-16T11:05:38Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "1pEV6_Yyfz1n9hAaJg7USfvPZgDpvG6He": {
+    "good": [
+      145.0
+    ],
+    "bad": [
+      160.2,
+      30.2,
+      83.8,
+      168.6,
+      119.4,
+      47.8,
+      38.6
+    ],
+    "notes": "wide light sparring with partner in red: small; F his kick and combo, the rest partner leads or he drifts out of frame",
+    "graded": "2026-10-16T11:05:38Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "1JNyxytmJVJzKi16oC24uJgOABUOTEBdg": {
+    "good": [],
+    "bad": [
+      30.2,
+      44.2,
+      1.0,
+      14.6
+    ],
+    "notes": "old ring sparring filmed letterboxed: tiny strip, unusable",
+    "graded": "2026-10-16T11:05:38Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "1xe9w_fIMcK3o6Nbxauu3Vgqd1Phhnwev": {
+    "good": [],
+    "bad": [
+      0.0
+    ],
+    "notes": "standing by a motorbike, legs only",
+    "graded": "2026-10-16T11:05:38Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "1TvIhoAsluCfJNG6Z-14q3Ku0KuSRCaiw": {
+    "good": [
+      0.0
+    ],
+    "bad": [],
+    "notes": "food: steak and a full table (lifestyle lane only, not a fight moment)",
+    "graded": "2026-10-16T11:05:38Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "1DThONEtMg2kkNRUTXViJTdtMdctgdpNz": {
+    "good": [
+      0.7549999999999999
+    ],
+    "bad": [],
+    "notes": "strict pull-ups in an autumn forest, whole body in frame (calisthenics/discipline lane)",
+    "graded": "2026-10-16T11:05:38Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "178bHaKfm8NJSSRd-dJGuSn2MqtKu4FHz": {
+    "good": [],
+    "bad": [
+      0.0
+    ],
+    "notes": "airport selfie talking, no training",
+    "graded": "2026-10-16T11:05:38Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "1rf6iJDQQxO_wMjYeGYuB81z9JUvXRQPc": {
+    "good": [
+      0.0
+    ],
+    "bad": [],
+    "notes": "cooking rice and beef (lifestyle lane only)",
+    "graded": "2026-10-16T11:05:38Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "1tkm5LMhiOBgsU74CYx-qCe4noWsEBKiq": {
+    "good": [],
+    "bad": [
+      0.0
+    ],
+    "notes": "computer screens, no training (builder b-roll at most)",
+    "graded": "2026-10-16T11:05:38Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "1FGVFg9sFlwI2s6lK6B4dXBRXonE21gho": {
+    "good": [
+      0.0
+    ],
+    "bad": [],
+    "notes": "oats and berries in a mug (lifestyle lane only)",
+    "graded": "2026-10-16T11:05:38Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "1vj6GxY875E36-_u9yC84tWzqDm4-9SIc": {
+    "good": [
+      24.2,
+      40.2,
+      15.8
+    ],
+    "bad": [
+      6.6,
+      50.2
+    ],
+    "notes": "low-angle bag kicks in red shirt: A/C full roundhouses with hip turn, B good; D starts with his face at the lens, E ends cut off at the camera",
+    "graded": "2026-10-16T11:05:38Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "17K00x6WgdwsldO84Bw0EtkuvvyJ-pNuL": {
+    "good": [
+      0.0
+    ],
+    "bad": [],
+    "notes": "groceries at the checkout: steak, eggs, yogurt (lifestyle lane only)",
+    "graded": "2026-10-16T11:05:38Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "1pOXUnXXddedR9PfNCeqZVkPTEgj4xxGo": {
+    "good": [],
+    "bad": [
+      0.0
+    ],
+    "notes": "dark sunset path, no fighter visible",
+    "graded": "2026-10-16T11:05:38Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "13Fpb4OmZofzoHqDrcw04W_F3Ye7q41KC": {
+    "good": [
+      5.0
+    ],
+    "bad": [
+      13.4
+    ],
+    "notes": "ring pull-ups in a forest from behind: A clean reps; B ends with him dropping off and walking away",
+    "graded": "2026-10-16T11:05:38Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "1yC5EhTYD5HXOFB4SqB7G5uXDGR1KIYSh": {
+    "good": [],
+    "bad": [
+      32.6,
+      23.4,
+      53.4,
+      10.6,
+      1.0,
+      45.0
+    ],
+    "notes": "ringside at a Thai stadium: atmosphere only, he isn't the one fighting and cornermen block the view",
+    "graded": "2026-10-16T11:05:38Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "10ZOgp_5ZZjc-djf0ZVNkQTZGHbn6kEE_": {
+    "good": [
+      17.8,
+      1.0
+    ],
+    "bad": [
+      26.2,
+      42.6,
+      54.6,
+      9.4
+    ],
+    "notes": "Thai stadium fight filmed from the corner: the fighter in blue HERO shorts may be Matteo (same shorts as the Success gym pad clip), unconfirmed; D/E clear close exchanges, A/B/C/F refs and stools in the way",
+    "graded": "2026-10-16T11:05:38Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "1j93MWwaj2S4Z5vA37ExXOBgFkTwon7ec": {
+    "good": [
+      1.0
+    ],
+    "bad": [],
+    "notes": "rooftop rope skipping at sunset from behind (conditioning lane)",
+    "graded": "2026-10-16T11:05:38Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "16okcYZwmHByyNzsNAHp9rNuXtowASZwH": {
+    "good": [
+      15.8
+    ],
+    "bad": [
+      4.2
+    ],
+    "notes": "rooftop shadowboxing at sunset: A stance, guard and footwork; B starts walking away from the lens",
+    "graded": "2026-10-16T11:05:38Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "1tmnkEzhQByAoVomRPOWm0Qk2bCYDIH1Q": {
+    "good": [
+      10.6
+    ],
+    "bad": [
+      19.0,
+      2.2
+    ],
+    "notes": "rooftop shadowboxing at sunset: A clean; B ends on an empty frame, C walks out from the camera",
+    "graded": "2026-10-16T11:05:38Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "1XdNHNatOJN-fPteT9x80O5CZemaNomJC": {
+    "good": [],
+    "bad": [
+      5.4
+    ],
+    "notes": "red bag warm-up drill: burned-in \"Brazilian Boxing Warmup\" caption would clash with our hook",
+    "graded": "2026-10-16T11:05:38Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "1jeOZ9e9A7YvPVaZJxqiODbbenf_Y0Nli": {
+    "good": [
+      21.4
+    ],
+    "bad": [
+      13.0,
+      2.6
+    ],
+    "notes": "rooftop shadowboxing at sunset: A sharp footwork with guard; B walks to camera, C walks away from it",
+    "graded": "2026-10-16T11:05:38Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "1H8B7An-cG24a0CeSV6311HAZh7hj0ZXR": {
+    "good": [],
+    "bad": [
+      12.6,
+      1.8,
+      25.0
+    ],
+    "notes": "red bag gym in grey tee: bouncing with hands low, walking in, walking to camera",
+    "graded": "2026-10-16T11:05:38Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "1EJLYUTVLVkSWxisIHwaqeks07lNocugQ": {
+    "good": [
+      17.4
+    ],
+    "bad": [
+      1.4,
+      30.2
+    ],
+    "notes": "red bag gym shadowboxing in grey tee: C clean combos; A walking and kettlebell, B ends with a hand at the lens",
+    "graded": "2026-10-16T11:05:38Z",
+    "by": "Claude (session, rubric context/boxing-technique.md)"
   }
 }

@@ -1,0 +1,62 @@
+{
+  "updated": "2026-10-16T11:06:46Z",
+  "median_views": 2325,
+  "median_basis": "Buzzfy: latest 14 own reels older than 48h (6 Sep to 13 Oct)",
+  "audience": {
+    "us_reach_pct": 16.5,
+    "in_reach_pct": 21.2,
+    "window": "reached, this week"
+  },
+  "reels": {
+    "18131444773684044": {
+      "views": 2656,
+      "reach": 2009,
+      "shares": 13,
+      "saves": 39,
+      "follows": null,
+      "skip_rate": 37.2,
+      "vs_median_x": 1.14,
+      "provisional": true
+    },
+    "18167111158483588": {
+      "views": 3007,
+      "reach": 2138,
+      "shares": 2,
+      "saves": 19,
+      "follows": null,
+      "skip_rate": 34.1,
+      "vs_median_x": 1.29,
+      "provisional": true
+    },
+    "17949258072324239": {
+      "views": 4144,
+      "reach": 2965,
+      "shares": 8,
+      "saves": 48,
+      "follows": null,
+      "skip_rate": 32.1,
+      "vs_median_x": 1.78,
+      "provisional": true
+    },
+    "18099839348637902": {
+      "views": 3503,
+      "reach": 2234,
+      "shares": 0,
+      "saves": 3,
+      "follows": null,
+      "skip_rate": 37.3,
+      "vs_median_x": 1.51,
+      "provisional": true
+    },
+    "18384412828239467": {
+      "views": 3168,
+      "reach": 2297,
+      "shares": 6,
+      "saves": 31,
+      "follows": null,
+      "skip_rate": 34.5,
+      "vs_median_x": 1.36,
+      "provisional": true
+    }
+  }
+}

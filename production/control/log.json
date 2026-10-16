@@ -23,5 +23,30 @@
     "at": "2026-10-15T20:19:25Z",
     "who": "Matteo",
     "text": "Approved 13 reels via dashboard"
+  },
+  {
+    "at": "2026-10-16T11:06:46Z",
+    "who": "Claude",
+    "text": "Catalogued all 70 Drive clips (58 usable; 2 shot sideways get a rotate fix; rifle, scooter and screen clips marked unusable)"
+  },
+  {
+    "at": "2026-10-16T11:06:46Z",
+    "who": "Claude",
+    "text": "Graded the best moments in 51 more clips: 41 of 61 clips now have at least one skilled stretch; 19 have none and are kept off fight hooks"
+  },
+  {
+    "at": "2026-10-16T11:06:46Z",
+    "who": "Claude",
+    "text": "Pose check is broken in Actions (libEGL.so.1 missing), so moments were graded by eye only"
+  },
+  {
+    "at": "2026-10-16T11:06:46Z",
+    "who": "Claude",
+    "text": "Logged early numbers for 5 reels in metrics.json (normal = 2,325 views)"
+  },
+  {
+    "at": "2026-10-16T11:06:46Z",
+    "who": "Claude",
+    "text": "Replied to the Saenchai idea; asked whether the stadium clips are Matteo's own fight"
   }
 ]

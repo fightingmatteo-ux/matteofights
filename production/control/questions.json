@@ -16,5 +16,15 @@
     "answer": "4. Split (Bebas white, last line red)",
     "answered_at": "2026-10-15T19:58:29Z",
     "via": "dashboard"
+  },
+  {
+    "id": "q-stadium",
+    "question": "Is that you fighting in the stadium clips (blue HERO shorts)?",
+    "context": "Two Drive clips (IMG ringside, Thai stadium) show a fight filmed from the corner. If it's your fight, it's the strongest footage you have for fight-night hooks. If not, I'll only use it as atmosphere.",
+    "options": [
+      "Yes, that's my fight",
+      "No, I was cornering / watching"
+    ],
+    "status": "open"
   }
 ]
