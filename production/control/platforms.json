@@ -1,8 +1,8 @@
 {
-  "updated": "2026-10-16T04:43:44Z",
+  "updated": "2026-10-16T11:36:59Z",
   "platforms": {
     "instagram": {
-      "followers": 2031,
+      "followers": 2033,
       "last_post": "2026-10-16T02:30:32Z",
       "failed": [],
       "next_slot": "2026-10-16T22:30:00Z",
@@ -34,7 +34,7 @@
       "next_slot": "2026-10-16T14:00:00Z",
       "plan_per_day": 6,
       "plan_mix": "3 reels + 3 written posts",
-      "posted_7d": 1,
+      "posted_7d": 2,
       "token_expires": "2026-12-14",
       "warn": null
     },
@@ -59,7 +59,7 @@
   "posts": {
     "freeze-A": {
       "instagram": {
-        "views": 2652,
+        "views": 2656,
         "likes": 61,
         "comments": 0,
         "shares": 13,
@@ -69,7 +69,7 @@
     },
     "freeze-B": {
       "instagram": {
-        "views": 3004,
+        "views": 3007,
         "likes": 59,
         "comments": 0,
         "shares": 2,
@@ -79,7 +79,7 @@
     },
     "freeze-C": {
       "instagram": {
-        "views": 4137,
+        "views": 4144,
         "likes": 90,
         "comments": 0,
         "shares": 8,
@@ -89,19 +89,19 @@
     },
     "lst-2026-10-15-built-for-fight-night": {
       "instagram": {
-        "views": 3442,
-        "likes": 44,
+        "views": 3503,
+        "likes": 46,
         "comments": 0,
         "shares": 0,
         "saves": 3,
         "url": "https://www.instagram.com/reel/DeiCa-risSs/"
       },
       "facebook": {
-        "views": 24,
+        "views": 55,
         "url": "https://www.facebook.com/reel/29282185481389743"
       },
       "threads": {
-        "views": 0,
+        "views": 14,
         "likes": 0,
         "replies": 0,
         "reposts": 0,
@@ -111,16 +111,25 @@
     },
     "lst-2026-10-15-technique-without-a-coach": {
       "instagram": {
-        "views": 842,
-        "likes": 9,
+        "views": 3175,
+        "likes": 40,
         "comments": 0,
-        "shares": 0,
-        "saves": 5,
+        "shares": 6,
+        "saves": 31,
         "url": "https://www.instagram.com/reel/Deidr7rFHUn/"
       }
     }
   },
   "inbox": [],
-  "threads_written": {},
+  "threads_written": {
+    "th-1016-1": {
+      "views": 0,
+      "likes": 0,
+      "replies": 0,
+      "reposts": 0,
+      "shares": 0,
+      "url": "https://www.threads.com/@matteofights/post/DejcJkTlpCM"
+    }
+  },
   "warned": []
 }

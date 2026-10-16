@@ -18,11 +18,11 @@
       "started": "2026-10-15T19:58:29Z",
       "n": {
         "a": 0,
-        "b": 0
+        "b": 1
       },
       "median_vs_normal": {
         "a": null,
-        "b": null
+        "b": 1.36
       }
     }
   ]
