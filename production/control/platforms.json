@@ -1,8 +1,8 @@
 {
-  "updated": "2026-10-16T11:36:59Z",
+  "updated": "2026-10-16T16:47:15Z",
   "platforms": {
     "instagram": {
-      "followers": 2033,
+      "followers": 2034,
       "last_post": "2026-10-16T02:30:32Z",
       "failed": [],
       "next_slot": "2026-10-16T22:30:00Z",
@@ -15,26 +15,26 @@
     "facebook": {
       "followers": 1296,
       "enabled": true,
-      "last_post": "2026-10-15T23:50:38Z",
+      "last_post": "2026-10-16T16:36:45Z",
       "failed": [],
       "errors": [],
-      "next_slot": "2026-10-16T16:30:00Z",
+      "next_slot": "2026-10-16T20:00:00Z",
       "plan_per_day": 4,
       "plan_mix": "3 reels + 1 slide album",
-      "posted_7d": 1,
+      "posted_7d": 3,
       "token_expires": null,
       "warn": null
     },
     "threads": {
       "followers": 39,
       "enabled": true,
-      "last_post": "2026-10-16T04:25:30Z",
+      "last_post": "2026-10-16T14:06:46Z",
       "failed": [],
       "errors": [],
-      "next_slot": "2026-10-16T14:00:00Z",
+      "next_slot": "2026-10-16T19:30:00Z",
       "plan_per_day": 6,
       "plan_mix": "3 reels + 3 written posts",
-      "posted_7d": 2,
+      "posted_7d": 4,
       "token_expires": "2026-12-14",
       "warn": null
     },
@@ -42,24 +42,26 @@
       "enabled": true,
       "last_post": null,
       "failed": [
-        "lst-2026-10-15-built-for-fight-night"
+        "lst-2026-10-15-built-for-fight-night",
+        "lst-2026-10-15-technique-without-a-coach"
       ],
       "errors": [
+        "POST https://www.googleapis.com/upload/youtube/v3/videos -> 401: {\n  \"error\": {\n    \"code\": 401,\n    \"message\": \"Unauthorized\",\n    \"errors\": [\n      {\n        \"message\": \"Unauthorized\",\n        \"doma",
         "POST https://www.googleapis.com/upload/youtube/v3/videos -> 401: {\n  \"error\": {\n    \"code\": 401,\n    \"message\": \"Unauthorized\",\n    \"errors\": [\n      {\n        \"message\": \"Unauthorized\",\n        \"doma"
       ],
-      "next_slot": "2026-10-16T16:30:00Z",
+      "next_slot": "2026-10-16T20:00:00Z",
       "privacy": "public",
       "plan_per_day": 3,
       "plan_mix": "3 Shorts",
       "posted_7d": 0,
       "token_expires": null,
-      "warn": "1 failed in the last 3 days"
+      "warn": "2 failed in the last 3 days"
     }
   },
   "posts": {
     "freeze-A": {
       "instagram": {
-        "views": 2656,
+        "views": 2664,
         "likes": 61,
         "comments": 0,
         "shares": 13,
@@ -69,7 +71,7 @@
     },
     "freeze-B": {
       "instagram": {
-        "views": 3007,
+        "views": 3018,
         "likes": 59,
         "comments": 0,
         "shares": 2,
@@ -79,7 +81,7 @@
     },
     "freeze-C": {
       "instagram": {
-        "views": 4144,
+        "views": 4148,
         "likes": 90,
         "comments": 0,
         "shares": 8,
@@ -89,19 +91,23 @@
     },
     "lst-2026-10-15-built-for-fight-night": {
       "instagram": {
-        "views": 3503,
-        "likes": 46,
+        "views": 3526,
+        "likes": 48,
         "comments": 0,
         "shares": 0,
         "saves": 3,
         "url": "https://www.instagram.com/reel/DeiCa-risSs/"
       },
       "facebook": {
-        "views": 55,
+        "views": 86,
         "url": "https://www.facebook.com/reel/29282185481389743"
       },
+      "facebook_slides": {
+        "views": null,
+        "url": "https://www.facebook.com/1070947222779004_122155114917352578"
+      },
       "threads": {
-        "views": 14,
+        "views": 15,
         "likes": 0,
         "replies": 0,
         "reposts": 0,
@@ -111,24 +117,44 @@
     },
     "lst-2026-10-15-technique-without-a-coach": {
       "instagram": {
-        "views": 3175,
+        "views": 3203,
         "likes": 40,
         "comments": 0,
         "shares": 6,
         "saves": 31,
         "url": "https://www.instagram.com/reel/Deidr7rFHUn/"
+      },
+      "facebook": {
+        "views": 0,
+        "url": "https://www.facebook.com/reel/1835746304451116"
+      },
+      "threads": {
+        "views": 88,
+        "likes": 1,
+        "replies": 0,
+        "reposts": 0,
+        "shares": 0,
+        "url": "https://www.threads.com/@matteofights/post/DejtWAPAWBB"
       }
     }
   },
   "inbox": [],
   "threads_written": {
     "th-1016-1": {
-      "views": 0,
+      "views": 28,
       "likes": 0,
       "replies": 0,
       "reposts": 0,
       "shares": 0,
       "url": "https://www.threads.com/@matteofights/post/DejcJkTlpCM"
+    },
+    "th-1016-2": {
+      "views": 0,
+      "likes": 0,
+      "replies": 0,
+      "reposts": 0,
+      "shares": 0,
+      "url": "https://www.threads.com/@matteofights/post/Dej-lLQlMXB"
     }
   },
   "warned": []
