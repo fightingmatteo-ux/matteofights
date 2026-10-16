@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-16T16:47:15Z",
+  "updated": "2026-10-16T21:22:44Z",
   "platforms": {
     "instagram": {
       "followers": 2034,
@@ -18,7 +18,7 @@
       "last_post": "2026-10-16T16:36:45Z",
       "failed": [],
       "errors": [],
-      "next_slot": "2026-10-16T20:00:00Z",
+      "next_slot": "2026-10-16T23:30:00Z",
       "plan_per_day": 4,
       "plan_mix": "3 reels + 1 slide album",
       "posted_7d": 3,
@@ -31,7 +31,7 @@
       "last_post": "2026-10-16T14:06:46Z",
       "failed": [],
       "errors": [],
-      "next_slot": "2026-10-16T19:30:00Z",
+      "next_slot": "2026-10-17T01:00:00Z",
       "plan_per_day": 6,
       "plan_mix": "3 reels + 3 written posts",
       "posted_7d": 4,
@@ -49,7 +49,7 @@
         "POST https://www.googleapis.com/upload/youtube/v3/videos -> 401: {\n  \"error\": {\n    \"code\": 401,\n    \"message\": \"Unauthorized\",\n    \"errors\": [\n      {\n        \"message\": \"Unauthorized\",\n        \"doma",
         "POST https://www.googleapis.com/upload/youtube/v3/videos -> 401: {\n  \"error\": {\n    \"code\": 401,\n    \"message\": \"Unauthorized\",\n    \"errors\": [\n      {\n        \"message\": \"Unauthorized\",\n        \"doma"
       ],
-      "next_slot": "2026-10-16T20:00:00Z",
+      "next_slot": "2026-10-16T23:00:00Z",
       "privacy": "public",
       "plan_per_day": 3,
       "plan_mix": "3 Shorts",
@@ -61,7 +61,7 @@
   "posts": {
     "freeze-A": {
       "instagram": {
-        "views": 2664,
+        "views": 2667,
         "likes": 61,
         "comments": 0,
         "shares": 13,
@@ -71,7 +71,7 @@
     },
     "freeze-B": {
       "instagram": {
-        "views": 3018,
+        "views": 3023,
         "likes": 59,
         "comments": 0,
         "shares": 2,
@@ -81,17 +81,17 @@
     },
     "freeze-C": {
       "instagram": {
-        "views": 4148,
+        "views": 4168,
         "likes": 90,
         "comments": 0,
-        "shares": 8,
+        "shares": 9,
         "saves": 48,
         "url": "https://www.instagram.com/reel/DefsPO_ih7V/"
       }
     },
     "lst-2026-10-15-built-for-fight-night": {
       "instagram": {
-        "views": 3526,
+        "views": 3534,
         "likes": 48,
         "comments": 0,
         "shares": 0,
@@ -99,7 +99,7 @@
         "url": "https://www.instagram.com/reel/DeiCa-risSs/"
       },
       "facebook": {
-        "views": 86,
+        "views": 105,
         "url": "https://www.facebook.com/reel/29282185481389743"
       },
       "facebook_slides": {
@@ -107,7 +107,7 @@
         "url": "https://www.facebook.com/1070947222779004_122155114917352578"
       },
       "threads": {
-        "views": 15,
+        "views": 16,
         "likes": 0,
         "replies": 0,
         "reposts": 0,
@@ -117,19 +117,19 @@
     },
     "lst-2026-10-15-technique-without-a-coach": {
       "instagram": {
-        "views": 3203,
-        "likes": 40,
+        "views": 3212,
+        "likes": 41,
         "comments": 0,
         "shares": 6,
-        "saves": 31,
+        "saves": 32,
         "url": "https://www.instagram.com/reel/Deidr7rFHUn/"
       },
       "facebook": {
-        "views": 0,
+        "views": 3,
         "url": "https://www.facebook.com/reel/1835746304451116"
       },
       "threads": {
-        "views": 88,
+        "views": 94,
         "likes": 1,
         "replies": 0,
         "reposts": 0,
@@ -149,7 +149,7 @@
       "url": "https://www.threads.com/@matteofights/post/DejcJkTlpCM"
     },
     "th-1016-2": {
-      "views": 0,
+      "views": 26,
       "likes": 0,
       "replies": 0,
       "reposts": 0,
