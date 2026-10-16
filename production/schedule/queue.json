@@ -84,14 +84,17 @@
       "not_before": "2026-10-16T22:30:00Z",
       "min_gap_hours": 2.5,
       "approved": true,
-      "status": "queued",
+      "status": "posted",
       "rotate": 90,
       "approved_note": "Matteo: approved the week via dashboard (2026-10-15T20:19:25Z)",
       "test": {
         "exp": "exp-1016-hook_style",
         "variant": "a",
         "value": "native"
-      }
+      },
+      "media_id": "18119489926753835",
+      "permalink": "https://www.instagram.com/reel/Deknr2RkvJM/",
+      "posted_at": "2026-10-16T22:36:22Z"
     },
     {
       "id": "lst-2026-10-17-mentally-tougher",
