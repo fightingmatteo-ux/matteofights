@@ -30,5 +30,9 @@
   {
     "id": "xp-8adc29d4",
     "text": "📤 Facebook Reels: 7 WAYS TO BUILD REAL TECHNIQUE WITHOUT A COACH\nhttps://www.facebook.com/reel/1835746304451116"
+  },
+  {
+    "id": "xp-5afb7839",
+    "text": "⚠️ YouTube Shorts gave up on: 7 WAYS TO BUILD REAL TECHNIQUE WITHOUT A COACH\nPOST https://www.googleapis.com/upload/youtube/v3/videos -> 401: {\n  \"error\": {\n    \"code\": 401,\n    \"message\": \"Unauthorized\",\n    \"errors\": [\n      {\n        \"message\": \"Unauthorized\",\n        \"domain\": \"youtube.header\",\n        \"reason\": \"youtubeSignupRequired\",\n        \"location\": \"Authorization"
   }
 ]
