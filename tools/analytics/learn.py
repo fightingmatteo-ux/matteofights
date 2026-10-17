@@ -68,9 +68,14 @@ def insights(media_id):
         return None
     v = {d["name"]: (d.get("values") or [{}])[0].get("value") for d in r.get("data", [])}
     skip = get(f"{media_id}/insights", metric="reels_skip_rate")  # newer metric; not on every reel
+    for extra in ("follows", "profile_visits"):  # documented for feed posts; asked per reel in case Meta returns them
+        r2 = get(f"{media_id}/insights", metric=extra)
+        if "error" not in r2:
+            v[extra] = (r2.get("data") or [{}])[0].get("values", [{}])[0].get("value")
     watch = v.get("ig_reels_avg_watch_time")
     return {"views": v.get("views"), "reach": v.get("reach"), "likes": v.get("likes"), "comments": v.get("comments"),
             "shares": v.get("shares"), "saves": v.get("saved"), "interactions": v.get("total_interactions"),
+            "follows": v.get("follows"), "profile_visits": v.get("profile_visits"),
             "avg_watch_s": round(watch / 1000, 1) if watch is not None else None,
             "skip_rate": None if "error" in skip else (skip.get("data") or [{}])[0].get("values", [{}])[0].get("value")}
 
@@ -153,7 +158,9 @@ def refresh_metrics(hist, t):
         r.update({k: x.get(k) for k in ("views", "reach", "shares", "saves", "comments", "likes", "avg_watch_s")})
         if x.get("skip_rate") is not None:
             r["skip_rate"] = x["skip_rate"]
-        r.setdefault("follows", None)  # not in the reels API; a Buzzfy pull fills it and it's kept
+        if x.get("follows") is not None:
+            r["follows"] = x["follows"]
+        r.setdefault("follows", None)  # if Instagram won't give it per reel, a Buzzfy pull fills it and it's kept
         r["vs_median_x"] = round(x["views"] / med, 2) if med and x.get("views") is not None else None
         r["provisional"] = (t - parse(h["posted_at"])).total_seconds() < 72 * 3600
     m["updated"] = iso(t)
