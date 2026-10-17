@@ -17,7 +17,7 @@ HF="npx --yes hyperframes@0.8.147"
 # Toolchain: carve (music under the voice) runs against worst-decision's @hyperframes/core.
 [ -d production/reels/worst-decision/node_modules ] || (cd production/reels/worst-decision && npm ci --no-audit --no-fund)
 [ -d "$dir/node_modules" ] || (cd "$dir" && npm i --no-audit --no-fund)
-[ -f ~/.claude/skills/hyperframes-audio/scripts/carve.mjs ] || $HF skills update general-video > /dev/null
+[ -f ~/.claude/skills/embedded-captions/SKILL.md ] || $HF skills update general-video talking-head-recut embedded-captions motion-graphics > /dev/null
 
 mkdir -p "$out"; out="$(realpath "$out")"
 cd "$dir"

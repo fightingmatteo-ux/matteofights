@@ -21,7 +21,7 @@ Reference builds:
 ```bash
 # needs ffmpeg/ffprobe, python 3.11+, node 18+
 python -m pip install -U faster-whisper yt-dlp numpy pillow
-npx hyperframes skills update general-video        # HyperFrames skills (+ hyperframes-audio carve)
+npx hyperframes skills update general-video talking-head-recut embedded-captions motion-graphics   # + carve
 cd production/reels/<slug> && npm i                 # carve needs @hyperframes/core in the reel project
 ```
 Secrets (never commit; `secrets/` is gitignored): `secrets/ig_cookies.txt` (Instagram, Netscape format).
@@ -63,6 +63,13 @@ Single clean take instead? `cutlist.py` (tightens gaps) — but keep `--max-gap`
 `work/template.html` uses `{{expr}}` timings from the EDL (`S('seg')`, `E('seg')`, `W('seg','WORD')`);
 `inject.py` renders it to `index.html`, `build.sh` = inject + carve. Re-timing never drifts.
 House layout 1080x1920: top-band cards 170–790 · subtitles centred ~y1440 · IG UI covers y>1600, x>940 low.
+
+**Edit-quality skills (use in this order):** `short-form-edit` for the story layer (3-second test, open loops,
+payoff, its `references/quality-gates.md` before render) · `motion-doctrine` first for any transition, then
+`cut-the-curve` (zoom-through, blur-cut, waterfall entries) and `seam-craft` (white flash at a cut) · `gsap` for
+timeline syntax · `talking-head-recut` for overlay cards and lower-thirds · `embedded-captions` + `captions-overlay`
+only when trying a new subtitle look (the house one-word serif style below stays default) · `motion-graphics` for
+stat or map inserts · `broll` for the clip library index (`content-bank/broll/`).
 
 **Motion craft (Emil Kowalski's skills, in `.claude/skills/`):** write new animation with `animate`, run
 `review-animations` on the template before rendering, name an effect Matteo describes with `animation-vocabulary`,
