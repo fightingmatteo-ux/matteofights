@@ -75,6 +75,49 @@ def fetch_videos(queue):
     return got
 
 
+def release_names():
+    """File names on the media release (deploy only; needs GH_TOKEN). Tells the Studio board which reels can render."""
+    if not os.environ.get("GH_TOKEN"):
+        return set()
+    r = subprocess.run(["gh", "release", "view", "media", "--json", "assets", "--jq", ".assets[].name"],
+                       capture_output=True, text=True)
+    return set(r.stdout.split()) if r.returncode == 0 else set()
+
+
+def studio():
+    """Talking-head reels in production (production/reels/<slug>/REEL.md front matter) for the Reels > Studio board."""
+    out, stored = [], release_names()
+    for f in sorted((ROOT / "production/reels").glob("20*/REEL.md"), reverse=True):
+        text = f.read_text(encoding="utf-8")
+        meta = dict(l.split(":", 1) for l in text.split("---")[1].strip().splitlines() if ":" in l) if text.startswith("---") else {}
+        title = next((l[2:].strip() for l in text.splitlines() if l.startswith("# ")), f.parent.name)
+        status = meta.get("status", "").split("#")[0].strip()
+        if "|" in status:  # untouched template value
+            status = "idea"
+        fmt = meta.get("format", "").strip()
+        out.append({"slug": f.parent.name, "title": f.parent.name[11:].replace("-", " ").capitalize() if title.startswith("<") else title,
+                    "status": status, "format": "" if fmt.startswith("<") else fmt,
+                    "variants": sorted({p.stem.split("-")[-1] for p in f.parent.glob("caption-*.txt")}),
+                    "renderable": f"{f.parent.name}-work.tar" in stored})  # media on the release (reel_work.sh)
+    return out[:12]
+
+
+def tests_and_growth():
+    """Hook tests (A/B/C per reel) + daily followers, from tools/analytics/learn.py's permanent history."""
+    h = load(ROOT / "analytics/reel-history.json", {"reels": {}, "decisions": {}, "followers": {}})
+    tests = {}
+    for mid, r in h["reels"].items():
+        if r.get("reel") and r.get("variant") not in (None, "", "-"):
+            c = r["checkpoints"].get("72h") or r.get("latest") or {}
+            tests.setdefault(r["reel"], {"reel": r["reel"], "variants": [], "decision": h["decisions"].get(r["reel"])})
+            tests[r["reel"]]["variants"].append({"v": r["variant"], "hook": r.get("hook"), "posted_at": r["posted_at"],
+                                                 **{k: c.get(k) for k in ("views", "shares", "saves", "avg_watch_s", "skip_rate")}})
+    for t in tests.values():
+        t["variants"].sort(key=lambda x: x["v"])
+    days = sorted(h["followers"].items())[-90:]
+    return sorted(tests.values(), key=lambda t: max(v["posted_at"] for v in t["variants"]), reverse=True)[:10], days
+
+
 def main():
     queue = load(ROOT / "production/schedule/queue.json", {"items": []})["items"]
     hooks = load(ROOT / "production/listicles/hooks.json", {"hooks": []})["hooks"]
@@ -118,6 +161,7 @@ def main():
             "time": i.get("not_before"), "state": state, "cover": cover,
             "clip": (i.get("clip") or "").split(" (")[0], "review": i.get("review"),
             "permalink": i.get("permalink"), "posted_at": i.get("posted_at"), "error": i.get("error"),
+            "reel": i.get("reel"), "variant": i.get("variant"),
             "metrics": m,
             "video": videos.get(i["id"]),
             "links": {k: v.get("url") for k, v in xpost.get(i["id"], {}).items() if v.get("status") == "posted" and v.get("url")},
@@ -136,12 +180,16 @@ def main():
             f[k] += r["metrics"].get(k) or 0
         f["winners"] += 1 if (r["metrics"].get("vs_median_x") or 0) >= 2 else 0
 
+    tests, growth = tests_and_growth()
     data = {
         "generated_at": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "account": "matteofights",
         "baseline": {k: metrics.get(k) for k in ("median_views", "updated", "audience")},
         "reels": sorted(reels, key=lambda r: r["time"] or "", reverse=True),
         "formats": fmt,
+        "tests": tests,          # hook tests: A/B/C per reel with 72 h numbers + the winner call
+        "growth": growth,        # [[YYYY-MM-DD, followers], ...] (learn.py, daily)
+        "studio": studio(),      # talking-head reels in production
         "questions": style_images(load(CTL / "questions.json", [])),
         "lab": load(ROOT / "production/style/lab.json", {"experiments": []}),
         "ideas": load(CTL / "ideas.json", [])[-50:],

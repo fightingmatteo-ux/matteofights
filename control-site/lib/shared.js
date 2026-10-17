@@ -13,8 +13,13 @@ export function json(body, status = 200) {
 // Start the Control workflow with one action. GitHub does the work (and commits), so the site
 // and Telegram stay stateless.
 export async function dispatch(env, payload, via) {
+  return dispatchWorkflow(env, "control.yml", { payload: JSON.stringify(payload), via });
+}
+
+// Start any workflow in the repo on master (callers allowlist the workflow and validate inputs).
+export async function dispatchWorkflow(env, file, inputs) {
   const r = await fetch(
-    `https://api.github.com/repos/${env.GITHUB_REPO}/actions/workflows/control.yml/dispatches`,
+    `https://api.github.com/repos/${env.GITHUB_REPO}/actions/workflows/${file}/dispatches`,
     {
       method: "POST",
       headers: {
@@ -22,7 +27,7 @@ export async function dispatch(env, payload, via) {
         accept: "application/vnd.github+json",
         "user-agent": "matteofights-control",
       },
-      body: JSON.stringify({ ref: "master", inputs: { payload: JSON.stringify(payload), via } }),
+      body: JSON.stringify({ ref: "master", inputs }),
     },
   );
   if (r.status !== 204) throw new Error(`GitHub dispatch ${r.status}: ${await r.text()}`);

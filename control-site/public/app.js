@@ -108,6 +108,73 @@ const countdown = (iso) => {
   return seg(`${Math.floor(m / 60)}:${String(m % 60).padStart(2, "0")}`, `Posts ${until(iso)}`);
 };
 
+// ---------------------------------------------------------------- next up: the few things worth doing now, most valuable first
+const prettySlug = (s) => String(s || "").replace(/^\d{4}-\d{2}-\d{2}-/, "").replace(/-/g, " ").replace(/^\w/, (c) => c.toUpperCase());
+function nextUp() {
+  const items = [];
+  const open = (D.platforms?.inbox || []).filter((c) => !c.answered && !hidden.has(c.platform + ":" + c.id));
+  const fresh = open.filter((c) => Date.now() - new Date(c.at) < 36e5).length;
+  if (open.length) items.push({ dot: fresh ? "red" : "", go: "decide", t: `Answer ${open.length} comment${open.length > 1 ? "s" : ""}`,
+    s: fresh ? `${fresh} in the last hour. Replying now lifts the reel most.` : "Early replies lift a reel's reach." });
+  for (const t of D.tests || []) {
+    const d = t.decision;
+    if (d && Date.now() - new Date(d.decided_at) < 7 * 864e5)
+      items.push({ dot: "gold", go: "results", t: `Share ${d.winner} of ${prettySlug(t.reel)} to your grid`, s: `${d.why[0].toUpperCase() + d.why.slice(1)}. In the Instagram app: the trial reel, then Share to profile.` });
+  }
+  const failed = D.reels.filter((r) => r.state === "failed" && r.time && Date.now() - new Date(r.time) < 3 * 864e5).length;
+  if (failed) items.push({ dot: "red", go: "reels", f: "failed", t: `${failed} post${failed > 1 ? "s" : ""} failed`, s: "Open it to see why." });
+  if (D.health.hooks_ready < 14) items.push({ dot: "", go: "decide", t: `${D.health.hooks_ready} listicle hooks left`, s: "Under two weeks. Send hook ideas, or ask Claude for a batch." });
+  if (!items.length) return "";
+  return `<section class="nextup" aria-label="Next up">${items.slice(0, 4).map((i) => `<button data-goto="${i.go}" ${i.f ? `data-filter="${i.f}"` : ""}>
+    <span class="dot ${i.dot}" aria-hidden="true"></span><span><b>${esc(i.t)}</b><small>${esc(i.s)}</small></span></button>`).join("")}</section>`;
+}
+
+// ---------------------------------------------------------------- results > followers + hook tests (tools/analytics/learn.py)
+function growthPanel() {
+  const G = D.growth || [];
+  if (G.length < 2) return "";
+  const v = G.map((g) => g[1]), last = v[v.length - 1], min = Math.min(...v), span = Math.max(...v) - min || 1;
+  const W = 300, H = 96;
+  const pts = v.map((y, i) => `${((i * W) / (v.length - 1)).toFixed(1)},${(H - 4 - ((y - min) * (H - 8)) / span).toFixed(1)}`).join(" ");
+  const since = (days) => {
+    const k = dayKey(new Date(Date.now() - days * 864e5)), past = G.filter((g) => g[0] <= k).pop();
+    if (!past) return "n/a";
+    const d = last - past[1];
+    return (d > 0 ? "+" : "") + n(d);
+  };
+  return `<section class="section growth" aria-labelledby="gr-h"><div class="head"><h2 class="h2" id="gr-h">Followers</h2><span class="label">Instagram, daily</span></div>
+    <div class="nums"><span>${n(last)}<small>now</small></span><span>${since(7)}<small>7 days</small></span><span>${since(30)}<small>30 days</small></span></div>
+    <svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" role="img" aria-label="Followers from ${n(v[0])} to ${n(last)} over ${v.length} days">
+      <polygon class="area" points="0,${H} ${pts} ${W},${H}"/><polyline class="line" points="${pts}"/></svg></section>`;
+}
+function hookTests() {
+  const T = D.tests || [];
+  if (!T.length) return "";
+  const hookOf = (t, v) => v.hook || D.reels.find((r) => r.reel === t.reel && r.variant === v.v)?.hook || "";
+  return `<section class="section" aria-labelledby="ht-h"><div class="head"><h2 class="h2" id="ht-h">Hook tests</h2><span class="label">same video, different hooks</span></div>
+    ${T.map((t) => {
+      const d = t.decision;
+      return `<article class="htest"><h3>${esc(prettySlug(t.reel))}</h3><p class="hint">${d ? `${esc(d.winner)} won: ${esc(d.why)}` : "Called once every hook is 72 hours old"}</p>
+        <ol>${t.variants.map((v) => `<li class="${d && d.winner === v.v ? "win" : ""}"><span class="v">${esc(v.v)}</span><span class="hk">${esc(calm(hookOf(t, v)).replace(/^[A-Z]: /, ""))}</span>
+          <span class="n">${v.views != null ? n(v.views) : "–"}<small>${v.shares ?? 0} shares${v.avg_watch_s != null ? `, ${v.avg_watch_s} s watched` : ""}</small></span></li>`).join("")}</ol></article>`;
+    }).join("")}
+    <p class="hint">Winner: most views at 72 hours, unless another hook has twice the shares. Within 15%, the longer average watch wins.</p></section>`;
+}
+
+// ---------------------------------------------------------------- reels > studio (cloud editing: tools/video/README.md)
+const STAGE = { idea: "Idea", "talking-points": "Talking points", filmed: "Filmed", edited: "Edited", testing: "Testing", "winner-posted": "Winner posted", archived: "Archived" };
+function studioBoard() {
+  const S = (D.studio || []).filter((s) => !["archived", "winner-posted"].includes(s.status));
+  const rendering = (s) => sent.has("run:reel_render:" + s.slug);
+  return `<section class="studio" aria-labelledby="st-h"><div class="head"><h2 class="h2" id="st-h">Studio</h2><span class="label">filmed reels, edited in the cloud</span></div>
+    ${S.length ? `<ul>${S.map((s) => `<li><div><p class="t">${esc(s.title)}</p><p class="m">${STAGE[s.status] || esc(s.status)}${s.variants.length ? `, hooks ${s.variants.join(" ")}` : ""}${s.renderable ? "" : ", media not in the cloud yet"}</p></div>
+      ${s.renderable ? `<button class="btn line" data-run="reel_render" data-slug="${esc(s.slug)}" data-variants="${esc(s.variants.join(",") || "A,B,C")}" ${rendering(s) ? "disabled" : ""}>${rendering(s) ? "Rendering" : "Render"}</button>` : ""}</li>`).join("")}</ul>` : ""}
+    <form data-ingest><label class="field" for="ing-slug">New reel from Drive</label>
+      <input class="text" id="ing-slug" name="slug" placeholder="2026-10-20-short-name" autocomplete="off" autocapitalize="off" spellcheck="false" required pattern="[a-z0-9][a-z0-9._\-]{2,80}">
+      <input class="text" name="footage" placeholder="newest, or the clip's name in Drive input" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Which footage">
+      <div class="row-actions"><button class="btn" type="submit">Bring it in</button><span class="hint">Preps the footage and writes the transcript. Then ask Claude for the edit.</span></div></form></section>`;
+}
+
 // ---------------------------------------------------------------- home
 function pending() {
   return D.reels.filter((r) => r.state === "needs_yes" && r.id.startsWith("lst-")).sort(byTime);
@@ -263,7 +330,7 @@ function trialsWaiting() {
 }
 
 function home() {
-  return `<div class="home"><div class="left">${clock()}${waiting()}${trialsWaiting()}${threadsWaiting()}${splits()}</div><section class="right" aria-labelledby="fc-h">${weekList()}</section></div>`;
+  return `<div class="home"><div class="left">${clock()}${nextUp()}${waiting()}${trialsWaiting()}${threadsWaiting()}${splits()}</div><section class="right" aria-labelledby="fc-h">${weekList()}</section></div>`;
 }
 
 // ---------------------------------------------------------------- reels
@@ -284,6 +351,7 @@ function reels() {
   const list = D.reels.filter((r) => filter === "all" || r.state === filter);
   const b = (k, l) => (k === "all" || counts[k] ? `<button data-filter="${k}" aria-pressed="${filter === k}">${l}<span class="n">${counts[k]}</span></button>` : "");
   return `<div class="page-head"><h1 class="h1">Reels</h1></div>
+    ${studioBoard()}
     <div class="filters" role="group" aria-label="Filter reels">${b("all", "All")}${b("needs_yes", "Needs yes")}${b("scheduled", "Set")}${b("posted", "Posted")}${b("failed", "Failed")}</div>
     ${list.length ? `<div class="grid">${list.map(tile).join("")}</div>` : `<p class="empty-note">No reels with this status.</p>`}`;
 }
@@ -351,7 +419,8 @@ function resultsYou(sw) {
     .sort((a, b) => b.avg - a.avg);
   if (!rows.length) {
     return `<div class="page-head"><div class="head"><h1 class="h1">Results</h1>${sw}</div></div>
-      <p class="empty-note">Results show up 72 hours after a reel posts. Claude pulls the numbers from Instagram every morning and compares each reel with your normal${med ? ` ${n(med)}` : ""} views.</p>`;
+      <p class="empty-note">Results show up 72 hours after a reel posts. The numbers come from Instagram every 2 hours and each reel is compared with your normal${med ? ` ${n(med)}` : ""} views.</p>
+      ${growthPanel()}${hookTests()}`;
   }
   const tot = rows.reduce((a, r) => ({ v: a.v + r.views, f: a.f + r.follows }), { v: 0, f: 0 });
   const avgF = tot.v ? (1000 * tot.f) / tot.v : 0;
@@ -370,7 +439,9 @@ function resultsYou(sw) {
         <article class="verdict"><h2 class="big">${fmtName(bestF.k)} wins follows</h2>${figF(bestF)}<p class="meta">From ${sample(bestF)}. Your average is ${avgF.toFixed(1)}.</p></article></div>`;
   return `<div class="page-head"><div class="head"><h1 class="h1">Results</h1>${sw}</div><p class="lede">Which formats earn views, and which turn views into followers.</p></div>
     ${verdicts}
-    <section aria-labelledby="l-h"><div class="head"><h2 class="h2" id="l-h">Every format</h2>
+    ${growthPanel()}
+    ${hookTests()}
+    <section class="section" aria-labelledby="l-h"><div class="head"><h2 class="h2" id="l-h">Every format</h2>
         <span class="toggle" role="group" aria-label="Rank formats by"><button data-by="views" aria-pressed="${by === "views"}">Views</button><button data-by="fpk" aria-pressed="${by === "fpk"}">Follows per 1k</button></span></div>
       <div class="ladder" data-by="${by}" role="table" aria-label="Formats by views per reel and follows per 1,000 views">
         <div class="lhead" role="row"><span role="columnheader">Format</span><span role="columnheader">Views per reel</span><span role="columnheader">Follows per 1,000 views</span></div>
@@ -555,7 +626,10 @@ function activity() {
         ${row("Clips Claude has watched", H.clips_catalogued)}
         ${row("Clips good enough to use", H.clips_usable)}
         ${row("Failed posts", H.failed.length, H.failed.length)}
-      </dl><p class="hint" style="margin-top:12px">Times are New York time.</p></section>
+      </dl><p class="hint" style="margin-top:12px">Times are New York time.</p>
+        <div class="runrow"><button class="btn line" data-run="refresh_stats" ${sent.has("run:refresh_stats:") ? "disabled" : ""}>Refresh numbers</button>
+          <button class="btn line" data-run="make_listicles" data-count="7" ${sent.has("run:make_listicles:") ? "disabled" : ""}>Make 7 listicles</button></div>
+        <p class="hint" style="margin-top:8px">New listicles wait for your yes like every week.</p></section>
       ${platformsPanel()}
       <section aria-labelledby="lg-h"><div class="head"><h2 class="h2" id="lg-h">Log</h2></div>
         ${D.log.length ? `<ol class="log" reversed>${D.log.slice().reverse().map((e) => `<li><time datetime="${esc(e.at)}" title="${F.full.format(new Date(e.at))} New York">${ago(e.at)}</time><p><span class="who ${e.who === "Matteo" ? "matteo" : ""}">${esc(e.who === "system" ? "System" : e.who)}</span> ${esc(e.text)}</p></li>`).join("")}</ol>`
@@ -656,6 +730,13 @@ document.addEventListener("click", (ev) => {
     t.disabled = true;
     return act({ action: "idea", text }, "rival:" + c.id, "Sent to your ideas. Claude picks it up on the next check.");
   }
+  if (t.dataset.run) {
+    const { run: job, slug = "", variants, count } = t.dataset;
+    const msg = { reel_render: "Render started. The phone cuts land in Drive and here in about 30 to 60 minutes.",
+      refresh_stats: "Refreshing. New numbers in a few minutes.", make_listicles: "Making 7 listicles. They show up for your yes when done." }[job];
+    t.disabled = true;
+    return act({ action: "run", job, slug, variants, count }, `run:${job}:${slug}`, msg);
+  }
   if (t.dataset.open) return openSheet(t.dataset.open);
   if ("review" in t.dataset) return openReview();
   if ("undo" in t.dataset) return undoAnswer();
@@ -680,6 +761,13 @@ document.addEventListener("click", (ev) => {
       if (ok) { D.edits = { ...(D.edits || {}), [id]: text }; $("#sheet").close(); render(); }
     });
   }
+});
+document.addEventListener("submit", (e) => {
+  const f = e.target.closest("[data-ingest]");
+  if (!f) return;
+  e.preventDefault();
+  const slug = f.slug.value.trim().toLowerCase(), footage = f.footage.value.trim() || "newest";
+  act({ action: "run", job: "reel_ingest", slug, footage }, `run:reel_ingest:${slug}`, "Bringing it in. The transcript is ready in about 10 minutes; then ask Claude for the edit.");
 });
 document.addEventListener("keydown", (e) => { if (e.key === "Escape" && pa && !$("#sheet").open) undoAnswer(); });
 document.addEventListener("visibilitychange", () => { if (document.visibilityState === "hidden") commitAnswer(); });
