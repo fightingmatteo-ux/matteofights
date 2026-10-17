@@ -22,6 +22,27 @@ Locally (laptop can reach Instagram): `bash production/editing/reel-kit/scripts/
 downloads with `secrets/ig_cookies.txt` and runs `watch.py` (now also writes `words.json`; works on Windows).
 Just a file: `python3 tools/video/watch.py VIDEO OUTDIR`. Editing: `production/editing/reel-kit/PIPELINE.md`.
 
+## Edit from your phone (no laptop)
+Rule: a reel's heavy media never lives only on the laptop. It sits on the `media` release as
+`<slug>-work.tar` (`reel_work.sh`), so the **Reel studio** Action and any cloud session can rebuild the reel.
+
+```
+Drive input ──► Reel studio "ingest" ──► raw.mp4 + voice.wav + words.json/transcript (committed) + <slug>-work.tar
+Claude cloud session (from the app): "make a reel from it" / "revise B: ..." ──► picks takes, edits template, commits
+Reel studio "render" ──► renders + -phone versions on the media release + Drive output ──► Claude sends the phone cut
+```
+1. **New footage:** drop the clip(s) in Drive input. In a cloud session say what you want ("new reel from the
+   newest clip, slug 2026-10-20-x, prompt..."). Claude runs **Reel studio** `mode=ingest footage=newest` (or
+   file/folder names, comma-separated, in filming order), then plans + edits from the committed transcript.
+2. **Revision:** "Saenchai B: make the counter bigger". Claude edits `work/template.html`/`takes.json`, commits,
+   runs **Reel studio** `mode=render slug=... variants=B`, pulls `<name>-B-phone.mp4` with `media.sh pull` and
+   sends it to you in the app. The full-quality render is in Drive output.
+3. Quick preview inside the session (no Drive): `reel_work.sh pull <slug>` then `CHECK=0 reel_render.sh <slug> B`.
+
+Old reel made on the laptop? Run once there: `bash tools/video/reel_work.sh push <slug>` (add any source paths
+outside the reel folder to `work/bundle-extra.txt`, e.g. `media/saenchai-broll` if b-roll gets re-cut).
+Cloud sessions trigger the Action with the GitHub MCP (`actions_run_trigger`, workflow `reel-studio.yml`).
+
 ## Edit a reel
 ```
 python3 tools/video/reel.py out.render.mp4 \

@@ -1,0 +1,112 @@
+# Reel studio: edit reels with no laptop. GitHub's runners reach Drive and have room to render; Claude cloud
+# sessions do the thinking (takes, template edits) and trigger this. Flow: tools/video/README.md "Edit from your phone".
+#   ingest  Drive input footage -> production/reels/<slug>/ (raw.mp4, voice.wav, words.json, transcript.txt);
+#           transcript committed, media saved as <slug>-work.tar on the media release
+#   render  pull <slug>-work.tar -> build + render the variants -> media release (+ -phone versions) + Drive output
+# Run it: Actions tab -> Reel studio (works from the GitHub mobile app), or ask Claude to trigger it.
+# Needs repo secret RCLONE_CONF (same as Upload to Drive).
+name: Reel studio
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        type: choice
+        options: [render, ingest]
+        default: render
+      slug:
+        description: Reel folder, e.g. 2026-10-16-saenchai-bigger-men
+        required: true
+      variants:
+        description: render - which hook variants (ignored for single-cut reels)
+        default: A,B,C
+      footage:
+        description: ingest - Drive input file or folder names, comma-separated, in filming order ("newest" = latest file)
+        default: newest
+      drive:
+        description: render - also upload the renders to Drive output
+        type: boolean
+        default: true
+
+permissions:
+  contents: write   # media release + transcript commit
+
+concurrency:
+  group: reel-studio-${{ inputs.slug }}
+  cancel-in-progress: false
+
+env:
+  SLUG: ${{ inputs.slug }}
+  IN_ID: 19PgWfSa9nwzBcn7JD24EY7QEr12IONbL
+  OUT_ID: 1bHwCLpkK2w9e9BN22dXWgQnn8_CLYpR2
+  GH_TOKEN: ${{ github.token }}
+
+jobs:
+  studio:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install ffmpeg, rclone, Python deps
+        run: |
+          case "$SLUG" in *[!a-zA-Z0-9._-]*|"") echo "slug must be a simple name"; exit 1;; esac
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
+          curl -fsSL https://rclone.org/install.sh | sudo bash > /dev/null
+          python3 -m pip install -q numpy pillow faster-whisper
+          mkdir -p ~/.config/rclone && printf '%s\n' "$RCLONE_CONF" > ~/.config/rclone/rclone.conf
+        env:
+          RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
+
+      - name: Ingest footage from Drive
+        if: inputs.mode == 'ingest'
+        env:
+          FOOTAGE: ${{ inputs.footage }}
+        run: |
+          mkdir -p "media/$SLUG"
+          if [ "$FOOTAGE" = newest ]; then
+            FOOTAGE=$(rclone lsf gdrive: --files-only --format tp --separator '|' --drive-root-folder-id "$IN_ID" \
+              | sort -r | head -1 | cut -d'|' -f2)
+            echo "newest file in Drive input: $FOOTAGE"
+          fi
+          clips=()
+          IFS=',' read -ra items <<< "$FOOTAGE"
+          for item in "${items[@]}"; do
+            item="$(echo "$item" | xargs)"
+            case "$item" in ""|*..*) echo "bad footage name: $item"; exit 1;; esac
+            rclone copy "gdrive:$item" "media/$SLUG/$item.d" --drive-root-folder-id "$IN_ID"
+            while IFS= read -r f; do clips+=("$f"); done < <(find "media/$SLUG/$item.d" -type f | sort)
+          done
+          [ ${#clips[@]} -gt 0 ] || { echo "no footage found for: $FOOTAGE"; exit 1; }
+          bash tools/video/reel_ingest.sh "$SLUG" "${clips[@]}"
+          rm -rf "media/$SLUG"/*.d   # originals stay in Drive; raw.mp4 + voice.wav carry everything the edit needs
+          bash tools/video/reel_work.sh push "$SLUG"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add "production/reels/$SLUG"
+          git commit -m "reel: ingest $SLUG (${#clips[@]} clip(s))"
+          for n in 1 2 3; do git pull --rebase -q origin "$GITHUB_REF_NAME" && git push -q origin "HEAD:$GITHUB_REF_NAME" && break; sleep 5; done
+          { echo "### Ingested $SLUG"; echo; echo '```'; head -c 6000 "production/reels/$SLUG/work/transcript.txt"; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Render
+        if: inputs.mode == 'render'
+        env:
+          VARIANTS: ${{ inputs.variants }}
+        run: |
+          bash tools/video/reel_work.sh pull "$SLUG"
+          bash tools/video/reel_render.sh "$SLUG" "$VARIANTS" out
+          gh release upload media out/*.mp4 --clobber
+          echo "### Rendered $SLUG" >> "$GITHUB_STEP_SUMMARY"
+          ls -1 out >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload renders to Drive output
+        if: inputs.mode == 'render' && inputs.drive
+        run: |
+          for f in out/*.mp4; do
+            case "$f" in *-phone.mp4) continue;; esac
+            rclone copyto "$f" "gdrive:$(basename "$f")" --drive-root-folder-id "$OUT_ID"
+          done
+          rclone ls gdrive: --drive-root-folder-id "$OUT_ID" | grep -F "${SLUG#????-??-??-}"

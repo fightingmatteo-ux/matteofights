@@ -81,6 +81,7 @@ Other connected MCPs (see `context/apps.md`): Higgsfield (`virality_predictor`, 
 | Reel results + test history | [production/reels/LEDGER.md](production/reels/LEDGER.md) | Choosing hooks/formats; logging a posted variant |
 | Reference reels (watched) | [content-bank/references/](content-bank/references/) | Before planning a new format |
 | Watch a video from the cloud | [tools/video/README.md](tools/video/README.md) | Cloud session needs to watch/download a reel |
+| Edit/render a reel with no laptop (Reel studio Action) | [tools/video/README.md](tools/video/README.md) "Edit from your phone" | Any reel edit or revision from a cloud session |
 | Analytics snapshots + IDs | [context/social.md](context/social.md) | Performance questions, before pulling live |
 | Connected tools/MCPs | [context/apps.md](context/apps.md) | Tooling decisions |
 

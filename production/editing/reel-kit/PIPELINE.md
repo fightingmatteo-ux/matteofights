@@ -6,6 +6,11 @@ psychology and fighter mindset. No Stance plug in reels for now. Nothing is ever
 
 Headless daily listicles (old 331k format, no filming): `tools/listicle/README.md`.
 
+**No laptop needed:** the **Reel studio** Action ingests Drive footage (prep + Whisper) and renders variants;
+a cloud session does the edit decisions in between. Every reel's heavy media goes on the `media` release as
+`<slug>-work.tar` (`tools/video/reel_work.sh push <slug>` after any laptop work). See `tools/video/README.md`
+"Edit from your phone".
+
 Reference builds:
 - `production/reels/worst-decision/` — latest standard: multi-take assembly, beats/J-cuts, serif one-word
   subtitles, bottom-anchored zoom, templated timings (`work/template.html` + `inject.py`), cover in `thumb/`
