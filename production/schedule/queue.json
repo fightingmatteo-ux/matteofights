@@ -110,14 +110,17 @@
       "not_before": "2026-10-17T22:30:00Z",
       "min_gap_hours": 2.5,
       "approved": true,
-      "status": "queued",
+      "status": "posted",
       "rotate": -90,
       "approved_note": "Matteo: approved the week via dashboard (2026-10-15T20:19:25Z)",
       "test": {
         "exp": "exp-1016-hook_style",
         "variant": "a",
         "value": "native"
-      }
+      },
+      "media_id": "18114233416853988",
+      "permalink": "https://www.instagram.com/reel/DenMdptlhYw/",
+      "posted_at": "2026-10-17T22:36:25Z"
     },
     {
       "id": "lst-2026-10-18-calm-without-experience",
