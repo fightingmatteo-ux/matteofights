@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-17T18:35:31Z",
+  "updated": "2026-10-17T22:27:12Z",
   "platforms": {
     "instagram": {
       "followers": 2036,
@@ -18,7 +18,7 @@
       "last_post": "2026-10-17T16:36:48Z",
       "failed": [],
       "errors": [],
-      "next_slot": "2026-10-17T20:00:00Z",
+      "next_slot": "2026-10-17T23:30:00Z",
       "plan_per_day": 4,
       "plan_mix": "3 reels + 1 slide album",
       "posted_7d": 6,
@@ -31,10 +31,10 @@
       "last_post": "2026-10-17T14:06:45Z",
       "failed": [],
       "errors": [],
-      "next_slot": "2026-10-17T19:30:00Z",
+      "next_slot": "2026-10-18T01:00:00Z",
       "plan_per_day": 6,
       "plan_mix": "3 reels + 3 written posts",
-      "posted_7d": 9,
+      "posted_7d": 10,
       "token_expires": "2026-12-14",
       "warn": null
     },
@@ -51,7 +51,7 @@
         "POST https://www.googleapis.com/upload/youtube/v3/videos -> 401: {\n  \"error\": {\n    \"code\": 401,\n    \"message\": \"Unauthorized\",\n    \"errors\": [\n      {\n        \"message\": \"Unauthorized\",\n        \"doma",
         "POST https://www.googleapis.com/upload/youtube/v3/videos -> 401: {\n  \"error\": {\n    \"code\": 401,\n    \"message\": \"Unauthorized\",\n    \"errors\": [\n      {\n        \"message\": \"Unauthorized\",\n        \"doma"
       ],
-      "next_slot": "2026-10-17T20:00:00Z",
+      "next_slot": "2026-10-17T23:00:00Z",
       "privacy": "public",
       "plan_per_day": 3,
       "plan_mix": "3 Shorts",
@@ -63,7 +63,7 @@
   "posts": {
     "freeze-A": {
       "instagram": {
-        "views": 2672,
+        "views": 2674,
         "likes": 61,
         "comments": 0,
         "shares": 13,
@@ -74,7 +74,7 @@
     "freeze-B": {
       "instagram": {
         "views": 3029,
-        "likes": 59,
+        "likes": 58,
         "comments": 0,
         "shares": 2,
         "saves": 19,
@@ -83,7 +83,7 @@
     },
     "freeze-C": {
       "instagram": {
-        "views": 4233,
+        "views": 4236,
         "likes": 92,
         "comments": 0,
         "shares": 9,
@@ -93,7 +93,7 @@
     },
     "lst-2026-10-15-built-for-fight-night": {
       "instagram": {
-        "views": 3535,
+        "views": 3544,
         "likes": 48,
         "comments": 0,
         "shares": 0,
@@ -119,15 +119,15 @@
     },
     "lst-2026-10-16-mindset-without-a-fight": {
       "instagram": {
-        "views": 3339,
-        "likes": 21,
+        "views": 3350,
+        "likes": 22,
         "comments": 0,
         "shares": 2,
         "saves": 22,
         "url": "https://www.instagram.com/reel/Deknr2RkvJM/"
       },
       "facebook": {
-        "views": 6,
+        "views": 14,
         "url": "https://www.facebook.com/reel/1463427735631609"
       },
       "threads": {
@@ -141,10 +141,10 @@
     },
     "lst-2026-10-15-technique-without-a-coach": {
       "instagram": {
-        "views": 3236,
+        "views": 3238,
         "likes": 41,
         "comments": 0,
-        "shares": 6,
+        "shares": 7,
         "saves": 33,
         "url": "https://www.instagram.com/reel/Deidr7rFHUn/"
       },
@@ -167,7 +167,7 @@
     },
     "lst-2026-10-16-no-ex-fighter": {
       "instagram": {
-        "views": 2796,
+        "views": 2811,
         "likes": 25,
         "comments": 0,
         "shares": 1,
@@ -223,12 +223,20 @@
       "url": "https://www.threads.com/@matteofights/post/DemA8CKG008"
     },
     "th-1017-2": {
-      "views": 50,
+      "views": 55,
       "likes": 1,
       "replies": 0,
       "reposts": 0,
       "shares": 0,
       "url": "https://www.threads.com/@matteofights/post/DemjYjCkTKi"
+    },
+    "th-1017-3": {
+      "views": 7,
+      "likes": 0,
+      "replies": 0,
+      "reposts": 0,
+      "shares": 0,
+      "url": "https://www.threads.com/@matteofights/post/DenFmcnlBk6"
     }
   },
   "warned": []
