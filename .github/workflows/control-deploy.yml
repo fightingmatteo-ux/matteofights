@@ -1,14 +1,12 @@
 # Deploys the control center (control.matteofights.me) to Cloudflare Pages: rebuilds data.json from the repo, then
-# uploads control-site/public + control-site/functions. Runs on every push to master and after the workflows that
-# commit to production/ (their pushes use GITHUB_TOKEN, which doesn't trigger "push" workflows).
+# uploads control-site/public + control-site/functions. Runs on every push to master, and when a workflow that
+# commits to production/ actually changed master (its last step dispatches this; GITHUB_TOKEN pushes don't trigger
+# "push"). Was workflow_run after every run: ~50 deploys a day, most with nothing new (changed 2026-10-17).
 name: Deploy control center
 
 on:
   push:
     branches: [master]
-  workflow_run:
-    workflows: [Control, Post queue, Listicle factory, Post trial reel, Cross-post, Platform stats]
-    types: [completed]
   workflow_dispatch:
 
 # Every run builds the latest master, so a newer run can replace an older one.
@@ -24,9 +22,11 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           ref: master
+      - name: ffmpeg (shrinks renders over the 25 MiB Pages limit into previews)
+        run: command -v ffmpeg > /dev/null || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null)
       - name: Build data (+ copy upcoming reel videos from the media release)
         env:
           GH_TOKEN: ${{ github.token }}

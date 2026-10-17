@@ -15,6 +15,7 @@ on:
 
 permissions:
   contents: write
+  actions: write     # start the dashboard deploy (GITHUB_TOKEN pushes don't trigger it)
 
 # No concurrency group: GitHub would drop queued decisions. Each run re-applies on a fresh checkout if a push races.
 
@@ -23,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - run: python3 -m pip install -q pillow
       - name: Apply the decision and push
         env:
@@ -54,3 +55,10 @@ jobs:
           git diff --cached --quiet && exit 0
           git commit -qm "control: telegram sent"
           for n in 1 2 3; do git pull --rebase -q origin master && git push -q origin HEAD:master && break; sleep 5; done
+      - name: Refresh the dashboard if this run changed master
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git fetch -q origin master
+          [ "$(git rev-parse origin/master)" = "$GITHUB_SHA" ] || gh workflow run control-deploy.yml -R "$GITHUB_REPOSITORY" --ref master

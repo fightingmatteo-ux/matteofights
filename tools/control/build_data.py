@@ -31,6 +31,27 @@ def style_images(questions):
     return questions
 
 
+PAGES_MAX = 24 * 1024 * 1024  # Cloudflare Pages rejects any file over 25 MiB (the whole deploy fails)
+
+
+def shrink_for_pages(f):
+    """Re-encode a render over the Pages limit into a 720p preview (same name). The dashboard only previews it;
+    the full render stays on the media release for posting. Learned 2026-10-17: 39 MB Saenchai renders broke
+    every deploy for a day."""
+    if f.stat().st_size <= PAGES_MAX:
+        return True
+    tmp = f.with_suffix(".preview.mp4")
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(f), "-vf", "scale=720:-2", "-c:v", "libx264",
+                    "-preset", "veryfast", "-crf", "28", "-c:a", "aac", "-b:a", "96k", "-movflags", "+faststart",
+                    str(tmp)], check=True)
+    tmp.replace(f)
+    if f.stat().st_size > PAGES_MAX:  # very long video: drop it rather than break the deploy
+        f.unlink()
+        print(f"video {f.name}: still over 24 MiB after the preview encode, left off the dashboard")
+        return False
+    return True
+
+
 def fetch_videos(queue):
     """Copy the videos of reels waiting, scheduled or posted in the last 3 days next to the page (behind the Access
     login) so the dashboard can play them. Needs GH_TOKEN + gh (the deploy workflow); skipped locally."""
@@ -47,7 +68,8 @@ def fetch_videos(queue):
         r = subprocess.run(["gh", "release", "download", "media", "-p", asset, "-D", str(vdir), "--clobber"],
                            capture_output=True, text=True)
         if r.returncode == 0 and (vdir / asset).exists():
-            got[qid] = f"videos/{asset}"
+            if shrink_for_pages(vdir / asset):
+                got[qid] = f"videos/{asset}"
         else:
             print(f"video {asset}: {r.stderr.strip()[:120]}")
     return got

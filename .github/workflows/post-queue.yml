@@ -10,6 +10,7 @@ on:
 
 permissions:
   contents: write   # commit the queue status back
+  actions: write     # start the dashboard deploy (GITHUB_TOKEN pushes don't trigger it)
 
 concurrency:
   group: post-queue
@@ -20,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 25
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Post next due item
         id: run
         env:
@@ -51,3 +52,10 @@ jobs:
           git config user.email "control@users.noreply.github.com"
           git commit -qm "control: telegram sent"
           for n in 1 2 3; do git pull --rebase -q && git push -q && break; sleep 5; done
+      - name: Refresh the dashboard if this run changed master
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git fetch -q origin master
+          [ "$(git rev-parse origin/master)" = "$GITHUB_SHA" ] || gh workflow run control-deploy.yml -R "$GITHUB_REPOSITORY" --ref master

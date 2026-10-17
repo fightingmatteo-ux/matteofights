@@ -40,7 +40,7 @@ jobs:
       NAME: ${{ inputs.name }}
       KIND: ${{ inputs.kind }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Install tools
         run: |
