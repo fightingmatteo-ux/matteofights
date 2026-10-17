@@ -69,9 +69,12 @@
       "text": "Which one is you?\n\n1. You train when no fight is booked\n2. You keep going after getting dropped in sparring\n3. You've never needed a crowd to show up\n\nDrop the number.",
       "chain": [],
       "from": "fighter-without-a-record",
-      "status": "queued",
+      "status": "posted",
       "approved": true,
-      "approved_note": "Matteo: approved via dashboard (2026-10-15T18:18:31Z)"
+      "approved_note": "Matteo: approved via dashboard (2026-10-15T18:18:31Z)",
+      "posted_at": "2026-10-17T16:37:00Z",
+      "thread_id": "18138306568650982",
+      "url": "https://www.threads.com/@matteofights/post/DemjYjCkTKi"
     },
     {
       "id": "th-1017-3",

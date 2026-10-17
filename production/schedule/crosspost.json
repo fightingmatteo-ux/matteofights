@@ -10,7 +10,7 @@
         "16:00",
         "19:30"
       ],
-      "last_slot": "2026-10-16T23:30:00Z"
+      "last_slot": "2026-10-17T16:30:00Z"
     },
     "youtube": {
       "enabled": true,
@@ -131,6 +131,18 @@
         "at": "2026-10-17T14:06:45Z",
         "id": "18117679552995942",
         "url": "https://www.threads.com/@matteofights/post/DemSHOvlZkK"
+      },
+      "facebook": {
+        "status": "posted",
+        "at": "2026-10-17T16:36:48Z",
+        "id": "987115153732256",
+        "url": "https://www.facebook.com/reel/987115153732256"
+      },
+      "youtube": {
+        "status": "failed",
+        "error": "POST https://www.googleapis.com/upload/youtube/v3/videos -> 401: {\n  \"error\": {\n    \"code\": 401,\n    \"message\": \"Unauthorized\",\n    \"errors\": [\n      {\n        \"message\": \"Unauthorized\",\n        \"domain\": \"youtube.header\",\n        \"reason\": \"youtubeSignupRequired\",\n        \"location\": \"Authorization\",\n        \"locationType\": \"header\"\n      }\n    ]\n  }\n}\n",
+        "tries": 1,
+        "at": "2026-10-17T16:36:50Z"
       }
     }
   }
