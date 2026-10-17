@@ -64,6 +64,16 @@ Single clean take instead? `cutlist.py` (tightens gaps) — but keep `--max-gap`
 `inject.py` renders it to `index.html`, `build.sh` = inject + carve. Re-timing never drifts.
 House layout 1080x1920: top-band cards 170–790 · subtitles centred ~y1440 · IG UI covers y>1600, x>940 low.
 
+**Motion craft (Emil Kowalski's skills, in `.claude/skills/`):** write new animation with `animate`, run
+`review-animations` on the template before rendering, name an effect Matteo describes with `animation-vocabulary`,
+use `apple-design` for spring and physical feel. They're written for app UI, so translate:
+- **Keep:** ease-out (or expo) entrances, never ease-in on anything appearing; no `scale(0)` (start ~0.9 + opacity);
+  blur-to-sharp entrances; springs for slams; staggered reveals; only animate transform/opacity/filter.
+- **Drop:** the 100-times-a-day frequency gate, UI duration caps (a reveal can hold longer), hover and reduced-motion
+  gating. A viewer watches a reel and doesn't click anything; the gate is "does it help the line land".
+- **HyperFrames wins on conflicts:** everything runs on the one paused GSAP timeline (seek-safe). No CSS transitions
+  or real-time springs, so use GSAP eases that match the skill's curves.
+
 **Non-negotiables (each one learned from Matteo's feedback):**
 - Frame 0 already shows the hook (it's the thumbnail). Hook = the first spoken line + on-screen text.
 - **Pacing:** never trim on Whisper word ends (clips words). Keep tails; **no speed-up** (any time-stretch sounds robotic on his voice; Matteo heard it at 1.06x); leave 0.3–0.6 s of
