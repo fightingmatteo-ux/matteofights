@@ -1,6 +1,6 @@
 ---
 slug: 2026-10-16-saenchai-bigger-men
-status: edited
+status: re-cut (v3), needs render on Matteo's PC
 pillar: psychology
 format: legend-credibility
 credibility: Saenchai (fought heavier opponents; widely reported)
@@ -16,9 +16,9 @@ See TALKING-POINTS.md (reading script this time, hooks verbatim).
 ## Variants
 | V | Hook (spoken, verbatim) | On-screen hook text | Length | Render (Drive output + media release) | Queue (NY) |
 |---|---|---|---|---|---|
-| A | Saenchai fought bigger men his whole career. Here's how he thought about it. | SAENCHAI FOUGHT / BIGGER MEN / HIS WHOLE CAREER | 45.2 s | saenchai-bigger-men-A.mp4 | Oct 16 09:30 |
-| B | If you always spar someone bigger than you, steal this from Saenchai. | ALWAYS SPARRING / SOMEONE BIGGER? | 43.2 s | saenchai-bigger-men-B.mp4 | Oct 16 12:00 |
-| C | Bigger guys win the trade, but Saenchai never traded. | BIGGER GUYS WIN THE TRADE. / SAENCHAI NEVER TRADED. | 42.3 s | saenchai-bigger-men-C.mp4 | Oct 16 14:30 |
+| A | Saenchai fought bigger men his whole career. Here's how he thought about it. | SAENCHAI FOUGHT / BIGGER MEN / HIS WHOLE CAREER | ~42.1 s | saenchai-bigger-men-A.mp4 | Oct 16 09:30 |
+| B | If you always spar someone bigger than you, steal this from Saenchai. | ALWAYS SPARRING / SOMEONE BIGGER? | ~41.0 s | saenchai-bigger-men-B.mp4 | Oct 16 12:00 |
+| C | Bigger guys win the trade, but Saenchai never traded. | BIGGER GUYS WIN THE TRADE. / SAENCHAI NEVER TRADED. | ~40.6 s | saenchai-bigger-men-C.mp4 | Oct 16 14:30 |
 
 Edit ("late-night film study", 2026-10-16): lamp-lit A-roll; Saenchai clips as game tape (letterboxed over a blurred
 copy, grain, TAPE labels); coach marks (STEP OFF arrow, CATCH circle, SWEEP / START OVER labels); a RESETS counter
@@ -80,3 +80,20 @@ sweep, start over, frustration; YOKKAO Toronto for trade, teep, step/catch, dump
 times". Look: late-night film study, RESETS counter 01 -> 02 -> 10, Bowe heavyweight callout, WIN THE RESET card.
 Cross-post: one hook per platform, never the same clip twice (`crosspost_to` in queue.json): A -> YouTube Shorts,
 B -> Threads, C -> Facebook. Talking-head captions keep their full body on every platform (`captions.prose`).
+
+## Edit v3 (2026-10-17, Matteo: "no one his size could beat him" take feels slow; whole reel a bit long; don't cut me
+mid-sentence, cut dead space, never speed me up)
+- Beat 1 now ends on "...fighting bigger guys, often by several kilos." The clause "because no one his size could beat
+  him" is gone (all 6 takes of it ran ~2.8 words/s vs ~3.5 for the lines around it). Cut at 106.46, the energy
+  minimum between "kilos" and "because" in the old render.
+- Dead space: pauses of 0.38 s+ cut down to ~0.2 s, only after a comma or full stop (reveal beats in hook A, hook C
+  and "don't win the exchange." keep ~0.3 s). Leads 0.18 -> 0.12 s (hooks 0.08), tails 0.30 -> 0.24 s. Speed stays 1.0.
+  Takes can now hold several ranges (`assemble.py`), so a beat stays one segment and the template is unchanged.
+- Lengths: A 47.5 -> ~42.1 s, B 45.9 -> ~41.0 s, C 45.8 -> ~40.6 s. Music now comes in ~0.6 s before the first tape
+  (it is pinned to "ten"), not 3 s after it.
+- Note: the renders on the media release and Drive (2026-10-16 03:11Z) were the v1 cut (A 45.2 s); v2 was never
+  uploaded. Render v3 and push it over them before approving anything.
+- Render (PC): `python -P ../../editing/reel-kit/scripts/assemble.py work/takes.json`, then
+  `python -P ../../editing/reel-kit/scripts/verify_cut.py` on each variant, `python -P make_broll.py <V>`,
+  `python -P build_variant.py <V>`, `npx hyperframes@0.8.147 render -q delivery`. Listen to the joins at "guys, / often",
+  "kilos. / He didn't" and "confidence. / Do that"; if a word clips, widen that range by 0.04 s.

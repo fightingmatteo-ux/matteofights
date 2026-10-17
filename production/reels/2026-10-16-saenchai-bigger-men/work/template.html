@@ -84,14 +84,14 @@
         <video id="aroll" class="clip full" src="assets/media/aroll.mp4" data-start="0" data-duration="{{E('loop')}}" data-track-index="0" muted playsinline></video>
       </div></div>
       <div id="lamp"></div>
-      <div id="scrim" class="clip layer" data-start="0" data-duration="{{W('heavier','NO')}}" data-track-index="2" style="background:linear-gradient(180deg, rgba(5,5,7,0.82) 0%, rgba(5,5,7,0.55) 28%, rgba(5,5,7,0) 46%)"></div>
+      <div id="scrim" class="clip layer" data-start="0" data-duration="{{E('heavier')}}" data-track-index="2" style="background:linear-gradient(180deg, rgba(5,5,7,0.82) 0%, rgba(5,5,7,0.55) 28%, rgba(5,5,7,0) 46%)"></div>
       <div id="scrim2" class="clip layer" data-start="{{S('cta')}}" data-duration="{{E('cta')-S('cta')}}" data-track-index="2" style="background:linear-gradient(180deg, rgba(5,5,7,0.8) 0%, rgba(5,5,7,0.5) 24%, rgba(5,5,7,0) 40%)"></div>
 
       <!-- GAME TAPE: one clip per line, cut to fit its slot (make_broll.py), never freezes -->
       <video id="tp-size" class="clip full" src="assets/media/b_size.mp4" data-start="{{S('heavier')-0.12}}" data-duration="{{W('heavier','OFTEN')-(S('heavier')-0.12)}}" data-track-index="1" muted playsinline></video>
       <div id="ov-size" class="clip layer ov" data-start="{{S('heavier')-0.12}}" data-duration="{{W('heavier','OFTEN')-(S('heavier')-0.12)}}" data-track-index="3"><div class="meta"><span><i class="rec"></i>SAENCHAI <b>vs</b> RIDDICK BOWE</span><span>13 COINS GYM</span></div></div>
-      <video id="tp-trade" class="clip full" src="assets/media/b_trade.mp4" data-start="{{W('heavier','OFTEN')}}" data-duration="{{W('heavier','NO')-(W('heavier','OFTEN'))}}" data-track-index="1" muted playsinline></video>
-      <div id="ov-trade" class="clip layer ov" data-start="{{W('heavier','OFTEN')}}" data-duration="{{W('heavier','NO')-(W('heavier','OFTEN'))}}" data-track-index="3"><div class="meta"><span><i class="rec"></i>SAENCHAI</span><span>SEMINAR, TORONTO</span></div></div>
+      <video id="tp-trade" class="clip full" src="assets/media/b_trade.mp4" data-start="{{W('heavier','OFTEN')}}" data-duration="{{E('heavier')-(W('heavier','OFTEN'))}}" data-track-index="1" muted playsinline></video>
+      <div id="ov-trade" class="clip layer ov" data-start="{{W('heavier','OFTEN')}}" data-duration="{{E('heavier')-(W('heavier','OFTEN'))}}" data-track-index="3"><div class="meta"><span><i class="rec"></i>SAENCHAI</span><span>SEMINAR, TORONTO</span></div></div>
       <video id="tp-teep" class="clip full" src="assets/media/b_teep.mp4" data-start="{{W('muscle','NEVER')-0.10}}" data-duration="{{E('muscle')-(W('muscle','NEVER')-0.10)}}" data-track-index="1" muted playsinline></video>
       <div id="ov-teep" class="clip layer ov" data-start="{{W('muscle','NEVER')-0.10}}" data-duration="{{E('muscle')-(W('muscle','NEVER')-0.10)}}" data-track-index="3"><div class="meta"><span><i class="rec"></i>SAENCHAI</span><span>SEMINAR, TORONTO</span></div></div>
       <video id="tp-step" class="clip full" src="assets/media/b_step.mp4" data-start="{{W('step','STEP')-0.12}}" data-duration="{{W('step','CATCH')-(W('step','STEP')-0.12)}}" data-track-index="1" muted playsinline></video>

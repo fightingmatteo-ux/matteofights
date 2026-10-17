@@ -19,7 +19,7 @@ MAX_SLOW = 2.0
 # name: (source, src start, src end, crop centre x in source px, slot from, slot to)   anchors: (seg, word|None, k, offset)
 SLOTS = [
     ("size",    "B", 95.6, 98.9, 790, ("heavier", None, 1, -0.12), ("heavier", "OFTEN", 1, 0)),
-    ("trade",   "T", 22.0, 25.2, 640, ("heavier", "OFTEN", 1, 0),   ("heavier", "NO", 1, 0)),
+    ("trade",   "T", 22.0, 25.2, 640, ("heavier", "OFTEN", 1, 0),   ("heavier", "END", 1, 0)),
     ("teep",    "T", 7.4, 10.8, 640,  ("muscle", "NEVER", 1, -0.1), ("muscle", "END", 1, 0)),
     ("step",    "T", 29.3, 30.9, 560, ("step", "STEP", 1, -0.12),   ("step", "CATCH", 1, 0)),
     ("catch",   "T", 30.7, 32.4, 520, ("step", "CATCH", 1, 0),      ("step", "SWEEP", 1, 0)),

@@ -9,18 +9,20 @@ work/takes.json:
     "words": "work/words.json",          # transcribe.py output [{text,start,end}]
     "speed": 1.0,                        # natural speed. Any time-stretch made Matteo's voice sound robotic
     "takes":    {"hook": [3.88, 7.45], "point1": [12.2, 18.9], ...},   # source seconds
+                # a take can also be several ranges, [[12.2, 14.1], [14.5, 18.9]]: one beat, its pauses cut out
     "variants": {"A": ["hook", "point1", ...], "B": ["hookB", "point1", ...]},
     "fix":      {"MAP": "MAT"}            # optional Whisper corrections for captions (UPPERCASE)
   }
 
 Usage:  python -P assemble.py work/takes.json [A B C]
 Writes per variant: assets/media/aroll_<V>.mp4 and work/edl_<V>.json
-  {"variant", "duration", "segments": [{i,name,start,end}], "words": [{w,s,e,seg}]}  (output seconds)
+  {"variant", "duration", "segments": [{i,name,start,end}], "joins": [s], "words": [{w,s,e,seg}]}  (output seconds)
 
 Rules baked in (learned on worst-decision, 2026-10-12):
 - Ranges keep natural tails after the last word (room tone). Whisper word ends land early; trimming on
   them clips words. Leave ~0.3-0.6 s after a reveal line: that dead space is the tension beat.
 - 12 ms fades at every join so cuts never click.
+- Cut a pause only between clauses (after a comma or full stop), never inside one, and keep ~0.2 s of it.
 """
 import json
 import subprocess
@@ -41,34 +43,42 @@ def build(cfg, variant):
     words = json.load(open(cfg["words"], encoding="utf-8"))
     fc, segs, out_words, inputs, t = [], [], [], [], 0.0
     order = cfg["variants"][variant]
+    k, joins = 0, []  # k: ffmpeg input pair / filter label, one per range; joins: output time of every cut
     for i, name in enumerate(order):
-        a, b = cfg["takes"][name]
-        d = b - a
-        # one input per take with fast seek: decoding only the take, not the whole clip
-        inputs += ["-ss", f"{a:.3f}", "-t", f"{d:.3f}", "-i", cfg["src"]]
-        if cfg.get("audio_src"):  # voice from the untouched original recording (same timeline)
-            inputs += ["-ss", f"{a:.3f}", "-t", f"{d:.3f}", "-i", cfg["audio_src"]]
-        vi, ai = (2 * i, 2 * i + 1) if cfg.get("audio_src") else (i, i)
-        fc.append(f"[{vi}:v]setpts=PTS-STARTPTS[v{i}];"
-                  f"[{ai}:a]asetpts=PTS-STARTPTS,afade=t=in:d=0.012,"
-                  f"afade=t=out:st={d - 0.015:.3f}:d=0.015[a{i}];")
-        toks = []
-        for w in words:
-            if not (w["end"] > a + 0.08 and w["start"] < b - 0.02):
-                continue
-            tok = norm(w["text"], fix)
-            if not tok:
-                continue
-            if toks and (toks[-1][0], tok) in MERGE:
-                toks[-1] = (MERGE[(toks[-1][0], tok)], toks[-1][1], w["end"])
-                continue
-            toks.append((tok, w["start"], w["end"]))
-        for tok, s, e in toks:
-            out_words.append({"w": tok, "s": round((t + max(0, s - a)) / speed, 3),
-                              "e": round((t + min(d, e - a)) / speed, 3), "seg": i})
-        segs.append({"i": i, "name": name, "start": round(t / speed, 3), "end": round((t + d) / speed, 3)})
-        t += d
-    n = len(order)
+        ranges = cfg["takes"][name]
+        if not isinstance(ranges[0], list):
+            ranges = [ranges]
+        seg_start = t
+        for a, b in ranges:
+            d = b - a
+            if t:
+                joins.append(round(t / speed, 3))
+            # one input per range with fast seek: decoding only the range, not the whole clip
+            inputs += ["-ss", f"{a:.3f}", "-t", f"{d:.3f}", "-i", cfg["src"]]
+            if cfg.get("audio_src"):  # voice from the untouched original recording (same timeline)
+                inputs += ["-ss", f"{a:.3f}", "-t", f"{d:.3f}", "-i", cfg["audio_src"]]
+            vi, ai = (2 * k, 2 * k + 1) if cfg.get("audio_src") else (k, k)
+            fc.append(f"[{vi}:v]setpts=PTS-STARTPTS[v{k}];"
+                      f"[{ai}:a]asetpts=PTS-STARTPTS,afade=t=in:d=0.012,"
+                      f"afade=t=out:st={d - 0.015:.3f}:d=0.015[a{k}];")
+            toks = []
+            for w in words:
+                if not (w["end"] > a + 0.08 and w["start"] < b - 0.02):
+                    continue
+                tok = norm(w["text"], fix)
+                if not tok:
+                    continue
+                if toks and (toks[-1][0], tok) in MERGE:
+                    toks[-1] = (MERGE[(toks[-1][0], tok)], toks[-1][1], w["end"])
+                    continue
+                toks.append((tok, w["start"], w["end"]))
+            for tok, s, e in toks:
+                out_words.append({"w": tok, "s": round((t + max(0, s - a)) / speed, 3),
+                                  "e": round((t + min(d, e - a)) / speed, 3), "seg": i})
+            t += d
+            k += 1
+        segs.append({"i": i, "name": name, "start": round(seg_start / speed, 3), "end": round(t / speed, 3)})
+    n = k
     fc.append("".join(f"[v{i}][a{i}]" for i in range(n)) + f"concat=n={n}:v=1:a=1[vc][ac];")
     # Rubber Band (formant-preserving) when ffmpeg has it: atempo smears speech into a phasey sound
     rb = "rubberband" in subprocess.run(["ffmpeg", "-hide_banner", "-filters"], capture_output=True, text=True).stdout
@@ -80,7 +90,7 @@ def build(cfg, variant):
                     "-pix_fmt", "yuv420p", "-color_range", "tv", "-colorspace", "bt709", "-color_primaries", "bt709",
                     "-color_trc", "bt709", "-c:a", "aac", "-b:a", "192k", "-ar", "48000",
                     f"assets/media/aroll_{variant}.mp4"], check=True)
-    edl = {"variant": variant, "duration": round(t / speed, 3), "segments": segs, "words": out_words}
+    edl = {"variant": variant, "duration": round(t / speed, 3), "segments": segs, "joins": joins, "words": out_words}
     json.dump(edl, open(f"work/edl_{variant}.json", "w", encoding="utf-8"), indent=1)
     print(f"{variant}: {edl['duration']:.1f}s")
     for s in segs:

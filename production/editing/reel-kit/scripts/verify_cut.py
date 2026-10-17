@@ -11,7 +11,7 @@ from faster_whisper import WhisperModel
 
 src, edl_path, script = sys.argv[1:4]
 edl = json.load(open(edl_path, encoding="utf-8"))
-joins = [s["start"] for s in edl["segments"][1:]]
+joins = edl.get("joins") or [s["start"] for s in edl["segments"][1:]]  # every cut, incl. pauses cut inside a beat
 pcm = subprocess.run(["ffmpeg", "-v", "error", "-i", src, "-ac", "1", "-ar", "16000", "-f", "f32le", "-"], capture_output=True, check=True).stdout
 model = WhisperModel("medium.en", device="cpu", compute_type="int8")
 segs, _ = model.transcribe(np.frombuffer(pcm, dtype=np.float32), word_timestamps=True, beam_size=5,
