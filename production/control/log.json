@@ -48,5 +48,25 @@
     "at": "2026-10-16T11:06:46Z",
     "who": "Claude",
     "text": "Replied to the Saenchai idea; asked whether the stadium clips are Matteo's own fight"
+  },
+  {
+    "at": "2026-10-17T11:01:43Z",
+    "who": "Claude",
+    "text": "Wrote 12 new hooks with the platform-captions skill (21 ready for next week: 10 listicle, 4 statement, 2 iykyk, 3 lifestyle, 2 builder); lint passes"
+  },
+  {
+    "at": "2026-10-17T11:01:43Z",
+    "who": "Claude",
+    "text": "Set clip_id on all 21 ready hooks: 21 different clips, each with a graded good moment"
+  },
+  {
+    "at": "2026-10-17T11:01:43Z",
+    "who": "Claude",
+    "text": "Stadium question closed: the Drive files are named 'Muay Thai fight matteo', so it is his fight"
+  },
+  {
+    "at": "2026-10-17T11:01:43Z",
+    "who": "Claude",
+    "text": "Refreshed metrics.json for 7 reels; style test (split vs native) still running, no new style proposal"
   }
 ]

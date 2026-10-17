@@ -25,6 +25,9 @@
       "Yes, that's my fight",
       "No, I was cornering / watching"
     ],
-    "status": "open"
+    "status": "answered",
+    "answer": "Yes: the Drive files are named 'Muay Thai fight matteo' (resolved by Claude, no tap needed)",
+    "answered_at": "2026-10-17T11:01:10Z",
+    "via": "Claude"
   }
 ]

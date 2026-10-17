@@ -1,61 +1,81 @@
 {
-  "updated": "2026-10-16T11:06:46Z",
+  "updated": "2026-10-17T11:01:43Z",
   "median_views": 2325,
-  "median_basis": "Buzzfy: latest 14 own reels older than 48h (6 Sep to 13 Oct)",
+  "median_basis": "Buzzfy: latest 16 own reels older than 48h (8 Sep to 15 Oct)",
   "audience": {
-    "us_reach_pct": 16.5,
-    "in_reach_pct": 21.2,
+    "us_reach_pct": 20.0,
+    "in_reach_pct": 25.8,
     "window": "reached, this week"
   },
   "reels": {
     "18131444773684044": {
-      "views": 2656,
-      "reach": 2009,
+      "views": 2669,
+      "reach": 2019,
       "shares": 13,
       "saves": 39,
       "follows": null,
-      "skip_rate": 37.2,
-      "vs_median_x": 1.14,
-      "provisional": true
+      "skip_rate": 37.3,
+      "vs_median_x": 1.15,
+      "provisional": false
     },
     "18167111158483588": {
-      "views": 3007,
-      "reach": 2138,
+      "views": 3028,
+      "reach": 2158,
       "shares": 2,
       "saves": 19,
       "follows": null,
-      "skip_rate": 34.1,
-      "vs_median_x": 1.29,
-      "provisional": true
+      "skip_rate": 34.2,
+      "vs_median_x": 1.3,
+      "provisional": false
     },
     "17949258072324239": {
-      "views": 4144,
-      "reach": 2965,
-      "shares": 8,
+      "views": 4217,
+      "reach": 3020,
+      "shares": 9,
       "saves": 48,
       "follows": null,
-      "skip_rate": 32.1,
-      "vs_median_x": 1.78,
-      "provisional": true
+      "skip_rate": 32.4,
+      "vs_median_x": 1.81,
+      "provisional": false
     },
     "18099839348637902": {
-      "views": 3503,
-      "reach": 2234,
+      "views": 3535,
+      "reach": 2252,
       "shares": 0,
       "saves": 3,
       "follows": null,
-      "skip_rate": 37.3,
-      "vs_median_x": 1.51,
+      "skip_rate": 37.5,
+      "vs_median_x": 1.52,
+      "provisional": true
+    },
+    "18119489926753835": {
+      "views": 3310,
+      "reach": 2135,
+      "shares": 2,
+      "saves": 21,
+      "follows": null,
+      "skip_rate": 40.5,
+      "vs_median_x": 1.42,
       "provisional": true
     },
     "18384412828239467": {
-      "views": 3168,
-      "reach": 2297,
+      "views": 3233,
+      "reach": 2341,
       "shares": 6,
-      "saves": 31,
+      "saves": 33,
       "follows": null,
       "skip_rate": 34.5,
-      "vs_median_x": 1.36,
+      "vs_median_x": 1.39,
+      "provisional": true
+    },
+    "18077912684721404": {
+      "views": 2769,
+      "reach": 1995,
+      "shares": 1,
+      "saves": 3,
+      "follows": null,
+      "skip_rate": 38.1,
+      "vs_median_x": 1.19,
       "provisional": true
     }
   }
