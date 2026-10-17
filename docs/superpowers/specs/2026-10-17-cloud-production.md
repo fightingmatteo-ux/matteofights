@@ -25,8 +25,12 @@ Telegram reply "B: bigger counter" ─► same job, revision mode, re-renders on
   control system (new `reel` / `revise` actions in `tools/control/control.py`) and on a Drive-poll schedule. It
   gets the repo, the skills in `.claude/skills/`, and Bash for ffmpeg/node/rclone/yt-dlp. It does the work a
   cloud session does today, but nobody has to open a session.
-- **Auth:** `CLAUDE_CODE_OAUTH_TOKEN` (Matteo's Claude subscription, made with `claude setup-token`) so reels don't
-  bill the API; `ANTHROPIC_API_KEY` (already a secret) as the fallback.
+- **Auth: Matteo's Claude account only, no API key (his call, 2026-10-17).** `CLAUDE_CODE_OAUTH_TOKEN`, made once
+  with `claude setup-token`, passed to claude-code-action as `claude_code_oauth_token`. Runs draw on his plan's
+  usage limits (shared with his own chats and sessions); if a run hits the limit it stops and says so on Telegram,
+  and the job is re-run after the reset. No `ANTHROPIC_API_KEY` fallback. The listicle footage agent moves off the
+  API too: it calls `claude -p` (Claude Code CLI, same token) instead of the Python SDK, and the
+  `ANTHROPIC_API_KEY` secret gets deleted once nothing reads it.
 - **Guardrails:** the agent can commit to `production/reels/<slug>/`, the bank index and queue.json (unapproved
   only), upload to the media release and Drive. It can't post, approve, or touch secrets. Every run ends with
   a Telegram message: the phone cuts, or exactly what blocked it.
