@@ -144,6 +144,14 @@
         "tries": 3,
         "at": "2026-10-17T16:40:51Z"
       }
+    },
+    "lst-2026-10-17-mentally-tougher": {
+      "youtube": {
+        "status": "failed",
+        "error": "POST https://www.googleapis.com/upload/youtube/v3/videos -> 401: {\n  \"error\": {\n    \"code\": 401,\n    \"message\": \"Unauthorized\",\n    \"errors\": [\n      {\n        \"message\": \"Unauthorized\",\n        \"domain\": \"youtube.header\",\n        \"reason\": \"youtubeSignupRequired\",\n        \"location\": \"Authorization\",\n        \"locationType\": \"header\"\n      }\n    ]\n  }\n}\n",
+        "tries": 1,
+        "at": "2026-10-17T23:05:53Z"
+      }
     }
   }
 }
