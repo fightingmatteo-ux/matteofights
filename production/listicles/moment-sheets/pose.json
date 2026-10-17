@@ -1450,5 +1450,609 @@
    "veto": null,
    "error": "libEGL.so.1: cannot open shared object file: No such file or directory"
   }
+ },
+ "1v6U2GDGWDi97o0PZqcmq8xMz00iO-kKf": {
+  "A": {
+   "score": 0.0,
+   "in_frame": 0.0,
+   "why": "fighter not visible"
+  },
+  "B": {
+   "score": 0.0,
+   "in_frame": 0.0,
+   "why": "fighter not visible"
+  },
+  "C": {
+   "score": 0.0,
+   "in_frame": 0.1,
+   "why": "fighter not visible"
+  },
+  "D": {
+   "score": 0.0,
+   "in_frame": 0.0,
+   "why": "fighter not visible"
+  }
+ },
+ "1J8mHxp5EZj0v1cEodM1GSZq6b7oE4UH-": {
+  "A": {
+   "score": 4.8,
+   "veto": null,
+   "in_frame": 0.88,
+   "guard": 0.34,
+   "strikes": 0.0,
+   "stance": 0.34,
+   "work": 1.0,
+   "body": 0.56,
+   "approach": 1.27
+  },
+  "B": {
+   "score": 5.6,
+   "veto": "walks up to the camera",
+   "in_frame": 0.93,
+   "guard": 0.31,
+   "strikes": 0.22,
+   "stance": 0.56,
+   "work": 1.0,
+   "body": 0.58,
+   "approach": 1.4
+  },
+  "C": {
+   "score": 3.2,
+   "veto": "hands down most of the time",
+   "in_frame": 0.42,
+   "guard": 0.0,
+   "strikes": 0.18,
+   "stance": 0.32,
+   "work": 1.0,
+   "body": 0.49,
+   "approach": 0.76
+  },
+  "D": {
+   "score": 6.6,
+   "veto": null,
+   "in_frame": 0.63,
+   "guard": 0.72,
+   "strikes": 0.44,
+   "stance": 0.53,
+   "work": 1.0,
+   "body": 0.47,
+   "approach": 1.22
+  },
+  "E": {
+   "score": 5.8,
+   "veto": null,
+   "in_frame": 0.58,
+   "guard": 0.59,
+   "strikes": 0.11,
+   "stance": 0.74,
+   "work": 1.0,
+   "body": 0.45,
+   "approach": 1.04
+  }
+ },
+ "1uVAp54Z25ALdUMjvgzyrxX3xELKaNQN-": {
+  "A": {
+   "score": 3.5,
+   "veto": "hands down most of the time",
+   "in_frame": 0.57,
+   "guard": 0.0,
+   "strikes": 0.0,
+   "stance": 0.54,
+   "work": 1.0,
+   "body": 0.45,
+   "approach": 1.05
+  },
+  "B": {
+   "score": 3.4,
+   "veto": "hands down most of the time",
+   "in_frame": 0.7,
+   "guard": 0.0,
+   "strikes": 0.0,
+   "stance": 0.32,
+   "work": 1.0,
+   "body": 0.51,
+   "approach": 0.89
+  },
+  "C": {
+   "score": 2.7,
+   "veto": "hands down most of the time",
+   "in_frame": 0.43,
+   "guard": 0.0,
+   "strikes": 0.0,
+   "stance": 0.25,
+   "work": 1.0,
+   "body": 0.4,
+   "approach": 1.0
+  },
+  "D": {
+   "score": 5.4,
+   "veto": "hands down most of the time",
+   "in_frame": 0.57,
+   "guard": 0.0,
+   "strikes": 1.0,
+   "stance": 0.51,
+   "work": 1.0,
+   "body": 0.46,
+   "approach": 1.17
+  },
+  "E": {
+   "score": 3.9,
+   "veto": "walks up to the camera",
+   "in_frame": 0.25,
+   "guard": 0.0,
+   "strikes": 0.44,
+   "stance": 0.66,
+   "work": 1.0,
+   "body": 0.34,
+   "approach": 1.64
+  }
+ },
+ "1wBC5fpAotAMKUQu6NnC7m3dH6w4yjxB_": {
+  "A": {
+   "score": 4.8,
+   "veto": "walks up to the camera",
+   "in_frame": 0.71,
+   "guard": 0.06,
+   "strikes": 0.62,
+   "stance": 0.35,
+   "work": 1.0,
+   "body": 0.6,
+   "approach": 1.86
+  },
+  "B": {
+   "score": 5.4,
+   "veto": "walks up to the camera",
+   "in_frame": 0.82,
+   "guard": 0.08,
+   "strikes": 0.66,
+   "stance": 0.44,
+   "work": 1.0,
+   "body": 0.66,
+   "approach": 2.63
+  },
+  "C": {
+   "score": 3.3,
+   "veto": "not visible enough",
+   "in_frame": 0.39,
+   "guard": 0.03,
+   "strikes": 0.28,
+   "stance": 0.23,
+   "work": 1.0,
+   "body": 0.73,
+   "approach": 0.97
+  },
+  "D": {
+   "score": 6.2,
+   "veto": "hands down most of the time",
+   "in_frame": 0.85,
+   "guard": 0.17,
+   "strikes": 1.0,
+   "stance": 0.36,
+   "work": 1.0,
+   "body": 0.58,
+   "approach": 1.08
+  },
+  "E": {
+   "score": 4.7,
+   "veto": "hands down most of the time",
+   "in_frame": 0.86,
+   "guard": 0.17,
+   "strikes": 0.25,
+   "stance": 0.31,
+   "work": 1.0,
+   "body": 0.61,
+   "approach": 1.0
+  },
+  "F": {
+   "score": 0.0,
+   "in_frame": 0.0,
+   "why": "fighter not visible"
+  }
+ },
+ "10IHPzw-ET_GpEOXfftLwgAkLu0b7bSSh": {
+  "A": {
+   "score": 3.9,
+   "veto": null,
+   "in_frame": 0.65,
+   "guard": 0.22,
+   "strikes": 0.0,
+   "stance": 0.3,
+   "work": 1.0,
+   "body": 0.48,
+   "approach": 1.15
+  },
+  "B": {
+   "score": 4.9,
+   "veto": "hands down most of the time",
+   "in_frame": 0.7,
+   "guard": 0.1,
+   "strikes": 0.33,
+   "stance": 0.71,
+   "work": 1.0,
+   "body": 0.49,
+   "approach": 1.04
+  },
+  "C": {
+   "score": 5.8,
+   "veto": "hands down most of the time",
+   "in_frame": 0.71,
+   "guard": 0.12,
+   "strikes": 0.65,
+   "stance": 0.78,
+   "work": 1.0,
+   "body": 0.5,
+   "approach": 1.02
+  },
+  "D": {
+   "score": 4.3,
+   "veto": null,
+   "in_frame": 0.62,
+   "guard": 0.31,
+   "strikes": 0.0,
+   "stance": 0.43,
+   "work": 1.0,
+   "body": 0.47,
+   "approach": 1.13
+  },
+  "E": {
+   "score": 6.6,
+   "veto": null,
+   "in_frame": 0.65,
+   "guard": 0.3,
+   "strikes": 1.0,
+   "stance": 0.59,
+   "work": 1.0,
+   "body": 0.48,
+   "approach": 1.0
+  },
+  "F": {
+   "score": 4.5,
+   "veto": "walks up to the camera",
+   "in_frame": 0.72,
+   "guard": 0.05,
+   "strikes": 0.22,
+   "stance": 0.64,
+   "work": 1.0,
+   "body": 0.5,
+   "approach": 1.45
+  },
+  "G": {
+   "score": 4.7,
+   "veto": null,
+   "in_frame": 0.61,
+   "guard": 0.4,
+   "strikes": 0.0,
+   "stance": 0.49,
+   "work": 1.0,
+   "body": 0.46,
+   "approach": 1.04
+  },
+  "H": {
+   "score": 4.3,
+   "veto": "hands down most of the time",
+   "in_frame": 0.73,
+   "guard": 0.09,
+   "strikes": 0.22,
+   "stance": 0.45,
+   "work": 1.0,
+   "body": 0.51,
+   "approach": 0.99
+  }
+ },
+ "1egfQUxxsbWihwBGrzK3yIL828MvADd_3": {
+  "A": {
+   "score": 4.8,
+   "veto": null,
+   "in_frame": 0.37,
+   "guard": 0.35,
+   "strikes": 0.33,
+   "stance": 0.59,
+   "work": 1.0,
+   "body": 0.38,
+   "approach": 1.29
+  },
+  "B": {
+   "score": 5.7,
+   "veto": null,
+   "in_frame": 0.33,
+   "guard": 0.2,
+   "strikes": 1.0,
+   "stance": 0.62,
+   "work": 1.0,
+   "body": 0.37,
+   "approach": 1.07
+  },
+  "C": {
+   "score": 5.4,
+   "veto": "walks up to the camera",
+   "in_frame": 0.3,
+   "guard": 0.16,
+   "strikes": 1.0,
+   "stance": 0.53,
+   "work": 1.0,
+   "body": 0.36,
+   "approach": 1.51
+  },
+  "D": {
+   "score": 5.8,
+   "veto": null,
+   "in_frame": 0.24,
+   "guard": 0.34,
+   "strikes": 1.0,
+   "stance": 0.56,
+   "work": 1.0,
+   "body": 0.34,
+   "approach": 1.09
+  },
+  "E": {
+   "score": 5.5,
+   "veto": "fighter too small",
+   "in_frame": 0.18,
+   "guard": 0.3,
+   "strikes": 1.0,
+   "stance": 0.52,
+   "work": 1.0,
+   "body": 0.31,
+   "approach": 1.0
+  },
+  "F": {
+   "score": 5.5,
+   "veto": "fighter too small",
+   "in_frame": 0.12,
+   "guard": 0.39,
+   "strikes": 1.0,
+   "stance": 0.39,
+   "work": 1.0,
+   "body": 0.29,
+   "approach": 1.3
+  }
+ },
+ "1sXAWX_CA3NO8oVTd7eJVb2mhp50Qdn9S": {
+  "A": {
+   "score": 5.2,
+   "veto": null,
+   "in_frame": 0.98,
+   "guard": 0.22,
+   "strikes": 0.22,
+   "stance": 0.43,
+   "work": 1.0,
+   "body": 0.61,
+   "approach": 1.09
+  },
+  "B": {
+   "score": 6.6,
+   "veto": "hands down most of the time",
+   "in_frame": 0.95,
+   "guard": 0.18,
+   "strikes": 1.0,
+   "stance": 0.42,
+   "work": 1.0,
+   "body": 0.58,
+   "approach": 1.12
+  },
+  "C": {
+   "score": 6.4,
+   "veto": "hands down most of the time",
+   "in_frame": 1.0,
+   "guard": 0.09,
+   "strikes": 0.98,
+   "stance": 0.45,
+   "work": 1.0,
+   "body": 0.63,
+   "approach": 1.02
+  },
+  "D": {
+   "score": 5.9,
+   "veto": "hands down most of the time",
+   "in_frame": 0.82,
+   "guard": 0.06,
+   "strikes": 0.98,
+   "stance": 0.38,
+   "work": 1.0,
+   "body": 0.54,
+   "approach": 1.17
+  },
+  "E": {
+   "score": 6.0,
+   "veto": "walks up to the camera",
+   "in_frame": 0.94,
+   "guard": 0.04,
+   "strikes": 0.98,
+   "stance": 0.38,
+   "work": 1.0,
+   "body": 0.58,
+   "approach": 1.78
+  },
+  "F": {
+   "score": 6.2,
+   "veto": null,
+   "in_frame": 0.82,
+   "guard": 0.27,
+   "strikes": 1.0,
+   "stance": 0.2,
+   "work": 1.0,
+   "body": 0.54,
+   "approach": 1.17
+  },
+  "G": {
+   "score": 5.8,
+   "veto": "hands down most of the time",
+   "in_frame": 0.88,
+   "guard": 0.16,
+   "strikes": 0.69,
+   "stance": 0.44,
+   "work": 1.0,
+   "body": 0.58,
+   "approach": 1.05
+  },
+  "H": {
+   "score": 5.4,
+   "veto": "hands down most of the time",
+   "in_frame": 0.7,
+   "guard": 0.0,
+   "strikes": 0.87,
+   "stance": 0.52,
+   "work": 1.0,
+   "body": 0.5,
+   "approach": 1.16
+  }
+ },
+ "1PYcmEi0o2RPHKxdIfN0GySjqXSsMaz5U": {
+  "A": {
+   "score": 6.4,
+   "veto": "fighter too small",
+   "in_frame": 0.14,
+   "guard": 0.82,
+   "strikes": 0.65,
+   "stance": 0.56,
+   "work": 1.0,
+   "body": 0.3,
+   "approach": 1.28
+  },
+  "B": {
+   "score": 6.3,
+   "veto": "fighter too small",
+   "in_frame": 0.08,
+   "guard": 0.89,
+   "strikes": 0.44,
+   "stance": 0.75,
+   "work": 1.0,
+   "body": 0.28,
+   "approach": 1.06
+  },
+  "C": {
+   "score": 6.5,
+   "veto": "fighter too small",
+   "in_frame": 0.07,
+   "guard": 0.89,
+   "strikes": 0.65,
+   "stance": 0.58,
+   "work": 1.0,
+   "body": 0.28,
+   "approach": 1.01
+  },
+  "D": {
+   "score": 6.0,
+   "veto": "fighter too small",
+   "in_frame": 0.11,
+   "guard": 0.92,
+   "strikes": 0.54,
+   "stance": 0.26,
+   "work": 1.0,
+   "body": 0.29,
+   "approach": 0.99
+  },
+  "E": {
+   "score": 5.9,
+   "veto": "fighter too small",
+   "in_frame": 0.02,
+   "guard": 0.88,
+   "strikes": 0.54,
+   "stance": 0.42,
+   "work": 1.0,
+   "body": 0.26,
+   "approach": 1.05
+  },
+  "F": {
+   "score": 4.6,
+   "veto": "fighter too small",
+   "in_frame": 0.04,
+   "guard": 0.8,
+   "strikes": 0.0,
+   "stance": 0.37,
+   "work": 1.0,
+   "body": 0.27,
+   "approach": 1.02
+  }
+ },
+ "1iExgm5mGtnhVQh2ah0TXSXGeviVKjOjc": {
+  "A": {
+   "score": 6.1,
+   "veto": "hands down most of the time",
+   "in_frame": 0.65,
+   "guard": 0.09,
+   "strikes": 0.98,
+   "stance": 0.73,
+   "work": 1.0,
+   "body": 0.48,
+   "approach": 1.09
+  },
+  "B": {
+   "score": 5.9,
+   "veto": "hands down most of the time",
+   "in_frame": 0.6,
+   "guard": 0.13,
+   "strikes": 0.98,
+   "stance": 0.56,
+   "work": 1.0,
+   "body": 0.46,
+   "approach": 0.97
+  },
+  "C": {
+   "score": 4.9,
+   "veto": "hands down most of the time",
+   "in_frame": 0.63,
+   "guard": 0.07,
+   "strikes": 0.54,
+   "stance": 0.57,
+   "work": 1.0,
+   "body": 0.47,
+   "approach": 0.99
+  },
+  "D": {
+   "score": 4.7,
+   "veto": "hands down most of the time",
+   "in_frame": 0.56,
+   "guard": 0.1,
+   "strikes": 0.54,
+   "stance": 0.42,
+   "work": 1.0,
+   "body": 0.45,
+   "approach": 1.02
+  },
+  "E": {
+   "score": 4.7,
+   "veto": "hands down most of the time",
+   "in_frame": 0.55,
+   "guard": 0.09,
+   "strikes": 0.65,
+   "stance": 0.36,
+   "work": 1.0,
+   "body": 0.44,
+   "approach": 1.04
+  },
+  "F": {
+   "score": 5.2,
+   "veto": "hands down most of the time",
+   "in_frame": 0.57,
+   "guard": 0.09,
+   "strikes": 0.76,
+   "stance": 0.52,
+   "work": 1.0,
+   "body": 0.45,
+   "approach": 1.14
+  },
+  "G": {
+   "score": 5.1,
+   "veto": null,
+   "in_frame": 0.4,
+   "guard": 0.21,
+   "strikes": 0.76,
+   "stance": 0.41,
+   "work": 1.0,
+   "body": 0.39,
+   "approach": 1.0
+  },
+  "H": {
+   "score": 5.0,
+   "veto": null,
+   "in_frame": 0.44,
+   "guard": 0.32,
+   "strikes": 0.65,
+   "stance": 0.24,
+   "work": 1.0,
+   "body": 0.41,
+   "approach": 1.0
+  }
  }
 }
