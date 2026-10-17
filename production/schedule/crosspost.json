@@ -10,7 +10,7 @@
         "16:00",
         "19:30"
       ],
-      "last_slot": "2026-10-17T16:30:00Z"
+      "last_slot": "2026-10-17T23:30:00Z"
     },
     "youtube": {
       "enabled": true,
@@ -151,6 +151,12 @@
         "error": "POST https://www.googleapis.com/upload/youtube/v3/videos -> 401: {\n  \"error\": {\n    \"code\": 401,\n    \"message\": \"Unauthorized\",\n    \"errors\": [\n      {\n        \"message\": \"Unauthorized\",\n        \"domain\": \"youtube.header\",\n        \"reason\": \"youtubeSignupRequired\",\n        \"location\": \"Authorization\",\n        \"locationType\": \"header\"\n      }\n    ]\n  }\n}\n",
         "tries": 3,
         "at": "2026-10-17T23:23:32Z"
+      },
+      "facebook": {
+        "status": "posted",
+        "at": "2026-10-17T23:36:27Z",
+        "id": "1076072028571420",
+        "url": "https://www.facebook.com/reel/1076072028571420"
       }
     }
   }
