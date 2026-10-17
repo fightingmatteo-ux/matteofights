@@ -431,8 +431,13 @@ function resultsYou(sw) {
   const small = (r) => `<small class="${thin(r) ? "thin" : ""}">${r.reels} ${r.reels === 1 ? "reel" : "reels"}${thin(r) ? ", small sample" : ""}</small>`;
   const sample = (r) => `${r.reels} ${r.reels === 1 ? "reel" : "reels"}${thin(r) ? ", small sample" : ""}`;
   const figV = (r) => `<p class="fig gold">${n(r.avg)} views per reel${med ? `, ${(r.avg / med).toFixed(1)}× normal` : ""}</p>`;
-  const figF = (r) => `<p class="fig gold">${r.fpk.toFixed(1)} follows per 1k views</p>`;
-  const verdicts = bestV === bestF
+  // follows per reel aren't in Instagram's API (only a Buzzfy pull fills them): say so instead of showing 0.0
+  const hasF = rows.some((r) => r.follows > 0);
+  const figF = (r) => (hasF ? `<p class="fig gold">${r.fpk.toFixed(1)} follows per 1k views</p>` : `<p class="meta">Follows per reel not measured yet.</p>`);
+  const verdicts = !hasF
+    ? `<div class="verdicts"><article class="verdict"><h2 class="big">${fmtName(bestV.k)} wins views</h2>${figV(bestV)}${figF(bestV)}
+        <p class="meta">From ${sample(bestV)}. Your normal is ${n(med)} views.</p></article></div>`
+    : bestV === bestF
     ? `<div class="verdicts"><article class="verdict"><h2 class="big">${fmtName(bestV.k)} wins both</h2>${figV(bestV)}${figF(bestV)}
         <p class="meta">From ${sample(bestV)}. Your normal is ${n(med)} views; your average is ${avgF.toFixed(1)} follows per 1k.</p></article></div>`
     : `<div class="verdicts split"><article class="verdict"><h2 class="big">${fmtName(bestV.k)} wins views</h2>${figV(bestV)}<p class="meta">From ${sample(bestV)}. Your normal is ${n(med)}.</p></article>
