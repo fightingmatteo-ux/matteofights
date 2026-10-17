@@ -42,5 +42,9 @@
   {
     "id": "xp-ef1c48aa",
     "text": "⚠️ YouTube Shorts gave up on: 7 WAYS TO BUILD A FIGHTER'S MINDSET WITHOUT A SINGLE FIGHT\nPOST https://www.googleapis.com/upload/youtube/v3/videos -> 401: {\n  \"error\": {\n    \"code\": 401,\n    \"message\": \"Unauthorized\",\n    \"errors\": [\n      {\n        \"message\": \"Unauthorized\",\n        \"domain\": \"youtube.header\",\n        \"reason\": \"youtubeSignupRequired\",\n        \"location\": \"Authorization"
+  },
+  {
+    "id": "xp-b2ff88dc",
+    "text": "📤 Threads: 7 WAYS TO BUILD A FIGHTER'S MINDSET WITHOUT A SINGLE FIGHT\nhttps://www.threads.com/@matteofights/post/Dek42IGkr_W"
   }
 ]
