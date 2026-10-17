@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-17T15:44:04Z",
+  "updated": "2026-10-17T18:35:31Z",
   "platforms": {
     "instagram": {
       "followers": 2036,
@@ -15,13 +15,13 @@
     "facebook": {
       "followers": 1296,
       "enabled": true,
-      "last_post": "2026-10-16T23:36:19Z",
+      "last_post": "2026-10-17T16:36:48Z",
       "failed": [],
       "errors": [],
-      "next_slot": "2026-10-17T16:30:00Z",
+      "next_slot": "2026-10-17T20:00:00Z",
       "plan_per_day": 4,
       "plan_mix": "3 reels + 1 slide album",
-      "posted_7d": 5,
+      "posted_7d": 6,
       "token_expires": null,
       "warn": null
     },
@@ -34,7 +34,7 @@
       "next_slot": "2026-10-17T19:30:00Z",
       "plan_per_day": 6,
       "plan_mix": "3 reels + 3 written posts",
-      "posted_7d": 8,
+      "posted_7d": 9,
       "token_expires": "2026-12-14",
       "warn": null
     },
@@ -44,25 +44,26 @@
       "failed": [
         "lst-2026-10-15-built-for-fight-night",
         "lst-2026-10-15-technique-without-a-coach",
-        "lst-2026-10-16-mindset-without-a-fight"
+        "lst-2026-10-16-mindset-without-a-fight",
+        "lst-2026-10-16-no-ex-fighter"
       ],
       "errors": [
         "POST https://www.googleapis.com/upload/youtube/v3/videos -> 401: {\n  \"error\": {\n    \"code\": 401,\n    \"message\": \"Unauthorized\",\n    \"errors\": [\n      {\n        \"message\": \"Unauthorized\",\n        \"doma",
         "POST https://www.googleapis.com/upload/youtube/v3/videos -> 401: {\n  \"error\": {\n    \"code\": 401,\n    \"message\": \"Unauthorized\",\n    \"errors\": [\n      {\n        \"message\": \"Unauthorized\",\n        \"doma"
       ],
-      "next_slot": "2026-10-17T16:30:00Z",
+      "next_slot": "2026-10-17T20:00:00Z",
       "privacy": "public",
       "plan_per_day": 3,
       "plan_mix": "3 Shorts",
       "posted_7d": 0,
       "token_expires": null,
-      "warn": "3 failed in the last 3 days"
+      "warn": "4 failed in the last 3 days"
     }
   },
   "posts": {
     "freeze-A": {
       "instagram": {
-        "views": 2671,
+        "views": 2672,
         "likes": 61,
         "comments": 0,
         "shares": 13,
@@ -82,7 +83,7 @@
     },
     "freeze-C": {
       "instagram": {
-        "views": 4232,
+        "views": 4233,
         "likes": 92,
         "comments": 0,
         "shares": 9,
@@ -118,7 +119,7 @@
     },
     "lst-2026-10-16-mindset-without-a-fight": {
       "instagram": {
-        "views": 3334,
+        "views": 3339,
         "likes": 21,
         "comments": 0,
         "shares": 2,
@@ -126,11 +127,11 @@
         "url": "https://www.instagram.com/reel/Deknr2RkvJM/"
       },
       "facebook": {
-        "views": 2,
+        "views": 6,
         "url": "https://www.facebook.com/reel/1463427735631609"
       },
       "threads": {
-        "views": 75,
+        "views": 77,
         "likes": 4,
         "replies": 0,
         "reposts": 0,
@@ -140,7 +141,7 @@
     },
     "lst-2026-10-15-technique-without-a-coach": {
       "instagram": {
-        "views": 3234,
+        "views": 3236,
         "likes": 41,
         "comments": 0,
         "shares": 6,
@@ -148,7 +149,7 @@
         "url": "https://www.instagram.com/reel/Deidr7rFHUn/"
       },
       "facebook": {
-        "views": 29,
+        "views": 30,
         "url": "https://www.facebook.com/reel/1835746304451116"
       },
       "facebook_slides": {
@@ -166,12 +167,16 @@
     },
     "lst-2026-10-16-no-ex-fighter": {
       "instagram": {
-        "views": 2787,
+        "views": 2796,
         "likes": 25,
         "comments": 0,
         "shares": 1,
         "saves": 3,
         "url": "https://www.instagram.com/reel/Dek8WnRCJAG/"
+      },
+      "facebook": {
+        "views": 0,
+        "url": "https://www.facebook.com/reel/987115153732256"
       },
       "threads": {
         "views": 0,
@@ -216,6 +221,14 @@
       "reposts": 0,
       "shares": 0,
       "url": "https://www.threads.com/@matteofights/post/DemA8CKG008"
+    },
+    "th-1017-2": {
+      "views": 50,
+      "likes": 1,
+      "replies": 0,
+      "reposts": 0,
+      "shares": 0,
+      "url": "https://www.threads.com/@matteofights/post/DemjYjCkTKi"
     }
   },
   "warned": []
