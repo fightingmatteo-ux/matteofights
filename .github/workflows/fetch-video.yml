@@ -74,14 +74,15 @@ jobs:
               python3 -P tools/video/ig_discovery.py "$URL" dl --user "$IG_USER"
             fi
           fi
-          f=$(ls dl/video* | grep -v '\.json$' | head -1)
+          f=$(ls dl/video* | grep -v '\.json$' | head -1 || true)
+          if [ -z "$f" ]; then echo "NO_VIDEO=1" >> "$GITHUB_ENV"; exit 0; fi
           ffmpeg -v error -i "$f" -c copy -movflags +faststart "dl/$NAME.mp4" || cp "$f" "dl/$NAME.mp4"
 
       - name: Watch
         run: |
           if [ "$KIND" = reference ]; then dir="content-bank/references/videos/$NAME"
           else dir="content-bank/real-footage/analysis/$NAME"; fi
-          python3 tools/video/watch.py "dl/$NAME.mp4" "$dir"
+          if [ -n "$NO_VIDEO" ]; then mkdir -p "$dir"; else python3 tools/video/watch.py "dl/$NAME.mp4" "$dir"; fi
           if [ -f dl/video.info.json ]; then
             python3 - "$dir" <<'PY'
           import json, sys
@@ -94,6 +95,7 @@ jobs:
           echo "DIR=$dir" >> "$GITHUB_ENV"
 
       - name: Store video on the media release
+        if: env.NO_VIDEO == ''
         env:
           GH_TOKEN: ${{ github.token }}
         run: |

@@ -4,7 +4,8 @@
 
 Fallback for the Fetch video workflow when yt-dlp is blocked. Finds the reel in the creator's media by
 its shortcode, downloads media_url to OUTDIR/video.mp4 and writes OUTDIR/video.info.json in yt-dlp's
-field names so the workflow's source.json step works unchanged. Without --user the username comes from
+field names so the workflow's source.json step works unchanged. If Meta withholds the video (licensed
+audio), only video.info.json is written and the workflow commits the caption and stats alone. Without --user the username comes from
 oEmbed (needs Meta app review) or, failing that, from scanning the accounts in
 production/competitors/accounts.json. Needs FB_USER_TOKEN; only creator/business accounts are visible.
 """
@@ -82,18 +83,19 @@ def main():
 
 
 def save(post, prof, outdir):
-    if not post.get("media_url"):
-        sys.exit("Meta API returned no media_url for this reel (copyrighted audio or restricted)")
     out = Path(outdir)
     out.mkdir(parents=True, exist_ok=True)
-    urllib.request.urlretrieve(post["media_url"], out / "video.mp4")
+    if post.get("media_url"):
+        urllib.request.urlretrieve(post["media_url"], out / "video.mp4")
+    else:
+        print("Meta API returned no media_url (licensed audio or restricted): saving caption and stats only")
     info = {"uploader": prof.get("username"), "uploader_id": prof.get("username"), "channel": prof.get("username"),
             "followers": prof.get("followers_count"), "description": post.get("caption"),
             "timestamp": post.get("timestamp"), "view_count": post.get("view_count"),
             "like_count": post.get("like_count"), "comment_count": post.get("comments_count"),
             "webpage_url": post.get("permalink")}
     (out / "video.info.json").write_text(json.dumps(info, indent=2, ensure_ascii=False), encoding="utf-8")
-    print(f"@{prof.get('username')}: {post.get('view_count')} views -> {out / 'video.mp4'}")
+    print(f"@{prof.get('username')}: {post.get('view_count')} views -> {out}")
 
 
 if __name__ == "__main__":
