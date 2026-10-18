@@ -35,6 +35,7 @@ Log: `media/2026-10-16-saenchai-bigger-men/renders/render_bc.log` (ends with `AL
 | Threads token | Expires 2026-12-14 | `crosspost.py threads-refresh` before then |
 | FB_USER_TOKEN | Set 2026-10-15, 60-day token, so expires ~2026-12-14. Expiry not tracked | Add tracking |
 | Listicle clip sheets | MATTEO | Waiting on his yes (Telegram or dashboard) |
+| Next week's 21 listicles (18 to 28 Oct) | **MATTEO** | Reviewed, 6 clips swapped and re-rendered 10-18 15:00Z. Waiting on his yes (dashboard / Telegram / chat). #1 posts 12:30 NY today only if approved |
 | control.matteofights.me | OK | Live behind Cloudflare Access (checked 10-18) |
 
 ## Rules (short)
