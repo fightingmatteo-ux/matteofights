@@ -22,7 +22,8 @@
         "16:00",
         "19:00"
       ],
-      "privacy_note": "Matteo: 'youtube approved' (2026-10-16). If YouTube still forces private, the audit isn't through yet."
+      "privacy_note": "Matteo: 'youtube approved' (2026-10-16). If YouTube still forces private, the audit isn't through yet.",
+      "last_slot": "2026-10-16T16:30:00Z"
     },
     "threads": {
       "enabled": true,
@@ -99,10 +100,11 @@
         "url": "https://www.facebook.com/1070947222779004_122155378989352578"
       },
       "youtube": {
-        "status": "failed",
-        "error": "POST https://www.googleapis.com/upload/youtube/v3/videos -> 401: {\n  \"error\": {\n    \"code\": 401,\n    \"message\": \"Unauthorized\",\n    \"errors\": [\n      {\n        \"message\": \"Unauthorized\",\n        \"domain\": \"youtube.header\",\n        \"reason\": \"youtubeSignupRequired\",\n        \"location\": \"Authorization\",\n        \"locationType\": \"header\"\n      }\n    ]\n  }\n}\n",
-        "tries": 1,
-        "at": "2026-10-18T14:46:26Z"
+        "status": "posted",
+        "at": "2026-10-18T15:12:32Z",
+        "id": "ORdjtVl0KjY",
+        "url": "https://youtube.com/shorts/ORdjtVl0KjY",
+        "privacy": "public"
       }
     },
     "lst-2026-10-16-mindset-without-a-fight": {
