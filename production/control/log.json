@@ -68,5 +68,20 @@
     "at": "2026-10-17T11:01:43Z",
     "who": "Claude",
     "text": "Refreshed metrics.json for 7 reels; style test (split vs native) still running, no new style proposal"
+  },
+  {
+    "at": "2026-10-18T11:01:00Z",
+    "who": "Claude",
+    "text": "Graded moments for 9 more clips (48 of 70 clips now have a skilled stretch); the pose check works in Actions again and was used as a second opinion"
+  },
+  {
+    "at": "2026-10-18T11:01:00Z",
+    "who": "Claude",
+    "text": "Refreshed metrics.json for 9 reels (normal is now 2,640 views); no listicle past 72 h yet, so no winner call"
+  },
+  {
+    "at": "2026-10-18T11:01:00Z",
+    "who": "Claude",
+    "text": "Sunday factory runs (09:00/09:40/10:20 UTC) haven't started yet; review of next week's renders waits for them"
   }
 ]

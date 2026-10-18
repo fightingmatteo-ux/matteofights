@@ -785,5 +785,140 @@
     "notes": "red bag gym shadowboxing in grey tee: C clean combos; A walking and kettlebell, B ends with a hand at the lens",
     "graded": "2026-10-16T11:05:38Z",
     "by": "Claude (session, rubric context/boxing-technique.md)"
+  },
+  "1v6U2GDGWDi97o0PZqcmq8xMz00iO-kKf": {
+    "good": [],
+    "bad": [
+      21.4,
+      10.2,
+      1.4,
+      29.8
+    ],
+    "notes": "empty rooftop and a thumb over the lens, no fighter",
+    "graded": "2026-10-18T11:00:32Z",
+    "by": "Claude (session, rubric context/boxing-technique.md + pose check)"
+  },
+  "1J8mHxp5EZj0v1cEodM1GSZq6b7oE4UH-": {
+    "good": [
+      29.0
+    ],
+    "bad": [
+      37.4,
+      1.8,
+      18.6,
+      10.2
+    ],
+    "notes": "red bag gym in grey tee: A shadowboxing with guard up; B walks to camera, C/E kettlebell and bending, D ends bent over",
+    "graded": "2026-10-18T11:00:32Z",
+    "by": "Claude (session, rubric context/boxing-technique.md + pose check)"
+  },
+  "1uVAp54Z25ALdUMjvgzyrxX3xELKaNQN-": {
+    "good": [
+      27.8,
+      17.4,
+      2.2
+    ],
+    "bad": [
+      37.4,
+      47.4
+    ],
+    "notes": "rooftop agility ladder at sunset: C/A/B quick clean footwork (hands low, conditioning drill not fight skill); D walks off, E walks to camera",
+    "graded": "2026-10-18T11:00:32Z",
+    "by": "Claude (session, rubric context/boxing-technique.md + pose check)"
+  },
+  "1wBC5fpAotAMKUQu6NnC7m3dH6w4yjxB_": {
+    "good": [
+      49.8
+    ],
+    "bad": [
+      58.2,
+      33.8,
+      1.0,
+      25.4,
+      9.4
+    ],
+    "notes": "red bag gym in black tank: E guard tight and combos (he sits near the right edge); A/B walk to camera, C arm over lens, D cut off with hands low, F empty",
+    "graded": "2026-10-18T11:00:32Z",
+    "by": "Claude (session, rubric context/boxing-technique.md + pose check)"
+  },
+  "10IHPzw-ET_GpEOXfftLwgAkLu0b7bSSh": {
+    "good": [
+      49.8,
+      41.4,
+      10.2
+    ],
+    "bad": [
+      62.6,
+      28.2,
+      18.6,
+      71.0,
+      1.8
+    ],
+    "notes": "red bag gym shadowboxing in grey tee: D/G guard up with good footwork, A stance and movement; B/C bouncing with hands down, E back to camera, F/H walking at the lens",
+    "graded": "2026-10-18T11:00:32Z",
+    "by": "Claude (session, rubric context/boxing-technique.md + pose check)"
+  },
+  "1egfQUxxsbWihwBGrzK3yIL828MvADd_3": {
+    "good": [
+      39.0,
+      13.4
+    ],
+    "bad": [
+      4.2,
+      47.4,
+      21.8,
+      30.6
+    ],
+    "notes": "hazy gym bag work from a distance: D/A readable combos; B guard low, C walks to camera, E/F fighter too small",
+    "graded": "2026-10-18T11:00:32Z",
+    "by": "Claude (session, rubric context/boxing-technique.md + pose check)"
+  },
+  "1sXAWX_CA3NO8oVTd7eJVb2mhp50Qdn9S": {
+    "good": [
+      50.2,
+      58.6,
+      31.8,
+      23.4
+    ],
+    "bad": [
+      69.0,
+      87.8,
+      41.8,
+      77.8
+    ],
+    "notes": "red BOX bag work (same footage as 'bagwork fitness first'): B/C/A sharp combos with the bag moving, F good; D back turned, E walks to camera, G someone passes the lens, H hands low; pose check vetoes B/C for hands down, I disagree (gloves return between punches)",
+    "graded": "2026-10-18T11:00:32Z",
+    "by": "Claude (session, rubric context/boxing-technique.md + pose check)"
+  },
+  "1PYcmEi0o2RPHKxdIfN0GySjqXSsMaz5U": {
+    "good": [],
+    "bad": [
+      64.6,
+      29.8,
+      44.2,
+      56.2,
+      20.6,
+      9.0
+    ],
+    "notes": "shirtless rooftop shadowboxing in daylight: fighter too small in every stretch (pose check agrees)",
+    "graded": "2026-10-18T11:00:32Z",
+    "by": "Claude (session, rubric context/boxing-technique.md + pose check)"
+  },
+  "1iExgm5mGtnhVQh2ah0TXSXGeviVKjOjc": {
+    "good": [
+      107.0,
+      61.0,
+      96.6,
+      118.2
+    ],
+    "bad": [
+      126.6,
+      81.4,
+      51.0,
+      35.8
+    ],
+    "notes": "red bag work in the big gym (same footage as an earlier graded clip): B/C/D/F combos with the bag swinging; A hands drop at the end, E starts far, G/H small; pose check vetoes most for hands down, second opinion only",
+    "graded": "2026-10-18T11:00:32Z",
+    "by": "Claude (session, rubric context/boxing-technique.md + pose check)"
   }
 }

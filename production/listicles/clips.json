@@ -987,7 +987,7 @@
     "energy": 1,
     "mood": "calm",
     "usable": false,
-    "problems": "no fighter",
+    "problems": "no fighter; no skilled moment (moments.json): not for fight hooks",
     "catalogued": "2026-10-16T11:02:27Z",
     "by": "Claude (session, clip sheet)"
   },
@@ -1099,7 +1099,7 @@
     "energy": 3,
     "mood": "raw",
     "usable": true,
-    "problems": "small-ish",
+    "problems": "small-ish; no skilled moment (moments.json): not for fight hooks",
     "catalogued": "2026-10-16T11:02:27Z",
     "by": "Claude (session, clip sheet)"
   },
