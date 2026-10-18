@@ -69,6 +69,7 @@ def main():
             print(f"oEmbed lookup failed ({e}); scanning tracked competitors")
             accounts = json.loads((ROOT / "production/competitors/accounts.json").read_text(encoding="utf-8"))["accounts"]
             users = [x["handle"] for x in accounts if x.get("platform") == "instagram"]
+            a.max_posts = min(a.max_posts, 100)  # stay inside Business Discovery's rate limit across many accounts
     for user in users:
         try:
             hit = find(code, user, a.max_posts)
