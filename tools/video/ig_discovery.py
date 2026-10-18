@@ -5,14 +5,20 @@
 Fallback for the Fetch video workflow when yt-dlp is blocked. Finds the reel in the creator's media by
 its shortcode, downloads media_url to OUTDIR/video.mp4 and writes OUTDIR/video.info.json in yt-dlp's
 field names so the workflow's source.json step works unchanged. Without --user the username comes from
-oEmbed. Needs FB_USER_TOKEN; only creator/business accounts are visible.
+oEmbed (needs Meta app review) or, failing that, from scanning the accounts in
+production/competitors/accounts.json. Needs FB_USER_TOKEN; only creator/business accounts are visible.
 """
 import argparse, json, os, re, sys, urllib.error, urllib.parse, urllib.request
 from pathlib import Path
 
+ROOT = Path(__file__).resolve().parents[2]
 GRAPH = "https://graph.facebook.com/v23.0"
 IG_ID = "17841465098113052"
 FIELDS = "timestamp,caption,like_count,comments_count,media_product_type,permalink,view_count,media_url"
+
+
+class ApiError(Exception):
+    pass
 
 
 def get(path, **params):
@@ -20,7 +26,27 @@ def get(path, **params):
     try:
         return json.load(urllib.request.urlopen(url, timeout=60))
     except urllib.error.HTTPError as e:
-        sys.exit(f"Meta API: {json.loads(e.read()).get('error', {}).get('message', e)}")
+        raise ApiError(f"Meta API: {json.loads(e.read()).get('error', {}).get('message', e)}")
+
+
+def find(code, user, max_posts):
+    """(post, profile) for this shortcode in @user's media, or None."""
+    after, seen, prof = None, 0, None
+    while seen < max_posts:
+        page = f".after({after})" if after else ""
+        f = f"business_discovery.username({user}){{username,followers_count,media{page}.limit(50){{{FIELDS}}}}}"
+        bd = get(IG_ID, fields=f)["business_discovery"]
+        prof = prof or bd
+        media = bd.get("media", {})
+        for post in media.get("data", []):
+            if f"/{code}/" in (post.get("permalink") or ""):
+                return post, prof
+        seen += len(media.get("data", []))
+        after = media.get("paging", {}).get("cursors", {}).get("after")
+        if not after or not media.get("data"):
+            break
+    print(f"{code} not in @{user}'s last {seen} posts")
+    return None
 
 
 def main():
@@ -35,25 +61,23 @@ def main():
     if not m:
         sys.exit("not an Instagram post link")
     code = m.group(1)
-    user = a.user.lstrip("@") or get("instagram_oembed", url=f"https://www.instagram.com/reel/{code}/").get("author_name", "")
-    if not user:
-        sys.exit("couldn't find the creator's username; pass --user")
-
-    after, seen, prof = None, 0, None
-    while seen < a.max_posts:
-        page = f".after({after})" if after else ""
-        f = f"business_discovery.username({user}){{username,followers_count,media{page}.limit(50){{{FIELDS}}}}}"
-        bd = get(IG_ID, fields=f)["business_discovery"]
-        prof = prof or bd
-        media = bd.get("media", {})
-        for post in media.get("data", []):
-            if f"/{code}/" in (post.get("permalink") or ""):
-                return save(post, prof, a.outdir)
-        seen += len(media.get("data", []))
-        after = media.get("paging", {}).get("cursors", {}).get("after")
-        if not after or not media.get("data"):
-            break
-    sys.exit(f"{code} not found in @{user}'s last {seen} posts")
+    users = [a.user.lstrip("@")] if a.user else []
+    if not users:
+        try:
+            users = [get("instagram_oembed", url=f"https://www.instagram.com/reel/{code}/")["author_name"]]
+        except (ApiError, KeyError) as e:
+            print(f"oEmbed lookup failed ({e}); scanning tracked competitors")
+            accounts = json.loads((ROOT / "production/competitors/accounts.json").read_text(encoding="utf-8"))["accounts"]
+            users = [x["handle"] for x in accounts if x.get("platform") == "instagram"]
+    for user in users:
+        try:
+            hit = find(code, user, a.max_posts)
+        except ApiError as e:
+            print(f"@{user}: {e}")
+            continue
+        if hit:
+            return save(*hit, a.outdir)
+    sys.exit("reel not found; rerun with the creator's username in the 'user' input")
 
 
 def save(post, prof, outdir):
