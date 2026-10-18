@@ -27,7 +27,7 @@ case "$cmd" in
     echo "$dir/$name" ;;
   push)
     file="$2"; name="$(basename "$file")"; rid=$(release_id)
-    old=$(gh api "repos/$REPO/releases/$rid/assets" --jq ".[] | select(.name==\"$name\") | .id")
+    old=$(gh api --paginate "repos/$REPO/releases/$rid/assets" --jq ".[] | select(.name==\"$name\") | .id")
     [ -z "$old" ] || gh api -X DELETE "repos/$REPO/releases/assets/$old"
     gh api -X POST -H "Content-Type: application/octet-stream" --input "$file" \
       "https://uploads.github.com/repos/$REPO/releases/$rid/assets?name=$name" --jq .browser_download_url ;;

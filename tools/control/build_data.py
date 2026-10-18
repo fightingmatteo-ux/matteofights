@@ -31,6 +31,9 @@ def style_images(questions):
     return questions
 
 
+PAGES_MAX = 24 * 1024 * 1024
+
+
 def fetch_videos(queue):
     """Copy the videos of reels waiting, scheduled or posted in the last 3 days next to the page (behind the Access
     login) so the dashboard can play them. Needs GH_TOKEN + gh (the deploy workflow); skipped locally."""
@@ -46,7 +49,23 @@ def fetch_videos(queue):
     for qid, asset in want.items():
         r = subprocess.run(["gh", "release", "download", "media", "-p", asset, "-D", str(vdir), "--clobber"],
                            capture_output=True, text=True)
-        if r.returncode == 0 and (vdir / asset).exists():
+        f = vdir / asset
+        if r.returncode == 0 and f.exists() and f.stat().st_size > PAGES_MAX and shutil.which("ffmpeg"):
+            # Cloudflare Pages refuses any file over 25 MiB and the whole deploy fails: shrink the preview copy
+            small = f.with_suffix(".small.mp4")
+            subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", str(f), "-vf", "scale=720:-2", "-c:v", "libx264",
+                            "-crf", "26", "-preset", "veryfast", "-c:a", "aac", "-b:a", "96k", "-movflags", "+faststart",
+                            str(small)], capture_output=True)
+            f.unlink()
+            if small.exists() and small.stat().st_size <= PAGES_MAX:
+                small.rename(f)
+            else:
+                small.unlink(missing_ok=True)
+                print(f"video {asset}: over 25 MiB and could not be shrunk, no preview")
+        if r.returncode == 0 and f.exists() and f.stat().st_size > PAGES_MAX:
+            f.unlink()  # never let one big preview fail the whole deploy
+            print(f"video {asset}: over 25 MiB, no preview")
+        if r.returncode == 0 and f.exists():
             got[qid] = f"videos/{asset}"
         else:
             print(f"video {asset}: {r.stderr.strip()[:120]}")

@@ -27,6 +27,8 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: master
+      - name: ffmpeg (shrinks reel previews over the 25 MiB Pages limit)
+        run: command -v ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg)
       - name: Build data (+ copy upcoming reel videos from the media release)
         env:
           GH_TOKEN: ${{ github.token }}
