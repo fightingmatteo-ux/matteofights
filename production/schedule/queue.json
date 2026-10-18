@@ -136,13 +136,16 @@
       "not_before": "2026-10-18T22:30:00Z",
       "min_gap_hours": 2.5,
       "approved": true,
-      "status": "queued",
+      "status": "posted",
       "approved_note": "Matteo: approved the week via dashboard (2026-10-15T20:19:25Z)",
       "test": {
         "exp": "exp-1016-hook_style",
         "variant": "a",
         "value": "native"
-      }
+      },
+      "media_id": "18032075129856571",
+      "permalink": "https://www.instagram.com/reel/DepxRDYkdGs/",
+      "posted_at": "2026-10-18T22:36:28Z"
     },
     {
       "id": "lst-2026-10-19-made-for-combat-sports",
