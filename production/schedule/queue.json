@@ -587,6 +587,160 @@
         "variant": "a",
         "value": "native"
       }
+    },
+    {
+      "id": "lst-2026-10-22-fight-trained-founder",
+      "reel": "listicles/2026-10-22-fight-trained-founder",
+      "variant": "-",
+      "hook": "6 SIGNS FIGHT TRAINING MADE YOU A DANGEROUS FOUNDER",
+      "archetype": "identity",
+      "format": "builder",
+      "clip": "bagwork fitness first.MOV (1dhTH0QynPgwnao6gG9stMknnucO89drM)",
+      "video_asset": "lst-2026-10-22-fight-trained-founder.mp4",
+      "caption_file": "production/listicles/2026-10-22-fight-trained-founder/caption.txt",
+      "strategy": "MANUAL",
+      "thumb_offset_ms": 500,
+      "not_before": "2026-10-23T01:30:00Z",
+      "min_gap_hours": 2.5,
+      "approved": false,
+      "status": "queued",
+      "test": {
+        "exp": "exp-1016-hook_style",
+        "variant": "b",
+        "value": "split"
+      }
+    },
+    {
+      "id": "lst-2026-10-23-gym-teaches-business",
+      "reel": "listicles/2026-10-23-gym-teaches-business",
+      "variant": "-",
+      "hook": "THE GYM TEACHES WHAT BUSINESS SCHOOL CAN'T",
+      "archetype": "identity",
+      "format": "builder",
+      "clip": "bagwork fitness first.MOV (1-XaH84HgvgRKgajbc1F15GxBakWA7oO_)",
+      "video_asset": "lst-2026-10-23-gym-teaches-business.mp4",
+      "caption_file": "production/listicles/2026-10-23-gym-teaches-business/caption.txt",
+      "strategy": "MANUAL",
+      "thumb_offset_ms": 500,
+      "not_before": "2026-10-24T01:30:00Z",
+      "min_gap_hours": 2.5,
+      "approved": false,
+      "status": "queued",
+      "test": {
+        "exp": "exp-1016-hook_style",
+        "variant": "a",
+        "value": "native"
+      }
+    },
+    {
+      "id": "lst-2026-10-24-training-too-long",
+      "reel": "listicles/2026-10-24-training-too-long",
+      "variant": "-",
+      "hook": "6 SIGNS YOU'VE BEEN TRAINING FIGHTING FOR TOO LONG",
+      "archetype": "identity",
+      "format": "listicle",
+      "clip": "pads chaiya.MOV (1vBV91hZz8OBFh2bAdw1Z7j1WC_aFJR-p)",
+      "video_asset": "lst-2026-10-24-training-too-long.mp4",
+      "caption_file": "production/listicles/2026-10-24-training-too-long/caption.txt",
+      "strategy": "MANUAL",
+      "thumb_offset_ms": 500,
+      "not_before": "2026-10-25T01:30:00Z",
+      "min_gap_hours": 2.5,
+      "approved": false,
+      "status": "queued",
+      "test": {
+        "exp": "exp-1016-hook_style",
+        "variant": "b",
+        "value": "split"
+      }
+    },
+    {
+      "id": "lst-2026-10-25-coach-sees",
+      "reel": "listicles/2026-10-25-coach-sees",
+      "variant": "-",
+      "hook": "7 THINGS YOUR COACH SEES THAT YOU DON'T",
+      "archetype": "tactical",
+      "format": "listicle",
+      "clip": "padwork morocco.MOV (1dydRhSqH8ZDmLQrfCRPfkAGBkB-Ur_YW)",
+      "video_asset": "lst-2026-10-25-coach-sees.mp4",
+      "caption_file": "production/listicles/2026-10-25-coach-sees/caption.txt",
+      "strategy": "MANUAL",
+      "thumb_offset_ms": 500,
+      "not_before": "2026-10-26T01:30:00Z",
+      "min_gap_hours": 2.5,
+      "approved": false,
+      "status": "queued",
+      "test": {
+        "exp": "exp-1016-hook_style",
+        "variant": "a",
+        "value": "native"
+      }
+    },
+    {
+      "id": "lst-2026-10-26-partner-everyone-wants",
+      "reel": "listicles/2026-10-26-partner-everyone-wants",
+      "variant": "-",
+      "hook": "6 SIGNS YOU'RE THE SPARRING PARTNER EVERYONE WANTS",
+      "archetype": "identity",
+      "format": "listicle",
+      "clip": "sparring eth.mp4 (1Pipo9qyf7LoVjbYn1pu4BAFWRke92UEB)",
+      "video_asset": "lst-2026-10-26-partner-everyone-wants.mp4",
+      "caption_file": "production/listicles/2026-10-26-partner-everyone-wants/caption.txt",
+      "strategy": "MANUAL",
+      "thumb_offset_ms": 500,
+      "not_before": "2026-10-27T01:30:00Z",
+      "min_gap_hours": 2.5,
+      "approved": false,
+      "status": "queued",
+      "test": {
+        "exp": "exp-1016-hook_style",
+        "variant": "b",
+        "value": "split"
+      }
+    },
+    {
+      "id": "lst-2026-10-27-beginner-habits-hurt",
+      "reel": "listicles/2026-10-27-beginner-habits-hurt",
+      "variant": "-",
+      "hook": "7 SPARRING HABITS THAT GET BEGINNERS HURT",
+      "archetype": "tactical",
+      "format": "listicle",
+      "clip": "sparring success gym hero.mov (1jDHxrjde9bZ4aWlA2BqIfwFLqYdfEqCR)",
+      "video_asset": "lst-2026-10-27-beginner-habits-hurt.mp4",
+      "caption_file": "production/listicles/2026-10-27-beginner-habits-hurt/caption.txt",
+      "strategy": "MANUAL",
+      "thumb_offset_ms": 500,
+      "not_before": "2026-10-28T01:30:00Z",
+      "min_gap_hours": 2.5,
+      "approved": false,
+      "status": "queued",
+      "test": {
+        "exp": "exp-1016-hook_style",
+        "variant": "a",
+        "value": "native"
+      }
+    },
+    {
+      "id": "lst-2026-10-28-fighting-pressure",
+      "reel": "listicles/2026-10-28-fighting-pressure",
+      "variant": "-",
+      "hook": "6 SIGNS FIGHTING CHANGED HOW YOU HANDLE PRESSURE",
+      "archetype": "identity",
+      "format": "listicle",
+      "clip": "padwork super8.mp4 (1VQckuhsKET3bhVHRsVsgANM797wcP7dM)",
+      "video_asset": "lst-2026-10-28-fighting-pressure.mp4",
+      "caption_file": "production/listicles/2026-10-28-fighting-pressure/caption.txt",
+      "strategy": "MANUAL",
+      "thumb_offset_ms": 500,
+      "not_before": "2026-10-29T01:30:00Z",
+      "min_gap_hours": 2.5,
+      "approved": false,
+      "status": "queued",
+      "test": {
+        "exp": "exp-1016-hook_style",
+        "variant": "b",
+        "value": "split"
+      }
     }
   ]
 }
