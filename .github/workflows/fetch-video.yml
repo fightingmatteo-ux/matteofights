@@ -88,7 +88,7 @@ jobs:
           import json, sys
           i = json.load(open("dl/video.info.json"))
           keep = {k: i.get(k) for k in ["uploader", "uploader_id", "channel", "title", "description",
-                  "timestamp", "view_count", "like_count", "comment_count", "webpage_url", "track", "artist"]}
+                  "timestamp", "view_count", "like_count", "comment_count", "webpage_url", "track", "artist", "followers"]}
           json.dump(keep, open(f"{sys.argv[1]}/source.json", "w"), indent=2, ensure_ascii=False)
           PY
           fi
