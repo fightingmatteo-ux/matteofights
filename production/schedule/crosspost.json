@@ -43,7 +43,7 @@
         "09:00"
       ],
       "approved_note": "Matteo: 'let's start doing all of that' (per-platform plan, 2026-10-16)",
-      "last_slot": "2026-10-17T13:00:00Z"
+      "last_slot": "2026-10-18T13:00:00Z"
     },
     "threads_text": {
       "enabled": true,
@@ -75,8 +75,8 @@
       "youtube": {
         "status": "failed",
         "error": "POST https://www.googleapis.com/upload/youtube/v3/videos -> 401: {\n  \"error\": {\n    \"code\": 401,\n    \"message\": \"Unauthorized\",\n    \"errors\": [\n      {\n        \"message\": \"Unauthorized\",\n        \"domain\": \"youtube.header\",\n        \"reason\": \"youtubeSignupRequired\",\n        \"location\": \"Authorization\",\n        \"locationType\": \"header\"\n      }\n    ]\n  }\n}\n",
-        "tries": 1,
-        "at": "2026-10-18T12:58:32Z"
+        "tries": 2,
+        "at": "2026-10-18T13:05:49Z"
       }
     },
     "lst-2026-10-15-technique-without-a-coach": {
@@ -111,6 +111,12 @@
         "at": "2026-10-17T01:06:28Z",
         "id": "17908994934563624",
         "url": "https://www.threads.com/@matteofights/post/Dek42IGkr_W"
+      },
+      "facebook_slides": {
+        "status": "posted",
+        "at": "2026-10-18T13:06:03Z",
+        "id": "1070947222779004_122155621437352578",
+        "url": "https://www.facebook.com/1070947222779004_122155621437352578"
       }
     },
     "lst-2026-10-16-no-ex-fighter": {
