@@ -5,8 +5,9 @@
 # Run it: Actions tab -> Fetch video -> Run workflow (works from the GitHub mobile app),
 # or ask Claude to trigger it.
 #
-# Instagram often blocks logged-out downloads from cloud IPs. If it fails, add a repo secret
-# IG_COOKIES with a Netscape-format cookies.txt exported from a logged-in browser session.
+# Instagram often blocks logged-out downloads from cloud IPs. yt-dlp uses the IG_COOKIES secret
+# (Netscape cookies.txt) when set; if it still fails, Instagram links fall back to Business Discovery
+# (tools/video/ig_discovery.py, FB_USER_TOKEN), which works for creator/business accounts.
 name: Fetch video
 
 on:
@@ -23,6 +24,9 @@ on:
         type: choice
         options: [reference, footage]
         default: reference
+      user:
+        description: Instagram creator's username (optional; helps the API fallback find the reel)
+        required: false
 
 permissions:
   contents: write
@@ -39,6 +43,7 @@ jobs:
       URL: ${{ inputs.url }}
       NAME: ${{ inputs.name }}
       KIND: ${{ inputs.kind }}
+      IG_USER: ${{ inputs.user }}
     steps:
       - uses: actions/checkout@v4
 
@@ -50,6 +55,7 @@ jobs:
       - name: Download
         env:
           IG_COOKIES: ${{ secrets.IG_COOKIES }}
+          FB_USER_TOKEN: ${{ secrets.FB_USER_TOKEN }}
         run: |
           case "$NAME" in *[!a-zA-Z0-9._-]*|"") echo "name must be a simple slug"; exit 1;; esac
           mkdir -p dl
@@ -60,8 +66,13 @@ jobs:
           else
             args=()
             if [ -n "$IG_COOKIES" ]; then printf '%s\n' "$IG_COOKIES" > cookies.txt; args+=(--cookies cookies.txt); fi
-            yt-dlp "${args[@]}" -f "bv*+ba/b" --merge-output-format mp4 --write-info-json \
-              -o "dl/video.%(ext)s" "$URL"
+            if ! yt-dlp "${args[@]}" -f "bv*+ba/b" --merge-output-format mp4 --write-info-json \
+              -o "dl/video.%(ext)s" "$URL"; then
+              # Instagram blocked yt-dlp: fall back to Business Discovery (Meta API, no cookies)
+              [[ "$URL" == *instagram.com* ]] || exit 1
+              rm -f dl/video*
+              python3 -P tools/video/ig_discovery.py "$URL" dl --user "$IG_USER"
+            fi
           fi
           f=$(ls dl/video* | grep -v '\.json$' | head -1)
           ffmpeg -v error -i "$f" -c copy -movflags +faststart "dl/$NAME.mp4" || cp "$f" "dl/$NAME.mp4"

@@ -41,3 +41,6 @@ files over 100 MB. Never commit raw footage to git.
 Instagram sometimes refuses logged-out downloads from cloud IPs. If **Fetch video** fails on an
 Instagram link, add a repo secret `IG_COOKIES` (Settings → Secrets → Actions) containing a
 Netscape-format `cookies.txt` exported from a logged-in browser. Use a burner account if you can.
+If yt-dlp still fails, the workflow falls back to Business Discovery (`tools/video/ig_discovery.py`, uses
+the `FB_USER_TOKEN` secret): it finds the reel in the creator's posts and downloads it through the Meta API.
+Works only for creator/business accounts; fill the optional `user` input if the username can't be looked up.
