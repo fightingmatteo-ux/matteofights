@@ -1,8 +1,8 @@
 {
-  "updated": "2026-10-18T15:58:56Z",
+  "updated": "2026-10-18T18:42:44Z",
   "platforms": {
     "instagram": {
-      "followers": 2036,
+      "followers": 2035,
       "last_post": "2026-10-18T01:36:24Z",
       "failed": [],
       "next_slot": "2026-10-18T22:30:00Z",
@@ -15,13 +15,13 @@
     "facebook": {
       "followers": 1295,
       "enabled": true,
-      "last_post": "2026-10-17T23:36:27Z",
+      "last_post": "2026-10-18T16:36:43Z",
       "failed": [],
       "errors": [],
-      "next_slot": "2026-10-18T16:30:00Z",
+      "next_slot": "2026-10-18T20:00:00Z",
       "plan_per_day": 4,
       "plan_mix": "3 reels + 1 slide album",
-      "posted_7d": 8,
+      "posted_7d": 9,
       "token_expires": null,
       "warn": null
     },
@@ -34,20 +34,20 @@
       "next_slot": "2026-10-18T19:30:00Z",
       "plan_per_day": 6,
       "plan_mix": "3 reels + 3 written posts",
-      "posted_7d": 13,
+      "posted_7d": 14,
       "token_expires": "2026-12-14",
       "warn": null
     },
     "youtube": {
       "enabled": true,
-      "last_post": "2026-10-18T15:48:27Z",
+      "last_post": "2026-10-18T17:38:51Z",
       "failed": [],
       "errors": [],
-      "next_slot": "2026-10-18T16:30:00Z",
+      "next_slot": "2026-10-18T20:00:00Z",
       "privacy": "public",
       "plan_per_day": 3,
       "plan_mix": "3 Shorts",
-      "posted_7d": 2,
+      "posted_7d": 6,
       "token_expires": null,
       "warn": null
     }
@@ -55,11 +55,11 @@
   "posts": {
     "freeze-A": {
       "instagram": {
-        "views": 2678,
-        "likes": 61,
+        "views": 2680,
+        "likes": 62,
         "comments": 0,
         "shares": 13,
-        "saves": 40,
+        "saves": 41,
         "url": "https://www.instagram.com/reel/Dee3EmfE--u/"
       }
     },
@@ -111,11 +111,11 @@
     },
     "lst-2026-10-16-mindset-without-a-fight": {
       "instagram": {
-        "views": 3359,
+        "views": 3360,
         "likes": 22,
         "comments": 0,
         "shares": 2,
-        "saves": 21,
+        "saves": 22,
         "url": "https://www.instagram.com/reel/Deknr2RkvJM/"
       },
       "facebook": {
@@ -137,15 +137,15 @@
     },
     "lst-2026-10-17-mentally-tougher": {
       "instagram": {
-        "views": 2672,
+        "views": 2675,
         "likes": 37,
         "comments": 0,
         "shares": 0,
-        "saves": 3,
+        "saves": 4,
         "url": "https://www.instagram.com/reel/DenMdptlhYw/"
       },
       "facebook": {
-        "views": 1,
+        "views": 4,
         "url": "https://www.facebook.com/reel/1076072028571420"
       },
       "threads": {
@@ -193,7 +193,7 @@
         "url": "https://www.instagram.com/reel/Dek8WnRCJAG/"
       },
       "facebook": {
-        "views": 36,
+        "views": 38,
         "url": "https://www.facebook.com/reel/987115153732256"
       },
       "threads": {
@@ -207,15 +207,19 @@
     },
     "lst-2026-10-17-fighter-without-a-record": {
       "instagram": {
-        "views": 3494,
+        "views": 3500,
         "likes": 21,
         "comments": 0,
         "shares": 1,
         "saves": 12,
         "url": "https://www.instagram.com/reel/DenhEaQCurA/"
       },
+      "facebook": {
+        "views": 0,
+        "url": "https://www.facebook.com/reel/1751464386119278"
+      },
       "threads": {
-        "views": 16,
+        "views": 17,
         "likes": 0,
         "replies": 0,
         "reposts": 0,
@@ -281,6 +285,14 @@
       "reposts": 0,
       "shares": 0,
       "url": "https://www.threads.com/@matteofights/post/Deoluj3oPR9"
+    },
+    "th-1018-2": {
+      "views": 1,
+      "likes": 0,
+      "replies": 0,
+      "reposts": 0,
+      "shares": 0,
+      "url": "https://www.threads.com/@matteofights/post/DepILAhmkse"
     }
   },
   "warned": []
