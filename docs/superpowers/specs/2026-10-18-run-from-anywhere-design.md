@@ -53,7 +53,7 @@ phone (dashboard PWA) ──upload──► R2 (direct, presigned URL)          
         │                                                              └─ R2: footage, renders, B-roll bank
         ├─ HTTPS ───► Modal "matteofights-render" (render + transcribe + B-roll fit, reads/writes R2)
         └─ dispatch ─► PRIVATE repo "matteofights" (post, cross-post, Claude planning, stats)
-Claude cloud routine (daily, subscription) ─► health check, safe fixes as PRs, report to digest
+ticker cron (free) ─► scripted health check; Claude only on failed fixes (≤4 runs/week)
 ```
 
 ### Where state lives
@@ -89,10 +89,10 @@ Claude cloud routine (daily, subscription) ─► health check, safe fixes as PR
    gets a presigned multipart URL from `/api/upload` and sends straight to R2 (large 4K files OK, resumable).
 2. **Prep job** (Modal): transcribe, score takes by disfluency (never transcript alone), make B-roll
    thumbnails/proxies and tag them into the bank.
-3. **Plan job** (private repo, `anthropics/claude-code-action` with `CLAUDE_CODE_OAUTH_TOKEN` from Matteo's
-   subscription): reads the transcript, take scores, Matteo's note, the brain (`context/`, platform-captions
-   skill, LEDGER), and writes the reel folder: talking points chosen, EDL, 3 hooks, captions, B-roll picks
-   (starred clips first, blocked clips never). Commits that folder. Builds the render bundle to R2.
+3. **Plan job** (scripted, no LLM): matches the transcript to a planned talking point and its 3 hooks + captions
+   (see Claude usage budget), builds the EDL from the best-scored takes, picks B-roll (starred first, blocked
+   never, tags from Matteo's note), writes the reel folder spec to D1/R2 and builds the render bundle. If no
+   match, the reel waits on the Reel screen for Matteo to pick or type a hook.
 4. **Render job** (Modal): 3 variants, slot-fitted B-roll (no freezes), `verify_cut.py` must pass.
 5. **Ready**: push notification "3 versions ready". Dashboard plays them inline.
 6. **Matteo**: hold-to-approve, or edit a hook line / swap a B-roll clip and tap re-render (only step 4 reruns,
@@ -138,25 +138,31 @@ uses the impeccable skill for the redesign pass.
 
 ## Claude usage budget
 
-Matteo's plan (Pro or Max) is not confirmed. *Builder's call:* design for Pro. The plan job uses one focused
-Claude run per upload (context read from a short brief, not the whole brain) and the maintenance routine is one
-run per day. A setting `CLAUDE_BUDGET` = `pro` | `max` lets Max add richer passes (e.g. a second hook round).
+Matteo is on Claude Pro ($20). Its limits are shared with his own sessions, so **automation spends ~zero Claude
+usage**. Claude work happens in his interactive sessions (weekly hook/talking-point batch, new formats, building).
+
+- Hooks for talking heads come from the weekly batch (`platform-captions` skill): each planned talking point is
+  stored in D1 with its 3 hooks + captions. On upload, the prep job matches the transcript to a planned talking
+  point (embedding or keyword similarity, no LLM); the cut, take choice and B-roll are scripted.
+- No match: the Reel screen shows a pick-a-hook list from the backlog and a free-text hook field. Optional draft
+  hooks from Gemini's free API tier (Google AI Studio key, $0), always labelled "draft". Toggle `DRAFT_HOOKS`.
+- Claude (claude-code-action with `CLAUDE_CODE_OAUTH_TOKEN`) runs only as the escalation step of maintenance,
+  capped at 1 run/day and 4/week (`CLAUDE_MAX_RUNS`), and only when a scripted fix failed.
 
 ## Self-maintenance
 
-A **Claude Code cloud routine** (Anthropic cloud, Matteo's subscription, no GitHub minutes) runs daily:
+A **scripted health check** runs from the ticker's free cron (hourly for jobs/posts, daily for the rest). No AI.
 
 - **Checks:** every token's expiry (IG 12-13, Threads 12-14, FB_USER_TOKEN ~12-14, YouTube, R2, PAT), failed or
-  stuck jobs, failed workflow runs, posts that missed their slot, cross-post failures, R2 size, private-repo
-  Actions minutes, Cloudflare free-plan limits, and Claude-setup bloat (below).
-- **Fixes on its own (PR, auto-merge after checks pass):** refreshable tokens (IG `ig.py refresh`, Threads
-  `threads-refresh`) when < 14 days left; retry failed jobs once; reset stuck jobs; small code fixes for a clear
-  failing step with a passing test or dry run; docs/STATUS.md updates.
+  stuck jobs, failed workflow runs, posts that missed their slot, cross-post failures, R2 size, Modal credit
+  used, private-repo Actions minutes, Cloudflare free-plan limits, Claude-setup budgets (below).
+- **Fixes on its own:** refreshable tokens (IG `ig.py refresh`, Threads `threads-refresh`) when < 14 days left;
+  retry a failed job once; reset stuck jobs; regenerate STATUS.md from D1.
+- **Escalates to Claude** only when a scripted fix failed and the cause looks like code: one run opens a PR with
+  the fix; auto-merge only for non-posting code with passing checks. Within `CLAUDE_MAX_RUNS`.
 - **Never:** set `approved`, post, change secrets, delete footage, merge anything touching posting logic without
   Matteo. Those become a "needs you" item with exactly what to do and a link.
 - **Reports:** one line per action into D1, shown in the dashboard and in the Telegram digest.
-
-STATUS.md becomes generated from D1 by the routine, so it can never drift from reality.
 
 ## Lean Claude setup
 
@@ -183,8 +189,8 @@ STATUS.md becomes generated from D1 by the routine, so it can never drift from r
 2. Modal render app; prove it on the Saenchai B and C renders (if Matteo has not rendered them locally first).
 3. Ticker deploy; posting reads D1; GitHub schedules become backup, then removed.
 4. Dashboard: live data from D1, upload, pipeline, reel screen, push. Then momentum/reveal/bank.
-5. Plan job (Claude) for uploads; listicle factory on the new render path.
-6. Maintenance routine; lean setup; site move; retire release/Drive.
+5. Scripted plan job for uploads (talking-point matching); listicle factory on the new render path.
+6. Scripted health check + Claude escalation; lean setup; site move; retire release/Drive.
 
 Success = one full week where Matteo uploads from his phone, approves from his phone, everything posts on time,
 nothing needed his laptop, and the bill is under $10.
