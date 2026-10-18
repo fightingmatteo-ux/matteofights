@@ -34,7 +34,7 @@
         "21:00"
       ],
       "topic": "Fight Psychology",
-      "last_slot": "2026-10-17T14:00:00Z"
+      "last_slot": "2026-10-18T01:00:00Z"
     },
     "facebook_slides": {
       "enabled": true,
@@ -157,6 +157,12 @@
         "at": "2026-10-17T23:36:27Z",
         "id": "1076072028571420",
         "url": "https://www.facebook.com/reel/1076072028571420"
+      },
+      "threads": {
+        "status": "posted",
+        "at": "2026-10-18T01:06:24Z",
+        "id": "18145170355608763",
+        "url": "https://www.threads.com/@matteofights/post/DendorRnGGH"
       }
     }
   }
