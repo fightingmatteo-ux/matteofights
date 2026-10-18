@@ -83,5 +83,10 @@
     "at": "2026-10-18T11:01:00Z",
     "who": "Claude",
     "text": "Sunday factory runs (09:00/09:40/10:20 UTC) haven't started yet; review of next week's renders waits for them"
+  },
+  {
+    "at": "2026-10-18T12:58:34Z",
+    "who": "system",
+    "text": "Sent 21 Threads posts to Telegram"
   }
 ]
