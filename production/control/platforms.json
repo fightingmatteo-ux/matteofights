@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-18T18:42:44Z",
+  "updated": "2026-10-18T22:28:57Z",
   "platforms": {
     "instagram": {
       "followers": 2035,
@@ -18,7 +18,7 @@
       "last_post": "2026-10-18T16:36:43Z",
       "failed": [],
       "errors": [],
-      "next_slot": "2026-10-18T20:00:00Z",
+      "next_slot": "2026-10-18T23:30:00Z",
       "plan_per_day": 4,
       "plan_mix": "3 reels + 1 slide album",
       "posted_7d": 9,
@@ -31,10 +31,10 @@
       "last_post": "2026-10-18T14:06:30Z",
       "failed": [],
       "errors": [],
-      "next_slot": "2026-10-18T19:30:00Z",
+      "next_slot": "2026-10-19T01:00:00Z",
       "plan_per_day": 6,
       "plan_mix": "3 reels + 3 written posts",
-      "posted_7d": 14,
+      "posted_7d": 15,
       "token_expires": "2026-12-14",
       "warn": null
     },
@@ -43,7 +43,7 @@
       "last_post": "2026-10-18T17:38:51Z",
       "failed": [],
       "errors": [],
-      "next_slot": "2026-10-18T20:00:00Z",
+      "next_slot": "2026-10-18T23:00:00Z",
       "privacy": "public",
       "plan_per_day": 3,
       "plan_mix": "3 Shorts",
@@ -55,7 +55,7 @@
   "posts": {
     "freeze-A": {
       "instagram": {
-        "views": 2680,
+        "views": 2681,
         "likes": 62,
         "comments": 0,
         "shares": 13,
@@ -75,7 +75,7 @@
     },
     "freeze-C": {
       "instagram": {
-        "views": 4240,
+        "views": 4243,
         "likes": 92,
         "comments": 0,
         "shares": 9,
@@ -137,7 +137,7 @@
     },
     "lst-2026-10-17-mentally-tougher": {
       "instagram": {
-        "views": 2675,
+        "views": 2677,
         "likes": 37,
         "comments": 0,
         "shares": 0,
@@ -145,7 +145,7 @@
         "url": "https://www.instagram.com/reel/DenMdptlhYw/"
       },
       "facebook": {
-        "views": 4,
+        "views": 14,
         "url": "https://www.facebook.com/reel/1076072028571420"
       },
       "threads": {
@@ -159,7 +159,7 @@
     },
     "lst-2026-10-15-technique-without-a-coach": {
       "instagram": {
-        "views": 3242,
+        "views": 3243,
         "likes": 41,
         "comments": 0,
         "shares": 7,
@@ -207,7 +207,7 @@
     },
     "lst-2026-10-17-fighter-without-a-record": {
       "instagram": {
-        "views": 3500,
+        "views": 3520,
         "likes": 21,
         "comments": 0,
         "shares": 1,
@@ -293,6 +293,14 @@
       "reposts": 0,
       "shares": 0,
       "url": "https://www.threads.com/@matteofights/post/DepILAhmkse"
+    },
+    "th-1018-3": {
+      "views": 9,
+      "likes": 0,
+      "replies": 4,
+      "reposts": 0,
+      "shares": 0,
+      "url": "https://www.threads.com/@matteofights/post/DepqZXNlcR9"
     }
   },
   "warned": []
