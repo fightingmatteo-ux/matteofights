@@ -174,7 +174,7 @@ A **scripted health check** runs from the ticker's free cron (hourly for jobs/po
   level or are removed from the repo.
 - CLAUDE.md budget: ≤ 1,200 words, routing only. Nested CLAUDE.md files in old reel folders and
   `media/legacy-stance-folder` are removed or merged.
-- The maintenance routine checks these budgets weekly and opens a PR when one drifts.
+- The scripted health check measures these budgets weekly and lists any drift as a "needs you" item.
 
 ## Cleanup included
 
