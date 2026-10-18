@@ -277,13 +277,16 @@
       "not_before": "2026-10-18T01:30:00Z",
       "min_gap_hours": 2.5,
       "approved": true,
-      "status": "queued",
+      "status": "posted",
       "approved_note": "Matteo: approved the week via dashboard (2026-10-15T20:19:25Z)",
       "test": {
         "exp": "exp-1016-hook_style",
         "variant": "b",
         "value": "split"
-      }
+      },
+      "media_id": "18079670120542159",
+      "permalink": "https://www.instagram.com/reel/DenhEaQCurA/",
+      "posted_at": "2026-10-18T01:36:24Z"
     },
     {
       "id": "lst-2026-10-18-last-round",
