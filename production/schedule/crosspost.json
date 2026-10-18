@@ -10,7 +10,7 @@
         "16:00",
         "19:30"
       ],
-      "last_slot": "2026-10-17T23:30:00Z"
+      "last_slot": "2026-10-18T16:30:00Z"
     },
     "youtube": {
       "enabled": true,
@@ -23,7 +23,7 @@
         "19:00"
       ],
       "privacy_note": "Matteo: 'youtube approved' (2026-10-16). If YouTube still forces private, the audit isn't through yet.",
-      "last_slot": "2026-10-16T20:00:00Z"
+      "last_slot": "2026-10-16T23:00:00Z"
     },
     "threads": {
       "enabled": true,
@@ -126,6 +126,13 @@
         "at": "2026-10-18T13:06:03Z",
         "id": "1070947222779004_122155621437352578",
         "url": "https://www.facebook.com/1070947222779004_122155621437352578"
+      },
+      "youtube": {
+        "status": "posted",
+        "at": "2026-10-18T16:36:46Z",
+        "id": "gxcBdiuSDpU",
+        "url": "https://youtube.com/shorts/gxcBdiuSDpU",
+        "privacy": "public"
       }
     },
     "lst-2026-10-16-no-ex-fighter": {
@@ -162,6 +169,12 @@
         "at": "2026-10-18T14:06:30Z",
         "id": "18103378739051223",
         "url": "https://www.threads.com/@matteofights/post/Deo26FVgcej"
+      },
+      "facebook": {
+        "status": "posted",
+        "at": "2026-10-18T16:36:43Z",
+        "id": "1751464386119278",
+        "url": "https://www.facebook.com/reel/1751464386119278"
       }
     }
   }
