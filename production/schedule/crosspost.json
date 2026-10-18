@@ -97,6 +97,12 @@
         "at": "2026-10-17T13:06:16Z",
         "id": "1070947222779004_122155378989352578",
         "url": "https://www.facebook.com/1070947222779004_122155378989352578"
+      },
+      "youtube": {
+        "status": "failed",
+        "error": "POST https://www.googleapis.com/upload/youtube/v3/videos -> 401: {\n  \"error\": {\n    \"code\": 401,\n    \"message\": \"Unauthorized\",\n    \"errors\": [\n      {\n        \"message\": \"Unauthorized\",\n        \"domain\": \"youtube.header\",\n        \"reason\": \"youtubeSignupRequired\",\n        \"location\": \"Authorization\",\n        \"locationType\": \"header\"\n      }\n    ]\n  }\n}\n",
+        "tries": 1,
+        "at": "2026-10-18T14:46:26Z"
       }
     },
     "lst-2026-10-16-mindset-without-a-fight": {
