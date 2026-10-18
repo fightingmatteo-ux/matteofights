@@ -10,6 +10,8 @@ analytics. Build it in phases; don't try to do everything at once.
 
 ## OPERATING RULES
 
+- **Open items live in [STATUS.md](STATUS.md).** Read it at session start; update it when you close or add one.
+
 - **Drafting is free; publishing is not.** Write captions, hooks, scripts, and reports freely.
   Never post to Instagram, schedule, or send anything outward without explicit confirmation in
   that conversation.

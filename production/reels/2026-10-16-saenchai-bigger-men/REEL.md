@@ -1,6 +1,6 @@
 ---
 slug: 2026-10-16-saenchai-bigger-men
-status: re-cut (v3), needs render on Matteo's PC
+status: v3 cut. A rendered + on media release (10-18). B and C are still the OLD 10-16 cut and need a render on Matteo's PC
 pillar: psychology
 format: legend-credibility
 credibility: Saenchai (fought heavier opponents; widely reported)
