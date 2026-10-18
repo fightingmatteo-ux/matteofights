@@ -34,7 +34,7 @@
         "21:00"
       ],
       "topic": "Fight Psychology",
-      "last_slot": "2026-10-18T01:00:00Z"
+      "last_slot": "2026-10-18T14:00:00Z"
     },
     "facebook_slides": {
       "enabled": true,
@@ -75,8 +75,8 @@
       "youtube": {
         "status": "failed",
         "error": "POST https://www.googleapis.com/upload/youtube/v3/videos -> 401: {\n  \"error\": {\n    \"code\": 401,\n    \"message\": \"Unauthorized\",\n    \"errors\": [\n      {\n        \"message\": \"Unauthorized\",\n        \"domain\": \"youtube.header\",\n        \"reason\": \"youtubeSignupRequired\",\n        \"location\": \"Authorization\",\n        \"locationType\": \"header\"\n      }\n    ]\n  }\n}\n",
-        "tries": 2,
-        "at": "2026-10-18T13:05:49Z"
+        "tries": 3,
+        "at": "2026-10-18T14:05:51Z"
       }
     },
     "lst-2026-10-15-technique-without-a-coach": {
@@ -147,6 +147,13 @@
         "url": "https://www.threads.com/@matteofights/post/DendorRnGGH"
       }
     },
-    "lst-2026-10-17-fighter-without-a-record": {}
+    "lst-2026-10-17-fighter-without-a-record": {
+      "threads": {
+        "status": "posted",
+        "at": "2026-10-18T14:06:30Z",
+        "id": "18103378739051223",
+        "url": "https://www.threads.com/@matteofights/post/Deo26FVgcej"
+      }
+    }
   }
 }
