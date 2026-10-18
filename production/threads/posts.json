@@ -288,7 +288,8 @@
       "chain": [],
       "from": "craft",
       "status": "queued",
-      "approved": false
+      "approved": true,
+      "approved_note": "Matteo: approved via dashboard (2026-10-18T15:34:38Z)"
     },
     {
       "id": "th-1023-2",
@@ -299,7 +300,8 @@
       "chain": [],
       "from": "craft",
       "status": "queued",
-      "approved": false
+      "approved": true,
+      "approved_note": "Matteo: approved via dashboard (2026-10-18T15:34:38Z)"
     },
     {
       "id": "th-1023-3",
@@ -310,7 +312,8 @@
       "chain": [],
       "from": "founder",
       "status": "queued",
-      "approved": false
+      "approved": true,
+      "approved_note": "Matteo: approved via dashboard (2026-10-18T15:34:38Z)"
     },
     {
       "id": "th-1024-1",
@@ -321,7 +324,8 @@
       "chain": [],
       "from": "craft",
       "status": "queued",
-      "approved": false
+      "approved": true,
+      "approved_note": "Matteo: approved via dashboard (2026-10-18T15:34:38Z)"
     },
     {
       "id": "th-1024-2",
@@ -332,7 +336,8 @@
       "chain": [],
       "from": "craft",
       "status": "queued",
-      "approved": false
+      "approved": true,
+      "approved_note": "Matteo: approved via dashboard (2026-10-18T15:34:38Z)"
     },
     {
       "id": "th-1024-3",
@@ -343,7 +348,8 @@
       "chain": [],
       "from": "craft",
       "status": "queued",
-      "approved": false
+      "approved": true,
+      "approved_note": "Matteo: approved via dashboard (2026-10-18T15:34:38Z)"
     },
     {
       "id": "th-1025-1",
@@ -354,7 +360,8 @@
       "chain": [],
       "from": "craft",
       "status": "queued",
-      "approved": false
+      "approved": true,
+      "approved_note": "Matteo: approved via dashboard (2026-10-18T15:34:38Z)"
     },
     {
       "id": "th-1025-2",
@@ -365,7 +372,8 @@
       "chain": [],
       "from": "craft",
       "status": "queued",
-      "approved": false
+      "approved": true,
+      "approved_note": "Matteo: approved via dashboard (2026-10-18T15:34:38Z)"
     },
     {
       "id": "th-1025-3",
@@ -382,7 +390,8 @@
       ],
       "from": "craft",
       "status": "queued",
-      "approved": false
+      "approved": true,
+      "approved_note": "Matteo: approved via dashboard (2026-10-18T15:34:38Z)"
     },
     {
       "id": "th-1026-1",
@@ -393,7 +402,8 @@
       "chain": [],
       "from": "founder",
       "status": "queued",
-      "approved": false
+      "approved": true,
+      "approved_note": "Matteo: approved via dashboard (2026-10-18T15:34:38Z)"
     },
     {
       "id": "th-1026-2",
@@ -404,7 +414,8 @@
       "chain": [],
       "from": "craft",
       "status": "queued",
-      "approved": false
+      "approved": true,
+      "approved_note": "Matteo: approved via dashboard (2026-10-18T15:34:38Z)"
     },
     {
       "id": "th-1026-3",
@@ -415,7 +426,8 @@
       "chain": [],
       "from": "craft",
       "status": "queued",
-      "approved": false
+      "approved": true,
+      "approved_note": "Matteo: approved via dashboard (2026-10-18T15:34:38Z)"
     },
     {
       "id": "th-1027-1",
@@ -426,7 +438,8 @@
       "chain": [],
       "from": "craft",
       "status": "queued",
-      "approved": false
+      "approved": true,
+      "approved_note": "Matteo: approved via dashboard (2026-10-18T15:34:38Z)"
     },
     {
       "id": "th-1027-2",
@@ -437,7 +450,8 @@
       "chain": [],
       "from": "craft",
       "status": "queued",
-      "approved": false
+      "approved": true,
+      "approved_note": "Matteo: approved via dashboard (2026-10-18T15:34:38Z)"
     },
     {
       "id": "th-1027-3",
@@ -448,7 +462,8 @@
       "chain": [],
       "from": "founder",
       "status": "queued",
-      "approved": false
+      "approved": true,
+      "approved_note": "Matteo: approved via dashboard (2026-10-18T15:34:38Z)"
     },
     {
       "id": "th-1028-1",
@@ -459,7 +474,8 @@
       "chain": [],
       "from": "craft",
       "status": "queued",
-      "approved": false
+      "approved": true,
+      "approved_note": "Matteo: approved via dashboard (2026-10-18T15:34:38Z)"
     },
     {
       "id": "th-1028-2",
@@ -470,7 +486,8 @@
       "chain": [],
       "from": "craft",
       "status": "queued",
-      "approved": false
+      "approved": true,
+      "approved_note": "Matteo: approved via dashboard (2026-10-18T15:34:38Z)"
     },
     {
       "id": "th-1028-3",
@@ -481,7 +498,8 @@
       "chain": [],
       "from": "craft",
       "status": "queued",
-      "approved": false
+      "approved": true,
+      "approved_note": "Matteo: approved via dashboard (2026-10-18T15:34:38Z)"
     },
     {
       "id": "th-1029-1",
@@ -492,7 +510,8 @@
       "chain": [],
       "from": "craft",
       "status": "queued",
-      "approved": false
+      "approved": true,
+      "approved_note": "Matteo: approved via dashboard (2026-10-18T15:34:38Z)"
     },
     {
       "id": "th-1029-2",
@@ -503,7 +522,8 @@
       "chain": [],
       "from": "craft",
       "status": "queued",
-      "approved": false
+      "approved": true,
+      "approved_note": "Matteo: approved via dashboard (2026-10-18T15:34:38Z)"
     },
     {
       "id": "th-1029-3",
@@ -514,7 +534,8 @@
       "chain": [],
       "from": "craft",
       "status": "queued",
-      "approved": false
+      "approved": true,
+      "approved_note": "Matteo: approved via dashboard (2026-10-18T15:34:38Z)"
     }
   ]
 }
