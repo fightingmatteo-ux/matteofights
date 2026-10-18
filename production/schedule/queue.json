@@ -741,6 +741,161 @@
         "variant": "b",
         "value": "split"
       }
+    },
+    {
+      "id": "lst-2026-10-18-round-three",
+      "reel": "listicles/2026-10-18-round-three",
+      "variant": "-",
+      "hook": "6 WAYS TO SURVIVE ROUND THREE WHEN YOUR CARDIO IS GONE",
+      "archetype": "tactical",
+      "format": "listicle",
+      "clip": "Bag work impact mma.MOV (1vj6GxY875E36-_u9yC84tWzqDm4-9SIc)",
+      "video_asset": "lst-2026-10-18-round-three.mp4",
+      "caption_file": "production/listicles/2026-10-18-round-three/caption.txt",
+      "strategy": "MANUAL",
+      "thumb_offset_ms": 500,
+      "not_before": "2026-10-18T16:30:00Z",
+      "min_gap_hours": 2.5,
+      "approved": false,
+      "status": "queued",
+      "test": {
+        "exp": "exp-1016-hook_style",
+        "variant": "a",
+        "value": "native"
+      }
+    },
+    {
+      "id": "lst-2026-10-19-first-body-shot",
+      "reel": "listicles/2026-10-19-first-body-shot",
+      "variant": "-",
+      "hook": "THE FIRST BODY SHOT TELLS YOU WHO YOU ARE",
+      "archetype": "identity",
+      "format": "statement",
+      "clip": "pads chaiya.MOV (1NIGqz7ZgwDky9Ri9fLtQXE8U4jzWicJK)",
+      "video_asset": "lst-2026-10-19-first-body-shot.mp4",
+      "caption_file": "production/listicles/2026-10-19-first-body-shot/caption.txt",
+      "strategy": "MANUAL",
+      "thumb_offset_ms": 500,
+      "not_before": "2026-10-19T16:30:00Z",
+      "min_gap_hours": 2.5,
+      "approved": false,
+      "status": "queued",
+      "test": {
+        "exp": "exp-1016-hook_style",
+        "variant": "b",
+        "value": "split"
+      }
+    },
+    {
+      "id": "lst-2026-10-20-nerves-never-leave",
+      "reel": "listicles/2026-10-20-nerves-never-leave",
+      "variant": "-",
+      "hook": "THE NERVES BEFORE SPARRING NEVER FULLY GO AWAY",
+      "archetype": "identity",
+      "format": "statement",
+      "clip": "sparring merlin.MOV (1Pv7SyBa3lziNPzto9P3WN7GR59GXEnnp)",
+      "video_asset": "lst-2026-10-20-nerves-never-leave.mp4",
+      "caption_file": "production/listicles/2026-10-20-nerves-never-leave/caption.txt",
+      "strategy": "MANUAL",
+      "thumb_offset_ms": 500,
+      "not_before": "2026-10-20T16:30:00Z",
+      "min_gap_hours": 2.5,
+      "approved": false,
+      "status": "queued",
+      "test": {
+        "exp": "exp-1016-hook_style",
+        "variant": "a",
+        "value": "native"
+      }
+    },
+    {
+      "id": "lst-2026-10-21-day-one-full-gear",
+      "reel": "listicles/2026-10-21-day-one-full-gear",
+      "variant": "-",
+      "hook": "THE NEW GUY WHO SHOWS UP IN FULL FIGHT GEAR ON DAY ONE",
+      "archetype": "identity",
+      "format": "iykyk",
+      "clip": "padwork success gym.mov (1atfSW2vTwqb15ayPvrPOEyOer7PxIpvv)",
+      "video_asset": "lst-2026-10-21-day-one-full-gear.mp4",
+      "caption_file": "production/listicles/2026-10-21-day-one-full-gear/caption.txt",
+      "strategy": "MANUAL",
+      "thumb_offset_ms": 500,
+      "not_before": "2026-10-21T16:30:00Z",
+      "min_gap_hours": 2.5,
+      "approved": false,
+      "status": "queued",
+      "rotate": 90,
+      "test": {
+        "exp": "exp-1016-hook_style",
+        "variant": "b",
+        "value": "split"
+      }
+    },
+    {
+      "id": "lst-2026-10-22-fighter-groceries",
+      "reel": "listicles/2026-10-22-fighter-groceries",
+      "variant": "-",
+      "hook": "WHAT A FIGHTER'S GROCERY RUN ACTUALLY LOOKS LIKE",
+      "archetype": "tactical",
+      "format": "lifestyle",
+      "clip": "Grocery shopping.MOV (17K00x6WgdwsldO84Bw0EtkuvvyJ-pNuL)",
+      "video_asset": "lst-2026-10-22-fighter-groceries.mp4",
+      "caption_file": "production/listicles/2026-10-22-fighter-groceries/caption.txt",
+      "strategy": "MANUAL",
+      "thumb_offset_ms": 500,
+      "not_before": "2026-10-22T16:30:00Z",
+      "min_gap_hours": 2.5,
+      "approved": false,
+      "status": "queued",
+      "test": {
+        "exp": "exp-1016-hook_style",
+        "variant": "a",
+        "value": "native"
+      }
+    },
+    {
+      "id": "lst-2026-10-23-recovery-twice-a-day",
+      "reel": "listicles/2026-10-23-recovery-twice-a-day",
+      "variant": "-",
+      "hook": "6 RECOVERY HABITS THAT LET FIGHTERS TRAIN TWICE A DAY",
+      "archetype": "tactical",
+      "format": "lifestyle",
+      "clip": "filtered-E820BE5A-1B36-4F7F-B6B1-B191FA9BBEF0.MP4 (1DThONEtMg2kkNRUTXViJTdtMdctgdpNz)",
+      "video_asset": "lst-2026-10-23-recovery-twice-a-day.mp4",
+      "caption_file": "production/listicles/2026-10-23-recovery-twice-a-day/caption.txt",
+      "strategy": "MANUAL",
+      "thumb_offset_ms": 500,
+      "not_before": "2026-10-23T16:30:00Z",
+      "min_gap_hours": 2.5,
+      "approved": false,
+      "status": "queued",
+      "test": {
+        "exp": "exp-1016-hook_style",
+        "variant": "b",
+        "value": "split"
+      }
+    },
+    {
+      "id": "lst-2026-10-24-morning-session-fuel",
+      "reel": "listicles/2026-10-24-morning-session-fuel",
+      "variant": "-",
+      "hook": "HOW FIGHTERS EAT BEFORE A MORNING SESSION",
+      "archetype": "tactical",
+      "format": "lifestyle",
+      "clip": "A81A42D6-2AB0-457C-851D-97E100D98486.MP4 (1FGVFg9sFlwI2s6lK6B4dXBRXonE21gho)",
+      "video_asset": "lst-2026-10-24-morning-session-fuel.mp4",
+      "caption_file": "production/listicles/2026-10-24-morning-session-fuel/caption.txt",
+      "strategy": "MANUAL",
+      "thumb_offset_ms": 500,
+      "not_before": "2026-10-24T16:30:00Z",
+      "min_gap_hours": 2.5,
+      "approved": false,
+      "status": "queued",
+      "test": {
+        "exp": "exp-1016-hook_style",
+        "variant": "a",
+        "value": "native"
+      }
     }
   ]
 }
