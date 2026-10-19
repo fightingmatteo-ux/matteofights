@@ -1,0 +1,52 @@
+language: en
+[   0.0-   1.5] Hear me out, there's a certain type of person
+[   1.5-   3.0] who will never be satisfied
+[   3.0-   5.0] with doing just one thing with their life
+[   5.0-   7.6] and they almost always follow a similar path.
+[   7.9-   9.3] It usually starts with sports.
+[   9.6-  11.0] You grow up playing some kind of sport
+[  11.0-  12.9] and eventually you fall in love with your fitness.
+[  13.3-  14.6] You start training, you push your limits,
+[  14.7-  17.0] you care about your sleep, your energy, the way you feel.
+[  17.2-  18.2] You start seeing what happens
+[  18.2-  21.0] when you consistently put effort towards something
+[  21.0-  23.4] and you get addicted to the feeling of progress.
+[  23.7-  24.8] But eventually you start wondering,
+[  25.0-  27.2] if I can completely transform my body
+[  27.2-  28.7] through discipline and repetition,
+[  28.7-  30.2] what else can I do it with?
+[  30.5-  32.5] So you start getting interested in business.
+[  32.9-  34.3] You read books, listen to podcasts,
+[  34.6-  35.6] study successful people
+[  35.6-  38.0] and you become obsessed with the idea
+[  38.0-  39.6] of building something of your own.
+[  39.7-  41.1] And you realize that same principle
+[  41.1-  43.3] you learn through sports, discipline, competition,
+[  43.7-  44.5] delayed gratification,
+[  44.7-  47.6] they almost apply perfectly to entrepreneurship.
+[  47.9-  49.8] But here's where things really get interesting
+[  49.8-  51.5] because even though you love business
+[  51.5-  52.2] and making money,
+[  52.2-  53.5] there's another side to you
+[  53.5-  55.4] that doesn't quite fit into either of those worlds.
+[  55.4-  58.7] You love music, art, film, writing, design.
+[  59.0-  61.6] You find yourself fascinated by philosophy, psychology,
+[  62.0-  63.0] the way people think.
+[  63.4-  64.4] You don't just want to make money.
+[  64.8-  65.9] You want to create things.
+[  66.3-  67.5] You want to create something beautiful.
+[  67.9-  69.8] Experience everything life has to offer
+[  69.8-  73.0] and understand as much of the world as possible.
+[  73.3-  74.7] But after a while, this is confusing
+[  74.7-  76.8] because everyone keeps telling you to pick one thing.
+[  77.0-  77.7] But you can't imagine
+[  77.7-  79.8] spending your entire life being just one thing.
+[  80.0-  82.2] Eventually you realize maybe these interests
+[  82.2-  83.5] aren't competing with each other
+[  83.5-  85.2] but they actually complement each other.
+[  85.5-  88.0] Maybe they're three parts of the same person.
+[  88.2-  91.8] An athlete's body, an entrepreneur's mind, an artist's soul.
+[  92.0-  93.9] And if you feel like you spent your entire life
+[  93.9-  95.0] with too many interests
+[  95.0-  96.1] to fit into one category,
+[  96.6-  97.7] then you've just found your people.
