@@ -2,9 +2,8 @@
 
 - **Link:** https://www.instagram.com/reel/DcwNOMLinJP/
 - **Saved:** 2026-10-19, by Matteo, as a good reference video
-- **Status:** PARTIAL. Caption + stats only (`references/videos/ferris-DcwNOMLinJP/source.json`). The Fetch video run
-  could not download the video (same as the Kolby reel: `IG_COOKIES` expired), so the on-screen hook, script and
-  pacing are not watched yet.
+- **Status:** WATCHED. Frames, transcript and cuts in `references/videos/ferris-DcwNOMLinJP/`. Numbers below are from
+  the Meta API pull (the yt-dlp `source.json` has no views and a wrong like count).
 
 ## Numbers (pulled 2026-10-19, ~48 days after posting)
 
@@ -45,9 +44,38 @@ even with the `Comment if...` CTA. That fits a **save/share** reel (a protocol p
   reads as expertise. It is also barrier removal by dose (it only takes 15 seconds), which is a different move from
   our spent `You don't need X` line.
 
-## Still to check once the video is watched
-- On-screen hook and the first 2 s: is it the claim ("isometrics for punching power"), a demo, or a contrast?
-- Format: talking head vs demo b-roll with text; length; whether all six holds are shown.
+## The video (42.5 s, watched)
+
+**Hook, 0–2 s:** on-screen text `THE SECRET TO BUILDING OP PUNCHING POWER` and said out loud word for word. Ferris is
+green-screened in the middle of a **black-and-white collage of famous fighters** (a UFC knockout with the clock showing,
+Tyson, a bloodied UFC fighter, a fighter in a masked hood). He has a lav mic held up to his mouth and an `ATHLETE` shirt on.
+
+**Setup, 2–10 s:** "Overcoming isometrics may be one of the best ways to increase punching power, and they've been a
+staple in my fighters' training. Here are the six exercises I've been having them do during the current fight camp."
+Same collage; small white subtitle captions (`Overcoming Isometrics`, `The 6 key exercises`). Proof is mentioned in
+passing ("my fighters", "this fight camp"), never as a brag.
+
+**List, 10–40 s:** the only hard cut. The background switches to a dark gym, and his head stays at the top. Below it
+there's a demo clip of his own fighters in a window with a numbered label (`1) Straight Punch Iso` … `6) Floor Press
+Holds`). Each item gets 4–7 s and one sentence of how-to:
+1. Straight punch iso: drive a med ball into the wall in your jab/cross, hold 5 s
+2. Pallof holds: drive into the ball, don't let the torso rotate
+3. Banded hook iso: band, drive hard into end range, max tension
+4. Split-stance drive iso: fighting stance, drive up into a barbell under the rack pins
+5. Hip thrust holds: hips produce and hold a lot of force
+6. Floor press holds
+
+**Close, 40–42.5 s:** pad-work b-roll and "If you want to improve your punching power, give these a shot." No follow
+CTA. The sets and reps are left out of the video and saved for the caption, which explains the "I totally forgot" line.
+
+### Why it works
+- **Borrowed stakes, then the method.** The collage of famous knockouts sells the outcome (KO power) before a single
+  exercise is shown. The list itself is ordinary gym footage; the opening 10 s carry the reel.
+- **Listicle with numbered labels.** The same shape as our two best reels (331k, 161k). A counted list keeps people
+  watching to the end.
+- **One sentence per item, real athletes on screen.** No hype in the middle. The demo clips are his proof.
+- **Cheap to make.** One talking-head recording, green-screened over stills and phone clips. Matteo can do this from
+  talking points.
 
 ## How to use it for @matteofights
 - **Lifestyle/training lane, framed for fighters.** Isometrics for punch power fits the adjacent lane that opened on
@@ -56,4 +84,6 @@ even with the `Comment if...` CTA. That fits a **save/share** reel (a protocol p
   `hooks.json`.
 - **Caption test:** try the "forgot to mention this in the video" opener with the protocol in the caption on one
   training reel, against our usual identity opener. Log it in `production/reels/LEDGER.md` as a caption variable.
+- **Format to borrow:** a B&W fighter collage behind Matteo for the hook and setup, then numbered demo windows. This
+  fits our listicle factory, which already pairs a hook with clips; the collage opener is the new piece.
 - Don't copy his split word for word. Matteo's version should be the holds he actually uses.

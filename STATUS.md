@@ -33,7 +33,7 @@ Log: `media/2026-10-16-saenchai-bigger-men/renders/render_bc.log` (ends with `AL
 | Meta oEmbed | WAIT | Not approved; `ig_discovery` scans tracked competitors instead |
 | IG token | Expires 2026-12-13 | `ig.py refresh` before then |
 | Threads token | Expires 2026-12-14 | `crosspost.py threads-refresh` before then |
-| IG_COOKIES secret | **MATTEO**: expired. Fetch video can't download Instagram reels (Kolby 10-18, Ferris 10-19 came back caption-only) | Export a fresh Netscape `cookies.txt` from a logged-in (burner) browser, update the Actions secret, then re-run Fetch video for `psych-ref-DeiS9s1P2al` and `ferris-DcwNOMLinJP` |
+| IG_COOKIES secret | Expired, no longer blocking: Fetch video now retries yt-dlp without cookies (worked for Ferris 10-19) and falls back to the API, then the embed page | Optional refresh if logged-out downloads start failing |
 | FB_USER_TOKEN | Set 2026-10-15, 60-day token, so expires ~2026-12-14. Expiry not tracked | Add tracking |
 | Listicle clip sheets | MATTEO | Waiting on his yes (Telegram or dashboard) |
 | Next week's 21 listicles (18 to 28 Oct) | **MATTEO** | Reviewed, 6 clips swapped and re-rendered 10-18 15:00Z. Waiting on his yes (dashboard / Telegram / chat). #1 posts 12:30 NY today only if approved |
