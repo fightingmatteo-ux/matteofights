@@ -242,8 +242,9 @@ def main():
     p.add_argument("--slot", default="18:30", help="daily post time, New York HH:MM")
     p.add_argument("--seconds", type=float, default=8.0)
     p.add_argument("--audio", default="",
-                   help="Instagram library sound Matteo adds by hand in the app (manual posting); default '' = "
-                        "royalty-free music in the file and the Post queue posts it after the weekly yes")
+                   help="Instagram library sound, 'Title - Artist' (e.g. 'Echo Sax End - Caleb Arredondo'): rendered "
+                        "without music and the Post queue attaches the sound through the Audio API (audio.py); if the "
+                        "API's library lacks it, Matteo adds it in the app. Default '' = royalty-free music in the file")
     p.add_argument("--only", default="", help="with --rerender: comma-separated queue ids to rebuild")
     p.add_argument("--rerender", action="store_true",
                    help="re-render the queued, not-yet-approved listicles in place (same hook and day)")

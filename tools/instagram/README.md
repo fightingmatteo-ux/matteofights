@@ -56,3 +56,26 @@ after the account's latest post. It writes `status`, `media_id` and `permalink` 
 - `approved: true` is set only after Matteo's explicit yes to the exact preview, via `python -P tools/instagram/approve.py <ids> --note "<when he said yes>"` (or by editing the file on github.com).
 - A failed item gets `status: failed` + `error`; fix it and set it back to `queued`.
 - Double-post guard: a post from the last 24 h starting with the same caption line counts as already posted.
+
+## Audio API: Instagram library sounds without the app (added 2026-10-19)
+`audio.py` attaches a sound from Instagram's library (e.g. Echo Sax End) when the reel is created, so `app_audio`
+listicles no longer need posting by hand. Meta only offers this through **Facebook Login** (graph.facebook.com), not the
+Instagram Login token above, so it runs on `FB_USER_TOKEN` and leaves `IG_ACCESS_TOKEN` / `ig.py` untouched.
+
+**One-time:** `FB_USER_TOKEN` needs `instagram_basic` and `instagram_content_publish` on top of its Page scopes.
+Graph API Explorer → app `matteofights-poster` → add those two → Generate → Extend → update `secrets/meta.env` and
+the `FB_USER_TOKEN` secret. Then `python -P tools/instagram/audio.py check` (or the **Audio** workflow, action `check`).
+Regenerating keeps the Page token working (`crosspost.py facebook-setup` again only if Facebook posting breaks).
+
+```bash
+python -P tools/instagram/audio.py search "echo sax end"            # find the id (empty query = trending)
+python -P tools/instagram/audio.py trial --asset X.mp4 --caption-file ... --audio "Echo Sax End - Caleb Arredondo"
+python -P tools/instagram/audio.py trial ... --audio-id <id> --confirm   # after Matteo's yes
+```
+- Default mix: sound 100 %, clip's own sound 20 % (`--audio-volume`, `--video-volume`; queue keys `audio_volume`, `video_volume`).
+- **Queue:** an approved item with `app_audio` gets its `audio_id` looked up at post time (exact title, and artist if
+  given). No exact match → `audio_status: "manual"`, Matteo posts it in the app. Token problem → skipped, retried next run.
+- **Post trial reel** workflow: optional `audio` input (id or "Title - Artist").
+- Meta's limits: only sounds cleared for third-party apps (some app songs are missing), no preview of reels with
+  attached audio, and trial_params + audio together is undocumented: if Meta refuses the pair the item fails with
+  Meta's message and nothing is posted.

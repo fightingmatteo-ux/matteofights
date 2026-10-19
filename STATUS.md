@@ -1,6 +1,6 @@
 # STATUS: open items, one place
 
-_Updated 2026-10-19 06:10 UTC. Every session: read this after CLAUDE.md, update it when you close or add an item._
+_Updated 2026-10-19 08:30 UTC. Every session: read this after CLAUDE.md, update it when you close or add an item._
 
 Legend: **DO** = needs action now, **MATTEO** = only Matteo can do it, **WAIT** = blocked on someone else, **OK** = done, kept for one cycle.
 
@@ -28,6 +28,7 @@ Log: `media/2026-10-16-saenchai-bigger-men/renders/render_bc.log` (ends with `AL
 
 | Item | Status | Next step |
 |---|---|---|
+| Audio API (`tools/instagram/audio.py`, added 10-19) | **MATTEO** | Add `instagram_basic` + `instagram_content_publish` to FB_USER_TOKEN (README 'Audio API'), update the secret, run the **Audio** workflow `check`, then `search "echo sax end"`. Until then app_audio items are skipped, not lost |
 | Cloudflare ticker (`tools/ticker`) | Likely not deployed, so posts run on late GitHub cron | MATTEO creates a fine-grained PAT (Actions read/write), then `wrangler deploy` + Worker secret `GH_TOKEN` |
 | TikTok | WAIT | App review |
 | Meta oEmbed | WAIT | Not approved; `ig_discovery` scans tracked competitors instead |

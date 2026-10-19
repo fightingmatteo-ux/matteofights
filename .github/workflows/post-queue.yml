@@ -25,6 +25,7 @@ jobs:
         id: run
         env:
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          FB_USER_TOKEN: ${{ secrets.FB_USER_TOKEN }}   # Audio API: items with app_audio get the library sound attached
           GH_TOKEN: ${{ github.token }}
         run: python3 -P tools/instagram/run_queue.py
       - name: Save queue status

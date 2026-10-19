@@ -1,6 +1,7 @@
 # Post a trial reel to @matteofights through our own Meta app (tools/instagram/ig.py).
 # Runs a PREVIEW unless `confirm` is ticked. Only tick it after Matteo said yes to that exact preview.
 #   gh workflow run post-trial-reel.yml -f video=<asset on the media release> -f caption_file=production/reels/<slug>/caption-A.txt
+#   ... -f audio="Echo Sax End - Caleb Arredondo"   # optional: attach an Instagram library sound (Audio API)
 #   ... -f confirm=true          # after the yes
 name: Post trial reel
 
@@ -21,6 +22,9 @@ on:
       thumb_offset:
         description: "Cover frame in ms (optional)"
         default: ""
+      audio:
+        description: "Instagram library sound: audio id, or 'Title - Artist' (optional; uses the Audio API)"
+        default: ""
       confirm:
         description: "Actually publish (only after Matteo's yes to the preview)"
         type: boolean
@@ -38,9 +42,17 @@ jobs:
         env:
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          FB_USER_TOKEN: ${{ secrets.FB_USER_TOKEN }}
           GH_TOKEN: ${{ github.token }}
+          AUDIO: ${{ inputs.audio }}
         run: |
           args=(trial --asset "${{ inputs.video }}" --caption-file "${{ inputs.caption_file }}" --strategy "${{ inputs.strategy }}")
           [ -n "${{ inputs.thumb_offset }}" ] && args+=(--thumb-offset "${{ inputs.thumb_offset }}")
           [ "${{ inputs.confirm }}" = "true" ] && args+=(--confirm)
-          python3 -P tools/instagram/ig.py "${args[@]}"
+          if [ -z "$AUDIO" ]; then
+            python3 -P tools/instagram/ig.py "${args[@]}"
+          elif [[ "$AUDIO" =~ ^[0-9]+$ ]]; then
+            python3 -P tools/instagram/audio.py "${args[@]}" --audio-id "$AUDIO"
+          else
+            python3 -P tools/instagram/audio.py "${args[@]}" --audio "$AUDIO"
+          fi

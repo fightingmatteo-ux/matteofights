@@ -1,0 +1,41 @@
+# Instagram Audio API (tools/instagram/audio.py, FB_USER_TOKEN). Read-only: checks the token, searches the
+# licensed library, or looks up one sound. Nothing is posted from here.
+#   gh workflow run audio.yml -f action=check
+#   gh workflow run audio.yml -f action=search -f query="echo sax end"
+name: Audio
+
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        type: choice
+        options: [check, search, info]
+        default: search
+      query:
+        description: "search: sound name (empty = trending). info: audio id"
+        default: ""
+      type:
+        type: choice
+        options: [music, original_sound]
+        default: music
+
+permissions:
+  contents: read
+
+jobs:
+  audio:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - env:
+          FB_USER_TOKEN: ${{ secrets.FB_USER_TOKEN }}
+          ACTION: ${{ inputs.action }}
+          QUERY: ${{ inputs.query }}
+          KIND: ${{ inputs.type }}
+        run: |
+          case "$ACTION" in
+            check)  python3 -P tools/instagram/audio.py check ;;
+            search) python3 -P tools/instagram/audio.py search "$QUERY" --type "$KIND" ;;
+            info)   python3 -P tools/instagram/audio.py info "$QUERY" ;;
+          esac
