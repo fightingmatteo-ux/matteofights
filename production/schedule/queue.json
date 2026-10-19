@@ -161,13 +161,16 @@
       "not_before": "2026-10-19T22:30:00Z",
       "min_gap_hours": 2.5,
       "approved": true,
-      "status": "queued",
+      "status": "posted",
       "approved_note": "Matteo: approved the week via dashboard (2026-10-15T20:19:25Z)",
       "test": {
         "exp": "exp-1016-hook_style",
         "variant": "a",
         "value": "native"
-      }
+      },
+      "media_id": "17958547584279391",
+      "permalink": "https://www.instagram.com/reel/DesWD6hjf8Y/",
+      "posted_at": "2026-10-19T22:36:19Z"
     },
     {
       "id": "lst-2026-10-20-dangerous-without-a-partner",
