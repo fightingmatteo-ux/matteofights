@@ -1,7 +1,8 @@
-"""Control center engine: one place where Matteo's decisions land, from the dashboard or from Telegram.
+"""Control center engine: one place where Matteo's decisions land. The dashboard (control.matteofights.me) is where
+he decides; Telegram only alerts him and links there (its old buttons and typed ideas still work).
 
-    python -P tools/control/control.py act '<json>' --via dashboard   # approve_week / answer / idea / telegram update
-    python -P tools/control/control.py notify                         # send Matteo what's new on Telegram
+    python -P tools/control/control.py act '<json>' --via dashboard   # approve_week / answer / idea / keep_video / telegram
+    python -P tools/control/control.py notify                         # alert Matteo on Telegram, with a dashboard link
 
 Files (all in production/control/, committed by the "Control" workflow):
   questions.json  cards Claude asks Matteo: {id, question, options[], status open|answered, answer, answered_at, via}
@@ -21,6 +22,7 @@ CTL = ROOT / "production" / "control"
 QUEUE = ROOT / "production" / "schedule" / "queue.json"
 THREADS = ROOT / "production" / "threads" / "posts.json"  # written Threads posts (tools/crosspost), approved weekly
 TG = "https://api.telegram.org/bot{token}/{method}"
+SITE = "https://control.matteofights.me"
 NY = None
 
 
@@ -137,6 +139,20 @@ def idea(text, via):
     return item
 
 
+def keep_video(qid, keep, via):
+    """Keep a posted reel's video in the cloud (tools/video/lifecycle.py skips it), or let it be deleted again."""
+    q = json.loads(QUEUE.read_text(encoding="utf-8"))
+    for i in q["items"]:
+        if i["id"] == qid and not i.get("video_deleted_at"):
+            if bool(i.get("keep_video")) == keep:
+                return False
+            i["keep_video"] = keep
+            QUEUE.write_text(json.dumps(q, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+            log(f"{'Keep' if keep else 'Let go of'} the video of {i.get('hook') or qid}", "Matteo")
+            return True
+    return False
+
+
 def act(payload, via):
     a = payload.get("action")
     if a == "approve_week":  # the whole week: reels + written Threads posts
@@ -152,6 +168,8 @@ def act(payload, via):
         return {"answered": bool(answer(payload["id"], str(payload["choice"])[:500], via))}
     if a == "idea":
         return {"idea": idea(str(payload["text"]), via)}
+    if a == "keep_video":
+        return {"changed": keep_video(str(payload["id"]), bool(payload.get("keep", True)), via)}
     raise SystemExit(f"unknown action {a!r}")
 
 
@@ -178,8 +196,9 @@ def tg(method, data=None, files=None):
     return out["result"]
 
 
-def buttons(rows):
-    return json.dumps({"inline_keyboard": [[{"text": t, "callback_data": d[:64]} for t, d in row] for row in rows]})
+def open_site(label="Open the control center", tab=""):
+    """Telegram only alerts; every decision happens on the dashboard."""
+    return json.dumps({"inline_keyboard": [[{"text": label, "url": SITE + (f"/#{tab}" if tab else "")}]]})
 
 
 def week_sheet(items):
@@ -210,14 +229,11 @@ def send_new(chat, state):
     if ids and key != state.get("announced_week"):
         lines = [f"• {ny(i['not_before'])} NY: {i.get('hook', i['id'])}" for i in sorted(week, key=lambda x: x["not_before"])]
         text = f"🥊 Next week is ready: {len(ids)} trial reels\n\n" + "\n".join(lines)
-        text += "\n\nApproving = your yes for exactly these. They post automatically at the New York times above."
+        text += "\n\nWatch them and approve on the control center. They post automatically at the New York times above."
         sheet = week_sheet(sorted(week, key=lambda x: x["not_before"]))
         if sheet:
             tg("sendPhoto", {"chat_id": chat, "caption": "Covers, in posting order"}, {"photo": ("week.jpg", sheet, "image/jpeg")})
-        batch = uuid.uuid4().hex[:8]
-        state.setdefault("batches", {})[batch] = ids
-        tg("sendMessage", {"chat_id": chat, "text": text[:4000],
-                           "reply_markup": buttons([[("✅ Approve the week", f"aw:{batch}")]])})
+        tg("sendMessage", {"chat_id": chat, "text": text[:4000], "reply_markup": open_site("Review the week", "home")})
         state["announced_week"] = key
         log(f"Sent the week ({len(ids)} reels) to Telegram")
     posts = pending_threads()
@@ -225,29 +241,25 @@ def send_new(chat, state):
     if posts and tkey != state.get("announced_threads"):
         lines = [f"• {ny(p['at'])}: {p['text'].splitlines()[0][:90]}" for p in posts]
         text = f"🧵 {len(posts)} Threads posts written for the week\n\n" + "\n".join(lines)
-        text += "\n\nFull text on the dashboard. Approving = your yes for exactly these; they post at the times above."
-        batch = uuid.uuid4().hex[:8]
-        state.setdefault("batches", {})[batch] = [p["id"] for p in posts]
-        tg("sendMessage", {"chat_id": chat, "text": text[:4000],
-                           "reply_markup": buttons([[("✅ Approve Threads posts", f"at:{batch}")]])})
+        text += "\n\nRead, edit and approve them on the control center; they post at the times above."
+        tg("sendMessage", {"chat_id": chat, "text": text[:4000], "reply_markup": open_site("Review Threads posts", "decide")})
         state["announced_threads"] = tkey
         log(f"Sent {len(posts)} Threads posts to Telegram")
     for x in load("questions.json", []):
         if x["status"] == "open" and x["id"] not in state.setdefault("sent_questions", []):
-            opts = x.get("options") or []
-            rows = [[(o[:40], f"q:{x['id']}:{k}")] for k, o in enumerate(opts)]
             img = ROOT / x["image"] if x.get("image") else None
             if img and img.exists():  # style lab: the options side by side
                 tg("sendPhoto", {"chat_id": chat, "caption": x["question"][:1000]},
                    {"photo": (img.name, img.read_bytes(), "image/jpeg")})
             tg("sendMessage", {"chat_id": chat, "text": f"❓ {x['question']}" + (f"\n\n{x['context']}" if x.get("context") else ""),
-                               **({"reply_markup": buttons(rows)} if rows else {})})
+                               "reply_markup": open_site("Answer on the control center", "decide")})
             state["sent_questions"].append(x["id"])
     q = json.loads(QUEUE.read_text(encoding="utf-8"))
     for i in q["items"]:
         if i["status"] == "failed" and i["id"] not in state.setdefault("sent_failed", []):
             tg("sendMessage", {"chat_id": chat, "text": f"⚠️ A reel failed to post: {i.get('hook', i['id'])}\n"
-                                                         f"{(i.get('error') or '')[:300]}\nClaude looks at it on the next daily check."})
+                                                         f"{(i.get('error') or '')[:300]}\nClaude looks at it on the next daily check.",
+                               "reply_markup": open_site()})
             state["sent_failed"].append(i["id"])
     for n in load("notes.json", []):
         if n["id"] not in state.setdefault("sent_notes", []):
@@ -286,7 +298,7 @@ def handle_update(u, chat, state):
     elif (u.get("message") or {}).get("text"):
         text = u["message"]["text"]
         if text.startswith("/start"):
-            outbox(state, "Connected. I'll send weeks to approve, winners and questions here. "
+            outbox(state, f"Connected. I'll alert you here when something needs you; you decide on {SITE}. "
                           "Anything you type becomes an idea for Claude.")
         else:
             idea(text, "Telegram")

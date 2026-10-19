@@ -1,0 +1,41 @@
+# Public site matteofights.me (docs/): deploys only when the site's own files change, instead of GitHub Pages'
+# branch build on every push (~400 Actions minutes a week). Never publishes docs/superpowers/ (private specs and
+# plans) or READMEs. Needs Settings > Pages > Build and deployment > Source = "GitHub Actions" (one-time, Matteo).
+name: Public site
+
+on:
+  push:
+    branches: [master]
+    paths: ["docs/**", "!docs/superpowers/**", ".github/workflows/site.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Stage the public files only
+        run: |
+          rsync -a --exclude superpowers --exclude 'README.md' --exclude '*.md' docs/ site/
+          touch site/.nojekyll
+          test -f site/CNAME && test -f site/index.html && test -f site/privacy.html
+          ! find site -path '*superpowers*' | grep -q .
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deploy
+        uses: actions/deploy-pages@v4

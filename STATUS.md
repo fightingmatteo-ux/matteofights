@@ -1,6 +1,6 @@
 # STATUS: open items, one place
 
-_Updated 2026-10-19 06:10 UTC. Every session: read this after CLAUDE.md, update it when you close or add an item._
+_Updated 2026-10-19 07:30 UTC. Every session: read this after CLAUDE.md, update it when you close or add an item._
 
 Legend: **DO** = needs action now, **MATTEO** = only Matteo can do it, **WAIT** = blocked on someone else, **OK** = done, kept for one cycle.
 
@@ -28,6 +28,11 @@ Log: `media/2026-10-16-saenchai-bigger-men/renders/render_bc.log` (ends with `AL
 
 | Item | Status | Next step |
 |---|---|---|
+| Run from anywhere, phase 1 (`docs/superpowers/plans/2026-10-18-phase1-foundation.md`) | **MATTEO** | Not started. Needs from his phone: a Modal account + token, an R2 API token, both saved as GitHub secrets (names in the plan). Renders go to Modal, never GitHub runners |
+| GitHub Actions minutes | DO (verify) | ~1,470 min in 7.5 days (10-11 to 10-19), about 3x the free 2,000/month. Fixed 10-19: dashboard deploy skips no-op runs + path filter. Biggest left: GitHub Pages rebuild on every push (417 min/week), see next row |
+| Public site matteofights.me | **MATTEO** | Settings > Pages > Source = "GitHub Actions", then run the "Public site" workflow. Stops the rebuild-on-every-push and stops publishing `docs/superpowers/` (private specs, likely public now at matteofights.me/superpowers/specs/...) |
+| Media cleanup | OK | Daily, `tools/video/lifecycle.py`: posted videos deleted after 7 days + all cross-posts, record in `production/archive/reels.json`. First real deletions ~10-21 |
+| Telegram | OK | Alerts only, each with a link to the control center. Decisions on the dashboard (old buttons + typed ideas still work) |
 | Cloudflare ticker (`tools/ticker`) | Likely not deployed, so posts run on late GitHub cron | MATTEO creates a fine-grained PAT (Actions read/write), then `wrangler deploy` + Worker secret `GH_TOKEN` |
 | TikTok | WAIT | App review |
 | Meta oEmbed | WAIT | Not approved; `ig_discovery` scans tracked competitors instead |

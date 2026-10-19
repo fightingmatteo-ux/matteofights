@@ -37,6 +37,14 @@ CAPS), the subhook, and a `READ DESCRIPTION` end card. Renders end in `.render.m
 `tools/video/media.sh list | pull NAME | push FILE` uses the `media` GitHub release, because git rejects
 files over 100 MB. Never commit raw footage to git.
 
+## Videos clean themselves up
+The **Media cleanup** workflow (daily, `tools/video/lifecycle.py`) deletes a posted reel's video from the
+media release and its Drive preview once it posted 7+ days ago and every cross-post platform has it (21 days
+at most). Winners stay 30 days; "Keep video" on the dashboard keeps one for good. Watched reference videos go
+after 14 days (their frames and transcript stay committed). Raw footage is never touched. Each deleted reel
+keeps a record in `production/archive/reels.json` (caption, cover, permalink, numbers, cross-post links), and
+stats keep updating because they're read by post id, not from the file. Dry run: `python3 -P tools/video/lifecycle.py`.
+
 ## Instagram blocks
 Instagram sometimes refuses logged-out downloads from cloud IPs. If **Fetch video** fails on an
 Instagram link, add a repo secret `IG_COOKIES` (Settings → Secrets → Actions) containing a

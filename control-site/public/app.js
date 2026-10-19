@@ -46,7 +46,8 @@ const hidden = (() => { try { return new Set(JSON.parse(localStorage.getItem("in
 const saveHidden = () => { try { localStorage.setItem("inboxDone", JSON.stringify([...hidden].slice(-400))); } catch {} };
 
 let D = null;
-let tab = (() => { try { return localStorage.getItem("tab") || "home"; } catch { return "home"; } })();
+// a Telegram alert links to control.matteofights.me/#decide etc.
+let tab = (() => { const h = location.hash.slice(1); if (["home", "reels", "results", "decide", "activity"].includes(h)) return h; try { return localStorage.getItem("tab") || "home"; } catch { return "home"; } })();
 let filter = "all";
 let by = "views"; // results ranking: views per reel or follows per 1k
 let rview = (() => { try { return localStorage.getItem("rview") || "you"; } catch { return "you"; } })(); // Results: you | rivals
@@ -79,7 +80,7 @@ async function act(body, key, okMsg) {
     render();
     return true;
   } catch (e) {
-    toast(e.server ? `Not sent (${e.message}). Try again in a minute, or send it on Telegram.` : "Not sent: no connection. Try again when you're back online.");
+    toast(e.server ? `Not sent (${e.message}). Try again in a minute.` : "Not sent: no connection. Try again when you're back online.");
     render();
     return false;
   }
@@ -423,7 +424,7 @@ function crossResults() {
 function decide() {
   const open = D.questions.filter((q) => q.status === "open");
   const done = D.questions.filter((q) => q.status !== "open").slice(-8).reverse();
-  let h = `<div class="page-head"><h1 class="h1">Your calls</h1><p class="lede">Claude asks here and on Telegram when it needs a decision. Tap an answer; you get 4 seconds to undo it.</p></div>`;
+  let h = `<div class="page-head"><h1 class="h1">Your calls</h1><p class="lede">Every decision happens here; Telegram only pings you. Tap an answer; you get 4 seconds to undo it.</p></div>`;
   h += open.length
     ? open.map((q) => {
         const sentK = [...sent].find((k) => k.startsWith(`q:${q.id}:`));
@@ -555,6 +556,7 @@ function activity() {
         ${row("Clips Claude has watched", H.clips_catalogued)}
         ${row("Clips good enough to use", H.clips_usable)}
         ${row("Failed posts", H.failed.length, H.failed.length)}
+        ${row("Posted videos cleared from the cloud", D.archive ? `${D.archive.videos_deleted} (${n(D.archive.mb_freed)} MB freed)` : "n/a")}
       </dl><p class="hint" style="margin-top:12px">Times are New York time.</p></section>
       ${platformsPanel()}
       <section aria-labelledby="lg-h"><div class="head"><h2 class="h2" id="lg-h">Log</h2></div>
@@ -577,9 +579,10 @@ function openSheet(id) {
     <div><span class="st ${s}">${LABEL[s]}</span><h2 id="sheet-title">${esc(calm(r.hook))}</h2>
       <p class="meta">${fmtName(r.format)}${when ? `<br>${when}` : ""}${r.clip ? `<br>Clip: ${esc(r.clip)}` : ""}</p></div>
     ${m.views != null ? `<dl>${stat("Views", n(m.views))}${stat("vs normal", m.vs_median_x != null ? xTxt(m.vs_median_x) : "n/a", isWin(r) ? "gold" : "")}${stat("Follows", n(m.follows))}${stat("Shares", n(m.shares))}${stat("Saves", n(m.saves))}${stat("Skip rate", m.skip_rate != null ? Math.round(m.skip_rate) + "%" : "n/a")}</dl>` : ""}
+    ${r.state === "posted" ? `<p class="meta">${r.video_deleted_at ? `Video cleared from the cloud ${ago(r.video_deleted_at)}. The post, its numbers and links are kept.` : r.keep_video ? "You're keeping this video in the cloud." : "The video is cleared from the cloud a week after posting, once every platform has it. Winners stay 30 days."}</p>` : ""}
     ${s === "win" ? `<p class="note">Winner. Repost it to your grid from the Instagram app with a trending sound; Claude sent suggestions on Telegram.</p>` : ""}
     ${r.error ? `<p class="err">Failed to post: ${esc(r.error).slice(0, 220)}. Claude looks at it on the next morning check.</p>` : ""}
-    <div class="foot">${r.permalink ? `<a class="btn" href="${esc(r.permalink)}" target="_blank" rel="noopener">Instagram</a>` : ""}${Object.entries(r.links || {}).map(([k, u]) => `<a class="btn line" href="${esc(u)}" target="_blank" rel="noopener">${PLAT[k] || esc(k)}</a>`).join("")}${r.video ? `<a class="btn line" href="${esc(r.video)}" download>Download</a>` : ""}<button class="btn line" data-close>Close</button></div>
+    <div class="foot">${r.permalink ? `<a class="btn" href="${esc(r.permalink)}" target="_blank" rel="noopener">Instagram</a>` : ""}${Object.entries(r.links || {}).map(([k, u]) => `<a class="btn line" href="${esc(u)}" target="_blank" rel="noopener">${PLAT[k] || esc(k)}</a>`).join("")}${r.video ? `<a class="btn line" href="${esc(r.video)}" download>Download</a>` : ""}${r.state === "posted" && !r.video_deleted_at ? `<button class="btn line" data-keep="${esc(r.id)}" data-on="${r.keep_video ? 0 : 1}" ${sent.has("keep:" + r.id) ? "disabled" : ""}>${r.keep_video ? "Let it be cleared" : "Keep video"}</button>` : ""}<button class="btn line" data-close>Close</button></div>
   </div>`;
   dlg.showModal(); markLoaded(dlg);
 }
@@ -657,6 +660,11 @@ document.addEventListener("click", (ev) => {
     return act({ action: "idea", text }, "rival:" + c.id, "Sent to your ideas. Claude picks it up on the next check.");
   }
   if (t.dataset.open) return openSheet(t.dataset.open);
+  if (t.dataset.keep) {
+    const id = t.dataset.keep, keep = t.dataset.on === "1";
+    t.disabled = true;
+    return act({ action: "keep_video", id, keep }, "keep:" + id, keep ? "Kept. This video stays in the cloud." : "OK. It's cleared with the others.").then(() => $("#sheet").open && $("#sheet").close());
+  }
   if ("review" in t.dataset) return openReview();
   if ("undo" in t.dataset) return undoAnswer();
   if (t.dataset.act === "idea") {

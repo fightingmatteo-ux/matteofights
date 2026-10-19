@@ -1,13 +1,15 @@
 # Deploys the control center (control.matteofights.me) to Cloudflare Pages: rebuilds data.json from the repo, then
-# uploads control-site/public + control-site/functions. Runs on every push to master and after the workflows that
-# commit to production/ (their pushes use GITHUB_TOKEN, which doesn't trigger "push" workflows).
+# uploads control-site/public + control-site/functions. Runs on pushes that change what the site shows, and after
+# the workflows that commit to production/ (their pushes use GITHUB_TOKEN, which doesn't trigger "push" workflows),
+# but only if that run actually committed something: most Post queue / Cross-post runs change nothing.
 name: Deploy control center
 
 on:
   push:
     branches: [master]
+    paths: ["control-site/**", "tools/control/**", "production/**", ".github/workflows/control-deploy.yml"]
   workflow_run:
-    workflows: [Control, Post queue, Listicle factory, Post trial reel, Cross-post, Platform stats]
+    workflows: [Control, Post queue, Listicle factory, Post trial reel, Cross-post, Platform stats, Media cleanup]
     types: [completed]
   workflow_dispatch:
 
@@ -27,15 +29,31 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: master
+      - name: Anything new since the run that triggered this?
+        id: chk
+        env:
+          EVENT: ${{ github.event_name }}
+          RUN_SHA: ${{ github.event.workflow_run.head_sha }}
+        run: |
+          if [ "$EVENT" = workflow_run ] && [ "$(git rev-parse HEAD)" = "$RUN_SHA" ]; then
+            echo "The triggering run committed nothing: the site is already current."
+            echo "go=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "go=true" >> "$GITHUB_OUTPUT"
+          fi
       - name: ffmpeg (shrinks reel previews over the 25 MiB Pages limit)
+        if: steps.chk.outputs.go == 'true'
         run: command -v ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg)
       - name: Build data (+ copy upcoming reel videos from the media release)
+        if: steps.chk.outputs.go == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         run: python3 -P tools/control/build_data.py
       - name: Version the app files (so a refresh always loads the latest code)
+        if: steps.chk.outputs.go == 'true'
         run: sed -i "s/app\.js\"/app.js?v=${GITHUB_SHA::7}-${GITHUB_RUN_NUMBER}\"/; s/style\.css\"/style.css?v=${GITHUB_SHA::7}-${GITHUB_RUN_NUMBER}\"/" control-site/public/index.html
       - name: Upload to Cloudflare Pages
+        if: steps.chk.outputs.go == 'true'
         working-directory: control-site
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}

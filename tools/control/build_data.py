@@ -82,6 +82,7 @@ def main():
     hook_fmt = {h.get("queue_id"): h for h in hooks}
 
     xpost = load(ROOT / "production/schedule/crosspost.json", {}).get("posts", {})
+    archive = load(ROOT / "production/archive/reels.json", {})
     videos = fetch_videos(queue)
     covers = OUT / "covers"
     shutil.rmtree(covers, ignore_errors=True)
@@ -115,6 +116,7 @@ def main():
             "time": i.get("not_before"), "state": state, "cover": cover,
             "clip": (i.get("clip") or "").split(" (")[0], "review": i.get("review"),
             "permalink": i.get("permalink"), "posted_at": i.get("posted_at"), "error": i.get("error"),
+            "video_deleted_at": i.get("video_deleted_at"), "keep_video": bool(i.get("keep_video")),
             "metrics": m,
             "video": videos.get(i["id"]),
             "links": {k: v.get("url") for k, v in xpost.get(i["id"], {}).items() if v.get("status") == "posted" and v.get("url")},
@@ -139,6 +141,10 @@ def main():
         "baseline": {k: metrics.get(k) for k in ("median_views", "updated", "audience")},
         "reels": sorted(reels, key=lambda r: r["time"] or "", reverse=True),
         "formats": fmt,
+        # tools/video/lifecycle.py: posted videos deleted from the cloud, record kept
+        "archive": {"videos_deleted": len(archive.get("reels", {})) + len(archive.get("references", {})),
+                    "mb_freed": round(sum(r.get("video", {}).get("mb", 0) for r in archive.get("reels", {}).values())
+                                      + sum(r.get("mb", 0) for r in archive.get("references", {}).values()))},
         "questions": style_images(load(CTL / "questions.json", [])),
         "lab": load(ROOT / "production/style/lab.json", {"experiments": []}),
         "ideas": load(CTL / "ideas.json", [])[-50:],

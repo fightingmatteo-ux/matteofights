@@ -1,0 +1,56 @@
+# Daily: delete posted reels' videos (media release + Drive preview) once they're done everywhere, and watched
+# reference videos after 14 days. Each deleted reel keeps a permanent record in production/archive/reels.json.
+# Rules: tools/video/lifecycle.py docstring. Raw footage is never touched.
+name: Media cleanup
+
+on:
+  schedule:
+    - cron: "35 4 * * *"
+  workflow_dispatch:
+    inputs:
+      apply:
+        description: Actually delete (off = dry run, just list)
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: post-queue   # writes queue.json: never at the same time as the Post queue or the factory
+  cancel-in-progress: false
+
+jobs:
+  clean:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: master
+      - name: rclone (for the Drive copies)
+        env:
+          RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
+        run: |
+          [ -n "$RCLONE_CONF" ] || exit 0
+          curl -fsSL https://rclone.org/install.sh | sudo bash > /dev/null
+          mkdir -p ~/.config/rclone && printf '%s\n' "$RCLONE_CONF" > ~/.config/rclone/rclone.conf
+          echo "RCLONE_CONFIG_OK=1" >> "$GITHUB_ENV"
+      - name: Delete and record
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          APPLY: ${{ github.event_name == 'schedule' || inputs.apply }}
+        run: |
+          git config user.name "media[bot]"
+          git config user.email "media@users.noreply.github.com"
+          if [ "$APPLY" != "true" ]; then python3 -P tools/video/lifecycle.py; exit 0; fi
+          python3 -P tools/video/lifecycle.py --apply
+          git add production/archive production/schedule/queue.json
+          if ! git diff --cached --quiet; then
+            git commit -qm "media: record posted videos before deleting them"
+            pushed=
+            for n in 1 2 3; do git pull --rebase -q origin master && git push -q origin HEAD:master && pushed=1 && break; sleep 5; done
+            [ -n "$pushed" ] || { echo "push failed: nothing deleted"; exit 1; }
+          fi
+          # records are in git now; delete their files (also retries anything a previous run left behind)
+          python3 -P tools/video/lifecycle.py --delete
