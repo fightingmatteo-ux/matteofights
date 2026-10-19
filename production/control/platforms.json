@@ -1,53 +1,53 @@
 {
-  "updated": "2026-10-18T22:28:57Z",
+  "updated": "2026-10-19T04:54:47Z",
   "platforms": {
     "instagram": {
       "followers": 2035,
-      "last_post": "2026-10-18T01:36:24Z",
+      "last_post": "2026-10-19T01:37:08Z",
       "failed": [],
-      "next_slot": "2026-10-18T22:30:00Z",
+      "next_slot": "2026-10-19T22:30:00Z",
       "plan_per_day": 3,
       "plan_mix": "3 trial reels",
-      "posted_7d": 9,
+      "posted_7d": 11,
       "token_expires": "2026-12-13",
       "warn": null
     },
     "facebook": {
       "followers": 1295,
       "enabled": true,
-      "last_post": "2026-10-18T16:36:43Z",
+      "last_post": "2026-10-18T23:36:18Z",
       "failed": [],
       "errors": [],
-      "next_slot": "2026-10-18T23:30:00Z",
+      "next_slot": "2026-10-19T16:30:00Z",
       "plan_per_day": 4,
       "plan_mix": "3 reels + 1 slide album",
-      "posted_7d": 9,
+      "posted_7d": 10,
       "token_expires": null,
       "warn": null
     },
     "threads": {
       "followers": 40,
       "enabled": true,
-      "last_post": "2026-10-18T14:06:30Z",
+      "last_post": "2026-10-19T01:06:27Z",
       "failed": [],
       "errors": [],
-      "next_slot": "2026-10-19T01:00:00Z",
+      "next_slot": "2026-10-19T14:00:00Z",
       "plan_per_day": 6,
       "plan_mix": "3 reels + 3 written posts",
-      "posted_7d": 15,
+      "posted_7d": 16,
       "token_expires": "2026-12-14",
       "warn": null
     },
     "youtube": {
       "enabled": true,
-      "last_post": "2026-10-18T17:38:51Z",
+      "last_post": "2026-10-18T23:05:53Z",
       "failed": [],
       "errors": [],
-      "next_slot": "2026-10-18T23:00:00Z",
+      "next_slot": "2026-10-19T16:30:00Z",
       "privacy": "public",
       "plan_per_day": 3,
       "plan_mix": "3 Shorts",
-      "posted_7d": 6,
+      "posted_7d": 7,
       "token_expires": null,
       "warn": null
     }
@@ -55,11 +55,11 @@
   "posts": {
     "freeze-A": {
       "instagram": {
-        "views": 2681,
+        "views": 2683,
         "likes": 62,
         "comments": 0,
         "shares": 13,
-        "saves": 41,
+        "saves": 40,
         "url": "https://www.instagram.com/reel/Dee3EmfE--u/"
       }
     },
@@ -75,7 +75,7 @@
     },
     "freeze-C": {
       "instagram": {
-        "views": 4243,
+        "views": 4248,
         "likes": 92,
         "comments": 0,
         "shares": 9,
@@ -111,7 +111,7 @@
     },
     "lst-2026-10-16-mindset-without-a-fight": {
       "instagram": {
-        "views": 3360,
+        "views": 3361,
         "likes": 22,
         "comments": 0,
         "shares": 2,
@@ -127,7 +127,7 @@
         "url": "https://www.facebook.com/1070947222779004_122155621437352578"
       },
       "threads": {
-        "views": 79,
+        "views": 80,
         "likes": 5,
         "replies": 0,
         "reposts": 0,
@@ -137,7 +137,7 @@
     },
     "lst-2026-10-17-mentally-tougher": {
       "instagram": {
-        "views": 2677,
+        "views": 2678,
         "likes": 37,
         "comments": 0,
         "shares": 0,
@@ -145,7 +145,7 @@
         "url": "https://www.instagram.com/reel/DenMdptlhYw/"
       },
       "facebook": {
-        "views": 14,
+        "views": 17,
         "url": "https://www.facebook.com/reel/1076072028571420"
       },
       "threads": {
@@ -155,6 +155,28 @@
         "reposts": 1,
         "shares": 0,
         "url": "https://www.threads.com/@matteofights/post/DendorRnGGH"
+      }
+    },
+    "lst-2026-10-18-calm-without-experience": {
+      "instagram": {
+        "views": 3065,
+        "likes": 40,
+        "comments": 0,
+        "shares": 4,
+        "saves": 28,
+        "url": "https://www.instagram.com/reel/DepxRDYkdGs/"
+      },
+      "facebook": {
+        "views": 0,
+        "url": "https://www.facebook.com/reel/1635879197909351"
+      },
+      "threads": {
+        "views": 59,
+        "likes": 1,
+        "replies": 0,
+        "reposts": 0,
+        "shares": 0,
+        "url": "https://www.threads.com/@matteofights/post/DeqCb_dCuSH"
       }
     },
     "lst-2026-10-15-technique-without-a-coach": {
@@ -207,15 +229,15 @@
     },
     "lst-2026-10-17-fighter-without-a-record": {
       "instagram": {
-        "views": 3520,
-        "likes": 21,
+        "views": 3530,
+        "likes": 22,
         "comments": 0,
         "shares": 1,
         "saves": 12,
         "url": "https://www.instagram.com/reel/DenhEaQCurA/"
       },
       "facebook": {
-        "views": 0,
+        "views": 13,
         "url": "https://www.facebook.com/reel/1751464386119278"
       },
       "threads": {
@@ -225,6 +247,16 @@
         "reposts": 0,
         "shares": 0,
         "url": "https://www.threads.com/@matteofights/post/Deo26FVgcej"
+      }
+    },
+    "lst-2026-10-18-last-round": {
+      "instagram": {
+        "views": 1727,
+        "likes": 31,
+        "comments": 0,
+        "shares": 3,
+        "saves": 2,
+        "url": "https://www.instagram.com/reel/DeqF89GjlH7/"
       }
     }
   },
@@ -279,7 +311,7 @@
       "url": "https://www.threads.com/@matteofights/post/DenFmcnlBk6"
     },
     "th-1018-1": {
-      "views": 61,
+      "views": 62,
       "likes": 0,
       "replies": 0,
       "reposts": 0,
@@ -295,7 +327,7 @@
       "url": "https://www.threads.com/@matteofights/post/DepILAhmkse"
     },
     "th-1018-3": {
-      "views": 9,
+      "views": 14,
       "likes": 0,
       "replies": 4,
       "reposts": 0,
