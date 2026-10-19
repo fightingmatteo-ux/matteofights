@@ -306,13 +306,16 @@
       "not_before": "2026-10-19T01:30:00Z",
       "min_gap_hours": 2.5,
       "approved": true,
-      "status": "queued",
+      "status": "posted",
       "approved_note": "Matteo: approved the week via dashboard (2026-10-15T20:19:25Z)",
       "test": {
         "exp": "exp-1016-hook_style",
         "variant": "b",
         "value": "split"
-      }
+      },
+      "media_id": "17917206747264143",
+      "permalink": "https://www.instagram.com/reel/DeqF89GjlH7/",
+      "posted_at": "2026-10-19T01:37:08Z"
     },
     {
       "id": "lst-2026-10-19-power-without-weights",
