@@ -44,7 +44,7 @@
         "09:00"
       ],
       "approved_note": "Matteo: 'let's start doing all of that' (per-platform plan, 2026-10-16)",
-      "last_slot": "2026-10-18T13:00:00Z"
+      "last_slot": "2026-10-19T13:00:00Z"
     },
     "threads_text": {
       "enabled": true,
@@ -154,6 +154,12 @@
         "id": "i26BtcNqHZ4",
         "url": "https://youtube.com/shorts/i26BtcNqHZ4",
         "privacy": "public"
+      },
+      "facebook_slides": {
+        "status": "posted",
+        "at": "2026-10-19T13:06:09Z",
+        "id": "1070947222779004_122155869381352578",
+        "url": "https://www.facebook.com/1070947222779004_122155869381352578"
       }
     },
     "lst-2026-10-17-mentally-tougher": {
@@ -218,6 +224,7 @@
         "id": "18097916627409908",
         "url": "https://www.threads.com/@matteofights/post/DeqCb_dCuSH"
       }
-    }
+    },
+    "lst-2026-10-18-last-round": {}
   }
 }
