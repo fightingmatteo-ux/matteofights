@@ -66,8 +66,9 @@ jobs:
           else
             args=()
             if [ -n "$IG_COOKIES" ]; then printf '%s\n' "$IG_COOKIES" > cookies.txt; args+=(--cookies cookies.txt); fi
-            if ! yt-dlp "${args[@]}" -f "bv*+ba/b" --merge-output-format mp4 --write-info-json \
-              -o "dl/video.%(ext)s" "$URL"; then
+            ytdl() { yt-dlp "$@" -f "bv*+ba/b" --merge-output-format mp4 --write-info-json -o "dl/video.%(ext)s" "$URL"; }
+            # expired cookies make yt-dlp fail where a logged-out request can work, so retry without them
+            if ! ytdl "${args[@]}" && { [ ${#args[@]} -eq 0 ] || ! ytdl; }; then
               # Instagram blocked yt-dlp: fall back to Business Discovery (Meta API, no cookies)
               [[ "$URL" == *instagram.com* ]] || exit 1
               rm -f dl/video*

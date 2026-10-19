@@ -82,13 +82,35 @@ def main():
     sys.exit("reel not found; rerun with the creator's username in the 'user' input")
 
 
+def embed_video_url(permalink):
+    """The public embed page often carries the mp4 even when the API withholds media_url."""
+    m = re.search(r"/(?:reel|reels|p|tv)/([A-Za-z0-9_-]+)", permalink)
+    if not m:
+        return None
+    req = urllib.request.Request(f"https://www.instagram.com/p/{m.group(1)}/embed/captioned/",
+                                 headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/130.0 Safari/537.36"})
+    try:
+        html = urllib.request.urlopen(req, timeout=60).read().decode("utf-8", "replace")
+    except urllib.error.URLError as e:
+        print(f"embed page: {e}")
+        return None
+    # video_url sits in JSON that may be escaped once or twice: strip the backslashes, then decode \u0026
+    flat = html.replace("\\", "")
+    hit = re.search(r'video_url":"(https:[^"]+)"', flat)
+    if not hit:
+        print("embed page has no video_url")
+        return None
+    return hit.group(1).replace("u0026", "&")
+
+
 def save(post, prof, outdir):
     out = Path(outdir)
     out.mkdir(parents=True, exist_ok=True)
-    if post.get("media_url"):
-        urllib.request.urlretrieve(post["media_url"], out / "video.mp4")
+    url = post.get("media_url") or embed_video_url(post.get("permalink") or "")
+    if url:
+        urllib.request.urlretrieve(url, out / "video.mp4")
     else:
-        print("Meta API returned no media_url (licensed audio or restricted): saving caption and stats only")
+        print("Meta API returned no media_url (licensed audio) and the embed page had none: saving caption and stats only")
     info = {"uploader": prof.get("username"), "uploader_id": prof.get("username"), "channel": prof.get("username"),
             "followers": prof.get("followers_count"), "description": post.get("caption"),
             "timestamp": post.get("timestamp"), "view_count": post.get("view_count"),
