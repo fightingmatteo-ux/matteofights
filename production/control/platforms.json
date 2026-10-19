@@ -1,27 +1,27 @@
 {
-  "updated": "2026-10-19T20:00:32Z",
+  "updated": "2026-10-19T23:48:16Z",
   "platforms": {
     "instagram": {
       "followers": 2036,
-      "last_post": "2026-10-19T01:37:08Z",
+      "last_post": "2026-10-19T22:36:19Z",
       "failed": [],
-      "next_slot": "2026-10-19T22:30:00Z",
+      "next_slot": "2026-10-20T01:30:00Z",
       "plan_per_day": 3,
       "plan_mix": "3 trial reels",
-      "posted_7d": 11,
+      "posted_7d": 12,
       "token_expires": "2026-12-13",
       "warn": null
     },
     "facebook": {
       "followers": 1295,
       "enabled": true,
-      "last_post": "2026-10-19T16:40:25Z",
+      "last_post": "2026-10-19T23:36:33Z",
       "failed": [],
       "errors": [],
-      "next_slot": "2026-10-19T23:30:00Z",
+      "next_slot": "2026-10-20T16:30:00Z",
       "plan_per_day": 4,
       "plan_mix": "3 reels + 1 slide album",
-      "posted_7d": 12,
+      "posted_7d": 13,
       "token_expires": null,
       "warn": null
     },
@@ -34,20 +34,20 @@
       "next_slot": "2026-10-20T01:00:00Z",
       "plan_per_day": 6,
       "plan_mix": "3 reels + 3 written posts",
-      "posted_7d": 19,
+      "posted_7d": 20,
       "token_expires": "2026-12-14",
       "warn": null
     },
     "youtube": {
       "enabled": true,
-      "last_post": "2026-10-19T16:40:28Z",
+      "last_post": "2026-10-19T23:05:52Z",
       "failed": [],
       "errors": [],
-      "next_slot": "2026-10-19T23:00:00Z",
+      "next_slot": "2026-10-20T16:30:00Z",
       "privacy": "public",
       "plan_per_day": 3,
       "plan_mix": "3 Shorts",
-      "posted_7d": 8,
+      "posted_7d": 9,
       "token_expires": null,
       "warn": null
     }
@@ -159,15 +159,15 @@
     },
     "lst-2026-10-18-calm-without-experience": {
       "instagram": {
-        "views": 3284,
+        "views": 3302,
         "likes": 45,
         "comments": 0,
         "shares": 5,
-        "saves": 32,
+        "saves": 33,
         "url": "https://www.instagram.com/reel/DepxRDYkdGs/"
       },
       "facebook": {
-        "views": 6,
+        "views": 10,
         "url": "https://www.facebook.com/reel/1635879197909351"
       },
       "threads": {
@@ -177,6 +177,20 @@
         "reposts": 0,
         "shares": 0,
         "url": "https://www.threads.com/@matteofights/post/DeqCb_dCuSH"
+      }
+    },
+    "lst-2026-10-19-made-for-combat-sports": {
+      "instagram": {
+        "views": 2286,
+        "likes": 29,
+        "comments": 0,
+        "shares": 0,
+        "saves": 1,
+        "url": "https://www.instagram.com/reel/DesWD6hjf8Y/"
+      },
+      "facebook": {
+        "views": 0,
+        "url": "https://www.facebook.com/reel/2252053825339456"
       }
     },
     "lst-2026-10-15-technique-without-a-coach": {
@@ -255,7 +269,7 @@
     },
     "lst-2026-10-18-last-round": {
       "instagram": {
-        "views": 2518,
+        "views": 2520,
         "likes": 48,
         "comments": 0,
         "shares": 5,
@@ -263,7 +277,7 @@
         "url": "https://www.instagram.com/reel/DeqF89GjlH7/"
       },
       "facebook": {
-        "views": 0,
+        "views": 2,
         "url": "https://www.facebook.com/reel/28558684847159932"
       },
       "threads": {
@@ -365,6 +379,14 @@
       "reposts": 0,
       "shares": 0,
       "url": "https://www.threads.com/@matteofights/post/DertY5aFDoh"
+    },
+    "th-1019-3": {
+      "views": 88,
+      "likes": 0,
+      "replies": 0,
+      "reposts": 0,
+      "shares": 0,
+      "url": "https://www.threads.com/@matteofights/post/DesPM4LgV6K"
     }
   },
   "warned": []
