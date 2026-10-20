@@ -19,7 +19,8 @@
       /* on "head" it jumps through him: #behind (under the cut-out) hands over to #front-head (over it) */
       #behind, #front-head { position: absolute; left: 0; right: 0; top: {{BEHIND_TOP}}px; text-align: center; font-family: "Geist", sans-serif;
         font-weight: 800; font-size: 360px; line-height: 0.8; letter-spacing: -0.065em; color: #E8112D; white-space: nowrap; }
-      #front-head { text-shadow: 0 4px 10px rgba(0,0,0,0.45), 0 14px 44px rgba(0,0,0,0.4); }
+      #front-head { text-shadow: 0 6px 14px rgba(0,0,0,0.5), 0 20px 60px rgba(0,0,0,0.45); transform-origin: 50% 60%; }
+      #behind { transform-origin: 50% 60%; }
       {{ED_CSS}}
       :root { --ed-cap-top: {{CAP_TOP}}px; --ed-back-top: {{BACK_TOP}}px; }
     </style>
@@ -57,11 +58,12 @@
       const PLAN = {{ED_PLAN}};
       const tl = gsap.timeline({ paused: true });
       // the title is already up on frame 0; "head" settles in as he says it, then the title softens away
-      // "head": the word punches through him, from behind his hair to in front of it
-      tl.fromTo("#front-head", { opacity: 0, scale: 0.9, filter: "blur(8px)" }, { opacity: 1, scale: 1.12, filter: "blur(0px)", duration: 0.1, ease: "power3.out" }, {{HEAD_SWAP}});
-      tl.to("#front-head", { scale: 1, duration: 0.22, ease: "power2.out" }, {{HEAD_SWAP}} + 0.1);
-      tl.fromTo("#cam", { scale: 1 }, { scale: 1.03, duration: 0.06, ease: "power2.out", immediateRender: false }, {{HEAD_SWAP}});
-      tl.to("#cam", { scale: 1, duration: 0.2, ease: "power2.out" }, {{HEAD_SWAP}} + 0.06);
+      // "head": the word winds back behind him, then flies forward through him toward the camera, over his forehead
+      tl.fromTo("#behind", { scale: 1, filter: "blur(0px)" }, { scale: 0.92, filter: "blur(2px)", duration: 0.16, ease: "power2.in" }, {{HEAD_SWAP}} - 0.16);
+      tl.fromTo("#front-head", { opacity: 1, scale: 0.92, y: 0, filter: "blur(8px)" }, { scale: 1.26, y: 70, filter: "blur(0px)", duration: 0.16, ease: "power3.out" }, {{HEAD_SWAP}});
+      tl.to("#front-head", { scale: 1.14, y: 56, duration: 0.3, ease: "power2.out" }, {{HEAD_SWAP}} + 0.16);
+      tl.fromTo("#cam", { scale: 1 }, { scale: 1.035, duration: 0.07, ease: "power2.out", immediateRender: false }, {{HEAD_SWAP}});
+      tl.to("#cam", { scale: 1, duration: 0.22, ease: "power2.out" }, {{HEAD_SWAP}} + 0.07);
       tl.to("#title", { opacity: 0, y: -20, filter: "blur(10px)", duration: 0.12, ease: "power1.in" }, {{TITLE_END}} - 0.12);
       tl.to("#front-head", { opacity: 0, filter: "blur(10px)", duration: 0.12, ease: "power1.in" }, {{TITLE_END}} - 0.12);
       Editorial.animate(tl, PLAN, { cam: "#cam-inner", shake: "#cam" });

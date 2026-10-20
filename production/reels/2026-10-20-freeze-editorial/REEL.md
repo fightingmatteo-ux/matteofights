@@ -38,3 +38,10 @@ the cloud (proxy), so it only exists in the session and in the chat.
 - Hook: **head.** sits behind his hair until he says "head" (2.87 s), then punches through to the front
   (`#behind` hands over to `#front-head` above the cut-out, scale pop 0.9 -> 1.12 -> 1, camera punch, punch SFX).
 - Render `media/freeze-editorial/freeze-editorial-A4.mp4` (+ `-phone`), check_render OK.
+
+## v5 (2026-10-20, Matteo: "I don't see it move from behind me to in front of me")
+v4's swap was invisible: the word sat above his hair, so the layer change showed nothing. Now the word sits
+lower (top 520, his head hides ~40% of it), winds back (scale 0.92) for 0.16 s before "head", then flies
+forward (0.92 -> 1.26 -> 1.14, +70 px down over his forehead, motion blur, camera punch). The rule: a
+behind-to-front move only reads if the word is visibly cut by him first AND it moves toward the camera.
+Render `media/freeze-editorial/freeze-editorial-A5.mp4` (+ `-phone`), check_render OK.

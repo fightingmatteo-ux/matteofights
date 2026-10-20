@@ -38,7 +38,7 @@ src = open("work/template.html", encoding="utf-8").read()
 fill = {"ED_CSS": css, "ED_JS": js, "ED_HTML_CAPS": ed["caps"], "ED_HTML_CAPS_BACK": ed["caps_back"], "ED_HTML_CARDS": ed["cards"], "ED_AUDIO": ed["audio"],
         "ED_PLAN": ed["plan"], "DUR": f"{d['duration']:.3f}", "TITLE_END": f"{TITLE_END:.3f}",
         "HEAD_T": f"{W('HEAD') - 0.03:.3f}", "HEAD_SWAP": f"{W('HEAD') - 0.02:.3f}",
-        "FRONT_DUR": f"{TITLE_END - W('HEAD') + 0.02:.3f}", "HEAD_SFX": f"{W('HEAD') - 0.11:.3f}", "CAP_TOP": "330", "BEHIND_TOP": "480", "BACK_TOP": "0"}
+        "FRONT_DUR": f"{TITLE_END - W('HEAD') + 0.02:.3f}", "HEAD_SFX": f"{W('HEAD') - 0.11:.3f}", "CAP_TOP": "330", "BEHIND_TOP": "520", "BACK_TOP": "0"}
 out = re.sub(r"\{\{(\w+)\}\}", lambda m: fill[m.group(1)], src)
 open("index.html", "w", encoding="utf-8").write(out)
 print(f"index.html built: {d['duration']:.1f}s, {len(json.loads(ed['plan'])['phrases'])} phrases, {len(CARDS)} cards")

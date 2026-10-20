@@ -58,9 +58,10 @@ curl -L -o rvm.onnx https://github.com/PeterL1n/RobustVideoMatting/releases/down
 (`#behind`, ~360 px, placed so the hair covers its lower edge), then `fg_A.webm` with the same start. All three sit
 in the camera, so the push-in moves them together. Example: `2026-10-20-freeze-editorial/work/template.html`.
 
-**Punch-through hook (the default):** the hook word sits behind his hair and, on the spoken word, jumps in front
-of him: a second copy (`#front-head`) above the cut-out takes over with a scale pop, a camera punch and the punch
-SFX. `check_render.py` keeps its default 1.5 s window, because a longer one flags this intended jump.
+**Punch-through hook (the default):** the hook word sits low enough that his head hides ~40% of it, winds back
+(scale 0.92) just before the spoken word, then a second copy (`#front-head`, above the cut-out) flies forward
+toward the camera (0.92 -> 1.26 -> 1.14, down over his forehead) with a camera punch and the punch SFX. Just
+swapping layers in place is invisible (tried in v4): the word must be visibly cut by him first, and it must move. `check_render.py` keeps its default 1.5 s window, because a longer one flags this intended jump.
 
 ## Notes
 - The piano bed is a synthesised placeholder (the cloud can't download music). Swap `assets/media/bed.wav` for a
