@@ -1,4 +1,5 @@
-// Matteo Fights control center. Reads data.json (rebuilt on every push), sends decisions to /api/act.
+// Matteo Fights control center. Reads data.json (rebuilt by the deploy workflow) plus live D1 data (studio.js,
+// /api/live), sends decisions to /api/act.
 "use strict";
 const $ = (s, el = document) => el.querySelector(s);
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -743,6 +744,7 @@ async function load() {
     const r = await fetch("data.json?" + Date.now(), { cache: "no-store" });
     if (!r.ok) throw new Error(r.status);
     D = await r.json();
+    if (typeof L !== "undefined" && L) overlay(); // live D1 state (studio.js) over the last rebuild
     if (!$("#sheet").open && !holdTimer) render();
   } catch {
     if (!D) $("#view").innerHTML = `<p class="empty-note">Couldn't load the latest data. Check your connection; this page retries every minute.</p>`;

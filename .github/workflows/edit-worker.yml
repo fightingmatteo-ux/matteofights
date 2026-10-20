@@ -1,0 +1,57 @@
+# Edit worker: Claude (Matteo's subscription, CLAUDE_CODE_OAUTH_TOKEN) turns dashboard uploads into 3 rendered,
+# queued, unapproved variants and applies revision notes. One item per run, then it starts itself again for the
+# next one. Capped at EDIT_MAX_RUNS a day. Instructions: tools/edit/WORKER.md. Renders run on Modal, not here.
+name: Edit worker
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: write
+  id-token: write
+concurrency:
+  group: edit-worker
+  cancel-in-progress: false
+env:
+  EDIT_MAX_RUNS: "4"
+jobs:
+  work:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    env:
+      CLOUDFLARE_D1_TOKEN: ${{ secrets.CLOUDFLARE_D1_TOKEN }}
+      R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+      R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+      MODAL_TOKEN_ID: ${{ secrets.MODAL_TOKEN_ID }}
+      MODAL_TOKEN_SECRET: ${{ secrets.MODAL_TOKEN_SECRET }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Anything to do, and budget left?
+        id: gate
+        run: |
+          n=$(python3 -P tools/edit/requests_cli.py open | python3 -c "import sys,json;print(len(json.load(sys.stdin)))")
+          echo "open=$n"
+          if [ "$n" = 0 ]; then echo "go=no" >> "$GITHUB_OUTPUT"; exit 0; fi
+          if python3 -P tools/edit/requests_cli.py budget "$EDIT_MAX_RUNS"; then echo "go=yes" >> "$GITHUB_OUTPUT"; else echo "go=no" >> "$GITHUB_OUTPUT"; fi
+      - if: steps.gate.outputs.go == 'yes'
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - if: steps.gate.outputs.go == 'yes'
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg >/dev/null
+          python3 -m pip install -q faster-whisper numpy pillow boto3 modal
+          git config user.name "edit-worker[bot]"
+          git config user.email "control@users.noreply.github.com"
+      - if: steps.gate.outputs.go == 'yes'
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          github_token: ${{ github.token }}
+          prompt: "Read tools/edit/WORKER.md and do exactly what it says for the oldest open item."
+          claude_args: "--max-turns 150 --allowedTools Bash,Read,Write,Edit,Glob,Grep,Skill"
+      - name: Next item
+        if: steps.gate.outputs.go == 'yes'
+        run: |
+          n=$(python3 -P tools/edit/requests_cli.py open | python3 -c "import sys,json;print(len(json.load(sys.stdin)))")
+          [ "$n" = 0 ] || gh workflow run edit-worker.yml
