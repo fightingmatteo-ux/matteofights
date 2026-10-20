@@ -47,8 +47,9 @@ When the backlog has no `ready` hooks left, the factory stops and says so. Ask C
 ## Audio (since 2026-10-20): his proven sounds, rotated
 Matteo's call: listicles do better on the sounds his best ones used (`production/sounds/own_proven.json`, sound scout
 `own` mode): Echo Sax End on 5 of his top 15 (incl. the 331k), INSONAMIA on 2, then Ethereal, Not You Too, Memory
-Reboot, 180db_, Fever once each. Only Echo Sax End is in the API library from its own artist; INSONAMIA and Memory
-Reboot are pinned fan uploads (`id:<audio_id> name`, checked at post time, gone = post by hand); the rest aren't
+Reboot, 180db_, Fever once each. Only Echo Sax End is in the API library from its own artist; INSONAMIA's official track
+(607478755762707, Matteo's link) is not in the API library, so the queue tries it first and falls back to a fan upload
+(`id:A|B name`, tried in order at post time; none available = post by hand); Memory Reboot is a pinned fan upload; the rest aren't
 attachable. Rotation (workflow default): Echo, INSONAMIA, Echo, Memory Reboot. The factory renders them without music and the queue item
 carries `app_audio: Echo Sax End - Caleb Arredondo`; at post time `audio.py resolve` finds it (music first, then the
 artist's own original-sound upload @caleb.arredondo, id 530317382955170) and the Audio API attaches it. Workflow input

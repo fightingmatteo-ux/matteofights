@@ -92,17 +92,27 @@ def resolve_audio(item):
     """Find the item's app_audio sound in Instagram's licensed library and store its audio_id. False = post by hand."""
     sys.path.insert(0, str(ROOT / "tools" / "instagram"))
     import audio
-    pinned = re.match(r"\s*id:(\d{6,})\s*(.*)", item["app_audio"])
+    # "id:A|B name": pinned sound(s), tried in order (e.g. the official track first, a fan upload of it second)
+    pinned = re.match(r"\s*id:([\d|]{6,})\s*(.*)", item["app_audio"])
     try:
-        if pinned:  # a sound picked by id (e.g. a fan upload of a proven song): check it still exists, use it as is
-            try:
-                a = audio.info(pinned.group(1))
-            except audio.ApiError as e:  # uploader deleted it / no longer cleared: post this one by hand
-                print(f"{item['id']}: pinned sound {pinned.group(1)} unavailable ({e}); left for the app")
-                item.update(audio_status="manual", audio_note=f"pinned sound gone: {str(e)[:200]}")
+        if pinned:
+            track = None
+            for sid in [x for x in pinned.group(1).split("|") if x]:
+                try:
+                    a = audio.info(sid)
+                except audio.ApiError as e:  # not in the API library / deleted: try the next one
+                    if re.search(r"access token|oauth|session has expired|permission", str(e), re.I) and \
+                            "does not exist" not in str(e):
+                        raise  # token problem, not the sound: retry next run
+                    print(f"{item['id']}: pinned sound {sid} unavailable ({str(e)[:120]})")
+                    continue
+                track = {"audio_id": sid, "title": a.get("title") or pinned.group(2),
+                         "display_artist": a.get("display_artist"), "ig_username": a.get("ig_username")}
+                break
+            if not track:
+                item.update(audio_status="manual", audio_note="no pinned sound available through the API")
+                print(f"{item['id']}: no pinned sound available; left for the app")
                 return False
-            track = {"audio_id": pinned.group(1), "title": a.get("title") or pinned.group(2),
-                     "display_artist": a.get("display_artist"), "ig_username": a.get("ig_username")}
         else:
             track = audio.resolve(item["app_audio"])
     except audio.ApiError as e:  # token missing/expired/scope: not the song's fault, so retry next run
