@@ -463,13 +463,14 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-10-22T22:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "test": {
         "exp": "exp-1016-hook_style",
         "variant": "a",
         "value": "native"
-      }
+      },
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)"
     },
     {
       "id": "lst-2026-10-23-rounds-nobody-sees",
@@ -485,13 +486,14 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-10-23T22:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "test": {
         "exp": "exp-1016-hook_style",
         "variant": "b",
         "value": "split"
-      }
+      },
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)"
     },
     {
       "id": "lst-2026-10-24-nerves-without-faking",
@@ -507,13 +509,14 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-10-24T22:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "test": {
         "exp": "exp-1016-hook_style",
         "variant": "a",
         "value": "native"
-      }
+      },
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)"
     },
     {
       "id": "lst-2026-10-25-light-sparring",
@@ -529,13 +532,14 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-10-25T22:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "test": {
         "exp": "exp-1016-hook_style",
         "variant": "b",
         "value": "split"
-      }
+      },
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)"
     },
     {
       "id": "lst-2026-10-26-fit-without-running",
@@ -551,13 +555,14 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-10-26T22:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "test": {
         "exp": "exp-1016-hook_style",
         "variant": "a",
         "value": "native"
-      }
+      },
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)"
     },
     {
       "id": "lst-2026-10-27-quit-before-good",
@@ -573,13 +578,14 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-10-27T22:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "test": {
         "exp": "exp-1016-hook_style",
         "variant": "b",
         "value": "split"
-      }
+      },
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)"
     },
     {
       "id": "lst-2026-10-28-quiet-threat",
@@ -595,13 +601,14 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-10-28T22:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "test": {
         "exp": "exp-1016-hook_style",
         "variant": "a",
         "value": "native"
-      }
+      },
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)"
     },
     {
       "id": "lst-2026-10-22-fight-trained-founder",
@@ -617,13 +624,14 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-10-23T01:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "test": {
         "exp": "exp-1016-hook_style",
         "variant": "b",
         "value": "split"
-      }
+      },
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)"
     },
     {
       "id": "lst-2026-10-23-gym-teaches-business",
@@ -639,13 +647,14 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-10-24T01:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "test": {
         "exp": "exp-1016-hook_style",
         "variant": "a",
         "value": "native"
-      }
+      },
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)"
     },
     {
       "id": "lst-2026-10-24-training-too-long",
@@ -661,13 +670,14 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-10-25T01:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "test": {
         "exp": "exp-1016-hook_style",
         "variant": "b",
         "value": "split"
-      }
+      },
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)"
     },
     {
       "id": "lst-2026-10-25-coach-sees",
@@ -683,13 +693,14 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-10-26T01:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "test": {
         "exp": "exp-1016-hook_style",
         "variant": "a",
         "value": "native"
-      }
+      },
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)"
     },
     {
       "id": "lst-2026-10-26-partner-everyone-wants",
@@ -705,13 +716,14 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-10-27T01:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "test": {
         "exp": "exp-1016-hook_style",
         "variant": "b",
         "value": "split"
-      }
+      },
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)"
     },
     {
       "id": "lst-2026-10-27-beginner-habits-hurt",
@@ -727,13 +739,14 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-10-28T01:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "test": {
         "exp": "exp-1016-hook_style",
         "variant": "a",
         "value": "native"
-      }
+      },
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)"
     },
     {
       "id": "lst-2026-10-28-fighting-pressure",
@@ -749,13 +762,14 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-10-29T01:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "test": {
         "exp": "exp-1016-hook_style",
         "variant": "b",
         "value": "split"
-      }
+      },
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)"
     },
     {
       "id": "lst-2026-10-18-round-three",
@@ -771,13 +785,14 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-10-18T16:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "test": {
         "exp": "exp-1016-hook_style",
         "variant": "a",
         "value": "native"
-      }
+      },
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)"
     },
     {
       "id": "lst-2026-10-19-first-body-shot",
@@ -793,13 +808,14 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-10-19T16:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "test": {
         "exp": "exp-1016-hook_style",
         "variant": "b",
         "value": "split"
-      }
+      },
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)"
     },
     {
       "id": "lst-2026-10-20-nerves-never-leave",
@@ -815,13 +831,14 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-10-20T16:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "test": {
         "exp": "exp-1016-hook_style",
         "variant": "a",
         "value": "native"
-      }
+      },
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)"
     },
     {
       "id": "lst-2026-10-21-day-one-full-gear",
@@ -837,14 +854,15 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-10-21T16:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "rotate": 90,
       "test": {
         "exp": "exp-1016-hook_style",
         "variant": "b",
         "value": "split"
-      }
+      },
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)"
     },
     {
       "id": "lst-2026-10-22-fighter-groceries",
@@ -860,13 +878,14 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-10-22T16:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "test": {
         "exp": "exp-1016-hook_style",
         "variant": "a",
         "value": "native"
-      }
+      },
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)"
     },
     {
       "id": "lst-2026-10-23-recovery-twice-a-day",
@@ -882,13 +901,14 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-10-23T16:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "test": {
         "exp": "exp-1016-hook_style",
         "variant": "b",
         "value": "split"
-      }
+      },
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)"
     },
     {
       "id": "lst-2026-10-24-morning-session-fuel",
@@ -904,13 +924,14 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-10-24T16:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "test": {
         "exp": "exp-1016-hook_style",
         "variant": "a",
         "value": "native"
-      }
+      },
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)"
     }
   ]
 }
