@@ -83,7 +83,7 @@ def main():
                "--caption-file", item["caption_file"], "--strategy", item.get("strategy", "MANUAL"), "--confirm"]
     if item.get("thumb_offset_ms") is not None:
         cmd += ["--thumb-offset", str(item["thumb_offset_ms"])]
-    state.patch("queue", item["id"], {"status": "posting"})
+    state.patch("queue", item["id"], {"status": "posting", "posting_since": now().strftime("%Y-%m-%dT%H:%M:%SZ")})
     r = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True, encoding="utf-8")
     out = r.stdout + r.stderr
     print(out[-3000:])

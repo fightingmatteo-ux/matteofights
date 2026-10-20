@@ -1,0 +1,37 @@
+# Scripted health check (tools/health/check.py, no AI): stuck/failed/missed reels, failed cloud renders, failed
+# workflow runs. New problems go to Telegram once a day each; the full list is in D1 health/latest.
+name: Health check
+on:
+  schedule:
+    - cron: "25 */2 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+concurrency:
+  group: health
+  cancel-in-progress: false
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    env:
+      CLOUDFLARE_D1_TOKEN: ${{ secrets.CLOUDFLARE_D1_TOKEN }}
+      GH_TOKEN: ${{ github.token }}
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check
+        run: python3 -P tools/health/check.py
+      - name: Tell Matteo (new problems only)
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          python3 -m pip install -q pillow 2>/dev/null || true
+          python3 -P tools/control/control.py notify || echo "telegram notify failed (non-fatal)"
+          git config user.name "control[bot]"
+          git config user.email "control@users.noreply.github.com"
+          git add production/control
+          git diff --cached --quiet && exit 0
+          git commit -qm "health: check"
+          for n in 1 2 3; do git pull --rebase -q && git push -q && break; sleep 5; done
