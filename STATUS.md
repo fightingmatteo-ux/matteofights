@@ -28,6 +28,7 @@ Log: `media/2026-10-16-saenchai-bigger-men/renders/render_bc.log` (ends with `AL
 
 | Item | Status | Next step |
 |---|---|---|
+| Editorial look (kaixerb reference, 10-20) | **MATTEO** | Watch the freeze-editorial test (sent in chat). If yes, it's the default for the next talking-head reel (PIPELINE.md already says so). Film `production/reels/2026-10-20-you-be-the-judge/` (needs the first-fight KO clip from Drive) |
 | Audio API (`tools/instagram/audio.py`, added 10-19) | **MATTEO** | Add `instagram_basic` + `instagram_content_publish` to FB_USER_TOKEN (README 'Audio API'), update the secret, run the **Audio** workflow `check`, then `search "echo sax end"`. Until then app_audio items are skipped, not lost |
 | Cloudflare ticker (`tools/ticker`) | Likely not deployed, so posts run on late GitHub cron | MATTEO creates a fine-grained PAT (Actions read/write), then `wrangler deploy` + Worker secret `GH_TOKEN` |
 | TikTok | WAIT | App review |

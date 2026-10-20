@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/lib/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: #000; }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; background: #000; }
+      .full { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+      #cam { position: absolute; inset: 0; overflow: hidden; }
+      #cam-inner { position: absolute; inset: 0; transform-origin: 50% 100%; }
+      /* hook title: on frame 0 (it is the thumbnail), inside the grid crop */
+      #title { position: absolute; left: 70px; right: 70px; top: 300px; text-align: center; font-family: "Geist", sans-serif; color: #fff;
+        text-shadow: 0 2px 6px rgba(0,0,0,0.45), 0 8px 34px rgba(0,0,0,0.4); }
+      #title .lead { display: block; font-weight: 700; font-size: 70px; line-height: 1.05; letter-spacing: -0.035em; }
+      #title .big { display: block; font-weight: 800; font-size: 190px; line-height: 0.92; letter-spacing: -0.06em; color: #E8112D; }
+      /* Editorial captions + white quote cards. Needs the Geist variable font at assets/fonts/Geist-latin.woff2. */
+@font-face { font-family: "Geist"; src: url("assets/fonts/Geist-latin.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+:root { --ed-white: #FFFFFF; --ed-paper: #FFFFFF; --ed-ink: #0B0B0D; --ed-red: #E8112D; --ed-cap-top: 1180px; }
+
+/* captions over the face: small lead words, one big red keyword on its own line, soft shadow (no outline box) */
+#ed-caps { position: absolute; left: 60px; right: 60px; top: var(--ed-cap-top); height: 320px; pointer-events: none; }
+.ed-ph { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
+  text-align: center; opacity: 0; font-family: "Geist", sans-serif; color: var(--ed-white);
+  text-shadow: 0 2px 6px rgba(0,0,0,0.45), 0 6px 28px rgba(0,0,0,0.35); }
+.ed-lead { font-weight: 700; font-size: 70px; line-height: 1.05; letter-spacing: -0.035em; }
+.ed-keyline { margin-top: -6px; font-weight: 800; font-size: 168px; line-height: 0.95; letter-spacing: -0.055em; color: var(--ed-red); }
+.ed-w { display: inline-block; opacity: 0; will-change: transform, filter, opacity; }
+
+/* quote card: white page, black type building on the voice, keyword huge in red */
+.ed-card { position: absolute; inset: 0; background: var(--ed-paper); overflow: hidden; }
+.ed-cardbox { position: absolute; left: 80px; right: 80px; top: 640px; font-family: "Geist", sans-serif; color: var(--ed-ink); }
+.ed-cardlead { font-weight: 700; font-size: 64px; line-height: 1.08; letter-spacing: -0.035em; text-align: left; }
+.ed-cardkey { font-weight: 800; font-size: 230px; line-height: 0.9; letter-spacing: -0.06em; color: var(--ed-red); white-space: nowrap; margin: 4px 0 6px -8px; }
+.ed-cardkey.ed-slam { font-size: 300px; }
+.ed-cardtail { font-weight: 700; font-size: 64px; line-height: 1.08; letter-spacing: -0.035em; text-align: right; }
+#ed-dip { position: absolute; inset: 0; background: #000; opacity: 0; pointer-events: none; }
+
+      :root { --ed-cap-top: 330px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="24.550" data-width="1080" data-height="1920">
+      <div id="cam"><div id="cam-inner">
+        <video id="aroll" class="clip full" src="assets/media/aroll_A.mp4" data-start="0" data-duration="24.550" data-track-index="0" muted playsinline></video>
+      </div></div>
+
+      <div id="title" class="clip" data-start="0" data-duration="3.490" data-track-index="5">
+        <span class="lead">If you freeze when you spar,</span><span id="title-big" class="big">it's your head.</span>
+      </div>
+
+      <div id="ed-caps">
+      <div id="ph0" class="ed-ph"><div class="ed-lead"><span id="ph0w0" class="ed-w">and</span> <span id="ph0w1" class="ed-w">there</span> <span id="ph0w2" class="ed-w">are</span></div><div class="ed-keyline"><span id="ph0w3" class="ed-w ed-key">three</span></div></div>
+      <div id="ph1" class="ed-ph"><div class="ed-lead"><span id="ph1w0" class="ed-w">things</span> <span id="ph1w1" class="ed-w">you</span> <span id="ph1w2" class="ed-w">can</span> <span id="ph1w3" class="ed-w">do</span></div></div>
+      <div id="ph2" class="ed-ph"><div class="ed-lead"><span id="ph2w0" class="ed-w">to</span> <span id="ph2w1" class="ed-w">fix</span> <span id="ph2w2" class="ed-w">it</span></div></div>
+      <div id="ph3" class="ed-ph"><div class="ed-lead"><span id="ph3w0" class="ed-w">number</span></div><div class="ed-keyline"><span id="ph3w1" class="ed-w ed-key">one</span></div></div>
+      <div id="ph4" class="ed-ph"><div class="ed-lead"><span id="ph4w0" class="ed-w">you</span> <span id="ph4w1" class="ed-w">have</span> <span id="ph4w2" class="ed-w">to</span> <span id="ph4w3" class="ed-w">expect</span></div></div>
+      <div id="ph5" class="ed-ph"><div class="ed-lead"><span id="ph5w0" class="ed-w">to</span> <span id="ph5w1" class="ed-w">get</span> <span id="ph5w2" class="ed-w">punched</span></div></div>
+      <div id="ph6" class="ed-ph"><div class="ed-lead"><span id="ph6w0" class="ed-w">number</span></div><div class="ed-keyline"><span id="ph6w1" class="ed-w ed-key">two</span></div></div>
+      <div id="ph7" class="ed-ph"><div class="ed-lead"><span id="ph7w0" class="ed-w">stop</span> <span id="ph7w1" class="ed-w">thinking</span> <span id="ph7w2" class="ed-w">about</span> <span id="ph7w3" class="ed-w">everything</span></div></div>
+      <div id="ph8" class="ed-ph"><div class="ed-lead"><span id="ph8w0" class="ed-w">just</span> <span id="ph8w1" class="ed-w">a</span></div><div class="ed-keyline"><span id="ph8w2" class="ed-w ed-key">jab</span></div></div>
+      <div id="ph9" class="ed-ph"><div class="ed-lead"><span id="ph9w0" class="ed-w">and</span> <span id="ph9w1" class="ed-w">then</span> <span id="ph9w2" class="ed-w">your</span> <span id="ph9w3" class="ed-w">head</span></div></div>
+      <div id="ph10" class="ed-ph"><div class="ed-lead"><span id="ph10w0" class="ed-w">is</span> <span id="ph10w1" class="ed-w">going</span> <span id="ph10w2" class="ed-w">to</span></div><div class="ed-keyline"><span id="ph10w3" class="ed-w ed-key">relax</span></div></div>
+      <div id="ph11" class="ed-ph"><div class="ed-lead"><span id="ph11w0" class="ed-w">number</span></div><div class="ed-keyline"><span id="ph11w1" class="ed-w ed-key">three</span></div></div>
+      <div id="ph12" class="ed-ph"><div class="ed-lead"><span id="ph12w0" class="ed-w">if</span> <span id="ph12w1" class="ed-w">you</span> <span id="ph12w2" class="ed-w">get</span></div><div class="ed-keyline"><span id="ph12w3" class="ed-w ed-key">caught</span></div></div>
+      <div id="ph13" class="ed-ph"><div class="ed-lead"><span id="ph13w0" class="ed-w">just</span> <span id="ph13w1" class="ed-w">step</span> <span id="ph13w2" class="ed-w">back</span></div></div>
+      <div id="ph14" class="ed-ph"><div class="ed-lead"><span id="ph14w0" class="ed-w">because</span> <span id="ph14w1" class="ed-w">if</span></div></div>
+      </div>
+      <div id="card0" class="clip ed-card" data-start="8.380" data-duration="2.880" data-track-index="6"><div class="ed-cardbox"><div class="ed-cardlead"><span id="card0w0" class="ed-w">getting</span> <span id="card0w1" class="ed-w">punched</span> <span id="card0w2" class="ed-w">isn&#x27;t</span> <span id="card0w3" class="ed-w">a</span> <span id="card0w4" class="ed-w">failure</span> <span id="card0w5" class="ed-w">it&#x27;s</span> <span id="card0w6" class="ed-w">just</span></div><div class="ed-cardkey" style="font-size:149px"><span id="card0w7" class="ed-w">information</span></div><div class="ed-cardtail"></div></div></div>
+      <div id="card1" class="clip ed-card" data-start="14.320" data-duration="1.500" data-track-index="6"><div class="ed-cardbox"><div class="ed-cardlead"><span id="card1w0" class="ed-w">pick</span></div><div class="ed-cardkey" style="font-size:230px"><span id="card1w1" class="ed-w">one</span></div><div class="ed-cardtail"><span id="card1w2" class="ed-w">job</span> <span id="card1w3" class="ed-w">per</span> <span id="card1w4" class="ed-w">round</span></div></div></div>
+      <div id="card2" class="clip ed-card" data-start="21.930" data-duration="2.080" data-track-index="6"><div class="ed-cardbox"><div class="ed-cardlead"><span id="card2w0" class="ed-w">take</span> <span id="card2w1" class="ed-w">a</span> <span id="card2w2" class="ed-w">deep</span> <span id="card2w3" class="ed-w">breath</span> <span id="card2w4" class="ed-w">and</span></div><div class="ed-cardkey ed-slam" style="font-size:300px"><span id="card2w5" class="ed-w">reset</span></div><div class="ed-cardtail"></div></div></div>
+      <div id="ed-dip"></div>
+
+      <audio id="vo" src="assets/media/aroll_A.mp4" data-start="0" data-duration="24.550" data-track-index="10" data-volume="1"></audio>
+      <audio id="ed-sfx0" src="assets/sfx/ed/shimmer.wav" data-start="0.000" data-duration="0.350" data-track-index="20" data-volume="0.25"></audio>
+      <audio id="ed-sfx1" src="assets/sfx/ed/tick.wav" data-start="3.500" data-duration="0.070" data-track-index="21" data-volume="0.22"></audio>
+      <audio id="ed-sfx2" src="assets/sfx/ed/key.wav" data-start="3.930" data-duration="0.450" data-track-index="22" data-volume="0.3"></audio>
+      <audio id="ed-sfx3" src="assets/sfx/ed/tick.wav" data-start="4.180" data-duration="0.070" data-track-index="23" data-volume="0.22"></audio>
+      <audio id="ed-sfx4" src="assets/sfx/ed/tick.wav" data-start="5.140" data-duration="0.070" data-track-index="20" data-volume="0.22"></audio>
+      <audio id="ed-sfx5" src="assets/sfx/ed/tick.wav" data-start="6.030" data-duration="0.070" data-track-index="21" data-volume="0.22"></audio>
+      <audio id="ed-sfx6" src="assets/sfx/ed/key.wav" data-start="6.220" data-duration="0.450" data-track-index="22" data-volume="0.3"></audio>
+      <audio id="ed-sfx7" src="assets/sfx/ed/tick.wav" data-start="6.650" data-duration="0.070" data-track-index="23" data-volume="0.22"></audio>
+      <audio id="ed-sfx8" src="assets/sfx/ed/tick.wav" data-start="7.290" data-duration="0.070" data-track-index="20" data-volume="0.22"></audio>
+      <audio id="ed-sfx9" src="assets/sfx/ed/whoom.wav" data-start="8.200" data-duration="0.600" data-track-index="21" data-volume="0.3"></audio>
+      <audio id="ed-sfx10" src="assets/sfx/ed/key.wav" data-start="10.260" data-duration="0.450" data-track-index="22" data-volume="0.34"></audio>
+      <audio id="ed-sfx11" src="assets/sfx/ed/tick.wav" data-start="11.290" data-duration="0.070" data-track-index="23" data-volume="0.22"></audio>
+      <audio id="ed-sfx12" src="assets/sfx/ed/key.wav" data-start="11.860" data-duration="0.450" data-track-index="20" data-volume="0.3"></audio>
+      <audio id="ed-sfx13" src="assets/sfx/ed/tick.wav" data-start="12.530" data-duration="0.070" data-track-index="21" data-volume="0.22"></audio>
+      <audio id="ed-sfx14" src="assets/sfx/ed/whoom.wav" data-start="14.140" data-duration="0.600" data-track-index="22" data-volume="0.3"></audio>
+      <audio id="ed-sfx15" src="assets/sfx/ed/key.wav" data-start="14.500" data-duration="0.450" data-track-index="23" data-volume="0.34"></audio>
+      <audio id="ed-sfx16" src="assets/sfx/ed/tick.wav" data-start="15.810" data-duration="0.070" data-track-index="20" data-volume="0.22"></audio>
+      <audio id="ed-sfx17" src="assets/sfx/ed/key.wav" data-start="16.260" data-duration="0.450" data-track-index="21" data-volume="0.3"></audio>
+      <audio id="ed-sfx18" src="assets/sfx/ed/tick.wav" data-start="16.410" data-duration="0.070" data-track-index="22" data-volume="0.22"></audio>
+      <audio id="ed-sfx19" src="assets/sfx/ed/tick.wav" data-start="17.230" data-duration="0.070" data-track-index="23" data-volume="0.22"></audio>
+      <audio id="ed-sfx20" src="assets/sfx/ed/key.wav" data-start="17.660" data-duration="0.450" data-track-index="20" data-volume="0.3"></audio>
+      <audio id="ed-sfx21" src="assets/sfx/ed/tick.wav" data-start="18.440" data-duration="0.070" data-track-index="21" data-volume="0.22"></audio>
+      <audio id="ed-sfx22" src="assets/sfx/ed/key.wav" data-start="18.810" data-duration="0.450" data-track-index="22" data-volume="0.3"></audio>
+      <audio id="ed-sfx23" src="assets/sfx/ed/tick.wav" data-start="19.860" data-duration="0.070" data-track-index="23" data-volume="0.22"></audio>
+      <audio id="ed-sfx24" src="assets/sfx/ed/key.wav" data-start="20.390" data-duration="0.450" data-track-index="20" data-volume="0.3"></audio>
+      <audio id="ed-sfx25" src="assets/sfx/ed/tick.wav" data-start="20.980" data-duration="0.070" data-track-index="21" data-volume="0.22"></audio>
+      <audio id="ed-sfx26" src="assets/sfx/ed/whoom.wav" data-start="21.750" data-duration="0.600" data-track-index="22" data-volume="0.3"></audio>
+      <audio id="ed-sfx27" src="assets/sfx/ed/sub.wav" data-start="23.250" data-duration="1.300" data-track-index="23" data-volume="0.55"></audio>
+      <audio id="ed-sfx28" src="assets/sfx/ed/tick.wav" data-start="24.080" data-duration="0.070" data-track-index="20" data-volume="0.22"></audio>
+      <audio id="ed-bed" src="assets/media/bed.wav" data-start="0" data-duration="24.550" data-track-index="11" data-volume="1" data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":0.2},{"t":8.33,"v":0.2},{"t":8.48,"v":0.45},{"t":11.26,"v":0.45},{"t":11.51,"v":0.2},{"t":14.27,"v":0.2},{"t":14.42,"v":0.45},{"t":15.82,"v":0.45},{"t":16.07,"v":0.2},{"t":21.88,"v":0.2},{"t":22.03,"v":0.45},{"t":24.01,"v":0.45},{"t":24.26,"v":0.2},{"t":24.25,"v":0.2},{"t":24.55,"v":0}]}]}'></audio>
+    </div>
+
+    <script>// Editorial motion for the PLAN that plan.py writes. Soft, calm, premium: blur-in words, no bounce.
+//   Editorial.animate(tl, PLAN, { cam: "#cam-inner" })
+window.Editorial = {
+  animate(tl, P, o = {}) {
+    const IN = 0.22, OUT = 0.08;
+    const wordIn = (id, t, key, slam) => {
+      if (slam) {
+        // over-scaled past the frame edges, settles hard: the one loud moment
+        tl.fromTo("#" + id, { opacity: 0, scale: 2.4, filter: "blur(18px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.32, ease: "expo.out" }, t);
+      } else if (key) {
+        tl.fromTo("#" + id, { opacity: 0, scale: 1.18, y: 10, filter: "blur(16px)" }, { opacity: 1, scale: 1, y: 0, filter: "blur(0px)", duration: 0.3, ease: "expo.out" }, t);
+      } else {
+        tl.fromTo("#" + id, { opacity: 0, y: 14, filter: "blur(10px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: IN, ease: "expo.out" }, t);
+      }
+    };
+
+    // captions: phrase shows, words build on the voice, phrase lifts and softens away before the next
+    P.phrases.forEach((ph) => {
+      const t0 = Math.max(0, ph.t0 - 0.03);
+      tl.fromTo("#" + ph.id, { opacity: 0 }, { opacity: 1, duration: 0.01 }, t0);
+      ph.words.forEach((w) => wordIn(w.id, Math.max(0, w.s - 0.03), w.key));
+      tl.to("#" + ph.id, { opacity: 0, y: -16, filter: "blur(8px)", duration: OUT, ease: "power1.in" }, Math.max(t0 + 0.2, ph.t1 - OUT));
+    });
+
+    // quote cards: words build on the voice; the card itself is a hard cut in and out (its clip timing)
+    P.cards.forEach((c) => {
+      c.words.forEach((w) => wordIn(w.id, Math.max(c.t0, w.s - 0.03), w.key, w.slam));
+      tl.fromTo("#" + c.id + " .ed-cardbox", { scale: 1.0 }, { scale: 1.03, duration: c.t1 - c.t0, ease: "none" }, c.t0);
+    });
+
+    // camera: never static. Slow push on every face stretch, alternate framing after each card (jump-cut feel)
+    if (o.cam) {
+      const last = P.faces.length - 1;
+      P.faces.forEach(([a, b], k) => {
+        // the last stretch holds frame 0's framing so the loop has no visual jump
+        if (k === last && last > 0 && o.loop !== false) { tl.set(o.cam, { scale: 1.0 }, a); return; }
+        const z = k % 2 ? 1.1 : 1.0;
+        tl.fromTo(o.cam, { scale: z }, { immediateRender: k === 0, scale: z + 0.04, duration: b - a, ease: "none" }, a);
+      });
+    }
+
+    if (P.dip) {
+      tl.fromTo("#ed-dip", { opacity: 0 }, { opacity: 1, duration: P.dip[1] - P.dip[0], ease: "sine.inOut" }, P.dip[0]);
+    }
+  },
+};
+</script>
+    <script>
+      const PLAN = {"phrases":[{"id":"ph0","t0":3.55,"end":4.23,"words":[{"id":"ph0w0","s":3.55,"key":false},{"id":"ph0w1","s":3.73,"key":false},{"id":"ph0w2","s":3.87,"key":false},{"id":"ph0w3","s":3.97,"key":true}],"t1":4.19},{"id":"ph1","t0":4.23,"end":5.19,"words":[{"id":"ph1w0","s":4.23,"key":false},{"id":"ph1w1","s":4.57,"key":false},{"id":"ph1w2","s":4.85,"key":false},{"id":"ph1w3","s":5.01,"key":false}],"t1":5.15},{"id":"ph2","t0":5.19,"end":5.85,"words":[{"id":"ph2w0","s":5.19,"key":false},{"id":"ph2w1","s":5.35,"key":false},{"id":"ph2w2","s":5.59,"key":false}],"t1":6.04},{"id":"ph3","t0":6.08,"end":6.56,"words":[{"id":"ph3w0","s":6.08,"key":false},{"id":"ph3w1","s":6.26,"key":true}],"t1":6.66},{"id":"ph4","t0":6.7,"end":7.34,"words":[{"id":"ph4w0","s":6.7,"key":false},{"id":"ph4w1","s":6.76,"key":false},{"id":"ph4w2","s":6.92,"key":false},{"id":"ph4w3","s":7.04,"key":false}],"t1":7.3},{"id":"ph5","t0":7.34,"end":8.16,"words":[{"id":"ph5w0","s":7.34,"key":false},{"id":"ph5w1","s":7.6,"key":false},{"id":"ph5w2","s":7.7,"key":false}],"t1":8.34},{"id":"ph6","t0":11.34,"end":12.3,"words":[{"id":"ph6w0","s":11.34,"key":false},{"id":"ph6w1","s":11.9,"key":true}],"t1":12.540000000000001},{"id":"ph7","t0":12.58,"end":14.06,"words":[{"id":"ph7w0","s":12.58,"key":false},{"id":"ph7w1","s":12.86,"key":false},{"id":"ph7w2","s":13.26,"key":false},{"id":"ph7w3","s":13.56,"key":false}],"t1":14.280000000000001},{"id":"ph8","t0":15.86,"end":16.46,"words":[{"id":"ph8w0","s":15.86,"key":false},{"id":"ph8w1","s":16.1,"key":false},{"id":"ph8w2","s":16.3,"key":true}],"t1":16.42},{"id":"ph9","t0":16.46,"end":17.28,"words":[{"id":"ph9w0","s":16.46,"key":false},{"id":"ph9w1","s":16.8,"key":false},{"id":"ph9w2","s":16.92,"key":false},{"id":"ph9w3","s":17.04,"key":false}],"t1":17.240000000000002},{"id":"ph10","t0":17.28,"end":18.06,"words":[{"id":"ph10w0","s":17.28,"key":false},{"id":"ph10w1","s":17.46,"key":false},{"id":"ph10w2","s":17.6,"key":false},{"id":"ph10w3","s":17.7,"key":true}],"t1":18.45},{"id":"ph11","t0":18.49,"end":19.35,"words":[{"id":"ph11w0","s":18.49,"key":false},{"id":"ph11w1","s":18.85,"key":true}],"t1":19.85},{"id":"ph12","t0":19.91,"end":20.73,"words":[{"id":"ph12w0","s":19.91,"key":false},{"id":"ph12w1","s":20.09,"key":false},{"id":"ph12w2","s":20.21,"key":false},{"id":"ph12w3","s":20.43,"key":true}],"t1":20.990000000000002},{"id":"ph13","t0":21.03,"end":21.81,"words":[{"id":"ph13w0","s":21.03,"key":false},{"id":"ph13w1","s":21.19,"key":false},{"id":"ph13w2","s":21.49,"key":false}],"t1":21.89},{"id":"ph14","t0":24.13,"end":24.55,"words":[{"id":"ph14w0","s":24.13,"key":false},{"id":"ph14w1","s":24.47,"key":false}],"t1":24.51}],"cards":[{"id":"card0","t0":8.379999999999999,"t1":11.26,"words":[{"id":"card0w0","s":8.44,"key":false},{"id":"card0w1","s":8.58,"key":false},{"id":"card0w2","s":8.98,"key":false},{"id":"card0w3","s":9.34,"key":false},{"id":"card0w4","s":9.42,"key":false},{"id":"card0w5","s":10.0,"key":false},{"id":"card0w6","s":10.14,"key":false},{"id":"card0w7","s":10.3,"key":true,"slam":false}]},{"id":"card1","t0":14.32,"t1":15.82,"words":[{"id":"card1w0","s":14.38,"key":false},{"id":"card1w1","s":14.54,"key":true,"slam":false},{"id":"card1w2","s":14.86,"key":false},{"id":"card1w3","s":15.14,"key":false},{"id":"card1w4","s":15.42,"key":false}]},{"id":"card2","t0":21.93,"t1":24.009999999999998,"words":[{"id":"card2w0","s":21.99,"key":false},{"id":"card2w1","s":22.19,"key":false},{"id":"card2w2","s":22.39,"key":false},{"id":"card2w3","s":22.63,"key":false},{"id":"card2w4","s":22.95,"key":false},{"id":"card2w5","s":23.29,"key":true,"slam":true}]}],"faces":[[0.0,8.379999999999999],[11.26,14.32],[15.82,21.93],[24.009999999999998,24.55]],"dip":null,"title_end":3.4899999999999998};
+      const tl = gsap.timeline({ paused: true });
+      // the title is already up on frame 0; "head" settles in as he says it, then the title softens away
+      tl.fromTo("#title-big", { scale: 1.0 }, { scale: 1.06, duration: 0.14, ease: "power2.out", yoyo: true, repeat: 1 }, 2.840);
+      tl.to("#title", { opacity: 0, y: -20, filter: "blur(10px)", duration: 0.12, ease: "power1.in" }, 3.490 - 0.12);
+      Editorial.animate(tl, PLAN, { cam: "#cam-inner" });
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

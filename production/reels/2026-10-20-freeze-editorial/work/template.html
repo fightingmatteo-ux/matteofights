@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/lib/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: #000; }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; background: #000; }
+      .full { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+      #cam { position: absolute; inset: 0; overflow: hidden; }
+      #cam-inner { position: absolute; inset: 0; transform-origin: 50% 100%; }
+      /* hook title: on frame 0 (it is the thumbnail), inside the grid crop */
+      #title { position: absolute; left: 70px; right: 70px; top: 300px; text-align: center; font-family: "Geist", sans-serif; color: #fff;
+        text-shadow: 0 2px 6px rgba(0,0,0,0.45), 0 8px 34px rgba(0,0,0,0.4); }
+      #title .lead { display: block; font-weight: 700; font-size: 70px; line-height: 1.05; letter-spacing: -0.035em; }
+      #title .big { display: block; font-weight: 800; font-size: 190px; line-height: 0.92; letter-spacing: -0.06em; color: #E8112D; }
+      {{ED_CSS}}
+      :root { --ed-cap-top: {{CAP_TOP}}px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="{{DUR}}" data-width="1080" data-height="1920">
+      <div id="cam"><div id="cam-inner">
+        <video id="aroll" class="clip full" src="assets/media/aroll_A.mp4" data-start="0" data-duration="{{DUR}}" data-track-index="0" muted playsinline></video>
+      </div></div>
+
+      <div id="title" class="clip" data-start="0" data-duration="{{TITLE_END}}" data-track-index="5">
+        <span class="lead">If you freeze when you spar,</span><span id="title-big" class="big">it's your head.</span>
+      </div>
+
+      <div id="ed-caps">
+      {{ED_HTML_CAPS}}
+      </div>
+      {{ED_HTML_CARDS}}
+      <div id="ed-dip"></div>
+
+      <audio id="vo" src="assets/media/aroll_A.mp4" data-start="0" data-duration="{{DUR}}" data-track-index="10" data-volume="1"></audio>
+      {{ED_AUDIO}}
+    </div>
+
+    <script>{{ED_JS}}</script>
+    <script>
+      const PLAN = {{ED_PLAN}};
+      const tl = gsap.timeline({ paused: true });
+      // the title is already up on frame 0; "head" settles in as he says it, then the title softens away
+      tl.fromTo("#title-big", { scale: 1.0 }, { scale: 1.06, duration: 0.14, ease: "power2.out", yoyo: true, repeat: 1 }, {{HEAD_T}});
+      tl.to("#title", { opacity: 0, y: -20, filter: "blur(10px)", duration: 0.12, ease: "power1.in" }, {{TITLE_END}} - 0.12);
+      Editorial.animate(tl, PLAN, { cam: "#cam-inner" });
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

@@ -87,8 +87,19 @@ series** with a real number ("day 1 of ..."). (c) **The premium-minimal edit lay
 quiet ticks) on our talking-points reels. (d) **Borrowing proven clips** (fighter interview soundbites) as the
 middle of a reel, with Matteo's framing around them. That's the same "packaged proven content" move.
 
-## Next step (not done yet)
+## Pacing (measured)
 
-`production/editing/reel-kit/` has no caption-SFX layer yet. To build it: a small tick/pop/sub set (free source,
-e.g. Mixkit SFX), then have the HyperFrames template place a tick on every `W('seg','WORD')` subtitle change and a
-hit on red words, offset −0.06 s. Test it on the next talking-points reel.
+- Speech: intro **4.3 words/s** with almost no pauses (1 over 0.3 s); podcast **3.45 words/s** with 5 kept
+  breaths up to 0.64 s. Fast where it's setup, air where the line matters.
+- Shots average 3.5 s, but the screen changes about every 0.5 s (a phrase, a word, a card). The camera always
+  drifts, except on the white cards, which are the stillest moments of the video. That contrast makes them land.
+- Cards: 15.0–16.2 s (1.2 s), 19.0–21.9 s (2.9 s), 33.0–36.5 s (3.5 s, fading white to grey to black). Each one
+  is the line the clip exists for. The music is in the clear on the cards and in the 1 s gap before the black frame.
+
+## Built from this (2026-10-20)
+
+`production/editing/reel-kit/editorial/` (captions, white cards, caption SFX, bed lift), now the default
+talking-head look in PIPELINE.md. Test re-cut: `production/reels/2026-10-20-freeze-editorial/`. "Judge me" reel
+plan: `production/reels/2026-10-20-you-be-the-judge/`.
+
+Still open: the hook word behind the head (subject cut-out), and a real music track instead of the synthesised bed.
