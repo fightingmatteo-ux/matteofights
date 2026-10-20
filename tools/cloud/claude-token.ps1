@@ -1,6 +1,6 @@
 # Lets the GitHub edit worker + talking points run on Matteo's Claude subscription. Run once a year:
 #   powershell -ExecutionPolicy Bypass -File tools\cloud\claude-token.ps1
-$ErrorActionPreference = "Stop"
+# no "Stop" here: Windows PowerShell treats claude's normal stderr output as a fatal error
 Set-Location (Split-Path (Split-Path $PSScriptRoot -Parent) -Parent)
 
 Write-Host ""
