@@ -1,114 +1,78 @@
-# @matteofights — Operating System
+# @matteofights: Operating System
 
-_The brain for Matteo's fighter Instagram (@matteofights). Last verified: 2026-06-05._
+Matteo's fighter Instagram (@matteofights): the brain (context/), the content engine (production/, tools/) and the
+machine that renders, posts and cross-posts on its own. This file is routing only: read the linked file when the
+task needs it. Open items: [STATUS.md](STATUS.md) (read at session start, update when you close or add one).
 
-This repo is a personal operating system for growing @matteofights. Long-term it becomes a
-voice-capable, partly-autonomous agent (see `docs/superpowers/specs/`). Today it's the brain +
-analytics. Build it in phases; don't try to do everything at once.
+## Rules
 
----
+- **Drafting is free; publishing is not.** Write hooks, captions, scripts freely. Never post, schedule or send
+  anything outward without Matteo's explicit yes in this conversation. Automation never sets `approved: true`;
+  only Matteo does (dashboard hold-to-approve, Telegram, or `tools/instagram/approve.py` after his yes).
+- **North star: fighter-brand growth** (reach, watch-through, followers on @matteofights). Coaching and the Stance
+  funnel are secondary; no Stance plug in reels unless he asks. Stance (the app) lives in
+  `C:\Users\matte\Documents\Claude\Projects\Stance`, never here.
+- **Live state only through `tools/state.py`** (queue, cross-posts, jobs). Never edit
+  `production/schedule/*.json` by hand in code; see [tools/cloud/README.md](tools/cloud/README.md).
+- **Renders run in the cloud** ([tools/render/README.md](tools/render/README.md)), not on the laptop and never on
+  GitHub runners.
+- **Concurrent writers:** other sessions and bots push to master all day. `git pull --rebase --autostash` before
+  push; `git add <your paths>`, never `-a`. Never commit `secrets/`, `media/`, `data.json`, `covers/`, renders.
+- Python: `python -P` (scripts) on this PC, `python3 -P` in workflows. Modal CLI on Windows: `PYTHONUTF8=1`.
+- Copy: no em dashes in user-facing text. Voice: [context/voice.md](context/voice.md).
+- Analytics files are dated snapshots: pull live (Buzzfy first, Windsor `instagram` 17841465098113052 as
+  fallback) when current numbers matter, then write a fresh snapshot.
 
-## OPERATING RULES
+## Content direction (Matteo, standing)
 
-- **Open items live in [STATUS.md](STATUS.md).** Read it at session start; update it when you close or add one.
+- **Topic:** combat-sport psychology and fighter mindset, not injury stories. Adjacent lifestyle lane (nutrition,
+  recovery, routine) always framed for fighters. **Builder lane:** about 2 of 14 reels/week on "fighter who
+  builds", format `builder`; judged on follows per 1k views vs fight content.
+- **Cadence (2026-10-20): 5 posts a day** (New York): listicles 09:00, 12:30, 18:30, 21:30 with an Instagram
+  sound attached, plus 1 talking-head variant 15:30. Listicles run themselves
+  ([tools/listicle/README.md](tools/listicle/README.md)).
+- **Talking heads:** Matteo films from talking points, not scripts. 3 hook variants per reel, posted as trial
+  reels 48 h apart, logged in [production/reels/LEDGER.md](production/reels/LEDGER.md). Look: **editorial**,
+  start from `production/reels/_TEMPLATE/editorial/`.
+- **What wins:** identity and contrast beat instruction. Best ever: `6 SIGNS YOU WERE BORN TO BE A FIGHTER`
+  (331k, caption opens `Some people train for fun.`); #2 `8 WAYS TO FIGHT LIKE A KILLER WITHOUT SPARRING 5X/WEEK`
+  (161k). Barrier-removal (`You don't need X`) is spent. Reels win; carousels are unproven, retested only with
+  the locked design system.
 
-- **Drafting is free; publishing is not.** Write captions, hooks, scripts, and reports freely.
-  Never post to Instagram, schedule, or send anything outward without explicit confirmation in
-  that conversation.
-- **The north star is fighter-brand growth.** When a content or analytics call is ambiguous,
-  optimize for reach, watch-through, and follower growth on @matteofights itself. Coaching
-  lead-gen and the Stance funnel are real but secondary.
-- **Read `context/` on demand, not all at once.** Use the routing table below.
-- **Analytics files are dated snapshots.** Pull live via Windsor when current numbers matter,
-  then write a fresh snapshot — don't trust a stale one.
-- **Answer from the brain when you can.** If `context/` already covers a brand/voice/format
-  question, answer directly without an API call.
-- **Reels win.** Default to reel thinking unless told otherwise. Carousels are being retested
-  deliberately in `production/carousels/` with a locked design system — their performance on this
-  account is **unproven**, not disproven. See [context/content.md](context/content.md).
-- **Content direction (2026-10-12):** combat sport psychology + fighter mindset, not injury stories.
-  Goal = followers and engaged fighters; no Stance plug in reels unless Matteo asks. Matteo films from
-  **talking points**, not scripts. Since 2026-10-15 also an adjacent lifestyle lane (nutrition, recovery,
-  routine), always framed for fighters; daily listicle trial reels run themselves (`tools/listicle/README.md`).
-  **Builder lane (approved by Matteo 2026-10-15):** ~2 of 14 reels/week on "fighter who builds" (what fighting
-  teaches about building), format `builder`. Not generic business advice; no Stance plug unless he asks. Judge it
-  on follows per 1k views vs the fight content. Every reel = 3 hook variants, posted by Matteo as trial reels 48 h
-  apart, logged in `production/reels/LEDGER.md`. Pipeline: `production/editing/reel-kit/PIPELINE.md`.
-  **Cadence (Matteo 2026-10-20): 5 posts a day**, 4 listicles (09:00, 12:30, 18:30, 21:30 NY, Instagram sound attached)
-  + 1 talking-head variant (15:30 NY); see `tools/listicle/README.md`. **Talking-head look (Matteo 2026-10-20): editorial**, start every talking-head edit from `production/reels/_TEMPLATE/editorial/`.
-- **Stance (the app/business) lives in a separate folder:** `C:\Users\matte\Documents\Claude\Projects\Stance`
-  (brand, audience, business, launch reel). Go there when Matteo says "Stance stuff". Not in this repo.
-- **Secrets never get committed:** `secrets/` (gitignored) holds `ig_cookies.txt` (Instagram login, for
-  yt-dlp). Cloud equivalent: Actions secret `IG_COOKIES`. Raw footage/renders: `media/` (gitignored)
-  locally; Drive input/output or the `media` GitHub release remotely.
-- **Identity and contrast beat instruction.** Best reel ever = `6 SIGNS YOU WERE BORN TO BE A FIGHTER`
-  (331k views); its caption opens `Some people train for fun.` (7410 = that post, not a separate hook).
-  #2 = `8 WAYS TO FIGHT LIKE A KILLER WITHOUT SPARRING 5X/WEEK` (161k). Both listicles. Barrier-removal (`You don't need X`) has decayed from 2814
-  to 20 over seven months — it is spent.
+## Where things run
 
----
-
-## CONNECTED DATA (Windsor.ai — account: joinstance@gmail.com)
-
-| Connector | Account | ID | Use for |
-|---|---|---|---|
-| `instagram` | Matteo (matteofights) | 17841465098113052 | Followers, reach, views, per-reel metrics, captions |
-
-| `buzzfy` (MCP, plugin `buzzfy@anthropic-plugin-directory`) | @matteofights via Instagram official API | — | **Primary for per-reel analytics**, audits, reel checkups, comments/DMs; publishing/scheduling on paid plan (trial-reel support unverified) |
-
-Analytics order: Buzzfy first (per-reel, incl. trial reels if exposed) → Windsor `instagram` as fallback/history.
-Other connected MCPs (see `context/apps.md`): Higgsfield (`virality_predictor`, image/video gen).
-
----
-
-## CONTEXT FILES (read on demand)
-
-| Topic | File | When to read |
+| Piece | Where | Doc |
 |---|---|---|
-| Who Matteo is — story, angles | [context/founder.md](context/founder.md) | Any copy, caption, or narrative work |
-| Visual + verbal identity | [context/brand.md](context/brand.md) | Designing posts, thumbnails, the dashboard |
-| Caption voice; words to avoid | [context/voice.md](context/voice.md) | Writing any caption or script |
-| Sound like a creator, not a quote page; what grows the account | [context/creator-voice.md](context/creator-voice.md) | **Any Threads post, caption, hook or carousel copy** |
-| Write Threads posts (weekly batch) | skill `threads-writer` (`.claude/skills/threads-writer/`) | Sunday batch, any Threads post |
-| Write hooks + captions (all platforms) | skill `platform-captions` (`.claude/skills/platform-captions/`) | Saturday hook batch, any new caption |
-| What is working, from our own numbers | `python3 -P tools/threads/report.py` | Before writing posts or captions; strategy questions |
-| Competitor outliers + video ideas from them | skill `competitor-ideas`; data `production/competitors/` (`tools/competitors/scout.py`, weekly) | Next video ideas, "what are competitors doing", adding competitors |
-| Who's watching | [context/audience.md](context/audience.md) | Targeting, hook psychology, copy |
-| Growth plan & funnel | [context/strategy.md](context/strategy.md) | Strategic decisions, cadence, CTAs |
-| Pillars, formats, cadence | [context/content.md](context/content.md) | Planning what to post |
-| The proven viral reel format | [context/viral-format.md](context/viral-format.md) | Making a reel / writing a hook + caption |
-| Caption engine (hook → caption) | [production/captions/CAPTION-ENGINE.md](production/captions/CAPTION-ENGINE.md) | Generating a reel's subhook + full caption from a hook |
-| Carousel look — locked | [production/carousels/BRAND.md](production/carousels/BRAND.md) | **Any carousel work. Read first.** |
-| Carousel copy procedure | [production/carousels/COPY-ENGINE.md](production/carousels/COPY-ENGINE.md) | Writing carousel hooks and slide copy |
-| **Make a reel (watch → plan → edit → test)** | [production/editing/reel-kit/PIPELINE.md](production/editing/reel-kit/PIPELINE.md) | **Any reel/video work. Read first.** |
-| Daily listicle trial reels (auto-rendered, approve weekly) | [tools/listicle/README.md](tools/listicle/README.md) | Hooks backlog, approving the week's listicles |
-| Reel results + test history | [production/reels/LEDGER.md](production/reels/LEDGER.md) | Choosing hooks/formats; logging a posted variant |
-| Reference reels (watched) | [content-bank/references/](content-bank/references/) | Before planning a new format |
-| Watch a video from the cloud | [tools/video/README.md](tools/video/README.md) | Cloud session needs to watch/download a reel |
-| Render a reel in the cloud (Modal, not this PC) | [tools/render/README.md](tools/render/README.md) | Any render: faster, frees the laptop |
-| Live state (queue, cross-posts, jobs): D1 + R2 | [tools/cloud/README.md](tools/cloud/README.md) | Reading/writing the queue from code: always via `tools/state.py` |
-| Analytics snapshots + IDs | [context/social.md](context/social.md) | Performance questions, before pulling live |
-| Connected tools/MCPs | [context/apps.md](context/apps.md) | Tooling decisions |
+| Live state (queue, cross-posts, render jobs) | Cloudflare D1 `matteofights`; JSON files in `production/schedule` are the truth until the cutover flag in `tools/cloud/cloud.json` | [tools/cloud/README.md](tools/cloud/README.md) |
+| Videos | R2 `matteofights-media` (`renders/`), `media` GitHub release as fallback | [tools/cloud/README.md](tools/cloud/README.md) |
+| Renders | Modal app `matteofights-render` (`tools/render/submit.py`) | [tools/render/README.md](tools/render/README.md) |
+| Posting timer | Cloudflare Worker `matteo-ticker` (every 5 min: slots + due queue items) | `tools/ticker/worker.js` |
+| Posting / cross-posting / listicles | GitHub Actions: Post queue, Cross-post, Listicle factory, Control | `.github/workflows/` |
+| Control center | control.matteofights.me (dashboard) + Telegram @matteofights_control_bot | [control-site/SETUP.md](control-site/SETUP.md) |
+| Secrets | `secrets/*.env` locally (git-ignored), GitHub/Modal/Worker secrets remotely; `tools/cloud/set-secrets.sh` | [tools/cloud/README.md](tools/cloud/README.md) |
+| Roadmap | Phase 1 done (cutover pending); Phase 2 live dashboard, 3 self-maintenance, 4 lean setup + cleanup | [spec](docs/superpowers/specs/2026-10-18-run-from-anywhere-design.md) |
 
----
+## Read on demand
 
-## REPO MAP
-
-```
-context/        the brain (markdown, read on demand)
-content-bank/   reels, captions, scraped posts
-analytics/      snapshots/ (raw Windsor JSON) + reports/ (digested)
-production/     remotion/ + carousels/ (content engine — Phase 2)
-dashboard/      Vite+React "sick UI" (Phase 1+)
-docs/superpowers/specs/   design + phase specs
-```
-
-## PHASE STATUS
-
-- **Phase 0 — Foundation:** brain + migrated content + repo. _In progress._
-- **Phase 1 — Analytics + dashboard:** Windsor pulls → snapshots/reports → read-only UI. _Next._
-- **Phase 2 — Content engine + "make a reel":** caption + subhook engine built (text); video rendering deferred. _In progress._
-- **Phase 3 — Jarvis + voice:** _Designed._
-- **Phase 4 — Posting + 24/7 agents:** _Designed._
-
-Full design: [docs/superpowers/specs/2026-06-05-matteofights-os-design.md](docs/superpowers/specs/2026-06-05-matteofights-os-design.md)
+| Task | Read |
+|---|---|
+| **Make or edit a reel (watch, plan, edit, test). Read first.** | [production/editing/reel-kit/PIPELINE.md](production/editing/reel-kit/PIPELINE.md) |
+| Render a reel | [tools/render/README.md](tools/render/README.md) |
+| Any caption, hook, Threads post, carousel copy | [context/creator-voice.md](context/creator-voice.md), skill `platform-captions` |
+| Weekly Threads batch | skill `threads-writer` |
+| Hook + caption from a hook | [production/captions/CAPTION-ENGINE.md](production/captions/CAPTION-ENGINE.md) |
+| The proven viral reel format | [context/viral-format.md](context/viral-format.md) |
+| What is working, from our numbers | `python -P tools/threads/report.py` |
+| Competitor outliers, next video ideas | skill `competitor-ideas`, data `production/competitors/` |
+| Who Matteo is, story, angles | [context/founder.md](context/founder.md) |
+| Visual identity | [context/brand.md](context/brand.md) |
+| Audience, hook psychology | [context/audience.md](context/audience.md) |
+| Strategy, funnel, CTAs | [context/strategy.md](context/strategy.md) |
+| Pillars, formats | [context/content.md](context/content.md) |
+| Reel results, test history | [production/reels/LEDGER.md](production/reels/LEDGER.md) |
+| Reference reels (watched) | [content-bank/references/](content-bank/references/) |
+| Watch or download a video from a cloud session | [tools/video/README.md](tools/video/README.md) |
+| Instagram API posting, tokens | `tools/instagram/ig.py` docstring |
+| Cross-posting (Facebook, YouTube, Threads) | `tools/crosspost/crosspost.py` docstring |
+| Analytics snapshots, account IDs | [context/social.md](context/social.md) |
+| Connected tools / MCPs | [context/apps.md](context/apps.md) |
