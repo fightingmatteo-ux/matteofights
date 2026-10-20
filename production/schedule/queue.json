@@ -966,6 +966,167 @@
       },
       "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)",
       "app_audio": "id:576492425503806 Echo Sax Endless - Caleb Arredondo (add in the Instagram app)"
+    },
+    {
+      "id": "lst-2026-10-21-same-shot",
+      "reel": "listicles/2026-10-21-same-shot",
+      "variant": "-",
+      "hook": "7 WAYS TO STOP GETTING HIT WITH THE SAME SHOT",
+      "archetype": "tactical",
+      "format": "listicle",
+      "clip": "sparring eth.mp4 (1pEV6_Yyfz1n9hAaJg7USfvPZgDpvG6He)",
+      "video_asset": "lst-2026-10-21-same-shot.mp4",
+      "caption_file": "production/listicles/2026-10-21-same-shot/caption.txt",
+      "strategy": "MANUAL",
+      "thumb_offset_ms": 500,
+      "not_before": "2026-10-21T13:00:00Z",
+      "min_gap_hours": 2.5,
+      "approved": false,
+      "status": "queued",
+      "test": {
+        "exp": "exp-1016-hook_style",
+        "variant": "b",
+        "value": "split"
+      },
+      "app_audio": "id:530317382955170 Echo Sax End - Caleb Arredondo (add in the Instagram app)"
+    },
+    {
+      "id": "lst-2026-10-22-jab-hurt",
+      "reel": "listicles/2026-10-22-jab-hurt",
+      "variant": "-",
+      "hook": "6 WAYS TO MAKE YOUR JAB ACTUALLY HURT",
+      "archetype": "tactical",
+      "format": "listicle",
+      "clip": "IMG_1227.MOV (1EJLYUTVLVkSWxisIHwaqeks07lNocugQ)",
+      "video_asset": "lst-2026-10-22-jab-hurt.mp4",
+      "caption_file": "production/listicles/2026-10-22-jab-hurt/caption.txt",
+      "strategy": "MANUAL",
+      "thumb_offset_ms": 500,
+      "not_before": "2026-10-22T13:00:00Z",
+      "min_gap_hours": 2.5,
+      "approved": false,
+      "status": "queued",
+      "test": {
+        "exp": "exp-1016-hook_style",
+        "variant": "a",
+        "value": "native"
+      },
+      "app_audio": "id:576492425503806 Echo Sax Endless - Caleb Arredondo (add in the Instagram app)"
+    },
+    {
+      "id": "lst-2026-10-23-hands-up-tired",
+      "reel": "listicles/2026-10-23-hands-up-tired",
+      "variant": "-",
+      "hook": "7 WAYS TO KEEP YOUR HANDS UP WHEN YOU'RE EXHAUSTED",
+      "archetype": "tactical",
+      "format": "listicle",
+      "clip": "boxing rome simba.mp4 (1-GxiwEjn1oJCJKUEkPb9W_lIXsOMsAAw)",
+      "video_asset": "lst-2026-10-23-hands-up-tired.mp4",
+      "caption_file": "production/listicles/2026-10-23-hands-up-tired/caption.txt",
+      "strategy": "MANUAL",
+      "thumb_offset_ms": 500,
+      "not_before": "2026-10-23T13:00:00Z",
+      "min_gap_hours": 2.5,
+      "approved": false,
+      "status": "queued",
+      "test": {
+        "exp": "exp-1016-hook_style",
+        "variant": "b",
+        "value": "split"
+      },
+      "app_audio": "id:530317382955170 Echo Sax End - Caleb Arredondo (add in the Instagram app)"
+    },
+    {
+      "id": "lst-2026-10-24-smaller-clinch",
+      "reel": "listicles/2026-10-24-smaller-clinch",
+      "variant": "-",
+      "hook": "8 WAYS TO HANDLE A BIGGER GUY IN THE CLINCH",
+      "archetype": "tactical",
+      "format": "listicle",
+      "clip": "padwork super8.mp4 (1VQckuhsKET3bhVHRsVsgANM797wcP7dM)",
+      "video_asset": "lst-2026-10-24-smaller-clinch.mp4",
+      "caption_file": "production/listicles/2026-10-24-smaller-clinch/caption.txt",
+      "strategy": "MANUAL",
+      "thumb_offset_ms": 500,
+      "not_before": "2026-10-24T13:00:00Z",
+      "min_gap_hours": 2.5,
+      "approved": false,
+      "status": "queued",
+      "test": {
+        "exp": "exp-1016-hook_style",
+        "variant": "a",
+        "value": "native"
+      },
+      "app_audio": "id:496614019576474 Echo Sax Feeling Blue - Caleb Arredondo (add in the Instagram app)"
+    },
+    {
+      "id": "lst-2026-10-25-read-round-one",
+      "reel": "listicles/2026-10-25-read-round-one",
+      "variant": "-",
+      "hook": "6 WAYS TO READ YOUR OPPONENT IN THE FIRST ROUND",
+      "archetype": "tactical",
+      "format": "listicle",
+      "clip": "sparring hero success gym.mov (1A9Awnno2e_KHq52e4PWWnRp9GUEEDY9V)",
+      "video_asset": "lst-2026-10-25-read-round-one.mp4",
+      "caption_file": "production/listicles/2026-10-25-read-round-one/caption.txt",
+      "strategy": "MANUAL",
+      "thumb_offset_ms": 500,
+      "not_before": "2026-10-25T13:00:00Z",
+      "min_gap_hours": 2.5,
+      "approved": false,
+      "status": "queued",
+      "test": {
+        "exp": "exp-1016-hook_style",
+        "variant": "b",
+        "value": "split"
+      },
+      "app_audio": "id:530317382955170 Echo Sax End - Caleb Arredondo (add in the Instagram app)"
+    },
+    {
+      "id": "lst-2026-10-26-three-days-a-week",
+      "reel": "listicles/2026-10-26-three-days-a-week",
+      "variant": "-",
+      "hook": "7 WAYS TO IMPROVE FAST WHEN YOU CAN ONLY TRAIN 3 TIMES A WEEK",
+      "archetype": "tactical",
+      "format": "listicle",
+      "clip": "pads super8.mp4 (1cO7ZS2vB0GficgdhERknFjIt1zkldbU6)",
+      "video_asset": "lst-2026-10-26-three-days-a-week.mp4",
+      "caption_file": "production/listicles/2026-10-26-three-days-a-week/caption.txt",
+      "strategy": "MANUAL",
+      "thumb_offset_ms": 500,
+      "not_before": "2026-10-26T13:00:00Z",
+      "min_gap_hours": 2.5,
+      "approved": false,
+      "status": "queued",
+      "test": {
+        "exp": "exp-1016-hook_style",
+        "variant": "a",
+        "value": "native"
+      },
+      "app_audio": "id:576492425503806 Echo Sax Endless - Caleb Arredondo (add in the Instagram app)"
+    },
+    {
+      "id": "lst-2026-10-27-bad-sparring-day",
+      "reel": "listicles/2026-10-27-bad-sparring-day",
+      "variant": "-",
+      "hook": "6 WAYS TO BOUNCE BACK AFTER A BAD SPARRING DAY",
+      "archetype": "tactical",
+      "format": "listicle",
+      "clip": "sparring ryan.mp4 (1oVEdYjTgppKfNtH5xykXcXyQOu03TCVO)",
+      "video_asset": "lst-2026-10-27-bad-sparring-day.mp4",
+      "caption_file": "production/listicles/2026-10-27-bad-sparring-day/caption.txt",
+      "strategy": "MANUAL",
+      "thumb_offset_ms": 500,
+      "not_before": "2026-10-27T13:00:00Z",
+      "min_gap_hours": 2.5,
+      "approved": false,
+      "status": "queued",
+      "test": {
+        "exp": "exp-1016-hook_style",
+        "variant": "b",
+        "value": "split"
+      },
+      "app_audio": "id:530317382955170 Echo Sax End - Caleb Arredondo (add in the Instagram app)"
     }
   ]
 }
