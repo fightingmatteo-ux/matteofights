@@ -35,7 +35,7 @@ css, js = plan.install(".", bed_seconds=d["duration"] + 1)
 src = open("work/template.html", encoding="utf-8").read()
 fill = {"ED_CSS": css, "ED_JS": js, "ED_HTML_CAPS": ed["caps"], "ED_HTML_CARDS": ed["cards"], "ED_AUDIO": ed["audio"],
         "ED_PLAN": ed["plan"], "DUR": f"{d['duration']:.3f}", "TITLE_END": f"{TITLE_END:.3f}",
-        "HEAD_T": f"{W('HEAD') - 0.03:.3f}", "CAP_TOP": "330"}
+        "HEAD_T": f"{W('HEAD') - 0.03:.3f}", "CAP_TOP": "330", "BEHIND_TOP": "480", "FG_END": "3.6"}
 out = re.sub(r"\{\{(\w+)\}\}", lambda m: fill[m.group(1)], src)
 open("index.html", "w", encoding="utf-8").write(out)
 print(f"index.html built: {d['duration']:.1f}s, {len(json.loads(ed['plan'])['phrases'])} phrases, {len(CARDS)} cards")

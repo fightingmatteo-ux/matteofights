@@ -11,7 +11,8 @@ test_variable: look (same takes as 2026-10-14-freeze-in-sparring A)
 Same takes as `2026-10-14-freeze-in-sparring` variant A, rebuilt with `reel-kit/editorial/` (the @kaixerb
 "premium minimal" look, Matteo's call 2026-10-20). Compare against the posted freeze-A.
 
-- Hook title on frame 0: "If you freeze when you spar, / **it's your head.**" Clears just before "and there are".
+- Hook title on frame 0: "If you freeze when you spar, / it's your" + **head.** huge and red BEHIND his hair
+  (v2: `fg_A.webm` cut-out from `cutout.py`, 0-3.6 s). Clears just before "and there are".
 - Captions in the ceiling space (y330), phrases of 1–4 words, keywords THREE, ONE, TWO, JAB, RELAX, CAUGHT.
 - White cards: "getting punched isn't a failure, it's just **information**" · "pick **one** job per round" ·
   "take a deep breath and **reset**" (slam + sub). Hard cut back to the face for "because", which holds the
@@ -22,5 +23,6 @@ Same takes as `2026-10-14-freeze-in-sparring` variant A, rebuilt with `reel-kit/
 Build (cloud): the raw is `media/freeze/media/freeze-in-sparring-raw.mp4` from the media release
 (`freeze-in-sparring-raw.mp4`); `prep_footage.sh` it to `assets/raw.mp4`, set `audio_src` in `work/takes.json`
 to wherever the raw is, then `assemble.py work/takes.json A`, `python -P build.py`, render.
-Render: `media/freeze-editorial/freeze-editorial-A.mp4` (+ `-phone.mp4`). The media release upload failed from
+Render v2: `media/freeze-editorial/freeze-editorial-A2.mp4` (+ `-phone.mp4`), check_render OK. v1 had black
+frames 0/2 + a zoom jump (renderer cold start), fixed by re-rendering. The media release upload failed from
 the cloud (proxy), so it only exists in the session and in the chat.

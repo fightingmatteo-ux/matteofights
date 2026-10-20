@@ -12,10 +12,12 @@
       #cam { position: absolute; inset: 0; overflow: hidden; }
       #cam-inner { position: absolute; inset: 0; transform-origin: 50% 100%; }
       /* hook title: on frame 0 (it is the thumbnail), inside the grid crop */
-      #title { position: absolute; left: 70px; right: 70px; top: 300px; text-align: center; font-family: "Geist", sans-serif; color: #fff;
+      #title { position: absolute; left: 70px; right: 70px; top: 250px; text-align: center; font-family: "Geist", sans-serif; color: #fff;
         text-shadow: 0 2px 6px rgba(0,0,0,0.45), 0 8px 34px rgba(0,0,0,0.4); }
       #title .lead { display: block; font-weight: 700; font-size: 70px; line-height: 1.05; letter-spacing: -0.035em; }
-      #title .big { display: block; font-weight: 800; font-size: 190px; line-height: 0.92; letter-spacing: -0.06em; color: #E8112D; }
+      /* the big word sits BEHIND his head: A-roll -> #behind -> cut-out (fg_A.webm), all inside the camera */
+      #behind { position: absolute; left: 0; right: 0; top: {{BEHIND_TOP}}px; text-align: center; font-family: "Geist", sans-serif;
+        font-weight: 800; font-size: 360px; line-height: 0.8; letter-spacing: -0.065em; color: #E8112D; white-space: nowrap; }
       {{ED_CSS}}
       :root { --ed-cap-top: {{CAP_TOP}}px; }
     </style>
@@ -24,10 +26,12 @@
     <div id="root" data-composition-id="main" data-start="0" data-duration="{{DUR}}" data-width="1080" data-height="1920">
       <div id="cam"><div id="cam-inner">
         <video id="aroll" class="clip full" src="assets/media/aroll_A.mp4" data-start="0" data-duration="{{DUR}}" data-track-index="0" muted playsinline></video>
+        <div id="behind" class="clip" data-start="0" data-duration="{{TITLE_END}}" data-track-index="1">head.</div>
+        <video id="fg" class="clip full" src="assets/media/fg_A.webm" data-start="0" data-duration="{{FG_END}}" data-track-index="2" muted playsinline></video>
       </div></div>
 
       <div id="title" class="clip" data-start="0" data-duration="{{TITLE_END}}" data-track-index="5">
-        <span class="lead">If you freeze when you spar,</span><span id="title-big" class="big">it's your head.</span>
+        <span class="lead">If you freeze when you spar,</span><span class="lead">it's your</span>
       </div>
 
       <div id="ed-caps">
@@ -45,8 +49,9 @@
       const PLAN = {{ED_PLAN}};
       const tl = gsap.timeline({ paused: true });
       // the title is already up on frame 0; "head" settles in as he says it, then the title softens away
-      tl.fromTo("#title-big", { scale: 1.0 }, { scale: 1.06, duration: 0.14, ease: "power2.out", yoyo: true, repeat: 1 }, {{HEAD_T}});
+      tl.fromTo("#behind", { scale: 1.0 }, { scale: 1.05, duration: 0.14, ease: "power2.out", yoyo: true, repeat: 1 }, {{HEAD_T}});
       tl.to("#title", { opacity: 0, y: -20, filter: "blur(10px)", duration: 0.12, ease: "power1.in" }, {{TITLE_END}} - 0.12);
+      tl.to("#behind", { opacity: 0, filter: "blur(10px)", duration: 0.12, ease: "power1.in" }, {{TITLE_END}} - 0.12);
       Editorial.animate(tl, PLAN, { cam: "#cam-inner" });
       window.__timelines["main"] = tl;
     </script>
