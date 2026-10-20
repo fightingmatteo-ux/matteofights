@@ -15,19 +15,16 @@ ROOT = Path(__file__).resolve().parents[3]
 SRC = {"T": ROOT / "media/saenchai-broll/aW6ew2j1ZmQ.mp4",          # YOKKAO: Saenchai sparring in Canada
        "B": ROOT / "media/saenchai-broll/EXPvZzeb5cE.mp4",          # Riddick Bowe and Saenchai @ 13 Coins Gym
        "H": ROOT / "media/saenchai-broll/clips/05-harrison-down-1.mp4"}  # Liam Harrison vs Saenchai 2 (2011), 12:55.5-12:58
-MAX_SLOW = 2.0
+MAX_SLOW = 1.0  # real speed only: the interpolated slow-mo looked jittery (Matteo 2026-10-20)
 # name: (source, src start, src end, crop centre x in source px, slot from, slot to)   anchors: (seg, word|None, k, offset)
-SLOTS = [
+SLOTS = [  # 2026-10-20 Matteo: "cuts a lot, feels like jumping scenes": 11 clips -> 7, step/catch and sweep/over merged
     ("size",    "B", 95.6, 98.9, 790, ("heavier", None, 1, -0.12), ("heavier", "OFTEN", 1, 0)),
     ("trade",   "T", 22.0, 25.2, 640, ("heavier", "OFTEN", 1, 0),   ("heavier", "END", 1, 0)),
     ("teep",    "T", 7.4, 10.8, 640,  ("muscle", "NEVER", 1, -0.1), ("muscle", "END", 1, 0)),
-    ("step",    "T", 29.3, 30.9, 560, ("step", "STEP", 1, -0.12),   ("step", "CATCH", 1, 0)),
-    ("catch",   "T", 30.7, 32.4, 520, ("step", "CATCH", 1, 0),      ("step", "SWEEP", 1, 0)),
-    ("sweep",   "B", 98.9, 101.3, 760, ("step", "SWEEP", 1, 0),     ("step", "START", 1, 0)),
-    ("over",    "B", 102.6, 105.4, 700, ("step", "START", 1, 0),    ("reset", None, 1, -0.12)),
+    ("step",    "T", 29.3, 32.4, 540, ("step", "STEP", 1, -0.12),   ("step", "SWEEP", 1, 0)),
+    ("sweep",   "B", 98.9, 101.3, 760, ("step", "SWEEP", 1, 0),     ("reset", None, 1, -0.12)),
     ("dump",    "T", 15.9, 18.9, 600, ("reset", None, 1, -0.12),    ("reset", "A", 1, 0)),
-    ("stance",  "T", 34.9, 37.6, 640, ("reset", "A", 1, 0),         ("reset", "TEN", 1, -0.08)),
-    ("harr",    "H", 0.55, 2.5, 427,   ("reset", "TEN", 1, -0.08),   ("reset", "HE'S", 1, 0)),
+    # face back for "a little confidence, do that ten times" (giant 10 sits behind him)
     ("frust",   "B", 105.2, 108.2, 720, ("reset", "HE'S", 1, 0),    ("reset", "END", 1, 0)),
 ]
 
