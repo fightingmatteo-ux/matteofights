@@ -837,14 +837,20 @@
       "not_before": "2026-10-19T16:30:00Z",
       "min_gap_hours": 2.5,
       "approved": true,
-      "status": "queued",
+      "status": "posted",
       "test": {
         "exp": "exp-1016-hook_style",
         "variant": "b",
         "value": "split"
       },
       "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)",
-      "app_audio": "id:530317382955170 Echo Sax End - Caleb Arredondo (add in the Instagram app)"
+      "app_audio": "id:530317382955170 Echo Sax End - Caleb Arredondo (add in the Instagram app)",
+      "audio_id": "530317382955170",
+      "audio_title": "Echo Sax End (Take 2)",
+      "audio_artist": "caleb.arredondo",
+      "media_id": "18128184061654018",
+      "permalink": "https://www.instagram.com/reel/DeuDZSSiSg2/",
+      "posted_at": "2026-10-20T14:31:53Z"
     },
     {
       "id": "lst-2026-10-20-nerves-never-leave",
