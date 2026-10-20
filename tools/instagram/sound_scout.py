@@ -29,12 +29,18 @@ import audio  # noqa: E402
 
 OUT = ROOT / "production/sounds/proven.json"
 WATCH = ROOT / "production/sounds/watch.json"
+# --list FILE --out FILE: read only these reels (e.g. Matteo's own best: production/sounds/own.json -> own_proven.json)
+if "--list" in sys.argv:
+    WATCH = ROOT / sys.argv[sys.argv.index("--list") + 1]
+    OUT = ROOT / sys.argv[sys.argv.index("--out") + 1]
 
 
 def reels():
-    o = json.loads((ROOT / "production/competitors/outliers.json").read_text(encoding="utf-8"))
-    rows = [{"url": x["url"], "views": x.get("views") or 0, "x": x.get("x"), "handle": x.get("handle"),
-             "hook": x.get("hook", "")[:80]} for x in o["outliers"] if x.get("platform") == "instagram"]
+    rows = []
+    if "--list" not in sys.argv:
+        o = json.loads((ROOT / "production/competitors/outliers.json").read_text(encoding="utf-8"))
+        rows = [{"url": x["url"], "views": x.get("views") or 0, "x": x.get("x"), "handle": x.get("handle"),
+                 "hook": x.get("hook", "")[:80]} for x in o["outliers"] if x.get("platform") == "instagram"]
     if WATCH.exists():
         for r in json.loads(WATCH.read_text(encoding="utf-8")).get("reels", []):
             rows.append({"url": r["url"], "views": r.get("views") or 0, "x": None, "handle": r.get("handle", ""),
@@ -99,7 +105,7 @@ def main():
         if not s["track"]:
             no_info += 1
             continue
-        if s["kind"] == "original" and r["views"] < 100000:
+        if s["kind"] == "original" and r["views"] < 100000 and "--list" not in sys.argv:
             continue  # small creators' own voice tracks: not a reusable sound
         if s["kind"] == "original":  # every creator's "Original audio" is a different sound
             key = f'{s["track"]} @{r["handle"]} ({s["cluster"] or r["url"]})'
