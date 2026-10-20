@@ -5,6 +5,8 @@
 # Run it: Actions tab -> Fetch video -> Run workflow (works from the GitHub mobile app),
 # or ask Claude to trigger it.
 #
+# YouTube always and Instagram often block logged-out downloads from cloud IPs. yt-dlp uses YT_COOKIES (YouTube links)
+# or IG_COOKIES (Instagram), each a Netscape cookies.txt from a logged-in browser (burner account).
 # Instagram often blocks logged-out downloads from cloud IPs. yt-dlp uses the IG_COOKIES secret
 # (Netscape cookies.txt) when set; if it still fails, Instagram links fall back to Business Discovery
 # (tools/video/ig_discovery.py, FB_USER_TOKEN), which works for creator/business accounts.
@@ -55,6 +57,7 @@ jobs:
       - name: Download
         env:
           IG_COOKIES: ${{ secrets.IG_COOKIES }}
+          YT_COOKIES: ${{ secrets.YT_COOKIES }}
           FB_USER_TOKEN: ${{ secrets.FB_USER_TOKEN }}
         run: |
           case "$NAME" in *[!a-zA-Z0-9._-]*|"") echo "name must be a simple slug"; exit 1;; esac
@@ -65,7 +68,9 @@ jobs:
             gdown "${id:-$URL}" -O dl/video
           else
             args=()
-            if [ -n "$IG_COOKIES" ]; then printf '%s\n' "$IG_COOKIES" > cookies.txt; args+=(--cookies cookies.txt); fi
+            # YouTube blocks GitHub runners ("confirm you're not a bot") unless a logged-in cookies.txt is passed
+            if [[ "$URL" == *youtu* ]]; then C="$YT_COOKIES"; else C="$IG_COOKIES"; fi
+            if [ -n "$C" ]; then printf '%s\n' "$C" > cookies.txt; args+=(--cookies cookies.txt); fi
             ytdl() { yt-dlp "$@" -f "bv*+ba/b" --merge-output-format mp4 --write-info-json -o "dl/video.%(ext)s" "$URL"; }
             # expired cookies make yt-dlp fail where a logged-out request can work, so retry without them
             if ! ytdl "${args[@]}" && { [ ${#args[@]} -eq 0 ] || ! ytdl; }; then

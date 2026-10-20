@@ -28,3 +28,22 @@ ringside clips; 3 rendered Saenchai variants).
   The Audio API is live (FB_USER_TOKEN has the scopes); the scout re-runs every Monday and flags any cleared track
   that starts showing up in 2+ outliers, with the `audio_id` ready to attach.
 - The API's "trending" list is localised to Thailand (Thai pop), so it is not a niche signal.
+
+## Round 2 (Matteo: "used all of those; no talking head, big reach, broaden the niche")
+Competitor reels we hold (Ferris, Kolby, kaixerb, Karst...) are the creators' own work: reposting them gets demoted
+as unoriginal and claimed, so they stay references only. The proven no-talking reach format in the niche is the
+**pro-fight moment breakdown** (Lawrence Kenshin: 2.3M / 1.6M / 1M / 1M, 13-31x his median; RamseyDewey "fake master
+gets KO'd" 2M, 95x): one famous moment, one curiosity hook, slow-mo replay with the detail circled, 20-40 s, text only.
+Edit it in the editorial look (white cards, keyword effects, freeze + red annotation), short clips, heavy transformation.
+
+Footage already identified (Saenchai reel research, on Matteo's PC in `media/saenchai-broll/`, YouTube ids):
+| Reel | Source | Hook (draft) |
+|---|---|---|
+| Heavyweight vs Saenchai | Riddick Bowe x Saenchai @ 13 Coins (EXPvZzeb5cE) | A HEAVYWEIGHT CHAMPION TRIED TO CATCH SAENCHAI. |
+| Watch his feet | Samkor vs Saenchai (XlLvvN4OfaM) | EVERYONE WATCHES HIS HANDS. WATCH HIS FEET. |
+| Make him reset | Liam Harrison vs Saenchai 2, 2011 (_sWmii41j-8) | WATCH WHAT HAPPENS EVERY TIME HARRISON STEPS IN. |
+| Pattern, then break it | Saenchai vs Thongthai (FTYRm8Z_t-k) | HE SHOWED HIM THE SAME KICK 4 TIMES. THE 5TH WASN'T A KICK. (verify on the footage) |
+
+Getting the footage to the cloud: YouTube blocks GitHub runners ("confirm you're not a bot", tested 10-20).
+Either Matteo uploads `media/saenchai-broll/` to Drive (Fetch video reads Drive links), or adds a `YT_COOKIES`
+Actions secret (Netscape cookies.txt from a logged-in YouTube burner) and Fetch video downloads any YouTube link.

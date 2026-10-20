@@ -37,6 +37,10 @@ CAPS), the subhook, and a `READ DESCRIPTION` end card. Renders end in `.render.m
 `tools/video/media.sh list | pull NAME | push FILE` uses the `media` GitHub release, because git rejects
 files over 100 MB. Never commit raw footage to git.
 
+## YouTube blocks
+YouTube refuses GitHub runners without login ("Sign in to confirm you're not a bot"). Add repo secret `YT_COOKIES`
+(Netscape cookies.txt exported from a logged-in browser, burner account) and **Fetch video** passes it for YouTube links.
+
 ## Instagram blocks
 Instagram sometimes refuses logged-out downloads from cloud IPs. If **Fetch video** fails on an
 Instagram link, add a repo secret `IG_COOKIES` (Settings → Secrets → Actions) containing a
