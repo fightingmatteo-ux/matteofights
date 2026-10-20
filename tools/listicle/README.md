@@ -106,3 +106,10 @@ The footage agent's API path is off without `ANTHROPIC_API_KEY`. Instead:
 Not only training clips: food, recovery, routine, travel clips in the folder can carry adjacent fighter topics
 (nutrition, sleep, recovery, discipline outside the gym). Rule: the hook still speaks to fighters
 ("WHAT I EAT BEFORE A FIGHT", "5 RECOVERY HABITS..."), never generic lifestyle. About 2-3 of 14 per week.
+
+## Daily cadence (Matteo 2026-10-20: post more, switch formats)
+Five slots a day, New York time: **09:00 listicle, 12:30 listicle, 15:30 talking head, 18:30 listicle, 21:30 listicle**.
+The factory fills the four listicle slots (Sunday crons 09:00/09:40/10:20/11:00 UTC = 18:30/21:30/12:30/09:00 NY), so
+Saturday needs **28 ready hooks**. The 15:30 slot is only for talking-head variants (3 hook variants per filmed reel,
+editorial template); when none is ready the slot stays empty rather than adding a 5th listicle. Every listicle carries
+an Instagram library sound through the Audio API (Echo Sax rotation, see the workflow's AUDIO default).

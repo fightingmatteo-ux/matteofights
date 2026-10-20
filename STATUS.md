@@ -37,6 +37,7 @@ Log: `media/2026-10-16-saenchai-bigger-men/renders/render_bc.log` (ends with `AL
 | You-be-the-judge reel | **MATTEO** | Film `production/reels/2026-10-20-you-be-the-judge/` (needs the first-fight KO clip from Drive) |
 | Audio API (`tools/instagram/audio.py`) | OK (checked 10-20) | FB_USER_TOKEN has instagram_basic + instagram_content_publish: library sounds can be attached. Sound scout (`sound-scout.yml`, Mondays) -> `production/sounds/proven.json`: niche outliers run on original audio, no cleared track yet |
 | Cloudflare ticker (`tools/ticker`) | Likely not deployed, so posts run on late GitHub cron | MATTEO creates a fine-grained PAT (Actions read/write), then `wrangler deploy` + Worker secret `GH_TOKEN` |
+| 5 posts a day (10-20) | **MATTEO** | 11 extra listicles (09:00 slot 21-27 Oct + 12:30 slot 25-28 Oct) rendering, need his yes. 15:30 talking-head slot fills only when he films |
 | TikTok | WAIT | App review |
 | Meta oEmbed | WAIT | Not approved; `ig_discovery` scans tracked competitors instead |
 | IG token | Expires 2026-12-13 | `ig.py refresh` before then |
