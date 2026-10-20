@@ -101,7 +101,10 @@ def main():
             continue
         if s["kind"] == "original" and r["views"] < 100000:
             continue  # small creators' own voice tracks: not a reusable sound
-        key = f'{s["track"]} - {s["artist"]}' if s["artist"] else s["track"]
+        if s["kind"] == "original":  # every creator's "Original audio" is a different sound
+            key = f'{s["track"]} @{r["handle"]} ({s["cluster"] or r["url"]})'
+        else:
+            key = f'{s["track"]} - {s["artist"]}' if s["artist"] else s["track"]
         g = groups.setdefault(key, {"key": key, "title": s["track"], "artist": s["artist"], "kind": s["kind"],
                                     "cluster": s["cluster"], "reels": []})
         g["reels"].append(r)
@@ -110,7 +113,16 @@ def main():
     for g in groups.values():
         hit = None
         try:
-            hit = audio.resolve(g["key"], "original_sound" if g["kind"] == "original" else "music")
+            # the sound's own id first (exact, works for original audio too), then an exact title + artist match
+            if g["cluster"]:
+                try:
+                    a = audio.info(g["cluster"])
+                    if a.get("audio_id") or a.get("id"):
+                        hit = {"audio_id": a.get("audio_id") or a.get("id")}
+                except audio.ApiError:
+                    pass
+            if not hit and g["kind"] == "music":
+                hit = audio.resolve(f'{g["title"]} - {g["artist"]}' if g["artist"] else g["title"], "music")
         except audio.ApiError as e:
             print(f"lookup failed for {g['key']}: {e}")
         sounds.append({
