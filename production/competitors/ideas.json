@@ -1,7 +1,207 @@
 {
  "_how": "Idea cards from competitor outliers (production/competitors/outliers.json), written by the competitor-ideas skill. Shown in the control center under Results > Rivals; 'Use this' sends the idea to production/control/ideas.json. 'skip' lists off-topic outlier ids hidden from the list (not combat sports or not makeable by Matteo).",
- "updated": "2026-10-16",
+ "updated": "2026-10-20",
  "ideas": [
+  {
+   "id": "first-fight-nerves",
+   "title": "Nerves before the first fight",
+   "status": "new",
+   "evidence": [
+    {
+     "id": "DehVOqBoB2K",
+     "platform": "instagram",
+     "handle": "brezojr",
+     "name": "Brezo Jr",
+     "views": 43608,
+     "x": 8.6,
+     "url": "https://www.instagram.com/reel/DehVOqBoB2K/",
+     "hook": "Being nervous before your first fight is completely normal. I still get nervous myself, and honestly, that’s not a bad thing."
+    },
+    {
+     "id": "DejrdNMI8Ja",
+     "platform": "instagram",
+     "handle": "brezojr",
+     "name": "Brezo Jr",
+     "views": 25025,
+     "x": 4.9,
+     "url": "https://www.instagram.com/reel/DejrdNMI8Ja/",
+     "hook": "Nobody tells you what starting MMA really feels like. 👇"
+    },
+    {
+     "id": "DbdjpxKuUBp",
+     "platform": "instagram",
+     "handle": "themuaythaiguy",
+     "name": "The Muay Thai Guy",
+     "views": 254967,
+     "x": 4.7,
+     "url": "https://www.instagram.com/reel/DbdjpxKuUBp/",
+     "hook": "This is what I wish I knew when I first started… 👇"
+    }
+   ],
+   "pattern": "Someone who has fought tells beginners the honest thing about their first fight: the nerves are normal and don't mean you're not ready.",
+   "why": "Likely why: every beginner has the fear and nobody says it out loud, so they save it and send it to the friend with a fight coming up. Three outliers from two creators: 8.6x, 4.9x and 4.7x their own medians (43.6k, 25.0k, 255k views).",
+   "version": {
+    "format": "talking head, editorial look (_TEMPLATE/editorial), 20-30 s",
+    "hook": "BEING NERVOUS BEFORE YOUR FIRST FIGHT DOESN'T MEAN YOU'RE NOT READY.",
+    "beats": [
+     "I was 16. It was his sixth fight and my first. (hook word READY flies from behind your head)",
+     "Someone told me: if you don't knock him out, you lose. (white card, keyword LOSE)",
+     "The nerves aren't a sign you're not ready. They're a sign it matters. (card, keyword MATTERS)",
+     "I knocked him out. They called it a draw. Your first fight won't go to plan either, and that's fine.",
+     "Close: send this to someone with a fight coming up."
+    ],
+    "needs": "Your own words on how the nerves felt (founder.md has the facts of the fight, not the feeling). Headroom above your head when filming."
+   },
+   "platforms": {
+    "instagram": "Talking-head reel, 3 hooks: nerves line (A) / 'I was 16, his 6th fight, my 1st' (B) / 'Nobody tells you this about your first fight' (C)",
+    "facebook": "Same reel",
+    "tiktok": "Same reel",
+    "youtube": "First Fight Nerves: What Nobody Tells You (Muay Thai) #shorts",
+    "threads": "Story: 'My first Muay Thai fight, I was 16. His sixth fight, my first. Someone told me if I didn't knock him out, I'd lose. The nerves before it weren't a sign I wasn't ready. They were a sign it mattered. What did you feel before your first fight?'"
+   }
+  },
+  {
+   "id": "achievements-unlocked",
+   "title": "Fighter achievements unlocked",
+   "status": "new",
+   "evidence": [
+    {
+     "id": "DemSq8wpd1O",
+     "platform": "instagram",
+     "handle": "themuaythaiguy",
+     "name": "The Muay Thai Guy",
+     "views": 251695,
+     "x": 4.7,
+     "url": "https://www.instagram.com/reel/DemSq8wpd1O/",
+     "hook": "How many have you unlocked? 👀 Drop your rarest Muay Thai experience below. Bragging encouraged."
+    }
+   ],
+   "pattern": "A checklist of experiences only people who train have had; viewers count how many they've unlocked and post their rarest one.",
+   "why": "Likely why: it's a game. Every viewer scores themselves, and bragging in the comments is the point. 4.7x the creator's median (252k views); his starter-pack posts on the same mechanic are already a card.",
+   "version": {
+    "format": "talking head listicle, editorial look, count effect on each number, 25-35 s",
+    "hook": "FIGHTER ACHIEVEMENTS. HOW MANY HAVE YOU UNLOCKED?",
+    "beats": [
+     "Hook word UNLOCKED flies from behind your head",
+     "6 to 8 achievements from your own life, one per beat (first fight at 16, a KO scored as a draw, training in Thailand, coming back after a broken fibula, training in gyms in five countries)",
+     "Keep the rarest for last, as a white card (keyword DRAW)",
+     "Close: what's your rarest one? (comment prompt, it's the whole mechanic)"
+    ],
+    "needs": "Your final list (only things you've actually done) and a couple of universal ones every fighter has (first black eye, shin bruises)."
+   },
+   "platforms": {
+    "instagram": "Talking-head reel; comment-driven, pin the best reply",
+    "facebook": "Same reel",
+    "tiktok": "Same reel",
+    "youtube": "Muay Thai Achievements: How Many Have You Unlocked? #shorts",
+    "threads": "Question: 'Fighter achievements I've unlocked: first fight at 16, a knockout that got scored a draw, training in Thailand, coming back from a broken fibula. What's the rarest one you've unlocked?'"
+   }
+  },
+  {
+   "id": "i-miss-system",
+   "title": "I miss... (deadpan nostalgia)",
+   "status": "new",
+   "evidence": [
+    {
+     "id": "DecJogUn94T",
+     "platform": "instagram",
+     "handle": "tinapham.co",
+     "name": "Tina Pham",
+     "views": 52277,
+     "x": 16.7,
+     "url": "https://www.instagram.com/reel/DecJogUn94T/",
+     "hook": "I miss cigarette smokers. They had a system: pack, lighter, pocket."
+    },
+    {
+     "id": "DemZKCqAiPG",
+     "platform": "instagram",
+     "handle": "tinapham.co",
+     "name": "Tina Pham",
+     "views": 47713,
+     "x": 15.2,
+     "url": "https://www.instagram.com/reel/DemZKCqAiPG/",
+     "hook": "I miss cigarette smokers. They had a system: pack, lighter, pocket."
+    },
+    {
+     "id": "DehPRWPjfXJ",
+     "platform": "instagram",
+     "handle": "tinapham.co",
+     "name": "Tina Pham",
+     "views": 45440,
+     "x": 14.5,
+     "url": "https://www.instagram.com/reel/DehPRWPjfXJ/",
+     "hook": "I miss cigarette smokers. They had a system: pack, lighter, pocket."
+    }
+   ],
+   "pattern": "A deadpan 'I miss X, they had a system' observation that sounds absurd and then turns out to be true.",
+   "why": "Likely why: the opener is strange enough to stop the scroll, and the 'system' turns out to be relatable, so people share it. Off-niche creator, but the same post hit three times: 15.2x, 14.5x and 5.8x her median (47.7k, 45.4k, 18.1k views). One creator only, so it's weaker evidence than a pattern across creators.",
+   "version": {
+    "format": "talking head, deadpan delivery, editorial look, 15-25 s",
+    "hook": "I MISS OLD-SCHOOL THAI GYMS. THEY HAD A SYSTEM.",
+    "beats": [
+     "Hook word SYSTEM flies from behind your head",
+     "3 to 4 real details of the system from the gyms you trained in (Koh Samui, Bangkok)",
+     "The turn: none of it was written down, everybody just knew",
+     "Close: what did your first gym get right?"
+    ],
+    "needs": "The real details of the old-school gyms you've trained at (rules, routines, who did what). Nothing invented."
+   },
+   "platforms": {
+    "instagram": "Talking-head reel, deadpan",
+    "facebook": "Same reel",
+    "tiktok": "Same reel",
+    "youtube": "Old School Thai Gyms Had a System #shorts",
+    "threads": "Take: 'I miss old-school Thai gyms. Nobody explained anything and everybody knew the rules. What did your first gym get right that new gyms forget?'"
+   }
+  },
+  {
+   "id": "focus-killer",
+   "title": "The habit that kills your focus",
+   "status": "new",
+   "evidence": [
+    {
+     "id": "FE4CFS5a_VQ",
+     "platform": "youtube",
+     "handle": "Hamza97",
+     "name": "Hamza",
+     "views": 217000,
+     "x": 4.9,
+     "url": "https://www.youtube.com/shorts/FE4CFS5a_VQ",
+     "hook": "Try this weird habit"
+    },
+    {
+     "id": "0i7Hb_XEZ4I",
+     "platform": "youtube",
+     "handle": "Hamza97",
+     "name": "Hamza",
+     "views": 198000,
+     "x": 4.4,
+     "url": "https://www.youtube.com/shorts/0i7Hb_XEZ4I",
+     "hook": "How to Instantly Decrease Focus"
+    }
+   ],
+   "pattern": "Name one everyday habit and show how it quietly ruins focus, then give the swap.",
+   "why": "Likely why: everyone suspects their phone, and a named habit with one fix is easy to act on and save. Two outliers from one creator: 4.9x and 4.4x his median (217k, 198k views). It's the lifestyle lane (approved 2026-10-15), framed for fighters.",
+   "version": {
+    "format": "talking head, editorial look, 20-30 s (lifestyle lane, fighter framing)",
+    "hook": "THE HABIT THAT KILLS YOUR FOCUS BEFORE YOU EVEN WALK INTO THE GYM.",
+    "beats": [
+     "Hook word FOCUS flies from behind your head",
+     "The habit: scrolling in the changing room right up to the first round",
+     "Why it matters in sparring: you walk in with someone else's thoughts (white card, keyword THOUGHTS)",
+     "The swap: phone in the bag, 2 minutes of shadowboxing in silence",
+     "Close: try it next session and tell me if your first round feels different"
+    ],
+    "needs": "Your own version of the swap if it's different. No stats unless you have a source."
+   },
+   "platforms": {
+    "instagram": "Talking-head reel, lifestyle lane",
+    "facebook": "Same reel",
+    "tiktok": "Same reel",
+    "youtube": "The Habit That Kills Your Focus Before Training #shorts",
+    "threads": "Tip: 'Scrolling in the changing room right up to the first round means you walk into sparring with someone else's thoughts. Phone in the bag, two minutes of shadowboxing in silence. Try it next session.'"
+   }
+  },
   {
    "id": "legend-principle",
    "title": "A legend, one principle",
@@ -472,12 +672,66 @@
   }
  ],
  "skip": [
-  "DeMfujGhnOJ",
+  "2Ij38mCYs2I",
+  "4OpscVUX4hQ",
+  "5yWSmthdokI",
+  "9SxJLIKJSEU",
   "DceGoxuqpHX",
-  "DeHjDOjiYSe",
-  "DecJogUn94T",
   "DeGPxsvktxy",
+  "DeHjDOjiYSe",
+  "DeMfujGhnOJ",
   "DeMpGhdEu3J",
-  "DeRygFjkcU2"
+  "DePNykljPHQ",
+  "DeRygFjkcU2",
+  "DeUQczqgRKZ",
+  "DeUXaWLE7u7",
+  "DeW8Kg1I_hk",
+  "DeW8QcojZ-t",
+  "DeW_rBsiUUC",
+  "DeXE0_GhWYB",
+  "DeXET7ZCUck",
+  "DeXHEZ8Cenu",
+  "DeZzWCBoKDb",
+  "DeaFHlTIbv0",
+  "DeatKiuBAP-",
+  "DecJogUn94T",
+  "DecQdBsjJNy",
+  "DecWJc-Ipo8",
+  "DecYte7qkOy",
+  "Dee52LqIgAW",
+  "DeeLl0qKN9h",
+  "DeelvU-Kj56",
+  "DeexvXujWuT",
+  "DehIiOpMJHE",
+  "DehTFIwiIc5",
+  "DehdISWGAwY",
+  "DehePZ1sJ6R",
+  "DehkyA-I8GI",
+  "Dej7n0FGKPC",
+  "DejjZnXoYpm",
+  "DekEM4osIuL",
+  "DekJE_0ivTL",
+  "DelqYwuoF1I",
+  "DemAntwoWjQ",
+  "DemUNHboG2-",
+  "DemUWqIMLLO",
+  "DemoaqdMfde",
+  "DempGKoI5Tg",
+  "Deo4H0QIZvt",
+  "Deol_CiMR0Q",
+  "FC7VYpbnxSc",
+  "JFiKgzOM3IA",
+  "LA5kI4LHGTc",
+  "MiR_r3QJzE8",
+  "WGOL4wvj3Fs",
+  "Z3kIyuxcQHA",
+  "cU5P7Dn6gmE",
+  "fratyLx2F7M",
+  "kYeLQs3uXG0",
+  "kqB1c3ozMzo",
+  "nhBrZHlcu4A",
+  "qGgeMPkFPMw",
+  "ryFk9iU33BU",
+  "zeP6aoD4x3c"
  ]
 }
