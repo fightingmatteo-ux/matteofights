@@ -1,0 +1,272 @@
+{
+ "updated": "2026-10-20",
+ "read": 15,
+ "blocked": 0,
+ "no_sound_info": 0,
+ "_how": "tools/instagram/sound_scout.py. cleared=true sounds can be attached by the Audio API (audio_id); others only in the Instagram app.",
+ "sounds": [
+  {
+   "key": "Echo Sax End - Caleb Arredondo",
+   "title": "Echo Sax End",
+   "artist": "Caleb Arredondo",
+   "kind": "music",
+   "instagram_audio_page": "https://www.instagram.com/reels/audio/708643231257071/",
+   "reels": 4,
+   "views": 331000,
+   "best_x": null,
+   "examples": [
+    {
+     "url": "https://www.instagram.com/reel/DZBjI9qzi6f/",
+     "views": 331000,
+     "x": null,
+     "handle": "matteofights",
+     "hook": "6 signs you were born to be a fighter (7320 likes)"
+    },
+    {
+     "url": "https://www.instagram.com/reel/DZzqIhPSd8y/",
+     "views": 0,
+     "x": null,
+     "handle": "matteofights",
+     "hook": "8 ways dangerous without hard sparring (160 likes)"
+    },
+    {
+     "url": "https://www.instagram.com/reel/DZIMyNiTl3k/",
+     "views": 0,
+     "x": null,
+     "handle": "matteofights",
+     "hook": "7 ways dangerous hands (123 likes)"
+    }
+   ],
+   "audio_id": "530317382955170",
+   "cleared": true,
+   "first_seen": "2026-10-20"
+  },
+  {
+   "key": "INSONAMIA - Slowed - Ronald Figo",
+   "title": "INSONAMIA - Slowed",
+   "artist": "Ronald Figo",
+   "kind": "music",
+   "instagram_audio_page": "https://www.instagram.com/reels/audio/607478755762707/",
+   "reels": 2,
+   "views": 0,
+   "best_x": null,
+   "examples": [
+    {
+     "url": "https://www.instagram.com/reel/DTnY8eMk-6E/",
+     "views": 0,
+     "x": null,
+     "handle": "matteofights",
+     "hook": "8 ways elite fight shape busy schedule (2736 likes)"
+    },
+    {
+     "url": "https://www.instagram.com/reel/DY7gUEFpnZ-/",
+     "views": 0,
+     "x": null,
+     "handle": "matteofights",
+     "hook": "You don't need a barbell to hit like a truck (705 likes)"
+    }
+   ],
+   "audio_id": null,
+   "cleared": false,
+   "first_seen": "2026-10-20"
+  },
+  {
+   "key": "Echo Sax End (Looped) - Caleb Arredondo",
+   "title": "Echo Sax End (Looped)",
+   "artist": "Caleb Arredondo",
+   "kind": "music",
+   "instagram_audio_page": "https://www.instagram.com/reels/audio/1342206993116716/",
+   "reels": 1,
+   "views": 0,
+   "best_x": null,
+   "examples": [
+    {
+     "url": "https://www.instagram.com/reel/DY9UUgfTpYD/",
+     "views": 0,
+     "x": null,
+     "handle": "matteofights",
+     "hook": "Sparring builds timing. Study builds IQ (1016 likes)"
+    }
+   ],
+   "audio_id": "530317382955170",
+   "cleared": true,
+   "first_seen": "2026-10-20"
+  },
+  {
+   "key": "Ethereal - mikeeysmind",
+   "title": "Ethereal",
+   "artist": "mikeeysmind",
+   "kind": "music",
+   "instagram_audio_page": "https://www.instagram.com/reels/audio/893516645268511/",
+   "reels": 1,
+   "views": 0,
+   "best_x": null,
+   "examples": [
+    {
+     "url": "https://www.instagram.com/reel/DZu7E1gTufE/",
+     "views": 0,
+     "x": null,
+     "handle": "matteofights",
+     "hook": "Listen to him (673 likes)"
+    }
+   ],
+   "audio_id": null,
+   "cleared": false,
+   "first_seen": "2026-10-20"
+  },
+  {
+   "key": "Not You Too (feat. Chris Brown) - Drake",
+   "title": "Not You Too (feat. Chris Brown)",
+   "artist": "Drake",
+   "kind": "music",
+   "instagram_audio_page": "https://www.instagram.com/reels/audio/2757646461025236/",
+   "reels": 1,
+   "views": 0,
+   "best_x": null,
+   "examples": [
+    {
+     "url": "https://www.instagram.com/reel/DUs_sWCE7e1/",
+     "views": 0,
+     "x": null,
+     "handle": "matteofights",
+     "hook": "8 ways to train boxing anywhere (629 likes)"
+    }
+   ],
+   "audio_id": null,
+   "cleared": false,
+   "first_seen": "2026-10-20"
+  },
+  {
+   "key": "Original audio @matteofights (https://www.instagram.com/reel/DcZAQJ1Tp1h/)",
+   "title": "Original audio",
+   "artist": "",
+   "kind": "original",
+   "instagram_audio_page": null,
+   "reels": 1,
+   "views": 0,
+   "best_x": null,
+   "examples": [
+    {
+     "url": "https://www.instagram.com/reel/DcZAQJ1Tp1h/",
+     "views": 0,
+     "x": null,
+     "handle": "matteofights",
+     "hook": "3-day boxing S&C plan (346 likes)"
+    }
+   ],
+   "audio_id": null,
+   "cleared": false,
+   "first_seen": "2026-10-20"
+  },
+  {
+   "key": "Original audio @matteofights (https://www.instagram.com/reel/DciAxaLKMn1/)",
+   "title": "Original audio",
+   "artist": "",
+   "kind": "original",
+   "instagram_audio_page": null,
+   "reels": 1,
+   "views": 0,
+   "best_x": null,
+   "examples": [
+    {
+     "url": "https://www.instagram.com/reel/DciAxaLKMn1/",
+     "views": 0,
+     "x": null,
+     "handle": "matteofights",
+     "hook": "hit harder without sparring every day (257 likes)"
+    }
+   ],
+   "audio_id": null,
+   "cleared": false,
+   "first_seen": "2026-10-20"
+  },
+  {
+   "key": "Original audio @matteofights (https://www.instagram.com/reel/Dc8blmkz5Sr/)",
+   "title": "Original audio",
+   "artist": "",
+   "kind": "original",
+   "instagram_audio_page": null,
+   "reels": 1,
+   "views": 0,
+   "best_x": null,
+   "examples": [
+    {
+     "url": "https://www.instagram.com/reel/Dc8blmkz5Sr/",
+     "views": 0,
+     "x": null,
+     "handle": "matteofights",
+     "hook": "Iykyk (230 likes)"
+    }
+   ],
+   "audio_id": null,
+   "cleared": false,
+   "first_seen": "2026-10-20"
+  },
+  {
+   "key": "Memory Reboot - VØJ, Narvent",
+   "title": "Memory Reboot",
+   "artist": "VØJ, Narvent",
+   "kind": "music",
+   "instagram_audio_page": "https://www.instagram.com/reels/audio/2616742488697004/",
+   "reels": 1,
+   "views": 0,
+   "best_x": null,
+   "examples": [
+    {
+     "url": "https://www.instagram.com/reel/DdmVi93zYnO/",
+     "views": 0,
+     "x": null,
+     "handle": "matteofights",
+     "hook": "No such thing as an ex-fighter (214 likes)"
+    }
+   ],
+   "audio_id": null,
+   "cleared": false,
+   "first_seen": "2026-10-20"
+  },
+  {
+   "key": "180db_ [130] (Intro Slowed) - Akuran",
+   "title": "180db_ [130] (Intro Slowed)",
+   "artist": "Akuran",
+   "kind": "music",
+   "instagram_audio_page": "https://www.instagram.com/reels/audio/919597597340269/",
+   "reels": 1,
+   "views": 0,
+   "best_x": null,
+   "examples": [
+    {
+     "url": "https://www.instagram.com/reel/DcgY6xnKnLZ/",
+     "views": 0,
+     "x": null,
+     "handle": "matteofights",
+     "hook": "10 signs better fighter than you think (167 likes)"
+    }
+   ],
+   "audio_id": null,
+   "cleared": false,
+   "first_seen": "2026-10-20"
+  },
+  {
+   "key": "Fever (Instrumental Slowed) - xaviorthemachine",
+   "title": "Fever (Instrumental Slowed)",
+   "artist": "xaviorthemachine",
+   "kind": "music",
+   "instagram_audio_page": "https://www.instagram.com/reels/audio/1565738527991539/",
+   "reels": 1,
+   "views": 0,
+   "best_x": null,
+   "examples": [
+    {
+     "url": "https://www.instagram.com/reel/DcNxE-3K5c6/",
+     "views": 0,
+     "x": null,
+     "handle": "matteofights",
+     "hook": "fight cardio 10 things (108 likes)"
+    }
+   ],
+   "audio_id": null,
+   "cleared": false,
+   "first_seen": "2026-10-20"
+  }
+ ]
+}
