@@ -44,7 +44,7 @@
         "09:00"
       ],
       "approved_note": "Matteo: 'let's start doing all of that' (per-platform plan, 2026-10-16)",
-      "last_slot": "2026-10-19T13:00:00Z"
+      "last_slot": "2026-10-20T13:00:00Z"
     },
     "threads_text": {
       "enabled": true,
@@ -181,6 +181,12 @@
         "id": "v2iHG5l0XGc",
         "url": "https://youtube.com/shorts/v2iHG5l0XGc",
         "privacy": "public"
+      },
+      "facebook_slides": {
+        "status": "posted",
+        "at": "2026-10-20T13:06:08Z",
+        "id": "1070947222779004_122156182431352578",
+        "url": "https://www.facebook.com/1070947222779004_122156182431352578"
       }
     },
     "lst-2026-10-17-fighter-without-a-record": {
@@ -266,6 +272,7 @@
         "id": "18106198853307940",
         "url": "https://www.threads.com/@matteofights/post/DesnPYJig5A"
       }
-    }
+    },
+    "lst-2026-10-19-power-without-weights": {}
   }
 }
