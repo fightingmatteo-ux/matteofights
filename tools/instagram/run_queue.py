@@ -5,13 +5,18 @@ Run by the "Post queue" workflow every 30 min (or by hand). An item posts only w
   status == "queued", now >= not_before, and the account's latest post is >= min_gap_hours old.
 Items with app_audio get that Instagram library sound attached through the Audio API (audio.py, FB_USER_TOKEN).
 Guard against double posts: if a post from the last 24 h already starts with the item's caption, it is
-marked posted instead of posting again.
+marked posted instead of posting again. An item is set to "posting" before the API call, and "posting" items are
+never picked again, so a failed state write after a successful post can't cause a second post.
+All reads and writes go through tools/state.py.
 """
 import datetime as dt, json, os, re, subprocess, sys, urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-QUEUE = ROOT / "production" / "schedule" / "queue.json"
+sys.path.insert(0, str(ROOT / "tools"))
+import state  # noqa: E402
+
+AUDIO_FIELDS = ("audio_id", "audio_title", "audio_artist", "audio_status", "audio_note")
 GRAPH = "https://graph.instagram.com/v23.0"
 DEFAULT_GAP_H = 2.5
 
@@ -34,10 +39,10 @@ def main():
         for line in (ROOT / "secrets" / "meta.env").read_text(encoding="utf-8").splitlines():
             if "=" in line:
                 k, v = line.split("=", 1); os.environ.setdefault(k.strip(), v.strip())
-    q = json.loads(QUEUE.read_text(encoding="utf-8"))
+    items = state.all("queue")
     # app_audio items carry a sound from Instagram's library. The Audio API (tools/instagram/audio.py, FB_USER_TOKEN)
     # attaches it; a sound it can't find exactly is marked audio_status "manual" and Matteo posts that one in the app.
-    due = [i for i in q["items"] if i.get("approved") is True and i.get("status") == "queued"
+    due = [i for i in items if i.get("approved") is True and i.get("status") == "queued"
            and i.get("audio_status") != "manual"
            and not i.get("sound_pending")  # still has baked-in music: wait for the factory's --sounds-only re-render
            and dt.datetime.fromisoformat(i["not_before"].replace("Z", "+00:00")) <= now()]
@@ -45,8 +50,10 @@ def main():
     for cand in sorted(due, key=lambda i: i["not_before"]):
         if not cand.get("app_audio") or cand.get("audio_id"):
             item = cand; break
-        if not resolve_audio(cand):
-            save(q); continue
+        ok = resolve_audio(cand)
+        state.patch("queue", cand["id"], {k: cand[k] for k in AUDIO_FIELDS if k in cand})
+        if not ok:
+            continue
         item = cand; break
     if not item:
         print("nothing due"); return
@@ -56,9 +63,9 @@ def main():
     first_line = caption.splitlines()[0].strip()
     for p in posts:
         if now() - p["at"] < dt.timedelta(hours=24) and (p.get("caption") or "").strip().startswith(first_line):
-            item.update(status="posted", media_id=p["id"], posted_at=p["timestamp"], permalink=p.get("permalink"),
-                        note="found already on Instagram, not re-posted")
-            save(q); print(f"{item['id']}: already posted ({p['id']})"); return
+            state.patch("queue", item["id"], dict(status="posted", media_id=p["id"], posted_at=p["timestamp"],
+                                                  permalink=p.get("permalink"), note="found already on Instagram, not re-posted"))
+            print(f"{item['id']}: already posted ({p['id']})"); return
 
     gap = dt.timedelta(hours=item.get("min_gap_hours", DEFAULT_GAP_H))
     if posts and now() - posts[0]["at"] < gap:
@@ -76,17 +83,18 @@ def main():
                "--caption-file", item["caption_file"], "--strategy", item.get("strategy", "MANUAL"), "--confirm"]
     if item.get("thumb_offset_ms") is not None:
         cmd += ["--thumb-offset", str(item["thumb_offset_ms"])]
+    state.patch("queue", item["id"], {"status": "posting"})
     r = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True, encoding="utf-8")
     out = r.stdout + r.stderr
     print(out[-3000:])
     m = re.search(r"media id (\d+)\s+(\S+)", out)
     if r.returncode == 0 and m:
-        item.update(status="posted", media_id=m.group(1), permalink=m.group(2),
-                    posted_at=now().strftime("%Y-%m-%dT%H:%M:%SZ"))
+        result = dict(status="posted", media_id=m.group(1), permalink=m.group(2),
+                      posted_at=now().strftime("%Y-%m-%dT%H:%M:%SZ"))
     else:
-        item.update(status="failed", error=out.strip().splitlines()[-1][:500] if out.strip() else f"exit {r.returncode}")
-    save(q)
-    sys.exit(0 if item["status"] == "posted" else 1)
+        result = dict(status="failed", error=out.strip().splitlines()[-1][:500] if out.strip() else f"exit {r.returncode}")
+    state.patch("queue", item["id"], result)
+    sys.exit(0 if result["status"] == "posted" else 1)
 
 
 def resolve_audio(item):
@@ -128,10 +136,6 @@ def resolve_audio(item):
                 audio_artist=track.get("display_artist") or track.get("ig_username"))
     print(f"{item['id']}: audio {track.get('title')} -> {track['audio_id']}")
     return True
-
-
-def save(q):
-    QUEUE.write_text(json.dumps(q, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
 
 if __name__ == "__main__":

@@ -16,9 +16,11 @@ Telegram only listens to TELEGRAM_CHAT_ID; the dashboard only accepts Matteo's C
 import argparse, datetime as dt, io, json, os, subprocess, sys, urllib.parse, urllib.request, uuid
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+import state as store  # noqa: E402  (live state: the reel queue)
+
 ROOT = Path(__file__).resolve().parents[2]
 CTL = ROOT / "production" / "control"
-QUEUE = ROOT / "production" / "schedule" / "queue.json"
 THREADS = ROOT / "production" / "threads" / "posts.json"  # written Threads posts (tools/crosspost), approved weekly
 TG = "https://api.telegram.org/bot{token}/{method}"
 NY = None
@@ -53,19 +55,16 @@ def ny(iso):
 # ---------------------------------------------------------------- actions (shared by web + Telegram)
 def pending_week():
     """Rendered listicles waiting for a yes, oldest first."""
-    q = json.loads(QUEUE.read_text(encoding="utf-8"))
-    return [i for i in q["items"] if i["id"].startswith("lst-") and i["status"] == "queued" and not i.get("approved")]
+    return [i for i in store.all("queue") if i["id"].startswith("lst-") and i["status"] == "queued" and not i.get("approved")]
 
 
 def approve(ids, via):
-    q = json.loads(QUEUE.read_text(encoding="utf-8"))
     stamp = now()
     done = []
-    for i in q["items"]:
+    for i in store.all("queue"):
         if i["id"] in ids and i["status"] == "queued" and not i.get("approved"):
-            i.update(approved=True, approved_note=f"Matteo: approved the week via {via} ({stamp})")
+            store.patch("queue", i["id"], dict(approved=True, approved_note=f"Matteo: approved the week via {via} ({stamp})"))
             done.append(i["id"])
-    QUEUE.write_text(json.dumps(q, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     if done:
         log(f"Approved {len(done)} reels via {via}", "Matteo")
     return done
@@ -243,8 +242,7 @@ def send_new(chat, state):
             tg("sendMessage", {"chat_id": chat, "text": f"❓ {x['question']}" + (f"\n\n{x['context']}" if x.get("context") else ""),
                                **({"reply_markup": buttons(rows)} if rows else {})})
             state["sent_questions"].append(x["id"])
-    q = json.loads(QUEUE.read_text(encoding="utf-8"))
-    for i in q["items"]:
+    for i in store.all("queue"):
         if i["status"] == "failed" and i["id"] not in state.setdefault("sent_failed", []):
             tg("sendMessage", {"chat_id": chat, "text": f"⚠️ A reel failed to post: {i.get('hook', i['id'])}\n"
                                                          f"{(i.get('error') or '')[:300]}\nClaude looks at it on the next daily check."})

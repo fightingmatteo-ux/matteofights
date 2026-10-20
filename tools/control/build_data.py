@@ -5,8 +5,11 @@ Runs as the Cloudflare Pages build command on every push, so the site always sho
 Sources: production/schedule/queue.json, production/listicles/{hooks,clips}.json, production/control/*.json
 (metrics.json is written by Claude's daily check from Buzzfy).
 """
-import datetime as dt, json, os, shutil, subprocess
+import datetime as dt, json, os, shutil, subprocess, sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+import state as store  # noqa: E402  (live state: queue + crosspost results)
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "control-site" / "public"
@@ -73,7 +76,7 @@ def fetch_videos(queue):
 
 
 def main():
-    queue = load(ROOT / "production/schedule/queue.json", {"items": []})["items"]
+    queue = store.all("queue")
     hooks = load(ROOT / "production/listicles/hooks.json", {"hooks": []})["hooks"]
     clips = load(ROOT / "production/listicles/clips.json", {})
     live = load(ROOT / "production/listicles/clip-sheets/index.json", {})
@@ -81,7 +84,7 @@ def main():
     per = metrics.get("reels", {})
     hook_fmt = {h.get("queue_id"): h for h in hooks}
 
-    xpost = load(ROOT / "production/schedule/crosspost.json", {}).get("posts", {})
+    xpost = store.get("crosspost", "posts") or {}
     videos = fetch_videos(queue)
     covers = OUT / "covers"
     shutil.rmtree(covers, ignore_errors=True)
@@ -145,7 +148,7 @@ def main():
         "log": load(CTL / "log.json", [])[-60:],
         "platforms": load(CTL / "platforms.json", {}),
         # other platforms (tools/crosspost): per-reel results + written Threads posts (approved weekly)
-        "crosspost": {k: v for k, v in load(ROOT / "production/schedule/crosspost.json", {}).items() if k != "_how"},
+        "crosspost": {"platforms": store.get("crosspost", "platforms") or {}, "posts": xpost},
         "threads_posts": sorted(load(ROOT / "production/threads/posts.json", {"posts": []})["posts"],
                                 key=lambda p: p["at"])[-60:],
         # Results > Rivals: competitor outliers (tools/competitors/scout.py) + idea cards (competitor-ideas skill)

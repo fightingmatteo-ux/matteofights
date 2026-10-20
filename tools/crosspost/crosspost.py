@@ -24,10 +24,10 @@ from zoneinfo import ZoneInfo
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import captions  # noqa: E402
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+import state as store  # noqa: E402  (live state: queue + crosspost results)
 
 ROOT = Path(__file__).resolve().parents[2]
-QUEUE = ROOT / "production" / "schedule" / "queue.json"
-STATE = ROOT / "production" / "schedule" / "crosspost.json"
 NOTES = ROOT / "production" / "control" / "notes.json"
 THREADS_POSTS = ROOT / "production" / "threads" / "posts.json"
 NY = ZoneInfo("America/New_York")
@@ -378,7 +378,8 @@ def next_slot(after, slots):
 
 
 def save_state(state):
-    STATE.write_text(json.dumps(state, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    store.patch("crosspost", "posts", state["posts"])
+    store.patch("crosspost", "platforms", state["platforms"])  # run_platform moves cfg["last_slot"]
 
 
 def run_platform(name, cfg, state, items, done, dry):
@@ -468,8 +469,8 @@ def run_threads_text(cfg, done, dry):
 
 def run(dry=False):
     load_env()
-    state = json.loads(STATE.read_text(encoding="utf-8"))
-    items = json.loads(QUEUE.read_text(encoding="utf-8"))["items"]
+    state = {"platforms": store.get("crosspost", "platforms") or {}, "posts": store.get("crosspost", "posts") or {}}
+    items = store.all("queue")
     done = []
     for name, cfg in state["platforms"].items():
         if not cfg.get("enabled"):
