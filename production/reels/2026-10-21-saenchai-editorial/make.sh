@@ -19,13 +19,14 @@ if [ ! -f "assets/media/fg_${V}_full.webm" ]; then
   VPY=.venv/bin/python; [ -x "$VPY" ] || VPY=.venv/Scripts/python.exe
   "$VPY" -m pip install -q onnxruntime numpy
   [ -f rvm.onnx ] || curl -sSL -o rvm.onnx https://github.com/PeterL1n/RobustVideoMatting/releases/download/v1.0.0/rvm_mobilenetv3_fp32.onnx
-  "$VPY" "$K/cutout.py" "assets/media/aroll_$V.mp4" "assets/media/fg_${V}_full.webm" --model rvm.onnx
+  "$VPY" "$K/cutout.py" "assets/media/aroll_$V.mp4" "assets/media/fg_${V}_tmp.webm" --model rvm.onnx
+  mv "assets/media/fg_${V}_tmp.webm" "assets/media/fg_${V}_full.webm"
 fi
 
 "$PY" -P build.py "$V"
 mkdir -p "$(dirname "$OUT")"
 render() { npx --yes hyperframes@0.8.147 render -q standard -w 4 -o "$OUT" 2>&1 | grep -E "rendered in|failed|rror" || true; }
 render
-"$PY" -I "$K/check_render.py" "$OUT" "assets/media/aroll_$V.mp4" || { echo "glitch: rendering again"; render; "$PY" -I "$K/check_render.py" "$OUT" "assets/media/aroll_$V.mp4"; }
+"$PY" -P "$K/check_render.py" "$OUT" "assets/media/aroll_$V.mp4" || { echo "glitch: rendering again"; render; "$PY" -P "$K/check_render.py" "$OUT" "assets/media/aroll_$V.mp4"; }
 ffmpeg -v error -y -i "$OUT" -c:v libx264 -crf 23 -preset slow -c:a copy -movflags +faststart "${OUT%.mp4}-phone.mp4"
 echo "done: $OUT (+ -phone.mp4)"
