@@ -1,15 +1,26 @@
 /* Editorial captions + white quote cards. Needs the Geist variable font at assets/fonts/Geist-latin.woff2. */
 @font-face { font-family: "Geist"; src: url("assets/fonts/Geist-latin.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
-:root { --ed-white: #FFFFFF; --ed-paper: #FFFFFF; --ed-ink: #0B0B0D; --ed-red: #E8112D; --ed-cap-top: 1180px; }
+:root { --ed-white: #FFFFFF; --ed-paper: #FFFFFF; --ed-ink: #0B0B0D; --ed-red: #E8112D; --ed-cap-top: 1180px; --ed-back-top: 460px; }
 
-/* captions over the face: small lead words, one big red keyword on its own line, soft shadow (no outline box) */
-#ed-caps { position: absolute; left: 60px; right: 60px; top: var(--ed-cap-top); height: 320px; pointer-events: none; }
+/* captions: front layer above everything; back layer sits inside the camera, under Matteo's cut-out */
+#ed-caps { position: absolute; left: 60px; right: 60px; top: var(--ed-cap-top); height: 360px; pointer-events: none; }
+#ed-caps-back { position: absolute; left: 60px; right: 60px; top: var(--ed-back-top); height: 360px; pointer-events: none; }
 .ed-ph { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
   text-align: center; opacity: 0; font-family: "Geist", sans-serif; color: var(--ed-white);
   text-shadow: 0 2px 6px rgba(0,0,0,0.45), 0 6px 28px rgba(0,0,0,0.35); }
-.ed-lead { font-weight: 700; font-size: 70px; line-height: 1.05; letter-spacing: -0.035em; }
-.ed-keyline { margin-top: -6px; font-weight: 800; font-size: 168px; line-height: 0.95; letter-spacing: -0.055em; color: var(--ed-red); }
-.ed-w { display: inline-block; opacity: 0; will-change: transform, filter, opacity; }
+/* lead top-left, keyword, tail bottom-right: the staggered layout of the reference */
+.ed-ph.ed-split { align-items: stretch; }
+.ed-ph.ed-split .ed-lead { align-self: center; transform: translateX(-90px); }
+.ed-ph.ed-split .ed-tail { align-self: center; transform: translateX(120px); }
+.ed-lead, .ed-tail { font-weight: 700; font-size: 70px; line-height: 1.05; letter-spacing: -0.035em; }
+.ed-tail { margin-top: -8px; }
+.ed-keyline { position: relative; margin-top: -6px; font-weight: 800; font-size: 176px; line-height: 0.95; letter-spacing: -0.055em; color: var(--ed-red); }
+#ed-caps-back .ed-keyline { font-size: 220px; }
+.ed-w { display: inline-block; position: relative; opacity: 0; will-change: transform, filter, opacity; }
+.ed-c { display: inline-block; will-change: transform, opacity, filter; }
+.ed-ghost { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); font-size: 2.6em; line-height: 1; color: transparent;
+  -webkit-text-stroke: 4px rgba(255,255,255,0.9); text-shadow: none; opacity: 0; z-index: -1; pointer-events: none; }
+.ed-card .ed-ghost { -webkit-text-stroke: 4px rgba(232,17,45,0.5); }
 
 /* quote card: white page, black type building on the voice, keyword huge in red */
 .ed-card { position: absolute; inset: 0; background: var(--ed-paper); overflow: hidden; }
@@ -18,4 +29,6 @@
 .ed-cardkey { font-weight: 800; font-size: 230px; line-height: 0.9; letter-spacing: -0.06em; color: var(--ed-red); white-space: nowrap; margin: 4px 0 6px -8px; }
 .ed-cardkey.ed-slam { font-size: 300px; }
 .ed-cardtail { font-weight: 700; font-size: 64px; line-height: 1.08; letter-spacing: -0.035em; text-align: right; }
-#ed-dip { position: absolute; inset: 0; background: #000; opacity: 0; pointer-events: none; }
+#ed-dip, #ed-flash { position: absolute; inset: 0; opacity: 0; pointer-events: none; }
+#ed-dip { background: #000; }
+#ed-flash { background: #fff; }

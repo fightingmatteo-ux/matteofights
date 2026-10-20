@@ -8,6 +8,7 @@ import re
 import sys
 
 sys.path.insert(0, "../../editing/reel-kit/editorial")
+import cutout  # noqa: E402
 import plan  # noqa: E402
 
 d = json.load(open("work/edl_A.json", encoding="utf-8"))
@@ -29,13 +30,14 @@ CARDS = [
     (W("TAKE") - 0.06, W("BECAUSE") - 0.12, "RESET"),              # take a deep breath and RESET (slam), face back for "because"
 ]
 ed = plan.build(d, keys={"THREE", "ONE", "TWO", "JAB", "RELAX", "CAUGHT"}, cards=CARDS, slam={"RESET"},
-                hide=[(0, TITLE_END)], title_end=TITLE_END)
+                hide=[(0, TITLE_END)], title_end=TITLE_END,
+                back_top=lambda t: (cutout.head_top("assets/media/fg_A_full.webm", t) or 660) - 235)
 css, js = plan.install(".", bed_seconds=d["duration"] + 1)
 
 src = open("work/template.html", encoding="utf-8").read()
-fill = {"ED_CSS": css, "ED_JS": js, "ED_HTML_CAPS": ed["caps"], "ED_HTML_CARDS": ed["cards"], "ED_AUDIO": ed["audio"],
+fill = {"ED_CSS": css, "ED_JS": js, "ED_HTML_CAPS": ed["caps"], "ED_HTML_CAPS_BACK": ed["caps_back"], "ED_HTML_CARDS": ed["cards"], "ED_AUDIO": ed["audio"],
         "ED_PLAN": ed["plan"], "DUR": f"{d['duration']:.3f}", "TITLE_END": f"{TITLE_END:.3f}",
-        "HEAD_T": f"{W('HEAD') - 0.03:.3f}", "CAP_TOP": "330", "BEHIND_TOP": "480", "FG_END": "3.6"}
+        "HEAD_T": f"{W('HEAD') - 0.03:.3f}", "CAP_TOP": "330", "BEHIND_TOP": "480", "BACK_TOP": "0"}
 out = re.sub(r"\{\{(\w+)\}\}", lambda m: fill[m.group(1)], src)
 open("index.html", "w", encoding="utf-8").write(out)
 print(f"index.html built: {d['duration']:.1f}s, {len(json.loads(ed['plan'])['phrases'])} phrases, {len(CARDS)} cards")

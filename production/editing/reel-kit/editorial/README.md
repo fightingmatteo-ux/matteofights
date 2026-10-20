@@ -13,6 +13,31 @@ The talking-head look since 2026-10-20, from the @kaixerb reference
 | `cutout.py` | Robust Video Matting -> `fg_<V>.webm` (Matteo only, with alpha) for text **behind his head** |
 | `check_render.py` | fails a render whose first second has black / out-of-step frames (cold-start glitch) |
 
+## Keyword effects (the word's meaning drives the motion + its sound)
+| Effect | Words (defaults in `plan.FX`) | Motion | Sound |
+|---|---|---|---|
+| `rewind` | reset, restart, again, back | letters scattered, rewind into place, chromatic ghost collapses, snap | tape rewind + click |
+| `jab` | jab, punch(ed), hit, strike | thrown in from the left with a skewed streak, overshoots, camera takes the hit | swish + thump |
+| `impact` | caught, knocked, slam, hurt | lands hard, shakes, white flash, camera punch | crack + low hit |
+| `exhale` | relax, breath(e), calm | letters start packed tight and breathe out, word floats up | soft breath |
+| `decode` | information, data, thinking, learn | letters scramble through glyphs, lock in left to right | computer blips |
+| `count` | one … five | giant outlined numeral swells behind the word | key tone |
+| `freeze` | freeze, froze, stuck | arrives ice-blue and shivering, thaws to red | shimmer |
+| `focus` | anything else | deep focus pull | key tone |
+Override per reel: `plan.build(..., fx={"WORD": "effect"})`. Add an effect = a function in `editorial.js` FX + a
+sound in `make_audio.py` + a row in `plan.FX_SFX`. Everything is seeded, so renders repeat exactly.
+
+## Behind / in front
+Keyword phrases alternate front, behind, front... (`behind=True`). Behind phrases live in `#ed-caps-back` inside
+the camera, under the full-length cut-out (`fg_<V>_full.webm`, ~5 min for 25 s). Their height comes from
+`back_top=lambda t: cutout.head_top(fg, t) - 235`: the highest his head gets during the phrase, so his hair
+always covers about the bottom quarter of the keyword, never more.
+
+## Transitions (measured on the reference, frame by frame)
+Words focus in (blur 14px -> 0, ~0.3 s, no bounce). A phrase dissolves into blur in ~0.18 s, ending just as the
+next one starts focusing (overlap ~0.1 s; longer overlap smears). Cards whip in with a horizontal motion blur;
+the face whips back in with a blur after.
+
 ## Per reel you decide only three things (in `build.py`)
 1. **keys**: the words that turn big + red over the face (one per phrase, ~every 3–6 s).
 2. **cards**: `(start, end, KEYWORD)` for the 2–3 lines that carry the reel. Start ~0.06 s before the line's

@@ -121,10 +121,60 @@ def bed(seconds):
     return norm(out, -4)
 
 
+def rewind():
+    # tape rewind: a fast rising warble of chirps that speeds up, ending on a hard click (the "snap back")
+    x = t(0.55)
+    rate = 18 + 60 * (x / 0.55) ** 2
+    f = 900 + 2600 * (x / 0.55) ** 1.5
+    s = np.sin(2 * np.pi * np.cumsum(f) / SR) * (0.5 + 0.5 * np.sign(np.sin(2 * np.pi * np.cumsum(rate) / SR)))
+    hiss = lowpass(rng.standard_normal(len(x)), 5000) * 0.6
+    body = (0.35 * s + hiss) * np.linspace(0.2, 1, len(x)) ** 2
+    click = np.zeros(int(SR * 0.08)); click[:int(SR * 0.004)] = rng.standard_normal(int(SR * 0.004))
+    click = env(click + 0.6 * np.sin(2 * np.pi * 2200 * t(0.08)), 0.0003, 0.012)
+    return norm(np.concatenate([body, click * 3]), -5)
+
+
+def punch():
+    # jab: short air swish into a tight low thump
+    sw = lowpass(rng.standard_normal(int(SR * 0.09)), 3000) * np.linspace(0, 1, int(SR * 0.09)) ** 2
+    x = t(0.25)
+    thump = env(np.sin(2 * np.pi * np.cumsum(150 * np.exp(-x * 25) + 55) / SR), 0.001, 0.06)
+    crack = env(rng.standard_normal(len(x)), 0.0003, 0.008) * 0.5
+    return norm(np.concatenate([sw * 0.5, thump + crack]), -3)
+
+
+def impact():
+    # caught: heavier hit, crack + sub tail
+    x = t(0.9)
+    thump = env(np.sin(2 * np.pi * np.cumsum(110 * np.exp(-x * 12) + 42) / SR), 0.001, 0.22)
+    crack = env(lowpass(rng.standard_normal(len(x)), 6000), 0.0003, 0.02) * 0.9
+    return norm(thump + crack, -2)
+
+
+def exhale():
+    # relax: a soft breath out, band-limited noise swelling and falling
+    x = t(1.0)
+    n = lowpass(rng.standard_normal(len(x)), 1800) - lowpass(rng.standard_normal(len(x)), 300) * 0.5
+    shape = np.sin(np.pi * x / 1.0) ** 1.5 * np.exp(-x * 0.8)
+    return norm(n * shape, -10)
+
+
+def data():
+    # decode: fast random computer blips settling on one note
+    out = []
+    for i in range(14):
+        f = rng.choice([1800, 2400, 3100, 3600, 4200, 2700]) if i < 13 else 2400
+        d = 0.028 if i < 13 else 0.12
+        out.append(env(np.sign(np.sin(2 * np.pi * f * t(d))) * 0.6, 0.001, d / 2.5))
+    return norm(np.concatenate(out), -12)
+
+
 if __name__ == "__main__":
     od = Path(sys.argv[1]); od.mkdir(parents=True, exist_ok=True)
-    for name, fn in [("tick", tick), ("key", key), ("whoom", whoom), ("shimmer", shimmer), ("sub", sub)]:
+    for name, fn in [("tick", tick), ("key", key), ("whoom", whoom), ("shimmer", shimmer), ("sub", sub),
+                     ("rewind", rewind), ("punch", punch), ("impact", impact), ("exhale", exhale), ("data", data)]:
         save(od / f"{name}.wav", fn())
-    secs = float(sys.argv[2]) if len(sys.argv) > 2 else 45
-    save(od / "bed.wav", bed(secs))
-    print(f"sfx + {secs:.0f}s bed -> {od}")
+    secs = float(sys.argv[2]) if len(sys.argv) > 2 else 0
+    if secs:
+        save(od / "bed.wav", bed(secs))
+    print(f"sfx -> {od}")

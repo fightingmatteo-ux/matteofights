@@ -26,3 +26,10 @@ to wherever the raw is, then `assemble.py work/takes.json A`, `python -P build.p
 Render v2: `media/freeze-editorial/freeze-editorial-A2.mp4` (+ `-phone.mp4`), check_render OK. v1 had black
 frames 0/2 + a zoom jump (renderer cold start), fixed by re-rendering. The media release upload failed from
 the cloud (proxy), so it only exists in the session and in the chat.
+
+## v3 (2026-10-20, Matteo: "alternate behind and in front, effects that match the words, smoother like the reference")
+- Keyword phrases alternate front / behind (full cut-out `fg_A_full.webm`, placed from `cutout.head_top`).
+- Effects: three/one/two = count (ghost numeral), information = decode, jab = jab, relax = exhale,
+  caught = impact, reset = rewind (slam). Matching synthesised sounds, 8-16 dB over baseline, under the voice.
+- Transitions: focus-pull in, blur dissolve out, ~0.1 s crossfade; cards whip in/out.
+- Render `media/freeze-editorial/freeze-editorial-A3.mp4` (+ `-phone`), check_render OK, peak -1.6 dBFS.

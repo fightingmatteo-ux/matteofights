@@ -19,7 +19,7 @@
       #behind { position: absolute; left: 0; right: 0; top: {{BEHIND_TOP}}px; text-align: center; font-family: "Geist", sans-serif;
         font-weight: 800; font-size: 360px; line-height: 0.8; letter-spacing: -0.065em; color: #E8112D; white-space: nowrap; }
       {{ED_CSS}}
-      :root { --ed-cap-top: {{CAP_TOP}}px; }
+      :root { --ed-cap-top: {{CAP_TOP}}px; --ed-back-top: {{BACK_TOP}}px; }
     </style>
   </head>
   <body>
@@ -27,7 +27,10 @@
       <div id="cam"><div id="cam-inner">
         <video id="aroll" class="clip full" src="assets/media/aroll_A.mp4" data-start="0" data-duration="{{DUR}}" data-track-index="0" muted playsinline></video>
         <div id="behind" class="clip" data-start="0" data-duration="{{TITLE_END}}" data-track-index="1">head.</div>
-        <video id="fg" class="clip full" src="assets/media/fg_A.webm" data-start="0" data-duration="{{FG_END}}" data-track-index="2" muted playsinline></video>
+        <div id="ed-caps-back">
+        {{ED_HTML_CAPS_BACK}}
+        </div>
+        <video id="fg" class="clip full" src="assets/media/fg_A_full.webm" data-start="0" data-duration="{{DUR}}" data-track-index="2" muted playsinline></video>
       </div></div>
 
       <div id="title" class="clip" data-start="0" data-duration="{{TITLE_END}}" data-track-index="5">
@@ -38,6 +41,7 @@
       {{ED_HTML_CAPS}}
       </div>
       {{ED_HTML_CARDS}}
+      <div id="ed-flash"></div>
       <div id="ed-dip"></div>
 
       <audio id="vo" src="assets/media/aroll_A.mp4" data-start="0" data-duration="{{DUR}}" data-track-index="10" data-volume="1"></audio>
@@ -52,7 +56,7 @@
       tl.fromTo("#behind", { scale: 1.0 }, { scale: 1.05, duration: 0.14, ease: "power2.out", yoyo: true, repeat: 1 }, {{HEAD_T}});
       tl.to("#title", { opacity: 0, y: -20, filter: "blur(10px)", duration: 0.12, ease: "power1.in" }, {{TITLE_END}} - 0.12);
       tl.to("#behind", { opacity: 0, filter: "blur(10px)", duration: 0.12, ease: "power1.in" }, {{TITLE_END}} - 0.12);
-      Editorial.animate(tl, PLAN, { cam: "#cam-inner" });
+      Editorial.animate(tl, PLAN, { cam: "#cam-inner", shake: "#cam" });
       window.__timelines["main"] = tl;
     </script>
   </body>
