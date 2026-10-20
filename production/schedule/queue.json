@@ -335,13 +335,16 @@
       "not_before": "2026-10-20T01:30:00Z",
       "min_gap_hours": 2.5,
       "approved": true,
-      "status": "queued",
+      "status": "posted",
       "approved_note": "Matteo: approved the week via dashboard (2026-10-15T20:19:25Z)",
       "test": {
         "exp": "exp-1016-hook_style",
         "variant": "b",
         "value": "split"
-      }
+      },
+      "media_id": "17951467833322313",
+      "permalink": "https://www.instagram.com/reel/DesqqXmCG5u/",
+      "posted_at": "2026-10-20T01:36:31Z"
     },
     {
       "id": "lst-2026-10-20-go-anyway",
