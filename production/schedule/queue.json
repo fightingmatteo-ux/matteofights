@@ -1127,6 +1127,98 @@
         "value": "split"
       },
       "app_audio": "id:530317382955170 Echo Sax End - Caleb Arredondo (add in the Instagram app)"
+    },
+    {
+      "id": "lst-2026-10-25-coach-thinks-ready",
+      "reel": "listicles/2026-10-25-coach-thinks-ready",
+      "variant": "-",
+      "hook": "6 SIGNS YOUR COACH THINKS YOU'RE READY TO FIGHT",
+      "archetype": "identity",
+      "format": "listicle",
+      "clip": "Bag work impact mma.MOV (1vj6GxY875E36-_u9yC84tWzqDm4-9SIc)",
+      "video_asset": "lst-2026-10-25-coach-thinks-ready.mp4",
+      "caption_file": "production/listicles/2026-10-25-coach-thinks-ready/caption.txt",
+      "strategy": "MANUAL",
+      "thumb_offset_ms": 500,
+      "not_before": "2026-10-25T16:30:00Z",
+      "min_gap_hours": 2.5,
+      "approved": false,
+      "status": "queued",
+      "test": {
+        "exp": "exp-1016-hook_style",
+        "variant": "a",
+        "value": "native"
+      },
+      "app_audio": "id:496614019576474 Echo Sax Feeling Blue - Caleb Arredondo (add in the Instagram app)"
+    },
+    {
+      "id": "lst-2026-10-26-better-than-it-feels",
+      "reel": "listicles/2026-10-26-better-than-it-feels",
+      "variant": "-",
+      "hook": "7 SIGNS YOU'RE IMPROVING EVEN IF IT DOESN'T FEEL LIKE IT",
+      "archetype": "identity",
+      "format": "listicle",
+      "clip": "IMG_1547.MOV (16okcYZwmHByyNzsNAHp9rNuXtowASZwH)",
+      "video_asset": "lst-2026-10-26-better-than-it-feels.mp4",
+      "caption_file": "production/listicles/2026-10-26-better-than-it-feels/caption.txt",
+      "strategy": "MANUAL",
+      "thumb_offset_ms": 500,
+      "not_before": "2026-10-26T16:30:00Z",
+      "min_gap_hours": 2.5,
+      "approved": false,
+      "status": "queued",
+      "test": {
+        "exp": "exp-1016-hook_style",
+        "variant": "b",
+        "value": "split"
+      },
+      "app_audio": "id:530317382955170 Echo Sax End - Caleb Arredondo (add in the Instagram app)"
+    },
+    {
+      "id": "lst-2026-10-27-breathes-better",
+      "reel": "listicles/2026-10-27-breathes-better",
+      "variant": "-",
+      "hook": "THE FIGHTER WHO BREATHES BETTER USUALLY WINS",
+      "archetype": "tactical",
+      "format": "statement",
+      "clip": "IMG_1546.MOV (1tmnkEzhQByAoVomRPOWm0Qk2bCYDIH1Q)",
+      "video_asset": "lst-2026-10-27-breathes-better.mp4",
+      "caption_file": "production/listicles/2026-10-27-breathes-better/caption.txt",
+      "strategy": "MANUAL",
+      "thumb_offset_ms": 500,
+      "not_before": "2026-10-27T16:30:00Z",
+      "min_gap_hours": 2.5,
+      "approved": false,
+      "status": "queued",
+      "test": {
+        "exp": "exp-1016-hook_style",
+        "variant": "a",
+        "value": "native"
+      },
+      "app_audio": "id:576492425503806 Echo Sax Endless - Caleb Arredondo (add in the Instagram app)"
+    },
+    {
+      "id": "lst-2026-10-28-sleep-rules",
+      "reel": "listicles/2026-10-28-sleep-rules",
+      "variant": "-",
+      "hook": "6 SLEEP RULES FIGHTERS USE TO RECOVER FASTER",
+      "archetype": "tactical",
+      "format": "lifestyle",
+      "clip": "14BFFBE5-5B4D-4DCD-89CE-381FE3F03F5A.MP4 (1rf6iJDQQxO_wMjYeGYuB81z9JUvXRQPc)",
+      "video_asset": "lst-2026-10-28-sleep-rules.mp4",
+      "caption_file": "production/listicles/2026-10-28-sleep-rules/caption.txt",
+      "strategy": "MANUAL",
+      "thumb_offset_ms": 500,
+      "not_before": "2026-10-28T16:30:00Z",
+      "min_gap_hours": 2.5,
+      "approved": false,
+      "status": "queued",
+      "test": {
+        "exp": "exp-1016-hook_style",
+        "variant": "b",
+        "value": "split"
+      },
+      "app_audio": "id:530317382955170 Echo Sax End - Caleb Arredondo (add in the Instagram app)"
     }
   ]
 }
