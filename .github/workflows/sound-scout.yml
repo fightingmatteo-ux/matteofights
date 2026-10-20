@@ -1,0 +1,39 @@
+# Which Instagram sounds carry outlier reels in the niche, and which can the Audio API attach
+# (tools/instagram/sound_scout.py -> production/sounds/proven.json). Mondays after Competitors, or on demand.
+# Read-only on Instagram: nothing is posted.
+name: Sound scout
+
+on:
+  schedule:
+    - cron: "40 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sound-scout
+  cancel-in-progress: false
+
+jobs:
+  scout:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: master
+      - run: python3 -m pip install -q yt-dlp
+      - name: Scout
+        env:
+          FB_USER_TOKEN: ${{ secrets.FB_USER_TOKEN }}
+          IG_COOKIES: ${{ secrets.IG_COOKIES }}
+        run: python3 -P tools/instagram/sound_scout.py
+      - name: Save
+        run: |
+          git config user.name "sounds[bot]"
+          git config user.email "sounds@users.noreply.github.com"
+          git add production/sounds/proven.json
+          git diff --cached --quiet && exit 0
+          git commit -qm "sounds: proven"
+          for n in 1 2 3; do git pull --rebase -q origin master && git push -q origin HEAD:master && break; sleep 5; done
