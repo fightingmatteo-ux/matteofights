@@ -59,6 +59,34 @@ Measured from spectrograms and onset timing against `words.json`, so read the le
   - A **sub hit on a black frame** before the CTA/loop as the section break.
 - **Don't copy:** the multi-colour keyword palette (green/pink). It's off-brand for us; we stay red/black/ivory.
 
+## Why it went viral (~800k views per Matteo; one of his first posts)
+
+Watched the whole thing frame by frame at 0.5 s. My read, in order of weight:
+
+1. **The premise is a comment machine.** "I'm 18, from the Philippines, day 1, trying to get my first client, give me
+   feedback" makes viewers judges. 1,026 comments on 35k likes (~3%) is very high; our listicles run far lower. Every
+   editor who watches it has an opinion, and the caption even names what to judge ("pacing, captions, or sounds").
+2. **Two audiences in one video.** Editors watch it to critique and save it as a style reference. Everyone else gets
+   a **proven viral clip** (Rick Rubin on Jay Shetty: "follow what's interesting, you can't predict the outcome").
+   The hard part of the content was already proven; he only had to package it.
+3. **Underdog in public + a likeable face.** Big smile in frame 0, bright blue shirt, plain warm background, `HEY` on
+   screen. People root for him, and a "first day" story makes people want to come back for day 2.
+4. **The edit proves the claim.** He says "I'm an editor" and the next 30 s show it: a change every 1–2 s, a light-leak
+   flash at 6.5 s, a whip-blur into the podcast at 9.5 s, white type cards, a fade to grey to black at 35–37 s. That
+   makes the video share-worthy and save-worthy as a reference.
+5. **The vibe = the 2025–26 "premium minimal" look.** A clean Inter-style sans, lots of white space, one red word,
+   soft blur-in text, quiet ticks, piano under wisdom. It feels calm and expensive rather than loud: no emoji, no
+   yellow Hormozi boxes, no meme sounds. That calm is the "trendy feel".
+6. **Short and done.** 41 s, the intro is 9 s, the outro is 4 s, and it just stops on "I'd really appreciate it".
+
+Also luck/cold start: a new account's first reels get tested wide, and one hit here doesn't prove the formula repeats.
+
+**What transfers to @matteofights:** (a) **an explicit "judge me" ask** in a fighter frame (`Rate my ... / tell me
+what I'm doing wrong`). Fighters love to correct each other, so it's a comment magnet. (b) **An underdog-in-public
+series** with a real number ("day 1 of ..."). (c) **The premium-minimal edit layer** (white cards, one red word,
+quiet ticks) on our talking-points reels. (d) **Borrowing proven clips** (fighter interview soundbites) as the
+middle of a reel, with Matteo's framing around them. That's the same "packaged proven content" move.
+
 ## Next step (not done yet)
 
 `production/editing/reel-kit/` has no caption-SFX layer yet. To build it: a small tick/pop/sub set (free source,
