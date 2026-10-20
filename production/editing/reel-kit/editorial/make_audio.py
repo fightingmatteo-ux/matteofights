@@ -100,7 +100,7 @@ def bed(seconds):
     # Am - F - C - G, 64 bpm, one chord per bar, sparse broken voicing: calm, "editorial"
     bar = 60 / 64 * 4
     chords = [[57, 64, 69, 72], [53, 60, 65, 69], [48, 55, 64, 67], [55, 62, 67, 71]]
-    out = np.zeros(int(SR * (seconds + 4)))
+    out = np.zeros(int(SR * (seconds + bar + 6)))  # room for the last bar's ringing notes
     i = 0
     while i * bar < seconds:
         ch = chords[i % 4]
