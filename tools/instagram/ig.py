@@ -60,7 +60,12 @@ class NoRedirect(urllib.request.HTTPRedirectHandler):
 
 
 def release_asset(name):
-    """(size, signed public download URL valid for a few minutes) of a file on the media release."""
+    """(size, download URL) of a render: presigned R2 link (6 h) when it's in R2, else the media release's signed
+    link (valid a few minutes)."""
+    sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
+    import r2
+    if v := r2.video(name):
+        return v
     if not os.environ.get("GH_TOKEN"):
         sys.exit("GH_TOKEN needed to read the media release.")
     assets = gh(f"repos/{REPO}/releases/tags/media")["assets"]

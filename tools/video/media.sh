@@ -2,7 +2,7 @@
 # Move big video files through GitHub Releases instead of git (git rejects files over 100 MB).
 #   tools/video/media.sh list              list stored media
 #   tools/video/media.sh pull NAME [DIR]   download a stored file (default DIR: media/)
-#   tools/video/media.sh push FILE         upload a file (e.g. a finished render)
+#   tools/video/media.sh push FILE         upload a file (e.g. a finished render), to the release and R2
 #     (Claude cloud sessions may be refused release writes; the Fetch video workflow can always write)
 # Files live on the "media" release of this repo. Uses the gh CLI's REST access.
 set -euo pipefail
@@ -30,6 +30,8 @@ case "$cmd" in
     old=$(gh api --paginate "repos/$REPO/releases/$rid/assets" --jq ".[] | select(.name==\"$name\") | .id")
     [ -z "$old" ] || gh api -X DELETE "repos/$REPO/releases/assets/$old"
     gh api -X POST -H "Content-Type: application/octet-stream" --input "$file" \
-      "https://uploads.github.com/repos/$REPO/releases/$rid/assets?name=$name" --jq .browser_download_url ;;
+      "https://uploads.github.com/repos/$REPO/releases/$rid/assets?name=$name" --jq .browser_download_url
+    # also to R2 (renders/<name>), where the posting scripts look first; skipped when boto3 or the R2 keys are missing
+    python3 -P "$(dirname "$0")/../r2.py" put "renders/$name" "$file" 2>/dev/null || echo "R2 upload skipped" ;;
   *) sed -n 2,7p "$0"; exit 1 ;;
 esac

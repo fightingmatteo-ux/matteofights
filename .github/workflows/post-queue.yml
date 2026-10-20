@@ -27,7 +27,11 @@ jobs:
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
           FB_USER_TOKEN: ${{ secrets.FB_USER_TOKEN }}   # Audio API: items with app_audio get the library sound attached
           GH_TOKEN: ${{ github.token }}
-        run: python3 -P tools/instagram/run_queue.py
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}         # videos in R2 get a 6 h presigned link
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+        run: |
+          python3 -m pip install -q boto3 || true
+          python3 -P tools/instagram/run_queue.py
       - name: Save queue status
         if: always()
         run: |

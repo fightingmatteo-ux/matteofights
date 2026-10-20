@@ -75,6 +75,12 @@ class _NoRedirect(urllib.request.HTTPRedirectHandler):
 
 
 def signed_url(asset):
+    """Download link for a render: presigned R2 (6 h) when it's in R2, else the media release's signed link."""
+    import r2
+    return r2.video_url(asset, release_url)
+
+
+def release_url(asset):
     """Signed public download link (valid a few minutes) for a file on the 'media' release."""
     tok = os.environ["GH_TOKEN"]
     _, _, rel = http("GET", f"https://api.github.com/repos/{REPO}/releases/tags/media",

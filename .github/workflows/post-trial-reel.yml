@@ -45,7 +45,10 @@ jobs:
           FB_USER_TOKEN: ${{ secrets.FB_USER_TOKEN }}
           GH_TOKEN: ${{ github.token }}
           AUDIO: ${{ inputs.audio }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}         # videos in R2 get a 6 h presigned link
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
         run: |
+          python3 -m pip install -q boto3 || true
           args=(trial --asset "${{ inputs.video }}" --caption-file "${{ inputs.caption_file }}" --strategy "${{ inputs.strategy }}")
           [ -n "${{ inputs.thumb_offset }}" ] && args+=(--thumb-offset "${{ inputs.thumb_offset }}")
           [ "${{ inputs.confirm }}" = "true" ] && args+=(--confirm)
