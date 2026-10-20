@@ -1,7 +1,7 @@
 {
-  "updated": "2026-10-19T11:00:11Z",
-  "median_views": 2708,
-  "median_basis": "Buzzfy: latest 16 own reels older than 48h (24 Sep to 17 Oct)",
+  "updated": "2026-10-20T11:00:46Z",
+  "median_views": 2732,
+  "median_basis": "Buzzfy: latest 15 own reels older than 48h (5 to 18 Oct)",
   "audience": {
     "us_reach_pct": 20.0,
     "in_reach_pct": 25.8,
@@ -9,13 +9,13 @@
   },
   "reels": {
     "18131444773684044": {
-      "views": 2683,
-      "reach": 2025,
+      "views": 2687,
+      "reach": 2030,
       "shares": 13,
-      "saves": 40,
+      "saves": 41,
       "follows": null,
-      "skip_rate": 37.3,
-      "vs_median_x": 0.99,
+      "skip_rate": 37.2,
+      "vs_median_x": 0.98,
       "provisional": false
     },
     "18167111158483588": {
@@ -25,17 +25,17 @@
       "saves": 19,
       "follows": null,
       "skip_rate": 34.3,
-      "vs_median_x": 1.12,
+      "vs_median_x": 1.11,
       "provisional": false
     },
     "17949258072324239": {
-      "views": 4249,
-      "reach": 3043,
+      "views": 4261,
+      "reach": 3053,
       "shares": 9,
       "saves": 48,
       "follows": null,
-      "skip_rate": 32.4,
-      "vs_median_x": 1.57,
+      "skip_rate": 32.5,
+      "vs_median_x": 1.56,
       "provisional": false
     },
     "18099839348637902": {
@@ -45,7 +45,7 @@
       "saves": 3,
       "follows": null,
       "skip_rate": 37.4,
-      "vs_median_x": 1.31,
+      "vs_median_x": 1.3,
       "provisional": false
     },
     "18119489926753835": {
@@ -55,27 +55,37 @@
       "saves": 22,
       "follows": null,
       "skip_rate": 40.5,
-      "vs_median_x": 1.24,
+      "vs_median_x": 1.23,
       "provisional": false
     },
     "18114233416853988": {
-      "views": 2679,
-      "reach": 1744,
+      "views": 2686,
+      "reach": 1751,
       "shares": 0,
       "saves": 4,
       "follows": null,
       "skip_rate": 44.1,
-      "vs_median_x": 0.99,
-      "provisional": true
+      "vs_median_x": 0.98,
+      "provisional": false
     },
     "18032075129856571": {
-      "views": 3257,
-      "reach": 1969,
+      "views": 3303,
+      "reach": 1997,
       "shares": 5,
-      "saves": 31,
+      "saves": 33,
       "follows": null,
       "skip_rate": 41.2,
-      "vs_median_x": 1.2,
+      "vs_median_x": 1.21,
+      "provisional": true
+    },
+    "17958547584279391": {
+      "views": 4171,
+      "reach": 2388,
+      "shares": 0,
+      "saves": 3,
+      "follows": null,
+      "skip_rate": 40,
+      "vs_median_x": 1.53,
       "provisional": true
     },
     "18384412828239467": {
@@ -85,7 +95,7 @@
       "saves": 33,
       "follows": null,
       "skip_rate": 34.4,
-      "vs_median_x": 1.2,
+      "vs_median_x": 1.19,
       "provisional": false
     },
     "18077912684721404": {
@@ -95,27 +105,47 @@
       "saves": 3,
       "follows": null,
       "skip_rate": 38.1,
-      "vs_median_x": 1.05,
+      "vs_median_x": 1.04,
       "provisional": false
     },
     "18079670120542159": {
-      "views": 3535,
-      "reach": 1969,
+      "views": 3547,
+      "reach": 1974,
       "shares": 1,
       "saves": 12,
       "follows": null,
-      "skip_rate": 38.8,
-      "vs_median_x": 1.31,
-      "provisional": true
+      "skip_rate": 38.7,
+      "vs_median_x": 1.3,
+      "provisional": false
     },
     "17917206747264143": {
-      "views": 2499,
-      "reach": 1953,
+      "views": 2526,
+      "reach": 1972,
       "shares": 5,
       "saves": 2,
       "follows": null,
-      "skip_rate": 39.5,
+      "skip_rate": 39.8,
       "vs_median_x": 0.92,
+      "provisional": true
+    },
+    "17951467833322313": {
+      "views": 3843,
+      "reach": 2418,
+      "shares": 8,
+      "saves": 32,
+      "follows": null,
+      "skip_rate": 41.6,
+      "vs_median_x": 1.41,
+      "provisional": true
+    },
+    "18160145677526865": {
+      "views": 1092,
+      "reach": 109,
+      "shares": 0,
+      "saves": 2,
+      "follows": null,
+      "skip_rate": 7.3,
+      "vs_median_x": 0.4,
       "provisional": true
     }
   }
