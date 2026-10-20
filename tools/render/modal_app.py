@@ -26,7 +26,7 @@ image = (
     # chromium pulls in every system library chrome-headless-shell needs; HyperFrames brings its own Chrome
     .apt_install("ffmpeg", "curl", "ca-certificates", "chromium", "fonts-liberation", "fonts-noto-color-emoji",
                  "fonts-noto-core")
-    .run_commands("curl -fsSL https://deb.nodesource.com/setup_20.x | bash -",
+    .run_commands("curl -fsSL https://deb.nodesource.com/setup_22.x | bash -",
                   "apt-get install -y nodejs",
                   f"cd /tmp && npx --yes {HF} browser ensure")
     .pip_install("boto3", "numpy", "onnxruntime")
