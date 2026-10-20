@@ -1,6 +1,6 @@
 # Edit worker: Claude (Matteo's subscription, CLAUDE_CODE_OAUTH_TOKEN) turns dashboard uploads into 3 rendered,
 # queued, unapproved variants and applies revision notes. One item per run, then it starts itself again for the
-# next one. Capped at EDIT_MAX_RUNS a day. Instructions: tools/edit/WORKER.md. Renders run on Modal, not here.
+# next one. Capped at EDIT_MAX_RUNS a day, Sonnet to spend little of the subscription. Instructions: tools/edit/WORKER.md. Renders run on Modal, not here.
 name: Edit worker
 on:
   workflow_dispatch:
@@ -12,7 +12,7 @@ concurrency:
   group: edit-worker
   cancel-in-progress: false
 env:
-  EDIT_MAX_RUNS: "4"
+  EDIT_MAX_RUNS: "3"
 jobs:
   work:
     runs-on: ubuntu-latest
@@ -49,7 +49,7 @@ jobs:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           github_token: ${{ github.token }}
           prompt: "Read tools/edit/WORKER.md and do exactly what it says for the oldest open item."
-          claude_args: "--max-turns 150 --allowedTools Bash,Read,Write,Edit,Glob,Grep,Skill"
+          claude_args: "--model sonnet --max-turns 120 --allowedTools Bash,Read,Write,Edit,Glob,Grep,Skill"
       - name: Next item
         if: steps.gate.outputs.go == 'yes'
         run: |
