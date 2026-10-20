@@ -34,6 +34,7 @@ analytics. Build it in phases; don't try to do everything at once.
   teaches about building), format `builder`. Not generic business advice; no Stance plug unless he asks. Judge it
   on follows per 1k views vs the fight content. Every reel = 3 hook variants, posted by Matteo as trial reels 48 h
   apart, logged in `production/reels/LEDGER.md`. Pipeline: `production/editing/reel-kit/PIPELINE.md`.
+  **Talking-head look (Matteo 2026-10-20): editorial**, start every talking-head edit from `production/reels/_TEMPLATE/editorial/`.
 - **Stance (the app/business) lives in a separate folder:** `C:\Users\matte\Documents\Claude\Projects\Stance`
   (brand, audience, business, launch reel). Go there when Matteo says "Stance stuff". Not in this repo.
 - **Secrets never get committed:** `secrets/` (gitignored) holds `ig_cookies.txt` (Instagram login, for

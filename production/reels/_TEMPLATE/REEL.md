@@ -20,7 +20,7 @@ _Link or paste `TALKING-POINTS.md`. Only the hook is verbatim._
 | B | | | | | |
 | C | | | | | |
 
-Shared body: <beats in order>. Edit: subtitles <style>, music <track>, pacing notes.
+Shared body: <beats in order>. Edit: editorial look (`_TEMPLATE/editorial/`): hook word <WORD>, keywords <...>, cards <...>, slam <...>; music <track>.
 
 ## Caption + hashtags
 ```

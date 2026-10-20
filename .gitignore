@@ -59,3 +59,6 @@ control-site/.impeccable/review/
 control-site/.impeccable/mocks/
 control-site/.impeccable/questions/
 control-site/public/videos/
+
+# RVM model + venv for the editorial cut-out (make.sh)
+*.onnx

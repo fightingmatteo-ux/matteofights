@@ -56,7 +56,7 @@ python -P ../../editing/reel-kit/scripts/assemble.py work/takes.json     # asset
 ```
 Single clean take instead? `cutlist.py` (tightens gaps) — but keep `--max-gap` ≥ 0.45 so beats survive.
 
-## 5. Design the edit (Claude, per reel) — copy `2026-10-20-freeze-editorial/` (older motion-graphics: `worst-decision/`)
+## 5. Design the edit (Claude, per reel) — start from `production/reels/_TEMPLATE/editorial/` (README there: fill `build.py`, run `make.sh`). Older motion-graphics look: `worst-decision/`
 `work/template.html` uses `{{expr}}` timings from the EDL (`S('seg')`, `E('seg')`, `W('seg','WORD')`);
 `inject.py` renders it to `index.html`, `build.sh` = inject + carve. Re-timing never drifts.
 House layout 1080x1920: top-band cards 170–790 · subtitles centred ~y1440 · IG UI covers y>1600, x>940 low.
