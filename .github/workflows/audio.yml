@@ -9,10 +9,10 @@ on:
     inputs:
       action:
         type: choice
-        options: [check, search, info]
+        options: [check, search, info, candidates]
         default: search
       query:
-        description: "search: sound name (empty = trending). info: audio id"
+        description: "search: sound name (empty = trending). info: audio id. candidates: 'Title - Artist; Title - Artist'"
         default: ""
       type:
         type: choice
@@ -38,4 +38,5 @@ jobs:
             check)  python3 -P tools/instagram/audio.py check ;;
             search) python3 -P tools/instagram/audio.py search "$QUERY" --type "$KIND" ;;
             info)   python3 -P tools/instagram/audio.py info "$QUERY" ;;
+            candidates) python3 -P tools/instagram/audio.py candidates "$QUERY" ;;
           esac

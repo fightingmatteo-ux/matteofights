@@ -187,6 +187,8 @@ def main():
     s = sub.add_parser("search"); s.add_argument("query", nargs="?", default="")
     s.add_argument("--type", choices=["music", "original_sound"], default="music")
     i = sub.add_parser("info"); i.add_argument("audio_id")
+    c = sub.add_parser("candidates", help="'Title - Artist; ...': exact pick (resolve) + what music/original search shows")
+    c.add_argument("names")
     t = sub.add_parser("trial")
     t.add_argument("--asset", required=True, help="file name on the media release")
     t.add_argument("--caption-file"); t.add_argument("--caption")
@@ -208,6 +210,15 @@ def main():
                 show(x)
         elif a.cmd == "info":
             show(info(a.audio_id))
+        elif a.cmd == "candidates":
+            for name in [n.strip() for n in a.names.split(";") if n.strip()]:
+                hit = resolve(name)
+                print(f"\n== {name}\n   pick: " + (f"{hit.get('audio_id')}  {hit.get('title')}  "
+                                                   f"{hit.get('display_artist') or '@' + str(hit.get('ig_username'))}" if hit else "NONE"))
+                title = re.split(r"\s+[-–|]\s+", re.sub(r"\(.*?\)", "", name), maxsplit=1)[0].strip()
+                for kind in ("music", "original_sound"):
+                    for x in search(title, kind)[:5]:
+                        print(f"   {kind[:5]}  ", end=""); show(x)
         else:
             cap = Path(a.caption_file).read_text(encoding="utf-8").strip() if a.caption_file else (a.caption or "")
             trial(a.asset, cap, a.strategy, a.audio_id, a.audio or "", a.audio_volume, a.video_volume,
