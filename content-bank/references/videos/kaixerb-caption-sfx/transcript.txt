@@ -1,0 +1,25 @@
+language: en
+[   0.1-   2.7] Hey, my name's Kai, I'm 18, I'm from the Philippines,
+[   3.1-   5.1] and this is my first day of posting my edits
+[   5.1-   6.6] to hopefully get my first client.
+[   6.7-   8.4] I tried editing a clip of a podcast,
+[   8.6-   9.6] so let me know what you think.
+[  10.2-  12.2] Don't do things just because you think
+[  12.2-  13.4] you're gonna get something for it.
+[  13.5-  14.5] That's not why we do things.
+[  14.7-  16.2] Do what's interesting to you.
+[  16.3-  17.7] Follow what's interesting.
+[  17.9-  18.8] Don't worry about the outcome.
+[  18.9-  20.1] We can't predict the outcome.
+[  20.3-  21.8] We can never predict the outcome.
+[  22.1-  24.0] Follow your own inner guide.
+[  24.4-  25.5] It directs us.
+[  25.7-  27.1] It might not make sense to us.
+[  27.2-  28.5] Certainly won't make sense to anyone else,
+[  28.5-  30.6] but it might not even make sense to us.
+[  30.9-  31.5] And that's okay.
+[  32.2-  32.8] It's fine.
+[  33.2-  34.0] Listen to yourself.
+[  34.2-  35.7] Why is it telling you this?
+[  37.7-  40.1] That's it, and if you could give me feedback,
+[  40.4-  41.4] I'd really appreciate it.
