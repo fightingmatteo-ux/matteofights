@@ -53,8 +53,8 @@ def main():
         for line in meta.read_text(encoding="utf-8").splitlines():
             if line.startswith("IG_ACCESS_TOKEN="):
                 os.environ.setdefault("IG_ACCESS_TOKEN", line.split("=", 1)[1].strip())
-    state = json.loads(xp.STATE.read_text(encoding="utf-8"))
-    queue = json.loads(xp.QUEUE.read_text(encoding="utf-8"))["items"]
+    state = {"platforms": xp.store.get("crosspost", "platforms") or {}, "posts": xp.store.get("crosspost", "posts") or {}}
+    queue = xp.store.all("queue")
     old = json.loads(OUT.read_text(encoding="utf-8")) if OUT.exists() else {}
     out = {"updated": xp.now(), "platforms": {}, "posts": {}, "inbox": []}
     since_inbox = recent_iso(INBOX_DAYS)
