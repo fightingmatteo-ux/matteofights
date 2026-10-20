@@ -51,3 +51,18 @@ def test_push_removes_ids_gone_from_files(env):
     state.backend("d1").put("queue", "stale", {"id": "stale"})
     state_mirror.main(["push"])
     assert state.backend("d1").get("queue", "stale") is None
+
+
+def test_pull_writes_d1_into_files_only_in_d1_mode(env, monkeypatch):
+    state_mirror.main(["push"])
+    first = state.backend("file").all("queue")[0]["id"]
+    state.backend("d1").patch("queue", first, {"status": "from-d1"})
+    monkeypatch.setattr(state, "configured", lambda: "file")
+    assert state_mirror.main(["pull"]) == 0  # file mode: files are the truth, nothing pulled
+    assert state.backend("file").get("queue", first)["status"] != "from-d1"
+    monkeypatch.setattr(state, "configured", lambda: "d1")
+    assert state_mirror.main(["push"]) == 0  # d1 mode: push refuses to overwrite the truth
+    assert state.backend("d1").get("queue", first)["status"] == "from-d1"
+    assert state_mirror.main(["pull"]) == 0
+    assert state.backend("file").get("queue", first)["status"] == "from-d1"
+    assert state_mirror.main(["compare"]) == 0

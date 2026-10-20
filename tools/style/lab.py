@@ -26,7 +26,8 @@ sys.path.insert(0, str(ROOT / "tools" / "listicle"))
 LAB = ROOT / "production" / "style" / "lab.json"
 LOOK = ROOT / "production" / "listicles" / "look.json"
 HOOKS = ROOT / "production" / "listicles" / "hooks.json"
-QUEUE = ROOT / "production" / "schedule" / "queue.json"
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+import state as store  # noqa: E402  (live state: the reel queue)
 CTL = ROOT / "production" / "control"
 MIN_N, WIN_MARGIN = 6, 0.15
 LABELS = {"native": "Current (Instagram native serif)", "poster": "Poster (Bebas, white on red)",
@@ -86,7 +87,7 @@ def render_hook_styles(values, out, hook=None):
     import render as r
     from PIL import Image, ImageDraw, ImageFont
     if not hook:
-        q = [i for i in load(QUEUE, {"items": []})["items"] if i["id"].startswith("lst-") and i.get("hook")]
+        q = [i for i in store.all("queue") if i["id"].startswith("lst-") and i.get("hook")]
         hook = q[-1]["hook"] if q else "6 SIGNS YOU WERE BUILT FOR FIGHT NIGHT"
     bg = clean_frame()
     tw, th = 432, 768
@@ -176,7 +177,7 @@ def assign(hook_id):
 def results():
     lab, look = load(LAB, {"experiments": []}), load(LOOK, {})
     metrics = load(CTL / "metrics.json", {}).get("reels", {})
-    items = load(QUEUE, {"items": []})["items"]
+    items = store.all("queue")
     notes = load(CTL / "notes.json", [])
     for e in lab["experiments"]:
         if e["status"] != "testing":

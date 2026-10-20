@@ -22,9 +22,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "style"))
 from lab import assign as lab_assign  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+import state as store  # noqa: E402  (live state: the reel queue)
 HOOKS = ROOT / "production" / "listicles" / "hooks.json"
 STATE = ROOT / "production" / "listicles" / "state.json"
-QUEUE = ROOT / "production" / "schedule" / "queue.json"
 CLIPS_FOLDER = "1EkBaa-a9m1lX5KQZnmNXQNj-E8E8hCKk"   # Matteo's raw training clips (top level only)
 OUT_FOLDER = "1bHwCLpkK2w9e9BN22dXWgQnn8_CLYpR2"     # Drive output; previews go in output/listicles/
 VIDEO_EXT = (".mov", ".mp4", ".m4v")
@@ -42,6 +43,16 @@ def load(p, default):
 
 def save(p, data):
     p.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+
+def load_queue():
+    """{"items": [...]} from tools/state.py; save_queue() writes back only what this run changed."""
+    items, before = store.snapshot("queue")
+    return {"items": items, "_before": before}
+
+
+def save_queue(queue):
+    store.save_changed("queue", queue["items"], queue["_before"])
 
 
 def run(*cmd):
@@ -263,7 +274,7 @@ def main():
     if a.rerender or a.sounds_only:
         return rerender(a.seconds, {x.strip() for x in a.only.split(',') if x.strip()}, a.rematch, a.sounds_only)
 
-    hooks, state, queue = load(HOOKS, None), load(STATE, {"clip_uses": {}, "last_clip": None, "music_i": 0}), load(QUEUE, None)
+    hooks, state, queue = load(HOOKS, None), load(STATE, {"clip_uses": {}, "last_clip": None, "music_i": 0}), load_queue()
     # --audio "A - X; B - Y": rotate through the sounds, one per reel (Matteo 2026-10-20: proven sounds, not only one)
     sounds = [x.strip() for x in a.audio.split(";") if x.strip()]
     todo = [h for h in hooks["hooks"] if h.get("status") == "ready"][: a.count]
@@ -322,7 +333,7 @@ def main():
         state["music_i"] += 1
         if sounds:
             state["sound_i"] = state.get("sound_i", 0) + 1
-        save(HOOKS, hooks); save(STATE, state); save(QUEUE, queue)  # after each one: a crash keeps the finished ones
+        save(HOOKS, hooks); save(STATE, state); save_queue(queue)  # after each one: a crash keeps the finished ones
         print(f"{qid}: {h['hook']} | clip {clip['Name']} | posts {slot.astimezone(TZ):%a %d %b %H:%M} New York once approved", flush=True)
 
 
@@ -331,7 +342,7 @@ def rerender(seconds, only=(), rematch=False, sounds_only=False):
     sounds_only: rebuild every queued lst-* item that has app_audio (approved or not) on its SAME clip without the
     baked-in music, so the Post queue attaches the Instagram sound (Matteo 2026-10-20: a sound on every listicle).
     Approval is kept: the picture is unchanged and the sound is what Matteo asked for."""
-    hooks, queue, state = load(HOOKS, None), load(QUEUE, None), load(STATE, {"clip_uses": {}})
+    hooks, queue, state = load(HOOKS, None), load_queue(), load(STATE, {"clip_uses": {}})
     by_q = {h.get("queue_id"): h for h in hooks["hooks"]}
     items = [i for i in queue["items"] if i["id"].startswith("lst-") and i["status"] == "queued"
              and (i.get("app_audio") if sounds_only else not i.get("approved"))
@@ -367,7 +378,7 @@ def rerender(seconds, only=(), rematch=False, sounds_only=False):
         run("rclone", "copyto", str(WORK / item["video_asset"]), f"gdrive:listicles/{item['video_asset']}",
             "--drive-root-folder-id", OUT_FOLDER)
         item.pop("sound_pending", None)  # the music-free render is on the release: the Post queue may take it now
-        save(QUEUE, queue); save(HOOKS, hooks)
+        save_queue(queue); save(HOOKS, hooks)
         print(f"{item['id']}: re-rendered on {clip['Name']}", flush=True)
 
 

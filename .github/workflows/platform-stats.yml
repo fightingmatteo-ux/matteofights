@@ -17,6 +17,8 @@ concurrency:
 jobs:
   stats:
     runs-on: ubuntu-latest
+    env:
+      CLOUDFLARE_D1_TOKEN: ${{ secrets.CLOUDFLARE_D1_TOKEN }}   # tools/state.py when cloud.json says d1
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4

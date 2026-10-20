@@ -104,3 +104,27 @@ def test_module_functions_use_env_backend(root, monkeypatch):
     state.put("job", "m", {"n": 1})
     assert json.loads((root / "production" / "state" / "job.json").read_text(encoding="utf-8")) == {"m": {"n": 1}}
     assert state.get("job", "m") == {"n": 1}
+
+
+def test_save_changed_writes_only_changed_fields(be):
+    be.put("queue", "a", {"id": "a", "status": "queued", "approved": False, "rotate": 90})
+    items, before = state.snapshot("queue", be)
+    item = next(i for i in items if i["id"] == "a")
+    item["clip"] = "new clip"
+    item.pop("rotate")
+    items.append({"id": "zz-new", "status": "queued"})
+    be.patch("queue", "a", {"approved": True})  # Matteo approves while the script runs
+    state.save_changed("queue", items, before, be)
+    got = be.get("queue", "a")
+    assert got["approved"] is True and got["clip"] == "new clip" and "rotate" not in got
+    assert be.get("queue", "zz-new")["status"] == "queued"
+
+
+def test_default_backend_follows_cloud_json(root, monkeypatch, tmp_path):
+    monkeypatch.delenv("STATE_BACKEND", raising=False)
+    cfg = tmp_path / "cloud.json"
+    cfg.write_text('{"state_backend": "d1"}', encoding="utf-8")
+    monkeypatch.setattr(state, "CLOUD", cfg)
+    assert state.configured() == "d1"
+    monkeypatch.setenv("STATE_BACKEND", "file")
+    assert state.configured() == "file"

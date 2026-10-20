@@ -1,0 +1,22 @@
+# Once D1 is the truth (tools/cloud/cloud.json state_backend = d1): writes D1 back into the JSON files every
+# night so production/schedule stays a readable backup in git. Does nothing while the files are the truth.
+name: State backup
+on:
+  schedule:
+    - cron: "17 4 * * *"
+  workflow_dispatch:
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    env:
+      CLOUDFLARE_D1_TOKEN: ${{ secrets.CLOUDFLARE_D1_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -P tools/state_mirror.py pull
+      - run: |
+          git config user.name "control[bot]"
+          git config user.email "control@users.noreply.github.com"
+          git add production/schedule production/state 2>/dev/null || true
+          git diff --cached --quiet && exit 0
+          git commit -qm "state: nightly backup from D1"
+          for n in 1 2 3; do git pull --rebase -q && git push -q && break; sleep 5; done

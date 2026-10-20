@@ -1,6 +1,7 @@
 """The only way scripts read and write live state (queue, cross-posts, jobs, ...).
 
-Backend from env STATE_BACKEND: "file" (default, today's JSON files) or "d1" (Cloudflare D1).
+Backend: env STATE_BACKEND, else "state_backend" in tools/cloud/cloud.json, else "file" (the JSON files).
+"d1" = Cloudflare D1. Flipping cloud.json is the cutover: every workflow and local run follows it.
 Every record is (kind, id) -> JSON object. Non-object values (like a file's "_how" text)
 are stored as {"value": ...}.
 
@@ -113,7 +114,13 @@ class FileBackend:
 
 def _d1(sql, params):
     cfg = json.loads(CLOUD.read_text(encoding="utf-8"))
-    token = os.environ.get("CLOUDFLARE_D1_TOKEN") or os.environ["CLOUDFLARE_BUILD_TOKEN"]
+    token = os.environ.get("CLOUDFLARE_D1_TOKEN") or os.environ.get("CLOUDFLARE_BUILD_TOKEN")
+    if not token:  # local run: read it from secrets/control.env
+        env = REPO / "secrets" / "control.env"
+        lines = env.read_text(encoding="utf-8").splitlines() if env.exists() else []
+        token = next((l.split("=", 1)[1].strip() for l in lines if l.startswith("CLOUDFLARE_BUILD_TOKEN=")), None)
+    if not token:
+        raise RuntimeError("D1 token missing: set CLOUDFLARE_D1_TOKEN")
     url = (f"https://api.cloudflare.com/client/v4/accounts/{cfg['account_id']}"
            f"/d1/database/{cfg['d1_database_id']}/query")
     req = urllib.request.Request(url, method="POST",
@@ -147,9 +154,9 @@ class D1Backend:
     def patch(self, kind, id, fields):
         # json_patch runs inside D1, so two workflows patching different fields both survive.
         _d1(f"INSERT INTO docs (kind, id, data) VALUES (?, ?, json_patch('{{}}', ?)) "
-            f"ON CONFLICT (kind, id) DO UPDATE SET data = json_patch(docs.data, excluded.data), "
+            f"ON CONFLICT (kind, id) DO UPDATE SET data = json_patch(docs.data, ?), "  # raw patch: nulls delete
             f"updated_at = {NOW}",
-            [kind, id, json.dumps(fields, ensure_ascii=False)])
+            [kind, id, json.dumps(fields, ensure_ascii=False), json.dumps(fields, ensure_ascii=False)])
 
     def delete(self, kind, id):
         _d1("DELETE FROM docs WHERE kind = ? AND id = ?", [kind, id])
@@ -163,8 +170,17 @@ def backend(name):
     raise ValueError(f"unknown state backend: {name}")
 
 
+def configured():
+    if os.environ.get("STATE_BACKEND"):
+        return os.environ["STATE_BACKEND"]
+    try:
+        return json.loads(CLOUD.read_text(encoding="utf-8")).get("state_backend", "file")
+    except FileNotFoundError:
+        return "file"
+
+
 def _current():
-    return backend(os.environ.get("STATE_BACKEND", "file"))
+    return backend(configured())
 
 
 def get(kind, id):
@@ -185,3 +201,25 @@ def patch(kind, id, fields):
 
 def delete(kind, id):
     _current().delete(kind, id)
+
+
+def snapshot(kind, be=None):
+    """(items, before) for scripts that edit many items in place: change `items`, then save_changed()."""
+    items = (be or _current()).all(kind)
+    return items, {i["id"]: json.loads(json.dumps(i)) for i in items}
+
+
+def save_changed(kind, items, before, be=None):
+    """Write only the fields that differ from `before` (removed fields become deletes), so a field someone
+    else changed meanwhile (an approval, a post status) is never overwritten with this script's stale copy."""
+    be = be or _current()
+    for item in items:
+        old = before.get(item["id"])
+        if old is None:
+            be.put(kind, item["id"], item)
+        else:
+            diff = {k: v for k, v in item.items() if old.get(k) != v}
+            diff.update({k: None for k in old if k not in item})
+            if diff:
+                be.patch(kind, item["id"], diff)
+        before[item["id"]] = json.loads(json.dumps(item))

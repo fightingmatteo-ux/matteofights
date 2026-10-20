@@ -1,11 +1,11 @@
 # Posts the next due, APPROVED item from production/schedule/queue.json (tools/instagram/run_queue.py).
-# Runs every 30 min (GitHub cron can run late) and on demand. One post per run, never two runs at once.
+# Started by the Cloudflare ticker (tools/ticker) when an item is due; GitHub cron every 3 h is the backup. One post per run, never two runs at once.
 # To post something: add it to queue.json, then set "approved": true only after Matteo's explicit yes.
 name: Post queue
 
 on:
   schedule:
-    - cron: "*/30 * * * *"
+    - cron: "0 */3 * * *"   # backup only: the Cloudflare ticker starts it when an item is due
   workflow_dispatch:
 
 permissions:
@@ -18,6 +18,8 @@ concurrency:
 jobs:
   post:
     runs-on: ubuntu-latest
+    env:
+      CLOUDFLARE_D1_TOKEN: ${{ secrets.CLOUDFLARE_D1_TOKEN }}   # tools/state.py when cloud.json says d1
     timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
@@ -63,4 +65,4 @@ jobs:
           CLOUDFLARE_D1_TOKEN: ${{ secrets.CLOUDFLARE_D1_TOKEN }}
         run: |
           git pull --rebase -q origin master || true
-          python3 -P tools/state_mirror.py push && python3 -P tools/state_mirror.py compare
+          python3 -P tools/state_mirror.py sync

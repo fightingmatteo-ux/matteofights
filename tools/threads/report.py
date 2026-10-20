@@ -14,6 +14,8 @@ import json, re, statistics as st, sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+import state as store  # noqa: E402  (live state: the reel queue)
 MIN_N = 5          # posts per group before a pattern counts
 MIN_VIEWS = 30     # posts below this are too small to rate per 1k views
 
@@ -63,7 +65,7 @@ def threads_stats():
 
 
 def reel_stats():
-    q = {i.get("media_id"): i for i in load("production/schedule/queue.json", {"items": []})["items"] if i.get("media_id")}
+    q = {i.get("media_id"): i for i in store.all("queue") if i.get("media_id")}
     m = load("production/control/metrics.json", {})
     rows = []
     for mid, r in (m.get("reels") or {}).items():
