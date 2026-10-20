@@ -48,9 +48,11 @@ task needs it. Open items: [STATUS.md](STATUS.md) (read at session start, update
 | Renders | Modal app `matteofights-render` (`tools/render/submit.py`) | [tools/render/README.md](tools/render/README.md) |
 | Posting timer | Cloudflare Worker `matteo-ticker` (every 5 min: slots + due queue items) | `tools/ticker/worker.js` |
 | Posting / cross-posting / listicles | GitHub Actions: Post queue, Cross-post, Listicle factory, Control | `.github/workflows/` |
-| Control center | control.matteofights.me (dashboard) + Telegram @matteofights_control_bot | [control-site/SETUP.md](control-site/SETUP.md) |
+| Control center (Matteo works from here) | control.matteofights.me: Home (approve), Studio (upload footage, revision notes, talking points, live edits/renders), Results, Decide; Telegram @matteofights_control_bot | [control-site/SETUP.md](control-site/SETUP.md) |
+| Edit worker / talking points (Claude, Sonnet, capped) | GitHub "Edit worker" (started by uploads + notes, 3 runs/day), "Talking points" (Mondays) | [tools/edit/WORKER.md](tools/edit/WORKER.md), [TALKING-POINTS.md](tools/edit/TALKING-POINTS.md) |
+| Health check (no AI) | GitHub "Health check" every 2 h: stuck/failed/missed reels, failed renders and workflows to Telegram | `tools/health/check.py` |
 | Secrets | `secrets/*.env` locally (git-ignored), GitHub/Modal/Worker secrets remotely; `tools/cloud/set-secrets.sh` | [tools/cloud/README.md](tools/cloud/README.md) |
-| Roadmap | Phase 1 done (cutover pending); Phase 2 live dashboard, 3 self-maintenance, 4 lean setup + cleanup | [spec](docs/superpowers/specs/2026-10-18-run-from-anywhere-design.md) |
+| Roadmap | Phases 1-4 built 2026-10-20 (D1 cutover pending, see STATUS.md) | [spec](docs/superpowers/specs/2026-10-18-run-from-anywhere-design.md) |
 
 ## Read on demand
 

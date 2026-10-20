@@ -18,6 +18,13 @@ Deploys come from `.github/workflows/control-deploy.yml`, not from Cloudflare's 
 (`data.json`, covers) is rebuilt from the repo on every push and after every workflow that changes `production/`.
 Manual redeploy: Actions → **Deploy control center** → Run workflow (or `gh workflow run control-deploy.yml`).
 
+## Studio and live data (2026-10-20)
+
+Pages bindings `DB` (D1 `matteofights`) and `MEDIA` (R2 `matteofights-media`), set on the project via the API.
+`/api/live` (everything from D1, polled every 30 s by `public/studio.js`), `/api/upload` (footage straight to R2
+`uploads/` in 50 MB parts, then starts the "Edit worker" workflow), `/api/studio` (revision notes, talking-point
+skip, retry). All check the Access login like `/api/act`.
+
 ## Cloudflare (account `849fbd13419572f8d5e345f23dd3de11`, fightingmatteo@gmail.com)
 
 - **DNS:** `matteofights.me` zone on Cloudflare (nameservers `derek`/`melinda.ns.cloudflare.com`, set at
