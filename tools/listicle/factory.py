@@ -262,6 +262,8 @@ def main():
         return rerender(a.seconds, {x.strip() for x in a.only.split(',') if x.strip()}, a.rematch)
 
     hooks, state, queue = load(HOOKS, None), load(STATE, {"clip_uses": {}, "last_clip": None, "music_i": 0}), load(QUEUE, None)
+    # --audio "A - X; B - Y": rotate through the sounds, one per reel (Matteo 2026-10-20: proven sounds, not only one)
+    sounds = [x.strip() for x in a.audio.split(";") if x.strip()]
     todo = [h for h in hooks["hooks"] if h.get("status") == "ready"][: a.count]
     if not todo:
         sys.exit("no 'ready' hooks left in production/listicles/hooks.json - ask Claude for a new batch")
@@ -280,6 +282,7 @@ def main():
         folder = ROOT / "production" / "listicles" / f"{day}-{h['id']}"
         folder.mkdir(parents=True, exist_ok=True)
         avoid = nearby_clips(queue, day) | ({state["last_clip"]} if state.get("last_clip") else set())
+        sound = sounds[state.get("sound_i", 0) % len(sounds)] if sounds else ""
         test = lab_assign(h["id"])  # style lab A/B: render reads hooks.json, so the variant goes there first
         if test and test[0] == "hook_style":
             h["style"] = test[1]
@@ -309,12 +312,14 @@ def main():
             "approved": False, "status": "queued", **({"rotate": rot} if rot else {}),
             **({"review": rv} if rv else {}),
             **({"test": test[2]} if test else {}),
-            **({"app_audio": f"{a.audio} (add in the Instagram app)"} if a.audio else {})})
+            **({"app_audio": f"{sound} (add in the Instagram app)"} if sound else {})})
         h.update(status="rendered", clip=f"{clip['Name']} ({clip['ID']})", queue_id=qid,
                  rendered_at=dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%MZ"))
         uses[clip["ID"]] = uses.get(clip["ID"], 0) + 1
         state["last_clip"] = clip["ID"]
         state["music_i"] += 1
+        if sounds:
+            state["sound_i"] = state.get("sound_i", 0) + 1
         save(HOOKS, hooks); save(STATE, state); save(QUEUE, queue)  # after each one: a crash keeps the finished ones
         print(f"{qid}: {h['hook']} | clip {clip['Name']} | posts {slot.astimezone(TZ):%a %d %b %H:%M} New York once approved", flush=True)
 
