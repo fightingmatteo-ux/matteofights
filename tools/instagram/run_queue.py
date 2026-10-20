@@ -92,8 +92,19 @@ def resolve_audio(item):
     """Find the item's app_audio sound in Instagram's licensed library and store its audio_id. False = post by hand."""
     sys.path.insert(0, str(ROOT / "tools" / "instagram"))
     import audio
+    pinned = re.match(r"\s*id:(\d{6,})\s*(.*)", item["app_audio"])
     try:
-        track = audio.resolve(item["app_audio"])
+        if pinned:  # a sound picked by id (e.g. a fan upload of a proven song): check it still exists, use it as is
+            try:
+                a = audio.info(pinned.group(1))
+            except audio.ApiError as e:  # uploader deleted it / no longer cleared: post this one by hand
+                print(f"{item['id']}: pinned sound {pinned.group(1)} unavailable ({e}); left for the app")
+                item.update(audio_status="manual", audio_note=f"pinned sound gone: {str(e)[:200]}")
+                return False
+            track = {"audio_id": pinned.group(1), "title": a.get("title") or pinned.group(2),
+                     "display_artist": a.get("display_artist"), "ig_username": a.get("ig_username")}
+        else:
+            track = audio.resolve(item["app_audio"])
     except audio.ApiError as e:  # token missing/expired/scope: not the song's fault, so retry next run
         print(f"{item['id']}: Audio API unavailable ({e}); skipped this run")
         item["audio_note"] = str(e)[:300]

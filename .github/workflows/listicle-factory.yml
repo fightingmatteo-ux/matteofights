@@ -35,7 +35,7 @@ on:
         default: false
       audio:
         description: "Instagram sound attached at post time ('Title - Artist'); 'none' = royalty-free music in the file"
-        default: "Echo Sax End - Caleb Arredondo"
+        default: "Echo Sax End - Caleb Arredondo; id:783202424324531 INSONAMIA (slowed) - Ronald Figo; Echo Sax End - Caleb Arredondo; id:534294096071090 Memory Reboot - VØJ, Narvent"
 
 permissions:
   contents: write   # commit hooks/state/queue + captions/covers
@@ -69,9 +69,10 @@ jobs:
           REMATCH: ${{ inputs.rematch && '--rematch' || '' }}
           SHEETS: ${{ (inputs.sheets || github.event.schedule == '0 7 * * 6') && '--sheets-only' || '' }}
           ONLY: ${{ inputs.only || '' }}
-          # Matteo 2026-10-20: listicles do better on the trending sound. Resolved by audio.py to the artist's own
-          # upload (@caleb.arredondo, original sound 530317382955170) and attached through the Audio API at post time.
-          AUDIO: ${{ inputs.audio == 'none' && '' || inputs.audio || 'Echo Sax End - Caleb Arredondo' }}
+          # Matteo 2026-10-20: listicles do better on the sounds that carried his best ones (production/sounds/own_proven.json).
+          # Rotated one per reel: Echo Sax End (5 of his top 15 incl. the 331k; artist's own upload) every other reel,
+          # INSONAMIA (2 of the top 15) and Memory Reboot as pinned fan uploads (the songs themselves aren't cleared).
+          AUDIO: ${{ inputs.audio == 'none' && '' || inputs.audio || 'Echo Sax End - Caleb Arredondo; id:783202424324531 INSONAMIA (slowed) - Ronald Figo; Echo Sax End - Caleb Arredondo; id:534294096071090 Memory Reboot - VØJ, Narvent' }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}   # footage agent; without it: least-used clips
         run: python3 -P tools/listicle/factory.py --count "$COUNT" --slot "$SLOT" --only "$ONLY" --audio "$AUDIO" $RERENDER $REMATCH $SHEETS
       - name: Commit
