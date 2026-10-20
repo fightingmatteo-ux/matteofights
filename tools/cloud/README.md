@@ -1,0 +1,14 @@
+# Cloud resources (Cloudflare)
+
+- R2 bucket `matteofights-media` (videos, render bundles). CORS: GET/PUT from the control center.
+- D1 database `matteofights`, one table `docs(kind, id, data JSON, updated_at)`. See `schema.sql`.
+- Non-secret ids: `cloud.json`. Read by `tools/state.py` and `tools/r2.py`.
+
+`bash tools/cloud/setup.sh` creates or updates all of it (safe to rerun). It uses
+`CLOUDFLARE_BUILD_TOKEN` from `secrets/control.env` (D1, R2, Workers Scripts: Edit).
+
+R2 S3 keys (`R2_ACCESS_KEY_ID`, `R2_SECRET_ACCESS_KEY`) live in `secrets/control.env`;
+created in the dashboard under R2 → Manage API Tokens, scoped to this bucket only.
+
+Check:
+    CLOUDFLARE_API_TOKEN=$CLOUDFLARE_BUILD_TOKEN npx wrangler@3 d1 execute matteofights --remote --command "select kind, count(*) from docs group by kind"
