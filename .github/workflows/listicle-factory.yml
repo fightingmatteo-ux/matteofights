@@ -105,3 +105,11 @@ jobs:
           git config user.email "control@users.noreply.github.com"
           git commit -qm "control: telegram sent"
           for n in 1 2 3; do git pull --rebase -q && git push -q && break; sleep 5; done
+      - name: Mirror state to D1
+        if: always()
+        continue-on-error: true
+        env:
+          CLOUDFLARE_D1_TOKEN: ${{ secrets.CLOUDFLARE_D1_TOKEN }}
+        run: |
+          git pull --rebase -q origin master || true
+          python3 -P tools/state_mirror.py push && python3 -P tools/state_mirror.py compare
