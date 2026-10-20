@@ -15,10 +15,10 @@
       #title { position: absolute; left: 70px; right: 70px; top: 250px; text-align: center; font-family: "Geist", sans-serif; color: #fff;
         text-shadow: 0 2px 6px rgba(0,0,0,0.45), 0 8px 34px rgba(0,0,0,0.4); }
       #title .lead { display: block; font-weight: 700; font-size: 70px; line-height: 1.05; letter-spacing: -0.035em; }
-      /* the big word sits BEHIND his head: A-roll -> #behind -> cut-out (fg_A.webm), all inside the camera */
-      /* on "head" it jumps through him: #behind (under the cut-out) hands over to #front-head (over it) */
+      /* the big word sits BEHIND his head: A-roll -> #behind -> cut-out (fg_<V>_full.webm), all inside the camera */
+      /* on the spoken hook word it jumps through him: #behind (under the cut-out) hands over to #front-head (over it) */
       #behind, #front-head { position: absolute; left: 0; right: 0; top: {{BEHIND_TOP}}px; text-align: center; font-family: "Geist", sans-serif;
-        font-weight: 800; font-size: 360px; line-height: 0.8; letter-spacing: -0.065em; color: #E8112D; white-space: nowrap; }
+        font-weight: 800; font-size: {{HOOK_SIZE}}px; line-height: 0.8; letter-spacing: -0.065em; color: #E8112D; white-space: nowrap; }
       #front-head { text-shadow: 0 6px 14px rgba(0,0,0,0.5), 0 20px 60px rgba(0,0,0,0.45); transform-origin: 50% 60%; }
       #behind { transform-origin: 50% 60%; }
       {{ED_CSS}}
@@ -28,17 +28,17 @@
   <body>
     <div id="root" data-composition-id="main" data-start="0" data-duration="{{DUR}}" data-width="1080" data-height="1920">
       <div id="cam"><div id="cam-inner">
-        <video id="aroll" class="clip full" src="assets/media/aroll_A.mp4" data-start="0" data-duration="{{DUR}}" data-track-index="0" muted playsinline></video>
-        <div id="behind" class="clip" data-start="0" data-duration="{{HEAD_SWAP}}" data-track-index="1">head.</div>
+        <video id="aroll" class="clip full" src="{{AROLL}}" data-start="0" data-duration="{{DUR}}" data-track-index="0" muted playsinline></video>
+        <div id="behind" class="clip" data-start="0" data-duration="{{HEAD_SWAP}}" data-track-index="1">{{HOOK_WORD}}</div>
         <div id="ed-caps-back">
         {{ED_HTML_CAPS_BACK}}
         </div>
-        <video id="fg" class="clip full" src="assets/media/fg_A_full.webm" data-start="0" data-duration="{{DUR}}" data-track-index="2" muted playsinline></video>
-        <div id="front-head" class="clip" data-start="{{HEAD_SWAP}}" data-duration="{{FRONT_DUR}}" data-track-index="3">head.</div>
+        <video id="fg" class="clip full" src="{{FG}}" data-start="0" data-duration="{{DUR}}" data-track-index="2" muted playsinline></video>
+        <div id="front-head" class="clip" data-start="{{HEAD_SWAP}}" data-duration="{{FRONT_DUR}}" data-track-index="3">{{HOOK_WORD}}</div>
       </div></div>
 
       <div id="title" class="clip" data-start="0" data-duration="{{TITLE_END}}" data-track-index="5">
-        <span class="lead">If you freeze when you spar,</span><span class="lead">it's your</span>
+        {{HOOK_LEAD}}
       </div>
 
       <div id="ed-caps">
@@ -48,7 +48,7 @@
       <div id="ed-flash"></div>
       <div id="ed-dip"></div>
 
-      <audio id="vo" src="assets/media/aroll_A.mp4" data-start="0" data-duration="{{DUR}}" data-track-index="10" data-volume="1"></audio>
+      <audio id="vo" src="{{AROLL}}" data-start="0" data-duration="{{DUR}}" data-track-index="10" data-volume="1"></audio>
       {{ED_AUDIO}}
       <audio id="sfx-head" src="assets/sfx/ed/punch.wav" data-start="{{HEAD_SFX}}" data-duration="0.34" data-track-index="26" data-volume="0.55"></audio>
     </div>
@@ -57,8 +57,8 @@
     <script>
       const PLAN = {{ED_PLAN}};
       const tl = gsap.timeline({ paused: true });
-      // the title is already up on frame 0; "head" settles in as he says it, then the title softens away
-      // "head": the word winds back behind him, then flies forward through him toward the camera, over his forehead
+      // the title is up on frame 0 (it is the thumbnail) and softens away as the captions take over
+      // on the spoken hook word: it winds back behind him, then flies forward through him toward the camera, over his forehead
       tl.fromTo("#behind", { scale: 1, filter: "blur(0px)" }, { scale: 0.92, filter: "blur(2px)", duration: 0.16, ease: "power2.in" }, {{HEAD_SWAP}} - 0.16);
       tl.fromTo("#front-head", { opacity: 1, scale: 0.92, y: 0, filter: "blur(8px)" }, { scale: 1.26, y: 70, filter: "blur(0px)", duration: 0.16, ease: "power3.out" }, {{HEAD_SWAP}});
       tl.to("#front-head", { scale: 1.14, y: 56, duration: 0.3, ease: "power2.out" }, {{HEAD_SWAP}} + 0.16);
