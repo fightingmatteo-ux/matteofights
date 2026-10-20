@@ -404,11 +404,12 @@
       "thumb_offset_ms": 300,
       "not_before": "2026-10-20T13:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "crosspost_to": [
         "youtube"
-      ]
+      ],
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:32Z)"
     },
     {
       "id": "saenchai-B",
@@ -422,11 +423,12 @@
       "thumb_offset_ms": 300,
       "not_before": "2026-10-20T16:00:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "crosspost_to": [
         "threads"
-      ]
+      ],
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:32Z)"
     },
     {
       "id": "saenchai-C",
@@ -440,11 +442,12 @@
       "thumb_offset_ms": 300,
       "not_before": "2026-10-20T19:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "crosspost_to": [
         "facebook"
-      ]
+      ],
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:32Z)"
     },
     {
       "id": "lst-2026-10-22-fighters-mindset",
