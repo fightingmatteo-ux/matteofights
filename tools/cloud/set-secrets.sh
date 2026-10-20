@@ -7,7 +7,8 @@ set -a; . secrets/control.env; . secrets/modal.env; set +a
 for pair in "CLOUDFLARE_D1_TOKEN:$CLOUDFLARE_BUILD_TOKEN" "R2_ACCESS_KEY_ID:$R2_ACCESS_KEY_ID" \
             "R2_SECRET_ACCESS_KEY:$R2_SECRET_ACCESS_KEY" "MODAL_TOKEN_ID:$MODAL_TOKEN_ID" \
             "MODAL_TOKEN_SECRET:$MODAL_TOKEN_SECRET" "RENDER_SECRET:$RENDER_SECRET"; do
-  printf '%s' "${pair#*:}" | gh secret set "${pair%%:*}" --repo fightingmatteo-ux/matteofights
+  # env -u: use gh's own login, not the limited GITHUB_TOKEN PAT that control.env just exported
+  printf '%s' "${pair#*:}" | env -u GITHUB_TOKEN -u GH_TOKEN gh secret set "${pair%%:*}" --repo fightingmatteo-ux/matteofights
 done
 
 python -m modal secret create matteofights --force \
