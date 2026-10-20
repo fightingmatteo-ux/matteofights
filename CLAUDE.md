@@ -85,6 +85,8 @@ Other connected MCPs (see `context/apps.md`): Higgsfield (`virality_predictor`, 
 | Reel results + test history | [production/reels/LEDGER.md](production/reels/LEDGER.md) | Choosing hooks/formats; logging a posted variant |
 | Reference reels (watched) | [content-bank/references/](content-bank/references/) | Before planning a new format |
 | Watch a video from the cloud | [tools/video/README.md](tools/video/README.md) | Cloud session needs to watch/download a reel |
+| Render a reel in the cloud (Modal, not this PC) | [tools/render/README.md](tools/render/README.md) | Any render: faster, frees the laptop |
+| Live state (queue, cross-posts, jobs): D1 + R2 | [tools/cloud/README.md](tools/cloud/README.md) | Reading/writing the queue from code: always via `tools/state.py` |
 | Analytics snapshots + IDs | [context/social.md](context/social.md) | Performance questions, before pulling live |
 | Connected tools/MCPs | [context/apps.md](context/apps.md) | Tooling decisions |
 

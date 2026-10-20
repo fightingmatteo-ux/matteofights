@@ -12,3 +12,12 @@ created in the dashboard under R2 → Manage API Tokens, scoped to this bucket o
 
 Check:
     CLOUDFLARE_API_TOKEN=$CLOUDFLARE_BUILD_TOKEN npx wrangler@3 d1 execute matteofights --remote --command "select kind, count(*) from docs group by kind"
+
+## Which side is the truth
+
+`"state_backend"` in `cloud.json` (missing = `file`). While `file`: the JSON files in production/schedule are
+the truth and every state workflow runs `state_mirror.py sync` (files to D1 + compare). Set it to `d1` for the
+cutover: scripts read and write D1, sync stops, and the "State backup" workflow writes D1 back into the files
+every night. Scripts never touch the queue files directly; they use `tools/state.py`.
+
+R2 keeps job bundles 2 days and renders 21 days (lifecycle rules in setup.sh).
