@@ -874,7 +874,10 @@
         "value": "native"
       },
       "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)",
-      "app_audio": "id:576492425503806 Echo Sax Endless - Caleb Arredondo (add in the Instagram app)"
+      "app_audio": "id:576492425503806 Echo Sax Endless - Caleb Arredondo (add in the Instagram app)",
+      "audio_id": "576492425503806",
+      "audio_title": "Echo Sax Endless",
+      "audio_artist": "caleb.arredondo"
     },
     {
       "id": "lst-2026-10-21-day-one-full-gear",
