@@ -6,14 +6,14 @@
  "_how": "tools/instagram/sound_scout.py. cleared=true sounds can be attached by the Audio API (audio_id); others only in the Instagram app.",
  "sounds": [
   {
-   "key": "Original audio",
+   "key": "Original audio @superbadvlad (https://www.instagram.com/reel/Dd-IyyyK-KX/)",
    "title": "Original audio",
    "artist": "",
    "kind": "original",
    "instagram_audio_page": null,
-   "reels": 21,
-   "views": 12133756,
-   "best_x": 34.4,
+   "reels": 1,
+   "views": 3226354,
+   "best_x": null,
    "examples": [
     {
      "url": "https://www.instagram.com/reel/Dd-IyyyK-KX/",
@@ -21,14 +21,44 @@
      "x": null,
      "handle": "superbadvlad",
      "hook": "First step lethal (footwork on the bag)"
-    },
+    }
+   ],
+   "audio_id": null,
+   "cleared": false,
+   "first_seen": "2026-10-20"
+  },
+  {
+   "key": "Original audio @themuaythaiguy (https://www.instagram.com/reel/DX_6NzTAbzQ/)",
+   "title": "Original audio",
+   "artist": "",
+   "kind": "original",
+   "instagram_audio_page": null,
+   "reels": 1,
+   "views": 1550364,
+   "best_x": 28.8,
+   "examples": [
     {
      "url": "https://www.instagram.com/reel/DX_6NzTAbzQ/",
      "views": 1550364,
      "x": 28.8,
      "handle": "themuaythaiguy",
      "hook": "The Muay Thai newb starter pack..."
-    },
+    }
+   ],
+   "audio_id": null,
+   "cleared": false,
+   "first_seen": "2026-10-20"
+  },
+  {
+   "key": "Original audio @themuaythaiguy (https://www.instagram.com/reel/DYKM9qhEb_2/)",
+   "title": "Original audio",
+   "artist": "",
+   "kind": "original",
+   "instagram_audio_page": null,
+   "reels": 1,
+   "views": 700397,
+   "best_x": 13.0,
+   "examples": [
     {
      "url": "https://www.instagram.com/reel/DYKM9qhEb_2/",
      "views": 700397,
@@ -37,8 +67,338 @@
      "hook": "These look like you're slacking... but they are the smartest things you can do 👇"
     }
    ],
-   "audio_id": "26497602303177074",
-   "cleared": true,
+   "audio_id": null,
+   "cleared": false,
+   "first_seen": "2026-10-20"
+  },
+  {
+   "key": "Original audio @themuaythaiguy (https://www.instagram.com/reel/DaLP8_Wus1p/)",
+   "title": "Original audio",
+   "artist": "",
+   "kind": "original",
+   "instagram_audio_page": null,
+   "reels": 1,
+   "views": 656276,
+   "best_x": 12.2,
+   "examples": [
+    {
+     "url": "https://www.instagram.com/reel/DaLP8_Wus1p/",
+     "views": 656276,
+     "x": 12.2,
+     "handle": "themuaythaiguy",
+     "hook": "Here’s a complete cost breakdown 🇹🇭"
+    }
+   ],
+   "audio_id": null,
+   "cleared": false,
+   "first_seen": "2026-10-20"
+  },
+  {
+   "key": "Original audio @themuaythaiguy (https://www.instagram.com/reel/DaS0ZqoRLRN/)",
+   "title": "Original audio",
+   "artist": "",
+   "kind": "original",
+   "instagram_audio_page": null,
+   "reels": 1,
+   "views": 627148,
+   "best_x": 11.7,
+   "examples": [
+    {
+     "url": "https://www.instagram.com/reel/DaS0ZqoRLRN/",
+     "views": 627148,
+     "x": 11.7,
+     "handle": "themuaythaiguy",
+     "hook": "Honestly, how many of these do you do 👇"
+    }
+   ],
+   "audio_id": null,
+   "cleared": false,
+   "first_seen": "2026-10-20"
+  },
+  {
+   "key": "Original audio @oneandreramsey (https://www.instagram.com/reel/Dd_6JF4jU_R/)",
+   "title": "Original audio",
+   "artist": "",
+   "kind": "original",
+   "instagram_audio_page": null,
+   "reels": 1,
+   "views": 528889,
+   "best_x": null,
+   "examples": [
+    {
+     "url": "https://www.instagram.com/reel/Dd_6JF4jU_R/",
+     "views": 528889,
+     "x": null,
+     "handle": "oneandreramsey",
+     "hook": "plyometric gym montage"
+    }
+   ],
+   "audio_id": null,
+   "cleared": false,
+   "first_seen": "2026-10-20"
+  },
+  {
+   "key": "Original audio @firas_zahabi (https://www.instagram.com/reel/DPWfDVTjn7j/)",
+   "title": "Original audio",
+   "artist": "",
+   "kind": "original",
+   "instagram_audio_page": null,
+   "reels": 1,
+   "views": 491963,
+   "best_x": 8.7,
+   "examples": [
+    {
+     "url": "https://www.instagram.com/reel/DPWfDVTjn7j/",
+     "views": 491963,
+     "x": 8.7,
+     "handle": "firas_zahabi",
+     "hook": "The cross block is one of my favourite defensive technique. It’s really useful i"
+    }
+   ],
+   "audio_id": null,
+   "cleared": false,
+   "first_seen": "2026-10-20"
+  },
+  {
+   "key": "Original audio @themuaythaiguy (https://www.instagram.com/reel/DYPVmxjD64s/)",
+   "title": "Original audio",
+   "artist": "",
+   "kind": "original",
+   "instagram_audio_page": null,
+   "reels": 1,
+   "views": 440548,
+   "best_x": 8.2,
+   "examples": [
+    {
+     "url": "https://www.instagram.com/reel/DYPVmxjD64s/",
+     "views": 440548,
+     "x": 8.2,
+     "handle": "themuaythaiguy",
+     "hook": "Nobody warned me about any of this... especially the last few 👇"
+    }
+   ],
+   "audio_id": null,
+   "cleared": false,
+   "first_seen": "2026-10-20"
+  },
+  {
+   "key": "Original audio @themuaythaiguy (https://www.instagram.com/reel/DeKJV-UJ77V/)",
+   "title": "Original audio",
+   "artist": "",
+   "kind": "original",
+   "instagram_audio_page": null,
+   "reels": 1,
+   "views": 368265,
+   "best_x": 6.8,
+   "examples": [
+    {
+     "url": "https://www.instagram.com/reel/DeKJV-UJ77V/",
+     "views": 368265,
+     "x": 6.8,
+     "handle": "themuaythaiguy",
+     "hook": "What’s your go to technique when you’re looking to land?"
+    }
+   ],
+   "audio_id": null,
+   "cleared": false,
+   "first_seen": "2026-10-20"
+  },
+  {
+   "key": "Original audio @firas_zahabi (https://www.instagram.com/reel/DTiRzTJjml7/)",
+   "title": "Original audio",
+   "artist": "",
+   "kind": "original",
+   "instagram_audio_page": null,
+   "reels": 1,
+   "views": 367299,
+   "best_x": 6.5,
+   "examples": [
+    {
+     "url": "https://www.instagram.com/reel/DTiRzTJjml7/",
+     "views": 367299,
+     "x": 6.5,
+     "handle": "firas_zahabi",
+     "hook": "Try this armbar switch whenever your opponent is resisting with a figure 4 grip."
+    }
+   ],
+   "audio_id": null,
+   "cleared": false,
+   "first_seen": "2026-10-20"
+  },
+  {
+   "key": "Original audio @chewjitsu (https://www.instagram.com/reel/DVwNtnJjcln/)",
+   "title": "Original audio",
+   "artist": "",
+   "kind": "original",
+   "instagram_audio_page": null,
+   "reels": 1,
+   "views": 361665,
+   "best_x": 17.1,
+   "examples": [
+    {
+     "url": "https://www.instagram.com/reel/DVwNtnJjcln/",
+     "views": 361665,
+     "x": 17.1,
+     "handle": "chewjitsu",
+     "hook": "It’s ok. Your buddies in the gym will still love you. 😂"
+    }
+   ],
+   "audio_id": null,
+   "cleared": false,
+   "first_seen": "2026-10-20"
+  },
+  {
+   "key": "Original audio @imaan.lore (https://www.instagram.com/reel/Dd4VYzGR5In/)",
+   "title": "Original audio",
+   "artist": "",
+   "kind": "original",
+   "instagram_audio_page": null,
+   "reels": 1,
+   "views": 351443,
+   "best_x": null,
+   "examples": [
+    {
+     "url": "https://www.instagram.com/reel/Dd4VYzGR5In/",
+     "views": 351443,
+     "x": null,
+     "handle": "imaan.lore",
+     "hook": "I will NEVER forget this one piece of advice before my fight"
+    }
+   ],
+   "audio_id": null,
+   "cleared": false,
+   "first_seen": "2026-10-20"
+  },
+  {
+   "key": "Original audio @themuaythaiguy (https://www.instagram.com/reel/DZsT6qjx3Oa/)",
+   "title": "Original audio",
+   "artist": "",
+   "kind": "original",
+   "instagram_audio_page": null,
+   "reels": 1,
+   "views": 327965,
+   "best_x": 6.1,
+   "examples": [
+    {
+     "url": "https://www.instagram.com/reel/DZsT6qjx3Oa/",
+     "views": 327965,
+     "x": 6.1,
+     "handle": "themuaythaiguy",
+     "hook": "Try these “secrets” 👇"
+    }
+   ],
+   "audio_id": null,
+   "cleared": false,
+   "first_seen": "2026-10-20"
+  },
+  {
+   "key": "Original audio @chewjitsu (https://www.instagram.com/reel/DV_nzIgjevC/)",
+   "title": "Original audio",
+   "artist": "",
+   "kind": "original",
+   "instagram_audio_page": null,
+   "reels": 1,
+   "views": 318957,
+   "best_x": 15.1,
+   "examples": [
+    {
+     "url": "https://www.instagram.com/reel/DV_nzIgjevC/",
+     "views": 318957,
+     "x": 15.1,
+     "handle": "chewjitsu",
+     "hook": "Tomorrow will probably be a rest day 😂"
+    }
+   ],
+   "audio_id": null,
+   "cleared": false,
+   "first_seen": "2026-10-20"
+  },
+  {
+   "key": "Original audio @thejosephabell (https://www.instagram.com/reel/Dd_3xmAjeXP/)",
+   "title": "Original audio",
+   "artist": "",
+   "kind": "original",
+   "instagram_audio_page": null,
+   "reels": 1,
+   "views": 312466,
+   "best_x": null,
+   "examples": [
+    {
+     "url": "https://www.instagram.com/reel/Dd_3xmAjeXP/",
+     "views": 312466,
+     "x": null,
+     "handle": "thejosephabell",
+     "hook": "break (motivational montage)"
+    }
+   ],
+   "audio_id": null,
+   "cleared": false,
+   "first_seen": "2026-10-20"
+  },
+  {
+   "key": "Original audio @firas_zahabi (https://www.instagram.com/reel/DO_QxFVjvu2/)",
+   "title": "Original audio",
+   "artist": "",
+   "kind": "original",
+   "instagram_audio_page": null,
+   "reels": 1,
+   "views": 305360,
+   "best_x": 5.4,
+   "examples": [
+    {
+     "url": "https://www.instagram.com/reel/DO_QxFVjvu2/",
+     "views": 305360,
+     "x": 5.4,
+     "handle": "firas_zahabi",
+     "hook": "The ruotolobrothersjiujitsu showed me this half guard trick to fight pressure, I"
+    }
+   ],
+   "audio_id": null,
+   "cleared": false,
+   "first_seen": "2026-10-20"
+  },
+  {
+   "key": "Original audio @themuaythaiguy (https://www.instagram.com/reel/DbdjpxKuUBp/)",
+   "title": "Original audio",
+   "artist": "",
+   "kind": "original",
+   "instagram_audio_page": null,
+   "reels": 1,
+   "views": 254967,
+   "best_x": 4.7,
+   "examples": [
+    {
+     "url": "https://www.instagram.com/reel/DbdjpxKuUBp/",
+     "views": 254967,
+     "x": 4.7,
+     "handle": "themuaythaiguy",
+     "hook": "This is what I wish I knew when I first started… 👇"
+    }
+   ],
+   "audio_id": null,
+   "cleared": false,
+   "first_seen": "2026-10-20"
+  },
+  {
+   "key": "Original audio @firas_zahabi (https://www.instagram.com/reel/DQULQT_jqqj/)",
+   "title": "Original audio",
+   "artist": "",
+   "kind": "original",
+   "instagram_audio_page": null,
+   "reels": 1,
+   "views": 253581,
+   "best_x": 4.5,
+   "examples": [
+    {
+     "url": "https://www.instagram.com/reel/DQULQT_jqqj/",
+     "views": 253581,
+     "x": 4.5,
+     "handle": "firas_zahabi",
+     "hook": "We’re seeing the calf kick more than ever in MMA, here’s when to throw it for ef"
+    }
+   ],
+   "audio_id": null,
+   "cleared": false,
    "first_seen": "2026-10-20"
   },
   {
@@ -64,6 +424,28 @@
    "first_seen": "2026-10-20"
   },
   {
+   "key": "Original audio @themuaythaiguy (https://www.instagram.com/reel/DemSq8wpd1O/)",
+   "title": "Original audio",
+   "artist": "",
+   "kind": "original",
+   "instagram_audio_page": null,
+   "reels": 1,
+   "views": 251695,
+   "best_x": 4.7,
+   "examples": [
+    {
+     "url": "https://www.instagram.com/reel/DemSq8wpd1O/",
+     "views": 251695,
+     "x": 4.7,
+     "handle": "themuaythaiguy",
+     "hook": "How many have you unlocked? 👀 Drop your rarest Muay Thai experience below. Bragg"
+    }
+   ],
+   "audio_id": null,
+   "cleared": false,
+   "first_seen": "2026-10-20"
+  },
+  {
    "key": "Vacation - Dirty Heads",
    "title": "Vacation",
    "artist": "Dirty Heads",
@@ -79,6 +461,50 @@
      "x": 4.6,
      "handle": "themuaythaiguy",
      "hook": "Here’s what a Muay Thai Vacations retreat looks like 👇"
+    }
+   ],
+   "audio_id": null,
+   "cleared": false,
+   "first_seen": "2026-10-20"
+  },
+  {
+   "key": "Original audio @radu_rewers (https://www.instagram.com/reel/Deol_CiMR0Q/)",
+   "title": "Original audio",
+   "artist": "",
+   "kind": "original",
+   "instagram_audio_page": null,
+   "reels": 1,
+   "views": 226341,
+   "best_x": 34.4,
+   "examples": [
+    {
+     "url": "https://www.instagram.com/reel/Deol_CiMR0Q/",
+     "views": 226341,
+     "x": 34.4,
+     "handle": "radu_rewers",
+     "hook": ""
+    }
+   ],
+   "audio_id": null,
+   "cleared": false,
+   "first_seen": "2026-10-20"
+  },
+  {
+   "key": "Original audio @radu_rewers (https://www.instagram.com/reel/DemoaqdMfde/)",
+   "title": "Original audio",
+   "artist": "",
+   "kind": "original",
+   "instagram_audio_page": null,
+   "reels": 1,
+   "views": 211813,
+   "best_x": 32.2,
+   "examples": [
+    {
+     "url": "https://www.instagram.com/reel/DemoaqdMfde/",
+     "views": 211813,
+     "x": 32.2,
+     "handle": "radu_rewers",
+     "hook": ""
     }
    ],
    "audio_id": null,
