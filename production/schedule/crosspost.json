@@ -35,7 +35,7 @@
         "21:00"
       ],
       "topic": "Fight Psychology",
-      "last_slot": "2026-10-20T14:00:00Z"
+      "last_slot": "2026-10-20T19:30:00Z"
     },
     "facebook_slides": {
       "enabled": true,
@@ -292,6 +292,14 @@
         "id": "L-b1JH1CdPQ",
         "url": "https://youtube.com/shorts/L-b1JH1CdPQ",
         "privacy": "public"
+      }
+    },
+    "lst-2026-10-18-round-three": {
+      "threads": {
+        "status": "posted",
+        "at": "2026-10-20T19:32:09Z",
+        "id": "18125179961313189",
+        "url": "https://www.threads.com/@matteofights/post/Deulw9eGHo4"
       }
     }
   }
