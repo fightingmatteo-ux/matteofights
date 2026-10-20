@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Matteo runs this once (Claude's safety check blocks it from piping secrets). Values come from secrets/*.env.
 set -euo pipefail
+export PYTHONUTF8=1 PYTHONIOENCODING=utf-8  # modal prints ✓, which the Windows console codepage can't encode
 cd "$(dirname "$0")/../.."
 set -a; . secrets/control.env; . secrets/modal.env; set +a
 
