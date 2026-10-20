@@ -24,6 +24,12 @@ else cf POST /r2/buckets "{\"name\":\"$BUCKET\"}" | ok && echo "bucket $BUCKET c
 cf PUT "/r2/buckets/$BUCKET/cors" '{"rules":[{"allowed":{"origins":["https://control.matteofights.me","https://matteo-control.pages.dev"],"methods":["GET","PUT"],"headers":["*"]},"exposeHeaders":["ETag"],"maxAgeSeconds":3600}]}' | ok
 echo "cors set"
 
+# Keep under the 10 GB free tier: job bundles 2 days, half-uploaded render parts 1 day, renders 21 days
+# (every platform has posted a reel within a week; the media release keeps anything pushed with media.sh).
+rule() { echo "{\"id\":\"$1\",\"enabled\":true,\"conditions\":{\"prefix\":\"$2\"},\"deleteObjectsTransition\":{\"condition\":{\"type\":\"Age\",\"maxAge\":$(( $3 * 86400 ))}}}"; }
+cf PUT "/r2/buckets/$BUCKET/lifecycle" "{\"rules\":[$(rule jobs jobs/ 2),$(rule render-tmp renders/tmp/ 1),$(rule renders renders/ 21)]}" | ok
+echo "lifecycle set"
+
 # D1 database
 DB_ID=$(cf GET "/d1/database?name=$DB" | python -c "import sys,json;r=[d for d in json.load(sys.stdin)['result'] if d['name']=='$DB'];print(r[0]['uuid'] if r else '')")
 if [ -z "$DB_ID" ]; then

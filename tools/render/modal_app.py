@@ -76,6 +76,7 @@ def render(job_id: str):
         for n in names:  # all uploaded: now publish them
             r2.copy(f"renders/tmp/{job_id}/{n}", f"renders/{n}")
             r2.delete(f"renders/tmp/{job_id}/{n}")
+        r2.delete(job["bundle"])  # failed jobs keep theirs for a look; R2 expires jobs/ after 2 days anyway
         jobs.patch("job", job_id, {"status": "done", "finished_at": _now(), "seconds": int(time.time() - t0),
                                    "keys": [f"renders/{n}" for n in names], "log": log[-1500:]})
     except Exception as e:  # noqa: BLE001 - every failure ends the job as failed with its reason
