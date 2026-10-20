@@ -44,6 +44,13 @@ render starts at the clip's first good moment (`render.graded_start`); ungraded 
 then the busiest stretch.
 When the backlog has no `ready` hooks left, the factory stops and says so. Ask Claude for the next batch.
 
+## Audio (since 2026-10-20): Echo Sax End by default
+Matteo's call: listicles do better on the trending sound. The factory renders them without music and the queue item
+carries `app_audio: Echo Sax End - Caleb Arredondo`; at post time `audio.py resolve` finds it (music first, then the
+artist's own original-sound upload @caleb.arredondo, id 530317382955170) and the Audio API attaches it. Workflow input
+`audio` changes the sound; `none` = royalty-free music in the file. Unproven: trial reel + attached audio in one call
+is undocumented by Meta; if it is refused the item fails with Meta's message and nothing posts (then re-render with `none`).
+
 ## Audio + posting (since 2026-10-15)
 The API can't attach Instagram library sounds, so trial reels carry royalty-free music in the file and the
 **Post queue posts them automatically** (after Matteo's one weekly yes via approve.py). Trending sounds are used

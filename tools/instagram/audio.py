@@ -96,7 +96,10 @@ def _norm(s):
 
 def resolve(name, kind="music"):
     """audio_id for a sound named in the queue (e.g. 'Echo Sax End - Caleb Arredondo (add in the Instagram app)'),
-    or None. Only an exact title match counts: posting the wrong song is worse than posting it by hand."""
+    or None. Only an exact title match counts: posting the wrong song is worse than posting it by hand.
+    Some trending songs (Echo Sax End) are only in the library as ORIGINAL sounds: if music has no exact match, an
+    original sound counts when its title (minus any "(Take 2)"-style suffix) is exact AND it was uploaded by the
+    artist's own account (ig_username matches the artist), never a fan re-upload or a sped-up mix."""
     name = re.sub(r"\(.*?\)", "", name or "").strip()
     parts = re.split(r"\s+[-–|]\s+|\s+by\s+", name, maxsplit=1)
     title, artist = parts[0].strip(), (parts[1].strip() if len(parts) > 1 else "")
@@ -108,6 +111,13 @@ def resolve(name, kind="music"):
         if artist and _norm(artist) not in _norm(a.get("display_artist") or a.get("ig_username") or ""):
             continue
         return a
+    if kind == "music" and artist:
+        for a in search(title, "original_sound"):
+            if _norm(re.sub(r"\(.*?\)", "", a.get("title") or "")) != _norm(title):
+                continue
+            if _norm(artist).replace(" ", "") != _norm(a.get("ig_username") or "").replace(" ", ""):
+                continue
+            return a
     return None
 
 
