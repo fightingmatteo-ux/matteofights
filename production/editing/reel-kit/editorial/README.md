@@ -27,6 +27,11 @@ The talking-head look since 2026-10-20, from the @kaixerb reference
 Override per reel: `plan.build(..., fx={"WORD": "effect"})`. Add an effect = a function in `editorial.js` FX + a
 sound in `make_audio.py` + a row in `plan.FX_SFX`. Everything is seeded, so renders repeat exactly.
 
+## Cutaways (b-roll / fight tape)
+`work/broll.json` ({name: {start, dur}}, clips at `assets/media/b_<name>.mp4`, e.g. from a `make_broll.py`) is picked up
+by build.py: clips sit above his cut-out, whip in with a motion blur, and phrases during them always go in front.
+Optional `REEL["bed"]`: a music file instead of the piano placeholder.
+
 ## Behind / in front
 Keyword phrases alternate front, behind, front... (`behind=True`). Behind phrases live in `#ed-caps-back` inside
 the camera, under the full-length cut-out (`fg_<V>_full.webm`, ~5 min for 25 s). Their height comes from

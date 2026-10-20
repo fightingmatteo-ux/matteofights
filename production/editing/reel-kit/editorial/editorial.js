@@ -108,6 +108,12 @@ window.Editorial = {
       if (o.cam) tl.fromTo(o.cam, { filter: "blur(18px)" }, { filter: "blur(0px)", duration: 0.16, ease: "power2.out", immediateRender: false }, c.t1);
     });
 
+    // cutaways (fight tape / b-roll): whip in with a motion blur, like the cards
+    (P.broll || []).forEach(([a]) => {
+      const el = Array.from(document.querySelectorAll(".ed-broll")).find((v) => Math.abs(parseFloat(v.dataset.start) - a) < 0.002);
+      if (el) tl.fromTo(el, { filter: "blur(18px)", scale: 1.08 }, { filter: "blur(0px)", scale: 1, duration: 0.14, ease: "power3.out" }, a);
+    });
+
     // camera: never static. Slow push on every face stretch, alternate framing after each card (jump-cut feel)
     if (o.cam) {
       const last = P.faces.length - 1;

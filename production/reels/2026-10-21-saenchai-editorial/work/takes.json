@@ -1,0 +1,134 @@
+{
+  "src": "../2026-10-16-saenchai-bigger-men/assets/raw.mp4",
+  "audio_src": "../2026-10-16-saenchai-bigger-men/assets/voice.wav",
+  "words": "work/words.json",
+  "speed": 1.0,
+  "takes": {
+    "hookA": [
+      [
+        8.88,
+        11.96
+      ],
+      [
+        12.24,
+        14.12
+      ]
+    ],
+    "hookB": [
+      34.66,
+      39.24
+    ],
+    "hookC": [
+      [
+        72.44,
+        74.44
+      ],
+      [
+        74.64,
+        76.68
+      ]
+    ],
+    "heavier": [
+      [
+        101.54,
+        104.52
+      ],
+      [
+        104.68,
+        106.46
+      ]
+    ],
+    "muscle": [
+      134.84,
+      140.5
+    ],
+    "step": [
+      147.7,
+      152.66
+    ],
+    "reset": [
+      [
+        210.48,
+        215.54
+      ],
+      [
+        215.72,
+        218.94
+      ]
+    ],
+    "win": [
+      [
+        233.64,
+        236.3
+      ],
+      [
+        236.54,
+        237.74
+      ],
+      [
+        237.98,
+        238.9
+      ]
+    ],
+    "cta": [
+      250.4,
+      255.66
+    ],
+    "loopA": [
+      [
+        285.04,
+        285.78
+      ],
+      [
+        286.02,
+        288.74
+      ]
+    ],
+    "loopB": [
+      292.15,
+      294.85
+    ],
+    "loopC": [
+      300.12,
+      302.98
+    ]
+  },
+  "variants": {
+    "A": [
+      "hookA",
+      "heavier",
+      "muscle",
+      "step",
+      "reset",
+      "win",
+      "cta",
+      "loopA"
+    ],
+    "B": [
+      "hookB",
+      "heavier",
+      "muscle",
+      "step",
+      "reset",
+      "win",
+      "cta",
+      "loopB"
+    ],
+    "C": [
+      "hookC",
+      "heavier",
+      "muscle",
+      "step",
+      "reset",
+      "win",
+      "cta",
+      "loopC"
+    ]
+  },
+  "fix": {
+    "SENTAI": "SAENCHAI",
+    "SENGAI": "SAENCHAI",
+    "SENCHAI": "SAENCHAI",
+    "10": "TEN"
+  }
+}

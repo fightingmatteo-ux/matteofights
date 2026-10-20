@@ -7,7 +7,9 @@ Kit + rules: production/editing/reel-kit/editorial/README.md. Worked example: 20
 Words are the UPPERCASE tokens in work/edl_<V>.json. ("WORD", k) = the k-th time that word is said.
 """
 import json
+import os
 import re
+import shutil
 import sys
 
 sys.path.insert(0, "../../editing/reel-kit/editorial")
@@ -31,6 +33,7 @@ REEL = {
         (("TAKE", 1), ("BECAUSE", 1), "RESET"),
     ],
     "slam": ["RESET"],          # max one card keyword: over-scaled + sub hit
+    "bed": None,                # music under the voice: an mp3/wav path, or None for the synthesised piano placeholder
 }
 # ----------------------------------------------------------------
 
@@ -54,12 +57,19 @@ head = lambda t: cutout.head_top(FG, t) or 660  # noqa: E731
 hook_size = min(360, int(960 / (0.45 * len(hook["word"]))))  # "head." is ~790 px wide at 360 px
 behind_top = min(head(t) for t in (0.0, swap / 2, swap)) - int(127 * hook_size / 360)
 
+# cutaways: make_broll.py-style work/broll.json ({name: {start, dur}}, files assets/media/b_<name>.mp4), if the reel has any
+broll = json.load(open("work/broll.json", encoding="utf-8")) if os.path.exists("work/broll.json") else {}
+broll_html, broll_spans = plan.broll_html(broll)
 ed = plan.build(d, keys=set(REEL["keys"]), cards=cards, slam=set(REEL["slam"]), fx=REEL["fx"],
-                hide=[(0, title_end)], title_end=title_end, back_top=lambda t: head(t) - 235)
-css, js = plan.install(".", bed_seconds=d["duration"] + 1)
+                hide=[(0, title_end)], title_end=title_end, back_top=lambda t: head(t) - 235, broll=broll_spans,
+                **({"bed": "assets/media/bed" + os.path.splitext(REEL["bed"])[1]} if REEL.get("bed") else {}))
+css, js = plan.install(".", bed_seconds=None if REEL.get("bed") else d["duration"] + 1)
+if REEL.get("bed"):
+    os.makedirs("assets/media", exist_ok=True)
+    shutil.copy(REEL["bed"], "assets/media/bed" + os.path.splitext(REEL["bed"])[1])
 
 fill = {"ED_CSS": css, "ED_JS": js, "ED_HTML_CAPS": ed["caps"], "ED_HTML_CAPS_BACK": ed["caps_back"],
-        "ED_HTML_CARDS": ed["cards"], "ED_AUDIO": ed["audio"], "ED_PLAN": ed["plan"],
+        "ED_HTML_CARDS": ed["cards"], "ED_AUDIO": ed["audio"], "ED_PLAN": ed["plan"], "ED_BROLL": broll_html,
         "AROLL": f"assets/media/aroll_{V}.mp4", "FG": FG, "DUR": f"{d['duration']:.3f}",
         "HOOK_LEAD": "".join(f'<span class="lead">{x}</span>' for x in hook["lead"]), "HOOK_WORD": hook["word"],
         "HOOK_SIZE": str(hook_size), "BEHIND_TOP": str(behind_top), "TITLE_END": f"{title_end:.3f}",

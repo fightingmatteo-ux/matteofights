@@ -39,12 +39,13 @@ FX = {"RESET": "rewind", "RESTART": "rewind", "AGAIN": "rewind", "BACK": "rewind
       "CAUGHT": "impact", "KNOCKED": "impact", "SLAM": "impact", "HURT": "impact",
       "RELAX": "exhale", "BREATH": "exhale", "BREATHE": "exhale", "CALM": "exhale",
       "INFORMATION": "decode", "DATA": "decode", "THINKING": "decode", "LEARN": "decode",
-      "ONE": "count", "TWO": "count", "THREE": "count", "FOUR": "count", "FIVE": "count",
+      "ONE": "count", "TWO": "count", "THREE": "count", "FOUR": "count", "FIVE": "count", "TEN": "count",
       "FREEZE": "freeze", "FROZE": "freeze", "STUCK": "freeze"}
 FX_SFX = {"rewind": ("rewind", -0.5, 0.45), "jab": ("punch", -0.1, 0.5), "impact": ("impact", -0.03, 0.5),
           "exhale": ("exhale", -0.05, 0.4), "decode": ("data", -0.02, 0.3), "count": ("key", -0.04, 0.3),
           "freeze": ("shimmer", -0.02, 0.4), "focus": ("key", -0.04, 0.3)}
-NUM = {"ONE": "1", "TWO": "2", "THREE": "3", "FOUR": "4", "FIVE": "5"}
+NUM = {"ONE": "1", "TWO": "2", "THREE": "3", "FOUR": "4", "FIVE": "5", "SIX": "6", "SEVEN": "7", "EIGHT": "8",
+       "NINE": "9", "TEN": "10"}
 
 
 def install(reel, bed_seconds=None):
@@ -94,20 +95,34 @@ def key_html(wid, word, fx, extra_cls=""):
     return f'<span id="{wid}" class="ed-w ed-key{extra_cls}" data-fx="{fx}">{ghost}{chars}</span>'
 
 
-def build(d, keys=(), cards=(), hide=(), fix=None, slam=(), dip=None, title_end=0.0, fx=None, behind=True, back_top=None,
+def broll_html(clips, track=4):
+    """Fight-tape / b-roll cutaways from a {name: {start, dur}} map (e.g. make_broll.py's work/broll.json; files at
+    assets/media/b_<name>.mp4). They go ABOVE Matteo's cut-out (inside the camera, after #fg), so he never floats
+    over the footage. Returns (html, spans)."""
+    html_, spans = [], []
+    for name, c in sorted(clips.items(), key=lambda kv: kv[1]["start"]):
+        html_.append(f'<video id="br-{name}" class="clip full ed-broll" src="assets/media/b_{name}.mp4" '
+                     f'data-start="{c["start"]:.3f}" data-duration="{c["dur"]:.3f}" data-track-index="{track}" muted playsinline></video>')
+        spans.append((c["start"], c["start"] + c["dur"]))
+    return "\n        ".join(html_), spans
+
+
+def build(d, keys=(), cards=(), hide=(), fix=None, slam=(), dip=None, title_end=0.0, fx=None, behind=True, back_top=None, broll=(),
           bed="assets/media/bed.wav", bed_base=0.20, bed_card=0.45, sfx_dir="assets/sfx/ed"):
     """keys: UPPERCASE words to emphasise. cards: (t0, t1, KEYWORD) spans cut to white. hide: (a, b) spans with no
     captions (the hook title). slam: keywords on cards that scale past the frame edges + sub. dip: (t0, t1) fade to
     black at the end (sub on it). title_end: when the hook title clears (gets a shimmer at 0). fx: {WORD: effect}
     overrides FX. behind: alternate keyword phrases behind Matteo (template needs #ed-caps-back + the fg cut-out).
     back_top(t) -> px: where a behind phrase starts at time t, e.g. from cutout.head_top() so his hair always
-    covers the keyword's lower edge (head_top - 235 tucks ~a quarter of the letters into the hair)."""
+    covers the keyword's lower edge (head_top - 235 tucks ~a quarter of the letters into the hair).
+    broll: (t0, t1) spans with cutaway footage on screen: phrases there always go in front (he isn't visible)."""
     keys = set(keys)
     fxmap = {**FX, **(fx or {})}
     fx_of = lambda w: fxmap.get(w, "focus")
     words = d["words"]
     in_span = lambda t, spans: any(a <= t < b for a, b, *_ in spans)
-    caps_html, back_html, cards_html, audio, plan = [], [], [], [], {"phrases": [], "cards": [], "faces": [], "dip": dip, "title_end": title_end}
+    caps_html, back_html, cards_html, audio, plan = [], [], [], [], {"phrases": [], "cards": [], "faces": [], "dip": dip, "title_end": title_end,
+                                                                  "broll": [list(b) for b in broll]}
     sfx = []  # (file, t, vol)
 
     # ---- captions over the face ----
@@ -130,7 +145,8 @@ def build(d, keys=(), cards=(), hide=(), fix=None, slam=(), dip=None, title_end=
                 (tail if seen_key else lead).append(f'<span id="{wid}" class="ed-w">{html.escape(disp(w["w"], fix))}</span>')
                 pw.append({"id": wid, "s": w["s"], "key": False})
         layer = "front"
-        if keyh:
+        on_broll = in_span(ph[0]["s"], broll)
+        if keyh and not on_broll:
             layer = "back" if behind and nkey % 2 == 1 else "front"
             nkey += 1
         cls = "ed-ph" + (" ed-split" if keyh else "")
