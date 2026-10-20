@@ -1,7 +1,243 @@
 {
  "updated": "2026-10-20",
- "read": 68,
- "blocked": 1,
+ "read": 66,
+ "blocked": 3,
+ "no_sound_info": 0,
  "_how": "tools/instagram/sound_scout.py. cleared=true sounds can be attached by the Audio API (audio_id); others only in the Instagram app.",
- "sounds": []
+ "sounds": [
+  {
+   "key": "Original audio",
+   "title": "Original audio",
+   "artist": "",
+   "kind": "original",
+   "instagram_audio_page": null,
+   "reels": 21,
+   "views": 12133756,
+   "best_x": 34.4,
+   "examples": [
+    {
+     "url": "https://www.instagram.com/reel/Dd-IyyyK-KX/",
+     "views": 3226354,
+     "x": null,
+     "handle": "superbadvlad",
+     "hook": "First step lethal (footwork on the bag)"
+    },
+    {
+     "url": "https://www.instagram.com/reel/DX_6NzTAbzQ/",
+     "views": 1550364,
+     "x": 28.8,
+     "handle": "themuaythaiguy",
+     "hook": "The Muay Thai newb starter pack..."
+    },
+    {
+     "url": "https://www.instagram.com/reel/DYKM9qhEb_2/",
+     "views": 700397,
+     "x": 13.0,
+     "handle": "themuaythaiguy",
+     "hook": "These look like you're slacking... but they are the smartest things you can do 👇"
+    }
+   ],
+   "audio_id": "26497602303177074",
+   "cleared": true,
+   "first_seen": "2026-10-20"
+  },
+  {
+   "key": "LAST TAPE - Redstar Radi",
+   "title": "LAST TAPE",
+   "artist": "Redstar Radi",
+   "kind": "music",
+   "instagram_audio_page": "https://www.instagram.com/reels/audio/1108280370945322/",
+   "reels": 1,
+   "views": 251987,
+   "best_x": 4.7,
+   "examples": [
+    {
+     "url": "https://www.instagram.com/reel/DZaA3iCEi8N/",
+     "views": 251987,
+     "x": 4.7,
+     "handle": "themuaythaiguy",
+     "hook": "Let me explain... 👇"
+    }
+   ],
+   "audio_id": null,
+   "cleared": false,
+   "first_seen": "2026-10-20"
+  },
+  {
+   "key": "Vacation - Dirty Heads",
+   "title": "Vacation",
+   "artist": "Dirty Heads",
+   "kind": "music",
+   "instagram_audio_page": "https://www.instagram.com/reels/audio/306890676517563/",
+   "reels": 1,
+   "views": 248470,
+   "best_x": 4.6,
+   "examples": [
+    {
+     "url": "https://www.instagram.com/reel/DZpZcsSR5Pz/",
+     "views": 248470,
+     "x": 4.6,
+     "handle": "themuaythaiguy",
+     "hook": "Here’s what a Muay Thai Vacations retreat looks like 👇"
+    }
+   ],
+   "audio_id": null,
+   "cleared": false,
+   "first_seen": "2026-10-20"
+  },
+  {
+   "key": "You Will Never Know - Imany",
+   "title": "You Will Never Know",
+   "artist": "Imany",
+   "kind": "music",
+   "instagram_audio_page": "https://www.instagram.com/reels/audio/250864725752689/",
+   "reels": 1,
+   "views": 44192,
+   "best_x": 6.7,
+   "examples": [
+    {
+     "url": "https://www.instagram.com/reel/DeeLl0qKN9h/",
+     "views": 44192,
+     "x": 6.7,
+     "handle": "radu_rewers",
+     "hook": ""
+    }
+   ],
+   "audio_id": null,
+   "cleared": false,
+   "first_seen": "2026-10-20"
+  },
+  {
+   "key": "home (Sped Up) - .diedlonely, Jay Karin",
+   "title": "home (Sped Up)",
+   "artist": ".diedlonely, Jay Karin",
+   "kind": "music",
+   "instagram_audio_page": "https://www.instagram.com/reels/audio/2064066727341791/",
+   "reels": 1,
+   "views": 35712,
+   "best_x": 7.0,
+   "examples": [
+    {
+     "url": "https://www.instagram.com/reel/Deo4H0QIZvt/",
+     "views": 35712,
+     "x": 7.0,
+     "handle": "brezojr",
+     "hook": "Win or lose,always show respect 🙏🏻"
+    }
+   ],
+   "audio_id": null,
+   "cleared": false,
+   "first_seen": "2026-10-20"
+  },
+  {
+   "key": "Trap Royalty - very cool tutorials",
+   "title": "Trap Royalty",
+   "artist": "very cool tutorials",
+   "kind": "music",
+   "instagram_audio_page": "https://www.instagram.com/reels/audio/1746933332567296/",
+   "reels": 1,
+   "views": 33743,
+   "best_x": 6.7,
+   "examples": [
+    {
+     "url": "https://www.instagram.com/reel/DempGKoI5Tg/",
+     "views": 33743,
+     "x": 6.7,
+     "handle": "brezojr",
+     "hook": "Hahah😂"
+    }
+   ],
+   "audio_id": null,
+   "cleared": false,
+   "first_seen": "2026-10-20"
+  },
+  {
+   "key": "Let Her Go (Anniversary Edition) (feat. Ed Sheeran) - Passenger",
+   "title": "Let Her Go (Anniversary Edition) (feat. Ed Sheeran)",
+   "artist": "Passenger",
+   "kind": "music",
+   "instagram_audio_page": "https://www.instagram.com/reels/audio/6407864819323406/",
+   "reels": 1,
+   "views": 26917,
+   "best_x": 4.1,
+   "examples": [
+    {
+     "url": "https://www.instagram.com/reel/DehePZ1sJ6R/",
+     "views": 26917,
+     "x": 4.1,
+     "handle": "radu_rewers",
+     "hook": ""
+    }
+   ],
+   "audio_id": null,
+   "cleared": false,
+   "first_seen": "2026-10-20"
+  },
+  {
+   "key": "everything works out in the end (slowed + best part looped) - core²",
+   "title": "everything works out in the end (slowed + best part looped)",
+   "artist": "core²",
+   "kind": "music",
+   "instagram_audio_page": "https://www.instagram.com/reels/audio/494207289668984/",
+   "reels": 1,
+   "views": 22475,
+   "best_x": 4.4,
+   "examples": [
+    {
+     "url": "https://www.instagram.com/reel/Dee52LqIgAW/",
+     "views": 22475,
+     "x": 4.4,
+     "handle": "brezojr",
+     "hook": "🥲🥲"
+    }
+   ],
+   "audio_id": null,
+   "cleared": false,
+   "first_seen": "2026-10-20"
+  },
+  {
+   "key": "Avatar: The Last Airbender - Jeremy Zuckerman",
+   "title": "Avatar: The Last Airbender",
+   "artist": "Jeremy Zuckerman",
+   "kind": "music",
+   "instagram_audio_page": "https://www.instagram.com/reels/audio/1528294104578801/",
+   "reels": 1,
+   "views": 9943,
+   "best_x": 3.2,
+   "examples": [
+    {
+     "url": "https://www.instagram.com/reel/DekJE_0ivTL/",
+     "views": 9943,
+     "x": 3.2,
+     "handle": "tinapham.co",
+     "hook": "The Last Airbender is fiction."
+    }
+   ],
+   "audio_id": null,
+   "cleared": false,
+   "first_seen": "2026-10-20"
+  },
+  {
+   "key": "Finder - Ninetoes",
+   "title": "Finder",
+   "artist": "Ninetoes",
+   "kind": "music",
+   "instagram_audio_page": "https://www.instagram.com/reels/audio/690167408666701/",
+   "reels": 1,
+   "views": 6455,
+   "best_x": 3.1,
+   "examples": [
+    {
+     "url": "https://www.instagram.com/reel/DeatKiuBAP-/",
+     "views": 6455,
+     "x": 3.1,
+     "handle": "_coachdino_",
+     "hook": "Is the PARTY/PATONG scene your favorite thing about Phuket, Thailand?"
+    }
+   ],
+   "audio_id": null,
+   "cleared": false,
+   "first_seen": "2026-10-20"
+  }
+ ]
 }
