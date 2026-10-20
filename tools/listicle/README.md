@@ -44,15 +44,13 @@ render starts at the clip's first good moment (`render.graded_start`); ungraded 
 then the busiest stretch.
 When the backlog has no `ready` hooks left, the factory stops and says so. Ask Claude for the next batch.
 
-## Audio (since 2026-10-20): his proven sounds, rotated
-Matteo's call: listicles do better on the sounds his best ones used (`production/sounds/own_proven.json`, sound scout
-`own` mode): Echo Sax End on 5 of his top 15 (incl. the 331k), INSONAMIA on 2, then Ethereal, Not You Too, Memory
-Reboot, 180db_, Fever once each. Only Echo Sax End is in the API library from its own artist; INSONAMIA's official track
-(607478755762707, Matteo's link) is not in the API library, so the queue tries it first and falls back to a fan upload
-(`id:A|B name`, tried in order at post time; none available = post by hand); Memory Reboot is a pinned fan upload; the rest aren't
-attachable. Rotation (workflow default): Echo, INSONAMIA, Echo, Memory Reboot. The factory renders them without music and the queue item
-carries `app_audio: Echo Sax End - Caleb Arredondo`; at post time `audio.py resolve` finds it (music first, then the
-artist's own original-sound upload @caleb.arredondo, id 530317382955170) and the Audio API attaches it. Workflow input
+## Audio (since 2026-10-20): original Echo Sax End and sounds like it
+Matteo's call: every listicle carries a sound. Echo Sax End carried 5 of his top 15 (incl. the 331k,
+`production/sounds/own_proven.json`), so the rotation (workflow default) is all Caleb Arredondo sax, pinned by Audio API id:
+Echo Sax End (530317382955170, his own upload) every other reel, Echo Sax Endless (576492425503806, his own upload) and
+Echo Sax Feeling Blue (496614019576474, his piece uploaded by @sovenhq). Listen: `instagram.com/reels/audio/<id>/`.
+The factory renders them without music; the queue item carries `app_audio` (`id:A|B name`, ids tried in order at post
+time; none available = `audio_status: manual`, post by hand) and the Audio API attaches it. Workflow input
 `audio` changes the sound; `none` = royalty-free music in the file. Unproven: trial reel + attached audio in one call
 is undocumented by Meta; if it is refused the item fails with Meta's message and nothing posts (then re-render with `none`).
 

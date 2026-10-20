@@ -39,7 +39,7 @@ on:
         default: false
       audio:
         description: "Instagram sound attached at post time ('Title - Artist'); 'none' = royalty-free music in the file"
-        default: "Echo Sax End - Caleb Arredondo; id:607478755762707|783202424324531 INSONAMIA - Ronald Figo; Echo Sax End - Caleb Arredondo; id:534294096071090 Memory Reboot - VØJ, Narvent"
+        default: "id:530317382955170 Echo Sax End - Caleb Arredondo; id:576492425503806 Echo Sax Endless - Caleb Arredondo; id:530317382955170 Echo Sax End - Caleb Arredondo; id:496614019576474 Echo Sax Feeling Blue - Caleb Arredondo"
 
 permissions:
   contents: write   # commit hooks/state/queue + captions/covers
@@ -74,11 +74,10 @@ jobs:
           SOUNDS_ONLY: ${{ inputs.sounds_only && '--sounds-only' || '' }}
           SHEETS: ${{ (inputs.sheets || github.event.schedule == '0 7 * * 6') && '--sheets-only' || '' }}
           ONLY: ${{ inputs.only || '' }}
-          # Matteo 2026-10-20: listicles do better on the sounds that carried his best ones (production/sounds/own_proven.json).
-          # Rotated one per reel: Echo Sax End (5 of his top 15 incl. the 331k; artist's own upload) every other reel,
-          # INSONAMIA (2 of the top 15): Matteo's official track 607478755762707 first (not in the API library 2026-10-20, so
-          # the fan upload 783202424324531 is used until it is), Memory Reboot as a pinned fan upload.
-          AUDIO: ${{ inputs.audio == 'none' && '' || inputs.audio || 'Echo Sax End - Caleb Arredondo; id:607478755762707|783202424324531 INSONAMIA - Ronald Figo; Echo Sax End - Caleb Arredondo; id:534294096071090 Memory Reboot - VØJ, Narvent' }}
+          # Matteo 2026-10-20: every listicle gets the original Echo Sax End (5 of his top 15 incl. the 331k) or a sound like it.
+          # Rotated one per reel, all pinned: Echo Sax End (Caleb Arredondo's own upload) every other reel, his Echo Sax
+          # Endless (own upload), and Echo Sax Feeling Blue (his piece, uploaded by @sovenhq).
+          AUDIO: ${{ inputs.audio == 'none' && '' || inputs.audio || 'id:530317382955170 Echo Sax End - Caleb Arredondo; id:576492425503806 Echo Sax Endless - Caleb Arredondo; id:530317382955170 Echo Sax End - Caleb Arredondo; id:496614019576474 Echo Sax Feeling Blue - Caleb Arredondo' }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}   # footage agent; without it: least-used clips
         run: python3 -P tools/listicle/factory.py --count "$COUNT" --slot "$SLOT" --only "$ONLY" --audio "$AUDIO" $RERENDER $REMATCH $SOUNDS_ONLY $SHEETS
       - name: Commit
