@@ -33,3 +33,8 @@ the cloud (proxy), so it only exists in the session and in the chat.
   caught = impact, reset = rewind (slam). Matching synthesised sounds, 8-16 dB over baseline, under the voice.
 - Transitions: focus-pull in, blur dissolve out, ~0.1 s crossfade; cards whip in/out.
 - Render `media/freeze-editorial/freeze-editorial-A3.mp4` (+ `-phone`), check_render OK, peak -1.6 dBFS.
+
+## v4 (2026-10-20, Matteo: "when I say head, it goes from behind me to in front of me")
+- Hook: **head.** sits behind his hair until he says "head" (2.87 s), then punches through to the front
+  (`#behind` hands over to `#front-head` above the cut-out, scale pop 0.9 -> 1.12 -> 1, camera punch, punch SFX).
+- Render `media/freeze-editorial/freeze-editorial-A4.mp4` (+ `-phone`), check_render OK.
