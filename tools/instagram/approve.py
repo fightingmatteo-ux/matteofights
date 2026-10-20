@@ -26,7 +26,7 @@ stamp = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%MZ")
 for i in a.ids:
     store.patch("queue", i, dict(approved=True, approved_note=f"Matteo: {a.note} (recorded {stamp})"))
     print(f"approved {i}: {items[i]['video_asset']}, not before {items[i]['not_before']}")
-if os.environ.get("STATE_BACKEND", "file") != "file":
+if store.configured() != "file":
     raise SystemExit(0)  # D1 is the truth: nothing to commit
 subprocess.run(["git", "add", str(QUEUE)], cwd=ROOT, check=True)
 subprocess.run(["git", "commit", "-qm", f"queue: approve {', '.join(a.ids)} ({a.note})\n\n"

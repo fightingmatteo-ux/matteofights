@@ -5,7 +5,7 @@ name: Post queue
 
 on:
   schedule:
-    - cron: "0 */3 * * *"   # backup only: the Cloudflare ticker starts it when an item is due
+    - cron: "*/30 * * * *"  # until the D1 cutover (the ticker reads D1, which only refreshes after workflows); then "0 */3 * * *"
   workflow_dispatch:
 
 permissions:

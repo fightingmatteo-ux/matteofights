@@ -26,3 +26,18 @@ def test_bundle_writes_shell_scripts_with_lf(tmp_path, monkeypatch):
     submit.bundle("production/reels/x", "B", [], out)
     with tarfile.open(out) as t:
         assert t.extractfile("production/reels/x/make.sh").read() == b"#!/bin/bash\necho hi\n"
+
+
+def test_wait_fails_a_job_modal_never_finished(tmp_path, monkeypatch):
+    import datetime as dt
+    import pytest
+    import state
+    monkeypatch.setenv("STATE_ROOT", str(tmp_path))
+    fb = state.backend("file")
+    monkeypatch.setattr(submit.state, "backend", lambda name: fb)
+    monkeypatch.setattr(submit.time, "sleep", lambda s: None)
+    old = (dt.datetime.now(dt.timezone.utc) - dt.timedelta(hours=3)).strftime("%Y-%m-%dT%H:%M:%SZ")
+    fb.put("job", "j", {"status": "rendering", "started_at": old, "outputs": []})
+    with pytest.raises(SystemExit):
+        submit.wait("j", [])
+    assert fb.get("job", "j")["status"] == "failed"

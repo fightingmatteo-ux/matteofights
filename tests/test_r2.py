@@ -49,3 +49,24 @@ def test_video_falls_back_without_keys(monkeypatch):
     monkeypatch.delenv("R2_SECRET_ACCESS_KEY", raising=False)
     monkeypatch.setattr(r2, "ENV_FILE", r2.ENV_FILE.with_name("does-not-exist.env"))
     assert r2.video("a.mp4") is None
+
+
+def test_upload_render_mirrors_to_r2_when_configured(keys, monkeypatch, tmp_path):
+    calls = []
+
+    class Up:
+        def upload_file(self, path, bucket, key):
+            calls.append((key, path))
+
+    monkeypatch.setattr(r2, "_client", lambda: Up())
+    f = tmp_path / "x.mp4"
+    f.write_bytes(b"0")
+    assert r2.upload_render(f) is True
+    assert calls == [("renders/x.mp4", str(f))]
+
+
+def test_upload_render_skips_without_keys(monkeypatch, tmp_path):
+    monkeypatch.delenv("R2_ACCESS_KEY_ID", raising=False)
+    monkeypatch.delenv("R2_SECRET_ACCESS_KEY", raising=False)
+    monkeypatch.setattr(r2, "ENV_FILE", r2.ENV_FILE.with_name("does-not-exist.env"))
+    assert r2.upload_render(tmp_path / "x.mp4") is False

@@ -109,10 +109,18 @@ def main():
         wait(job_id, outputs)
 
 
+STALE = dt.timedelta(hours=2, minutes=15)  # Modal's function timeout is 2 h: no result after that = container died
+
+
 def wait(job_id, outputs):
     jobs, last = state.backend("d1"), None
     while True:
         j = jobs.get("job", job_id)
+        since = j.get("started_at") or j.get("submitted_at")
+        if j["status"] in ("queued", "rendering") and since and dt.datetime.now(dt.timezone.utc) -                 dt.datetime.fromisoformat(since.replace("Z", "+00:00")) > STALE:
+            jobs.patch("job", job_id, {"status": "failed", "error": "no result from Modal after 2 h 15 min "
+                                                                    "(container killed or timed out)"})
+            continue
         if j["status"] != last:
             print(f"{job_id}: {j['status']}", flush=True)
             last = j["status"]

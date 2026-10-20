@@ -61,7 +61,8 @@ def render(job_id: str):
         reel = work / job["reel_dir"]
         if (reel / "package-lock.json").exists() and not (reel / "node_modules").exists():
             subprocess.run(["npm", "ci", "--silent"], cwd=reel, check=True)
-        p = subprocess.run(["bash", "-c", job["cmd"]], cwd=reel, capture_output=True, text=True)
+        # under the 7200 s function timeout, so a hung build still ends as "failed" with its log
+        p = subprocess.run(["bash", "-c", job["cmd"]], cwd=reel, capture_output=True, text=True, timeout=6600)
         log = (p.stdout + p.stderr)[-3000:]
         print(log)
         if p.returncode:

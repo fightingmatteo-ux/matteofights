@@ -32,6 +32,6 @@ case "$cmd" in
     gh api -X POST -H "Content-Type: application/octet-stream" --input "$file" \
       "https://uploads.github.com/repos/$REPO/releases/$rid/assets?name=$name" --jq .browser_download_url
     # also to R2 (renders/<name>), where the posting scripts look first; skipped when boto3 or the R2 keys are missing
-    python3 -P "$(dirname "$0")/../r2.py" put "renders/$name" "$file" 2>/dev/null || echo "R2 upload skipped" ;;
+    python3 -P "$(dirname "$0")/../r2.py" put "renders/$name" "$file" ||       echo "WARNING: R2 not updated. If renders/$name is already in R2, posting will use that OLDER copy." >&2 ;;
   *) sed -n 2,7p "$0"; exit 1 ;;
 esac

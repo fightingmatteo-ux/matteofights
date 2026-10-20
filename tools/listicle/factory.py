@@ -24,6 +24,7 @@ from lab import assign as lab_assign  # noqa: E402
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import state as store  # noqa: E402  (live state: the reel queue)
+import r2  # noqa: E402
 HOOKS = ROOT / "production" / "listicles" / "hooks.json"
 STATE = ROOT / "production" / "listicles" / "state.json"
 CLIPS_FOLDER = "1EkBaa-a9m1lX5KQZnmNXQNj-E8E8hCKk"   # Matteo's raw training clips (top level only)
@@ -313,6 +314,7 @@ def main():
         (folder / "caption.txt").write_text(h["caption"].strip() + "\n", encoding="utf-8")
 
         run("gh", "release", "upload", "media", str(work / asset), "--clobber", "-R", REPO)
+        r2.upload_render(work / asset)  # posting prefers R2: never leave an older copy there
         run("rclone", "copyto", str(work / asset), f"gdrive:listicles/{asset}", "--drive-root-folder-id", OUT_FOLDER)
 
         qid = f"lst-{day}-{h['id']}"
@@ -375,6 +377,7 @@ def rerender(seconds, only=(), rematch=False, sounds_only=False):
             item["review"] = rv
         h["clip"] = item["clip"]
         run("gh", "release", "upload", "media", str(WORK / item["video_asset"]), "--clobber", "-R", REPO)
+        r2.upload_render(WORK / item["video_asset"])  # a re-render must replace the R2 copy too
         run("rclone", "copyto", str(WORK / item["video_asset"]), f"gdrive:listicles/{item['video_asset']}",
             "--drive-root-folder-id", OUT_FOLDER)
         item.pop("sound_pending", None)  # the music-free render is on the release: the Post queue may take it now

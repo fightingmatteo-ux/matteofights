@@ -93,6 +93,15 @@ def delete(key):
     _client().delete_object(Bucket=_bucket(), Key=key)
 
 
+def upload_render(path):
+    """Mirror a finished render to renders/<name> so posting never picks an older R2 copy over a fresh release
+    upload. False when R2 isn't set up here (boto3 or keys missing)."""
+    if not configured():
+        return False
+    put_file(f"renders/{Path(path).name}", path)
+    return True
+
+
 def video(asset):
     """(size, presigned URL) of renders/<asset> in R2, or None (not there, or R2 not set up here)."""
     if not configured():
