@@ -804,14 +804,20 @@
       "not_before": "2026-10-18T16:30:00Z",
       "min_gap_hours": 2.5,
       "approved": true,
-      "status": "queued",
+      "status": "posted",
       "test": {
         "exp": "exp-1016-hook_style",
         "variant": "a",
         "value": "native"
       },
       "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)",
-      "app_audio": "Echo Sax End - Caleb Arredondo (add in the Instagram app)"
+      "app_audio": "Echo Sax End - Caleb Arredondo (add in the Instagram app)",
+      "audio_id": "530317382955170",
+      "audio_title": "Echo Sax End (Take 2)",
+      "audio_artist": "caleb.arredondo",
+      "media_id": "18160145677526865",
+      "permalink": "https://www.instagram.com/reel/Detl951FIOw/",
+      "posted_at": "2026-10-20T10:14:43Z"
     },
     {
       "id": "lst-2026-10-19-first-body-shot",
