@@ -409,12 +409,16 @@
       "not_before": "2026-10-20T19:30:00Z",
       "min_gap_hours": 2.5,
       "approved": true,
-      "status": "queued",
+      "status": "posted",
       "crosspost_to": [
         "youtube"
       ],
       "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:32Z)",
-      "slot_note": "15:30 NY talking-head slot (Matteo 2026-10-20)"
+      "slot_note": "15:30 NY talking-head slot (Matteo 2026-10-20)",
+      "posting_since": "2026-10-20T20:01:58Z",
+      "media_id": "18033600278853405",
+      "permalink": "https://www.instagram.com/reel/DeupTI6AQXt/",
+      "posted_at": "2026-10-20T20:03:13Z"
     },
     {
       "id": "saenchai-B",
