@@ -128,3 +128,20 @@ def test_default_backend_follows_cloud_json(root, monkeypatch, tmp_path):
     assert state.configured() == "d1"
     monkeypatch.setenv("STATE_BACKEND", "file")
     assert state.configured() == "file"
+
+
+def test_save_changed_replaces_a_changed_field_whole(be):
+    be.put("queue", "r", {"id": "r", "review": {"ok": False, "why": "blurry"}})
+    items, before = state.snapshot("queue", be)
+    next(i for i in items if i["id"] == "r")["review"] = {"ok": True}
+    state.save_changed("queue", items, before, be)
+    assert be.get("queue", "r")["review"] == {"ok": True}
+
+
+def test_set_paths_nested_replace_and_remove(be):
+    be.put("crosspost", "pp", {"reel": {"youtube": {"status": "failed", "error": "x", "tries": 2}, "fb": {"s": 1}}})
+    be.patch("crosspost", "pp", {"other": {"keep": True}})  # someone else's field
+    state.set_paths("crosspost", "pp", {("reel", "youtube"): {"status": "posted"}, ("new",): {"a": 1}},
+                    remove=[("reel", "fb")], be=be)
+    assert be.get("crosspost", "pp") == {"reel": {"youtube": {"status": "posted"}}, "other": {"keep": True},
+                                         "new": {"a": 1}}

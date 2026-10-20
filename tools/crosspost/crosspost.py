@@ -383,9 +383,30 @@ def next_slot(after, slots):
     raise ValueError("no slot")
 
 
+def load_state():
+    """{"platforms", "posts"} from tools/state.py, plus a copy save_state() diffs against."""
+    st = {"platforms": store.get("crosspost", "platforms") or {}, "posts": store.get("crosspost", "posts") or {}}
+    st["_before"] = json.loads(json.dumps(st))
+    return st
+
+
 def save_state(state):
-    store.patch("crosspost", "posts", state["posts"])
-    store.patch("crosspost", "platforms", state["platforms"])  # run_platform moves cfg["last_slot"]
+    """Write each changed platform config and per-platform post record whole (a posted record must not keep a
+    failed attempt's error), leaving everything this run didn't touch alone."""
+    before = state["_before"]
+    for doc in ("platforms", "posts"):
+        old, new, sets = before[doc], state[doc], {}
+        for k, v in new.items():
+            if k not in old or not isinstance(v, dict) or not isinstance(old[k], dict):
+                if old.get(k) != v:
+                    sets[(k,)] = v  # new reel / platform: set whole
+                continue
+            for name, rec in v.items():
+                if old[k].get(name) != rec:
+                    sets[(k, name)] = rec
+        if sets:
+            store.set_paths("crosspost", doc, sets)
+    state["_before"] = json.loads(json.dumps({"platforms": state["platforms"], "posts": state["posts"]}))
 
 
 def run_platform(name, cfg, state, items, done, dry):
@@ -475,7 +496,7 @@ def run_threads_text(cfg, done, dry):
 
 def run(dry=False):
     load_env()
-    state = {"platforms": store.get("crosspost", "platforms") or {}, "posts": store.get("crosspost", "posts") or {}}
+    state = load_state()
     items = store.all("queue")
     done = []
     for name, cfg in state["platforms"].items():

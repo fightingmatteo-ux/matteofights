@@ -111,6 +111,21 @@ class FileBackend:
     def delete(self, kind, id):
         self._store(kind, self._load(kind)[0], id, None)
 
+    def set_paths(self, kind, id, values, remove=()):
+        doc, view = self._load(kind)
+        data = json.loads(json.dumps(view.get(id, {})))
+        for path, v in values.items():
+            node = data
+            for k in path[:-1]:
+                node = node.setdefault(k, {})
+            node[path[-1]] = v
+        for path in remove:
+            node = data
+            for k in path[:-1]:
+                node = node.get(k, {})
+            node.pop(path[-1], None)
+        self._store(kind, doc, id, data)
+
 
 def _d1(sql, params):
     cfg = json.loads(CLOUD.read_text(encoding="utf-8"))
@@ -132,6 +147,10 @@ def _d1(sql, params):
     if not body.get("success"):
         raise RuntimeError(f"D1 query failed: {body.get('errors')}")
     return body["result"][0]["results"]
+
+
+def _jpath(path):
+    return "$" + "".join('."' + str(k).replace('"', '') + '"' for k in path)
 
 
 NOW = "strftime('%Y-%m-%dT%H:%M:%SZ','now')"
@@ -160,6 +179,20 @@ class D1Backend:
 
     def delete(self, kind, id):
         _d1("DELETE FROM docs WHERE kind = ? AND id = ?", [kind, id])
+
+    def set_paths(self, kind, id, values, remove=()):
+        # json_set/json_remove run inside D1 on each path only: other fields (someone else's change) survive.
+        # A path's parent must exist; callers set a missing parent whole instead.
+        _d1("INSERT INTO docs (kind, id, data) VALUES (?, ?, '{}') ON CONFLICT (kind, id) DO NOTHING", [kind, id])
+        expr, params = "data", []
+        if values:
+            expr = "json_set(data" + ", ?, json(?)" * len(values) + ")"
+            for path, v in values.items():
+                params += [_jpath(path), json.dumps(v, ensure_ascii=False)]
+        if remove:
+            expr = f"json_remove({expr}" + ", ?" * len(remove) + ")"
+            params += [_jpath(path) for path in remove]
+        _d1(f"UPDATE docs SET data = {expr}, updated_at = {NOW} WHERE kind = ? AND id = ?", params + [kind, id])
 
 
 def backend(name):
@@ -203,6 +236,11 @@ def delete(kind, id):
     _current().delete(kind, id)
 
 
+def set_paths(kind, id, values, remove=(), be=None):
+    """Replace whole values at nested paths ({("reel", "youtube"): {...}}) and remove paths, touching nothing else."""
+    (be or _current()).set_paths(kind, id, values, remove)
+
+
 def snapshot(kind, be=None):
     """(items, before) for scripts that edit many items in place: change `items`, then save_changed()."""
     items = (be or _current()).all(kind)
@@ -210,16 +248,16 @@ def snapshot(kind, be=None):
 
 
 def save_changed(kind, items, before, be=None):
-    """Write only the fields that differ from `before` (removed fields become deletes), so a field someone
-    else changed meanwhile (an approval, a post status) is never overwritten with this script's stale copy."""
+    """Write only the fields that differ from `before`, each replaced whole (removed fields are deleted), so a
+    field someone else changed meanwhile (an approval, a post status) is never overwritten with a stale copy."""
     be = be or _current()
     for item in items:
         old = before.get(item["id"])
         if old is None:
             be.put(kind, item["id"], item)
         else:
-            diff = {k: v for k, v in item.items() if old.get(k) != v}
-            diff.update({k: None for k in old if k not in item})
-            if diff:
-                be.patch(kind, item["id"], diff)
+            changed = {(k,): v for k, v in item.items() if old.get(k) != v}
+            gone = [(k,) for k in old if k not in item]
+            if changed or gone:
+                be.set_paths(kind, item["id"], changed, gone)
         before[item["id"]] = json.loads(json.dumps(item))
