@@ -45,22 +45,6 @@ export async function isOwner(request, env) {
   return !!email && email === (env.OWNER_EMAIL || "").toLowerCase();
 }
 
-// Start any workflow without inputs (the edit worker after an upload or a revision note).
-export async function startWorkflow(env, file) {
-  const r = await fetch(`https://api.github.com/repos/${env.GITHUB_REPO}/actions/workflows/${file}/dispatches`, {
-    method: "POST",
-    headers: { authorization: `Bearer ${env.GITHUB_TOKEN}`, accept: "application/vnd.github+json", "user-agent": "matteofights-control" },
-    body: JSON.stringify({ ref: "master" }),
-  });
-  if (r.status !== 204) throw new Error(`GitHub dispatch ${file} ${r.status}: ${await r.text()}`);
-}
-
-// Every /api call that reads or changes things: the Access login must be Matteo.
-export async function isOwner(request, env) {
-  const email = await accessEmail(request, env);
-  return !!email && email === (env.OWNER_EMAIL || "").toLowerCase();
-}
-
 // Verify the Cloudflare Access login (RS256 JWT) instead of trusting a header, so the API is safe
 // even if the Access rule were ever removed by mistake.
 let certs = null;
