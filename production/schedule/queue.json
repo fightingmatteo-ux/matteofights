@@ -192,7 +192,9 @@
         "exp": "exp-1016-hook_style",
         "variant": "a",
         "value": "native"
-      }
+      },
+      "app_audio": "id:534294096071090 Memory Reboot - VØJ, Narvent (add in the Instagram app)",
+      "sound_pending": true
     },
     {
       "id": "lst-2026-10-21-started-late",
@@ -214,7 +216,9 @@
         "exp": "exp-1016-hook_style",
         "variant": "a",
         "value": "native"
-      }
+      },
+      "app_audio": "Echo Sax End - Caleb Arredondo (add in the Instagram app)",
+      "sound_pending": true
     },
     {
       "id": "lst-2026-10-15-technique-without-a-coach",
@@ -367,7 +371,9 @@
         "exp": "exp-1016-hook_style",
         "variant": "b",
         "value": "split"
-      }
+      },
+      "app_audio": "Echo Sax End - Caleb Arredondo (add in the Instagram app)",
+      "sound_pending": true
     },
     {
       "id": "lst-2026-10-21-about-to-level-up",
@@ -390,7 +396,9 @@
         "exp": "exp-1016-hook_style",
         "variant": "b",
         "value": "split"
-      }
+      },
+      "app_audio": "id:534294096071090 Memory Reboot - VØJ, Narvent (add in the Instagram app)",
+      "sound_pending": true
     },
     {
       "id": "saenchai-A",
@@ -470,7 +478,9 @@
         "variant": "a",
         "value": "native"
       },
-      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)"
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)",
+      "app_audio": "id:607478755762707|783202424324531 INSONAMIA - Ronald Figo (add in the Instagram app)",
+      "sound_pending": true
     },
     {
       "id": "lst-2026-10-23-rounds-nobody-sees",
@@ -493,7 +503,9 @@
         "variant": "b",
         "value": "split"
       },
-      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)"
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)",
+      "app_audio": "Echo Sax End - Caleb Arredondo (add in the Instagram app)",
+      "sound_pending": true
     },
     {
       "id": "lst-2026-10-24-nerves-without-faking",
@@ -516,7 +528,9 @@
         "variant": "a",
         "value": "native"
       },
-      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)"
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)",
+      "app_audio": "id:534294096071090 Memory Reboot - VØJ, Narvent (add in the Instagram app)",
+      "sound_pending": true
     },
     {
       "id": "lst-2026-10-25-light-sparring",
@@ -539,7 +553,9 @@
         "variant": "b",
         "value": "split"
       },
-      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)"
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)",
+      "app_audio": "id:607478755762707|783202424324531 INSONAMIA - Ronald Figo (add in the Instagram app)",
+      "sound_pending": true
     },
     {
       "id": "lst-2026-10-26-fit-without-running",
@@ -562,7 +578,9 @@
         "variant": "a",
         "value": "native"
       },
-      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)"
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)",
+      "app_audio": "id:534294096071090 Memory Reboot - VØJ, Narvent (add in the Instagram app)",
+      "sound_pending": true
     },
     {
       "id": "lst-2026-10-27-quit-before-good",
@@ -585,7 +603,9 @@
         "variant": "b",
         "value": "split"
       },
-      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)"
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)",
+      "app_audio": "id:607478755762707|783202424324531 INSONAMIA - Ronald Figo (add in the Instagram app)",
+      "sound_pending": true
     },
     {
       "id": "lst-2026-10-28-quiet-threat",
@@ -608,7 +628,9 @@
         "variant": "a",
         "value": "native"
       },
-      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)"
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)",
+      "app_audio": "id:534294096071090 Memory Reboot - VØJ, Narvent (add in the Instagram app)",
+      "sound_pending": true
     },
     {
       "id": "lst-2026-10-22-fight-trained-founder",
@@ -631,7 +653,9 @@
         "variant": "b",
         "value": "split"
       },
-      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)"
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)",
+      "app_audio": "Echo Sax End - Caleb Arredondo (add in the Instagram app)",
+      "sound_pending": true
     },
     {
       "id": "lst-2026-10-23-gym-teaches-business",
@@ -654,7 +678,9 @@
         "variant": "a",
         "value": "native"
       },
-      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)"
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)",
+      "app_audio": "id:607478755762707|783202424324531 INSONAMIA - Ronald Figo (add in the Instagram app)",
+      "sound_pending": true
     },
     {
       "id": "lst-2026-10-24-training-too-long",
@@ -677,7 +703,9 @@
         "variant": "b",
         "value": "split"
       },
-      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)"
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)",
+      "app_audio": "Echo Sax End - Caleb Arredondo (add in the Instagram app)",
+      "sound_pending": true
     },
     {
       "id": "lst-2026-10-25-coach-sees",
@@ -700,7 +728,9 @@
         "variant": "a",
         "value": "native"
       },
-      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)"
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)",
+      "app_audio": "Echo Sax End - Caleb Arredondo (add in the Instagram app)",
+      "sound_pending": true
     },
     {
       "id": "lst-2026-10-26-partner-everyone-wants",
@@ -723,7 +753,9 @@
         "variant": "b",
         "value": "split"
       },
-      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)"
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)",
+      "app_audio": "Echo Sax End - Caleb Arredondo (add in the Instagram app)",
+      "sound_pending": true
     },
     {
       "id": "lst-2026-10-27-beginner-habits-hurt",
@@ -746,7 +778,9 @@
         "variant": "a",
         "value": "native"
       },
-      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)"
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)",
+      "app_audio": "Echo Sax End - Caleb Arredondo (add in the Instagram app)",
+      "sound_pending": true
     },
     {
       "id": "lst-2026-10-28-fighting-pressure",
@@ -769,7 +803,9 @@
         "variant": "b",
         "value": "split"
       },
-      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)"
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)",
+      "app_audio": "Echo Sax End - Caleb Arredondo (add in the Instagram app)",
+      "sound_pending": true
     },
     {
       "id": "lst-2026-10-18-round-three",
@@ -792,7 +828,9 @@
         "variant": "a",
         "value": "native"
       },
-      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)"
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)",
+      "app_audio": "Echo Sax End - Caleb Arredondo (add in the Instagram app)",
+      "sound_pending": true
     },
     {
       "id": "lst-2026-10-19-first-body-shot",
@@ -815,7 +853,9 @@
         "variant": "b",
         "value": "split"
       },
-      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)"
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)",
+      "app_audio": "id:607478755762707|783202424324531 INSONAMIA - Ronald Figo (add in the Instagram app)",
+      "sound_pending": true
     },
     {
       "id": "lst-2026-10-20-nerves-never-leave",
@@ -838,7 +878,9 @@
         "variant": "a",
         "value": "native"
       },
-      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)"
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)",
+      "app_audio": "Echo Sax End - Caleb Arredondo (add in the Instagram app)",
+      "sound_pending": true
     },
     {
       "id": "lst-2026-10-21-day-one-full-gear",
@@ -862,7 +904,9 @@
         "variant": "b",
         "value": "split"
       },
-      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)"
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)",
+      "app_audio": "id:607478755762707|783202424324531 INSONAMIA - Ronald Figo (add in the Instagram app)",
+      "sound_pending": true
     },
     {
       "id": "lst-2026-10-22-fighter-groceries",
@@ -885,7 +929,9 @@
         "variant": "a",
         "value": "native"
       },
-      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)"
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)",
+      "app_audio": "Echo Sax End - Caleb Arredondo (add in the Instagram app)",
+      "sound_pending": true
     },
     {
       "id": "lst-2026-10-23-recovery-twice-a-day",
@@ -908,7 +954,9 @@
         "variant": "b",
         "value": "split"
       },
-      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)"
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)",
+      "app_audio": "id:534294096071090 Memory Reboot - VØJ, Narvent (add in the Instagram app)",
+      "sound_pending": true
     },
     {
       "id": "lst-2026-10-24-morning-session-fuel",
@@ -931,7 +979,9 @@
         "variant": "a",
         "value": "native"
       },
-      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)"
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)",
+      "app_audio": "Echo Sax End - Caleb Arredondo (add in the Instagram app)",
+      "sound_pending": true
     }
   ]
 }

@@ -56,6 +56,10 @@ artist's own original-sound upload @caleb.arredondo, id 530317382955170) and the
 `audio` changes the sound; `none` = royalty-free music in the file. Unproven: trial reel + attached audio in one call
 is undocumented by Meta; if it is refused the item fails with Meta's message and nothing posts (then re-render with `none`).
 
+Every listicle carries a sound (Matteo 2026-10-20). Already-rendered ones: set `app_audio` + `sound_pending` in the
+queue, run the factory with `sounds_only` (same clip, baked music removed, approvals kept); the Post queue skips
+`sound_pending` items until that run uploads the new file.
+
 ## Audio + posting (since 2026-10-15)
 The API can't attach Instagram library sounds, so trial reels carry royalty-free music in the file and the
 **Post queue posts them automatically** (after Matteo's one weekly yes via approve.py). Trending sounds are used

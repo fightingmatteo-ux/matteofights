@@ -39,6 +39,7 @@ def main():
     # attaches it; a sound it can't find exactly is marked audio_status "manual" and Matteo posts that one in the app.
     due = [i for i in q["items"] if i.get("approved") is True and i.get("status") == "queued"
            and i.get("audio_status") != "manual"
+           and not i.get("sound_pending")  # still has baked-in music: wait for the factory's --sounds-only re-render
            and dt.datetime.fromisoformat(i["not_before"].replace("Z", "+00:00")) <= now()]
     item = None
     for cand in sorted(due, key=lambda i: i["not_before"]):

@@ -33,6 +33,10 @@ on:
         description: With rerender, let the footage agent re-pick every clip from the whole folder
         type: boolean
         default: false
+      sounds_only:
+        description: Re-render queued listicles that carry a sound (approved too) without the baked music
+        type: boolean
+        default: false
       audio:
         description: "Instagram sound attached at post time ('Title - Artist'); 'none' = royalty-free music in the file"
         default: "Echo Sax End - Caleb Arredondo; id:607478755762707|783202424324531 INSONAMIA - Ronald Figo; Echo Sax End - Caleb Arredondo; id:534294096071090 Memory Reboot - VØJ, Narvent"
@@ -67,6 +71,7 @@ jobs:
           SLOT: ${{ github.event.schedule == '40 9 * * 0' && '21:30' || github.event.schedule == '20 10 * * 0' && '12:30' || inputs.slot || '18:30' }}
           RERENDER: ${{ inputs.rerender && '--rerender' || '' }}
           REMATCH: ${{ inputs.rematch && '--rematch' || '' }}
+          SOUNDS_ONLY: ${{ inputs.sounds_only && '--sounds-only' || '' }}
           SHEETS: ${{ (inputs.sheets || github.event.schedule == '0 7 * * 6') && '--sheets-only' || '' }}
           ONLY: ${{ inputs.only || '' }}
           # Matteo 2026-10-20: listicles do better on the sounds that carried his best ones (production/sounds/own_proven.json).
@@ -75,7 +80,7 @@ jobs:
           # the fan upload 783202424324531 is used until it is), Memory Reboot as a pinned fan upload.
           AUDIO: ${{ inputs.audio == 'none' && '' || inputs.audio || 'Echo Sax End - Caleb Arredondo; id:607478755762707|783202424324531 INSONAMIA - Ronald Figo; Echo Sax End - Caleb Arredondo; id:534294096071090 Memory Reboot - VØJ, Narvent' }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}   # footage agent; without it: least-used clips
-        run: python3 -P tools/listicle/factory.py --count "$COUNT" --slot "$SLOT" --only "$ONLY" --audio "$AUDIO" $RERENDER $REMATCH $SHEETS
+        run: python3 -P tools/listicle/factory.py --count "$COUNT" --slot "$SLOT" --only "$ONLY" --audio "$AUDIO" $RERENDER $REMATCH $SOUNDS_ONLY $SHEETS
       - name: Commit
         if: always()
         run: |

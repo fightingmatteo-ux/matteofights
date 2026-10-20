@@ -246,6 +246,8 @@ def main():
                         "without music and the Post queue attaches the sound through the Audio API (audio.py); if the "
                         "API's library lacks it, Matteo adds it in the app. Default '' = royalty-free music in the file")
     p.add_argument("--only", default="", help="with --rerender: comma-separated queue ids to rebuild")
+    p.add_argument("--sounds-only", action="store_true",
+                   help="re-render queued listicles that carry app_audio (approved too) on the same clip, music removed")
     p.add_argument("--rerender", action="store_true",
                    help="re-render the queued, not-yet-approved listicles in place (same hook and day)")
     p.add_argument("--rematch", action="store_true",
@@ -258,8 +260,8 @@ def main():
         return load_catalog(list_clips())
     if a.sheets_only:
         return make_sheets(list_clips())
-    if a.rerender:
-        return rerender(a.seconds, {x.strip() for x in a.only.split(',') if x.strip()}, a.rematch)
+    if a.rerender or a.sounds_only:
+        return rerender(a.seconds, {x.strip() for x in a.only.split(',') if x.strip()}, a.rematch, a.sounds_only)
 
     hooks, state, queue = load(HOOKS, None), load(STATE, {"clip_uses": {}, "last_clip": None, "music_i": 0}), load(QUEUE, None)
     # --audio "A - X; B - Y": rotate through the sounds, one per reel (Matteo 2026-10-20: proven sounds, not only one)
@@ -324,11 +326,15 @@ def main():
         print(f"{qid}: {h['hook']} | clip {clip['Name']} | posts {slot.astimezone(TZ):%a %d %b %H:%M} New York once approved", flush=True)
 
 
-def rerender(seconds, only=(), rematch=False):
-    """Rebuild queued, unapproved lst-* items. The agent reviews each; a failed review (or --rematch) re-picks the clip."""
+def rerender(seconds, only=(), rematch=False, sounds_only=False):
+    """Rebuild queued, unapproved lst-* items. The agent reviews each; a failed review (or --rematch) re-picks the clip.
+    sounds_only: rebuild every queued lst-* item that has app_audio (approved or not) on its SAME clip without the
+    baked-in music, so the Post queue attaches the Instagram sound (Matteo 2026-10-20: a sound on every listicle).
+    Approval is kept: the picture is unchanged and the sound is what Matteo asked for."""
     hooks, queue, state = load(HOOKS, None), load(QUEUE, None), load(STATE, {"clip_uses": {}})
     by_q = {h.get("queue_id"): h for h in hooks["hooks"]}
-    items = [i for i in queue["items"] if i["id"].startswith("lst-") and not i.get("approved") and i["status"] == "queued"
+    items = [i for i in queue["items"] if i["id"].startswith("lst-") and i["status"] == "queued"
+             and (i.get("app_audio") if sounds_only else not i.get("approved"))
              and (not only or i["id"] in only)]
     clips = list_clips()
     by_id = {c["ID"]: c for c in clips}
@@ -339,7 +345,7 @@ def rerender(seconds, only=(), rematch=False):
         cur = by_id.get(cur_id) or {"ID": cur_id, "Name": item["clip"].split(" (")[0]}
         folder = ROOT / Path(item["caption_file"]).parent
         avoid = nearby_clips(queue, item["not_before"][:10], skip_id=item["id"]) | {cur_id}
-        if cat is None:  # no agent: plain re-render, keep any manual rotate
+        if cat is None or sounds_only:  # no agent / sound swap only: plain re-render on the same clip, keep any rotate
             rot = item.get("rotate") or cat_rotate(manual_catalog(), cur_id)
             render(fetch(cur_id, cur["Name"]), h["id"], WORK / item["video_asset"], seconds, folder / "cover.jpg",
                    None if item.get("app_audio") else n, rot)
@@ -357,10 +363,11 @@ def rerender(seconds, only=(), rematch=False):
         if rv:
             item["review"] = rv
         h["clip"] = item["clip"]
-        save(QUEUE, queue); save(HOOKS, hooks)
         run("gh", "release", "upload", "media", str(WORK / item["video_asset"]), "--clobber", "-R", REPO)
         run("rclone", "copyto", str(WORK / item["video_asset"]), f"gdrive:listicles/{item['video_asset']}",
             "--drive-root-folder-id", OUT_FOLDER)
+        item.pop("sound_pending", None)  # the music-free render is on the release: the Post queue may take it now
+        save(QUEUE, queue); save(HOOKS, hooks)
         print(f"{item['id']}: re-rendered on {clip['Name']}", flush=True)
 
 
