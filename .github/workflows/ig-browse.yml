@@ -1,0 +1,28 @@
+# List a creator's recent Instagram videos (Business Discovery, read-only) to pick footage for Fetch video.
+#   gh workflow run ig-browse.yml -f user=yokkao -f grep=saenchai
+name: IG browse
+
+on:
+  workflow_dispatch:
+    inputs:
+      user:
+        description: Instagram username (creator/business accounts only)
+        required: true
+      grep:
+        description: Only captions containing this word (optional)
+        default: ""
+
+permissions:
+  contents: read
+
+jobs:
+  browse:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - env:
+          FB_USER_TOKEN: ${{ secrets.FB_USER_TOKEN }}
+          IG_USER: ${{ inputs.user }}
+          GREP: ${{ inputs.grep }}
+        run: python3 -P tools/video/ig_browse.py "$IG_USER" --grep "$GREP" --pages 4
