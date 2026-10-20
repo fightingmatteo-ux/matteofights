@@ -57,7 +57,11 @@ after the account's latest post. It writes `status`, `media_id` and `permalink` 
 - A failed item gets `status: failed` + `error`; fix it and set it back to `queued`.
 - Double-post guard: a post from the last 24 h starting with the same caption line counts as already posted.
 
-## Audio API: Instagram library sounds without the app (added 2026-10-19)
+## Audio API: Instagram library sounds without the app (added 2026-10-19, live since 2026-10-20)
+**Sound scout** (`sound_scout.py`, Action **Sound scout**, Mondays 06:40 UTC): reads the sound of every Instagram
+outlier + `production/sounds/watch.json` (yt-dlp raw pages: `music_asset_info` / `original_sound_info`), ranks them
+by the views they carried and resolves each to an `audio_id` the API can attach -> `production/sounds/proven.json`.
+
 `audio.py` attaches a sound from Instagram's library (e.g. Echo Sax End) when the reel is created, so `app_audio`
 listicles no longer need posting by hand. Meta only offers this through **Facebook Login** (graph.facebook.com), not the
 Instagram Login token above, so it runs on `FB_USER_TOKEN` and leaves `IG_ACCESS_TOKEN` / `ig.py` untouched.

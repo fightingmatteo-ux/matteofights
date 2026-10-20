@@ -29,8 +29,9 @@ Log: `media/2026-10-16-saenchai-bigger-men/renders/render_bc.log` (ends with `AL
 | Item | Status | Next step |
 |---|---|---|
 | Editorial look (kaixerb reference, 10-20) | OK | Approved by Matteo (v5). Saved as the default: `production/reels/_TEMPLATE/editorial/`. Next talking-head reel uses it. Leave headroom above your head when filming |
+| No-filming slate (10-20) | **MATTEO** | `production/competitors/no-filming-2026-10-20.md`. #1 freeze C editorial is rendered (sent in chat): your yes to post it as a trial reel |
 | You-be-the-judge reel | **MATTEO** | Film `production/reels/2026-10-20-you-be-the-judge/` (needs the first-fight KO clip from Drive) |
-| Audio API (`tools/instagram/audio.py`, added 10-19) | **MATTEO** | Add `instagram_basic` + `instagram_content_publish` to FB_USER_TOKEN (README 'Audio API'), update the secret, run the **Audio** workflow `check`, then `search "echo sax end"`. Until then app_audio items are skipped, not lost |
+| Audio API (`tools/instagram/audio.py`) | OK (checked 10-20) | FB_USER_TOKEN has instagram_basic + instagram_content_publish: library sounds can be attached. Sound scout (`sound-scout.yml`, Mondays) -> `production/sounds/proven.json`: niche outliers run on original audio, no cleared track yet |
 | Cloudflare ticker (`tools/ticker`) | Likely not deployed, so posts run on late GitHub cron | MATTEO creates a fine-grained PAT (Actions read/write), then `wrangler deploy` + Worker secret `GH_TOKEN` |
 | TikTok | WAIT | App review |
 | Meta oEmbed | WAIT | Not approved; `ig_discovery` scans tracked competitors instead |
