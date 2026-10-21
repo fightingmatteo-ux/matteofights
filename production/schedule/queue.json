@@ -1261,6 +1261,57 @@
       },
       "app_audio": "id:530317382955170 Echo Sax End - Caleb Arredondo (add in the Instagram app)",
       "approved_note": "Matteo: approved the week via dashboard (2026-10-20T14:29:35Z)"
+    },
+    {
+      "id": "saenchai-v3-A",
+      "reel": "2026-10-16-saenchai-bigger-men",
+      "variant": "v3-A",
+      "video_asset": "saenchai-bigger-men-A.mp4",
+      "caption_file": "production/reels/2026-10-16-saenchai-bigger-men/caption-A.txt",
+      "hook": "Saenchai fought bigger men his whole career",
+      "format": "talking head",
+      "strategy": "MANUAL",
+      "thumb_offset_ms": 300,
+      "not_before": "2026-10-23T19:30:00Z",
+      "min_gap_hours": 2.5,
+      "approved": false,
+      "status": "queued",
+      "crosspost_to": [],
+      "slot_note": "15:30 NY talking-head slot. Old-style (v3 'film study') cut of the same hook, tested against the editorial cut posted 3 days earlier"
+    },
+    {
+      "id": "saenchai-v3-B",
+      "reel": "2026-10-16-saenchai-bigger-men",
+      "variant": "v3-B",
+      "video_asset": "saenchai-bigger-men-B.mp4",
+      "caption_file": "production/reels/2026-10-16-saenchai-bigger-men/caption-B.txt",
+      "hook": "Always sparring someone bigger? Steal this from Saenchai",
+      "format": "talking head",
+      "strategy": "MANUAL",
+      "thumb_offset_ms": 300,
+      "not_before": "2026-10-24T19:30:00Z",
+      "min_gap_hours": 2.5,
+      "approved": false,
+      "status": "queued",
+      "crosspost_to": [],
+      "slot_note": "15:30 NY talking-head slot. Old-style (v3 'film study') cut of the same hook, tested against the editorial cut posted 3 days earlier"
+    },
+    {
+      "id": "saenchai-v3-C",
+      "reel": "2026-10-16-saenchai-bigger-men",
+      "variant": "v3-C",
+      "video_asset": "saenchai-bigger-men-C.mp4",
+      "caption_file": "production/reels/2026-10-16-saenchai-bigger-men/caption-C.txt",
+      "hook": "Bigger guys win the trade. Saenchai never traded",
+      "format": "talking head",
+      "strategy": "MANUAL",
+      "thumb_offset_ms": 300,
+      "not_before": "2026-10-25T19:30:00Z",
+      "min_gap_hours": 2.5,
+      "approved": false,
+      "status": "queued",
+      "crosspost_to": [],
+      "slot_note": "15:30 NY talking-head slot. Old-style (v3 'film study') cut of the same hook, tested against the editorial cut posted 3 days earlier"
     }
   ]
 }

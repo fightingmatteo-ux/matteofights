@@ -1,6 +1,6 @@
 # STATUS: open items, one place
 
-_Updated 2026-10-19 08:30 UTC. Every session: read this after CLAUDE.md, update it when you close or add an item._
+_Updated 2026-10-21 05:40 UTC. Every session: read this after CLAUDE.md, update it when you close or add an item._
 
 Legend: **DO** = needs action now, **MATTEO** = only Matteo can do it, **WAIT** = blocked on someone else, **OK** = done, kept for one cycle.
 
@@ -37,6 +37,7 @@ Log: `media/2026-10-16-saenchai-bigger-men/renders/render_bc.log` (ends with `AL
 | You-be-the-judge reel | **MATTEO** | Film `production/reels/2026-10-20-you-be-the-judge/` (needs the first-fight KO clip from Drive) |
 | Audio API (`tools/instagram/audio.py`) | OK (checked 10-20) | FB_USER_TOKEN has instagram_basic + instagram_content_publish: library sounds can be attached. Sound scout (`sound-scout.yml`, Mondays) -> `production/sounds/proven.json`: niche outliers run on original audio, no cleared track yet |
 | Phase 1 cloud (D1, R2, Modal, ticker) | Built 2026-10-20. Files are still the truth; every state workflow mirrors to D1 (`state_mirror.py sync`). Ticker reads D1 and starts Post queue when an item is due | **2026-10-23 or later:** if the "Mirror state to D1" steps were clean for 3 days, set `"state_backend": "d1"` in `tools/cloud/cloud.json` and the post-queue cron to `0 */3 * * *` (the cutover; revert = set both back). Plan: docs/superpowers/plans/2026-10-18-phase1-foundation.md |
+| Saenchai old-style (v3 film-study) A/B/C | **MATTEO** | Queued 10-21 as `saenchai-v3-A/B/C` at 15:30 NY on 23/24/25 Oct (19:30Z), same hooks and captions as the editorial cut, so each hook runs in both edit styles 3 days apart (editorial A posted 10-20, B 10-21, C 10-22). Files checked: `saenchai-bigger-men-A/B/C.mp4` on the `media` release are the v3 cut (tape + RESETS counter), 42.1/41.0/40.6 s. No cross-posts (the editorial cut covers YT/Threads/FB). `approved:false` until Matteo's yes |
 | Saenchai A/B/C | OK | Moved to the 15:30 NY talking-head slot: A 20 Oct, B 21 Oct, C 22 Oct (19:30 UTC). Posts whatever file is on the `media` release as saenchai-bigger-men-A/B/C.mp4 at that time |
 | 5 posts a day (10-20) | **MATTEO** | 11 extra listicles (09:00 slot 21-27 Oct + 12:30 slot 25-28 Oct) rendering, need his yes. 15:30 talking-head slot: empty day = skipped (Matteo 10-20) |
 | TikTok | WAIT | App review |
