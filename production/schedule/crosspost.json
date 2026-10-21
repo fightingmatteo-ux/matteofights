@@ -10,7 +10,7 @@
         "16:00",
         "19:30"
       ],
-      "last_slot": "2026-10-21T20:00:00Z"
+      "last_slot": "2026-10-21T23:30:00Z"
     },
     "youtube": {
       "enabled": true,
@@ -393,6 +393,13 @@
         "privacy": "public"
       }
     },
-    "lst-2026-10-20-go-anyway": {}
+    "lst-2026-10-20-go-anyway": {
+      "facebook": {
+        "status": "posted",
+        "at": "2026-10-21T23:36:19Z",
+        "id": "1773940297206633",
+        "url": "https://www.facebook.com/reel/1773940297206633"
+      }
+    }
   }
 }
