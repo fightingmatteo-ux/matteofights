@@ -916,7 +916,7 @@
       "not_before": "2026-10-21T16:30:00Z",
       "min_gap_hours": 2.5,
       "approved": true,
-      "status": "queued",
+      "status": "posted",
       "test": {
         "exp": "exp-1016-hook_style",
         "variant": "b",
@@ -924,7 +924,14 @@
       },
       "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)",
       "app_audio": "id:530317382955170 Echo Sax End - Caleb Arredondo (add in the Instagram app)",
-      "rotate": 90
+      "rotate": 90,
+      "audio_id": "530317382955170",
+      "audio_title": "Echo Sax End (Take 2)",
+      "audio_artist": "caleb.arredondo",
+      "posting_since": "2026-10-21T16:30:54Z",
+      "media_id": "18413195857091439",
+      "permalink": "https://www.instagram.com/reel/Dew15dnH7MT/",
+      "posted_at": "2026-10-21T16:31:41Z"
     },
     {
       "id": "lst-2026-10-22-fighter-groceries",
