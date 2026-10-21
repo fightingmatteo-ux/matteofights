@@ -216,14 +216,21 @@
       "not_before": "2026-10-21T22:30:00Z",
       "min_gap_hours": 2.5,
       "approved": true,
-      "status": "queued",
+      "status": "posted",
       "approved_note": "Matteo: approved the week via dashboard (2026-10-15T20:19:25Z)",
       "test": {
         "exp": "exp-1016-hook_style",
         "variant": "a",
         "value": "native"
       },
-      "app_audio": "id:576492425503806 Echo Sax Endless - Caleb Arredondo (add in the Instagram app)"
+      "app_audio": "id:576492425503806 Echo Sax Endless - Caleb Arredondo (add in the Instagram app)",
+      "audio_id": "576492425503806",
+      "audio_title": "Echo Sax Endless",
+      "audio_artist": "caleb.arredondo",
+      "posting_since": "2026-10-21T22:30:56Z",
+      "media_id": "18426809170159139",
+      "permalink": "https://www.instagram.com/reel/DexfGakDfVJ/",
+      "posted_at": "2026-10-21T22:31:44Z"
     },
     {
       "id": "lst-2026-10-15-technique-without-a-coach",
