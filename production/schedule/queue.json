@@ -1274,10 +1274,11 @@
       "thumb_offset_ms": 300,
       "not_before": "2026-10-23T19:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "crosspost_to": [],
-      "slot_note": "15:30 NY talking-head slot. Old-style (v3 'film study') cut of the same hook, tested against the editorial cut posted 3 days earlier"
+      "slot_note": "15:30 NY talking-head slot. Old-style (v3 'film study') cut of the same hook, tested against the editorial cut posted 3 days earlier",
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-21T05:50:13Z)"
     },
     {
       "id": "saenchai-v3-B",
@@ -1291,10 +1292,11 @@
       "thumb_offset_ms": 300,
       "not_before": "2026-10-24T19:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "crosspost_to": [],
-      "slot_note": "15:30 NY talking-head slot. Old-style (v3 'film study') cut of the same hook, tested against the editorial cut posted 3 days earlier"
+      "slot_note": "15:30 NY talking-head slot. Old-style (v3 'film study') cut of the same hook, tested against the editorial cut posted 3 days earlier",
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-21T05:50:13Z)"
     },
     {
       "id": "saenchai-v3-C",
@@ -1308,10 +1310,11 @@
       "thumb_offset_ms": 300,
       "not_before": "2026-10-25T19:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "crosspost_to": [],
-      "slot_note": "15:30 NY talking-head slot. Old-style (v3 'film study') cut of the same hook, tested against the editorial cut posted 3 days earlier"
+      "slot_note": "15:30 NY talking-head slot. Old-style (v3 'film study') cut of the same hook, tested against the editorial cut posted 3 days earlier",
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-21T05:50:13Z)"
     }
   ]
 }
