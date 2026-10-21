@@ -254,9 +254,12 @@
       "text": "Started combat sports late?\n\nHow old were you when you walked into your first gym?\n\nCurious how many of you are out there.",
       "chain": [],
       "from": "started-late",
-      "status": "queued",
+      "status": "posted",
       "approved": true,
-      "approved_note": "Matteo: approved via dashboard (2026-10-15T18:18:31Z)"
+      "approved_note": "Matteo: approved via dashboard (2026-10-15T18:18:31Z)",
+      "posted_at": "2026-10-21T16:32:59Z",
+      "thread_id": "18100925747630241",
+      "url": "https://www.threads.com/@matteofights/post/Dew2GqOlTdO"
     },
     {
       "id": "th-1021-3",
