@@ -370,14 +370,21 @@
       "not_before": "2026-10-21T01:30:00Z",
       "min_gap_hours": 2.5,
       "approved": true,
-      "status": "queued",
+      "status": "posted",
       "approved_note": "Matteo: approved the week via dashboard (2026-10-15T20:19:25Z)",
       "test": {
         "exp": "exp-1016-hook_style",
         "variant": "b",
         "value": "split"
       },
-      "app_audio": "id:496614019576474 Echo Sax Feeling Blue - Caleb Arredondo (add in the Instagram app)"
+      "app_audio": "id:496614019576474 Echo Sax Feeling Blue - Caleb Arredondo (add in the Instagram app)",
+      "audio_id": "496614019576474",
+      "audio_title": "Caleb Arredondo - Echo Sax Feeling Blue",
+      "audio_artist": "sovenhq",
+      "posting_since": "2026-10-21T01:30:54Z",
+      "media_id": "18603509794071360",
+      "permalink": "https://www.instagram.com/reel/DevO_Nikr6o/",
+      "posted_at": "2026-10-21T01:32:21Z"
     },
     {
       "id": "lst-2026-10-21-about-to-level-up",
