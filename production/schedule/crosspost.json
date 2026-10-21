@@ -35,7 +35,7 @@
         "21:00"
       ],
       "topic": "Fight Psychology",
-      "last_slot": "2026-10-20T19:30:00Z"
+      "last_slot": "2026-10-21T01:00:00Z"
     },
     "facebook_slides": {
       "enabled": true,
@@ -328,7 +328,14 @@
         "at": "2026-10-20T23:36:24Z",
         "id": "1127207633178582",
         "url": "https://www.facebook.com/reel/1127207633178582"
+      },
+      "threads": {
+        "status": "posted",
+        "at": "2026-10-21T01:06:31Z",
+        "id": "18099870458430983",
+        "url": "https://www.threads.com/@matteofights/post/DevMBzqD1Z-"
       }
-    }
+    },
+    "lst-2026-10-20-nerves-never-leave": {}
   }
 }
