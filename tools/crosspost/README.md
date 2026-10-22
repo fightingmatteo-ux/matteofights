@@ -10,6 +10,14 @@ slot, oldest first, with a caption shaped for that platform (`captions.py`). On 
   `production/threads/posts.json`. They only post after Matteo approves the week (Telegram "✅ Approve Threads posts",
   or `approve_threads` / `approve_week` on the dashboard API). Never the same text twice (Threads flags repeats).
 
+**Facebook since 2026-10-22** (Matteo's yes after Facebook views fell from ~100 to ~0 a reel): `platforms.facebook.winners`
+is on, so Facebook only gets the daily pick. The Listicle factory's daily `--fb-pick` run (20:10 UTC) takes the best Instagram
+reel aged 72 h to 7 days that isn't on Facebook yet and did at least `min_vs_median` x the account median views (Buzzfy
+`metrics.json`, else the API numbers; ties by shares + saves per 1k; follows per reel aren't available), renders its
+Facebook version (`render.offsite`: the list as cards on screen, royalty-free music, ~25 s) as `<asset>-fb.mp4`, and marks
+the queue item (`fb_pick`, `video_asset_fb`). No reel clears the bar = no Facebook reel that day. YouTube and Threads
+take a listicle's music copy (`video_asset_music`, rendered by the factory) when its Instagram sound is attached in the app.
+
 Results: `production/schedule/crosspost.json` (per reel and platform) and Telegram ("📤 Facebook Reels: …").
 Everything also lands in the dashboard's data (`crosspost`, `threads_posts` in data.json).
 
@@ -18,7 +26,7 @@ Everything also lands in the dashboard's data (`crosspost`, `threads_posts` in d
 | Platform | Volume | Slots (NY) | Shape |
 |---|---|---|---|
 | Instagram | 2 listicle trial reels/day (8 s loops) | 18:30, 21:30 | unchanged |
-| Facebook | 2 reels + 1 slide album/day | reels 12:30, 19:30; album 09:00 | 1-3 line hook, list, question, ≤3 hashtags, no IG CTAs |
+| Facebook | 1 reel/day, only the best Instagram reel at 72 h (since 2026-10-22); slide albums paused | 19:30 | Facebook version: list on screen, music in the file, no READ DESCRIPTION; caption 1-3 line hook, list, question, ≤3 hashtags |
 | YouTube | 2 Shorts/day; long-form 1/week later (needs Matteo) | 12:30, 19:00 | keyword title "… 🥊 #shorts", list in description, 3 hashtags |
 | Threads | 2 reels + 3 written posts/day | reels 10:00, 15:30; text 07:30, 12:30, 17:30 | hook first, no hashtags, one topic tag ("Fight Psychology") |
 | TikTok | 1 video + 1 photo carousel/day (after app review) | ~12:30, 19:30 | drafts to the inbox; Matteo adds a trending sound in-app |

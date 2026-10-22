@@ -11,6 +11,7 @@ on:
     - cron: "40 9 * * 0"   # Sunday: next week's 21:30 New York slot
     - cron: "20 10 * * 0"  # Sunday: next week's 12:30 New York slot (3 a day since 2026-10-16)
     - cron: "0 11 * * 0"   # Sunday: next week's 09:00 New York slot (4 listicles a day since 2026-10-20; 15:30 is the talking-head slot)
+    - cron: "10 20 * * *"  # daily: today's Facebook reel (best Instagram reel at 72 h) + its Facebook version, before the 19:30 NY slot
   workflow_dispatch:
     inputs:
       count:
@@ -36,6 +37,14 @@ on:
         default: false
       sounds_only:
         description: Re-render queued listicles that carry a sound (approved too) without the baked music
+        type: boolean
+        default: false
+      music_copies:
+        description: Render missing music copies (YouTube/Threads) of listicles whose sound is attached in the app
+        type: boolean
+        default: false
+      fb_pick:
+        description: Pick today's Facebook reel from the Instagram numbers and render its Facebook version
         type: boolean
         default: false
       audio:
@@ -76,6 +85,8 @@ jobs:
           REMATCH: ${{ inputs.rematch && '--rematch' || '' }}
           SOUNDS_ONLY: ${{ inputs.sounds_only && '--sounds-only' || '' }}
           SHEETS: ${{ (inputs.sheets || github.event.schedule == '0 7 * * 6') && '--sheets-only' || '' }}
+          MUSIC_COPIES: ${{ inputs.music_copies && '--music-copies' || '' }}
+          FB_PICK: ${{ (inputs.fb_pick || github.event.schedule == '10 20 * * *') && '--fb-pick' || '' }}
           ONLY: ${{ inputs.only || '' }}
           # Matteo 2026-10-20: every listicle gets the original Echo Sax End (5 of his top 15 incl. the 331k) or a sound like it.
           # Rotated one per reel, all pinned: Echo Sax End (Caleb Arredondo's own upload) every other reel, his Echo Sax
@@ -84,7 +95,7 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}   # footage agent; without it: least-used clips
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}         # renders also go to R2, where posting looks first
           R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
-        run: python3 -P tools/listicle/factory.py --count "$COUNT" --slot "$SLOT" --only "$ONLY" --audio "$AUDIO" $RERENDER $REMATCH $SOUNDS_ONLY $SHEETS
+        run: python3 -P tools/listicle/factory.py --count "$COUNT" --slot "$SLOT" --only "$ONLY" --audio "$AUDIO" $RERENDER $REMATCH $SOUNDS_ONLY $SHEETS $MUSIC_COPIES $FB_PICK
       - name: Commit
         if: always()
         run: |
@@ -92,7 +103,7 @@ jobs:
           git diff --cached --quiet && exit 0
           git config user.name "listicle-factory[bot]"
           git config user.email "listicle-factory@users.noreply.github.com"
-          git commit -qm "listicles: ${{ (inputs.sheets || github.event.schedule == '0 7 * * 6') && 'clip sheets; ' || '' }}${{ inputs.rerender && 're-rendered ' || '' }}$(python3 -c "import json;q=json.load(open('production/schedule/queue.json'));print(', '.join(i['id'] for i in q['items'] if i['id'].startswith('lst-') and not i['approved'] and i['status']=='queued'))") awaiting yes"
+          git commit -qm "listicles: ${{ (inputs.fb_pick || github.event.schedule == '10 20 * * *') && 'facebook pick; ' || '' }}${{ inputs.music_copies && 'music copies; ' || '' }}${{ (inputs.sheets || github.event.schedule == '0 7 * * 6') && 'clip sheets; ' || '' }}${{ inputs.rerender && 're-rendered ' || '' }}$(python3 -c "import json;q=json.load(open('production/schedule/queue.json'));print(', '.join(i['id'] for i in q['items'] if i['id'].startswith('lst-') and not i['approved'] and i['status']=='queued'))") awaiting yes"
           for n in 1 2 3; do git pull --rebase -q && git push -q && break; sleep 5; done
       - name: Telegram (anything new for Matteo)
         if: always()

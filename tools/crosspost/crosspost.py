@@ -11,8 +11,13 @@ State: production/schedule/crosspost.json
   platforms.<name>.enabled  only Matteo turns a platform on (his yes to posting there)
   platforms.<name>.since    only reels posted on Instagram at/after this time are cross-posted (no surprise backfill)
   platforms.youtube.privacy "private" until Google's API audit passes (unaudited apps can only upload private)
+  platforms.facebook.winners  only reels the daily Facebook pick chose (queue item fb_pick, set by
+                            tools/listicle/factory.py --fb-pick from the Instagram numbers at 72 h) go to Facebook,
+                            as their Facebook version (video_asset_fb: list on screen, music in the file)
   posts.<queue id>.<name>   {status: posted|failed, id, url, at, error, tries}
-The same video file and caption as Instagram (production/schedule/queue.json -> media release + caption_file).
+The same video file and caption as Instagram (production/schedule/queue.json -> media release + caption_file), except:
+a listicle whose Instagram sound is attached in the app has a silent-ish file, so YouTube and Threads take its music
+copy (video_asset_music) and Facebook its Facebook version (video_asset_fb).
 Secrets (env, or secrets/crosspost.env locally): YT_CLIENT_ID, YT_CLIENT_SECRET, YT_REFRESH_TOKEN,
 FB_PAGE_TOKEN, THREADS_ACCESS_TOKEN, THREADS_USER_ID (+ THREADS_APP_SECRET locally, only to make a token long-lived), GH_TOKEN.
 """
@@ -99,6 +104,11 @@ def release_url(asset):
     raise RuntimeError("GitHub did not return a download link")
 
 
+def offsite_asset(item):
+    """The file for other platforms: the music copy when the Instagram file relies on an in-app sound."""
+    return item.get("video_asset_music") or item["video_asset"]
+
+
 def download(asset):
     with urllib.request.urlopen(signed_url(asset), timeout=300) as r:
         return r.read()
@@ -148,7 +158,7 @@ def post_youtube(item, cfg):
                         "description": shorten(captions.youtube_description(cap, hook), 4900), "categoryId": "17",
                         "tags": ["fighter", "mma", "boxing", "muay thai", "fight mindset"]},
             "status": {"privacyStatus": cfg.get("privacy", "private"), "selfDeclaredMadeForKids": False}}
-    video = download(item["video_asset"])
+    video = download(offsite_asset(item))
     tok = yt_access()
     _, h, _ = http("POST", "https://www.googleapis.com/upload/youtube/v3/videos?uploadType=resumable&part=snippet,status",
                    raw=json.dumps(meta).encode(),
@@ -235,7 +245,7 @@ def th_publish(params, wait=False):
 
 def post_threads(item, cfg):
     text = captions.threads(caption(item), item.get("hook", ""))
-    pid, url = th_publish({"media_type": "VIDEO", "video_url": signed_url(item["video_asset"]), "text": text,
+    pid, url = th_publish({"media_type": "VIDEO", "video_url": signed_url(offsite_asset(item)), "text": text,
                            "topic_tag": cfg.get("topic", captions.TOPIC)}, wait=True)
     return {"id": pid, "url": url}
 
@@ -289,7 +299,7 @@ def post_facebook(item, cfg):
     _, _, s = http("POST", f"{FB}/{page}/video_reels", {"upload_phase": "start", "access_token": tok})
     vid = s["video_id"]
     http("POST", f"https://rupload.facebook.com/video-upload/v21.0/{vid}", raw=b"",
-         headers={"Authorization": f"OAuth {tok}", "file_url": signed_url(item["video_asset"])})
+         headers={"Authorization": f"OAuth {tok}", "file_url": signed_url(item.get("video_asset_fb") or offsite_asset(item))})
     http("POST", f"{FB}/{page}/video_reels", {"upload_phase": "finish", "video_id": vid, "video_state": "PUBLISHED",
                                               "description": shorten(captions.facebook(caption(item), item.get("hook", "")), 2000),
                                               "access_token": tok})
@@ -418,15 +428,19 @@ def run_platform(name, cfg, state, items, done, dry):
     t_now = dt.datetime.now(dt.timezone.utc)
     since = max(cfg.get("since") or now(), iso(t_now - dt.timedelta(days=LOOKBACK_DAYS)))
     last = parse_iso(cfg["last_slot"]) + dt.timedelta(minutes=1) if cfg.get("last_slot") else None
-    for it in sorted(items, key=lambda x: x.get("posted_at", "")):
-        if it.get("status") != "posted" or (it.get("posted_at") or "") < since or not it.get("video_asset"):
+    winners = bool(cfg.get("winners"))  # Facebook: only the daily pick, timed from when it was picked
+    ref = (lambda x: (x.get("fb_pick") or {}).get("at") or "") if winners else (lambda x: x.get("posted_at") or "")
+    for it in sorted(items, key=ref):
+        if it.get("status") != "posted" or ref(it) < since or not it.get("video_asset"):
+            continue
+        if winners and ((it.get("posted_at") or "") < cfg.get("since", "") or not it.get("video_asset_fb")):
             continue
         rec = state["posts"].setdefault(it["id"], {}).get(name, {})
         if rec.get("status") in ("posted", "skipped") or rec.get("tries", 0) >= MAX_TRIES:
             continue
         if "crosspost_to" in it and name not in it["crosspost_to"]:
             continue  # hook variants of one video: each goes to its own platform, never the same clip twice
-        after = parse_iso(it["posted_at"]) + dt.timedelta(minutes=cfg.get("min_delay_min", 0))
+        after = parse_iso(ref(it)) + dt.timedelta(minutes=cfg.get("min_delay_min", 0))
         after = max(after, last) if last else after
         slot = next_slot(after, cfg["slots"]) if cfg.get("slots") else after
         if slot > t_now:

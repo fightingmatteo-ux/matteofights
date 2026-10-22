@@ -1,6 +1,6 @@
 # STATUS: open items, one place
 
-_Updated 2026-10-21 05:40 UTC. Every session: read this after CLAUDE.md, update it when you close or add an item._
+_Updated 2026-10-22 14:30 UTC. Every session: read this after CLAUDE.md, update it when you close or add an item._
 
 Legend: **DO** = needs action now, **MATTEO** = only Matteo can do it, **WAIT** = blocked on someone else, **OK** = done, kept for one cycle.
 
@@ -40,6 +40,7 @@ Log: `media/2026-10-16-saenchai-bigger-men/renders/render_bc.log` (ends with `AL
 | Saenchai old-style (v3 film-study) A/B/C | **MATTEO** | Queued 10-21 as `saenchai-v3-A/B/C` at 15:30 NY on 23/24/25 Oct (19:30Z), same hooks and captions as the editorial cut, so each hook runs in both edit styles 3 days apart (editorial A posted 10-20, B 10-21, C 10-22). Files checked: `saenchai-bigger-men-A/B/C.mp4` on the `media` release are the v3 cut (tape + RESETS counter), 42.1/41.0/40.6 s. No cross-posts (the editorial cut covers YT/Threads/FB). `approved:false` until Matteo's yes |
 | Saenchai A/B/C | OK | Moved to the 15:30 NY talking-head slot: A 20 Oct, B 21 Oct, C 22 Oct (19:30 UTC). Posts whatever file is on the `media` release as saenchai-bigger-men-A/B/C.mp4 at that time |
 | 5 posts a day (10-20) | **MATTEO** | 11 extra listicles (09:00 slot 21-27 Oct + 12:30 slot 25-28 Oct) rendering, need his yes. 15:30 talking-head slot: empty day = skipped (Matteo 10-20) |
+| Facebook reels (10-22) | **DO (verify)** | Views fell ~100 -> ~0 a reel. Matteo's yes: 1 FB reel/day, only the best IG reel at 72 h (>= median views), as its Facebook version (list on screen + music, `<asset>-fb.mp4`), 19:30 NY; slide albums paused; YT/Threads get music copies (`<asset>-music.mp4`). Daily pick = Listicle factory 20:10 UTC. Check in a week: FB views per reel vs the old ~20. Matteo to check Page quality / recommendation eligibility in Professional dashboard. Doc: tools/crosspost/README.md |
 | TikTok | WAIT | App review |
 | Meta oEmbed | WAIT | Not approved; `ig_discovery` scans tracked competitors instead |
 | IG token | Expires 2026-12-13 | `ig.py refresh` before then |

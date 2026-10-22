@@ -9,6 +9,14 @@ on to the next-best clip (up to MAX_TRIES). Without ANTHROPIC_API_KEY it falls b
 video to the "media" release, copy it to Drive output/listicles/ for Matteo to watch, write the caption + cover
 under production/listicles/<id>/, and add a queue item with approved=false on the next free daily slot.
 Nothing posts until the item is approved (tools/instagram/approve.py) after Matteo's explicit yes.
+
+Copies for the other platforms (Matteo 2026-10-22, after Facebook views fell to ~0):
+  music copy     a listicle whose Instagram sound is attached in the app also gets <asset>-music.mp4, the same reel
+                 with royalty-free music in the file, for YouTube and Threads (video_asset_music).
+  --fb-pick      once a day: the best Instagram reel at 72 h (views vs the account median, then shares + saves)
+                 that clears platforms.facebook.winners in crosspost.json becomes the day's Facebook reel (fb_pick);
+                 a listicle gets its Facebook version first (render.offsite: list on screen, music, no READ
+                 DESCRIPTION) as <asset>-fb.mp4 (video_asset_fb). The Cross-post workflow posts it in the Facebook slot.
 Needs: rclone remote "gdrive" (secret RCLONE_CONF), gh CLI (GH_TOKEN), ffmpeg, Pillow.
 """
 import argparse, datetime as dt, json, os, subprocess, sys
@@ -16,7 +24,7 @@ from zoneinfo import ZoneInfo
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from render import render, candidate_windows  # noqa: E402
+from render import render, candidate_windows, offsite  # noqa: E402
 import footage_agent as agent  # noqa: E402
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "style"))
 from lab import assign as lab_assign  # noqa: E402
@@ -25,6 +33,8 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import state as store  # noqa: E402  (live state: the reel queue)
 import r2  # noqa: E402
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "crosspost"))
+import captions  # noqa: E402
 HOOKS = ROOT / "production" / "listicles" / "hooks.json"
 STATE = ROOT / "production" / "listicles" / "state.json"
 CLIPS_FOLDER = "1EkBaa-a9m1lX5KQZnmNXQNj-E8E8hCKk"   # Matteo's raw training clips (top level only)
@@ -59,6 +69,30 @@ def save_queue(queue):
 def run(*cmd):
     print("+", " ".join(cmd), flush=True)
     subprocess.run(cmd, check=True, cwd=ROOT)
+
+
+def ship(path, drive=False):
+    """A finished render to the media release and R2 (+ Drive output/listicles/ for Matteo to watch)."""
+    run("gh", "release", "upload", "media", str(path), "--clobber", "-R", REPO)
+    r2.upload_render(path)  # posting prefers R2: never leave an older copy there
+    if drive:
+        run("rclone", "copyto", str(path), f"gdrive:listicles/{path.name}", "--drive-root-folder-id", OUT_FOLDER)
+
+
+def clip_of(item):
+    """(clip dict, rotate) of a queued/posted listicle, from its "Name (ID)" clip field."""
+    cid = item["clip"].rsplit("(", 1)[1].rstrip(")")
+    return {"ID": cid, "Name": item["clip"].split(" (")[0]}, item.get("rotate", 0)  # rotate is stored when not 0
+
+
+def music_copy(item, hook_id, music_i):
+    """<asset>-music.mp4: the same reel with royalty-free music in the file, for YouTube and Threads (the Instagram
+    file has no music when its sound is attached in the app)."""
+    clip, rot = clip_of(item)
+    out = WORK / item["video_asset"].replace(".mp4", "-music.mp4")
+    render(fetch(clip["ID"], clip["Name"]), hook_id, out, 8.0, None, music_i, rot)
+    ship(out)
+    item["video_asset_music"] = out.name
 
 
 def list_clips():
@@ -264,6 +298,10 @@ def main():
                    help="re-render the queued, not-yet-approved listicles in place (same hook and day)")
     p.add_argument("--rematch", action="store_true",
                    help="with --rerender: let the footage agent pick the clip again from the whole folder")
+    p.add_argument("--music-copies", action="store_true",
+                   help="render the missing music copies (YouTube/Threads) of queued and recent listicles with app_audio")
+    p.add_argument("--fb-pick", action="store_true",
+                   help="pick today's Facebook reel from the Instagram numbers at 72 h and render its Facebook version")
     p.add_argument("--catalog-only", action="store_true", help="just describe new Drive clips (needs API key)")
     p.add_argument("--sheets-only", action="store_true", help="just make contact sheets for new Drive clips")
     a = p.parse_args()
@@ -272,6 +310,10 @@ def main():
         return load_catalog(list_clips())
     if a.sheets_only:
         return make_sheets(list_clips())
+    if a.music_copies:
+        return music_copies()
+    if a.fb_pick:
+        return fb_pick()
     if a.rerender or a.sounds_only:
         return rerender(a.seconds, {x.strip() for x in a.only.split(',') if x.strip()}, a.rematch, a.sounds_only)
 
@@ -328,6 +370,8 @@ def main():
             **({"review": rv} if rv else {}),
             **({"test": test[2]} if test else {}),
             **({"app_audio": f"{sound} (add in the Instagram app)"} if sound else {})})
+        if sound:
+            music_copy(queue["items"][-1], h["id"], state["music_i"])
         h.update(status="rendered", clip=f"{clip['Name']} ({clip['ID']})", queue_id=qid,
                  rendered_at=dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%MZ"))
         uses[clip["ID"]] = uses.get(clip["ID"], 0) + 1
@@ -380,9 +424,89 @@ def rerender(seconds, only=(), rematch=False, sounds_only=False):
         r2.upload_render(WORK / item["video_asset"])  # a re-render must replace the R2 copy too
         run("rclone", "copyto", str(WORK / item["video_asset"]), f"gdrive:listicles/{item['video_asset']}",
             "--drive-root-folder-id", OUT_FOLDER)
+        if item.get("app_audio"):
+            music_copy(item, h["id"], n)
         item.pop("sound_pending", None)  # the music-free render is on the release: the Post queue may take it now
         save_queue(queue); save(HOOKS, hooks)
         print(f"{item['id']}: re-rendered on {clip['Name']}", flush=True)
+
+
+def music_copies():
+    """Backfill: music copies for listicles that rely on an in-app sound, still queued or posted in the last 3 days
+    (older ones are past the cross-post lookback)."""
+    hooks, queue = load(HOOKS, None), load_queue()
+    by_q = {h.get("queue_id"): h for h in hooks["hooks"]}
+    recent = (dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=3)).strftime("%Y-%m-%dT%H:%M:%SZ")
+    todo = [i for i in queue["items"] if i["id"].startswith("lst-") and i.get("app_audio") and not i.get("video_asset_music")
+            and i["id"] in by_q and (i.get("status") == "queued" or (i.get("posted_at") or "") >= recent)]
+    for n, item in enumerate(todo):
+        music_copy(item, by_q[item["id"]]["id"], n)
+        save_queue(queue)  # after each one: a crash keeps the finished ones
+        print(f"{item['id']}: music copy {item['video_asset_music']}", flush=True)
+
+
+METRICS = ROOT / "production" / "control" / "metrics.json"      # Buzzfy numbers per media id (+ account median)
+PLATFORMS = ROOT / "production" / "control" / "platforms.json"  # Instagram API numbers per queue id (stats.py)
+
+
+def ig_numbers(item, metrics, platforms):
+    """(views, shares + saves) on Instagram: Buzzfy's numbers when it has the reel, else the API's."""
+    m = (metrics.get("reels") or {}).get(item.get("media_id") or "") or {}
+    if m.get("views") is None:
+        m = ((platforms.get("posts") or {}).get(item["id"]) or {}).get("instagram") or {}
+    return m.get("views"), (m.get("shares") or 0) + (m.get("saves") or 0)
+
+
+def fb_pick():
+    """Today's Facebook reel: the best Instagram reel aged min_age_hours..max_age_days that isn't on Facebook yet and
+    did at least min_vs_median x the account's median views. At most one pick per day; none when nothing clears the
+    bar (a dud costs the Page reach). Matteo 2026-10-22: Facebook gets 1 reel a day, only Instagram winners."""
+    cfg = (store.get("crosspost", "platforms") or {}).get("facebook") or {}
+    rule = cfg.get("winners")
+    if not cfg.get("enabled") or not rule:
+        sys.exit("Facebook is off or not in winners mode (crosspost.json platforms.facebook.winners)")
+    hooks, queue = load(HOOKS, None), load_queue()
+    by_q = {h.get("queue_id"): h for h in hooks["hooks"]}
+    xposted = store.get("crosspost", "posts") or {}
+    metrics, platforms = load(METRICS, {}), load(PLATFORMS, {})
+    median = metrics.get("median_views") or 0
+    now = dt.datetime.now(dt.timezone.utc)
+    iso = lambda t: t.strftime("%Y-%m-%dT%H:%M:%SZ")  # noqa: E731
+    if any((i.get("fb_pick") or {}).get("at", "") >= iso(now - dt.timedelta(hours=20)) for i in queue["items"]):
+        return print("fb-pick: already picked in the last 20 h")
+    young, old = iso(now - dt.timedelta(hours=rule.get("min_age_hours", 72))), iso(now - dt.timedelta(days=rule.get("max_age_days", 7)))
+    cands = []
+    for i in queue["items"]:
+        if (i.get("status") != "posted" or not (old <= (i.get("posted_at") or "") <= young) or i.get("fb_pick")
+                or (i.get("posted_at") or "") < cfg.get("since", "") or ("crosspost_to" in i and "facebook" not in i["crosspost_to"])
+                or (xposted.get(i["id"]) or {}).get("facebook", {}).get("status") == "posted"):
+            continue
+        views, ss = ig_numbers(i, metrics, platforms)
+        if views:
+            cands.append((views, ss * 1000 / views, i))
+    cands.sort(key=lambda c: (c[0], c[1]), reverse=True)
+    for views, ss_k, i in cands[:5]:
+        print(f"  {i['id']}: {views} views ({views / median:.2f}x median), {ss_k:.1f} shares+saves /1k" if median else f"  {i['id']}: {views}")
+    if not cands or (median and cands[0][0] < rule.get("min_vs_median", 1.0) * median):
+        return print(f"fb-pick: nothing clears {rule.get('min_vs_median', 1.0)}x the {median} median views: no Facebook reel today")
+    views, ss_k, item = cands[0]
+    if item["id"].startswith("lst-"):
+        h = by_q[item["id"]]
+        cap = (ROOT / item["caption_file"]).read_text(encoding="utf-8")
+        content = captions.slides(cap, item.get("hook", ""))
+        if not content:
+            sys.exit(f"{item['id']}: caption has no list, can't make its Facebook version")
+        clip, rot = clip_of(item)
+        out = WORK / item["video_asset"].replace(".mp4", "-fb.mp4")
+        offsite(fetch(clip["ID"], clip["Name"]), h["id"], out, content[1], content[2], now.timetuple().tm_yday, rot)
+        ship(out, drive=True)
+        item["video_asset_fb"] = out.name
+    else:  # talking head / own audio: its own file is already the Facebook version
+        item["video_asset_fb"] = item["video_asset"]
+    item["fb_pick"] = {"at": iso(now), "ig_views": views, "vs_median": round(views / median, 2) if median else None,
+                       "shares_saves_per_1k": round(ss_k, 1)}
+    save_queue(queue)
+    print(f"fb-pick: {item['id']} ({views} Instagram views) -> {item['video_asset_fb']}", flush=True)
 
 
 if __name__ == "__main__":

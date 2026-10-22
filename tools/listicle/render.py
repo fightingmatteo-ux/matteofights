@@ -54,6 +54,7 @@ RED, WHITE, BLACK = (227, 27, 35), (255, 255, 255), (8, 8, 10)
 # Instagram's grid crop keeps y 285-1635; the UI covers the bottom ~320 px. Text stays inside both.
 TOP, BOTTOM, TEXT_W, PAD = 300, 1600, 940, 40
 LOOP_X = 0.5      # seconds of end -> start crossfade
+LAYOUT = {}       # where the last render() put the hook plate: {"top", "bottom"} (offsite() fits the cards around it)
 ZOOM = 0.045      # peak push-in (4.5%), mid-reel
 
 
@@ -293,8 +294,9 @@ def cta_layer(base=1440):
 TURN = {0: "", 90: "transpose=1,", -90: "transpose=2,", 180: "hflip,vflip,"}
 
 
-def render(clip, hook_id, out, seconds=8.0, cover=None, music_i=0, rotate=0):
-    """rotate: extra clockwise turn for phone clips saved sideways without rotation metadata (90, -90, 180)."""
+def render(clip, hook_id, out, seconds=8.0, cover=None, music_i=0, rotate=0, cta=True):
+    """rotate: extra clockwise turn for phone clips saved sideways without rotation metadata (90, -90, 180).
+    cta=False: no READ DESCRIPTION pill (offsite() puts the list on screen instead)."""
     hooks = {h["id"]: h for h in json.loads(HOOKS.read_text(encoding="utf-8"))["hooks"]}
     h = hooks[hook_id]
     dur = float(ff(["-show_entries", "format=duration", "-of", "csv=p=0", str(clip)]) or 0)
@@ -333,7 +335,8 @@ def render(clip, hook_id, out, seconds=8.0, cover=None, music_i=0, rotate=0):
         top = place_plate(row_motion, bottom - TOP)
         hook_layer(h["hook"], top, style)[0].save(hp)
         print(f"hook style {style}", flush=True)
-        if h.get("format") == "iykyk":  # one-line caption: nothing to send people to
+        LAYOUT.update(top=top, bottom=top + bottom - TOP)
+        if h.get("format") == "iykyk" or not cta:  # one-line caption / list on screen: nothing to send people to
             Image.new("RGBA", (W, H), (0, 0, 0, 0)).save(cp)
         else:
             cta_layer(1300 if top == TOP else top - 60).save(cp)  # low plate: pill sits just above it
@@ -381,6 +384,78 @@ def render(clip, hook_id, out, seconds=8.0, cover=None, music_i=0, rotate=0):
     if cover:  # frame 0.5 s = the cover Instagram uses (thumb_offset 500)
         subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", "0.5", "-i", str(out), "-frames:v", "1",
                         "-vf", "scale=540:-2", "-q:v", "4", str(cover)], check=True)
+    return out
+
+
+# ---------------------------------------------------------------- offsite version (Facebook)
+CARD_BASE, CARD_PER_CHAR, CARD_MAX = 1.2, 0.045, 3.2  # seconds on screen per list card: reading time, capped
+HOOK_ALONE = 1.8                                      # the hook plate on its own before the first card
+
+
+def card_layer(text, tag, zone):
+    """One list item (or the closing question) on a black plate, centred in `zone` (y0, y1), with a red
+    "3 / 7" tag above it so viewers see how many are left. tag=None: the question, white on red."""
+    img = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    d = ImageDraw.Draw(img)
+    f, lines = fit(d, text.upper(), 3, 96, TEXT_W - 140)
+    c = cap_h(f)
+    step, px, py = round(c * 1.45), 36, round(c * 0.5)
+    tf = ImageFont.truetype(str(BEBAS), 64)
+    tc = cap_h(tf)
+    tag_h = (tc + 36 + 18) if tag else 0
+    box_h = (len(lines) - 1) * step + c + 2 * py
+    y0 = (zone[0] + zone[1] - box_h - tag_h) / 2
+    if tag:
+        tw = d.textlength(tag, font=tf)
+        d.rounded_rectangle([(W - tw) / 2 - 24, y0, (W + tw) / 2 + 24, y0 + tc + 36], 14, fill=RED)
+        d.text((W / 2, y0 + 18 + tc), tag, font=tf, fill=WHITE, anchor="ms")
+        y0 += tag_h
+    bw = max(d.textlength(l, font=f) for l in lines) + 2 * px
+    d.rounded_rectangle([(W - bw) / 2, y0, (W + bw) / 2, y0 + box_h], 20, fill=BLACK if tag else RED)
+    for i, l in enumerate(lines):
+        d.text((W / 2, y0 + py + c + i * step), l, font=f, fill=WHITE, anchor="ms")
+    return img
+
+
+def offsite(clip, hook_id, out, items, question, music_i=0, rotate=0, seconds=8.0):
+    """The Facebook version of a listicle: same clip, hook plate and loop as the Instagram reel, but no READ
+    DESCRIPTION (Facebook viewers don't open captions): the list plays on screen one item at a time, then the
+    question, over the looping clip, with royalty-free music in the file (Instagram's library sound only exists
+    on Instagram). Length = reading time of the cards, about 22-25 s for 7 items."""
+    with tempfile.TemporaryDirectory() as tmp:
+        bg = Path(tmp, "bg.mp4")
+        render(clip, hook_id, bg, seconds, None, None, rotate, cta=False)
+        top, bottom = LAYOUT["top"], LAYOUT["bottom"]
+        zone = (bottom + 90, BOTTOM) if top == TOP else (TOP, top - 60)  # the half the hook plate leaves free
+        cards, t = [], HOOK_ALONE
+        texts = [(x, f"{k + 1} / {len(items)}") for k, x in enumerate(items)] + [(question, None)]
+        for k, (text, tag) in enumerate(texts):
+            dur = min(CARD_MAX, CARD_BASE + CARD_PER_CHAR * len(text))
+            png = Path(tmp, f"card{k}.png")
+            card_layer(text, tag, zone).save(png)
+            cards.append((png, t, t + dur))
+            t += dur
+        T = t + 0.3
+        track = MUSIC[music_i % len(MUSIC)]
+        m0 = music_start(track, T)
+        print(f"offsite: {len(items)} cards, {T:.1f}s, music {track.name} from {m0:.2f}s", flush=True)
+        cmd = ["ffmpeg", "-v", "error", "-y", "-stream_loop", "-1", "-i", str(bg)]
+        for png, _, _ in cards:
+            cmd += ["-loop", "1", "-framerate", str(FPS), "-t", f"{T:.3f}", "-i", str(png)]
+        cmd += ["-ss", f"{m0:.3f}", "-i", str(track)]
+        fc, last = [f"[0:v]trim=duration={T:.3f},setpts=PTS-STARTPTS[v0]"], "v0"
+        for k, (_, a, b) in enumerate(cards, 1):
+            fc.append(f"[{k}:v]format=rgba,fade=t=in:st={a:.2f}:d=0.2:alpha=1,fade=t=out:st={b - 0.2:.2f}:d=0.2:alpha=1[c{k}]")
+            fc.append(f"[{last}][c{k}]overlay=0:0:enable='between(t,{a:.2f},{b:.2f})'[v{k}]")
+            last = f"v{k}"
+        fc.append(f"[{last}]format=yuv420p[v]")
+        fc.append(f"[{len(cards) + 1}:a]atrim=0:{T:.3f},asetpts=PTS-STARTPTS,afade=t=in:d=0.03,"
+                  f"afade=t=out:st={max(0, T - 1.0):.3f}:d=1.0,loudnorm=I=-15:LRA=9:TP=-1.5,aresample=48000[au]")
+        cmd += ["-filter_complex", ";".join(fc), "-map", "[v]", "-map", "[au]", "-t", f"{T:.3f}", "-r", str(FPS),
+                "-color_primaries", "bt709", "-color_trc", "bt709", "-colorspace", "bt709", "-color_range", "tv",
+                "-c:v", "libx264", "-preset", "slow", "-crf", "18", "-profile:v", "high", "-g", str(FPS),
+                "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", str(out)]
+        subprocess.run(cmd, check=True)
     return out
 
 
