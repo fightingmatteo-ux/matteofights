@@ -988,7 +988,7 @@
       "not_before": "2026-10-22T16:30:00Z",
       "min_gap_hours": 2.5,
       "approved": true,
-      "status": "queued",
+      "status": "posted",
       "test": {
         "exp": "exp-1016-hook_style",
         "variant": "a",
@@ -996,7 +996,14 @@
       },
       "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)",
       "app_audio": "id:496614019576474 Echo Sax Feeling Blue - Caleb Arredondo (add in the Instagram app)",
-      "video_asset_music": "lst-2026-10-22-fighter-groceries-music.mp4"
+      "video_asset_music": "lst-2026-10-22-fighter-groceries-music.mp4",
+      "audio_id": "496614019576474",
+      "audio_title": "Caleb Arredondo - Echo Sax Feeling Blue",
+      "audio_artist": "sovenhq",
+      "posting_since": "2026-10-22T16:30:55Z",
+      "media_id": "18131948600499044",
+      "permalink": "https://www.instagram.com/reel/Dezasm8kgMv/",
+      "posted_at": "2026-10-22T16:31:45Z"
     },
     {
       "id": "lst-2026-10-23-recovery-twice-a-day",
