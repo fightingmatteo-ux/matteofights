@@ -299,9 +299,12 @@
       "text": "Which one is you?\n\n1. Training feels harder, not easier\n2. The guys who used to beat you are struggling now\n3. Sparring feels slower than it used to\n\nDrop the number.",
       "chain": [],
       "from": "about-to-level-up",
-      "status": "queued",
+      "status": "posted",
       "approved": true,
-      "approved_note": "Matteo: approved via dashboard (2026-10-15T18:18:31Z)"
+      "approved_note": "Matteo: approved via dashboard (2026-10-15T18:18:31Z)",
+      "posted_at": "2026-10-22T16:41:03Z",
+      "thread_id": "17918300100464331",
+      "url": "https://www.threads.com/@matteofights/post/Dezb0zhlAFO"
     },
     {
       "id": "th-1022-3",
