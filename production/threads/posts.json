@@ -314,9 +314,12 @@
       "text": "Started late? Ask more questions than anyone in the gym.\n\nOne question a session to the best person there.\n\nMost will help. Nobody's ever annoyed by someone who wants to learn.",
       "chain": [],
       "from": "started-late",
-      "status": "queued",
+      "status": "posted",
       "approved": true,
-      "approved_note": "Matteo: approved via dashboard (2026-10-15T18:18:31Z)"
+      "approved_note": "Matteo: approved via dashboard (2026-10-15T18:18:31Z)",
+      "posted_at": "2026-10-22T21:36:02Z",
+      "thread_id": "18104869901266042",
+      "url": "https://www.threads.com/@matteofights/post/Dez9lIHEu_R"
     },
     {
       "id": "th-1023-1",
