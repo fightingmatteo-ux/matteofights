@@ -1,11 +1,11 @@
 {
-  "updated": "2026-10-21T23:27:37Z",
+  "updated": "2026-10-22T05:03:21Z",
   "platforms": {
     "instagram": {
       "followers": 2042,
-      "last_post": "2026-10-21T22:31:44Z",
+      "last_post": "2026-10-22T01:31:54Z",
       "failed": [],
-      "next_slot": "2026-10-22T01:30:00Z",
+      "next_slot": "2026-10-22T13:00:00Z",
       "plan_per_day": 3,
       "plan_mix": "3 trial reels",
       "posted_7d": 21,
@@ -15,26 +15,26 @@
     "facebook": {
       "followers": 1294,
       "enabled": true,
-      "last_post": "2026-10-21T20:06:23Z",
+      "last_post": "2026-10-21T23:36:19Z",
       "failed": [],
       "errors": [],
-      "next_slot": "2026-10-21T23:30:00Z",
+      "next_slot": "2026-10-22T16:30:00Z",
       "plan_per_day": 4,
       "plan_mix": "3 reels + 1 slide album",
-      "posted_7d": 20,
+      "posted_7d": 21,
       "token_expires": null,
       "warn": null
     },
     "threads": {
       "followers": 41,
       "enabled": true,
-      "last_post": "2026-10-21T19:32:45Z",
+      "last_post": "2026-10-22T01:05:23Z",
       "failed": [],
       "errors": [],
-      "next_slot": "2026-10-22T01:00:00Z",
+      "next_slot": "2026-10-22T14:00:00Z",
       "plan_per_day": 6,
       "plan_mix": "3 reels + 3 written posts",
-      "posted_7d": 32,
+      "posted_7d": 33,
       "token_expires": "2026-12-14",
       "warn": null
     },
@@ -75,11 +75,11 @@
     },
     "freeze-C": {
       "instagram": {
-        "views": 4270,
+        "views": 4273,
         "likes": 92,
         "comments": 0,
         "shares": 9,
-        "saves": 49,
+        "saves": 50,
         "url": "https://www.instagram.com/reel/DefsPO_ih7V/"
       }
     },
@@ -237,7 +237,7 @@
     },
     "lst-2026-10-18-calm-without-experience": {
       "instagram": {
-        "views": 3310,
+        "views": 3312,
         "likes": 45,
         "comments": 0,
         "shares": 5,
@@ -285,7 +285,7 @@
     },
     "lst-2026-10-18-round-three": {
       "instagram": {
-        "views": 5931,
+        "views": 5934,
         "likes": 78,
         "comments": 0,
         "shares": 5,
@@ -329,8 +329,8 @@
     },
     "lst-2026-10-19-made-for-combat-sports": {
       "instagram": {
-        "views": 4747,
-        "likes": 63,
+        "views": 4765,
+        "likes": 64,
         "comments": 0,
         "shares": 0,
         "saves": 5,
@@ -351,7 +351,7 @@
     },
     "lst-2026-10-19-power-without-weights": {
       "instagram": {
-        "views": 5064,
+        "views": 5093,
         "likes": 67,
         "comments": 1,
         "shares": 10,
@@ -373,7 +373,7 @@
     },
     "lst-2026-10-20-dangerous-without-a-partner": {
       "instagram": {
-        "views": 3312,
+        "views": 3315,
         "likes": 53,
         "comments": 4,
         "shares": 3,
@@ -385,7 +385,7 @@
         "url": "https://www.facebook.com/reel/28827941603535737"
       },
       "threads": {
-        "views": 137,
+        "views": 148,
         "likes": 3,
         "replies": 0,
         "reposts": 0,
@@ -395,12 +395,24 @@
     },
     "lst-2026-10-20-go-anyway": {
       "instagram": {
-        "views": 1197,
+        "views": 1199,
         "likes": 19,
         "comments": 0,
         "shares": 1,
         "saves": 1,
         "url": "https://www.instagram.com/reel/DevO_Nikr6o/"
+      },
+      "facebook": {
+        "views": 0,
+        "url": "https://www.facebook.com/reel/1773940297206633"
+      },
+      "threads": {
+        "views": 11,
+        "likes": 0,
+        "replies": 0,
+        "reposts": 0,
+        "shares": 0,
+        "url": "https://www.threads.com/@matteofights/post/Dexwscij0nt"
       }
     },
     "lst-2026-10-20-nerves-never-leave": {
@@ -413,11 +425,11 @@
         "url": "https://www.instagram.com/reel/DeuX-FsDXOP/"
       },
       "facebook": {
-        "views": 0,
+        "views": 4,
         "url": "https://www.facebook.com/reel/1660392892284770"
       },
       "threads": {
-        "views": 14,
+        "views": 15,
         "likes": 0,
         "replies": 0,
         "reposts": 0,
@@ -425,20 +437,30 @@
         "url": "https://www.threads.com/@matteofights/post/DewlT4oj8j-"
       }
     },
+    "lst-2026-10-21-about-to-level-up": {
+      "instagram": {
+        "views": 2845,
+        "likes": 39,
+        "comments": 0,
+        "shares": 3,
+        "saves": 6,
+        "url": "https://www.instagram.com/reel/DexzuAhDjYP/"
+      }
+    },
     "lst-2026-10-21-day-one-full-gear": {
       "instagram": {
-        "views": 2542,
-        "likes": 38,
+        "views": 2571,
+        "likes": 39,
         "comments": 0,
         "shares": 1,
-        "saves": 2,
+        "saves": 3,
         "url": "https://www.instagram.com/reel/Dew15dnH7MT/"
       }
     },
     "lst-2026-10-21-same-shot": {
       "instagram": {
-        "views": 2161,
-        "likes": 33,
+        "views": 2172,
+        "likes": 35,
         "comments": 2,
         "shares": 1,
         "saves": 1,
@@ -447,17 +469,17 @@
     },
     "lst-2026-10-21-started-late": {
       "instagram": {
-        "views": 960,
-        "likes": 10,
+        "views": 2437,
+        "likes": 24,
         "comments": 0,
-        "shares": 0,
-        "saves": 1,
+        "shares": 2,
+        "saves": 6,
         "url": "https://www.instagram.com/reel/DexfGakDfVJ/"
       }
     },
     "saenchai-A": {
       "instagram": {
-        "views": 2021,
+        "views": 2025,
         "likes": 67,
         "comments": 0,
         "shares": 7,
@@ -467,16 +489,26 @@
     },
     "saenchai-B": {
       "instagram": {
-        "views": 2015,
-        "likes": 59,
+        "views": 2125,
+        "likes": 60,
         "comments": 0,
         "shares": 3,
-        "saves": 18,
+        "saves": 21,
         "url": "https://www.instagram.com/reel/DexKfNuDZUl/"
       }
     }
   },
   "inbox": [
+    {
+      "platform": "threads",
+      "id": "18063396077528947",
+      "who": "mrleebojakes",
+      "text": "Restarted at 45",
+      "at": "2026-10-22T02:57:33+0000",
+      "on": "Started combat sports late?",
+      "url": "https://www.threads.com/@mrleebojakes/post/Dex9mKyEb4g",
+      "answered": false
+    },
     {
       "platform": "threads",
       "id": "18079719032726166",
@@ -610,7 +642,7 @@
       "url": "https://www.threads.com/@matteofights/post/Deu0ACBAZ4l"
     },
     "th-1021-1": {
-      "views": 183,
+      "views": 186,
       "likes": 2,
       "replies": 0,
       "reposts": 0,
@@ -618,15 +650,15 @@
       "url": "https://www.threads.com/@matteofights/post/DewUHv9FLr_"
     },
     "th-1021-2": {
-      "views": 121,
+      "views": 149,
       "likes": 1,
-      "replies": 0,
+      "replies": 1,
       "reposts": 0,
       "shares": 0,
       "url": "https://www.threads.com/@matteofights/post/Dew2GqOlTdO"
     },
     "th-1021-3": {
-      "views": 54,
+      "views": 59,
       "likes": 0,
       "replies": 0,
       "reposts": 0,
