@@ -344,9 +344,12 @@
       "text": "Cardio, hands or head: which one goes first for you in round three?\n\nPick one. Then say what you do when it goes.",
       "chain": [],
       "from": "craft",
-      "status": "queued",
+      "status": "posted",
       "approved": true,
-      "approved_note": "Matteo: approved via dashboard (2026-10-18T15:34:38Z)"
+      "approved_note": "Matteo: approved via dashboard (2026-10-18T15:34:38Z)",
+      "posted_at": "2026-10-23T16:32:41Z",
+      "thread_id": "18135756361671839",
+      "url": "https://www.threads.com/@matteofights/post/De1_qcnGqKS"
     },
     {
       "id": "th-1023-3",
