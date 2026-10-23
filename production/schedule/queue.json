@@ -697,7 +697,7 @@
       "not_before": "2026-10-23T01:30:00Z",
       "min_gap_hours": 2.5,
       "approved": true,
-      "status": "queued",
+      "status": "posted",
       "test": {
         "exp": "exp-1016-hook_style",
         "variant": "b",
@@ -705,7 +705,14 @@
       },
       "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)",
       "app_audio": "id:576492425503806 Echo Sax Endless - Caleb Arredondo (add in the Instagram app)",
-      "video_asset_music": "lst-2026-10-22-fight-trained-founder-music.mp4"
+      "video_asset_music": "lst-2026-10-22-fight-trained-founder-music.mp4",
+      "audio_id": "576492425503806",
+      "audio_title": "Echo Sax Endless",
+      "audio_artist": "caleb.arredondo",
+      "posting_since": "2026-10-23T01:30:53Z",
+      "media_id": "18414402283089109",
+      "permalink": "https://www.instagram.com/reel/De0YfNNjQhb/",
+      "posted_at": "2026-10-23T01:31:40Z"
     },
     {
       "id": "lst-2026-10-23-gym-teaches-business",
