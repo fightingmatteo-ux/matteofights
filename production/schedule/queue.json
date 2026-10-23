@@ -547,7 +547,7 @@
       "not_before": "2026-10-23T22:30:00Z",
       "min_gap_hours": 2.5,
       "approved": true,
-      "status": "queued",
+      "status": "posted",
       "test": {
         "exp": "exp-1016-hook_style",
         "variant": "b",
@@ -555,7 +555,14 @@
       },
       "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)",
       "app_audio": "id:496614019576474 Echo Sax Feeling Blue - Caleb Arredondo (add in the Instagram app)",
-      "video_asset_music": "lst-2026-10-23-rounds-nobody-sees-music.mp4"
+      "video_asset_music": "lst-2026-10-23-rounds-nobody-sees-music.mp4",
+      "audio_id": "496614019576474",
+      "audio_title": "Caleb Arredondo - Echo Sax Feeling Blue",
+      "audio_artist": "sovenhq",
+      "posting_since": "2026-10-23T22:30:53Z",
+      "media_id": "17986132824095194",
+      "permalink": "https://www.instagram.com/reel/De2orvpDPBu/",
+      "posted_at": "2026-10-23T22:31:36Z"
     },
     {
       "id": "lst-2026-10-24-nerves-without-faking",
