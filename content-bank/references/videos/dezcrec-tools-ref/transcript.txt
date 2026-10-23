@@ -1,0 +1,21 @@
+language: en
+[   0.0-   4.1] Here are nine free GitHub repos that replace thousands of dollars with paid software.
+[   4.4-   4.6] 1.
+[   4.9-   7.5] Open Higgs Field Replaces Higgs Field 2.
+[   7.9-  11.0] Voice Studio Replaces 11 Labs Right On Your Machine
+[  11.0-  11.5] 3.
+[  11.9-  16.3] Open SEO Replaces SEMrush Rank Tracking Backlinks Site Audits
+[  16.3-  16.7] 4.
+[  17.1-  20.6] WeNora Replaces Notion On Local Models 5.
+[  21.0-  26.4] Open Whisper Replaces Whisper Flow You can dictate into any app online or off.
+[  26.6-  26.9] 6.
+[  26.9-  29.9] The Asana Killer Open Project 7.
+[  30.4-  34.0] Cal.com Replaces Calendly with a Google and Outlook Sync
+[  34.0-  34.3] 8.
+[  34.6-  39.0] ChatWoo Replaces Intercom Every lead and client message in one inbox
+[  39.0-  39.7] 9.
+[  40.2-  43.9] Cap Replaces Loom Paying for four or five of these, that's money
+[  43.9-  45.4] back in your pocket every month.
+[  45.7-  49.9] And if you have a favorite app that wasn't listed here, Reverse Engineer Anything rebuilds
+[  49.9-  50.6] it with ClogKiller.
+[  50.8-  53.3] Comment repo and I'll send you online links for free.
