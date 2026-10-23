@@ -41,6 +41,7 @@ Log: `media/2026-10-16-saenchai-bigger-men/renders/render_bc.log` (ends with `AL
 | Saenchai A/B/C | OK | Moved to the 15:30 NY talking-head slot: A 20 Oct, B 21 Oct, C 22 Oct (19:30 UTC). Posts whatever file is on the `media` release as saenchai-bigger-men-A/B/C.mp4 at that time |
 | 5 posts a day (10-20) | **MATTEO** | 11 extra listicles (09:00 slot 21-27 Oct + 12:30 slot 25-28 Oct) rendering, need his yes. 15:30 talking-head slot: empty day = skipped (Matteo 10-20) |
 | Facebook reels (10-22) | **DO (verify)** | Views fell ~100 -> ~0 a reel. Matteo's yes: 1 FB reel/day, only the best IG reel at 72 h (>= median views), as its Facebook version (list on screen + music, `<asset>-fb.mp4`), 19:30 NY; slide albums paused; YT/Threads get music copies (`<asset>-music.mp4`). Daily pick = Listicle factory 20:10 UTC. Check in a week: FB views per reel vs the old ~20. Matteo to check Page quality / recommendation eligibility in Professional dashboard. Doc: tools/crosspost/README.md |
+| Effects shots (nvision.media reference, 10-23) | **MATTEO** | Shot guide `production/shooting/effects-shots.md`. Film the first test shoot (cards 1, 2, 5, 7, 10), upload, Claude builds the effects. Gypsy Amazon version needs their colours, font, logo |
 | TikTok | WAIT | App review |
 | Meta oEmbed | WAIT | Not approved; `ig_discovery` scans tracked competitors instead |
 | IG token | Expires 2026-12-13 | `ig.py refresh` before then |
