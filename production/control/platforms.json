@@ -1,11 +1,11 @@
 {
-  "updated": "2026-10-22T21:45:09Z",
+  "updated": "2026-10-23T00:44:07Z",
   "platforms": {
     "instagram": {
-      "followers": 2042,
-      "last_post": "2026-10-22T19:32:03Z",
+      "followers": 2043,
+      "last_post": "2026-10-22T22:31:52Z",
       "failed": [],
-      "next_slot": "2026-10-22T22:30:00Z",
+      "next_slot": "2026-10-23T01:30:00Z",
       "plan_per_day": 3,
       "plan_mix": "3 trial reels",
       "posted_7d": 24,
@@ -18,10 +18,10 @@
       "last_post": "2026-10-21T23:36:19Z",
       "failed": [],
       "errors": [],
-      "next_slot": "2026-10-22T23:30:00Z",
+      "next_slot": "2026-10-23T23:30:00Z",
       "plan_per_day": 1,
       "plan_mix": "1 reel (best Instagram reel at 72 h)",
-      "posted_7d": 22,
+      "posted_7d": 21,
       "token_expires": null,
       "warn": null
     },
@@ -40,14 +40,14 @@
     },
     "youtube": {
       "enabled": true,
-      "last_post": "2026-10-22T20:05:56Z",
+      "last_post": "2026-10-22T23:06:01Z",
       "failed": [],
       "errors": [],
-      "next_slot": "2026-10-22T23:00:00Z",
+      "next_slot": "2026-10-23T16:30:00Z",
       "privacy": "public",
       "plan_per_day": 3,
       "plan_mix": "3 Shorts",
-      "posted_7d": 17,
+      "posted_7d": 18,
       "token_expires": null,
       "warn": null
     }
@@ -285,8 +285,8 @@
     },
     "lst-2026-10-18-round-three": {
       "instagram": {
-        "views": 6301,
-        "likes": 82,
+        "views": 6348,
+        "likes": 83,
         "comments": 0,
         "shares": 5,
         "saves": 25,
@@ -355,7 +355,7 @@
     },
     "lst-2026-10-19-power-without-weights": {
       "instagram": {
-        "views": 5145,
+        "views": 5146,
         "likes": 67,
         "comments": 1,
         "shares": 10,
@@ -407,7 +407,7 @@
         "url": "https://www.instagram.com/reel/DevO_Nikr6o/"
       },
       "facebook": {
-        "views": 17,
+        "views": 38,
         "url": "https://www.facebook.com/reel/1773940297206633"
       },
       "threads": {
@@ -443,8 +443,8 @@
     },
     "lst-2026-10-21-about-to-level-up": {
       "instagram": {
-        "views": 3619,
-        "likes": 58,
+        "views": 3711,
+        "likes": 59,
         "comments": 0,
         "shares": 8,
         "saves": 12,
@@ -461,7 +461,7 @@
         "url": "https://www.instagram.com/reel/Dew15dnH7MT/"
       },
       "threads": {
-        "views": 25,
+        "views": 27,
         "likes": 0,
         "replies": 0,
         "reposts": 0,
@@ -489,7 +489,7 @@
     },
     "lst-2026-10-21-started-late": {
       "instagram": {
-        "views": 2668,
+        "views": 2673,
         "likes": 27,
         "comments": 0,
         "shares": 3,
@@ -507,10 +507,20 @@
         "url": "https://www.instagram.com/reel/Dezasm8kgMv/"
       }
     },
+    "lst-2026-10-22-fighters-mindset": {
+      "instagram": {
+        "views": 2481,
+        "likes": 34,
+        "comments": 0,
+        "shares": 0,
+        "saves": 5,
+        "url": "https://www.instagram.com/reel/De0D5cbjtJf/"
+      }
+    },
     "lst-2026-10-22-jab-hurt": {
       "instagram": {
-        "views": 2723,
-        "likes": 65,
+        "views": 2745,
+        "likes": 67,
         "comments": 0,
         "shares": 3,
         "saves": 33,
@@ -529,7 +539,7 @@
     },
     "saenchai-B": {
       "instagram": {
-        "views": 2447,
+        "views": 2450,
         "likes": 68,
         "comments": 0,
         "shares": 6,
@@ -539,11 +549,11 @@
     },
     "saenchai-C": {
       "instagram": {
-        "views": 1262,
-        "likes": 30,
+        "views": 1712,
+        "likes": 49,
         "comments": 0,
-        "shares": 0,
-        "saves": 7,
+        "shares": 2,
+        "saves": 11,
         "url": "https://www.instagram.com/reel/DezvTk8DwrQ/"
       }
     }
@@ -724,7 +734,7 @@
       "url": "https://www.threads.com/@matteofights/post/Dey46bsFUEY"
     },
     "th-1022-2": {
-      "views": 35,
+      "views": 36,
       "likes": 0,
       "replies": 0,
       "reposts": 0,
@@ -732,7 +742,7 @@
       "url": "https://www.threads.com/@matteofights/post/Dezb0zhlAFO"
     },
     "th-1022-3": {
-      "views": 0,
+      "views": 18,
       "likes": 0,
       "replies": 0,
       "reposts": 0,
