@@ -1,7 +1,8 @@
 # Carousels (swipe posts), tools/carousel/README.md.
 #  - Monday: research. scout.py finds other creators' outlier carousels (proven hooks, slides 1-2 saved for Claude to
 #    read), report.py reviews every carousel of ours (reach, views per reach, saves/shares/follows per 1k).
-#  - On demand: frames. Still frames from Drive training clips (frames.py) so Claude can pick a photo per slide.
+#  - On demand: frames. Still frames + 4 s seamless video loops from Drive training clips (frames.py) so Claude can
+#    pick a photo per slide and the moving detail for the cover. Loops go to the media release, never git.
 name: Carousel
 
 on:
@@ -67,6 +68,10 @@ jobs:
           CLIPS: ${{ inputs.frames }}
           PER_CLIP: ${{ inputs.per_clip }}
         run: python3 -P tools/carousel/frames.py "$CLIPS" --per-clip "$PER_CLIP"
+      - name: Upload video loops to the media release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release upload media work/carousel-frames/loops/*.webm --clobber
       - name: Commit
         run: |
           git config user.name "github-actions[bot]"

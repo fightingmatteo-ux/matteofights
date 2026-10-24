@@ -7,6 +7,9 @@ production/listicles/moments.json first, then evenly spread), keeps the sharpest
 rotated per clips.json, as production/carousels/frames/<clip id>/<seconds>.jpg (long edge 1440, q88).
 production/carousels/frames/index.json lists them per clip with a sharpness score. Claude looks at them to pick
 the photo for each slide; render.py takes a frame path or any photo Matteo provides.
+Next to every frame it cuts a 4 s seamless loop from that moment (VP9 webm, 720 wide, no sound, the last 0.5 s
+crossfades into the first frame) as work/carousel-frames/loops/carousel-loop-<clip id>-<seconds>.webm; the workflow
+uploads those to the media release (never git) and the cover slide plays one as its moving detail.
 """
 import argparse, json, subprocess, sys
 from pathlib import Path
@@ -38,6 +41,14 @@ def grab(path, t, rotate, dest):
     return im
 
 
+def loop(path, t, rotate, dest, seconds=4.0, fade=0.5):
+    turn = {90: "transpose=1,", 180: "transpose=1,transpose=1,", 270: "transpose=2,"}.get(rotate, "")
+    run("ffmpeg", "-v", "error", "-y", "-ss", f"{t:.2f}", "-t", f"{seconds + fade:.2f}", "-i", str(path), "-filter_complex",
+        f"[0:v]{turn}scale=720:-2,fps=30,split[a][b];[a]trim={fade}:{seconds + fade},setpts=PTS-STARTPTS[m];"
+        f"[b]trim=0:{fade},setpts=PTS-STARTPTS[h];[m][h]xfade=transition=fade:duration={fade}:offset={seconds - fade},format=yuv420p",
+        "-c:v", "libvpx-vp9", "-b:v", "0", "-crf", "36", "-row-mt", "1", "-an", str(dest))
+
+
 def sharpness(im):
     small = im.convert("L").resize((480, round(480 * im.height / im.width)))
     return round(ImageStat.Stat(small.filter(ImageFilter.FIND_EDGES)).var[0], 1)
@@ -62,13 +73,18 @@ def frames_for(clip_id, per_clip, cat):
         scored.append((sharpness(im), round(t, 1), im))
     out_dir = OUT / clip_id
     out_dir.mkdir(parents=True, exist_ok=True)
+    loops = WORK / "loops"
+    loops.mkdir(exist_ok=True)
+    dur = duration(local)
     kept = []
     for score, t, im in sorted(scored, key=lambda s: -s[0]):
         if all(abs(t - k["t"]) >= 3 for k in kept):
             name = f"{t:06.1f}.jpg"
             im.save(out_dir / name, quality=88)
+            lname = f"carousel-loop-{clip_id}-{t:06.1f}.webm"
+            loop(local, min(t, max(0.0, dur - 4.6)), rotate, loops / lname)
             kept.append({"t": t, "file": f"production/carousels/frames/{clip_id}/{name}", "sharpness": score,
-                         "size": list(im.size)})
+                         "size": list(im.size), "loop": lname})
         if len(kept) == per_clip:
             break
     local.unlink()
