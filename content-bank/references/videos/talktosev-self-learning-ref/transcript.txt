@@ -1,0 +1,12 @@
+language: en
+[   0.0-   5.5] I automated trial reels with my MacBook where I only have to drop a video that I record into
+[   5.5-  11.2] this folder. It begins editing it within 30 seconds and then makes five different variations to put
+[  11.2-  17.3] them as trial reels all for me and then tests them out for the next 72 hours to tell me which
+[  17.3-  23.1] one performs the best so that I can push it out to everybody and beyond. It will also send me
+[  23.1-  29.3] a report into a hub that I've made that will tell me how many people have gone past the first
+[  29.3-  34.6] three seconds which is the hook and then how many people have stayed throughout the entire video
+[  34.6-  40.6] and then will give me a report on why they've done that and then what the plan is for the next five
+[  40.6-  46.4] reels that I make and it will learn over time and get better and better and better and then also
+[  46.4-  52.1] it will then suggest to me to go hey you should put this one as an ad to get more customers because
+[  52.1-  57.1] it's green lighting everywhere. I'm going to test this for the next 30 days and tell you
+[  57.1-  59.7] the moment I make the first dollar from it. Follow for more.
