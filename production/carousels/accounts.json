@@ -1,4 +1,15 @@
 {
   "note": "Extra Instagram accounts the weekly carousel scout reads (tools/carousel/scout.py), on top of the competitors in production/competitors/accounts.json. Creator/business accounts only. Add carousel-heavy accounts in fight, fitness and mindset here.",
-  "accounts": ["jayhiette", "danesmithfit"]
+  "accounts": [
+    "basicallyboxing",
+    "espnmma",
+    "ringmagazine",
+    "mmajunkie",
+    "ufc",
+    "onechampionship",
+    "evolvemma",
+    "jayhiette",
+    "danesmithfit"
+  ],
+  "picked": "2026-10-24 from the survey (analytics/reports/2026-10-24-carousel-accounts.md): fight accounts whose carousels beat their reels or score highest per 1k followers. jayhiette/danesmithfit = the funnel reference."
 }
