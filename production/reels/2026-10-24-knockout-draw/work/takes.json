@@ -1,0 +1,102 @@
+{
+ "src": "assets/raw.mp4",
+ "audio_src": "assets/voice.wav",
+ "words": "work/words.json",
+ "speed": 1.0,
+ "takes": {
+  "hookA": [
+   3.36,
+   5.9
+  ],
+  "loopA": [
+   0.1,
+   3.26
+  ],
+  "hookB": [
+   21.58,
+   25.92
+  ],
+  "loopB": [
+   18.9,
+   21.52
+  ],
+  "hookC": [
+   45.04,
+   49.3
+  ],
+  "loopC": [
+   40.88,
+   44.86
+  ],
+  "setup": [
+   179.94,
+   185.72
+  ],
+  "setupC": [
+   184.22,
+   185.72
+  ],
+  "warn": [
+   186.26,
+   191.55
+  ],
+  "fight": [
+   191.86,
+   198.3
+  ],
+  "draw": [
+   198.4,
+   199.78
+  ],
+  "debate": [
+   199.8,
+   207.72
+  ],
+  "lesson": [
+   207.98,
+   213.42
+  ],
+  "close": [
+   252.0,
+   255.0
+  ]
+ },
+ "variants": {
+  "A": [
+   "hookA",
+   "setup",
+   "warn",
+   "fight",
+   "draw",
+   "debate",
+   "lesson",
+   "close",
+   "loopA"
+  ],
+  "B": [
+   "hookB",
+   "setup",
+   "warn",
+   "fight",
+   "draw",
+   "debate",
+   "lesson",
+   "close",
+   "loopB"
+  ],
+  "C": [
+   "hookC",
+   "setupC",
+   "warn",
+   "fight",
+   "draw",
+   "debate",
+   "lesson",
+   "close",
+   "loopC"
+  ]
+ },
+ "fix": {
+  "COACH": "COACHES"
+ }
+}

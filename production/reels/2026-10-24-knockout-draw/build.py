@@ -1,7 +1,7 @@
 """Editorial talking-head reel (the look since 2026-10-20): python -P build.py A
 
-Copy production/reels/_TEMPLATE/editorial/ (build.py, make.sh, work/template.html) into the new reel, fill REEL
-below from the transcript, then `bash make.sh A` (assemble -> cut-out -> build -> render -> glitch check).
+Knockout draw (2026-10-24). Renders on Modal: the "Submit render" workflow runs `bash make.sh <V>` there
+(prep raw footage -> assemble -> fight tape (make_broll.py) -> cut-out -> build -> render -> glitch check).
 Kit + rules: production/editing/reel-kit/editorial/README.md. Worked example: 2026-10-20-freeze-editorial/.
 
 Words are the UPPERCASE tokens in work/edl_<V>.json. ("WORD", k) = the k-th time that word is said.
@@ -18,22 +18,24 @@ import plan  # noqa: E402
 
 # ---------------------------------------------------------------- fill this in per reel
 REEL = {
-    # per variant: the hook title. lead = small lines on frame 0; word = the big word that starts behind his
-    # head and flies to the front when he SAYS `on`; the title clears just before `until` is said.
+    # Knockout draw (pin candidate). Hook word flies from behind his head to the front on the spoken word.
+    # Refs: ("WORD", k) = k-th time said in the whole cut; ("WORD", "seg", k) = k-th time inside that segment.
     "hooks": {
-        "A": {"lead": ["If you freeze when you spar,", "it's your"], "word": "head.", "on": ("HEAD", 1), "until": ("AND", 1)},
+        "A": {"lead": ["I knocked him out.", "They called it a"], "word": "draw.", "on": ("DRAW", 1), "until": ("WAS", 1)},
+        "B": {"lead": ["My first fight, stacked against me.", "I still knocked him"], "word": "out.", "on": ("OUT", 1), "until": ("WAS", 1)},
+        "C": {"lead": ["I was 16.", "His sixth fight. My"], "word": "first.", "on": ("FIRST", 1), "until": ("HE", 1)},
     },
-    # words that go big + red over the face; their effect comes from the word (plan.FX), override in "fx"
-    "keys": ["THREE", "ONE", "TWO", "JAB", "RELAX", "CAUGHT"],
-    "fx": {},
-    # the 2-3 lines that carry the reel, cut to a white card: (first word, card ends before this word, KEYWORD)
+    # big + red over the face (one per phrase, every ~3-6 s); none inside the tape cutaways
+    "keys": ["REFEREE", "POINTS", "LEGAL", "VIOLENCE", "JUDGES"],
+    "fx": {"POINTS": "decode", "LEGAL": "focus", "JUDGES": "focus"},
+    # white cards: (first word, card ends before this word, KEYWORD)
     "cards": [
-        (("GETTING", 1), ("NUMBER", 2), "INFORMATION"),
-        (("PICK", 1), ("JUST", 2), "ONE"),
-        (("TAKE", 1), ("BECAUSE", 1), "RESET"),
+        (("THEY", "draw", 1), ("MY", "debate", 1), "DRAW"),
+        (("YOU", "debate", 1), ("TELL", "debate", 1), "JUDGE"),
+        (("IT'S", "lesson", 1), ("YOU", "close", 1), "CHESS"),
     ],
-    "slam": ["RESET"],          # max one card keyword: over-scaled + sub hit
-    "bed": None,                # music under the voice: an mp3/wav path, or None for the synthesised piano placeholder
+    "slam": ["DRAW"],
+    "bed": "../../listicles/music/epic-bold-drums-alex-morgan.mp3",   # the track from the approved Saenchai editorial cut
 }
 # ----------------------------------------------------------------
 
@@ -43,7 +45,13 @@ WORDS = d["words"]
 FG = f"assets/media/fg_{V}_full.webm"
 
 
+SEG = {x["name"]: x["i"] for x in d["segments"]}
+
+
 def W(ref):
+    if len(ref) == 3:
+        word, seg, k = ref
+        return [w for w in WORDS if w["w"] == word and w["seg"] == SEG[seg]][k - 1]["s"]
     word, k = ref
     return [w for w in WORDS if w["w"] == word][k - 1]["s"]
 

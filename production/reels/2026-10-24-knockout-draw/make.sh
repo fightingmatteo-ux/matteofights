@@ -10,7 +10,15 @@ PY=$(command -v python3 || command -v python)
 SLUG=$(basename "$PWD")
 OUT="../../../media/$SLUG/$SLUG-$V.mp4"
 
+# footage in (Modal: fetched by the Submit render workflow): raw from the media release, prepped once per job
+RAW=../../../media/2026-10-24-knockout-draw/raw.mp4
+[ -f assets/raw.mp4 ] || bash ../../editing/reel-kit/scripts/prep_footage.sh "$RAW" assets/raw.mp4
+[ -f assets/voice.wav ] || ffmpeg -v error -y -i "$RAW" -vn -c:a pcm_s16le -ar 48000 assets/voice.wav
+
 [ -f "assets/media/aroll_$V.mp4" ] || "$PY" -P ../../editing/reel-kit/scripts/assemble.py work/takes.json "$V"
+
+# fight tape cut to this variant's lines (media/first-fight/first-fight-1.mp4)
+"$PY" -P make_broll.py "$V"
 
 if [ ! -f "assets/media/fg_${V}_full.webm" ]; then
   [ -d .venv ] || "$PY" -m venv .venv
