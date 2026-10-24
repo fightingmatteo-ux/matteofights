@@ -26,6 +26,8 @@ black = [i for i in range(n) if r[i].mean() < 12]
 dr = np.abs(np.diff(r[:n], axis=0)).mean((1, 2))
 da = np.abs(np.diff(a[:n], axis=0)).mean((1, 2))
 jumps = [i + 1 for i in range(n - 1) if dr[i] > da[i] + 4]
+if len(sys.argv) > 4 and sys.argv[4] == "black":  # the reel opens on b-roll/graphics, not the A-roll: only black frames count
+    jumps = []
 if black or jumps:
     print(f"FAIL {render}: black frames {black}, jumps at frames {jumps}. Render again.")
     sys.exit(1)
