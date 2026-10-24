@@ -16,6 +16,9 @@ on:
       per_clip:
         description: Frames to keep per clip
         default: "4"
+      survey:
+        description: Instagram handles to rank by carousel performance (space or comma separated); runs only the survey
+        default: ""
 
 permissions:
   contents: write
@@ -26,7 +29,7 @@ concurrency:
 
 jobs:
   research:
-    if: github.event_name == 'schedule' || inputs.frames == ''
+    if: github.event_name == 'schedule' || (inputs.frames == '' && inputs.survey == '')
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
@@ -45,6 +48,26 @@ jobs:
           git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
           git add production/carousels/proven.json production/carousels/proven production/carousels/results.json analytics/reports
           git commit -m "carousel: weekly research" || exit 0
+          git pull --rebase -q origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+
+  survey:
+    if: github.event_name == 'workflow_dispatch' && inputs.survey != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Survey
+        env:
+          FB_USER_TOKEN: ${{ secrets.FB_USER_TOKEN }}
+          USERS: ${{ inputs.survey }}
+        run: python3 -P tools/carousel/scout.py --survey "$USERS"
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add analytics/reports
+          git commit -m "carousel: accounts survey" || exit 0
           git pull --rebase -q origin "${GITHUB_REF_NAME}"
           git push origin "HEAD:${GITHUB_REF_NAME}"
 

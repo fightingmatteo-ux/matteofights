@@ -1,6 +1,7 @@
 """Find carousels that already proved themselves, so every @matteofights carousel starts from a proven hook.
 
     python3 -P tools/carousel/scout.py [--posts 60] [user ...]
+    python3 -P tools/carousel/scout.py --survey user1 user2 ...   # rank candidate accounts by carousel performance
 
 Weekly (Carousel workflow, Mondays). Pulls the recent posts of every account in production/carousels/accounts.json
 (plus the Instagram competitors in production/competitors/accounts.json) through Business Discovery, keeps the
@@ -60,11 +61,50 @@ def accounts():
     return list(dict.fromkeys(u.lstrip("@") for u in users))
 
 
+def survey(users, n):
+    """Which accounts' carousels perform: per account, carousels in the last n posts, median carousel score
+    (likes + 3x comments) per 1k followers, and how carousels do vs that account's reels. Writes a report."""
+    rows = []
+    for user in users:
+        try:
+            followers, posts = posts_of(user, n)
+        except RuntimeError as e:
+            print(f"@{user}: {e}")
+            continue
+        cars = [x for x in posts if x.get("media_type") == "CAROUSEL_ALBUM"]
+        vids = [x for x in posts if x.get("media_type") == "VIDEO"]
+        if not cars or not followers:
+            print(f"@{user}: {len(cars)} carousels")
+            continue
+        med = statistics.median(score(x) for x in cars)
+        best = max(cars, key=score)
+        rows.append({"user": user, "followers": followers, "carousels": len(cars), "of": len(posts),
+                     "median": med, "per_k": round(1000 * med / followers, 2),
+                     "vs_reels": round(med / statistics.median(score(x) for x in vids), 2) if vids else None,
+                     "best": best["permalink"], "best_score": score(best),
+                     "best_line": (best.get("caption") or "").strip().split("\n")[0][:70]})
+        print(f"@{user}: {len(cars)}/{len(posts)} carousels, median {med:.0f} ({rows[-1]['per_k']}/1k followers)")
+    rows.sort(key=lambda r: (r["carousels"] >= 5, r["per_k"]), reverse=True)
+    lines = [f"# Carousel accounts survey, {dt.date.today().isoformat()}", "",
+             "Score = likes + 3x comments (Business Discovery shows no views or saves). Ranked by median carousel score per 1k "
+             "followers, accounts with 5+ carousels first.", "",
+             "| Account | Followers | Carousels | Median score | Per 1k followers | vs their reels | Best carousel |", "|---|---|---|---|---|---|---|"]
+    for r in rows:
+        lines.append(f"| @{r['user']} | {r['followers']:,} | {r['carousels']}/{r['of']} | {r['median']:.0f} | {r['per_k']} | "
+                     f"{r['vs_reels'] if r['vs_reels'] is not None else '-'} | [{r['best_score']:,}]({r['best']}) {r['best_line'].replace('|', '/')} |")
+    out = ROOT / "analytics" / "reports" / f"{dt.date.today().isoformat()}-carousel-accounts.md"
+    out.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    print(f"-> {out.relative_to(ROOT)}")
+
+
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("users", nargs="*")
     p.add_argument("--posts", type=int, default=60)
+    p.add_argument("--survey", action="store_true")
     a = p.parse_args()
+    if a.survey:
+        return survey([u.lstrip("@") for raw in a.users for u in raw.replace(",", " ").split()], a.posts)
     bank = json.loads(PROVEN.read_text(encoding="utf-8"))
     known = {e["code"] for e in bank["carousels"]}
     added, errors = 0, []
