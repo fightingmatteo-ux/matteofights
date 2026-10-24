@@ -1,0 +1,10 @@
+# Pages project "matteo-signup": the public signup endpoint for matteofights.me/protocol (functions/api/signup.js).
+# Deployed by .github/workflows/signup-deploy.yml. Same D1 database as tools/state.py and the control center.
+name = "matteo-signup"
+pages_build_output_dir = "public"
+compatibility_date = "2026-09-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "matteofights"
+database_id = "bf069f02-2394-43aa-a11b-ea10985f78c6"

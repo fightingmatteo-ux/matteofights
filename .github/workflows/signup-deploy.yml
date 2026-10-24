@@ -1,0 +1,50 @@
+# Deploys the public signup endpoint (Pages project matteo-signup, signup-site/) that THE PROTOCOL page posts to.
+# Creates the project on first run, sets its Telegram secrets, deploys, then smoke-tests it (no real signup sent).
+name: Deploy signup endpoint
+
+on:
+  push:
+    branches: [master]
+    paths: [signup-site/**, .github/workflows/signup-deploy.yml]
+  workflow_dispatch:
+
+concurrency:
+  group: signup-deploy
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: signup-site
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      W: npx --yes wrangler@4.149.0
+    steps:
+      - uses: actions/checkout@v4
+      - name: Create the project (first run only)
+        run: $W pages project create matteo-signup --production-branch master || echo "project exists"
+      - name: Deploy
+        run: $W pages deploy --project-name matteo-signup --branch master --commit-hash "$(git rev-parse HEAD)"
+      - name: Telegram secrets (apply from the next deployment, so deploy again after)
+        env:
+          TG_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TG_CHAT: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          printf '%s' "$TG_TOKEN" | $W pages secret put TELEGRAM_BOT_TOKEN --project-name matteo-signup
+          printf '%s' "$TG_CHAT" | $W pages secret put TELEGRAM_CHAT_ID --project-name matteo-signup
+          $W pages deploy --project-name matteo-signup --branch master --commit-hash "$(git rev-parse HEAD)"
+      - name: Smoke test (CORS, validation, D1 counts; sends no signup)
+        run: |
+          U=https://matteo-signup.pages.dev/api/signup
+          sleep 20
+          curl -sS -o /dev/null -w "OPTIONS %{http_code}\n" -X OPTIONS -H "Origin: https://matteofights.me" $U
+          code=$(curl -sS -o /dev/null -w "%{http_code}" -X POST -H "content-type: application/json" -d '{"email":"nope"}' $U)
+          echo "bad email -> $code"; test "$code" = 400
+          curl -sS -f $U; echo
