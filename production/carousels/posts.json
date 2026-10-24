@@ -1,0 +1,20 @@
+{
+  "posts": [
+    {
+      "id": "car-choose-your-hard",
+      "status": "draft",
+      "layer": "belief",
+      "look": "editorial",
+      "slides": [
+        {"kind": "cover", "title": "Choose your hard.", "sub": "Fighter edition.", "photo": null},
+        {"kind": "point", "n": 1, "title": "Sparring is hard.", "body": "Freezing the first time it's real is harder.", "photo": null},
+        {"kind": "point", "n": 2, "title": "Conditioning is hard.", "body": "Gassing in round two with your corner watching is harder.", "photo": null},
+        {"kind": "point", "n": 3, "title": "Getting corrected is hard.", "body": "Making the same mistake for a whole year is harder.", "photo": null},
+        {"kind": "point", "n": 4, "title": "Showing up after a loss is hard.", "body": "Living with \"what if\" is harder.", "photo": null},
+        {"kind": "point", "n": 5, "title": "Fear before the walkout is hard.", "body": "Never finding out who you are is harder.", "photo": null},
+        {"kind": "close", "title": "Both are hard. Only one makes you a fighter.", "body": "Choose your hard.", "cta": "Save this for the morning you don't want to go."}
+      ],
+      "caption": "Every fighter picks a hard.\nMost people just don't notice they picked.\n\nSparring hurts. Freezing when it's real hurts longer.\nConditioning hurts. Gassing in round two hurts in front of everyone.\n\nBoth are hard. Only one moves you forward.\n\nSave this for the morning you don't want to go.\n\n#muaythai #boxing #fighter #discipline"
+    }
+  ]
+}
