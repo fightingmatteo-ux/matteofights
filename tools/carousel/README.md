@@ -9,8 +9,9 @@ Threads (carousel); TikTok photo mode after its app review. YouTube has no image
 - **Every carousel starts from a proven hook.** `hook_ref` in `production/carousels/posts.json` must point to an
   `own` hook in `proven.json` (our reels that already won) or a `read` outlier carousel the scout found. Adapt the
   pattern to fighter psychology; never copy another creator's slides. `lint.py` refuses anything else.
-- **Slide 1 is animated** on Instagram and Threads (4.5 s silent loop: push-in, two peeks at slide 2, pulsing arrow).
-  Text is complete from frame 0 because the first frame is the thumbnail. Facebook gets the still.
+- **Slide 1 has one moving detail** on Instagram and Threads: the photo card plays a 4 s seamless loop of the real
+  footage (frames.py cuts it, media release), the SWIPE badge turns slowly, everything else is still. No fake swipe
+  motion (Matteo 10-24). Text is complete from frame 0 because the first frame is the thumbnail. Facebook gets the still.
 - Voice rules apply (context/voice.md): no em dashes, one CTA on the close slide. As little text as possible:
   title <= 6 words, one line <= 8 words. Neighbouring slides never share a layout; at least 4 layouts a post.
 - Rendering needs Node + Playwright with Chromium (`npm i playwright@1.63.0 && npx playwright install chromium` in Actions).

@@ -39,13 +39,12 @@ body { background: #333; }
 .cover h1 .c { display: block; font: 210px Anton; text-transform: uppercase; color: var(--red); }
 .cover .kicker { position: absolute; left: 76px; top: 150px; font: 600 28px Mono; letter-spacing: .3em; text-transform: uppercase; color: var(--gold); }
 .cover .badge { position: absolute; right: 110px; bottom: 150px; width: 230px; height: 230px; z-index: 4; }
-.cover .badge .ring { position: absolute; inset: 0; animation: spin 9s linear infinite; }
+.cover .badge .ring { position: absolute; inset: 0; animation: spin 8s linear infinite; }  /* 4 s loop = half a turn, the ring text repeats every 90 deg */
 .cover .badge .core { position: absolute; inset: 62px; border-radius: 50%; background: var(--white); color: var(--ink); display: grid; place-items: center; }
-.cover .badge .core svg { width: 54px; height: 54px; animation: nudge 1.5s ease-in-out infinite; }
-.cover .card { animation: push 4.5s ease-in-out infinite; }
+.cover .badge .core svg { width: 54px; height: 54px; animation: nudge 2s ease-in-out infinite; }
+video.ph { object-fit: cover; object-position: center 40%; }
 @keyframes spin { to { transform: rotate(360deg); } }
 @keyframes nudge { 0%, 100% { transform: translateX(-6px); } 50% { transform: translateX(8px); } }
-@keyframes push { 0%, 100% { background-size: 100% auto; } 50% { background-size: 107% auto; } }
 
 /* 2 numeral: paper, giant outlined numeral bleeding off, round photo, handwritten line */
 .numeral .big { position: absolute; left: -30px; top: 40px; font: 560px/1 Anton; color: var(--ink); opacity: .9; }

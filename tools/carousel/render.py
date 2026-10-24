@@ -15,8 +15,10 @@ Every slide but the last carries the swipe tab, and a red thread runs across the
 as one strip when swiping. Copy rule: title <= 5 words, one short line under it.
 
 Slide fields: layout, title, line (the short line), photo, n (number). Cover: kicker + title as three parts
-"a|b|c" (a and c in Anton, b in italic serif). --animate writes <id>-01.mp4 (4.5 s silent loop: badge spins,
-arrow nudges, photo pushes in, the slide peeks twice at slide 2). Frame 0 is complete: it is the thumbnail.
+"a|b|c" (a and c in Anton, b in italic serif). The moving detail: give the cover a `video` (a 4 s seamless loop from frames.py, on the media release as
+carousel-loop-<clip>-<t>.webm, pulled to media/) and the photo card plays it. --animate writes <id>-01.mp4: the
+card's footage loops, the SWIPE badge turns slowly, everything else stays still. Frame 0 is complete (it is the
+thumbnail); without --animate the cover is the still from the same moment.
 """
 import argparse, html, json, subprocess
 from pathlib import Path
@@ -54,9 +56,16 @@ def furniture(i, total, last):
     return out
 
 
+def media_card(s, cls):
+    if s.get("video"):
+        v = Path(s["video"]) if Path(s["video"]).is_absolute() else ROOT / s["video"]
+        return f'<video class="ph {cls}" src="{v.as_uri()}" muted playsinline preload="auto" style="{bg(s.get("photo"))}"></video>'
+    return f'<div class="ph {cls}" style="{bg(s.get("photo"))}"></div>'
+
+
 def cover(s, i, total):
     a, b, c = (s["title"].split("|") + ["", "", ""])[:3]
-    return (f'<div class="slide dark cover grain"><div class="block"></div><div class="ph card" style="{bg(s.get("photo"))}"></div>'
+    return (f'<div class="slide dark cover grain"><div class="block"></div>{media_card(s, "card")}'
             f'<div class="kicker">{esc(s.get("kicker"))}</div>'
             f'<h1><span class="a">{esc(a)}</span><span class="b">{esc(b)}</span><span class="c">{esc(c)}</span></h1>'
             f'<div class="badge">{RING}<div class="core">{ARROW}</div></div>{furniture(i, total, False)}</div>')
@@ -105,17 +114,13 @@ def close(s, i, total):
 LAYOUTS = {"cover": cover, "numeral": numeral, "tape": tape, "split": split, "polaroid": polaroid, "quote": quote, "close": close}
 
 PAGE = """<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="{css}">
-<style>#all .slide{{margin-bottom:20px}} #stage{{display:none;position:fixed;left:0;top:0;width:1080px;height:1350px;overflow:hidden;z-index:99}}
-body.recording #stage{{display:block}} #track{{display:flex;width:2160px}} #track .slide{{flex:none}}</style></head>
-<body><div id="stage"><div id="track">{cover}{peek}</div></div><div id="all">{slides}</div></body></html>"""
+<style>#all .slide{{margin-bottom:20px}}</style></head><body><div id="all">{slides}</div></body></html>"""
 
 
 def build(post):
     total = len(post["slides"])
-    parts = [LAYOUTS[s["layout"]](s, i, total) for i, s in enumerate(post["slides"], 1)]
-    peek = parts[1].replace('class="slide', 'class="slide peek-copy', 1) if total > 1 else ""
-    return PAGE.format(css=(HERE / "slides.css").as_uri(), cover=parts[0].replace('class="slide', 'class="slide peek-copy', 1),
-                       peek=peek, slides="".join(parts))
+    return PAGE.format(css=(HERE / "slides.css").as_uri(),
+                       slides="".join(LAYOUTS[s["layout"]](s, i, total) for i, s in enumerate(post["slides"], 1)))
 
 
 def render(post, outdir, animated=False):
@@ -123,7 +128,7 @@ def render(post, outdir, animated=False):
     out.mkdir(parents=True, exist_ok=True)
     page = out / f"{post['id']}.html"
     page.write_text(build(post), encoding="utf-8")
-    cmd = ["node", str(HERE / "shoot.cjs"), str(page), str(out), post["id"]] + (["--animate", "4.5"] if animated else [])
+    cmd = ["node", str(HERE / "shoot.cjs"), str(page), str(out), post["id"]] + (["--animate", "4"] if animated else [])
     subprocess.run(cmd, check=True)
     paths = [out / f"{post['id']}-{i:02d}.jpg" for i in range(1, len(post["slides"]) + 1)]
     return ([out / f"{post['id']}-01.mp4"] if animated else []) + paths
