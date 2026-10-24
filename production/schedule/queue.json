@@ -1504,13 +1504,14 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-10-26T19:00:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "crosspost_to": [],
       "slot_note": "hook test, same day: 2026-10-26 15:00 NY (trials.py schedule)",
       "trial_set": "knockout-draw",
       "opening": "result",
-      "length": "full"
+      "length": "full",
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-24T18:28:37Z)"
     },
     {
       "id": "2026-10-24-knockout-draw-B",
@@ -1524,13 +1525,14 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-10-26T19:20:00Z",
       "min_gap_hours": 0.25,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "crosspost_to": [],
       "slot_note": "hook test, same day: 2026-10-26 15:20 NY (trials.py schedule)",
       "trial_set": "knockout-draw",
       "opening": "story",
-      "length": "full"
+      "length": "full",
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-24T18:28:37Z)"
     },
     {
       "id": "2026-10-24-knockout-draw-C",
@@ -1544,13 +1546,14 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-10-26T19:40:00Z",
       "min_gap_hours": 0.25,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "crosspost_to": [],
       "slot_note": "hook test, same day: 2026-10-26 15:40 NY (trials.py schedule)",
       "trial_set": "knockout-draw",
       "opening": "number",
-      "length": "full"
+      "length": "full",
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-24T18:28:37Z)"
     }
   ]
 }
