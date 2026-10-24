@@ -48,10 +48,11 @@
         "production/carousels/proven/DdoxPx0jRk0/01.jpg",
         "production/carousels/proven/DdoxPx0jRk0/02.jpg"
       ],
-      "status": "unread",
-      "hook": null,
-      "pattern": null,
-      "found": "2026-10-24"
+      "status": "read",
+      "hook": "S-Tier formats that are so good they should be illegal (they get increasingly more effective)",
+      "pattern": "Ranked escalating list: 'N S-tier X so good they should be illegal (each one better than the last)'. The escalation promise is the swipe driver. 10.9x the account's carousel median.",
+      "found": "2026-10-24",
+      "read_by": "Claude 2026-10-24"
     },
     {
       "code": "DeBwZ9XE2_C",
@@ -67,10 +68,11 @@
         "production/carousels/proven/DeBwZ9XE2_C/01.jpg",
         "production/carousels/proven/DeBwZ9XE2_C/02.jpg"
       ],
-      "status": "unread",
-      "hook": null,
-      "pattern": null,
-      "found": "2026-10-24"
+      "status": "read",
+      "hook": "If someone you know finally gets themselves into shape and your first reaction is \"You look sick\" or \"You're getting too skinny\": you're the problem.",
+      "pattern": "Call-out of how people react to someone else's change: 'If your first reaction to X is Y, you're the problem.' Contrast + identity, drives shares/comments. 60x the account's carousel median.",
+      "found": "2026-10-24",
+      "read_by": "Claude 2026-10-24"
     },
     {
       "code": "DP_XJRYDi8x",
@@ -86,10 +88,11 @@
         "production/carousels/proven/DP_XJRYDi8x/01.jpg",
         "production/carousels/proven/DP_XJRYDi8x/02.jpg"
       ],
-      "status": "unread",
+      "status": "rejected",
       "hook": null,
-      "pattern": null,
-      "found": "2026-10-24"
+      "pattern": "news / event poster / photo dump: no transferable hook",
+      "found": "2026-10-24",
+      "read_by": "Claude 2026-10-24"
     },
     {
       "code": "Dblr8jGlXTP",
@@ -105,10 +108,11 @@
         "production/carousels/proven/Dblr8jGlXTP/01.jpg",
         "production/carousels/proven/Dblr8jGlXTP/02.jpg"
       ],
-      "status": "unread",
+      "status": "rejected",
       "hook": null,
-      "pattern": null,
-      "found": "2026-10-24"
+      "pattern": "news / event poster / photo dump: no transferable hook",
+      "found": "2026-10-24",
+      "read_by": "Claude 2026-10-24"
     },
     {
       "code": "DX2sd9oFYtH",
@@ -123,10 +127,11 @@
       "slides": [
         "production/carousels/proven/DX2sd9oFYtH/01.jpg"
       ],
-      "status": "unread",
+      "status": "rejected",
       "hook": null,
-      "pattern": null,
-      "found": "2026-10-24"
+      "pattern": "news / event poster / photo dump: no transferable hook",
+      "found": "2026-10-24",
+      "read_by": "Claude 2026-10-24"
     },
     {
       "code": "DV9fYwwFdBq",
@@ -142,10 +147,11 @@
         "production/carousels/proven/DV9fYwwFdBq/01.jpg",
         "production/carousels/proven/DV9fYwwFdBq/02.jpg"
       ],
-      "status": "unread",
+      "status": "rejected",
       "hook": null,
-      "pattern": null,
-      "found": "2026-10-24"
+      "pattern": "news / event poster / photo dump: no transferable hook",
+      "found": "2026-10-24",
+      "read_by": "Claude 2026-10-24"
     },
     {
       "code": "C60Zab3JNip",
@@ -161,10 +167,11 @@
         "production/carousels/proven/C60Zab3JNip/01.jpg",
         "production/carousels/proven/C60Zab3JNip/02.jpg"
       ],
-      "status": "unread",
+      "status": "rejected",
       "hook": null,
-      "pattern": null,
-      "found": "2026-10-24"
+      "pattern": "news / event poster / photo dump: no transferable hook",
+      "found": "2026-10-24",
+      "read_by": "Claude 2026-10-24"
     },
     {
       "code": "CvY2bgTLCKD",
@@ -180,10 +187,11 @@
         "production/carousels/proven/CvY2bgTLCKD/01.jpg",
         "production/carousels/proven/CvY2bgTLCKD/02.jpg"
       ],
-      "status": "unread",
+      "status": "rejected",
       "hook": null,
-      "pattern": null,
-      "found": "2026-10-24"
+      "pattern": "news / event poster / photo dump: no transferable hook",
+      "found": "2026-10-24",
+      "read_by": "Claude 2026-10-24"
     },
     {
       "code": "DehduhtkfAJ",
@@ -198,10 +206,11 @@
       "slides": [
         "production/carousels/proven/DehduhtkfAJ/01.jpg"
       ],
-      "status": "unread",
+      "status": "rejected",
       "hook": null,
-      "pattern": null,
-      "found": "2026-10-24"
+      "pattern": "news / event poster / photo dump: no transferable hook",
+      "found": "2026-10-24",
+      "read_by": "Claude 2026-10-24"
     },
     {
       "code": "Dd9nneHnUUr",
@@ -217,10 +226,11 @@
         "production/carousels/proven/Dd9nneHnUUr/01.jpg",
         "production/carousels/proven/Dd9nneHnUUr/02.jpg"
       ],
-      "status": "unread",
+      "status": "rejected",
       "hook": null,
-      "pattern": null,
-      "found": "2026-10-24"
+      "pattern": "news / event poster / photo dump: no transferable hook",
+      "found": "2026-10-24",
+      "read_by": "Claude 2026-10-24"
     },
     {
       "code": "DezoWyoG0PS",
@@ -235,10 +245,11 @@
       "slides": [
         "production/carousels/proven/DezoWyoG0PS/01.jpg"
       ],
-      "status": "unread",
+      "status": "rejected",
       "hook": null,
-      "pattern": null,
-      "found": "2026-10-24"
+      "pattern": "news / event poster / photo dump: no transferable hook",
+      "found": "2026-10-24",
+      "read_by": "Claude 2026-10-24"
     },
     {
       "code": "Dex2QaOjfZC",
@@ -254,10 +265,11 @@
         "production/carousels/proven/Dex2QaOjfZC/01.jpg",
         "production/carousels/proven/Dex2QaOjfZC/02.jpg"
       ],
-      "status": "unread",
+      "status": "rejected",
       "hook": null,
-      "pattern": null,
-      "found": "2026-10-24"
+      "pattern": "news / event poster / photo dump: no transferable hook",
+      "found": "2026-10-24",
+      "read_by": "Claude 2026-10-24"
     },
     {
       "code": "DeupPVUGyc7",
@@ -273,10 +285,11 @@
         "production/carousels/proven/DeupPVUGyc7/01.jpg",
         "production/carousels/proven/DeupPVUGyc7/02.jpg"
       ],
-      "status": "unread",
+      "status": "rejected",
       "hook": null,
-      "pattern": null,
-      "found": "2026-10-24"
+      "pattern": "news / event poster / photo dump: no transferable hook",
+      "found": "2026-10-24",
+      "read_by": "Claude 2026-10-24"
     },
     {
       "code": "DervaePDcw6",
@@ -291,10 +304,11 @@
       "slides": [
         "production/carousels/proven/DervaePDcw6/01.jpg"
       ],
-      "status": "unread",
+      "status": "rejected",
       "hook": null,
-      "pattern": null,
-      "found": "2026-10-24"
+      "pattern": "news / event poster / photo dump: no transferable hook",
+      "found": "2026-10-24",
+      "read_by": "Claude 2026-10-24"
     },
     {
       "code": "DepRRmGDcW9",
@@ -309,10 +323,11 @@
       "slides": [
         "production/carousels/proven/DepRRmGDcW9/01.jpg"
       ],
-      "status": "unread",
+      "status": "rejected",
       "hook": null,
-      "pattern": null,
-      "found": "2026-10-24"
+      "pattern": "news / event poster / photo dump: no transferable hook",
+      "found": "2026-10-24",
+      "read_by": "Claude 2026-10-24"
     },
     {
       "code": "DehOIvAIGpj",
@@ -328,10 +343,11 @@
         "production/carousels/proven/DehOIvAIGpj/01.jpg",
         "production/carousels/proven/DehOIvAIGpj/02.jpg"
       ],
-      "status": "unread",
+      "status": "rejected",
       "hook": null,
-      "pattern": null,
-      "found": "2026-10-24"
+      "pattern": "news / event poster / photo dump: no transferable hook",
+      "found": "2026-10-24",
+      "read_by": "Claude 2026-10-24"
     },
     {
       "code": "Dezr1rgmr7A",
@@ -347,10 +363,11 @@
         "production/carousels/proven/Dezr1rgmr7A/01.jpg",
         "production/carousels/proven/Dezr1rgmr7A/02.jpg"
       ],
-      "status": "unread",
+      "status": "rejected",
       "hook": null,
-      "pattern": null,
-      "found": "2026-10-24"
+      "pattern": "news / event poster / photo dump: no transferable hook",
+      "found": "2026-10-24",
+      "read_by": "Claude 2026-10-24"
     },
     {
       "code": "DeyLtxTlFlY",
@@ -365,10 +382,11 @@
       "slides": [
         "production/carousels/proven/DeyLtxTlFlY/01.jpg"
       ],
-      "status": "unread",
+      "status": "rejected",
       "hook": null,
-      "pattern": null,
-      "found": "2026-10-24"
+      "pattern": "news / event poster / photo dump: no transferable hook",
+      "found": "2026-10-24",
+      "read_by": "Claude 2026-10-24"
     },
     {
       "code": "DevElDBksCv",
@@ -384,10 +402,11 @@
         "production/carousels/proven/DevElDBksCv/01.jpg",
         "production/carousels/proven/DevElDBksCv/02.jpg"
       ],
-      "status": "unread",
+      "status": "rejected",
       "hook": null,
-      "pattern": null,
-      "found": "2026-10-24"
+      "pattern": "news / event poster / photo dump: no transferable hook",
+      "found": "2026-10-24",
+      "read_by": "Claude 2026-10-24"
     },
     {
       "code": "DetraT6ipPk",
@@ -403,10 +422,11 @@
         "production/carousels/proven/DetraT6ipPk/01.jpg",
         "production/carousels/proven/DetraT6ipPk/02.jpg"
       ],
-      "status": "unread",
+      "status": "rejected",
       "hook": null,
-      "pattern": null,
-      "found": "2026-10-24"
+      "pattern": "news / event poster / photo dump: no transferable hook",
+      "found": "2026-10-24",
+      "read_by": "Claude 2026-10-24"
     },
     {
       "code": "Denx92mH9HX",
@@ -419,10 +439,11 @@
       "x_median": 3.53,
       "caption_first_line": "In the clinch, timing is everything. ⏱️ Kru Jong shows you his top 3 sweeps to catch your opponent off guard! ",
       "slides": [],
-      "status": "unread",
+      "status": "no_slides",
       "hook": null,
-      "pattern": null,
-      "found": "2026-10-24"
+      "pattern": "slides are video, slide 1 not readable from the API",
+      "found": "2026-10-24",
+      "read_by": "Claude 2026-10-24"
     },
     {
       "code": "DeRQK1kH9OQ",
@@ -435,10 +456,11 @@
       "x_median": 5.76,
       "caption_first_line": "Swipe to see how Thor’s gonna be moving against Doctor Doom. ⚡🔨😭",
       "slides": [],
-      "status": "unread",
+      "status": "no_slides",
       "hook": null,
-      "pattern": null,
-      "found": "2026-10-24"
+      "pattern": "slides are video, slide 1 not readable from the API",
+      "found": "2026-10-24",
+      "read_by": "Claude 2026-10-24"
     },
     {
       "code": "Dd6FKkGnwNu",
@@ -451,10 +473,11 @@
       "x_median": 11.18,
       "caption_first_line": "Take your time. It’s a tough one. 😮‍💨💀 #MuayThaiThailand #EvolveMMA",
       "slides": [],
-      "status": "unread",
+      "status": "no_slides",
       "hook": null,
-      "pattern": null,
-      "found": "2026-10-24"
+      "pattern": "slides are video, slide 1 not readable from the API",
+      "found": "2026-10-24",
+      "read_by": "Claude 2026-10-24"
     },
     {
       "code": "Dd3gYPmH36T",
@@ -467,10 +490,11 @@
       "x_median": 2.69,
       "caption_first_line": "Want to get better at Muay Thai sparring? Don’t just spar more. Spar with a purpose.",
       "slides": [],
-      "status": "unread",
+      "status": "no_slides",
       "hook": null,
-      "pattern": null,
-      "found": "2026-10-24"
+      "pattern": "slides are video, slide 1 not readable from the API",
+      "found": "2026-10-24",
+      "read_by": "Claude 2026-10-24"
     }
   ],
   "errors": []
