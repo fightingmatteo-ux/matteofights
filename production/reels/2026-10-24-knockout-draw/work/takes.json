@@ -21,78 +21,36 @@
    21.52
   ],
   "hookC": [
-   45.04,
-   49.3
+   52.84,
+   57.0
   ],
   "loopC": [
-   40.88,
-   44.86
+   49.85,
+   52.8
   ],
-  "setup": [
+  "body": [
    179.94,
-   185.72
+   216.95
   ],
-  "setupC": [
+  "bodyC": [
    184.22,
-   185.72
-  ],
-  "warn": [
-   186.26,
-   191.55
-  ],
-  "fight": [
-   191.86,
-   198.3
-  ],
-  "draw": [
-   198.4,
-   199.78
-  ],
-  "debate": [
-   199.8,
-   207.72
-  ],
-  "lesson": [
-   207.98,
-   213.42
-  ],
-  "close": [
-   252.0,
-   255.0
+   216.95
   ]
  },
  "variants": {
   "A": [
    "hookA",
-   "setup",
-   "warn",
-   "fight",
-   "draw",
-   "debate",
-   "lesson",
-   "close",
+   "body",
    "loopA"
   ],
   "B": [
    "hookB",
-   "setup",
-   "warn",
-   "fight",
-   "draw",
-   "debate",
-   "lesson",
-   "close",
+   "body",
    "loopB"
   ],
   "C": [
    "hookC",
-   "setupC",
-   "warn",
-   "fight",
-   "draw",
-   "debate",
-   "lesson",
-   "close",
+   "bodyC",
    "loopC"
   ]
  },

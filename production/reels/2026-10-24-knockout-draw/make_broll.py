@@ -1,12 +1,13 @@
-"""Cut the first-fight tape so each clip fills its slot exactly (real speed, no clip ever runs out and freezes).
+"""Cut the first-fight tape so each clip fills its slot exactly, at real speed, synced to the words.
 
     python -P make_broll.py A     # reads work/edl_A.json, writes assets/media/b_<name>.mp4 + work/broll.json
 
 Source: media/first-fight/first-fight-1.mp4 (Drive "Muay Thai fight matteo .MOV", 480x852, filmed from the corner).
-Moments (checked frame by frame 2026-10-24): clinch 45.4-47.5 s, ref steps in ~50.3, right hand ~50.5, he drops ~50.9.
-Each slot is [from-anchor, to-anchor] in the cut; the source starts at `src_at` and runs as long as the slot needs.
-`sync` = (source second, anchor) to line a moment up with a spoken word instead of the slot start.
-Frame: 4:5 crop of the ring (1080x1350 at y=285) over a dark blurred copy, like 2026-10-21-saenchai-editorial.
+Moments (frame by frame, 2026-10-24): clinch 45.0-45.9 s, ref walks in ~50.4, right hand 50.5, he drops 50.6-50.9.
+Slots: [from-anchor, to-anchor] in the cut; `sync` = (source second, anchor) puts that moment on that word.
+Anchors: (seg, word | None | "END", k, offset); seg "hook" = first segment, "body" = second, "loop" = last.
+`hold` = freeze the clip's last frame once the source reaches that second (a deliberate freeze on the punch).
+`full` = full-bleed 9:16 crop (the hook); otherwise a 4:5 crop over a dark blurred copy.
 """
 import json
 import subprocess
@@ -17,19 +18,25 @@ V = sys.argv[1]
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
 SRC = ROOT / "media/first-fight/first-fight-1.mp4"
-# name: (crop x, y, w, h in source px, slot from, slot to, sync)   anchors: (seg, word|None|"END", k, offset)
+KO = 50.5  # the right hand
+PUNCH_WORD = {"A": "KNOCKED", "B": "KNOCKED", "C": "FIRST"}[V]
 SLOTS = {
-    # "I was 16 and it was my first fight" over the arena (variants that say it in the body, not C)
-    "ring":   ((0, 60, 480, 600), ("setup", None, 1, -0.12), ("setup", "IT", 2, -0.05), (3.0, ("setup", None, 1, -0.12))),
-    "clinch": ((30, 130, 400, 500), ("fight", "WE", 1, -0.12), ("fight", "THE", 2, -0.05), (45.4, ("fight", "WE", 1, -0.12))),
-    # the right hand lands on "throw", he drops under "right hand / he's out"
-    "ko":     ((30, 130, 400, 500), ("fight", "THE", 2, -0.05), ("fight", "END", 1, 0), (50.45, ("fight", "THROW", 1, 0))),
-    # replay on "some people say the right hand was too late"
-    "replay": ((60, 170, 260, 325), ("debate", "SOME", 1, -0.1), ("debate", "YOU", 1, -0.06), (50.45, ("debate", "RIGHT", 1, 0))),
+    # every hook opens on the knockout: the right hand lands on the spoken word
+    "hook":   dict(crop=(20, 90, 360, 640), full=True, a=("hook", None, 1, 0), b=("hook", "END", 1, 0),
+                   sync=(KO, ("hook", PUNCH_WORD, 1, 0.05))),
+    # "we clinch, I elbowed the top of his head"
+    "clinch": dict(crop=(30, 130, 400, 500), a=("body", "WE", 1, -0.12), b=("body", "REF", 1, -0.3),
+                   sync=(45.6, ("body", "ELBOWED", 1, 0))),
+    # "the ref steps in and I throw the right hand. He's out" (the drop sits in the silence after "out")
+    "ko":     dict(crop=(30, 130, 400, 500), a=("body", "REF", 1, -0.3), b=("body", "THEY", 1, -0.08),
+                   sync=(KO, ("body", "THROW", 1, 0.05))),
+    # "some people say the right hand was too late. You be the judge": replay, freezes on the punch
+    "replay": dict(crop=(60, 170, 260, 325), a=("body", "SOME", 1, -0.1), b=("body", "TELL", 1, -0.06),
+                   sync=(KO, ("body", "RIGHT", 2, 0.1)), hold=KO + 0.04),
 }
 
 d = json.load(open(HERE / f"work/edl_{V}.json", encoding="utf-8"))
-segs = {s["name"]: s for s in d["segments"]}
+segs = {"hook": d["segments"][0], "body": d["segments"][1], "loop": d["segments"][-1]}
 (HERE / "assets/media").mkdir(parents=True, exist_ok=True)
 
 
@@ -45,22 +52,30 @@ def at(a):
 
 
 out = {}
-for name, (crop, fa, fb, (src_t, anchor)) in SLOTS.items():
-    if fa[0] not in segs:
-        continue
-    t0, t1 = at(fa), at(fb)
-    a = src_t - (at(anchor) - t0)          # source second shown at the slot start
+for name, c in SLOTS.items():
+    t0, t1 = at(c["a"]), at(c["b"])
+    src_t, anchor = c["sync"]
+    a = src_t - (at(anchor) - t0)          # source second on screen at the slot start
     dur = t1 - t0 + 0.15
-    x, y, w, h = crop
-    fc = (f"[0:v]fps=30,split[a][b];"
-          f"[a]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,boxblur=30:2,eq=brightness=-0.3:saturation=0.6[bg];"
-          f"[b]crop={w}:{h}:{x}:{y},scale=1080:1350:force_original_aspect_ratio=increase:flags=lanczos,crop=1080:1350,"
-          f"unsharp=5:5:0.8,eq=contrast=1.07:saturation=1.08[fg];"
-          f"[bg][fg]overlay=0:285,noise=alls=6:allf=t,format=yuv420p")
+    x, y, w, h = c["crop"]
+    hold = ""
+    if c.get("hold") and c["hold"] < a + dur:
+        keep = c["hold"] - a
+        hold = f"trim=duration={keep:.3f},tpad=stop_mode=clone:stop_duration={dur - keep + 0.1:.3f},"
+    if c.get("full"):
+        fc = (f"[0:v]fps=30,{hold}crop={w}:{h}:{x}:{y},scale=1080:1920:flags=lanczos,unsharp=5:5:0.7,"
+              f"eq=contrast=1.06:saturation=1.08,noise=alls=5:allf=t,format=yuv420p")
+    else:
+        fc = (f"[0:v]fps=30,{hold}split[a][b];"
+              f"[a]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,boxblur=30:2,eq=brightness=-0.3:saturation=0.6[bg];"
+              f"[b]crop={w}:{h}:{x}:{y},scale=1080:1350:force_original_aspect_ratio=increase:flags=lanczos,crop=1080:1350,"
+              f"unsharp=5:5:0.8,eq=contrast=1.07:saturation=1.08[fg];"
+              f"[bg][fg]overlay=0:285,noise=alls=6:allf=t,format=yuv420p")
     dst = HERE / f"assets/media/b_{name}.mp4"
-    subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-ss", f"{a:.3f}", "-t", f"{dur:.3f}", "-i", str(SRC),
-                    "-filter_complex", fc, "-an", "-c:v", "libx264", "-crf", "19", "-preset", "fast",
+    subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-ss", f"{max(0, a):.3f}", "-t", f"{dur + 0.2:.3f}", "-i", str(SRC),
+                    "-filter_complex", fc, "-an", "-t", f"{dur:.3f}", "-c:v", "libx264", "-crf", "18", "-preset", "fast",
                     "-g", "30", "-keyint_min", "30", "-movflags", "+faststart", str(dst)], check=True)
-    out[name] = {"start": round(t0, 3), "dur": round(t1 - t0, 3), "src": [round(a, 2), round(a + dur, 2)]}
+    out[name] = {"start": round(t0, 3), "dur": round(t1 - t0, 3), "src": [round(a, 2), round(a + dur, 2)],
+                 "full": bool(c.get("full"))}
     print(f"{name:7} slot {t0:6.2f}-{t1:6.2f} ({t1 - t0:4.2f}s)  src {a:.2f}-{a + dur:.2f}")
 json.dump(out, open(HERE / "work/broll.json", "w"), indent=1)

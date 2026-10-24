@@ -11,35 +11,71 @@
       .full { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
       #cam { position: absolute; inset: 0; overflow: hidden; }
       #cam-inner { position: absolute; inset: 0; transform-origin: 50% 100%; }
-      /* hook title: on frame 0 (it is the thumbnail), inside the grid crop */
-      #title { position: absolute; left: 70px; right: 70px; top: 250px; text-align: center; font-family: "Geist", sans-serif; color: #fff;
-        text-shadow: 0 2px 6px rgba(0,0,0,0.45), 0 8px 34px rgba(0,0,0,0.4); }
-      #title .lead { display: block; font-weight: 700; font-size: 70px; line-height: 1.05; letter-spacing: -0.035em; }
-      /* the big word sits BEHIND his head: A-roll -> #behind -> cut-out (fg_<V>_full.webm), all inside the camera */
-      /* on the spoken hook word it jumps through him: #behind (under the cut-out) hands over to #front-head (over it) */
-      #behind, #front-head { position: absolute; left: 0; right: 0; top: {{BEHIND_TOP}}px; text-align: center; font-family: "Geist", sans-serif;
-        font-weight: 800; font-size: {{HOOK_SIZE}}px; line-height: 0.8; letter-spacing: -0.065em; color: #E8112D; white-space: nowrap; }
-      #front-head { text-shadow: 0 6px 14px rgba(0,0,0,0.5), 0 20px 60px rgba(0,0,0,0.45); transform-origin: 50% 60%; }
-      #behind { transform-origin: 50% 60%; }
       {{ED_CSS}}
       :root { --ed-cap-top: {{CAP_TOP}}px; --ed-back-top: {{BACK_TOP}}px; }
+      /* ---- hook: the knockout tape full-bleed, a per-hook graphic on top (Emil Kowalski motion rules:
+         strong ease-out entrances, nothing from scale(0), 30-80 ms staggers, transform/opacity/filter only) ---- */
+      #hooktape { z-index: 0; }
+      #hk { position: absolute; inset: 0; font-family: "Geist", sans-serif; color: #fff; pointer-events: none; }
+      #hk .scrim { position: absolute; inset: 0;
+        background: linear-gradient(180deg, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.18) 34%, rgba(0,0,0,0.12) 55%, rgba(0,0,0,0.66) 100%); }
+      .hk-lead { position: absolute; left: 70px; right: 70px; top: 300px; text-align: center; font-weight: 700; font-size: 72px;
+        line-height: 1.06; letter-spacing: -0.035em; text-shadow: 0 2px 8px rgba(0,0,0,0.5), 0 10px 34px rgba(0,0,0,0.4); }
+      .hk-lead .ln { display: block; }
+      .hk-w { display: inline-block; will-change: transform, filter, opacity; }
+      .red { color: #E8112D; }
+      .mono { font-family: ui-monospace, "SFMono-Regular", Menlo, monospace; letter-spacing: 0.18em; }
+      .hk-flash { position: absolute; inset: 0; background: #fff; opacity: 0; }
+      /* A: official result plate, K.O. struck through, rolls over to DRAW */
+      .plate { position: absolute; left: 110px; right: 110px; top: 760px; height: 470px; border-radius: 34px;
+        background: rgba(10,10,12,0.72); border: 2px solid rgba(255,255,255,0.14); backdrop-filter: blur(6px); overflow: hidden; }
+      .plate .lbl { position: absolute; left: 0; right: 0; top: 52px; text-align: center; font-size: 30px; font-weight: 600; color: rgba(255,255,255,0.7); }
+      .plate .slot { position: absolute; left: 0; right: 0; top: 120px; height: 300px; overflow: hidden; text-align: center; }
+      .plate .word { position: absolute; left: 0; right: 0; top: 0; font-weight: 800; font-size: 250px; line-height: 300px; letter-spacing: -0.055em; white-space: nowrap; }
+      .plate .ch { display: inline-block; will-change: transform, opacity; }
+      .plate .strike { position: absolute; left: 150px; right: 150px; top: 262px; height: 22px; border-radius: 11px; background: #E8112D;
+        transform-origin: 0 50%; transform: scaleX(0); }
+      /* B: his 6 fights stack against my 1, then the 1 knocks the stack over */
+      .stk { position: absolute; left: 0; right: 0; top: 760px; height: 760px; }
+      .col { position: absolute; bottom: 120px; width: 260px; display: flex; flex-direction: column-reverse; align-items: center; gap: 12px; }
+      .col.him { left: 170px; } .col.me { right: 170px; }
+      .blk { width: 260px; height: 74px; border-radius: 14px; background: rgba(255,255,255,0.94); color: #0B0B0D; display: flex; align-items: center;
+        justify-content: center; font-weight: 800; font-size: 40px; letter-spacing: -0.02em; box-shadow: 0 10px 30px rgba(0,0,0,0.35); will-change: transform, opacity; }
+      .blk.mine { background: #E8112D; color: #fff; }
+      .cap { position: absolute; bottom: 40px; width: 260px; text-align: center; font-size: 30px; font-weight: 600; color: rgba(255,255,255,0.85); }
+      .cap.him { left: 170px; } .cap.me { right: 170px; }
+      .stkbase { position: absolute; left: 130px; right: 130px; bottom: 104px; height: 4px; border-radius: 2px; background: rgba(255,255,255,0.5); }
+      /* C: the numbers. 16, fight #6 against fight #1 (odometer digits) */
+      .age { position: absolute; left: 0; right: 0; top: 640px; text-align: center; }
+      .age .lbl, .rec .lbl { font-size: 30px; font-weight: 600; color: rgba(255,255,255,0.75); }
+      .odo { display: inline-flex; height: 380px; overflow: hidden; font-weight: 800; font-size: 380px; line-height: 380px; letter-spacing: -0.06em; }
+      .col1 { display: flex; flex-direction: column; will-change: transform; }
+      .rec .slot1 { display: inline-block; position: relative; width: 112px; height: 170px; overflow: hidden; vertical-align: top; }
+      .rec .slot1 .col1 { position: absolute; left: 0; top: 0; width: 112px; }
+      .rec .slot1 .col1 b { display: block; height: 170px; line-height: 170px; font-weight: 800; text-align: left; }
+      .recs { position: absolute; left: 90px; right: 90px; top: 1150px; display: flex; gap: 30px; }
+      .rec { flex: 1; height: 300px; border-radius: 30px; background: rgba(10,10,12,0.74); border: 2px solid rgba(255,255,255,0.14);
+        text-align: center; padding-top: 40px; will-change: transform, opacity, filter; }
+      .rec .num { display: inline-flex; height: 170px; overflow: hidden; font-weight: 800; font-size: 170px; line-height: 170px; letter-spacing: -0.05em; }
+      .rec .under { width: 120px; height: 12px; border-radius: 6px; margin: 4px auto 0; background: #E8112D; transform: scaleX(0); transform-origin: 0 50%; }
     </style>
   </head>
   <body>
     <div id="root" data-composition-id="main" data-start="0" data-duration="{{DUR}}" data-width="1080" data-height="1920">
       <div id="cam"><div id="cam-inner">
         <video id="aroll" class="clip full" src="{{AROLL}}" data-start="0" data-duration="{{DUR}}" data-track-index="0" muted playsinline></video>
-        <div id="behind" class="clip" data-start="0" data-duration="{{HEAD_SWAP}}" data-track-index="1">{{HOOK_WORD}}</div>
         <div id="ed-caps-back">
         {{ED_HTML_CAPS_BACK}}
         </div>
         <video id="fg" class="clip full" src="{{FG}}" data-start="0" data-duration="{{DUR}}" data-track-index="2" muted playsinline></video>
-        <div id="front-head" class="clip" data-start="{{HEAD_SWAP}}" data-duration="{{FRONT_DUR}}" data-track-index="3">{{HOOK_WORD}}</div>
         {{ED_BROLL}}
       </div></div>
 
-      <div id="title" class="clip" data-start="0" data-duration="{{TITLE_END}}" data-track-index="5">
-        {{HOOK_LEAD}}
+      <video id="hooktape" class="clip full" src="assets/media/b_hook.mp4" data-start="0" data-duration="{{HOOK_END}}" data-track-index="5" muted playsinline></video>
+      <div id="hk" class="clip" data-start="0" data-duration="{{HOOK_END}}" data-track-index="6">
+        <div class="scrim"></div>
+        {{HOOK_HTML}}
+        <div class="hk-flash" id="hkflash"></div>
       </div>
 
       <div id="ed-caps">
@@ -51,22 +87,60 @@
 
       <audio id="vo" src="{{AROLL}}" data-start="0" data-duration="{{DUR}}" data-track-index="10" data-volume="1"></audio>
       {{ED_AUDIO}}
-      <audio id="sfx-head" src="assets/sfx/ed/punch.wav" data-start="{{HEAD_SFX}}" data-duration="0.34" data-track-index="26" data-volume="0.55"></audio>
+      {{HOOK_AUDIO}}
     </div>
 
     <script>{{ED_JS}}</script>
     <script>
       const PLAN = {{ED_PLAN}};
+      const HK = {{HOOK_PLAN}};
       const tl = gsap.timeline({ paused: true });
-      // the title is up on frame 0 (it is the thumbnail) and softens away as the captions take over
-      // on the spoken hook word: it winds back behind him, then flies forward through him toward the camera, over his forehead
-      tl.fromTo("#behind", { scale: 1, filter: "blur(0px)" }, { scale: 0.92, filter: "blur(2px)", duration: 0.16, ease: "power2.in" }, {{HEAD_SWAP}} - 0.16);
-      tl.fromTo("#front-head", { opacity: 1, scale: 0.92, y: 0, filter: "blur(8px)" }, { scale: 1.26, y: 70, filter: "blur(0px)", duration: 0.16, ease: "power3.out" }, {{HEAD_SWAP}});
-      tl.to("#front-head", { scale: 1.14, y: 56, duration: 0.3, ease: "power2.out" }, {{HEAD_SWAP}} + 0.16);
-      tl.fromTo("#cam", { scale: 1 }, { scale: 1.035, duration: 0.07, ease: "power2.out", immediateRender: false }, {{HEAD_SWAP}});
-      tl.to("#cam", { scale: 1, duration: 0.22, ease: "power2.out" }, {{HEAD_SWAP}} + 0.07);
-      tl.to("#title", { opacity: 0, y: -20, filter: "blur(10px)", duration: 0.12, ease: "power1.in" }, {{TITLE_END}} - 0.12);
-      tl.to("#front-head", { opacity: 0, filter: "blur(10px)", duration: 0.12, ease: "power1.in" }, {{TITLE_END}} - 0.12);
+      const OUT4 = "power4.out", INOUT = "power3.inOut";
+      // words of the spoken hook build in as they are said (blur to sharp, small rise, no bounce)
+      HK.words.forEach((w) => tl.fromTo("#" + w.id, { opacity: w.s < 0.05 ? 1 : 0, y: w.s < 0.05 ? 0 : 16, filter: w.s < 0.05 ? "blur(0px)" : "blur(12px)" },
+        { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.28, ease: OUT4, immediateRender: true }, Math.max(0, w.s - 0.04)));
+      const flash = (t, a) => tl.fromTo("#hkflash", { opacity: a }, { opacity: 0, duration: 0.22, ease: "power2.out", immediateRender: false }, t);
+      // the tape: slow push all hook long, a punch-in on the knockout
+      tl.fromTo("#hooktape", { scale: 1.0 }, { scale: 1.08, duration: HK.end, ease: "none", immediateRender: true }, 0);
+      tl.fromTo("#hooktape", { filter: "brightness(1)" }, { filter: "brightness(1.35)", duration: 0.06, ease: "power2.out", immediateRender: false }, HK.ko);
+      tl.to("#hooktape", { filter: "brightness(1)", duration: 0.3, ease: "power2.out" }, HK.ko + 0.06);
+      flash(HK.ko, 0.55);
+
+      if (HK.v === "A") {
+        // K.O. lands with the punch, gets struck through on "called", rolls over to DRAW on "draw"
+        tl.fromTo("#koW", { scale: 1.12, filter: "blur(6px)" }, { scale: 1, filter: "blur(0px)", duration: 0.34, ease: "back.out(1.6)", immediateRender: false }, HK.ko);
+        tl.to("#plate .strike", { scaleX: 1, duration: 0.24, ease: OUT4 }, HK.t.called);
+        tl.to("#koW .ch, #plate .strike", { yPercent: -110, opacity: 0, duration: 0.22, ease: "power3.in", stagger: 0.035 }, HK.t.draw - 0.2);
+        tl.fromTo("#drawW .ch", { yPercent: 110, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 0.42, ease: OUT4, stagger: 0.045, immediateRender: true }, HK.t.draw - 0.04);
+        tl.fromTo("#drawW", { scale: 1.08 }, { scale: 1, duration: 0.4, ease: "back.out(1.7)", immediateRender: false }, HK.t.draw + 0.12);
+        tl.fromTo("#plate", { borderColor: "rgba(255,255,255,0.14)" }, { borderColor: "rgba(232,17,45,0.9)", duration: 0.2, ease: "power2.out", immediateRender: false }, HK.t.draw + 0.1);
+      }
+      if (HK.v === "B") {
+        // his six fights drop onto the stack one by one on "stacked", the stack leans in on "against me",
+        // my one fight hits on "knocked" and the stack goes over
+        tl.fromTo("#him .blk", { y: -260, opacity: 0, rotation: (i) => (i % 2 ? 4 : -4) }, { y: 0, opacity: 1, rotation: 0, duration: 0.36, ease: OUT4,
+          stagger: 0.07, immediateRender: true }, HK.t.stacked - 0.05);
+        tl.fromTo(".cap.him", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.3, ease: OUT4, immediateRender: true }, HK.t.stacked + 0.4);
+        tl.fromTo("#him", { rotation: 0 }, { rotation: 7, duration: 0.5, ease: INOUT, transformOrigin: "50% 100%", immediateRender: false }, HK.t.against);
+        tl.fromTo("#me .blk", { x: 0 }, { x: -170, duration: 0.12, ease: OUT4, immediateRender: false }, HK.t.knocked - 0.06);
+        tl.to("#me .blk", { x: 0, duration: 0.36, ease: OUT4 }, HK.t.knocked + 0.08);
+        tl.to("#him .blk", { x: (i) => -240 - i * 70, y: (i) => 420 + i * 60, rotation: (i) => -50 - i * 18, opacity: 0, duration: 0.7,
+          ease: "power2.in", stagger: { each: 0.035, from: "end" } }, HK.t.knocked);
+        tl.to(".cap.him", { opacity: 0, duration: 0.2, ease: "power2.out" }, HK.t.knocked + 0.2);
+        flash(HK.t.knocked, 0.4);
+      }
+      if (HK.v === "C") {
+        // 16 is on screen from frame 0; his record rolls 1 -> 6 on "sixth", mine lands on "first" in red
+        tl.fromTo("#age", { scale: 1.06 }, { scale: 1, duration: 0.4, ease: OUT4, immediateRender: false }, HK.t.sixteen);
+        tl.fromTo("#recHim", { x: -140, opacity: 0, filter: "blur(10px)" }, { x: 0, opacity: 1, filter: "blur(0px)", duration: 0.36, ease: OUT4, immediateRender: true }, HK.t.his - 0.1);
+        tl.fromTo("#recHim .col1", { y: 0 }, { y: -850, duration: 0.7, ease: OUT4, immediateRender: true }, HK.t.sixth - 0.15);
+        tl.fromTo("#recMe", { x: 140, opacity: 0, filter: "blur(10px)" }, { x: 0, opacity: 1, filter: "blur(0px)", duration: 0.36, ease: OUT4, immediateRender: true }, HK.t.my - 0.08);
+        tl.to("#recMe .under", { scaleX: 1, duration: 0.3, ease: OUT4 }, HK.t.first);
+        tl.fromTo("#recMe .num", { scale: 1.18 }, { scale: 1, duration: 0.38, ease: "back.out(1.7)", immediateRender: false }, HK.t.first);
+      }
+      // the hook clears into the face: a short blur, never a hard pop
+      tl.to("#hk, #hooktape", { opacity: 0, filter: "blur(12px)", duration: 0.16, ease: "power1.in" }, HK.end - 0.16);
+
       Editorial.animate(tl, PLAN, { cam: "#cam-inner", shake: "#cam" });
       window.__timelines["main"] = tl;
     </script>

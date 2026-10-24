@@ -11,16 +11,6 @@
       .full { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
       #cam { position: absolute; inset: 0; overflow: hidden; }
       #cam-inner { position: absolute; inset: 0; transform-origin: 50% 100%; }
-      /* hook title: on frame 0 (it is the thumbnail), inside the grid crop */
-      #title { position: absolute; left: 70px; right: 70px; top: 250px; text-align: center; font-family: "Geist", sans-serif; color: #fff;
-        text-shadow: 0 2px 6px rgba(0,0,0,0.45), 0 8px 34px rgba(0,0,0,0.4); }
-      #title .lead { display: block; font-weight: 700; font-size: 70px; line-height: 1.05; letter-spacing: -0.035em; }
-      /* the big word sits BEHIND his head: A-roll -> #behind -> cut-out (fg_<V>_full.webm), all inside the camera */
-      /* on the spoken hook word it jumps through him: #behind (under the cut-out) hands over to #front-head (over it) */
-      #behind, #front-head { position: absolute; left: 0; right: 0; top: 533px; text-align: center; font-family: "Geist", sans-serif;
-        font-weight: 800; font-size: 360px; line-height: 0.8; letter-spacing: -0.065em; color: #E8112D; white-space: nowrap; }
-      #front-head { text-shadow: 0 6px 14px rgba(0,0,0,0.5), 0 20px 60px rgba(0,0,0,0.45); transform-origin: 50% 60%; }
-      #behind { transform-origin: 50% 60%; }
       /* Editorial captions + white quote cards. Needs the Geist variable font at assets/fonts/Geist-latin.woff2. */
 @font-face { font-family: "Geist"; src: url("assets/fonts/Geist-latin.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
 :root { --ed-white: #FFFFFF; --ed-paper: #FFFFFF; --ed-ink: #0B0B0D; --ed-red: #E8112D; --ed-cap-top: 1180px; --ed-back-top: 460px; }
@@ -57,117 +47,155 @@
 #ed-flash { background: #fff; }
 
       :root { --ed-cap-top: 330px; --ed-back-top: 0px; }
+      /* ---- hook: the knockout tape full-bleed, a per-hook graphic on top (Emil Kowalski motion rules:
+         strong ease-out entrances, nothing from scale(0), 30-80 ms staggers, transform/opacity/filter only) ---- */
+      #hooktape { z-index: 0; }
+      #hk { position: absolute; inset: 0; font-family: "Geist", sans-serif; color: #fff; pointer-events: none; }
+      #hk .scrim { position: absolute; inset: 0;
+        background: linear-gradient(180deg, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.18) 34%, rgba(0,0,0,0.12) 55%, rgba(0,0,0,0.66) 100%); }
+      .hk-lead { position: absolute; left: 70px; right: 70px; top: 300px; text-align: center; font-weight: 700; font-size: 72px;
+        line-height: 1.06; letter-spacing: -0.035em; text-shadow: 0 2px 8px rgba(0,0,0,0.5), 0 10px 34px rgba(0,0,0,0.4); }
+      .hk-lead .ln { display: block; }
+      .hk-w { display: inline-block; will-change: transform, filter, opacity; }
+      .red { color: #E8112D; }
+      .mono { font-family: ui-monospace, "SFMono-Regular", Menlo, monospace; letter-spacing: 0.18em; }
+      .hk-flash { position: absolute; inset: 0; background: #fff; opacity: 0; }
+      /* A: official result plate, K.O. struck through, rolls over to DRAW */
+      .plate { position: absolute; left: 110px; right: 110px; top: 760px; height: 470px; border-radius: 34px;
+        background: rgba(10,10,12,0.72); border: 2px solid rgba(255,255,255,0.14); backdrop-filter: blur(6px); overflow: hidden; }
+      .plate .lbl { position: absolute; left: 0; right: 0; top: 52px; text-align: center; font-size: 30px; font-weight: 600; color: rgba(255,255,255,0.7); }
+      .plate .slot { position: absolute; left: 0; right: 0; top: 120px; height: 300px; overflow: hidden; text-align: center; }
+      .plate .word { position: absolute; left: 0; right: 0; top: 0; font-weight: 800; font-size: 250px; line-height: 300px; letter-spacing: -0.055em; white-space: nowrap; }
+      .plate .ch { display: inline-block; will-change: transform, opacity; }
+      .plate .strike { position: absolute; left: 150px; right: 150px; top: 262px; height: 22px; border-radius: 11px; background: #E8112D;
+        transform-origin: 0 50%; transform: scaleX(0); }
+      /* B: his 6 fights stack against my 1, then the 1 knocks the stack over */
+      .stk { position: absolute; left: 0; right: 0; top: 760px; height: 760px; }
+      .col { position: absolute; bottom: 120px; width: 260px; display: flex; flex-direction: column-reverse; align-items: center; gap: 12px; }
+      .col.him { left: 170px; } .col.me { right: 170px; }
+      .blk { width: 260px; height: 74px; border-radius: 14px; background: rgba(255,255,255,0.94); color: #0B0B0D; display: flex; align-items: center;
+        justify-content: center; font-weight: 800; font-size: 40px; letter-spacing: -0.02em; box-shadow: 0 10px 30px rgba(0,0,0,0.35); will-change: transform, opacity; }
+      .blk.mine { background: #E8112D; color: #fff; }
+      .cap { position: absolute; bottom: 40px; width: 260px; text-align: center; font-size: 30px; font-weight: 600; color: rgba(255,255,255,0.85); }
+      .cap.him { left: 170px; } .cap.me { right: 170px; }
+      .stkbase { position: absolute; left: 130px; right: 130px; bottom: 104px; height: 4px; border-radius: 2px; background: rgba(255,255,255,0.5); }
+      /* C: the numbers. 16, fight #6 against fight #1 (odometer digits) */
+      .age { position: absolute; left: 0; right: 0; top: 640px; text-align: center; }
+      .age .lbl, .rec .lbl { font-size: 30px; font-weight: 600; color: rgba(255,255,255,0.75); }
+      .odo { display: inline-flex; height: 380px; overflow: hidden; font-weight: 800; font-size: 380px; line-height: 380px; letter-spacing: -0.06em; }
+      .col1 { display: flex; flex-direction: column; will-change: transform; }
+      .rec .slot1 { display: inline-block; position: relative; width: 112px; height: 170px; overflow: hidden; vertical-align: top; }
+      .rec .slot1 .col1 { position: absolute; left: 0; top: 0; width: 112px; }
+      .rec .slot1 .col1 b { display: block; height: 170px; line-height: 170px; font-weight: 800; text-align: left; }
+      .recs { position: absolute; left: 90px; right: 90px; top: 1150px; display: flex; gap: 30px; }
+      .rec { flex: 1; height: 300px; border-radius: 30px; background: rgba(10,10,12,0.74); border: 2px solid rgba(255,255,255,0.14);
+        text-align: center; padding-top: 40px; will-change: transform, opacity, filter; }
+      .rec .num { display: inline-flex; height: 170px; overflow: hidden; font-weight: 800; font-size: 170px; line-height: 170px; letter-spacing: -0.05em; }
+      .rec .under { width: 120px; height: 12px; border-radius: 6px; margin: 4px auto 0; background: #E8112D; transform: scaleX(0); transform-origin: 0 50%; }
     </style>
   </head>
   <body>
-    <div id="root" data-composition-id="main" data-start="0" data-duration="40.950" data-width="1080" data-height="1920">
+    <div id="root" data-composition-id="main" data-start="0" data-duration="39.840" data-width="1080" data-height="1920">
       <div id="cam"><div id="cam-inner">
-        <video id="aroll" class="clip full" src="assets/media/aroll_A.mp4" data-start="0" data-duration="40.950" data-track-index="0" muted playsinline></video>
-        <div id="behind" class="clip" data-start="0" data-duration="1.960" data-track-index="1">draw.</div>
+        <video id="aroll" class="clip full" src="assets/media/aroll_C.mp4" data-start="0" data-duration="39.840" data-track-index="0" muted playsinline></video>
         <div id="ed-caps-back">
-        <div id="ph9" class="ed-ph ed-split" style="top:425px;bottom:auto;height:440px"><div class="ed-lead"></div><div class="ed-keyline"><span id="ph9w0" class="ed-w ed-key" data-fx="decode"><span class="ed-c">p</span><span class="ed-c">o</span><span class="ed-c">i</span><span class="ed-c">n</span><span class="ed-c">t</span><span class="ed-c">s</span></span></div><div class="ed-tail"><span id="ph9w1" class="ed-w">you&#x27;re</span> <span id="ph9w2" class="ed-w">gonna</span></div></div>
-        <div id="ph26" class="ed-ph ed-split" style="top:425px;bottom:auto;height:440px"><div class="ed-lead"><span id="ph26w0" class="ed-w">about</span></div><div class="ed-keyline"><span id="ph26w1" class="ed-w ed-key" data-fx="focus"><span class="ed-c">v</span><span class="ed-c">i</span><span class="ed-c">o</span><span class="ed-c">l</span><span class="ed-c">e</span><span class="ed-c">n</span><span class="ed-c">c</span><span class="ed-c">e</span></span></div></div>
+        <div id="ph5" class="ed-ph ed-split" style="top:425px;bottom:auto;height:440px"><div class="ed-lead"></div><div class="ed-keyline"><span id="ph5w0" class="ed-w ed-key" data-fx="decode"><span class="ed-c">p</span><span class="ed-c">o</span><span class="ed-c">i</span><span class="ed-c">n</span><span class="ed-c">t</span><span class="ed-c">s</span></span></div><div class="ed-tail"><span id="ph5w1" class="ed-w">you&#x27;re</span> <span id="ph5w2" class="ed-w">gonna</span></div></div>
+        <div id="ph23" class="ed-ph ed-split" style="top:425px;bottom:auto;height:440px"><div class="ed-lead"><span id="ph23w0" class="ed-w">about</span></div><div class="ed-keyline"><span id="ph23w1" class="ed-w ed-key" data-fx="focus"><span class="ed-c">v</span><span class="ed-c">i</span><span class="ed-c">o</span><span class="ed-c">l</span><span class="ed-c">e</span><span class="ed-c">n</span><span class="ed-c">c</span><span class="ed-c">e</span></span></div></div>
         </div>
-        <video id="fg" class="clip full" src="assets/media/fg_A_full.webm" data-start="0" data-duration="40.950" data-track-index="2" muted playsinline></video>
-        <div id="front-head" class="clip" data-start="1.960" data-duration="0.700" data-track-index="3">draw.</div>
-        <video id="br-ring" class="clip full ed-broll" src="assets/media/b_ring.mp4" data-start="2.420" data-duration="2.770" data-track-index="4" muted playsinline></video>
-        <video id="br-clinch" class="clip full ed-broll" src="assets/media/b_clinch.mp4" data-start="13.530" data-duration="2.230" data-track-index="4" muted playsinline></video>
-        <video id="br-ko" class="clip full ed-broll" src="assets/media/b_ko.mp4" data-start="15.760" data-duration="4.290" data-track-index="4" muted playsinline></video>
-        <video id="br-replay" class="clip full ed-broll" src="assets/media/b_replay.mp4" data-start="23.830" data-duration="3.000" data-track-index="4" muted playsinline></video>
+        <video id="fg" class="clip full" src="assets/media/fg_C_full.webm" data-start="0" data-duration="39.840" data-track-index="2" muted playsinline></video>
+        <video id="br-clinch" class="clip full ed-broll" src="assets/media/b_clinch.mp4" data-start="11.720" data-duration="2.380" data-track-index="4" muted playsinline></video>
+        <video id="br-ko" class="clip full ed-broll" src="assets/media/b_ko.mp4" data-start="14.100" data-duration="4.260" data-track-index="4" muted playsinline></video>
+        <video id="br-replay" class="clip full ed-broll" src="assets/media/b_replay.mp4" data-start="22.140" data-duration="3.940" data-track-index="4" muted playsinline></video>
       </div></div>
 
-      <div id="title" class="clip" data-start="0" data-duration="2.660" data-track-index="5">
-        <span class="lead">I knocked him out.</span><span class="lead">They called it a</span>
+      <video id="hooktape" class="clip full" src="assets/media/b_hook.mp4" data-start="0" data-duration="4.160" data-track-index="5" muted playsinline></video>
+      <div id="hk" class="clip" data-start="0" data-duration="4.160" data-track-index="6">
+        <div class="scrim"></div>
+        <div class="hk-lead"><span class="ln"><span id="hw0_0" class="hk-w">I</span> <span id="hw0_1" class="hk-w">was</span> <span id="hw0_2" class="hk-w red">16.</span></span><span class="ln"><span id="hw1_0" class="hk-w">His</span> <span id="hw1_1" class="hk-w">sixth</span> <span id="hw1_2" class="hk-w">fight.</span></span><span class="ln"><span id="hw2_0" class="hk-w">My</span> <span id="hw2_1" class="hk-w red">first.</span></span></div><div class="age" id="age"><div class="lbl mono">AGE</div><div class="odo"><span>16</span></div></div><div class="recs"><div class="rec" id="recHim"><div class="lbl mono">HIS FIGHT</div><div class="num">#<span class="slot1"><span class="col1"><b>1</b><b>2</b><b>3</b><b>4</b><b>5</b><b>6</b></span></span></div></div><div class="rec" id="recMe"><div class="lbl mono">MY FIGHT</div><div class="num red">#1</div><div class="under"></div></div></div>
+        <div class="hk-flash" id="hkflash"></div>
       </div>
 
       <div id="ed-caps">
-      <div id="ph0" class="ed-ph"><div class="ed-lead"><span id="ph0w0" class="ed-w">was</span></div></div>
-      <div id="ph1" class="ed-ph"><div class="ed-lead"><span id="ph1w0" class="ed-w">16</span> <span id="ph1w1" class="ed-w">and</span> <span id="ph1w2" class="ed-w">it</span> <span id="ph1w3" class="ed-w">was</span></div></div>
-      <div id="ph2" class="ed-ph"><div class="ed-lead"><span id="ph2w0" class="ed-w">my</span> <span id="ph2w1" class="ed-w">first</span> <span id="ph2w2" class="ed-w">fight</span> <span id="ph2w3" class="ed-w">it</span></div></div>
-      <div id="ph3" class="ed-ph"><div class="ed-lead"><span id="ph3w0" class="ed-w">was</span> <span id="ph3w1" class="ed-w">his</span> <span id="ph3w2" class="ed-w">sixth</span> <span id="ph3w3" class="ed-w">one</span></div></div>
-      <div id="ph4" class="ed-ph ed-split"><div class="ed-lead"><span id="ph4w0" class="ed-w">he</span> <span id="ph4w1" class="ed-w">knew</span> <span id="ph4w2" class="ed-w">the</span></div><div class="ed-keyline"><span id="ph4w3" class="ed-w ed-key" data-fx="focus"><span class="ed-c">r</span><span class="ed-c">e</span><span class="ed-c">f</span><span class="ed-c">e</span><span class="ed-c">r</span><span class="ed-c">e</span><span class="ed-c">e</span></span></div></div>
-      <div id="ph5" class="ed-ph"><div class="ed-lead"><span id="ph5w0" class="ed-w">the</span> <span id="ph5w1" class="ed-w">contact</span> <span id="ph5w2" class="ed-w">who</span> <span id="ph5w3" class="ed-w">got</span></div></div>
-      <div id="ph6" class="ed-ph"><div class="ed-lead"><span id="ph6w0" class="ed-w">me</span> <span id="ph6w1" class="ed-w">the</span> <span id="ph6w2" class="ed-w">fight</span> <span id="ph6w3" class="ed-w">told</span></div></div>
-      <div id="ph7" class="ed-ph"><div class="ed-lead"><span id="ph7w0" class="ed-w">me</span></div></div>
-      <div id="ph8" class="ed-ph"><div class="ed-lead"><span id="ph8w0" class="ed-w">if</span> <span id="ph8w1" class="ed-w">it&#x27;s</span> <span id="ph8w2" class="ed-w">down</span> <span id="ph8w3" class="ed-w">to</span></div></div>
-      <div id="ph10" class="ed-ph"><div class="ed-lead"><span id="ph10w0" class="ed-w">lose</span></div></div>
-      <div id="ph11" class="ed-ph"><div class="ed-lead"><span id="ph11w0" class="ed-w">we</span> <span id="ph11w1" class="ed-w">clinch</span> <span id="ph11w2" class="ed-w">I</span> <span id="ph11w3" class="ed-w">elbowed</span></div></div>
-      <div id="ph12" class="ed-ph"><div class="ed-lead"><span id="ph12w0" class="ed-w">the</span> <span id="ph12w1" class="ed-w">top</span> <span id="ph12w2" class="ed-w">of</span> <span id="ph12w3" class="ed-w">his</span></div></div>
-      <div id="ph13" class="ed-ph"><div class="ed-lead"><span id="ph13w0" class="ed-w">head</span> <span id="ph13w1" class="ed-w">the</span> <span id="ph13w2" class="ed-w">ref</span> <span id="ph13w3" class="ed-w">steps</span></div></div>
-      <div id="ph14" class="ed-ph"><div class="ed-lead"><span id="ph14w0" class="ed-w">in</span> <span id="ph14w1" class="ed-w">and</span> <span id="ph14w2" class="ed-w">I</span> <span id="ph14w3" class="ed-w">throw</span></div></div>
-      <div id="ph15" class="ed-ph"><div class="ed-lead"><span id="ph15w0" class="ed-w">the</span> <span id="ph15w1" class="ed-w">right</span> <span id="ph15w2" class="ed-w">hand</span></div></div>
-      <div id="ph16" class="ed-ph"><div class="ed-lead"><span id="ph16w0" class="ed-w">he&#x27;s</span> <span id="ph16w1" class="ed-w">out</span></div></div>
-      <div id="ph17" class="ed-ph"><div class="ed-lead"><span id="ph17w0" class="ed-w">my</span> <span id="ph17w1" class="ed-w">coaches</span> <span id="ph17w2" class="ed-w">said</span> <span id="ph17w3" class="ed-w">the</span></div></div>
-      <div id="ph18" class="ed-ph ed-split"><div class="ed-lead"><span id="ph18w0" class="ed-w">elbows</span> <span id="ph18w1" class="ed-w">were</span></div><div class="ed-keyline"><span id="ph18w2" class="ed-w ed-key" data-fx="focus"><span class="ed-c">l</span><span class="ed-c">e</span><span class="ed-c">g</span><span class="ed-c">a</span><span class="ed-c">l</span></span></div></div>
-      <div id="ph19" class="ed-ph"><div class="ed-lead"><span id="ph19w0" class="ed-w">some</span> <span id="ph19w1" class="ed-w">people</span> <span id="ph19w2" class="ed-w">say</span> <span id="ph19w3" class="ed-w">the</span></div></div>
-      <div id="ph20" class="ed-ph"><div class="ed-lead"><span id="ph20w0" class="ed-w">right</span> <span id="ph20w1" class="ed-w">hand</span> <span id="ph20w2" class="ed-w">was</span> <span id="ph20w3" class="ed-w">too</span></div></div>
-      <div id="ph21" class="ed-ph"><div class="ed-lead"><span id="ph21w0" class="ed-w">late</span></div></div>
-      <div id="ph22" class="ed-ph"><div class="ed-lead"><span id="ph22w0" class="ed-w">tell</span> <span id="ph22w1" class="ed-w">me</span> <span id="ph22w2" class="ed-w">in</span> <span id="ph22w3" class="ed-w">the</span></div></div>
-      <div id="ph23" class="ed-ph"><div class="ed-lead"><span id="ph23w0" class="ed-w">comments</span></div></div>
-      <div id="ph24" class="ed-ph"><div class="ed-lead"><span id="ph24w0" class="ed-w">that</span> <span id="ph24w1" class="ed-w">night</span> <span id="ph24w2" class="ed-w">taught</span> <span id="ph24w3" class="ed-w">me</span></div></div>
-      <div id="ph25" class="ed-ph"><div class="ed-lead"><span id="ph25w0" class="ed-w">that</span> <span id="ph25w1" class="ed-w">fighting</span> <span id="ph25w2" class="ed-w">isn&#x27;t</span> <span id="ph25w3" class="ed-w">just</span></div></div>
-      <div id="ph27" class="ed-ph"><div class="ed-lead"><span id="ph27w0" class="ed-w">you</span> <span id="ph27w1" class="ed-w">can&#x27;t</span> <span id="ph27w2" class="ed-w">control</span> <span id="ph27w3" class="ed-w">the</span></div></div>
-      <div id="ph28" class="ed-ph ed-split"><div class="ed-lead"></div><div class="ed-keyline"><span id="ph28w0" class="ed-w ed-key" data-fx="focus"><span class="ed-c">j</span><span class="ed-c">u</span><span class="ed-c">d</span><span class="ed-c">g</span><span class="ed-c">e</span><span class="ed-c">s</span></span></div></div>
-      <div id="ph29" class="ed-ph"><div class="ed-lead"><span id="ph29w0" class="ed-w">only</span> <span id="ph29w1" class="ed-w">what</span> <span id="ph29w2" class="ed-w">you</span> <span id="ph29w3" class="ed-w">do</span></div></div>
-      <div id="ph30" class="ed-ph"><div class="ed-lead"><span id="ph30w0" class="ed-w">and</span> <span id="ph30w1" class="ed-w">that&#x27;s</span> <span id="ph30w2" class="ed-w">why</span> <span id="ph30w3" class="ed-w">one</span></div></div>
-      <div id="ph31" class="ed-ph"><div class="ed-lead"><span id="ph31w0" class="ed-w">of</span> <span id="ph31w1" class="ed-w">the</span> <span id="ph31w2" class="ed-w">best</span> <span id="ph31w3" class="ed-w">nights</span></div></div>
-      <div id="ph32" class="ed-ph"><div class="ed-lead"><span id="ph32w0" class="ed-w">in</span> <span id="ph32w1" class="ed-w">my</span> <span id="ph32w2" class="ed-w">life</span></div></div>
+      <div id="ph0" class="ed-ph ed-split"><div class="ed-lead"><span id="ph0w0" class="ed-w">he</span> <span id="ph0w1" class="ed-w">knew</span> <span id="ph0w2" class="ed-w">the</span></div><div class="ed-keyline"><span id="ph0w3" class="ed-w ed-key" data-fx="focus"><span class="ed-c">r</span><span class="ed-c">e</span><span class="ed-c">f</span><span class="ed-c">e</span><span class="ed-c">r</span><span class="ed-c">e</span><span class="ed-c">e</span></span></div></div>
+      <div id="ph1" class="ed-ph"><div class="ed-lead"><span id="ph1w0" class="ed-w">the</span> <span id="ph1w1" class="ed-w">contact</span> <span id="ph1w2" class="ed-w">who</span> <span id="ph1w3" class="ed-w">got</span></div></div>
+      <div id="ph2" class="ed-ph"><div class="ed-lead"><span id="ph2w0" class="ed-w">me</span> <span id="ph2w1" class="ed-w">the</span> <span id="ph2w2" class="ed-w">fight</span> <span id="ph2w3" class="ed-w">told</span></div></div>
+      <div id="ph3" class="ed-ph"><div class="ed-lead"><span id="ph3w0" class="ed-w">me</span></div></div>
+      <div id="ph4" class="ed-ph"><div class="ed-lead"><span id="ph4w0" class="ed-w">if</span> <span id="ph4w1" class="ed-w">it&#x27;s</span> <span id="ph4w2" class="ed-w">down</span> <span id="ph4w3" class="ed-w">to</span></div></div>
+      <div id="ph6" class="ed-ph"><div class="ed-lead"><span id="ph6w0" class="ed-w">lose</span></div></div>
+      <div id="ph7" class="ed-ph"><div class="ed-lead"><span id="ph7w0" class="ed-w">we</span> <span id="ph7w1" class="ed-w">clinch</span> <span id="ph7w2" class="ed-w">I</span> <span id="ph7w3" class="ed-w">elbowed</span></div></div>
+      <div id="ph8" class="ed-ph"><div class="ed-lead"><span id="ph8w0" class="ed-w">the</span> <span id="ph8w1" class="ed-w">top</span> <span id="ph8w2" class="ed-w">of</span> <span id="ph8w3" class="ed-w">his</span></div></div>
+      <div id="ph9" class="ed-ph"><div class="ed-lead"><span id="ph9w0" class="ed-w">head</span> <span id="ph9w1" class="ed-w">the</span> <span id="ph9w2" class="ed-w">ref</span> <span id="ph9w3" class="ed-w">steps</span></div></div>
+      <div id="ph10" class="ed-ph"><div class="ed-lead"><span id="ph10w0" class="ed-w">in</span> <span id="ph10w1" class="ed-w">and</span> <span id="ph10w2" class="ed-w">I</span> <span id="ph10w3" class="ed-w">throw</span></div></div>
+      <div id="ph11" class="ed-ph"><div class="ed-lead"><span id="ph11w0" class="ed-w">the</span> <span id="ph11w1" class="ed-w">right</span> <span id="ph11w2" class="ed-w">hand</span></div></div>
+      <div id="ph12" class="ed-ph"><div class="ed-lead"><span id="ph12w0" class="ed-w">he&#x27;s</span> <span id="ph12w1" class="ed-w">out</span></div></div>
+      <div id="ph13" class="ed-ph"><div class="ed-lead"><span id="ph13w0" class="ed-w">coaches</span> <span id="ph13w1" class="ed-w">said</span> <span id="ph13w2" class="ed-w">the</span> <span id="ph13w3" class="ed-w">elbows</span></div></div>
+      <div id="ph14" class="ed-ph ed-split"><div class="ed-lead"><span id="ph14w0" class="ed-w">were</span></div><div class="ed-keyline"><span id="ph14w1" class="ed-w ed-key" data-fx="focus"><span class="ed-c">l</span><span class="ed-c">e</span><span class="ed-c">g</span><span class="ed-c">a</span><span class="ed-c">l</span></span></div></div>
+      <div id="ph15" class="ed-ph"><div class="ed-lead"><span id="ph15w0" class="ed-w">some</span> <span id="ph15w1" class="ed-w">people</span> <span id="ph15w2" class="ed-w">say</span> <span id="ph15w3" class="ed-w">the</span></div></div>
+      <div id="ph16" class="ed-ph"><div class="ed-lead"><span id="ph16w0" class="ed-w">right</span> <span id="ph16w1" class="ed-w">hand</span> <span id="ph16w2" class="ed-w">was</span> <span id="ph16w3" class="ed-w">too</span></div></div>
+      <div id="ph17" class="ed-ph"><div class="ed-lead"><span id="ph17w0" class="ed-w">late</span></div></div>
+      <div id="ph18" class="ed-ph"><div class="ed-lead"><span id="ph18w0" class="ed-w">you</span> <span id="ph18w1" class="ed-w">be</span> <span id="ph18w2" class="ed-w">the</span> <span id="ph18w3" class="ed-w">judge</span></div></div>
+      <div id="ph19" class="ed-ph"><div class="ed-lead"><span id="ph19w0" class="ed-w">tell</span> <span id="ph19w1" class="ed-w">me</span> <span id="ph19w2" class="ed-w">in</span> <span id="ph19w3" class="ed-w">the</span></div></div>
+      <div id="ph20" class="ed-ph"><div class="ed-lead"><span id="ph20w0" class="ed-w">comments</span></div></div>
+      <div id="ph21" class="ed-ph"><div class="ed-lead"><span id="ph21w0" class="ed-w">that</span> <span id="ph21w1" class="ed-w">night</span> <span id="ph21w2" class="ed-w">taught</span> <span id="ph21w3" class="ed-w">me</span></div></div>
+      <div id="ph22" class="ed-ph"><div class="ed-lead"><span id="ph22w0" class="ed-w">that</span> <span id="ph22w1" class="ed-w">fighting</span> <span id="ph22w2" class="ed-w">isn&#x27;t</span> <span id="ph22w3" class="ed-w">just</span></div></div>
+      <div id="ph24" class="ed-ph"><div class="ed-lead"><span id="ph24w0" class="ed-w">you</span> <span id="ph24w1" class="ed-w">can&#x27;t</span> <span id="ph24w2" class="ed-w">control</span> <span id="ph24w3" class="ed-w">what</span></div></div>
+      <div id="ph25" class="ed-ph ed-split"><div class="ed-lead"><span id="ph25w0" class="ed-w">the</span></div><div class="ed-keyline"><span id="ph25w1" class="ed-w ed-key" data-fx="focus"><span class="ed-c">j</span><span class="ed-c">u</span><span class="ed-c">d</span><span class="ed-c">g</span><span class="ed-c">e</span><span class="ed-c">s</span></span></div><div class="ed-tail"><span id="ph25w2" class="ed-w">do</span></div></div>
+      <div id="ph26" class="ed-ph"><div class="ed-lead"><span id="ph26w0" class="ed-w">only</span> <span id="ph26w1" class="ed-w">what</span> <span id="ph26w2" class="ed-w">you</span> <span id="ph26w3" class="ed-w">do</span></div></div>
+      <div id="ph27" class="ed-ph"><div class="ed-lead"><span id="ph27w0" class="ed-w">and</span> <span id="ph27w1" class="ed-w">I</span> <span id="ph27w2" class="ed-w">still</span> <span id="ph27w3" class="ed-w">think</span></div></div>
+      <div id="ph28" class="ed-ph"><div class="ed-lead"><span id="ph28w0" class="ed-w">about</span> <span id="ph28w1" class="ed-w">that</span> <span id="ph28w2" class="ed-w">night</span> <span id="ph28w3" class="ed-w">every</span></div></div>
+      <div id="ph29" class="ed-ph"><div class="ed-lead"><span id="ph29w0" class="ed-w">time</span> <span id="ph29w1" class="ed-w">I</span> <span id="ph29w2" class="ed-w">train</span></div></div>
       </div>
-      <div id="card0" class="clip ed-card" data-start="20.090" data-duration="1.320" data-track-index="6"><div class="ed-cardbox"><div class="ed-cardlead"><span id="card0w0" class="ed-w">they</span> <span id="card0w1" class="ed-w">called</span> <span id="card0w2" class="ed-w">it</span> <span id="card0w3" class="ed-w">a</span></div><div class="ed-cardkey ed-slam" style="font-size:300px"><span id="card0w4" class="ed-w ed-key" data-fx="focus"><span class="ed-c">d</span><span class="ed-c">r</span><span class="ed-c">a</span><span class="ed-c">w</span></span></div><div class="ed-cardtail"></div></div></div>
-      <div id="card1" class="clip ed-card" data-start="26.830" data-duration="0.920" data-track-index="6"><div class="ed-cardbox"><div class="ed-cardlead"><span id="card1w0" class="ed-w">you</span> <span id="card1w1" class="ed-w">be</span> <span id="card1w2" class="ed-w">the</span></div><div class="ed-cardkey" style="font-size:230px"><span id="card1w3" class="ed-w ed-key" data-fx="focus"><span class="ed-c">j</span><span class="ed-c">u</span><span class="ed-c">d</span><span class="ed-c">g</span><span class="ed-c">e</span></span></div><div class="ed-cardtail"></div></div></div>
-      <div id="card2" class="clip ed-card" data-start="32.370" data-duration="2.320" data-track-index="6"><div class="ed-cardbox"><div class="ed-cardlead"><span id="card2w0" class="ed-w">it&#x27;s</span></div><div class="ed-cardkey" style="font-size:230px"><span id="card2w1" class="ed-w ed-key" data-fx="focus"><span class="ed-c">c</span><span class="ed-c">h</span><span class="ed-c">e</span><span class="ed-c">s</span><span class="ed-c">s</span></span></div><div class="ed-cardtail"><span id="card2w2" class="ed-w">except</span> <span id="card2w3" class="ed-w">you</span> <span id="card2w4" class="ed-w">get</span> <span id="card2w5" class="ed-w">punched</span></div></div></div>
+      <div id="card0" class="clip ed-card" data-start="18.380" data-duration="1.480" data-track-index="6"><div class="ed-cardbox"><div class="ed-cardlead"><span id="card0w0" class="ed-w">they</span> <span id="card0w1" class="ed-w">called</span> <span id="card0w2" class="ed-w">it</span> <span id="card0w3" class="ed-w">a</span></div><div class="ed-cardkey ed-slam" style="font-size:300px"><span id="card0w4" class="ed-w ed-key" data-fx="focus"><span class="ed-c">d</span><span class="ed-c">r</span><span class="ed-c">a</span><span class="ed-c">w</span></span></div><div class="ed-cardtail"><span id="card0w5" class="ed-w">my</span></div></div></div>
+      <div id="card1" class="clip ed-card" data-start="30.940" data-duration="2.540" data-track-index="6"><div class="ed-cardbox"><div class="ed-cardlead"><span id="card1w0" class="ed-w">it&#x27;s</span></div><div class="ed-cardkey" style="font-size:230px"><span id="card1w1" class="ed-w ed-key" data-fx="focus"><span class="ed-c">c</span><span class="ed-c">h</span><span class="ed-c">e</span><span class="ed-c">s</span><span class="ed-c">s</span></span></div><div class="ed-cardtail"><span id="card1w2" class="ed-w">except</span> <span id="card1w3" class="ed-w">you</span> <span id="card1w4" class="ed-w">get</span> <span id="card1w5" class="ed-w">punched</span></div></div></div>
       <div id="ed-flash"></div>
       <div id="ed-dip"></div>
 
-      <audio id="vo" src="assets/media/aroll_A.mp4" data-start="0" data-duration="40.950" data-track-index="10" data-volume="1"></audio>
+      <audio id="vo" src="assets/media/aroll_C.mp4" data-start="0" data-duration="39.840" data-track-index="10" data-volume="1"></audio>
       <audio id="ed-sfx0" src="assets/sfx/ed/shimmer.wav" data-start="0.000" data-duration="0.350" data-track-index="20" data-volume="0.25"></audio>
-      <audio id="ed-sfx1" src="assets/sfx/ed/tick.wav" data-start="2.670" data-duration="0.070" data-track-index="21" data-volume="0.22"></audio>
-      <audio id="ed-sfx2" src="assets/sfx/ed/tick.wav" data-start="3.210" data-duration="0.070" data-track-index="22" data-volume="0.22"></audio>
-      <audio id="ed-sfx3" src="assets/sfx/ed/tick.wav" data-start="3.930" data-duration="0.070" data-track-index="23" data-volume="0.22"></audio>
-      <audio id="ed-sfx4" src="assets/sfx/ed/tick.wav" data-start="5.430" data-duration="0.070" data-track-index="20" data-volume="0.22"></audio>
-      <audio id="ed-sfx5" src="assets/sfx/ed/tick.wav" data-start="6.690" data-duration="0.070" data-track-index="21" data-volume="0.22"></audio>
-      <audio id="ed-sfx6" src="assets/sfx/ed/key.wav" data-start="7.640" data-duration="0.450" data-track-index="22" data-volume="0.3"></audio>
-      <audio id="ed-sfx7" src="assets/sfx/ed/tick.wav" data-start="8.270" data-duration="0.070" data-track-index="23" data-volume="0.22"></audio>
-      <audio id="ed-sfx8" src="assets/sfx/ed/tick.wav" data-start="9.250" data-duration="0.070" data-track-index="20" data-volume="0.22"></audio>
-      <audio id="ed-sfx9" src="assets/sfx/ed/tick.wav" data-start="10.090" data-duration="0.070" data-track-index="21" data-volume="0.22"></audio>
-      <audio id="ed-sfx10" src="assets/sfx/ed/tick.wav" data-start="10.750" data-duration="0.070" data-track-index="22" data-volume="0.22"></audio>
-      <audio id="ed-sfx11" src="assets/sfx/ed/tick.wav" data-start="11.490" data-duration="0.070" data-track-index="23" data-volume="0.22"></audio>
-      <audio id="ed-sfx12" src="assets/sfx/ed/data.wav" data-start="11.520" data-duration="0.484" data-track-index="20" data-volume="0.3"></audio>
-      <audio id="ed-sfx13" src="assets/sfx/ed/tick.wav" data-start="12.870" data-duration="0.070" data-track-index="21" data-volume="0.22"></audio>
-      <audio id="ed-sfx14" src="assets/sfx/ed/tick.wav" data-start="13.600" data-duration="0.070" data-track-index="22" data-volume="0.22"></audio>
-      <audio id="ed-sfx15" src="assets/sfx/ed/tick.wav" data-start="15.040" data-duration="0.070" data-track-index="23" data-volume="0.22"></audio>
-      <audio id="ed-sfx16" src="assets/sfx/ed/tick.wav" data-start="15.500" data-duration="0.070" data-track-index="20" data-volume="0.22"></audio>
-      <audio id="ed-sfx17" src="assets/sfx/ed/tick.wav" data-start="16.580" data-duration="0.070" data-track-index="21" data-volume="0.22"></audio>
-      <audio id="ed-sfx18" src="assets/sfx/ed/tick.wav" data-start="17.580" data-duration="0.070" data-track-index="22" data-volume="0.22"></audio>
-      <audio id="ed-sfx19" src="assets/sfx/ed/tick.wav" data-start="18.840" data-duration="0.070" data-track-index="23" data-volume="0.22"></audio>
-      <audio id="ed-sfx20" src="assets/sfx/ed/whoom.wav" data-start="19.910" data-duration="0.600" data-track-index="20" data-volume="0.3"></audio>
-      <audio id="ed-sfx21" src="assets/sfx/ed/key.wav" data-start="20.910" data-duration="0.450" data-track-index="21" data-volume="0.4"></audio>
-      <audio id="ed-sfx22" src="assets/sfx/ed/sub.wav" data-start="20.990" data-duration="1.400" data-track-index="22" data-volume="0.5"></audio>
-      <audio id="ed-sfx23" src="assets/sfx/ed/tick.wav" data-start="21.440" data-duration="0.070" data-track-index="23" data-volume="0.22"></audio>
-      <audio id="ed-sfx24" src="assets/sfx/ed/tick.wav" data-start="22.680" data-duration="0.070" data-track-index="20" data-volume="0.22"></audio>
-      <audio id="ed-sfx25" src="assets/sfx/ed/key.wav" data-start="23.230" data-duration="0.450" data-track-index="21" data-volume="0.3"></audio>
-      <audio id="ed-sfx26" src="assets/sfx/ed/tick.wav" data-start="23.880" data-duration="0.070" data-track-index="22" data-volume="0.22"></audio>
-      <audio id="ed-sfx27" src="assets/sfx/ed/tick.wav" data-start="24.920" data-duration="0.070" data-track-index="23" data-volume="0.22"></audio>
-      <audio id="ed-sfx28" src="assets/sfx/ed/tick.wav" data-start="26.060" data-duration="0.070" data-track-index="20" data-volume="0.22"></audio>
-      <audio id="ed-sfx29" src="assets/sfx/ed/whoom.wav" data-start="26.650" data-duration="0.600" data-track-index="21" data-volume="0.3"></audio>
-      <audio id="ed-sfx30" src="assets/sfx/ed/key.wav" data-start="27.350" data-duration="0.450" data-track-index="22" data-volume="0.4"></audio>
-      <audio id="ed-sfx31" src="assets/sfx/ed/tick.wav" data-start="27.780" data-duration="0.070" data-track-index="23" data-volume="0.22"></audio>
-      <audio id="ed-sfx32" src="assets/sfx/ed/tick.wav" data-start="28.640" data-duration="0.070" data-track-index="20" data-volume="0.22"></audio>
-      <audio id="ed-sfx33" src="assets/sfx/ed/tick.wav" data-start="29.300" data-duration="0.070" data-track-index="21" data-volume="0.22"></audio>
-      <audio id="ed-sfx34" src="assets/sfx/ed/tick.wav" data-start="30.280" data-duration="0.070" data-track-index="22" data-volume="0.22"></audio>
-      <audio id="ed-sfx35" src="assets/sfx/ed/tick.wav" data-start="31.500" data-duration="0.070" data-track-index="23" data-volume="0.22"></audio>
-      <audio id="ed-sfx36" src="assets/sfx/ed/key.wav" data-start="31.770" data-duration="0.450" data-track-index="20" data-volume="0.3"></audio>
-      <audio id="ed-sfx37" src="assets/sfx/ed/whoom.wav" data-start="32.190" data-duration="0.600" data-track-index="21" data-volume="0.3"></audio>
-      <audio id="ed-sfx38" src="assets/sfx/ed/key.wav" data-start="32.770" data-duration="0.450" data-track-index="22" data-volume="0.4"></audio>
-      <audio id="ed-sfx39" src="assets/sfx/ed/tick.wav" data-start="34.760" data-duration="0.070" data-track-index="23" data-volume="0.22"></audio>
-      <audio id="ed-sfx40" src="assets/sfx/ed/tick.wav" data-start="35.840" data-duration="0.070" data-track-index="20" data-volume="0.22"></audio>
-      <audio id="ed-sfx41" src="assets/sfx/ed/key.wav" data-start="35.850" data-duration="0.450" data-track-index="21" data-volume="0.3"></audio>
-      <audio id="ed-sfx42" src="assets/sfx/ed/tick.wav" data-start="36.600" data-duration="0.070" data-track-index="22" data-volume="0.22"></audio>
-      <audio id="ed-sfx43" src="assets/sfx/ed/tick.wav" data-start="38.160" data-duration="0.070" data-track-index="23" data-volume="0.22"></audio>
-      <audio id="ed-sfx44" src="assets/sfx/ed/tick.wav" data-start="39.040" data-duration="0.070" data-track-index="20" data-volume="0.22"></audio>
-      <audio id="ed-sfx45" src="assets/sfx/ed/tick.wav" data-start="39.840" data-duration="0.070" data-track-index="21" data-volume="0.22"></audio>
-      <audio id="ed-bed" src="assets/media/bed.mp3" data-start="0" data-duration="40.950" data-track-index="11" data-volume="1" data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":0.2},{"t":20.04,"v":0.2},{"t":20.19,"v":0.45},{"t":21.41,"v":0.45},{"t":21.66,"v":0.2},{"t":26.78,"v":0.2},{"t":26.93,"v":0.45},{"t":27.75,"v":0.45},{"t":28.0,"v":0.2},{"t":32.32,"v":0.2},{"t":32.47,"v":0.45},{"t":34.69,"v":0.45},{"t":34.94,"v":0.2},{"t":40.65,"v":0.2},{"t":40.95,"v":0}]}]}'></audio>
-      <audio id="sfx-head" src="assets/sfx/ed/punch.wav" data-start="1.870" data-duration="0.34" data-track-index="26" data-volume="0.55"></audio>
+      <audio id="ed-sfx1" src="assets/sfx/ed/tick.wav" data-start="4.110" data-duration="0.070" data-track-index="21" data-volume="0.22"></audio>
+      <audio id="ed-sfx2" src="assets/sfx/ed/key.wav" data-start="4.980" data-duration="0.450" data-track-index="22" data-volume="0.3"></audio>
+      <audio id="ed-sfx3" src="assets/sfx/ed/tick.wav" data-start="6.070" data-duration="0.070" data-track-index="23" data-volume="0.22"></audio>
+      <audio id="ed-sfx4" src="assets/sfx/ed/tick.wav" data-start="7.130" data-duration="0.070" data-track-index="20" data-volume="0.22"></audio>
+      <audio id="ed-sfx5" src="assets/sfx/ed/tick.wav" data-start="7.970" data-duration="0.070" data-track-index="21" data-volume="0.22"></audio>
+      <audio id="ed-sfx6" src="assets/sfx/ed/tick.wav" data-start="8.630" data-duration="0.070" data-track-index="22" data-volume="0.22"></audio>
+      <audio id="ed-sfx7" src="assets/sfx/ed/tick.wav" data-start="9.370" data-duration="0.070" data-track-index="23" data-volume="0.22"></audio>
+      <audio id="ed-sfx8" src="assets/sfx/ed/data.wav" data-start="9.400" data-duration="0.484" data-track-index="20" data-volume="0.3"></audio>
+      <audio id="ed-sfx9" src="assets/sfx/ed/tick.wav" data-start="10.750" data-duration="0.070" data-track-index="21" data-volume="0.22"></audio>
+      <audio id="ed-sfx10" src="assets/sfx/ed/tick.wav" data-start="11.790" data-duration="0.070" data-track-index="22" data-volume="0.22"></audio>
+      <audio id="ed-sfx11" src="assets/sfx/ed/tick.wav" data-start="13.230" data-duration="0.070" data-track-index="23" data-volume="0.22"></audio>
+      <audio id="ed-sfx12" src="assets/sfx/ed/tick.wav" data-start="13.690" data-duration="0.070" data-track-index="20" data-volume="0.22"></audio>
+      <audio id="ed-sfx13" src="assets/sfx/ed/tick.wav" data-start="14.770" data-duration="0.070" data-track-index="21" data-volume="0.22"></audio>
+      <audio id="ed-sfx14" src="assets/sfx/ed/tick.wav" data-start="15.770" data-duration="0.070" data-track-index="22" data-volume="0.22"></audio>
+      <audio id="ed-sfx15" src="assets/sfx/ed/tick.wav" data-start="17.030" data-duration="0.070" data-track-index="23" data-volume="0.22"></audio>
+      <audio id="ed-sfx16" src="assets/sfx/ed/whoom.wav" data-start="18.200" data-duration="0.600" data-track-index="20" data-volume="0.3"></audio>
+      <audio id="ed-sfx17" src="assets/sfx/ed/key.wav" data-start="19.200" data-duration="0.450" data-track-index="21" data-volume="0.4"></audio>
+      <audio id="ed-sfx18" src="assets/sfx/ed/sub.wav" data-start="19.280" data-duration="1.400" data-track-index="22" data-volume="0.5"></audio>
+      <audio id="ed-sfx19" src="assets/sfx/ed/tick.wav" data-start="19.890" data-duration="0.070" data-track-index="23" data-volume="0.22"></audio>
+      <audio id="ed-sfx20" src="assets/sfx/ed/tick.wav" data-start="21.290" data-duration="0.070" data-track-index="20" data-volume="0.22"></audio>
+      <audio id="ed-sfx21" src="assets/sfx/ed/key.wav" data-start="21.540" data-duration="0.450" data-track-index="21" data-volume="0.3"></audio>
+      <audio id="ed-sfx22" src="assets/sfx/ed/tick.wav" data-start="22.190" data-duration="0.070" data-track-index="22" data-volume="0.22"></audio>
+      <audio id="ed-sfx23" src="assets/sfx/ed/tick.wav" data-start="23.230" data-duration="0.070" data-track-index="23" data-volume="0.22"></audio>
+      <audio id="ed-sfx24" src="assets/sfx/ed/tick.wav" data-start="24.370" data-duration="0.070" data-track-index="20" data-volume="0.22"></audio>
+      <audio id="ed-sfx25" src="assets/sfx/ed/tick.wav" data-start="25.150" data-duration="0.070" data-track-index="21" data-volume="0.22"></audio>
+      <audio id="ed-sfx26" src="assets/sfx/ed/tick.wav" data-start="26.090" data-duration="0.070" data-track-index="22" data-volume="0.22"></audio>
+      <audio id="ed-sfx27" src="assets/sfx/ed/tick.wav" data-start="26.950" data-duration="0.070" data-track-index="23" data-volume="0.22"></audio>
+      <audio id="ed-sfx28" src="assets/sfx/ed/tick.wav" data-start="27.870" data-duration="0.070" data-track-index="20" data-volume="0.22"></audio>
+      <audio id="ed-sfx29" src="assets/sfx/ed/tick.wav" data-start="28.850" data-duration="0.070" data-track-index="21" data-volume="0.22"></audio>
+      <audio id="ed-sfx30" src="assets/sfx/ed/tick.wav" data-start="30.070" data-duration="0.070" data-track-index="22" data-volume="0.22"></audio>
+      <audio id="ed-sfx31" src="assets/sfx/ed/key.wav" data-start="30.340" data-duration="0.450" data-track-index="23" data-volume="0.3"></audio>
+      <audio id="ed-sfx32" src="assets/sfx/ed/whoom.wav" data-start="30.760" data-duration="0.600" data-track-index="20" data-volume="0.3"></audio>
+      <audio id="ed-sfx33" src="assets/sfx/ed/key.wav" data-start="31.340" data-duration="0.450" data-track-index="21" data-volume="0.4"></audio>
+      <audio id="ed-sfx34" src="assets/sfx/ed/tick.wav" data-start="33.550" data-duration="0.070" data-track-index="22" data-volume="0.22"></audio>
+      <audio id="ed-sfx35" src="assets/sfx/ed/tick.wav" data-start="34.510" data-duration="0.070" data-track-index="23" data-volume="0.22"></audio>
+      <audio id="ed-sfx36" src="assets/sfx/ed/key.wav" data-start="34.640" data-duration="0.450" data-track-index="20" data-volume="0.3"></audio>
+      <audio id="ed-sfx37" src="assets/sfx/ed/tick.wav" data-start="35.630" data-duration="0.070" data-track-index="21" data-volume="0.22"></audio>
+      <audio id="ed-sfx38" src="assets/sfx/ed/tick.wav" data-start="36.840" data-duration="0.070" data-track-index="22" data-volume="0.22"></audio>
+      <audio id="ed-sfx39" src="assets/sfx/ed/tick.wav" data-start="37.690" data-duration="0.070" data-track-index="23" data-volume="0.22"></audio>
+      <audio id="ed-sfx40" src="assets/sfx/ed/tick.wav" data-start="38.770" data-duration="0.070" data-track-index="20" data-volume="0.22"></audio>
+      <audio id="ed-bed" src="assets/media/bed.mp3" data-start="0" data-duration="39.840" data-track-index="11" data-volume="1" data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":0.2},{"t":18.33,"v":0.2},{"t":18.48,"v":0.45},{"t":19.86,"v":0.45},{"t":20.11,"v":0.2},{"t":30.89,"v":0.2},{"t":31.04,"v":0.45},{"t":33.48,"v":0.45},{"t":33.73,"v":0.2},{"t":39.54,"v":0.2},{"t":39.84,"v":0}]}]}'></audio>
+      <audio id="hks0" src="assets/sfx/ed/impact.wav" data-start="3.540" data-duration="1.2" data-track-index="30" data-volume="0.55"></audio>
+      <audio id="hks1" src="assets/sfx/ed/data.wav" data-start="1.670" data-duration="1.2" data-track-index="31" data-volume="0.3"></audio>
+      <audio id="hks2" src="assets/sfx/ed/key.wav" data-start="3.500" data-duration="1.2" data-track-index="32" data-volume="0.4"></audio>
     </div>
 
     <script>// Editorial motion for the PLAN that plan.py writes.
@@ -304,17 +332,55 @@ window.Editorial = {
 };
 </script>
     <script>
-      const PLAN = {"phrases":[{"id":"ph0","t0":2.72,"end":2.88,"words":[{"id":"ph0w0","s":2.72,"key":false}],"layer":"front","t1":3.2899999999999996},{"id":"ph1","t0":3.26,"end":3.98,"words":[{"id":"ph1w0","s":3.26,"key":false},{"id":"ph1w1","s":3.4,"key":false},{"id":"ph1w2","s":3.72,"key":false},{"id":"ph1w3","s":3.84,"key":false}],"layer":"front","t1":4.01},{"id":"ph2","t0":3.98,"end":5.48,"words":[{"id":"ph2w0","s":3.98,"key":false},{"id":"ph2w1","s":4.32,"key":false},{"id":"ph2w2","s":4.7,"key":false},{"id":"ph2w3","s":5.24,"key":false}],"layer":"front","t1":5.510000000000001},{"id":"ph3","t0":5.48,"end":6.54,"words":[{"id":"ph3w0","s":5.48,"key":false},{"id":"ph3w1","s":5.62,"key":false},{"id":"ph3w2","s":5.88,"key":false},{"id":"ph3w3","s":6.24,"key":false}],"layer":"front","t1":6.7700000000000005},{"id":"ph4","t0":6.74,"end":8.06,"words":[{"id":"ph4w0","s":6.74,"key":false},{"id":"ph4w1","s":7.08,"key":false},{"id":"ph4w2","s":7.4,"key":false},{"id":"ph4w3","s":7.68,"key":true,"fx":"focus"}],"layer":"front","t1":8.35},{"id":"ph5","t0":8.32,"end":9.3,"words":[{"id":"ph5w0","s":8.32,"key":false},{"id":"ph5w1","s":8.42,"key":false},{"id":"ph5w2","s":8.84,"key":false},{"id":"ph5w3","s":9.08,"key":false}],"layer":"front","t1":9.33},{"id":"ph6","t0":9.3,"end":10.14,"words":[{"id":"ph6w0","s":9.3,"key":false},{"id":"ph6w1","s":9.46,"key":false},{"id":"ph6w2","s":9.58,"key":false},{"id":"ph6w3","s":9.82,"key":false}],"layer":"front","t1":10.17},{"id":"ph7","t0":10.14,"end":10.4,"words":[{"id":"ph7w0","s":10.14,"key":false}],"layer":"front","t1":10.83},{"id":"ph8","t0":10.8,"end":11.54,"words":[{"id":"ph8w0","s":10.8,"key":false},{"id":"ph8w1","s":10.94,"key":false},{"id":"ph8w2","s":11.18,"key":false},{"id":"ph8w3","s":11.36,"key":false}],"layer":"front","t1":11.569999999999999},{"id":"ph9","t0":11.54,"end":12.92,"words":[{"id":"ph9w0","s":11.54,"key":true,"fx":"decode"},{"id":"ph9w1","s":11.92,"key":false},{"id":"ph9w2","s":12.72,"key":false}],"layer":"back","t1":12.95},{"id":"ph10","t0":12.92,"end":13.32,"words":[{"id":"ph10w0","s":12.92,"key":false}],"layer":"front","t1":13.68},{"id":"ph11","t0":13.65,"end":15.09,"words":[{"id":"ph11w0","s":13.65,"key":false},{"id":"ph11w1","s":13.79,"key":false},{"id":"ph11w2","s":14.35,"key":false},{"id":"ph11w3","s":14.65,"key":false}],"layer":"front","t1":15.12},{"id":"ph12","t0":15.09,"end":15.55,"words":[{"id":"ph12w0","s":15.09,"key":false},{"id":"ph12w1","s":15.17,"key":false},{"id":"ph12w2","s":15.33,"key":false},{"id":"ph12w3","s":15.43,"key":false}],"layer":"front","t1":15.58},{"id":"ph13","t0":15.55,"end":16.63,"words":[{"id":"ph13w0","s":15.55,"key":false},{"id":"ph13w1","s":15.81,"key":false},{"id":"ph13w2","s":16.21,"key":false},{"id":"ph13w3","s":16.41,"key":false}],"layer":"front","t1":16.66},{"id":"ph14","t0":16.63,"end":17.63,"words":[{"id":"ph14w0","s":16.63,"key":false},{"id":"ph14w1","s":16.97,"key":false},{"id":"ph14w2","s":17.19,"key":false},{"id":"ph14w3","s":17.31,"key":false}],"layer":"front","t1":17.66},{"id":"ph15","t0":17.63,"end":18.31,"words":[{"id":"ph15w0","s":17.63,"key":false},{"id":"ph15w1","s":17.79,"key":false},{"id":"ph15w2","s":17.99,"key":false}],"layer":"front","t1":18.92},{"id":"ph16","t0":18.89,"end":19.51,"words":[{"id":"ph16w0","s":18.89,"key":false},{"id":"ph16w1","s":19.13,"key":false}],"layer":"front","t1":20.07},{"id":"ph17","t0":21.49,"end":22.73,"words":[{"id":"ph17w0","s":21.49,"key":false},{"id":"ph17w1","s":21.63,"key":false},{"id":"ph17w2","s":21.97,"key":false},{"id":"ph17w3","s":22.41,"key":false}],"layer":"front","t1":22.76},{"id":"ph18","t0":22.73,"end":23.57,"words":[{"id":"ph18w0","s":22.73,"key":false},{"id":"ph18w1","s":23.03,"key":false},{"id":"ph18w2","s":23.27,"key":true,"fx":"focus"}],"layer":"front","t1":23.96},{"id":"ph19","t0":23.93,"end":24.97,"words":[{"id":"ph19w0","s":23.93,"key":false},{"id":"ph19w1","s":24.17,"key":false},{"id":"ph19w2","s":24.47,"key":false},{"id":"ph19w3","s":24.81,"key":false}],"layer":"front","t1":25.0},{"id":"ph20","t0":24.97,"end":26.11,"words":[{"id":"ph20w0","s":24.97,"key":false},{"id":"ph20w1","s":25.19,"key":false},{"id":"ph20w2","s":25.47,"key":false},{"id":"ph20w3","s":25.91,"key":false}],"layer":"front","t1":26.14},{"id":"ph21","t0":26.11,"end":26.43,"words":[{"id":"ph21w0","s":26.11,"key":false}],"layer":"front","t1":26.810000000000002},{"id":"ph22","t0":27.83,"end":28.69,"words":[{"id":"ph22w0","s":27.83,"key":false},{"id":"ph22w1","s":28.27,"key":false},{"id":"ph22w2","s":28.45,"key":false},{"id":"ph22w3","s":28.61,"key":false}],"layer":"front","t1":28.720000000000002},{"id":"ph23","t0":28.69,"end":29.01,"words":[{"id":"ph23w0","s":28.69,"key":false}],"layer":"front","t1":29.380000000000003},{"id":"ph24","t0":29.35,"end":30.33,"words":[{"id":"ph24w0","s":29.35,"key":false},{"id":"ph24w1","s":29.59,"key":false},{"id":"ph24w2","s":29.83,"key":false},{"id":"ph24w3","s":30.13,"key":false}],"layer":"front","t1":30.36},{"id":"ph25","t0":30.33,"end":31.55,"words":[{"id":"ph25w0","s":30.33,"key":false},{"id":"ph25w1","s":30.53,"key":false},{"id":"ph25w2","s":30.89,"key":false},{"id":"ph25w3","s":31.33,"key":false}],"layer":"front","t1":31.580000000000002},{"id":"ph26","t0":31.55,"end":32.17,"words":[{"id":"ph26w0","s":31.55,"key":false},{"id":"ph26w1","s":31.81,"key":true,"fx":"focus"}],"layer":"back","t1":32.349999999999994},{"id":"ph27","t0":34.81,"end":35.89,"words":[{"id":"ph27w0","s":34.81,"key":false},{"id":"ph27w1","s":34.99,"key":false},{"id":"ph27w2","s":35.35,"key":false},{"id":"ph27w3","s":35.71,"key":false}],"layer":"front","t1":35.92},{"id":"ph28","t0":35.89,"end":36.21,"words":[{"id":"ph28w0","s":35.89,"key":true,"fx":"focus"}],"layer":"front","t1":36.68},{"id":"ph29","t0":36.65,"end":37.59,"words":[{"id":"ph29w0","s":36.65,"key":false},{"id":"ph29w1","s":36.89,"key":false},{"id":"ph29w2","s":37.17,"key":false},{"id":"ph29w3","s":37.37,"key":false}],"layer":"front","t1":38.24},{"id":"ph30","t0":38.21,"end":39.09,"words":[{"id":"ph30w0","s":38.21,"key":false},{"id":"ph30w1","s":38.39,"key":false},{"id":"ph30w2","s":38.69,"key":false},{"id":"ph30w3","s":38.85,"key":false}],"layer":"front","t1":39.120000000000005},{"id":"ph31","t0":39.09,"end":39.89,"words":[{"id":"ph31w0","s":39.09,"key":false},{"id":"ph31w1","s":39.19,"key":false},{"id":"ph31w2","s":39.31,"key":false},{"id":"ph31w3","s":39.59,"key":false}],"layer":"front","t1":39.92},{"id":"ph32","t0":39.89,"end":40.81,"words":[{"id":"ph32w0","s":39.89,"key":false},{"id":"ph32w1","s":40.19,"key":false},{"id":"ph32w2","s":40.37,"key":false}],"layer":"front","t1":40.980000000000004}],"cards":[{"id":"card0","t0":20.09,"t1":21.41,"words":[{"id":"card0w0","s":20.15,"key":false},{"id":"card0w1","s":20.39,"key":false},{"id":"card0w2","s":20.65,"key":false},{"id":"card0w3","s":20.83,"key":false},{"id":"card0w4","s":20.95,"key":true,"slam":true,"fx":"focus"}]},{"id":"card1","t0":26.830000000000002,"t1":27.75,"words":[{"id":"card1w0","s":26.89,"key":false},{"id":"card1w1","s":27.07,"key":false},{"id":"card1w2","s":27.25,"key":false},{"id":"card1w3","s":27.39,"key":true,"slam":false,"fx":"focus"}]},{"id":"card2","t0":32.37,"t1":34.690000000000005,"words":[{"id":"card2w0","s":32.43,"key":false},{"id":"card2w1","s":32.81,"key":true,"slam":false,"fx":"focus"},{"id":"card2w2","s":33.07,"key":false},{"id":"card2w3","s":33.69,"key":false},{"id":"card2w4","s":34.07,"key":false},{"id":"card2w5","s":34.23,"key":false}]}],"faces":[[0.0,20.09],[21.41,26.830000000000002],[27.75,32.37],[34.690000000000005,40.95]],"dip":null,"title_end":2.66,"broll":[[2.42,5.1899999999999995],[13.53,15.76],[15.76,20.05],[23.83,26.83]]};
+      const PLAN = {"phrases":[{"id":"ph0","t0":4.16,"end":5.4,"words":[{"id":"ph0w0","s":4.16,"key":false},{"id":"ph0w1","s":4.42,"key":false},{"id":"ph0w2","s":4.74,"key":false},{"id":"ph0w3","s":5.02,"key":true,"fx":"focus"}],"layer":"front","t1":6.1000000000000005},{"id":"ph1","t0":6.12,"end":7.18,"words":[{"id":"ph1w0","s":6.12,"key":false},{"id":"ph1w1","s":6.3,"key":false},{"id":"ph1w2","s":6.72,"key":false},{"id":"ph1w3","s":6.96,"key":false}],"layer":"front","t1":7.21},{"id":"ph2","t0":7.18,"end":8.02,"words":[{"id":"ph2w0","s":7.18,"key":false},{"id":"ph2w1","s":7.34,"key":false},{"id":"ph2w2","s":7.46,"key":false},{"id":"ph2w3","s":7.7,"key":false}],"layer":"front","t1":8.049999999999999},{"id":"ph3","t0":8.02,"end":8.28,"words":[{"id":"ph3w0","s":8.02,"key":false}],"layer":"front","t1":8.709999999999999},{"id":"ph4","t0":8.68,"end":9.42,"words":[{"id":"ph4w0","s":8.68,"key":false},{"id":"ph4w1","s":8.82,"key":false},{"id":"ph4w2","s":9.06,"key":false},{"id":"ph4w3","s":9.24,"key":false}],"layer":"front","t1":9.45},{"id":"ph5","t0":9.42,"end":10.8,"words":[{"id":"ph5w0","s":9.42,"key":true,"fx":"decode"},{"id":"ph5w1","s":9.8,"key":false},{"id":"ph5w2","s":10.6,"key":false}],"layer":"back","t1":10.83},{"id":"ph6","t0":10.8,"end":11.2,"words":[{"id":"ph6w0","s":10.8,"key":false}],"layer":"front","t1":11.87},{"id":"ph7","t0":11.84,"end":13.28,"words":[{"id":"ph7w0","s":11.84,"key":false},{"id":"ph7w1","s":11.98,"key":false},{"id":"ph7w2","s":12.54,"key":false},{"id":"ph7w3","s":12.84,"key":false}],"layer":"front","t1":13.309999999999999},{"id":"ph8","t0":13.28,"end":13.74,"words":[{"id":"ph8w0","s":13.28,"key":false},{"id":"ph8w1","s":13.36,"key":false},{"id":"ph8w2","s":13.52,"key":false},{"id":"ph8w3","s":13.62,"key":false}],"layer":"front","t1":13.77},{"id":"ph9","t0":13.74,"end":14.82,"words":[{"id":"ph9w0","s":13.74,"key":false},{"id":"ph9w1","s":14.0,"key":false},{"id":"ph9w2","s":14.4,"key":false},{"id":"ph9w3","s":14.6,"key":false}],"layer":"front","t1":14.85},{"id":"ph10","t0":14.82,"end":15.82,"words":[{"id":"ph10w0","s":14.82,"key":false},{"id":"ph10w1","s":15.16,"key":false},{"id":"ph10w2","s":15.38,"key":false},{"id":"ph10w3","s":15.5,"key":false}],"layer":"front","t1":15.85},{"id":"ph11","t0":15.82,"end":16.5,"words":[{"id":"ph11w0","s":15.82,"key":false},{"id":"ph11w1","s":15.98,"key":false},{"id":"ph11w2","s":16.18,"key":false}],"layer":"front","t1":17.11},{"id":"ph12","t0":17.08,"end":17.7,"words":[{"id":"ph12w0","s":17.08,"key":false},{"id":"ph12w1","s":17.32,"key":false}],"layer":"front","t1":18.360000000000003},{"id":"ph13","t0":19.94,"end":21.34,"words":[{"id":"ph13w0","s":19.94,"key":false},{"id":"ph13w1","s":20.28,"key":false},{"id":"ph13w2","s":20.72,"key":false},{"id":"ph13w3","s":21.04,"key":false}],"layer":"front","t1":21.37},{"id":"ph14","t0":21.34,"end":21.88,"words":[{"id":"ph14w0","s":21.34,"key":false},{"id":"ph14w1","s":21.58,"key":true,"fx":"focus"}],"layer":"front","t1":22.27},{"id":"ph15","t0":22.24,"end":23.28,"words":[{"id":"ph15w0","s":22.24,"key":false},{"id":"ph15w1","s":22.48,"key":false},{"id":"ph15w2","s":22.78,"key":false},{"id":"ph15w3","s":23.12,"key":false}],"layer":"front","t1":23.310000000000002},{"id":"ph16","t0":23.28,"end":24.42,"words":[{"id":"ph16w0","s":23.28,"key":false},{"id":"ph16w1","s":23.5,"key":false},{"id":"ph16w2","s":23.78,"key":false},{"id":"ph16w3","s":24.22,"key":false}],"layer":"front","t1":24.450000000000003},{"id":"ph17","t0":24.42,"end":24.74,"words":[{"id":"ph17w0","s":24.42,"key":false}],"layer":"front","t1":25.23},{"id":"ph18","t0":25.2,"end":26.02,"words":[{"id":"ph18w0","s":25.2,"key":false},{"id":"ph18w1","s":25.38,"key":false},{"id":"ph18w2","s":25.56,"key":false},{"id":"ph18w3","s":25.7,"key":false}],"layer":"front","t1":26.17},{"id":"ph19","t0":26.14,"end":27.0,"words":[{"id":"ph19w0","s":26.14,"key":false},{"id":"ph19w1","s":26.58,"key":false},{"id":"ph19w2","s":26.76,"key":false},{"id":"ph19w3","s":26.92,"key":false}],"layer":"front","t1":27.03},{"id":"ph20","t0":27.0,"end":27.32,"words":[{"id":"ph20w0","s":27.0,"key":false}],"layer":"front","t1":27.950000000000003},{"id":"ph21","t0":27.92,"end":28.9,"words":[{"id":"ph21w0","s":27.92,"key":false},{"id":"ph21w1","s":28.16,"key":false},{"id":"ph21w2","s":28.4,"key":false},{"id":"ph21w3","s":28.7,"key":false}],"layer":"front","t1":28.93},{"id":"ph22","t0":28.9,"end":30.12,"words":[{"id":"ph22w0","s":28.9,"key":false},{"id":"ph22w1","s":29.1,"key":false},{"id":"ph22w2","s":29.46,"key":false},{"id":"ph22w3","s":29.9,"key":false}],"layer":"front","t1":30.150000000000002},{"id":"ph23","t0":30.12,"end":30.74,"words":[{"id":"ph23w0","s":30.12,"key":false},{"id":"ph23w1","s":30.38,"key":true,"fx":"focus"}],"layer":"back","t1":30.92},{"id":"ph24","t0":33.6,"end":34.56,"words":[{"id":"ph24w0","s":33.6,"key":false},{"id":"ph24w1","s":33.78,"key":false},{"id":"ph24w2","s":34.08,"key":false},{"id":"ph24w3","s":34.36,"key":false}],"layer":"front","t1":34.59},{"id":"ph25","t0":34.56,"end":35.24,"words":[{"id":"ph25w0","s":34.56,"key":false},{"id":"ph25w1","s":34.68,"key":true,"fx":"focus"},{"id":"ph25w2","s":34.92,"key":false}],"layer":"front","t1":35.71},{"id":"ph26","t0":35.68,"end":36.58,"words":[{"id":"ph26w0","s":35.68,"key":false},{"id":"ph26w1","s":35.92,"key":false},{"id":"ph26w2","s":36.14,"key":false},{"id":"ph26w3","s":36.34,"key":false}],"layer":"front","t1":36.92},{"id":"ph27","t0":36.89,"end":37.74,"words":[{"id":"ph27w0","s":36.89,"key":false},{"id":"ph27w1","s":37.12,"key":false},{"id":"ph27w2","s":37.24,"key":false},{"id":"ph27w3","s":37.48,"key":false}],"layer":"front","t1":37.77},{"id":"ph28","t0":37.74,"end":38.82,"words":[{"id":"ph28w0","s":37.74,"key":false},{"id":"ph28w1","s":37.94,"key":false},{"id":"ph28w2","s":38.12,"key":false},{"id":"ph28w3","s":38.5,"key":false}],"layer":"front","t1":38.85},{"id":"ph29","t0":38.82,"end":39.58,"words":[{"id":"ph29w0","s":38.82,"key":false},{"id":"ph29w1","s":39.14,"key":false},{"id":"ph29w2","s":39.28,"key":false}],"layer":"front","t1":39.870000000000005}],"cards":[{"id":"card0","t0":18.380000000000003,"t1":19.860000000000003,"words":[{"id":"card0w0","s":18.44,"key":false},{"id":"card0w1","s":18.68,"key":false},{"id":"card0w2","s":18.94,"key":false},{"id":"card0w3","s":19.12,"key":false},{"id":"card0w4","s":19.24,"key":true,"slam":true,"fx":"focus"},{"id":"card0w5","s":19.8,"key":false}]},{"id":"card1","t0":30.94,"t1":33.480000000000004,"words":[{"id":"card1w0","s":31.0,"key":false},{"id":"card1w1","s":31.38,"key":true,"slam":false,"fx":"focus"},{"id":"card1w2","s":31.64,"key":false},{"id":"card1w3","s":32.26,"key":false},{"id":"card1w4","s":32.64,"key":false},{"id":"card1w5","s":32.8,"key":false}]}],"faces":[[0.0,18.380000000000003],[19.860000000000003,30.94],[33.480000000000004,39.84]],"dip":null,"title_end":4.16,"broll":[[11.72,14.100000000000001],[14.1,18.36],[22.14,26.080000000000002]]};
+      const HK = {"v": "C", "end": 4.16, "ko": 3.57, "words": [{"id": "hw0_0", "s": 0.08}, {"id": "hw0_1", "s": 0.22}, {"id": "hw0_2", "s": 0.72}, {"id": "hw1_0", "s": 1.52}, {"id": "hw1_1", "s": 1.82}, {"id": "hw1_2", "s": 2.24}, {"id": "hw2_0", "s": 3.3}, {"id": "hw2_1", "s": 3.52}], "t": {"one": 3.82, "was": 0.22, "sixth": 1.82, "fight": 2.24, "my": 3.3, "i": 0.08, "and": 2.88, "his": 1.52, "sixteen": 0.72, "first": 3.52, "it": 1.22}};
       const tl = gsap.timeline({ paused: true });
-      // the title is up on frame 0 (it is the thumbnail) and softens away as the captions take over
-      // on the spoken hook word: it winds back behind him, then flies forward through him toward the camera, over his forehead
-      tl.fromTo("#behind", { scale: 1, filter: "blur(0px)" }, { scale: 0.92, filter: "blur(2px)", duration: 0.16, ease: "power2.in" }, 1.960 - 0.16);
-      tl.fromTo("#front-head", { opacity: 1, scale: 0.92, y: 0, filter: "blur(8px)" }, { scale: 1.26, y: 70, filter: "blur(0px)", duration: 0.16, ease: "power3.out" }, 1.960);
-      tl.to("#front-head", { scale: 1.14, y: 56, duration: 0.3, ease: "power2.out" }, 1.960 + 0.16);
-      tl.fromTo("#cam", { scale: 1 }, { scale: 1.035, duration: 0.07, ease: "power2.out", immediateRender: false }, 1.960);
-      tl.to("#cam", { scale: 1, duration: 0.22, ease: "power2.out" }, 1.960 + 0.07);
-      tl.to("#title", { opacity: 0, y: -20, filter: "blur(10px)", duration: 0.12, ease: "power1.in" }, 2.660 - 0.12);
-      tl.to("#front-head", { opacity: 0, filter: "blur(10px)", duration: 0.12, ease: "power1.in" }, 2.660 - 0.12);
+      const OUT4 = "power4.out", INOUT = "power3.inOut";
+      // words of the spoken hook build in as they are said (blur to sharp, small rise, no bounce)
+      HK.words.forEach((w) => tl.fromTo("#" + w.id, { opacity: w.s < 0.05 ? 1 : 0, y: w.s < 0.05 ? 0 : 16, filter: w.s < 0.05 ? "blur(0px)" : "blur(12px)" },
+        { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.28, ease: OUT4, immediateRender: true }, Math.max(0, w.s - 0.04)));
+      const flash = (t, a) => tl.fromTo("#hkflash", { opacity: a }, { opacity: 0, duration: 0.22, ease: "power2.out", immediateRender: false }, t);
+      // the tape: slow push all hook long, a punch-in on the knockout
+      tl.fromTo("#hooktape", { scale: 1.0 }, { scale: 1.08, duration: HK.end, ease: "none", immediateRender: true }, 0);
+      tl.fromTo("#hooktape", { filter: "brightness(1)" }, { filter: "brightness(1.35)", duration: 0.06, ease: "power2.out", immediateRender: false }, HK.ko);
+      tl.to("#hooktape", { filter: "brightness(1)", duration: 0.3, ease: "power2.out" }, HK.ko + 0.06);
+      flash(HK.ko, 0.55);
+
+      if (HK.v === "A") {
+        // K.O. lands with the punch, gets struck through on "called", rolls over to DRAW on "draw"
+        tl.fromTo("#koW", { scale: 1.12, filter: "blur(6px)" }, { scale: 1, filter: "blur(0px)", duration: 0.34, ease: "back.out(1.6)", immediateRender: false }, HK.ko);
+        tl.to("#plate .strike", { scaleX: 1, duration: 0.24, ease: OUT4 }, HK.t.called);
+        tl.to("#koW .ch, #plate .strike", { yPercent: -110, opacity: 0, duration: 0.22, ease: "power3.in", stagger: 0.035 }, HK.t.draw - 0.2);
+        tl.fromTo("#drawW .ch", { yPercent: 110, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 0.42, ease: OUT4, stagger: 0.045, immediateRender: true }, HK.t.draw - 0.04);
+        tl.fromTo("#drawW", { scale: 1.08 }, { scale: 1, duration: 0.4, ease: "back.out(1.7)", immediateRender: false }, HK.t.draw + 0.12);
+        tl.fromTo("#plate", { borderColor: "rgba(255,255,255,0.14)" }, { borderColor: "rgba(232,17,45,0.9)", duration: 0.2, ease: "power2.out", immediateRender: false }, HK.t.draw + 0.1);
+      }
+      if (HK.v === "B") {
+        // his six fights drop onto the stack one by one on "stacked", the stack leans in on "against me",
+        // my one fight hits on "knocked" and the stack goes over
+        tl.fromTo("#him .blk", { y: -260, opacity: 0, rotation: (i) => (i % 2 ? 4 : -4) }, { y: 0, opacity: 1, rotation: 0, duration: 0.36, ease: OUT4,
+          stagger: 0.07, immediateRender: true }, HK.t.stacked - 0.05);
+        tl.fromTo(".cap.him", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.3, ease: OUT4, immediateRender: true }, HK.t.stacked + 0.4);
+        tl.fromTo("#him", { rotation: 0 }, { rotation: 7, duration: 0.5, ease: INOUT, transformOrigin: "50% 100%", immediateRender: false }, HK.t.against);
+        tl.fromTo("#me .blk", { x: 0 }, { x: -170, duration: 0.12, ease: OUT4, immediateRender: false }, HK.t.knocked - 0.06);
+        tl.to("#me .blk", { x: 0, duration: 0.36, ease: OUT4 }, HK.t.knocked + 0.08);
+        tl.to("#him .blk", { x: (i) => -240 - i * 70, y: (i) => 420 + i * 60, rotation: (i) => -50 - i * 18, opacity: 0, duration: 0.7,
+          ease: "power2.in", stagger: { each: 0.035, from: "end" } }, HK.t.knocked);
+        tl.to(".cap.him", { opacity: 0, duration: 0.2, ease: "power2.out" }, HK.t.knocked + 0.2);
+        flash(HK.t.knocked, 0.4);
+      }
+      if (HK.v === "C") {
+        // 16 is on screen from frame 0; his record rolls 1 -> 6 on "sixth", mine lands on "first" in red
+        tl.fromTo("#age", { scale: 1.06 }, { scale: 1, duration: 0.4, ease: OUT4, immediateRender: false }, HK.t.sixteen);
+        tl.fromTo("#recHim", { x: -140, opacity: 0, filter: "blur(10px)" }, { x: 0, opacity: 1, filter: "blur(0px)", duration: 0.36, ease: OUT4, immediateRender: true }, HK.t.his - 0.1);
+        tl.fromTo("#recHim .col1", { y: 0 }, { y: -850, duration: 0.7, ease: OUT4, immediateRender: true }, HK.t.sixth - 0.15);
+        tl.fromTo("#recMe", { x: 140, opacity: 0, filter: "blur(10px)" }, { x: 0, opacity: 1, filter: "blur(0px)", duration: 0.36, ease: OUT4, immediateRender: true }, HK.t.my - 0.08);
+        tl.to("#recMe .under", { scaleX: 1, duration: 0.3, ease: OUT4 }, HK.t.first);
+        tl.fromTo("#recMe .num", { scale: 1.18 }, { scale: 1, duration: 0.38, ease: "back.out(1.7)", immediateRender: false }, HK.t.first);
+      }
+      // the hook clears into the face: a short blur, never a hard pop
+      tl.to("#hk, #hooktape", { opacity: 0, filter: "blur(12px)", duration: 0.16, ease: "power1.in" }, HK.end - 0.16);
+
       Editorial.animate(tl, PLAN, { cam: "#cam-inner", shake: "#cam" });
       window.__timelines["main"] = tl;
     </script>
