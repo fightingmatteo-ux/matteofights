@@ -1,0 +1,82 @@
+# Submit render: send a reel's variants to Modal from GitHub, for cloud sessions that don't hold the Modal/R2/D1 keys.
+# The runner only packs and submits (tools/render/submit.py); the render itself runs on Modal, never here.
+# Flow from a cloud session: commit the reel folder (build.py, make.sh, work/*.json), make sure its big inputs are on
+# the media release, then run this workflow. Variants render one after another (never in parallel).
+# Outputs land in R2 renders/ (where posting looks first) and are copied to the media release so a session can pull
+# them to review.
+name: Submit render
+
+on:
+  workflow_dispatch:
+    inputs:
+      reel:
+        description: Reel folder, e.g. production/reels/2026-10-24-knockout-draw
+        required: true
+      variants:
+        description: Variants, space separated, e.g. "A B C"
+        required: true
+        default: A
+      media:
+        description: 'Media release files to fetch first, "asset=repo/path" space separated'
+        required: false
+        default: ""
+      include:
+        description: Extra repo paths the build reads outside the reel folder, space separated
+        required: false
+        default: ""
+
+permissions:
+  contents: write   # copy the renders to the media release
+
+concurrency:
+  group: submit-render
+  cancel-in-progress: false
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    env:
+      REEL: ${{ inputs.reel }}
+      VARIANTS: ${{ inputs.variants }}
+      MEDIA: ${{ inputs.media }}
+      INCLUDE: ${{ inputs.include }}
+      CLOUDFLARE_D1_TOKEN: ${{ secrets.CLOUDFLARE_D1_TOKEN }}
+      R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+      R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+      MODAL_TOKEN_ID: ${{ secrets.MODAL_TOKEN_ID }}
+      MODAL_TOKEN_SECRET: ${{ secrets.MODAL_TOKEN_SECRET }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install
+        run: python3 -m pip install -q boto3 modal
+
+      - name: Fetch inputs from the media release
+        run: |
+          case "$REEL" in production/reels/*) ;; *) echo "reel must be under production/reels/"; exit 1;; esac
+          for pair in $MEDIA; do
+            asset="${pair%%=*}"; dest="${pair#*=}"
+            case "$dest" in media/*) ;; *) echo "media destination must be under media/: $dest"; exit 1;; esac
+            mkdir -p "$(dirname "$dest")"
+            bash tools/video/media.sh pull "$asset" "$(dirname "$dest")" > /dev/null
+            [ "$(dirname "$dest")/$asset" = "$dest" ] || mv "$(dirname "$dest")/$asset" "$dest"
+            ls -la "$dest"
+          done
+
+      - name: Render on Modal, one variant at a time
+        run: |
+          args=(); for p in $INCLUDE; do args+=(--include "$p"); done
+          slug=$(basename "$REEL")
+          for v in $VARIANTS; do
+            python3 -P tools/render/submit.py "$REEL" "$v" "${args[@]}" --wait
+            ls -la "media/$slug/"
+          done
+
+      - name: Copy renders to the media release (for review from a cloud session)
+        run: |
+          slug=$(basename "$REEL")
+          for f in media/$slug/$slug-*.mp4; do
+            bash tools/video/media.sh push "$f" || echo "release copy failed for $f (the R2 copy is still there)"
+          done
