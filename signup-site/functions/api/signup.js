@@ -61,7 +61,10 @@ export async function onRequestGet({ request, env }) {
             max(json_extract(data, '$.last_at')) AS latest
      FROM docs WHERE kind = 'signup'`,
   ).first();
-  return reply(request, r);
+  const dm = await env.DB.prepare(
+    `SELECT count(*) AS comments, sum(json_extract(data, '$.dm') = 'sent') AS dms_sent FROM docs WHERE kind = 'protocol_dm'`,
+  ).first();
+  return reply(request, { ...r, protocol_comments: dm.comments, protocol_dms_sent: dm.dms_sent });
 }
 
 export async function onRequestPost({ request, env, waitUntil }) {

@@ -32,11 +32,13 @@ jobs:
         run: $W pages project create matteo-signup --production-branch master || echo "project exists"
       - name: Deploy
         run: $W pages deploy --project-name matteo-signup --branch master --commit-hash "$(git rev-parse HEAD)"
-      - name: Telegram secrets (apply from the next deployment, so deploy again after)
+      - name: Secrets (apply from the next deployment, so deploy again after)
         env:
           TG_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TG_CHAT: ${{ secrets.TELEGRAM_CHAT_ID }}
+          IG_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}   # comment PROTOCOL auto-DM (functions/api/ig-webhook.js)
         run: |
+          printf '%s' "$IG_TOKEN" | $W pages secret put IG_ACCESS_TOKEN --project-name matteo-signup
           printf '%s' "$TG_TOKEN" | $W pages secret put TELEGRAM_BOT_TOKEN --project-name matteo-signup
           printf '%s' "$TG_CHAT" | $W pages secret put TELEGRAM_CHAT_ID --project-name matteo-signup
           $W pages deploy --project-name matteo-signup --branch master --commit-hash "$(git rev-parse HEAD)"
@@ -48,3 +50,5 @@ jobs:
           code=$(curl -sS -o /dev/null -w "%{http_code}" -X POST -H "content-type: application/json" -d '{"email":"nope"}' $U)
           echo "bad email -> $code"; test "$code" = 400
           curl -sS -f $U; echo
+          code=$(curl -sS -o /dev/null -w "%{http_code}" "https://matteo-signup.pages.dev/api/ig-webhook?hub.mode=subscribe&hub.verify_token=matteofights-protocol&hub.challenge=42")
+          echo "ig webhook verify -> $code"; test "$code" = 200
