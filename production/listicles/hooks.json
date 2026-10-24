@@ -768,6 +768,371 @@
       "clip": "14BFFBE5-5B4D-4DCD-89CE-381FE3F03F5A.MP4 (1rf6iJDQQxO_wMjYeGYuB81z9JUvXRQPc)",
       "queue_id": "lst-2026-10-28-sleep-rules",
       "rendered_at": "2026-10-20T12:34Z"
+    },
+    {
+      "id": "gym-second-home",
+      "archetype": "identity",
+      "hook": "6 SIGNS THE GYM IS YOUR SECOND HOME",
+      "subhook": [
+        "Some people go to the gym.",
+        "Some people live there between sessions."
+      ],
+      "caption": "Some people go to the gym.\nSome people live there between sessions.\n\n6 signs the gym is your second home:\n\n1. You know the coach's playlist better than your own\n2. You've retaped a bag nobody asked you to fix\n3. You hold pads for the new guys without being asked\n4. You show up on a rest day just to watch\n5. People ask where you were when you miss one class\n6. Your spare shoes have lived there for months\n\nRepost this so your gym finds it.\n\n#muaythai #boxinglife #fighter",
+      "status": "ready",
+      "format": "listicle",
+      "clip_id": "1EJLYUTVLVkSWxisIHwaqeks07lNocugQ"
+    },
+    {
+      "id": "not-a-beginner",
+      "archetype": "identity",
+      "hook": "7 SIGNS YOU'RE NOT A BEGINNER ANYMORE",
+      "subhook": [
+        "Year one you count the rounds.",
+        "Now you count the mistakes."
+      ],
+      "caption": "Year one you count the rounds.\nNow you count the mistakes.\n\n7 signs you're not a beginner anymore:\n\n1. You stopped blinking at the jab\n2. You know you're tired before your coach says it\n3. You get annoyed at your own habits, not your partner\n4. New people ask you how to wrap their hands\n5. You warm up without anyone telling you to\n6. You watch fights for the feet, not the knockouts\n7. You know who to go light with and who to go hard with\n\nRepost this so the right people find it.\n\n#boxing #muaythai #fighter",
+      "status": "ready",
+      "format": "listicle",
+      "clip_id": "1-XaH84HgvgRKgajbc1F15GxBakWA7oO_"
+    },
+    {
+      "id": "fighting-therapy",
+      "archetype": "identity",
+      "hook": "6 SIGNS COMBAT SPORTS IS HOW YOU DEAL WITH LIFE",
+      "subhook": [
+        "Some people talk it out.",
+        "Some people hit pads until it goes quiet."
+      ],
+      "caption": "Some people talk it out.\nSome people hit pads until it goes quiet.\n\n6 signs combat sports is how you deal with life:\n\n1. A bad day makes you want to train, not skip\n2. It's the only hour your phone doesn't matter\n3. You walk out calmer than you walked in\n4. You can tell someone's mood by how they hit pads\n5. You've trained through things you never told anyone about\n6. Rest days are harder than hard sessions\n\nRepost this so someone who needs the gym finds it.\n\n#muaythai #boxing #fightermindset",
+      "status": "ready",
+      "format": "listicle",
+      "clip_id": "1wBC5fpAotAMKUQu6NnC7m3dH6w4yjxB_"
+    },
+    {
+      "id": "ten-years",
+      "archetype": "identity",
+      "hook": "6 SIGNS YOU'LL STILL BE TRAINING IN 10 YEARS",
+      "subhook": [
+        "Some people train for a season.",
+        "Some people train for life."
+      ],
+      "caption": "Some people train for a season.\nSome people train for life.\n\n6 signs you'll still be training in 10 years:\n\n1. You don't need motivation, it's just Tuesday\n2. You train around injuries instead of stopping\n3. You've started to enjoy the boring basics\n4. You're curious about wrestling, BJJ, anything that makes you better\n5. You stopped comparing yourself to the guy next to you\n6. A lost round makes you want the next one\n\nRepost this so the right people find it.\n\n#muaythai #boxinglife #discipline",
+      "status": "ready",
+      "format": "listicle",
+      "clip_id": "1dydRhSqH8ZDmLQrfCRPfkAGBkB-Ur_YW"
+    },
+    {
+      "id": "fight-iq",
+      "archetype": "identity",
+      "hook": "6 SIGNS YOU HAVE HIGH FIGHT IQ",
+      "subhook": [
+        "Some fighters are fast.",
+        "Some fighters are already where you're going."
+      ],
+      "caption": "Some fighters are fast.\nSome fighters are already where you're going.\n\n6 signs you have high fight IQ:\n\n1. You spot their habits in the first round\n2. You show one thing so you can land another\n3. You know when not to throw\n4. You fix things between rounds before your coach says it\n5. You watch the hips, not the hands\n6. You can tell what's coming from how they step\n\nRepost this so the right people find it.\n\n#boxing #muaythai #fightiq #sparring",
+      "status": "ready",
+      "format": "listicle",
+      "clip_id": "1Pv7SyBa3lziNPzto9P3WN7GR59GXEnnp"
+    },
+    {
+      "id": "fighter-not-fit",
+      "archetype": "identity",
+      "hook": "6 SIGNS YOU'RE A FIGHTER, NOT JUST FIT",
+      "subhook": [
+        "Some people look like fighters.",
+        "Some people move like one."
+      ],
+      "caption": "Some people look like fighters.\nSome people move like one.\n\n6 signs you're a fighter, not just fit:\n\n1. You take a body shot and your hands stay up\n2. You breathe through exchanges instead of holding it\n3. You know where the ropes are without looking\n4. You don't need the mirror to know your stance is off\n5. You stay calm when it gets messy\n6. When you get hit, you hit back\n\nRepost this so real fighters find it.\n\n#muaythai #boxing #fighter",
+      "status": "ready",
+      "format": "listicle",
+      "clip_id": "1cO7ZS2vB0GficgdhERknFjIt1zkldbU6"
+    },
+    {
+      "id": "kicks-caught",
+      "archetype": "tactical",
+      "hook": "7 WAYS TO THROW KICKS THAT DON'T GET CAUGHT",
+      "subhook": [
+        "A kick that gets caught is a free sweep.",
+        "A kick that lands changes the fight."
+      ],
+      "caption": "A kick that gets caught is a free sweep.\nA kick that lands changes the fight.\n\n7 ways to throw kicks that don't get caught:\n\n1. Set it up with your hands first\n2. Kick through the target, don't push it\n3. Bring the leg back as fast as it went out\n4. Kick right after they punch, when their weight is forward\n5. Go low before you go high\n6. Turn the hip over so it lands with the shin\n7. Don't step out wide first, it tells them it's coming\n\nSave this before your next session.\n\n#muaythai #kickboxing #sparring #fighter",
+      "status": "ready",
+      "format": "listicle",
+      "clip_id": "1VQckuhsKET3bhVHRsVsgANM797wcP7dM"
+    },
+    {
+      "id": "body-kicks",
+      "archetype": "tactical",
+      "hook": "7 WAYS TO STOP EATING BODY KICKS",
+      "subhook": [
+        "Everyone protects their head.",
+        "The body is where fights get decided."
+      ],
+      "caption": "Everyone protects their head.\nThe body is where fights get decided.\n\n7 ways to stop eating body kicks:\n\n1. Keep your elbow glued to your ribs\n2. Check with your knee, not your hand\n3. Step in on the kick so it lands on your thigh\n4. Breathe out the moment it lands\n5. Read the hip, it turns before the leg comes\n6. Answer every kick with a straight punch\n7. Stop standing square, it opens your whole side\n\nSave this before your next session.\n\n#muaythai #kickboxing #sparring #fighter",
+      "status": "ready",
+      "format": "listicle",
+      "clip_id": "1kY_fR5PwN07yk9dasbW4Q_5k39muHf-T"
+    },
+    {
+      "id": "southpaw",
+      "archetype": "tactical",
+      "hook": "6 WAYS TO FIGHT A SOUTHPAW WHEN YOU NEVER SPAR ONE",
+      "subhook": [
+        "Lefties train against right-handers every day.",
+        "You train against a lefty twice a year."
+      ],
+      "caption": "Lefties train against right-handers every day.\nYou train against a lefty twice a year.\n\n6 ways to fight a southpaw (left-handed fighter):\n\n1. Win the outside foot battle, put your lead foot outside theirs\n2. Hand fight: control their lead hand with yours\n3. Throw the straight right down the middle\n4. Kick the open body with your rear leg\n5. Circle away from their left hand\n6. Check the left kick early, it's their best weapon\n\nSave this before your next session.\n\n#boxing #muaythai #southpaw #sparring",
+      "status": "ready",
+      "format": "listicle",
+      "clip_id": "1Pipo9qyf7LoVjbYn1pu4BAFWRke92UEB"
+    },
+    {
+      "id": "teep-like-thai",
+      "archetype": "tactical",
+      "hook": "6 WAYS TO USE THE TEEP LIKE A THAI",
+      "subhook": [
+        "Most people use the front kick to push.",
+        "Thais use it to break your rhythm."
+      ],
+      "caption": "Most people use the front kick to push.\nThais use it to break your rhythm.\n\n6 ways to use the teep (Muay Thai push kick):\n\n1. Teep the hip the moment they step in\n2. Teep the thigh to stop their kick before it starts\n3. Fake the teep to land the cross\n4. Teep off the back foot when they pressure you\n5. Keep your hands up while you kick\n6. Put the foot back in stance fast so you don't get swept\n\nSave this before your next session.\n\n#muaythai #teep #thaiboxing #fighter",
+      "status": "ready",
+      "format": "listicle",
+      "clip_id": "1NIGqz7ZgwDky9Ri9fLtQXE8U4jzWicJK"
+    },
+    {
+      "id": "pressure-fighter",
+      "archetype": "tactical",
+      "hook": "7 WAYS TO BEAT A PRESSURE FIGHTER WITHOUT RUNNING",
+      "subhook": [
+        "Running from pressure gets you trapped on the ropes.",
+        "Angles get you out."
+      ],
+      "caption": "Running from pressure gets you trapped on the ropes.\nAngles get you out.\n\n7 ways to beat a pressure fighter:\n\n1. Pivot off the jab instead of backing up\n2. Step off at an angle, never straight back\n3. Land the jab or teep as they step in\n4. Make them pay for walking forward with an uppercut\n5. Frame and turn them in the clinch\n6. Get back to the middle of the ring every time\n7. Fight them on your terms for ten seconds, then move\n\nSave this before your next session.\n\n#boxing #muaythai #sparring #boxingtraining",
+      "status": "ready",
+      "format": "listicle",
+      "clip_id": "1A9Awnno2e_KHq52e4PWWnRp9GUEEDY9V"
+    },
+    {
+      "id": "adrenaline-dump",
+      "archetype": "tactical",
+      "hook": "6 WAYS TO STOP GASSING OUT IN YOUR FIRST FIGHT",
+      "subhook": [
+        "Your cardio isn't the problem on fight night.",
+        "The adrenaline dump is."
+      ],
+      "caption": "Your cardio isn't the problem on fight night.\nThe adrenaline dump is.\n\n6 ways to stop gassing out in your first fight:\n\n1. Warm up to a light sweat, not until you're tired\n2. Breathe out slow through your nose on the walk out\n3. Throw your first combo early to burn off the jitters\n4. Drop your shoulders between exchanges\n5. Stop chasing the knockout in round one\n6. Spar some rounds at fight pace during camp\n\nSave this before your next session.\n\n#muaythai #boxing #fightnight #fighter",
+      "status": "ready",
+      "format": "listicle",
+      "clip_id": "10ZOgp_5ZZjc-djf0ZVNkQTZGHbn6kEE_",
+      "moment": 1.0
+    },
+    {
+      "id": "countered-after-combo",
+      "archetype": "tactical",
+      "hook": "6 WAYS TO STOP GETTING COUNTERED AFTER YOUR COMBO",
+      "subhook": [
+        "Landing the combo feels good.",
+        "Eating the counter after it doesn't."
+      ],
+      "caption": "Landing the combo feels good.\nEating the counter after it doesn't.\n\n6 ways to stop getting countered after your combo:\n\n1. Finish on a hook or a kick, not a lazy jab\n2. Hands back to your face, not your waist\n3. Move your head off the line after the last shot\n4. Step out at an angle when you're done\n5. Stop admiring the shot that landed\n6. End on a feint so they hesitate\n\nSave this before your next session.\n\n#boxingtraining #muaythai #sparring #boxing",
+      "status": "ready",
+      "format": "listicle",
+      "clip_id": "1HwvYUojYUMftZfNlofwE3qDwK2ggLCa5"
+    },
+    {
+      "id": "learn-from-sparring",
+      "archetype": "tactical",
+      "hook": "6 WAYS TO LEARN MORE FROM EVERY SPARRING ROUND",
+      "subhook": [
+        "Some people spar to win.",
+        "Some people spar to find out."
+      ],
+      "caption": "Some people spar to win.\nSome people spar to find out.\n\n6 ways to learn more from every sparring round:\n\n1. Pick one thing to work on before the bell\n2. Film one round a week and watch it the same night\n3. Ask your partner what you do every single time\n4. After each round, say out loud what caught you\n5. Spar people better than you, at half speed\n6. Write it in your notes app before you leave\n\nSave this before your next session.\n\n#sparring #boxing #muaythai #boxingtraining",
+      "status": "ready",
+      "format": "listicle",
+      "clip_id": "1pEV6_Yyfz1n9hAaJg7USfvPZgDpvG6He"
+    },
+    {
+      "id": "first-fight-draw",
+      "archetype": "identity",
+      "hook": "I KNOCKED HIM OUT IN MY FIRST FIGHT. IT WAS A DRAW.",
+      "subhook": [
+        "Sixteen, first Muay Thai fight.",
+        "The judges saw something else."
+      ],
+      "caption": "Sixteen, first Muay Thai fight.\nThe judges saw something else.\n\nI learned more from that draw than from any win.\n\n1. Nobody owes you the result\n2. Do your job so clearly they can't argue\n3. Then let it go and get back in the gym\n\nRepost this so someone who got robbed finds it.\n\n#muaythai #fightnight #fighter",
+      "status": "ready",
+      "format": "statement",
+      "clip_id": "10ZOgp_5ZZjc-djf0ZVNkQTZGHbn6kEE_"
+    },
+    {
+      "id": "rest-days",
+      "archetype": "tactical",
+      "hook": "6 THINGS FIGHTERS ACTUALLY DO ON REST DAYS",
+      "subhook": [
+        "A rest day isn't a day off.",
+        "It's when last week's training actually sinks in."
+      ],
+      "caption": "A rest day isn't a day off.\nIt's when last week's training actually sinks in.\n\n6 things fighters actually do on rest days:\n\n1. Walk for an hour, nothing harder\n2. Eat properly, especially the protein they skipped\n3. Stretch the hips and the shins\n4. Watch their own sparring footage\n5. Sleep longer than feels normal\n6. Stay away from the gym, even when it's hard\n\nSave this before your next session.\n\n#fighter #muaythai #recovery #boxinglife",
+      "status": "ready",
+      "format": "lifestyle",
+      "clip_id": "1FGVFg9sFlwI2s6lK6B4dXBRXonE21gho"
+    },
+    {
+      "id": "sparring-teaches-building",
+      "archetype": "identity",
+      "hook": "6 THINGS SPARRING TEACHES YOU ABOUT BUILDING ANYTHING",
+      "subhook": [
+        "Some people wait until they feel ready.",
+        "Fighters learn by getting hit."
+      ],
+      "caption": "Some people wait until they feel ready.\nFighters learn by getting hit.\n\n6 things sparring teaches you about building anything:\n\n1. A bad round teaches more than a good one\n2. Your plan lasts until the first jab\n3. Showing up on the boring days is the whole game\n4. Whoever adjusts fastest usually wins\n5. Ego is the most expensive thing you own\n6. Small rounds every day beat one big camp\n\nFollow for the fighter's side of building something.\n\n#fightermindset #entrepreneur #discipline #boxing",
+      "status": "ready",
+      "format": "builder",
+      "clip_id": "1yFn7JVPSORuthE3aWGdbcEV7JwIv3sRy"
+    },
+    {
+      "id": "habits-when-tired",
+      "archetype": "identity",
+      "hook": "YOUR REAL HABITS ONLY SHOW UP WHEN YOU'RE TIRED",
+      "subhook": [
+        "Fresh, everyone looks good.",
+        "Tired, you see what you actually trained."
+      ],
+      "caption": "Fresh, everyone looks good.\nTired, you see what you actually trained.\n\nRound one shows your best day. Round three shows your habits.\n\n1. Drill it until it happens tired\n2. Spar the last round like it counts\n3. Fix what breaks first\n\nSave this before your next session.\n\n#boxingtraining #muaythai #sparring",
+      "status": "ready",
+      "format": "statement",
+      "clip_id": "1dhTH0QynPgwnao6gG9stMknnucO89drM"
+    },
+    {
+      "id": "getting-hit-skill",
+      "archetype": "tactical",
+      "hook": "GETTING HIT IS A SKILL. ALMOST NOBODY TRAINS IT.",
+      "subhook": [
+        "Everyone drills what happens when they punch.",
+        "Almost nobody drills what happens after they get caught."
+      ],
+      "caption": "Everyone drills what happens when they punch.\nAlmost nobody drills what happens after they get caught.\n\nGetting caught is normal. Panicking after it is the habit that loses fights.\n\n1. Breathe out when it lands\n2. Cover and step off the line\n3. Answer with something, anything, straight away\n\nSave this before your next session.\n\n#boxing #muaythai #sparring #fighter",
+      "status": "ready",
+      "format": "statement",
+      "clip_id": "10SOLCvEv283OA3GSmymq4xU6CTY9fXBK"
+    },
+    {
+      "id": "shin-bruises",
+      "archetype": "identity",
+      "hook": "TRYING TO EXPLAIN YOUR SHIN BRUISES TO YOUR MOM",
+      "subhook": [
+        "No, nobody is hurting me.",
+        "I pay for this."
+      ],
+      "caption": "No, nobody is hurting me.\nI pay for this.\n\nEvery Muay Thai fighter has had this conversation 😂\n\nTag the training partner whose mom has seen their shins 👇\n\n#muaythai #kickboxing #fighter",
+      "status": "ready",
+      "format": "iykyk",
+      "clip_id": "1vj6GxY875E36-_u9yC84tWzqDm4-9SIc"
+    },
+    {
+      "id": "strength-not-slow",
+      "archetype": "tactical",
+      "hook": "HOW FIGHTERS GET STRONGER WITHOUT GETTING SLOW",
+      "subhook": [
+        "Some people lift like bodybuilders.",
+        "Fighters lift so they can still move in round five."
+      ],
+      "caption": "Some people lift like bodybuilders.\nFighters lift so they can still move in round five.\n\nHow fighters get stronger without getting slow:\n\n1. Pull-ups and push-ups before any machine\n2. Low reps, fast reps, never to failure\n3. Lift on the same day as hard sparring so rest days stay rest\n4. Train the neck and the core, not the mirror muscles\n5. Stop the set when the speed drops\n\nSave this before your next session.\n\n#fighter #strengthtraining #muaythai #boxing",
+      "status": "ready",
+      "format": "lifestyle",
+      "clip_id": "13Fpb4OmZofzoHqDrcw04W_F3Ye7q41KC"
+    },
+    {
+      "id": "my-bad",
+      "archetype": "identity",
+      "hook": "WHEN YOUR SPARRING PARTNER SAYS \"MY BAD\" FOR THE FOURTH TIME",
+      "subhook": [
+        "The first one was an accident.",
+        "The fourth one wasn't."
+      ],
+      "caption": "The first one was an accident.\nThe fourth one wasn't.\n\n\"My bad\" means nothing after the second head kick 😂\n\nTag the partner who's always sorry and never slows down 👇\n\n#sparring #muaythai #boxinglife",
+      "status": "ready",
+      "format": "iykyk",
+      "clip_id": "14FI6N5qWI7__IS40ii1DpUcrxnnVMmKT"
+    },
+    {
+      "id": "boring-best",
+      "archetype": "identity",
+      "hook": "YOUR GYM'S BEST FIGHTERS ARE THE MOST BORING TO WATCH TRAIN",
+      "subhook": [
+        "Beginners want new combos every week.",
+        "The best ones drill the jab for a year."
+      ],
+      "caption": "Beginners want new combos every week.\nThe best ones drill the jab for a year.\n\nWatch who looks bored doing the basics. That's who you don't want to spar.\n\n1. Same jab\n2. Same footwork\n3. Every session\n\nRepost this so the right people find it.\n\n#boxing #muaythai #boxingtraining",
+      "status": "ready",
+      "format": "statement",
+      "clip_id": "1lAtkpgK12-kQvyz-w9QeNIEqPxqrXWZ6"
+    },
+    {
+      "id": "glove-smell",
+      "archetype": "identity",
+      "hook": "THE SMELL OF YOUR GLOVES AFTER A WEEK IN THE BAG",
+      "subhook": [
+        "Non-fighters will never understand.",
+        "You just know."
+      ],
+      "caption": "Non-fighters will never understand.\nYou just know.\n\nEvery fighter has opened that bag on a Monday 😂\n\nTag the training partner whose gloves you can smell from the door 👇\n\n#boxinglife #muaythai #fighter",
+      "status": "ready",
+      "format": "iykyk",
+      "clip_id": "1egfQUxxsbWihwBGrzK3yIL828MvADd_3"
+    },
+    {
+      "id": "night-before-fight",
+      "archetype": "tactical",
+      "hook": "WHAT FIGHTERS EAT THE NIGHT BEFORE A FIGHT",
+      "subhook": [
+        "Try something new and you'll feel it in round one.",
+        "Fighters eat what they always eat."
+      ],
+      "caption": "Try something new and you'll feel it in round one.\nFighters eat what they always eat.\n\nWhat fighters eat the night before a fight:\n\n1. Rice or pasta, food they've eaten a hundred times\n2. A normal portion of chicken or fish\n3. Nothing spicy, nothing new\n4. Water through the day, not a litre at midnight\n5. Done eating a few hours before bed\n\nSave this for your fight week.\n\n#fighter #muaythai #fightnight #boxing",
+      "status": "ready",
+      "format": "lifestyle",
+      "clip_id": "1rf6iJDQQxO_wMjYeGYuB81z9JUvXRQPc"
+    },
+    {
+      "id": "bad-round-building",
+      "archetype": "identity",
+      "hook": "ONE BAD ROUND DOESN'T LOSE THE FIGHT. SAME WITH BUILDING.",
+      "subhook": [
+        "One bad round doesn't lose you the fight.",
+        "One bad month doesn't end what you're building."
+      ],
+      "caption": "One bad round doesn't lose you the fight.\nOne bad month doesn't end what you're building.\n\nFighters know how to lose a round and still win the night.\n\n1. Sit on the stool\n2. Fix one thing\n3. Go out for the next round\n\nFollow for the fighter's side of building something.\n\n#fightermindset #entrepreneur #discipline",
+      "status": "ready",
+      "format": "builder",
+      "clip_id": "1i9iXjD3ZNLP9o_TUUsOUsiz8CROpoTEW"
+    },
+    {
+      "id": "footwork-drills",
+      "archetype": "tactical",
+      "hook": "6 FOOTWORK DRILLS THAT MAKE YOU HARDER TO HIT",
+      "subhook": [
+        "Most people train their hands.",
+        "Their feet decide if the hands ever land."
+      ],
+      "caption": "Most people train their hands.\nTheir feet decide if the hands ever land.\n\n6 footwork drills that make you harder to hit:\n\n1. Line drill: step in and out on a line, stay in stance\n2. Pivot off the lead foot, 20 times each side\n3. One round of shadowboxing with steps only, no punches\n4. Mirror drill: copy a partner's feet for a round\n5. Agility ladder in your stance, not running\n6. Cut off an imaginary ring, never cross your feet\n\nSave this before your next session.\n\n#boxingtraining #footwork #boxing #muaythai",
+      "status": "ready",
+      "format": "listicle",
+      "clip_id": "1uVAp54Z25ALdUMjvgzyrxX3xELKaNQN-"
+    },
+    {
+      "id": "sparring-isnt-fighting",
+      "archetype": "identity",
+      "hook": "WIN EVERY SPARRING ROUND AND YOU'LL LEARN NOTHING",
+      "subhook": [
+        "Win every round in sparring.",
+        "Learn nothing for a year."
+      ],
+      "caption": "Win every round in sparring.\nLearn nothing for a year.\n\nSparring is where you try the thing you're bad at. Fight night is where you use the thing you're good at.\n\n1. Lose rounds on purpose\n2. Try the new combo\n3. Save winning for the fight\n\nSave this before your next session.\n\n#sparring #boxing #muaythai",
+      "status": "ready",
+      "format": "statement",
+      "clip_id": "1jDHxrjde9bZ4aWlA2BqIfwFLqYdfEqCR"
     }
   ]
 }
