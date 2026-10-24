@@ -1,0 +1,95 @@
+/* @matteofights carousel layouts. One 1080x1350 .slide per layout; render.py fills them, shoot.mjs screenshots. */
+@font-face { font-family: Anton; src: url(fonts/Anton-Regular.ttf); }
+@font-face { font-family: Bebas; src: url(fonts/BebasNeue-Regular.ttf); }
+@font-face { font-family: Serif; src: url(fonts/DMSerifDisplay-Regular.ttf); }
+@font-face { font-family: Serif; font-style: italic; src: url(fonts/DMSerifDisplay-Italic.ttf); }
+@font-face { font-family: Marker; src: url(fonts/PermanentMarker-Regular.ttf); }
+@font-face { font-family: Geist; src: url(fonts/Geist.ttf); font-weight: 100 900; }
+@font-face { font-family: Mono; src: url(fonts/GeistMono.ttf); font-weight: 100 900; }
+
+:root { --ink: #0b0b0d; --paper: #ece8df; --red: #c82020; --gold: #c49040; --white: #f5f5f2; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #333; }
+.slide { width: 1080px; height: 1350px; position: relative; overflow: hidden; font-family: Geist; color: var(--white); }
+.dark { background: var(--ink); }
+.paper { background: var(--paper); color: var(--ink); }
+.blood { background: var(--red); }
+.ph { position: absolute; background-size: cover; background-position: center 40%; }
+.grain::after { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .16; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"); }
+
+/* shared furniture */
+.count { position: absolute; top: 64px; right: 72px; font: 500 26px Mono; letter-spacing: .12em; opacity: .7; }
+.handle { position: absolute; bottom: 60px; left: 72px; font: 500 24px Mono; letter-spacing: .08em; opacity: .55; }
+.thread { position: absolute; height: 6px; background: var(--red); }            /* runs across slide edges */
+.swipe { position: absolute; right: 0; top: 50%; transform: translateY(-50%); width: 92px; height: 150px;
+  background: var(--white); color: var(--ink); border-radius: 75px 0 0 75px; display: grid; place-items: center; }
+.paper .swipe { background: var(--ink); color: var(--white); }
+.swipe svg { width: 44px; height: 44px; }
+.marker { font-family: Marker; }
+.outline { color: transparent; -webkit-text-stroke: 3px currentColor; }
+
+/* 1 cover: stacked mixed type over a tilted photo card, spinning SWIPE badge */
+.cover .card { right: -60px; top: 300px; width: 560px; height: 780px; transform: rotate(4deg); border-radius: 18px;
+  box-shadow: 0 30px 80px rgba(0,0,0,.6); }
+.cover .block { position: absolute; right: 30px; top: 360px; width: 480px; height: 720px; background: var(--red); transform: rotate(-3deg); }
+.cover h1 { position: absolute; left: 72px; top: 250px; line-height: .86; z-index: 3; text-shadow: 0 8px 40px rgba(0,0,0,.5); }
+.cover h1 .a { display: block; font: 210px Anton; text-transform: uppercase; letter-spacing: -.01em; }
+.cover h1 .b { display: block; font: italic 170px Serif; color: var(--white); margin: 6px 0 0 8px; }
+.cover h1 .c { display: block; font: 210px Anton; text-transform: uppercase; color: var(--red); }
+.cover .kicker { position: absolute; left: 76px; top: 150px; font: 600 28px Mono; letter-spacing: .3em; text-transform: uppercase; color: var(--gold); }
+.cover .badge { position: absolute; right: 110px; bottom: 150px; width: 230px; height: 230px; z-index: 4; }
+.cover .badge .ring { position: absolute; inset: 0; animation: spin 9s linear infinite; }
+.cover .badge .core { position: absolute; inset: 62px; border-radius: 50%; background: var(--white); color: var(--ink); display: grid; place-items: center; }
+.cover .badge .core svg { width: 54px; height: 54px; animation: nudge 1.5s ease-in-out infinite; }
+.cover .card { animation: push 4.5s ease-in-out infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes nudge { 0%, 100% { transform: translateX(-6px); } 50% { transform: translateX(8px); } }
+@keyframes push { 0%, 100% { background-size: 100% auto; } 50% { background-size: 107% auto; } }
+
+/* 2 numeral: paper, giant outlined numeral bleeding off, round photo, handwritten line */
+.numeral .big { position: absolute; left: -30px; top: 40px; font: 560px/1 Anton; color: var(--ink); opacity: .9; }
+.numeral .disc { width: 470px; height: 470px; right: 80px; top: 330px; border-radius: 50%; border: 10px solid var(--red); }
+.numeral h2 { position: absolute; left: 72px; top: 880px; width: 900px; font: 124px/1 Serif; letter-spacing: -.01em; }
+.numeral .note { position: absolute; left: 80px; top: 1040px; font: 54px/1.1 Marker; color: var(--red); transform: rotate(-2deg); }
+.numeral .squiggle { position: absolute; left: 76px; top: 1120px; width: 560px; }
+
+/* 3 tape: full-bleed photo, title on a tilted tape strip, gold marker line */
+.tape .full { inset: 0; filter: contrast(1.08) saturate(.9); }
+.tape .shade { position: absolute; inset: 0; background: rgba(11,11,13,.28); }
+.tape .strip { position: absolute; left: -20px; bottom: 300px; padding: 26px 70px 22px 92px; background: var(--ink); transform: rotate(-3deg); }
+.tape .strip h2 { font: 110px/1 Anton; text-transform: uppercase; }
+.tape .note { position: absolute; left: 70px; bottom: 200px; padding: 10px 34px; background: var(--red); font: 50px Marker; color: var(--white); transform: rotate(2deg); }
+
+/* 4 split: photo top cut on a diagonal, number column, short text */
+.split .top { left: 0; top: 0; width: 1080px; height: 800px; clip-path: polygon(0 0, 100% 0, 100% 78%, 0 100%); }
+.split .num { position: absolute; left: 72px; top: 850px; font: 220px/1 Bebas; color: var(--gold); }
+.split .text { position: absolute; left: 330px; top: 860px; width: 660px; display: flex; flex-direction: column; gap: 26px; }
+.split h2 { font: 86px/.98 Anton; text-transform: uppercase; }
+.split .sub { font: 400 40px/1.25 Geist; opacity: .85; }
+
+/* 5 polaroid: red ground, tilted polaroid with handwriting, title above */
+.polaroid h2 { position: absolute; left: 72px; top: 130px; width: 940px; font: 150px/.92 Bebas; text-transform: uppercase; color: var(--ink); }
+.polaroid h2 em { font: italic 128px Serif; text-transform: none; color: var(--white); }
+.polaroid .frame { position: absolute; left: 190px; top: 430px; width: 700px; height: 820px; background: #faf9f6; padding: 34px 34px 0;
+  transform: rotate(-5deg); box-shadow: 0 30px 70px rgba(0,0,0,.45); }
+.polaroid .frame .ph { position: relative; display: block; width: 632px; height: 620px; }
+.polaroid .frame p { font: 50px/1.1 Marker; color: var(--ink); text-align: center; margin-top: 34px; }
+.polaroid .pin { position: absolute; left: 520px; top: 400px; width: 40px; height: 40px; border-radius: 50%; background: var(--gold); box-shadow: 0 6px 12px rgba(0,0,0,.4); z-index: 2; }
+
+/* 6 quote: black, giant gold quote marks, italic serif, film strip of the photo */
+.quote .mark { position: absolute; left: 60px; top: 60px; font: 420px/1 Serif; color: var(--gold); }
+.quote h2 { position: absolute; left: 90px; top: 360px; width: 900px; font: italic 110px/1.02 Serif; }
+.quote .sub { position: absolute; left: 96px; top: 760px; font: 500 30px Mono; letter-spacing: .2em; text-transform: uppercase; color: var(--red); }
+.quote .film { left: 0; bottom: 140px; width: 1080px; height: 300px; filter: grayscale(1) contrast(1.15); }
+.quote .holes { position: absolute; left: 0; width: 1080px; height: 24px; background: repeating-linear-gradient(90deg, var(--ink) 0 26px, transparent 26px 52px); }
+
+/* 7 close: one CTA, save icon with a hand-drawn arrow toward Instagram's save button */
+.close h2 { position: absolute; left: 72px; top: 220px; font: 120px/1 Serif; }
+.close .big { position: absolute; left: 66px; top: 360px; font: 250px/.9 Anton; text-transform: uppercase; color: var(--red); }
+.close .cta { position: absolute; left: 72px; top: 860px; display: flex; gap: 34px; align-items: center; }
+.close .cta .icon { width: 150px; height: 150px; border-radius: 34px; background: var(--ink); display: grid; place-items: center; }
+.close .cta .icon svg { width: 70px; height: 70px; }
+.close .cta p { font: 600 50px/1.1 Geist; width: 640px; }
+.close .arrow { position: absolute; right: 180px; bottom: 80px; width: 240px; }
+.close .arrow-note { position: absolute; right: 70px; bottom: 300px; font: 46px Marker; color: var(--red); transform: rotate(6deg); }

@@ -1,253 +1,132 @@
-"""Render a carousel (swipe post) to 1080x1350 JPEG slides in one of the two brand looks.
+"""Render a carousel (swipe post) to designed 1080x1350 slides, each in its own layout, plus an animated cover.
 
-    python3 -P tools/carousel/render.py production/carousels/posts.json POST_ID OUTDIR [--look editorial|poster] [--animate]
+    python3 -P tools/carousel/render.py production/carousels/posts.json POST_ID OUTDIR [--animate]
 
---animate also writes <id>-01.mp4: the cover as a 4.5 s silent loop (Instagram and Threads take a video as slide 1;
-Facebook albums keep the still). Text is complete from frame 0 because the first frame is the thumbnail. Motion:
-slow push-in on the photo, then twice a "peek" (the slide eases left and shows the edge of slide 2) with a pulsing
-arrow, the cue that makes people swipe.
+Builds one HTML page (slides.css + fonts/) and screenshots it in Chromium (shoot.cjs, Playwright). Every slide
+names its `layout`; neighbours never share one (lint.py checks). Layouts, so a post never looks like one template:
+  cover     stacked mixed type (Anton / italic serif / red Anton) over a tilted photo card, spinning SWIPE badge
+  numeral   paper ground, giant outlined numeral, round photo in a red ring, handwritten line with a squiggle
+  tape      full-bleed photo, title on a tilted black tape strip, gold handwritten line
+  split     photo cut on a diagonal, gold number column, short title + one line
+  polaroid  red ground, tilted polaroid with a pin and handwriting, title above
+  quote     black, giant gold quote marks, italic serif, the photo as a film strip
+  close     one CTA with the save icon and a hand-drawn arrow toward Instagram's save button
+Every slide but the last carries the swipe tab, and a red thread runs across the slide edges so the carousel reads
+as one strip when swiping. Copy rule: title <= 5 words, one short line under it.
 
-A post in posts.json:
-    {"id": "car-choose-your-hard", "look": "editorial",
-     "slides": [{"kind": "cover", "title": "...", "sub": "...", "photo": "path or null"},
-                {"kind": "point", "n": 1, "title": "...", "body": "...", "photo": "..."},
-                {"kind": "close", "title": "...", "body": "...", "cta": "..."}],
-     "caption": "..."}
-Photos: a frame from production/carousels/frames/ (tools/carousel/frames.py) or any photo Matteo provides.
-Looks:
-  editorial  white display serif on black, the photo in a thin white frame, clean sans body (the jayhiette/Dane style)
-  poster     full-bleed darkened photo, Bebas Neue caps, red headline, gold numbers (the listicle-cover brand)
+Slide fields: layout, title, line (the short line), photo, n (number). Cover: kicker + title as three parts
+"a|b|c" (a and c in Anton, b in italic serif). --animate writes <id>-01.mp4 (4.5 s silent loop: badge spins,
+arrow nudges, photo pushes in, the slide peeks twice at slide 2). Frame 0 is complete: it is the thumbnail.
 """
-import argparse, json, math, subprocess
+import argparse, html, json, subprocess
 from pathlib import Path
 
-from PIL import Image, ImageDraw, ImageEnhance, ImageFont, ImageOps
+HERE = Path(__file__).resolve().parent
+ROOT = HERE.parents[1]
 
-ROOT = Path(__file__).resolve().parents[2]
-FONTS = Path(__file__).resolve().parent / "fonts"
-W, H = 1080, 1350
-INK = (11, 11, 13)
-WHITE = (245, 245, 242)
-GREY = (150, 150, 150)
-RED = (200, 32, 32)
-GOLD = (196, 144, 64)
-HANDLE = "@matteofights"
-
-
-def font(name, size, weight=None):
-    f = ImageFont.truetype(str(FONTS / name), size)
-    if weight:
-        f.set_variation_by_axes([weight])
-    return f
+CHEVRON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>'
+ARROW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg>'
+BOOKMARK = '<svg viewBox="0 0 24 24" fill="none" stroke="#f5f5f2" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12v18l-6-4.5L6 21z"/></svg>'
+SQUIGGLE = '<svg class="squiggle" viewBox="0 0 560 40" fill="none" stroke="#c82020" stroke-width="7" stroke-linecap="round"><path d="M4 26 C 60 4, 100 40, 160 20 S 260 6, 320 24 S 440 36, 556 12"/></svg>'
+CURVE = ('<svg class="arrow" viewBox="0 0 300 300" fill="none" stroke="#c82020" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">'
+         '<path d="M30 20 C 60 160, 150 230, 250 250"/><path d="M200 210 L 252 252 L 190 272"/></svg>')
+RING = ('<svg class="ring" viewBox="0 0 230 230"><defs><path id="c" d="M115,115 m-92,0 a92,92 0 1,1 184,0 a92,92 0 1,1 -184,0"/></defs>'
+        '<circle cx="115" cy="115" r="113" fill="#c82020"/><text font-family="Mono" font-weight="700" font-size="25" letter-spacing="6" fill="#f5f5f2">'
+        '<textPath href="#c" textLength="572" lengthAdjust="spacing">SWIPE · SWIPE · SWIPE · SWIPE ·</textPath></text></svg>')
 
 
-def serif(size):
-    return font("DMSerifDisplay-Regular.ttf", size)
+def esc(s):
+    return html.escape(s or "")
 
 
-def sans(size, weight=420):
-    return font("Geist.ttf", size, weight)
+def bg(photo):
+    if not photo:
+        return ""
+    p = Path(photo) if Path(photo).is_absolute() else ROOT / photo
+    return f"background-image:url('{p.as_uri()}')"
 
 
-def bebas(size):
-    return font("BebasNeue-Regular.ttf", size)
+def furniture(i, total, last):
+    out = f'<div class="count">{i:02d} / {total:02d}</div><div class="handle">@matteofights</div>'
+    out += '<div class="thread" style="left:0;right:0;bottom:36px"></div>' if not last else '<div class="thread" style="left:0;width:700px;bottom:36px"></div>'
+    if not last and i > 1:
+        out += f'<div class="swipe">{CHEVRON}</div>'
+    return out
 
 
-def wrap(d, text, f, width):
-    lines = []
-    for para in text.split("\n"):
-        cur = ""
-        for w in para.split():
-            t = f"{cur} {w}".strip()
-            if d.textlength(t, font=f) <= width or not cur:
-                cur = t
-            else:
-                lines.append(cur)
-                cur = w
-        lines.append(cur)
-    return lines
+def cover(s, i, total):
+    a, b, c = (s["title"].split("|") + ["", "", ""])[:3]
+    return (f'<div class="slide dark cover grain"><div class="block"></div><div class="ph card" style="{bg(s.get("photo"))}"></div>'
+            f'<div class="kicker">{esc(s.get("kicker"))}</div>'
+            f'<h1><span class="a">{esc(a)}</span><span class="b">{esc(b)}</span><span class="c">{esc(c)}</span></h1>'
+            f'<div class="badge">{RING}<div class="core">{ARROW}</div></div>{furniture(i, total, False)}</div>')
 
 
-def fit(d, text, make, width, max_h, start, low, lead):
-    """Largest size from start down to low whose wrapped text fits width x max_h."""
-    for size in range(start, low - 1, -2):
-        f = make(size)
-        lines = wrap(d, text, f, width)
-        if len(lines) * size * lead <= max_h:
-            return f, lines, size
-    return f, lines, size
+def numeral(s, i, total):
+    return (f'<div class="slide paper numeral grain"><div class="big outline">{s.get("n", i - 1):02d}</div>'
+            f'<div class="ph disc" style="{bg(s.get("photo"))}"></div><h2>{esc(s["title"])}</h2>'
+            f'<div class="note">{esc(s.get("line"))}</div>{SQUIGGLE}{furniture(i, total, False)}</div>')
 
 
-def block(d, xy, lines, f, size, lead, fill, align="left", width=None):
-    x, y = xy
-    for line in lines:
-        lx = x + (width - d.textlength(line, font=f)) / 2 if align == "center" else x
-        d.text((lx, y), line, font=f, fill=fill)
-        y += size * lead
-    return y
+def tape(s, i, total):
+    return (f'<div class="slide dark tape"><div class="ph full" style="{bg(s.get("photo"))}"></div><div class="shade"></div>'
+            f'<div class="strip"><h2>{esc(s["title"])}</h2></div><div class="note">{esc(s.get("line"))}</div>'
+            f'{furniture(i, total, False)}</div>')
 
 
-ZOOM = [1.0]  # set by animate(): push-in on every photo of the frame being drawn
+def split(s, i, total):
+    return (f'<div class="slide dark split grain"><div class="ph top" style="{bg(s.get("photo"))}"></div>'
+            f'<div class="num">{s.get("n", i - 1):02d}</div><div class="text"><h2>{esc(s["title"])}</h2><div class="sub">{esc(s.get("line"))}</div></div>'
+            f'{furniture(i, total, False)}</div>')
 
 
-def photo(path, size):
-    im = ImageOps.exif_transpose(Image.open(ROOT / path if not Path(path).is_absolute() else path)).convert("RGB")
-    z = ZOOM[0]
-    big = (round(size[0] * z), round(size[1] * z))
-    im = ImageOps.fit(im, big, Image.LANCZOS, centering=(0.5, 0.4))
-    x, y = (big[0] - size[0]) // 2, int((big[1] - size[1]) * 0.4)
-    return im.crop((x, y, x + size[0], y + size[1]))
+def polaroid(s, i, total):
+    t = esc(s["title"])
+    if "|" in t:  # "PART|italic part"
+        x, y = t.split("|", 1)
+        t = f"{x} <em>{y}</em>"
+    return (f'<div class="slide blood polaroid grain"><h2>{t}</h2><div class="pin"></div>'
+            f'<div class="frame"><div class="ph" style="{bg(s.get("photo"))}"></div><p>{esc(s.get("line"))}</p></div>'
+            f'{furniture(i, total, False)}</div>')
 
 
-def framed(img, im, box):
-    x, y, w, h = box
-    img.paste(photo(im, (w, h)), (x, y))
-    ImageDraw.Draw(img).rectangle([x - 2, y - 2, x + w + 1, y + h + 1], outline=WHITE, width=2)
+def quote(s, i, total):
+    return (f'<div class="slide dark quote"><div class="mark">“</div><h2>{esc(s["title"])}</h2><div class="sub">{esc(s.get("line"))}</div>'
+            f'<div class="ph film" style="{bg(s.get("photo"))}"></div><div class="holes" style="bottom:410px"></div>'
+            f'<div class="holes" style="bottom:150px"></div>{furniture(i, total, False)}</div>')
 
 
-def footer(d, n, total, color=GREY):
-    f = sans(26, 450)
-    d.text((80, H - 78), HANDLE, font=f, fill=color)
-    pg = f"{n}/{total}"
-    d.text((W - 80 - d.textlength(pg, font=f), H - 78), pg, font=f, fill=color)
+def close(s, i, total):
+    return (f'<div class="slide paper close grain"><h2>{esc(s["title"])}</h2><div class="big">{esc(s.get("big"))}</div>'
+            f'<div class="cta"><div class="icon">{BOOKMARK}</div><p>{esc(s.get("cta"))}</p></div>'
+            f'<div class="arrow-note">{esc(s.get("line") or "tap save")}</div>{CURVE}{furniture(i, total, True)}</div>')
 
 
-# ---------- editorial ----------
+LAYOUTS = {"cover": cover, "numeral": numeral, "tape": tape, "split": split, "polaroid": polaroid, "quote": quote, "close": close}
 
-def editorial(s, n, total):
-    img = Image.new("RGB", (W, H), INK)
-    d = ImageDraw.Draw(img)
-    M = 110
-    if s["kind"] == "cover":
-        f, lines, size = fit(d, s["title"], serif, W - 2 * M, 300, 132, 80, 1.0)
-        y = 210
-        y = block(d, (M, y), lines, f, size, 1.0, WHITE, "center", W - 2 * M)
-        if s.get("sub"):
-            fs = sans(44, 380)
-            y = block(d, (M, y + 26), [s["sub"]], fs, 44, 1.2, WHITE, "center", W - 2 * M)
-        if s.get("photo"):
-            framed(img, s["photo"], (150, int(y) + 60, W - 300, H - int(y) - 60 - 170))
-    elif s["kind"] == "point":
-        head = f"{s['n']}. {s['title']}" if s.get("n") else s["title"]
-        f, lines, size = fit(d, head, serif, W - 2 * M, 200, 92, 60, 1.02)
-        y = block(d, (M, 150), lines, f, size, 1.02, WHITE)
-        top = int(y) + 40
-        fb, blines, bsize = fit(d, s.get("body", ""), lambda z: sans(z, 400), W - 2 * M, 250, 50, 36, 1.22)
-        body_h = len(blines) * bsize * 1.22
-        if s.get("photo"):
-            ph = int(H - top - body_h - 60 - 150)
-            framed(img, s["photo"], (M, top, W - 2 * M, ph))
-            top += ph + 50
-        block(d, (M, top), blines, fb, bsize, 1.22, WHITE)
-    else:  # close
-        f, lines, size = fit(d, s["title"], serif, W - 2 * M, 360, 110, 64, 1.02)
-        fb, blines, bsize = fit(d, s.get("body", ""), lambda z: sans(z, 400), W - 2 * M, 300, 48, 36, 1.25)
-        total_h = len(lines) * size * 1.02 + 40 + len(blines) * bsize * 1.25
-        y = (H - total_h) / 2 - 40
-        y = block(d, (M, y), lines, f, size, 1.02, WHITE, "center", W - 2 * M)
-        y = block(d, (M, y + 40), blines, fb, bsize, 1.25, WHITE, "center", W - 2 * M)
-        if s.get("cta"):
-            fc = sans(36, 560)
-            block(d, (M, y + 50), wrap(d, s["cta"], fc, W - 2 * M), fc, 36, 1.3, WHITE, "center", W - 2 * M)
-    footer(d, n, total)
-    return img
+PAGE = """<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="{css}">
+<style>#all .slide{{margin-bottom:20px}} #stage{{display:none;position:fixed;left:0;top:0;width:1080px;height:1350px;overflow:hidden;z-index:99}}
+body.recording #stage{{display:block}} #track{{display:flex;width:2160px}} #track .slide{{flex:none}}</style></head>
+<body><div id="stage"><div id="track">{cover}{peek}</div></div><div id="all">{slides}</div></body></html>"""
 
 
-# ---------- poster ----------
-
-def dark_photo(path, amount=0.42):
-    return ImageEnhance.Brightness(photo(path, (W, H))).enhance(amount)
-
-
-def poster(s, n, total):
-    img = dark_photo(s["photo"]) if s.get("photo") else Image.new("RGB", (W, H), INK)
-    d = ImageDraw.Draw(img)
-    M = 90
-    if s["kind"] == "cover":
-        f, lines, size = fit(d, s["title"].upper(), bebas, W - 2 * M, 640, 230, 120, 0.92)
-        y = H * 0.40 - len(lines) * size * 0.92 / 2
-        y = block(d, (M, y), lines, f, size, 0.92, RED)
-        if s.get("sub"):
-            block(d, (M, y + 10), [s["sub"].upper()], bebas(72), 72, 1.0, WHITE)
-        block(d, (M, H - 190), ["SWIPE  >"], bebas(48), 48, 1, GOLD)
-    elif s["kind"] == "point":
-        block(d, (M, 120), [f"{s['n']:02d}"], bebas(170), 170, 1, GOLD)
-        f, lines, size = fit(d, s["title"].upper(), bebas, W - 2 * M, 300, 130, 80, 0.95)
-        y = block(d, (M, 320), lines, f, size, 0.95, WHITE)
-        fb, blines, bsize = fit(d, s.get("body", ""), lambda z: sans(z, 520), W - 2 * M, 300, 52, 38, 1.22)
-        block(d, (M, y + 30), blines, fb, bsize, 1.22, WHITE)
-    else:  # close
-        f, lines, size = fit(d, s["title"].upper(), bebas, W - 2 * M, 520, 190, 100, 0.95)
-        y = block(d, (M, 260), lines, f, size, 0.95, RED)
-        fb, blines, bsize = fit(d, s.get("body", ""), lambda z: sans(z, 480), W - 2 * M, 280, 48, 36, 1.25)
-        y = block(d, (M, y + 40), blines, fb, bsize, 1.25, WHITE)
-        if s.get("cta"):
-            fc = bebas(64)
-            block(d, (M, y + 50), wrap(d, s["cta"].upper(), fc, W - 2 * M), fc, 64, 1.0, GOLD)
-    footer(d, n, total, (200, 200, 200))
-    return img
+def build(post):
+    total = len(post["slides"])
+    parts = [LAYOUTS[s["layout"]](s, i, total) for i, s in enumerate(post["slides"], 1)]
+    peek = parts[1].replace('class="slide', 'class="slide peek-copy', 1) if total > 1 else ""
+    return PAGE.format(css=(HERE / "slides.css").as_uri(), cover=parts[0].replace('class="slide', 'class="slide peek-copy', 1),
+                       peek=peek, slides="".join(parts))
 
 
-LOOKS = {"editorial": editorial, "poster": poster}
-
-FPS, SECONDS, PEEKS, PEEK_PX = 30, 4.5, (1.4, 3.0), 120
-
-
-def ease(t):
-    return 0.5 - 0.5 * math.cos(math.pi * max(0.0, min(1.0, t)))
-
-
-def peek(t):
-    """0..1..0 over 1.1 s for each peek start."""
-    return max((math.sin(math.pi * ease((t - p) / 1.1)) if p <= t <= p + 1.1 else 0.0) for p in PEEKS)
-
-
-def arrow(d, x, y, alpha, color):
-    c = tuple(round(v * alpha + 11 * (1 - alpha)) for v in color)
-    for k in range(2):
-        ox = x + k * 26
-        d.line([(ox, y - 26), (ox + 22, y), (ox, y + 26)], fill=c, width=6, joint="curve")
-
-
-def animate(post, draw, out_mp4, total):
-    """Cover slide as a silent looping MP4 with a push-in and two swipe peeks at slide 2."""
-    nxt = draw(post["slides"][1], 2, total) if len(post["slides"]) > 1 else None
-    ff = subprocess.Popen(["ffmpeg", "-v", "error", "-y", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}",
-                           "-r", str(FPS), "-i", "-", "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "18",
-                           "-movflags", "+faststart", str(out_mp4)], stdin=subprocess.PIPE)
-    n = int(FPS * SECONDS)
-    for i in range(n):
-        t = i / FPS
-        ZOOM[0] = 1.0 + 0.05 * math.sin(math.pi * i / n)  # in and back out: seamless loop
-        cover = draw(post["slides"][0], 1, total)
-        ZOOM[0] = 1.0
-        dx = round(PEEK_PX * peek(t))
-        frame = Image.new("RGB", (W, H), INK)
-        frame.paste(cover, (-dx, 0))
-        if nxt is not None and dx:
-            frame.paste(nxt.crop((0, 0, dx, H)), (W - dx, 0))
-            ImageDraw.Draw(frame).line([(W - dx, 0), (W - dx, H)], fill=INK, width=4)
-        pulse = 0.55 + 0.45 * math.sin(2 * math.pi * t / 1.5) ** 2
-        arrow(ImageDraw.Draw(frame), W - dx - 110, H // 2, pulse, WHITE)
-        ff.stdin.write(frame.tobytes())
-    ff.stdin.close()
-    if ff.wait():
-        raise RuntimeError("ffmpeg failed on the animated cover")
-    return out_mp4
-
-
-def render(post, outdir, look=None, animated=False):
+def render(post, outdir, animated=False):
     out = Path(outdir)
     out.mkdir(parents=True, exist_ok=True)
-    draw = LOOKS[look or post.get("look", "editorial")]
-    paths = []
-    for i, s in enumerate(post["slides"], 1):
-        p = out / f"{post['id']}-{i:02d}.jpg"
-        draw(s, i, len(post["slides"])).save(p, quality=92)
-        paths.append(p)
-    if animated:
-        paths.insert(0, animate(post, draw, out / f"{post['id']}-01.mp4", len(post["slides"])))
-    return paths
+    page = out / f"{post['id']}.html"
+    page.write_text(build(post), encoding="utf-8")
+    cmd = ["node", str(HERE / "shoot.cjs"), str(page), str(out), post["id"]] + (["--animate", "4.5"] if animated else [])
+    subprocess.run(cmd, check=True)
+    paths = [out / f"{post['id']}-{i:02d}.jpg" for i in range(1, len(post["slides"]) + 1)]
+    return ([out / f"{post['id']}-01.mp4"] if animated else []) + paths
 
 
 def main():
@@ -255,12 +134,11 @@ def main():
     p.add_argument("posts")
     p.add_argument("post_id")
     p.add_argument("outdir")
-    p.add_argument("--look", choices=list(LOOKS))
     p.add_argument("--animate", action="store_true")
     a = p.parse_args()
     posts = json.loads(Path(a.posts).read_text(encoding="utf-8"))["posts"]
     post = next(x for x in posts if x["id"] == a.post_id)
-    for path in render(post, a.outdir, a.look, a.animate):
+    for path in render(post, a.outdir, a.animate):
         print(path)
 
 
