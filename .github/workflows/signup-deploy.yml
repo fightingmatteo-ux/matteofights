@@ -54,3 +54,9 @@ jobs:
           curl -sS -f $U; echo
           code=$(curl -sS -o /dev/null -w "%{http_code}" "https://matteo-signup.pages.dev/api/ig-webhook?hub.mode=subscribe&hub.verify_token=matteofights-protocol&hub.challenge=42")
           echo "ig webhook verify -> $code"; test "$code" = 200
+      - name: Instagram side (token works, account subscribed to the comments webhook)
+        env:
+          IG_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+        run: |
+          curl -sS "https://graph.instagram.com/v21.0/me?fields=username&access_token=$IG_TOKEN"; echo
+          curl -sS "https://graph.instagram.com/v21.0/me/subscribed_apps?access_token=$IG_TOKEN"; echo
