@@ -83,3 +83,27 @@ python -P tools/instagram/audio.py trial ... --audio-id <id> --confirm   # after
 - Meta's limits: only sounds cleared for third-party apps (some app songs are missing), no preview of reels with
   attached audio, and trial_params + audio together is undocumented: if Meta refuses the pair the item fails with
   Meta's message and nothing is posted.
+
+## Comment PROTOCOL auto-DM (one-time, Matteo, ~10 min)
+
+Someone comments "protocol" on any reel -> they get a DM with matteofights.me/protocol and a short public reply
+("Sent it to your DMs 🥊"). Code: `signup-site/functions/api/ig-webhook.js` (Pages project `matteo-signup`), every
+comment logged in D1 kind `protocol_dm`; counts at `https://matteo-signup.pages.dev/api/signup`.
+
+1. **Permissions.** developers.facebook.com -> app `matteofights-poster` -> Use cases -> Instagram -> Customize ->
+   API setup with Instagram login -> add `instagram_business_manage_comments` and
+   `instagram_business_manage_messages` (keep the two you have).
+2. **New token.** Same page -> Generate token for @matteofights (allow the new permissions) -> update the GitHub
+   secret `IG_ACCESS_TOKEN` (and `secrets/meta.env`). Then run the **Deploy signup endpoint** workflow so the
+   endpoint gets the new token too.
+3. **Messages on.** Instagram app -> Settings -> Messages and story replies -> Message controls -> Connected tools
+   -> **Allow access to messages** ON.
+4. **Webhook.** Same API setup page -> 3. Configure webhooks: Callback URL
+   `https://matteo-signup.pages.dev/api/ig-webhook`, Verify token `matteofights-protocol` -> Verify and save ->
+   subscribe the field **comments**. Then switch the webhook toggle for @matteofights on.
+5. **Optional, safer:** App settings -> Basic -> App secret -> add it to the Pages project `matteo-signup` as secret
+   `IG_APP_SECRET` (signature check). Without it every comment is re-read from Instagram before anything is sent.
+6. **Test:** comment "protocol" on one of your reels from a second account. The DM should land within seconds.
+
+Note: `ig.py refresh` keeps the same scopes; after a refresh, re-run **Deploy signup endpoint** so it has the new
+token too.

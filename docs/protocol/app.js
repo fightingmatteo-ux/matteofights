@@ -17,7 +17,9 @@
     // to a real ESP (ConvertKit/Beehiiv/Resend/etc.) by changing this
     // one URL and, if the payload shape needs to change, editing
     // submitEmail() below. Nothing else in the app needs to know.
-    EMAIL_WEBHOOK_URL: "https://hook.eu1.make.com/7tieu19hys3tpolvxvj6ti1jn6t7x0ra",
+    // Our own endpoint (signup-site/functions/api/signup.js): keeps every answer in D1, tags STANCE joins,
+    // pings Telegram per lead, and still forwards each payload to the old Make.com webhook so Notion fills.
+    EMAIL_WEBHOOK_URL: "https://matteo-signup.pages.dev/api/signup",
     // Optional: point this at an analytics collector (e.g. a separate
     // Make.com webhook, or replace track() to call gtag()). Left null
     // by default . events still fire and are visible in
