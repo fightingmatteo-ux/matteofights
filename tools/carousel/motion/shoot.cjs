@@ -1,5 +1,6 @@
 // Record every .slide of an animated-UI carousel page as its own 10 s 1080x1350 mp4 (+ a frame-0 jpg, the thumbnail).
-//   node tools/carousel/motion/shoot.cjs PAGE.html OUTDIR [SECONDS]
+//   node tools/carousel/motion/shoot.cjs PAGE.html OUTDIR [SECONDS] [SPEED]
+// SPEED > 1 plays the page's timeline faster (sparring.html is laid out on 10 s; 6 s at speed 1.6 keeps ~1 s of hold).
 // Deterministic like ../shoot.cjs: each frame pauses every animation at t and screenshots, no real-time capture.
 const { chromium } = require("playwright");
 const { spawn } = require("node:child_process");
@@ -7,7 +8,7 @@ const { pathToFileURL } = require("node:url");
 const path = require("node:path");
 const fs = require("node:fs");
 
-const [page_, outdir, secs = "10"] = process.argv.slice(2);
+const [page_, outdir, secs = "6", speed = "1.6"] = process.argv.slice(2);
 const FPS = 30;
 
 (async () => {
@@ -25,7 +26,7 @@ const FPS = 30;
       { stdio: ["pipe", "inherit", "inherit"] });
     const n = Math.round(FPS * Number(secs));
     for (let i = 0; i < n; i++) {
-      await page.evaluate((t) => document.getAnimations().forEach((a) => { a.pause(); a.currentTime = t; }), (i / FPS) * 1000);
+      await page.evaluate((t) => document.getAnimations().forEach((a) => { a.pause(); a.currentTime = t; }), (i / FPS) * 1000 * Number(speed));
       const buf = await page.screenshot({ type: "jpeg", quality: 95 });
       if (i === 0) fs.writeFileSync(name + ".jpg", buf);
       if (!ff.stdin.write(buf)) await new Promise((r) => ff.stdin.once("drain", r));
