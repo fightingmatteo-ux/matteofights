@@ -24,6 +24,10 @@ on:
         description: Extra repo paths the build reads outside the reel folder, space separated
         required: false
         default: ""
+      cmd:
+        description: 'Optional command run on Modal instead of "bash make.sh V"; {V} becomes the variant'
+        required: false
+        default: ""
 
 permissions:
   contents: write   # copy the renders to the media release
@@ -41,6 +45,7 @@ jobs:
       VARIANTS: ${{ inputs.variants }}
       MEDIA: ${{ inputs.media }}
       INCLUDE: ${{ inputs.include }}
+      CMD: ${{ inputs.cmd }}
       CLOUDFLARE_D1_TOKEN: ${{ secrets.CLOUDFLARE_D1_TOKEN }}
       R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
       R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
@@ -70,7 +75,8 @@ jobs:
           args=(); for p in $INCLUDE; do args+=(--include "$p"); done
           slug=$(basename "$REEL")
           for v in $VARIANTS; do
-            python3 -P tools/render/submit.py "$REEL" "$v" "${args[@]}" --wait
+            if [ -n "$CMD" ]; then set -- --cmd "${CMD//\{V\}/$v}"; else set --; fi
+            python3 -P tools/render/submit.py "$REEL" "$v" "${args[@]}" "$@" --wait
             ls -la "media/$slug/"
           done
 
