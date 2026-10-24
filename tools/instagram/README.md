@@ -94,8 +94,8 @@ comment logged in D1 kind `protocol_dm`; counts at `https://matteo-signup.pages.
    API setup with Instagram login -> add `instagram_business_manage_comments` and
    `instagram_business_manage_messages` (keep the two you have).
 2. **New token.** Same page -> Generate token for @matteofights (allow the new permissions) -> update the GitHub
-   secret `IG_ACCESS_TOKEN` (and `secrets/meta.env`). Then run the **Deploy signup endpoint** workflow so the
-   endpoint gets the new token too.
+   secret `IG_ACCESS_TOKEN` (and `secrets/meta.env`). The **Deploy signup endpoint** workflow copies it to the
+   endpoint daily (or run it by hand to do it now).
 3. **Messages on.** Instagram app -> Settings -> Messages and story replies -> Message controls -> Connected tools
    -> **Allow access to messages** ON.
 4. **Webhook.** Same API setup page -> 3. Configure webhooks: Callback URL
@@ -105,5 +105,5 @@ comment logged in D1 kind `protocol_dm`; counts at `https://matteo-signup.pages.
    `IG_APP_SECRET` (signature check). Without it every comment is re-read from Instagram before anything is sent.
 6. **Test:** comment "protocol" on one of your reels from a second account. The DM should land within seconds.
 
-Note: `ig.py refresh` keeps the same scopes; after a refresh, re-run **Deploy signup endpoint** so it has the new
-token too.
+Note: `ig.py refresh` keeps the same scopes; the daily **Deploy signup endpoint** run picks the refreshed token up.
+Privacy policy URL for the Meta app (needed to switch it to Live): https://matteofights.me/privacy.html

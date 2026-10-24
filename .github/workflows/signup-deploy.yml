@@ -6,6 +6,8 @@ on:
   push:
     branches: [master]
     paths: [signup-site/**, .github/workflows/signup-deploy.yml]
+  schedule:
+    - cron: "17 6 * * *"   # daily: picks up a new or refreshed IG_ACCESS_TOKEN without anyone running this
   workflow_dispatch:
 
 concurrency:
