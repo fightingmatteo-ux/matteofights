@@ -16,7 +16,11 @@
       "last_error": "POST https://graph.instagram.com/v23.0/17841465098113052/media -> 400: {\"error\":{\"message\":\"The parameter video_url is required\",\"type\":\"IGApiException\",\"code\":100,\"fbtrace_id\":\"AXoRtpCOZerfosho0GTOkCw\"}}",
       "media_id": "18131444773684044",
       "permalink": "https://www.instagram.com/reel/Dee3EmfE--u/",
-      "posted_at": "2026-10-14T16:55:34Z"
+      "posted_at": "2026-10-14T16:55:34Z",
+      "trial_set": "freeze-in-sparring",
+      "opening": "reframe",
+      "length": "full",
+      "hook": "Your freeze isn't a technique problem. It's your head."
     },
     {
       "id": "freeze-B",
@@ -32,7 +36,11 @@
       "status": "posted",
       "media_id": "18167111158483588",
       "permalink": "https://www.instagram.com/reel/DefWU45CpKI/",
-      "posted_at": "2026-10-14T21:28:39Z"
+      "posted_at": "2026-10-14T21:28:39Z",
+      "trial_set": "freeze-in-sparring",
+      "opening": "contrast",
+      "length": "full",
+      "hook": "Fighters and beginners spar with the same hands. Not the same head."
     },
     {
       "id": "freeze-C",
@@ -48,7 +56,11 @@
       "status": "posted",
       "media_id": "17949258072324239",
       "permalink": "https://www.instagram.com/reel/DefsPO_ih7V/",
-      "posted_at": "2026-10-15T00:40:07Z"
+      "posted_at": "2026-10-15T00:40:07Z",
+      "trial_set": "freeze-in-sparring",
+      "opening": "contrast",
+      "length": "full",
+      "hook": "Beginners try to win every exchange. Fighters don't."
     },
     {
       "id": "lst-2026-10-15-built-for-fight-night",
@@ -450,7 +462,10 @@
       "posting_since": "2026-10-20T20:01:58Z",
       "media_id": "18033600278853405",
       "permalink": "https://www.instagram.com/reel/DeupTI6AQXt/",
-      "posted_at": "2026-10-20T20:03:13Z"
+      "posted_at": "2026-10-20T20:03:13Z",
+      "trial_set": "saenchai-editorial",
+      "opening": "story",
+      "length": "full"
     },
     {
       "id": "saenchai-B",
@@ -474,7 +489,10 @@
       "posting_since": "2026-10-21T19:30:51Z",
       "media_id": "18124280446899296",
       "permalink": "https://www.instagram.com/reel/DexKfNuDZUl/",
-      "posted_at": "2026-10-21T19:31:32Z"
+      "posted_at": "2026-10-21T19:31:32Z",
+      "trial_set": "saenchai-editorial",
+      "opening": "question",
+      "length": "full"
     },
     {
       "id": "saenchai-C",
@@ -498,7 +516,10 @@
       "posting_since": "2026-10-22T19:31:01Z",
       "media_id": "17912911344520196",
       "permalink": "https://www.instagram.com/reel/DezvTk8DwrQ/",
-      "posted_at": "2026-10-22T19:32:03Z"
+      "posted_at": "2026-10-22T19:32:03Z",
+      "trial_set": "saenchai-editorial",
+      "opening": "contrast",
+      "length": "full"
     },
     {
       "id": "lst-2026-10-22-fighters-mindset",
@@ -1424,7 +1445,10 @@
       "posting_since": "2026-10-23T19:30:57Z",
       "media_id": "17989846548098278",
       "permalink": "https://www.instagram.com/reel/De2UGIoEci0/",
-      "posted_at": "2026-10-23T19:32:00Z"
+      "posted_at": "2026-10-23T19:32:00Z",
+      "trial_set": "saenchai-v3",
+      "opening": "story",
+      "length": "full"
     },
     {
       "id": "saenchai-v3-B",
@@ -1442,7 +1466,10 @@
       "status": "queued",
       "crosspost_to": [],
       "slot_note": "15:30 NY talking-head slot. Old-style (v3 'film study') cut of the same hook, tested against the editorial cut posted 3 days earlier",
-      "approved_note": "Matteo: approved the week via dashboard (2026-10-21T05:50:13Z)"
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-21T05:50:13Z)",
+      "trial_set": "saenchai-v3",
+      "opening": "question",
+      "length": "full"
     },
     {
       "id": "saenchai-v3-C",
@@ -1460,7 +1487,10 @@
       "status": "queued",
       "crosspost_to": [],
       "slot_note": "15:30 NY talking-head slot. Old-style (v3 'film study') cut of the same hook, tested against the editorial cut posted 3 days earlier",
-      "approved_note": "Matteo: approved the week via dashboard (2026-10-21T05:50:13Z)"
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-21T05:50:13Z)",
+      "trial_set": "saenchai-v3",
+      "opening": "contrast",
+      "length": "full"
     },
     {
       "id": "2026-10-24-knockout-draw-A",
@@ -1472,12 +1502,15 @@
       "format": "talking head",
       "strategy": "MANUAL",
       "thumb_offset_ms": 500,
-      "not_before": "2026-10-26T19:30:00Z",
+      "not_before": "2026-10-26T19:00:00Z",
       "min_gap_hours": 2.5,
       "approved": false,
       "status": "queued",
       "crosspost_to": [],
-      "slot_note": "15:30 NY talking-head slot, hook test 48 h apart. Pin candidate: the winner at 72 h gets shared to the grid and pinned."
+      "slot_note": "hook test, same day: 2026-10-26 15:00 NY (trials.py schedule)",
+      "trial_set": "knockout-draw",
+      "opening": "result",
+      "length": "full"
     },
     {
       "id": "2026-10-24-knockout-draw-B",
@@ -1489,12 +1522,15 @@
       "format": "talking head",
       "strategy": "MANUAL",
       "thumb_offset_ms": 500,
-      "not_before": "2026-10-28T19:30:00Z",
-      "min_gap_hours": 2.5,
+      "not_before": "2026-10-26T19:20:00Z",
+      "min_gap_hours": 0.25,
       "approved": false,
       "status": "queued",
       "crosspost_to": [],
-      "slot_note": "15:30 NY talking-head slot, hook test 48 h apart. Pin candidate: the winner at 72 h gets shared to the grid and pinned."
+      "slot_note": "hook test, same day: 2026-10-26 15:20 NY (trials.py schedule)",
+      "trial_set": "knockout-draw",
+      "opening": "story",
+      "length": "full"
     },
     {
       "id": "2026-10-24-knockout-draw-C",
@@ -1506,12 +1542,15 @@
       "format": "talking head",
       "strategy": "MANUAL",
       "thumb_offset_ms": 500,
-      "not_before": "2026-10-30T19:30:00Z",
-      "min_gap_hours": 2.5,
+      "not_before": "2026-10-26T19:40:00Z",
+      "min_gap_hours": 0.25,
       "approved": false,
       "status": "queued",
       "crosspost_to": [],
-      "slot_note": "15:30 NY talking-head slot, hook test 48 h apart. Pin candidate: the winner at 72 h gets shared to the grid and pinned."
+      "slot_note": "hook test, same day: 2026-10-26 15:40 NY (trials.py schedule)",
+      "trial_set": "knockout-draw",
+      "opening": "number",
+      "length": "full"
     }
   ]
 }

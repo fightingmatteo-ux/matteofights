@@ -10,7 +10,9 @@ You run unattended in the "Talking points" workflow every Sunday. Turn this week
    more are still unfilmed, add only 2 this week.
 3. Pick the outliers whose idea fits the content direction in CLAUDE.md (fighter psychology and mindset first).
    For each, write the talking point **as Matteo would say it**: his story and angle (`context/founder.md`), not a
-   copy of the competitor. 3 hook versions (the A/B/C test, identity and contrast beat instruction), 2 to 3 points
+   copy of the competitor. 3 hook versions (the A/B/C test, identity and contrast beat instruction), each a different
+   opening type (`tools/trials/trials.py` OPENINGS), at least 2 from the top rows of
+   `production/trials/learnings.md` and 1 that is still under-tested, 2 to 3 points
    he talks through freely, one real example from his fighting, a growth CTA.
 4. Add each: `python3 -P tools/edit/requests_cli.py tp-add "<title>" --hook "..." --hook "..." --hook "..."
    --point "..." --point "..." --source <outlier url> --why "<why it should work, with the outlier's numbers>"`.

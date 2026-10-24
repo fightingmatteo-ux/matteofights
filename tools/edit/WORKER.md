@@ -8,7 +8,7 @@ control.matteofights.me. He is not watching. Do the work, never ask questions, n
 `python3 -P tools/edit/requests_cli.py open` lists the open items, oldest first. Do **one** item per run (the
 workflow starts again for the next one). Read CLAUDE.md and `production/editing/reel-kit/PIPELINE.md` first.
 
-### An upload (kind `upload`): raw footage, edit it into 3 trial-reel variants
+### An upload (kind `upload`): raw footage, edit it into 4 trial-reel variants (a hook test)
 
 1. `python3 -P tools/edit/requests_cli.py fetch <id> media/uploads/` and look at `note` + `talking_point`
    (`requests_cli.py tps` shows the talking points: its 3 hooks are the A/B/C test).
@@ -18,17 +18,21 @@ workflow starts again for the next one). Read CLAUDE.md and `production/editing/
    (`production/reels/_TEMPLATE/editorial/`): new folder `production/reels/<yyyy-mm-dd-slug>/`, `prep_footage.sh`,
    `transcribe.py` (model `small.en` on this runner), pick takes into `work/takes.json`, `assemble.py`, fill
    `build.py`, captions and hooks with the `platform-captions` skill and `context/creator-voice.md`. No talking
-   point given: write 3 hooks yourself from the transcript.
-3. Render all three in the cloud, never on this runner:
+   point given: write 3 hooks yourself from the transcript, each a different opening type from
+   `tools/trials/trials.py` OPENINGS, favouring the top rows of `production/trials/learnings.md`.
+   Variant D = hook A cut to under 25 s (drop the weakest body points); skip D if no clean short cut exists.
+3. Render all of them in the cloud, never on this runner:
    `python3 -P tools/render/submit.py production/reels/<slug> A --include <every repo path the build reads outside the reel folder> --wait`
-   (then B, then C). Each must pass its glitch check (`make.sh` does it); a failed job: read its error, fix, resubmit
+   (then B, C, D). Each must pass its glitch check (`make.sh` does it); a failed job: read its error, fix, resubmit
    once.
-4. Queue the variants **unapproved** with `tools/state.py`, one item per variant, ids `<slug>-A/B/C`,
+4. Queue the variants **unapproved** with `tools/state.py`, one item per variant, ids `<slug>-A/B/C/D`,
    `video_asset` = the `-phone.mp4` name, `caption_file`, `hook`, `format: "talking head"`, `status: "queued"`,
-   `approved: false`, `not_before` = the next free 15:30 New York slots (one per day), `min_gap_hours: 2.5`,
-   `strategy: "MANUAL"`, `thumb_offset_ms: 500`. Matteo approves on the dashboard.
+   `approved: false`, `reel: <slug>`, `variant`, `strategy: "MANUAL"`, `thumb_offset_ms: 500`. Then label each
+   (`python3 -P tools/trials/trials.py label <id> <opening> [--length short]`) and give the set the next free day:
+   `python3 -P tools/trials/trials.py schedule <slug> <yyyy-mm-dd>` (15:00/15:20/15:40/16:00 NY, same day).
+   Matteo approves on the dashboard.
 5. Commit only your paths (`git add production/reels/<slug>`), pull --rebase, push.
-6. `requests_cli.py finish upload <id> done --note "3 variants ready: <hooks>"`; if the talking point was used,
+6. `requests_cli.py finish upload <id> done --note "4 variants ready: <hooks>"`; if the talking point was used,
    `finish talking_point <tp> filmed`.
 
 ### A revision (kind `request`): Matteo's note on a reel

@@ -1,0 +1,48 @@
+# Every 3 hours: numbers for every hook-test variant (Instagram API), the 72 h verdict per test, the LEDGER rows,
+# the opening-type tally (production/trials/learnings.md) and a Telegram nudge to share the winner.
+# tools/trials/trials.py. Read-only on Instagram: never posts, never approves.
+name: Hook tests
+
+on:
+  schedule:
+    - cron: "40 */3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: hook-tests
+  cancel-in-progress: false
+
+jobs:
+  verdict:
+    runs-on: ubuntu-latest
+    env:
+      CLOUDFLARE_D1_TOKEN: ${{ secrets.CLOUDFLARE_D1_TOKEN }}   # tools/state.py when cloud.json says d1
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: master
+      - name: Numbers, verdicts, learnings
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+        run: python3 -P tools/trials/trials.py run
+      - name: Save and tell Matteo
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          git config user.name "trials[bot]"
+          git config user.email "trials@users.noreply.github.com"
+          git add production/trials production/control/notes.json production/reels/LEDGER.md
+          git diff --cached --quiet && exit 0
+          git commit -qm "hook tests: numbers and verdicts"
+          for n in 1 2 3; do git pull --rebase -q origin master && git push -q origin HEAD:master && break; sleep 5; done
+          python3 -m pip install -q pillow 2>/dev/null || true
+          python3 -P tools/control/control.py notify || echo "telegram notify failed (non-fatal)"
+          git add production/control
+          git diff --cached --quiet && exit 0
+          git commit -qm "control: telegram sent"
+          for n in 1 2 3; do git pull --rebase -q origin master && git push -q origin HEAD:master && break; sleep 5; done
