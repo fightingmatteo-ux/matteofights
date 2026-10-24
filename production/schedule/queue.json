@@ -1454,6 +1454,57 @@
       "crosspost_to": [],
       "slot_note": "15:30 NY talking-head slot. Old-style (v3 'film study') cut of the same hook, tested against the editorial cut posted 3 days earlier",
       "approved_note": "Matteo: approved the week via dashboard (2026-10-21T05:50:13Z)"
+    },
+    {
+      "id": "2026-10-24-knockout-draw-A",
+      "reel": "2026-10-24-knockout-draw",
+      "variant": "A",
+      "video_asset": "2026-10-24-knockout-draw-A-phone.mp4",
+      "caption_file": "production/reels/2026-10-24-knockout-draw/caption-A.txt",
+      "hook": "I knocked him out. They called it a draw.",
+      "format": "talking head",
+      "strategy": "MANUAL",
+      "thumb_offset_ms": 500,
+      "not_before": "2026-10-26T19:30:00Z",
+      "min_gap_hours": 2.5,
+      "approved": false,
+      "status": "queued",
+      "crosspost_to": [],
+      "slot_note": "15:30 NY talking-head slot, hook test 48 h apart. Pin candidate: the winner at 72 h gets shared to the grid and pinned."
+    },
+    {
+      "id": "2026-10-24-knockout-draw-B",
+      "reel": "2026-10-24-knockout-draw",
+      "variant": "B",
+      "video_asset": "2026-10-24-knockout-draw-B-phone.mp4",
+      "caption_file": "production/reels/2026-10-24-knockout-draw/caption-B.txt",
+      "hook": "My first fight was stacked against me. I still knocked him out.",
+      "format": "talking head",
+      "strategy": "MANUAL",
+      "thumb_offset_ms": 500,
+      "not_before": "2026-10-28T19:30:00Z",
+      "min_gap_hours": 2.5,
+      "approved": false,
+      "status": "queued",
+      "crosspost_to": [],
+      "slot_note": "15:30 NY talking-head slot, hook test 48 h apart. Pin candidate: the winner at 72 h gets shared to the grid and pinned."
+    },
+    {
+      "id": "2026-10-24-knockout-draw-C",
+      "reel": "2026-10-24-knockout-draw",
+      "variant": "C",
+      "video_asset": "2026-10-24-knockout-draw-C-phone.mp4",
+      "caption_file": "production/reels/2026-10-24-knockout-draw/caption-C.txt",
+      "hook": "I was 16. His sixth fight. My first.",
+      "format": "talking head",
+      "strategy": "MANUAL",
+      "thumb_offset_ms": 500,
+      "not_before": "2026-10-30T19:30:00Z",
+      "min_gap_hours": 2.5,
+      "approved": false,
+      "status": "queued",
+      "crosspost_to": [],
+      "slot_note": "15:30 NY talking-head slot, hook test 48 h apart. Pin candidate: the winner at 72 h gets shared to the grid and pinned."
     }
   ]
 }
