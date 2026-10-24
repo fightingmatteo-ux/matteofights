@@ -1,71 +1,77 @@
 {
   "posts": [
     {
-      "id": "car-round-three",
+      "id": "car-fight-iq",
       "status": "draft",
       "layer": "belief",
-      "hook_ref": "own-round-three",
+      "hook_ref": "own-fight-iq",
       "animated": true,
       "slides": [
         {
           "layout": "cover",
-          "kicker": "6 ways to survive it",
-          "title": "Round three.|no gas|left.",
-          "photo": "production/carousels/frames/1NIGqz7ZgwDky9Ri9fLtQXE8U4jzWicJK/0024.6.jpg",
-          "video": "media/carousel-loop-1NIGqz7ZgwDky9Ri9fLtQXE8U4jzWicJK-0024.6.webm",
-          "video_offset": 0
+          "kicker": "Without sparring every day",
+          "title": "Build|real|fight IQ.",
+          "photo": null,
+          "video": null
         },
         {
           "layout": "numeral",
           "n": 1,
-          "title": "Exhale on every shot.",
-          "line": "Holding your breath empties the tank.",
-          "photo": "production/carousels/frames/1cO7ZS2vB0GficgdhERknFjIt1zkldbU6/0078.2.jpg"
+          "title": "Watch fights on mute.",
+          "line": "Follow the feet, not the punches.",
+          "photo": null
         },
         {
           "layout": "tape",
           "n": 2,
-          "title": "Clinch. Breathe. Reset.",
-          "line": "Ten seconds of rest nobody sees.",
-          "photo": "production/carousels/frames/1oVEdYjTgppKfNtH5xykXcXyQOu03TCVO/0154.2.jpg"
+          "title": "Shadowbox with a plan.",
+          "line": "Pick an opponent. Fight his habits.",
+          "photo": null
         },
         {
           "layout": "split",
           "n": 3,
-          "title": "Jab more. Chase less.",
-          "line": "A busy jab buys you time.",
-          "photo": "production/carousels/frames/1vBV91hZz8OBFh2bAdw1Z7j1WC_aFJR-p/0027.0.jpg"
+          "title": "Film your own rounds.",
+          "line": "Your habits show up on camera.",
+          "photo": null
         },
         {
           "layout": "quote",
           "n": 4,
-          "title": "Tired is just a feeling.",
-          "line": "He's just as tired as you.",
-          "photo": "production/carousels/frames/1dhTH0QynPgwnao6gG9stMknnucO89drM/0111.0.jpg"
+          "title": "Ask why after every round.",
+          "line": "What worked, and why it worked.",
+          "photo": null
         },
         {
           "layout": "polaroid",
           "n": 5,
-          "title": "Hands up|when they're heavy.",
-          "line": "Tired guards get finished.",
-          "photo": "production/carousels/frames/1VQckuhsKET3bhVHRsVsgANM797wcP7dM/0024.2.jpg"
+          "title": "Drill reactions,|not combos.",
+          "line": "He shows it. You answer it.",
+          "photo": null
         },
         {
           "layout": "numeral",
           "n": 6,
-          "title": "Win the last 30 seconds.",
-          "line": "Judges remember how you finish.",
-          "photo": "production/carousels/frames/1VQckuhsKET3bhVHRsVsgANM797wcP7dM/0005.0.jpg"
+          "title": "One counter a week.",
+          "line": "Then use it until it's automatic.",
+          "photo": null
+        },
+        {
+          "layout": "tape",
+          "n": 7,
+          "title": "Rest days are film days.",
+          "line": "Your body heals. Your eye trains.",
+          "photo": null
         },
         {
           "layout": "close",
-          "title": "Round three decides it.",
-          "big": "Be ready.",
-          "cta": "Save this before your next hard sparring day.",
+          "title": "Fight IQ isn't a gift.",
+          "big": "Train it.",
+          "cta": "Save this for your next rest day.",
           "line": "tap save"
         }
       ],
-      "caption": "Round three is where fights get decided.\nNot because of skill. Because of the tank.\n\n1. Exhale on every shot. Holding your breath empties you faster.\n2. Clinch, breathe, reset. Ten seconds of rest nobody sees.\n3. Jab more, chase less. A busy jab buys time.\n4. Tired is just a feeling. He's just as tired as you.\n5. Hands up when they're heavy. Tired guards get finished.\n6. Win the last 30 seconds. Judges remember the finish.\n\nSave this before your next hard sparring day.\n\n#muaythai #boxing #fighter #sparring"
+      "caption": "Fight IQ isn't something you're born with.\nIt's something you build. Most of it outside sparring.\n\n1. Watch fights on mute. Follow the feet.\n2. Shadowbox with a plan. Pick an opponent and fight his habits.\n3. Film your own rounds. Your habits show up on camera.\n4. Ask why after every round. What worked, and why.\n5. Drill reactions, not combos. He shows it, you answer it.\n6. One counter a week. Use it until it's automatic.\n7. Rest days are film days.\n\nSave this for your next rest day.\n\n#muaythai #boxing #fighter #fightiq"
     }
   ]
 }
