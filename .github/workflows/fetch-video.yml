@@ -10,8 +10,8 @@
 # Instagram often blocks logged-out downloads from cloud IPs. yt-dlp uses the IG_COOKIES secret
 # (Netscape cookies.txt) when set; if it still fails, Instagram links fall back to Business Discovery
 # (tools/video/ig_discovery.py, FB_USER_TOKEN), which works for creator/business accounts.
-# Instagram carousels (swipe posts) and photo posts: yt-dlp finds no video, the fallback saves every slide
-# to <dir>/slides/NN.jpg and they are committed with the analysis.
+# Instagram /p/ posts (carousels, photo posts) go to Business Discovery first: it saves every slide
+# to <dir>/slides/NN.jpg; animated slides become NN/ frames + NN-contact.jpg, their mp4 goes to the media release.
 name: Fetch video
 
 on:
@@ -64,7 +64,10 @@ jobs:
         run: |
           case "$NAME" in *[!a-zA-Z0-9._-]*|"") echo "name must be a simple slug"; exit 1;; esac
           mkdir -p dl
-          if [[ "$URL" == *drive.google.com* ]]; then
+          # /p/ posts are usually carousels: yt-dlp keeps only the first item, Business Discovery saves every slide
+          if [[ "$URL" == *instagram.com/p/* ]] && python3 -P tools/video/ig_discovery.py "$URL" dl --user "$IG_USER"; then
+            :
+          elif [[ "$URL" == *drive.google.com* ]]; then
             # gdown >= 6 dropped --fuzzy; pass the bare file id
             id=$(printf '%s' "$URL" | sed -nE 's#.*/d/([^/?]+).*#\1#p; s#.*[?&]id=([^&]+).*#\1#p' | head -1)
             gdown "${id:-$URL}" -O dl/video
@@ -91,7 +94,18 @@ jobs:
           if [ "$KIND" = reference ]; then dir="content-bank/references/videos/$NAME"
           else dir="content-bank/real-footage/analysis/$NAME"; fi
           if [ -n "$NO_VIDEO" ]; then mkdir -p "$dir"; else python3 tools/video/watch.py "dl/$NAME.mp4" "$dir"; fi
-          if [ -d dl/slides ]; then cp -r dl/slides "$dir/"; fi
+          if [ -d dl/slides ]; then
+            # animated (video) slides: frames + contact sheet go in git, the mp4 goes to the media release
+            for v in dl/slides/*.mp4; do
+              [ -e "$v" ] || continue
+              n=$(basename "$v" .mp4)
+              mkdir -p "dl/slides/$n"
+              ffmpeg -v error -i "$v" -vf fps=2,scale=540:-2 "dl/slides/$n/f%03d.jpg"
+              ffmpeg -v error -i "$v" -vf "fps=1,scale=270:-2,tile=5x2" -frames:v 1 "dl/slides/$n-contact.jpg"
+              mv "$v" "dl/$NAME-slide$n.mp4"
+            done
+            cp -r dl/slides "$dir/"
+          fi
           if [ -f dl/video.info.json ]; then
             python3 - "$dir" <<'PY'
           import json, sys
@@ -105,13 +119,15 @@ jobs:
           echo "DIR=$dir" >> "$GITHUB_ENV"
 
       - name: Store video on the media release
-        if: env.NO_VIDEO == ''
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          shopt -s nullglob
+          files=(dl/$NAME.mp4 dl/$NAME-slide*.mp4)
+          [ ${#files[@]} -gt 0 ] || exit 0
           gh release view media > /dev/null 2>&1 || \
             gh release create media --title Media --notes "Raw footage, references and renders. Managed by tools/video/media.sh."
-          gh release upload media "dl/$NAME.mp4" --clobber
+          gh release upload media "${files[@]}" --clobber
 
       - name: Commit analysis
         run: |
