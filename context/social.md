@@ -32,6 +32,14 @@ reel pushed to FB should carry the full caption, not a stripped one.
 - **Net new followers since Jun 5:** ~86. **Since surge started (May 24):** ~+323 new followers.
 - Latest raw data: pull fresh; nearest report in `analytics/reports/2026-06-15.md`.
 
+## Profile conversion snapshot (2026-10-24, Buzzfy, last 30 days)
+- Followers 2,043 (net +15 in 30 d: 59 follows, 44 unfollows). Following 993.
+- Reach 63.3k, 99.7% non-followers. Profile views 409, website clicks 4 (1%).
+- **Grid frozen since 2026-09-24:** every reel after that is a MANUAL trial reel (`on_profile_grid: false`),
+  so visitors land on a grid topped by two Stance pitches ("Comment STANCE") from September.
+- Bio: "🇨🇭🇧🇷 in Bangkok / Fighter rebuilding from broken leg + ACL tear / I help fighters stop training
+  random / ⬇️ Find your weakness + Stance waitlist", link matteofights.me. Name field: "Matteo".
+
 ## Biography (as of Jun 15)
 > 🇨🇭🇧🇷 in Bangkok  
 > Fighter rebuilding from broken leg + ACL tear  
