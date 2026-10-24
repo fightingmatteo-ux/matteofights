@@ -1,13 +1,17 @@
-# Carousels (swipe posts): pull still frames from the Drive training clips (tools/carousel/frames.py) so Claude can
-# pick a photo per slide. Rendering and posting come next (tools/carousel/README.md).
+# Carousels (swipe posts), tools/carousel/README.md.
+#  - Monday: research. scout.py finds other creators' outlier carousels (proven hooks, slides 1-2 saved for Claude to
+#    read), report.py reviews every carousel of ours (reach, views per reach, saves/shares/follows per 1k).
+#  - On demand: frames. Still frames from Drive training clips (frames.py) so Claude can pick a photo per slide.
 name: Carousel
 
 on:
+  schedule:
+    - cron: "20 6 * * 1"   # Monday 06:20 UTC: weekly research (after the 06:00 competitor scout)
   workflow_dispatch:
     inputs:
       frames:
-        description: Drive clip ids to pull frames from (comma-separated)
-        required: true
+        description: Drive clip ids to pull frames from (comma-separated); empty = run the weekly research
+        default: ""
       per_clip:
         description: Frames to keep per clip
         default: "4"
@@ -20,9 +24,33 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  frames:
+  research:
+    if: github.event_name == 'schedule' || inputs.frames == ''
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Scout proven carousels
+        env:
+          FB_USER_TOKEN: ${{ secrets.FB_USER_TOKEN }}
+        run: python3 -P tools/carousel/scout.py
+      - name: Review our carousels
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+        run: python3 -P tools/carousel/report.py
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add production/carousels/proven.json production/carousels/proven production/carousels/results.json analytics/reports
+          git commit -m "carousel: weekly research" || exit 0
+          git pull --rebase -q origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+
+  frames:
+    if: github.event_name == 'workflow_dispatch' && inputs.frames != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
       - name: Install ffmpeg, rclone, Pillow

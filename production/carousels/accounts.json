@@ -1,0 +1,4 @@
+{
+  "note": "Extra Instagram accounts the weekly carousel scout reads (tools/carousel/scout.py), on top of the competitors in production/competitors/accounts.json. Creator/business accounts only. Add carousel-heavy accounts in fight, fitness and mindset here.",
+  "accounts": ["jayhiette", "danesmithfit"]
+}

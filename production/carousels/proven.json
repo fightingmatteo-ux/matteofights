@@ -1,0 +1,13 @@
+{
+  "note": "Proven hooks for carousels. Every carousel in posts.json needs hook_ref = a 'read' entry's code (other creators' outlier carousels, found weekly by tools/carousel/scout.py) or an 'own' id (our own reels that proved the hook on our audience). Adapt the pattern to Matteo's topic; never copy another creator's slides word for word.",
+  "updated": null,
+  "own": [
+    {"id": "own-born-fighter", "hook": "6 SIGNS YOU WERE BORN TO BE A FIGHTER", "pattern": "N signs you were born/built to be X (identity)", "proof": "reel, 331k views, 233 shares (2026-06)"},
+    {"id": "own-killer-without-sparring", "hook": "8 WAYS TO FIGHT LIKE A KILLER WITHOUT SPARRING 5X/WEEK", "pattern": "N ways to <outcome> without <requirement> (tactical)", "proof": "reel, 161k views, 1,937 saves"},
+    {"id": "own-fight-iq", "hook": "7 WAYS TO BUILD FIGHT IQ WITHOUT SPARRING EVERYDAY", "pattern": "N ways to <outcome> without <requirement> (tactical)", "proof": "reel, 32k views"},
+    {"id": "own-round-three", "hook": "6 WAYS TO SURVIVE ROUND THREE WHEN YOUR CARDIO IS GONE", "pattern": "N ways to survive <fight moment> (tactical + fight moment)", "proof": "trial reel 2026-10-20, 2.07x normal views"},
+    {"id": "own-hit-harder", "hook": "8 WAYS TO HIT HARDER WITHOUT LIFTING A SINGLE WEIGHT", "pattern": "N ways to <outcome> without <requirement> (tactical)", "proof": "trial reel 2026-10-20, 1.66x views, 50 saves"}
+  ],
+  "carousels": [],
+  "errors": []
+}
