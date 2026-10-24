@@ -42,3 +42,7 @@ hand ~50.5 s on "throw", drop ~50.9 s), tighter replay on "some people say the r
 - Fight tape = ONE real-speed clip from file 2 under "so we clinch ... he's out": elbows on "elbow", ref on
   "referee steps in", the punch on "right", he's down by "out". Replay freezes on the punch under "came too early".
 - Cards: DRAW (slam), CHESS. Captions say "too early".
+
+## Replay patch (2026-10-24, Matteo: the right hand is out of frame on "came too early")
+`patch_replay.py <V>` re-cut only the replay (punch inside the frame) and composited it into the finished renders, captions kept
+from the render via a glyph mask, camera push matched (1.115x). Run on Modal through Submit render with `cmd`. No full re-render.
