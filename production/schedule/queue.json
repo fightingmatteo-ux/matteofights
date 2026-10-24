@@ -736,7 +736,7 @@
       "not_before": "2026-10-24T01:30:00Z",
       "min_gap_hours": 2.5,
       "approved": true,
-      "status": "queued",
+      "status": "posted",
       "test": {
         "exp": "exp-1016-hook_style",
         "variant": "a",
@@ -744,7 +744,14 @@
       },
       "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)",
       "app_audio": "id:530317382955170 Echo Sax End - Caleb Arredondo (add in the Instagram app)",
-      "video_asset_music": "lst-2026-10-23-gym-teaches-business-music.mp4"
+      "video_asset_music": "lst-2026-10-23-gym-teaches-business-music.mp4",
+      "audio_id": "530317382955170",
+      "audio_title": "Echo Sax End (Take 2)",
+      "audio_artist": "caleb.arredondo",
+      "posting_since": "2026-10-24T01:30:52Z",
+      "media_id": "17912693520506520",
+      "permalink": "https://www.instagram.com/reel/De29Sc6CnAf/",
+      "posted_at": "2026-10-24T01:31:38Z"
     },
     {
       "id": "lst-2026-10-24-training-too-long",
