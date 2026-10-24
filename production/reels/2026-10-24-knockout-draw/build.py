@@ -27,7 +27,7 @@ REEL = {
     # the word the right hand lands on in the hook tape (make_broll.py PUNCH_WORD, +0.05 s)
     "ko_word": {"A": "KNOCKED", "B": "KNOCKED", "C": "FIRST"},
     # big + red over the face, one every few seconds, none over the tape
-    "keys": ["REFEREE", "POINTS", "LEGAL", "VIOLENCE", "JUDGES"],
+    "keys": ["SIXTH", "POINTS", "LEGAL", "VIOLENCE", "JUDGES"],
     "fx": {"POINTS": "decode", "LEGAL": "focus", "JUDGES": "focus"},
     # white cards: (first word, card ends before this word, KEYWORD); refs are inside the body segment
     "cards": [

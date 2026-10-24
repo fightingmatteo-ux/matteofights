@@ -2,8 +2,9 @@
 
     python -P make_broll.py A     # reads work/edl_A.json, writes assets/media/b_<name>.mp4 + work/broll.json
 
-Source: media/first-fight/first-fight-1.mp4 (Drive "Muay Thai fight matteo .MOV", 480x852, filmed from the corner).
-Moments (frame by frame, 2026-10-24): clinch 45.0-45.9 s, ref walks in ~50.4, right hand 50.5, he drops 50.6-50.9.
+Source: media/first-fight/first-fight-2.mp4 (Drive "Muay Thai fight matteo 2.MOV", 480x852). Matteo = blue shorts, red
+gloves, back to the camera (confirmed by Matteo 2026-10-24). Frame by frame: clinch 42.4 s, elbows to the top of his
+head 43.1-47.8, the ref separates them ~47.9-48.1, the right hand lands 48.33, he drops out of frame 48.6-48.9.
 Slots: [from-anchor, to-anchor] in the cut; `sync` = (source second, anchor) puts that moment on that word.
 Anchors: (seg, word | None | "END", k, offset); seg "hook" = first segment, "body" = second, "loop" = last.
 `hold` = freeze the clip's last frame once the source reaches that second (a deliberate freeze on the punch).
@@ -17,21 +18,19 @@ from pathlib import Path
 V = sys.argv[1]
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
-SRC = ROOT / "media/first-fight/first-fight-1.mp4"
-KO = 50.5  # the right hand
+SRC = ROOT / "media/first-fight/first-fight-2.mp4"
+KO = 48.33  # the right hand lands
 PUNCH_WORD = {"A": "KNOCKED", "B": "KNOCKED", "C": "FIRST"}[V]
 SLOTS = {
     # every hook opens on the knockout: the right hand lands on the spoken word
-    "hook":   dict(crop=(20, 90, 360, 640), full=True, a=("hook", None, 1, 0), b=("hook", "END", 1, 0),
+    "hook":   dict(crop=(110, 0, 360, 640), full=True, a=("hook", None, 1, 0), b=("hook", "END", 1, 0),
                    sync=(KO, ("hook", PUNCH_WORD, 1, 0.05))),
-    # "we clinch, I elbowed the top of his head"
-    "clinch": dict(crop=(30, 130, 400, 500), a=("body", "WE", 1, -0.12), b=("body", "REF", 1, -0.3),
-                   sync=(45.6, ("body", "ELBOWED", 1, 0))),
-    # "the ref steps in and I throw the right hand. He's out" (the drop sits in the silence after "out")
-    "ko":     dict(crop=(30, 130, 400, 500), a=("body", "REF", 1, -0.3), b=("body", "THEY", 1, -0.08),
-                   sync=(KO, ("body", "THROW", 1, 0.05))),
-    # "some people say the right hand was too late. You be the judge": replay, freezes on the punch
-    "replay": dict(crop=(60, 170, 260, 325), a=("body", "SOME", 1, -0.1), b=("body", "TELL", 1, -0.06),
+    # "so we clinch, I elbow the top of his head, the referee steps in and I throw the right hand. He's out":
+    # ONE real-speed clip, the narration lines up with the tape (elbows, ref, punch on "right", he's down by "out")
+    "fight":  dict(crop=(0, 0, 480, 600), a=("body", "WE", 1, -0.12), b=("body", "THEY", 1, -0.08),
+                   sync=(KO, ("body", "RIGHT", 1, 0))),
+    # "some people say the right hand came too early. You be the judge": replay, freezes on the punch
+    "replay": dict(crop=(130, 0, 320, 400), a=("body", "SOME", 1, -0.1), b=("body", "TELL", 1, -0.06),
                    sync=(KO, ("body", "RIGHT", 2, 0.1)), hold=KO + 0.04),
 }
 

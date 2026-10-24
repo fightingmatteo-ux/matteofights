@@ -17,7 +17,7 @@ RAW=../../../media/2026-10-24-knockout-draw/raw.mp4
 
 [ -f "assets/media/aroll_$V.mp4" ] || "$PY" -P ../../editing/reel-kit/scripts/assemble.py work/takes.json "$V"
 
-# fight tape cut to this variant's lines (media/first-fight/first-fight-1.mp4)
+# fight tape cut to this variant's lines (media/first-fight/first-fight-2.mp4)
 "$PY" -P make_broll.py "$V"
 
 if [ ! -f "assets/media/fg_${V}_full.webm" ]; then

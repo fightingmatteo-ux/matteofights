@@ -9,7 +9,7 @@ test_variable: hook
 # Knockout draw (pin candidate, remake of 2026-10-12-origin-story)
 
 Raw: Drive "Talking head raw footage pinnedreel 1" -> media release `2026-10-24-knockout-draw-raw.mp4`.
-KO: "Muay Thai fight matteo .MOV" 0:47.9-0:49.5 (media release `first-fight-1.mp4`).
+KO: "Muay Thai fight matteo 2.MOV" (media release `first-fight-2.mp4`): Matteo in blue shorts, back to camera. Clinch 42.4, elbows 43.1-47.8, ref separates 47.9-48.1, right hand 48.33, he drops 48.6-48.9.
 
 | V | Hook (spoken) | Loop line |
 |---|---|---|
@@ -34,3 +34,11 @@ Schedule: 15:30 NY slot, 48 h apart (Oct 26, 28, 30), unapproved until Matteo's 
 Takes: hook A take 1, B take 2, C take 1; body take 3 ("too late"), close from take 4. Tape: clinch 45.4 s, KO (right
 hand ~50.5 s on "throw", drop ~50.9 s), tighter replay on "some people say the right hand was too late". Cards: draw
 (slam), judge, chess. Music: epic-bold-drums. Queue: knockout-draw-A/B/C, 26/28/30 Oct 19:30Z, approved:false.
+
+## v2 (2026-10-24, Matteo: "all look the same, bad takes, wrong b-roll, too many cuts, pacing off")
+- Each hook opens on the KO tape with its own motion graphic: A result plate K.O. -> DRAW, B 6 fights stacked
+  against 1 then knocked over, C 16 / fight #6 / fight #1 (odometer). Emil Kowalski motion rules.
+- Body = take 4 (the "too early" take, Matteo's correct version), one continuous take: hook -> body -> loop.
+- Fight tape = ONE real-speed clip from file 2 under "so we clinch ... he's out": elbows on "elbow", ref on
+  "referee steps in", the punch on "right", he's down by "out". Replay freezes on the punch under "came too early".
+- Cards: DRAW (slam), CHESS. Captions say "too early".
