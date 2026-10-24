@@ -22,7 +22,7 @@ Body: setup, warning, clinch/elbow/right hand, silence, "They called it a draw",
 ("My coaches said the elbow was legal. Some people say the right hand came too late. You be the judge."),
 chess line, "You can't control the judges. Only what you do." Target 30-40 s.
 
-Schedule: same-day hook test (trials.py schedule, 2026-10-24): Oct 26 15:00 / 15:20 / 15:40 NY. Openings: A result, B story, C number. Unapproved until Matteo's yes.
+Schedule: 15:30 NY slot, 48 h apart (Oct 26, 28, 30), unapproved until Matteo's yes.
 
 ## Render (2026-10-24, Modal via the "Submit render" workflow)
 | V | Length | File (R2 renders/ + media release) |
