@@ -1,6 +1,11 @@
 """Render a carousel (swipe post) to 1080x1350 JPEG slides in one of the two brand looks.
 
-    python3 -P tools/carousel/render.py production/carousels/posts.json POST_ID OUTDIR [--look editorial|poster]
+    python3 -P tools/carousel/render.py production/carousels/posts.json POST_ID OUTDIR [--look editorial|poster] [--animate]
+
+--animate also writes <id>-01.mp4: the cover as a 4.5 s silent loop (Instagram and Threads take a video as slide 1;
+Facebook albums keep the still). Text is complete from frame 0 because the first frame is the thumbnail. Motion:
+slow push-in on the photo, then twice a "peek" (the slide eases left and shows the edge of slide 2) with a pulsing
+arrow, the cue that makes people swipe.
 
 A post in posts.json:
     {"id": "car-choose-your-hard", "look": "editorial",
@@ -13,7 +18,7 @@ Looks:
   editorial  white display serif on black, the photo in a thin white frame, clean sans body (the jayhiette/Dane style)
   poster     full-bleed darkened photo, Bebas Neue caps, red headline, gold numbers (the listicle-cover brand)
 """
-import argparse, json
+import argparse, json, math, subprocess
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageEnhance, ImageFont, ImageOps
@@ -82,9 +87,16 @@ def block(d, xy, lines, f, size, lead, fill, align="left", width=None):
     return y
 
 
+ZOOM = [1.0]  # set by animate(): push-in on every photo of the frame being drawn
+
+
 def photo(path, size):
     im = ImageOps.exif_transpose(Image.open(ROOT / path if not Path(path).is_absolute() else path)).convert("RGB")
-    return ImageOps.fit(im, size, Image.LANCZOS, centering=(0.5, 0.4))
+    z = ZOOM[0]
+    big = (round(size[0] * z), round(size[1] * z))
+    im = ImageOps.fit(im, big, Image.LANCZOS, centering=(0.5, 0.4))
+    x, y = (big[0] - size[0]) // 2, int((big[1] - size[1]) * 0.4)
+    return im.crop((x, y, x + size[0], y + size[1]))
 
 
 def framed(img, im, box):
@@ -178,8 +190,53 @@ def poster(s, n, total):
 
 LOOKS = {"editorial": editorial, "poster": poster}
 
+FPS, SECONDS, PEEKS, PEEK_PX = 30, 4.5, (1.4, 3.0), 120
 
-def render(post, outdir, look=None):
+
+def ease(t):
+    return 0.5 - 0.5 * math.cos(math.pi * max(0.0, min(1.0, t)))
+
+
+def peek(t):
+    """0..1..0 over 1.1 s for each peek start."""
+    return max((math.sin(math.pi * ease((t - p) / 1.1)) if p <= t <= p + 1.1 else 0.0) for p in PEEKS)
+
+
+def arrow(d, x, y, alpha, color):
+    c = tuple(round(v * alpha + 11 * (1 - alpha)) for v in color)
+    for k in range(2):
+        ox = x + k * 26
+        d.line([(ox, y - 26), (ox + 22, y), (ox, y + 26)], fill=c, width=6, joint="curve")
+
+
+def animate(post, draw, out_mp4, total):
+    """Cover slide as a silent looping MP4 with a push-in and two swipe peeks at slide 2."""
+    nxt = draw(post["slides"][1], 2, total) if len(post["slides"]) > 1 else None
+    ff = subprocess.Popen(["ffmpeg", "-v", "error", "-y", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}",
+                           "-r", str(FPS), "-i", "-", "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "18",
+                           "-movflags", "+faststart", str(out_mp4)], stdin=subprocess.PIPE)
+    n = int(FPS * SECONDS)
+    for i in range(n):
+        t = i / FPS
+        ZOOM[0] = 1.0 + 0.05 * math.sin(math.pi * i / n)  # in and back out: seamless loop
+        cover = draw(post["slides"][0], 1, total)
+        ZOOM[0] = 1.0
+        dx = round(PEEK_PX * peek(t))
+        frame = Image.new("RGB", (W, H), INK)
+        frame.paste(cover, (-dx, 0))
+        if nxt is not None and dx:
+            frame.paste(nxt.crop((0, 0, dx, H)), (W - dx, 0))
+            ImageDraw.Draw(frame).line([(W - dx, 0), (W - dx, H)], fill=INK, width=4)
+        pulse = 0.55 + 0.45 * math.sin(2 * math.pi * t / 1.5) ** 2
+        arrow(ImageDraw.Draw(frame), W - dx - 110, H // 2, pulse, WHITE)
+        ff.stdin.write(frame.tobytes())
+    ff.stdin.close()
+    if ff.wait():
+        raise RuntimeError("ffmpeg failed on the animated cover")
+    return out_mp4
+
+
+def render(post, outdir, look=None, animated=False):
     out = Path(outdir)
     out.mkdir(parents=True, exist_ok=True)
     draw = LOOKS[look or post.get("look", "editorial")]
@@ -188,6 +245,8 @@ def render(post, outdir, look=None):
         p = out / f"{post['id']}-{i:02d}.jpg"
         draw(s, i, len(post["slides"])).save(p, quality=92)
         paths.append(p)
+    if animated:
+        paths.insert(0, animate(post, draw, out / f"{post['id']}-01.mp4", len(post["slides"])))
     return paths
 
 
@@ -197,10 +256,11 @@ def main():
     p.add_argument("post_id")
     p.add_argument("outdir")
     p.add_argument("--look", choices=list(LOOKS))
+    p.add_argument("--animate", action="store_true")
     a = p.parse_args()
     posts = json.loads(Path(a.posts).read_text(encoding="utf-8"))["posts"]
     post = next(x for x in posts if x["id"] == a.post_id)
-    for path in render(post, a.outdir, a.look):
+    for path in render(post, a.outdir, a.look, a.animate):
         print(path)
 
 
