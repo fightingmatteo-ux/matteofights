@@ -55,3 +55,4 @@ Log: `media/2026-10-16-saenchai-bigger-men/renders/render_bc.log` (ends with `AL
 ## Rules (short)
 
 Never set `approved:true`. Never commit `secrets/`, `data.json`, `covers/`, `voice.wav`, `snaps/`. Commit only your own paths. Never run renders as session background jobs, and never render variants in parallel.
+| Style lab next aspect (10-24) | OPEN | hook_style is fully tested (native won). Add a new lab aspect before the next Saturday proposal: hook position (lower plate, faces kept clear; the 10-20 review swapped 6 clips for text over the face) or sound. Code in tools/style/lab.py ASPECTS + tools/listicle/render.py |

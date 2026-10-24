@@ -173,5 +173,10 @@
     "at": "2026-10-24T11:04:32Z",
     "who": "Claude",
     "text": "Saturday: 28 ready hooks for 28 Oct - 4 Nov (15 listicles, 9 of them tactical; 5 statements; 3 iykyk; 3 lifestyle; 2 builder), lint clean, clips spaced. LEDGER +5; normal now 2651. Asked Matteo for a talking head from 26 Oct."
+  },
+  {
+    "at": "2026-10-24T11:04:53Z",
+    "who": "Claude",
+    "text": "Style lab: no new test this week. Every hook_style option has been tested (native won 10-22) and hook_style is the only aspect the lab can run. Next useful test needs a new aspect (hook position lower so the text stops covering faces, or sound choice); that is code work, flagged in STATUS."
   }
 ]
