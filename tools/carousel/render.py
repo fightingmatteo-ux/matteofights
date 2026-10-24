@@ -63,11 +63,17 @@ def media_card(s, cls):
     return f'<div class="ph {cls}" style="{bg(s.get("photo"))}"></div>'
 
 
+def fit(word, width=780, top=210):
+    """Anton caps run about 0.47 em a character: shrink long words so they stay left of the photo card."""
+    return f"font-size:{min(top, int(width / (0.47 * max(len(word), 1))))}px"
+
+
 def cover(s, i, total):
     a, b, c = (s["title"].split("|") + ["", "", ""])[:3]
     return (f'<div class="slide dark cover grain"><div class="block"></div>{media_card(s, "card")}'
             f'<div class="kicker">{esc(s.get("kicker"))}</div>'
-            f'<h1><span class="a">{esc(a)}</span><span class="b">{esc(b)}</span><span class="c">{esc(c)}</span></h1>'
+            f'<h1><span class="a" style="{fit(a)}">{esc(a)}</span><span class="b">{esc(b)}</span>'
+            f'<span class="c" style="{fit(c)}">{esc(c)}</span></h1>'
             f'<div class="badge">{RING}<div class="core">{ARROW}</div></div>{furniture(i, total, False)}</div>')
 
 

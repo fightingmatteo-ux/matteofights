@@ -1,61 +1,70 @@
 {
   "posts": [
     {
-      "id": "car-choose-your-hard",
+      "id": "car-round-three",
       "status": "draft",
       "layer": "belief",
+      "hook_ref": "own-round-three",
+      "animated": true,
       "slides": [
         {
           "layout": "cover",
-          "kicker": "Fighter edition",
-          "title": "Choose|your|hard.",
-          "photo": "production/carousels/frames/12nHOhQPcIngi6oZS5cDoaB2BJv0eQ8UE/0023.8.jpg",
-          "video": "media/carousel-loop-12nHOhQPcIngi6oZS5cDoaB2BJv0eQ8UE-0023.8.webm"
+          "kicker": "6 ways to survive it",
+          "title": "Round three.|no gas|left.",
+          "photo": null,
+          "video": null
         },
         {
           "layout": "numeral",
           "n": 1,
-          "title": "Sparring is hard.",
-          "line": "Freezing for real is harder.",
-          "photo": "production/carousels/frames/1cO7ZS2vB0GficgdhERknFjIt1zkldbU6/0063.0.jpg"
+          "title": "Exhale on every shot.",
+          "line": "Holding your breath empties the tank.",
+          "photo": null
         },
         {
           "layout": "tape",
           "n": 2,
-          "title": "Conditioning is hard.",
-          "line": "Gassing in round 2 is harder.",
-          "photo": "production/carousels/frames/1DThONEtMg2kkNRUTXViJTdtMdctgdpNz/0004.8.jpg"
+          "title": "Clinch. Breathe. Reset.",
+          "line": "Ten seconds of rest nobody sees.",
+          "photo": null
         },
         {
           "layout": "split",
           "n": 3,
-          "title": "Getting corrected is hard.",
-          "line": "Repeating the mistake for a year is harder.",
-          "photo": "production/carousels/frames/1vBV91hZz8OBFh2bAdw1Z7j1WC_aFJR-p/0016.5.jpg"
-        },
-        {
-          "layout": "polaroid",
-          "n": 4,
-          "title": "Losing|is hard.",
-          "line": "Never coming back is harder.",
-          "photo": "production/carousels/frames/1-XaH84HgvgRKgajbc1F15GxBakWA7oO_/0020.3.jpg"
+          "title": "Jab more. Chase less.",
+          "line": "A busy jab buys you time.",
+          "photo": null
         },
         {
           "layout": "quote",
+          "n": 4,
+          "title": "Tired is just a feeling.",
+          "line": "He's just as tired as you.",
+          "photo": null
+        },
+        {
+          "layout": "polaroid",
           "n": 5,
-          "title": "Fear before the walkout is hard.",
-          "line": "Never knowing who you are is harder.",
-          "photo": "production/carousels/frames/1kY_fR5PwN07yk9dasbW4Q_5k39muHf-T/0020.2.jpg"
+          "title": "Hands up|when they're heavy.",
+          "line": "Tired guards get finished.",
+          "photo": null
+        },
+        {
+          "layout": "numeral",
+          "n": 6,
+          "title": "Win the last 30 seconds.",
+          "line": "Judges remember how you finish.",
+          "photo": null
         },
         {
           "layout": "close",
-          "title": "Both are hard.",
-          "big": "Choose yours.",
-          "cta": "Save this for the morning you don't want to go.",
+          "title": "Round three decides it.",
+          "big": "Be ready.",
+          "cta": "Save this before your next hard sparring day.",
           "line": "tap save"
         }
       ],
-      "caption": "Every fighter picks a hard.\nMost people just don't notice they picked.\n\nSparring hurts. Freezing when it's real hurts longer.\nConditioning hurts. Gassing in round two hurts in front of everyone.\n\nBoth are hard. Only one moves you forward.\n\nSave this for the morning you don't want to go.\n\n#muaythai #boxing #fighter #discipline"
+      "caption": "Round three is where fights get decided.\nNot because of skill. Because of the tank.\n\n1. Exhale on every shot. Holding your breath empties you faster.\n2. Clinch, breathe, reset. Ten seconds of rest nobody sees.\n3. Jab more, chase less. A busy jab buys time.\n4. Tired is just a feeling. He's just as tired as you.\n5. Hands up when they're heavy. Tired guards get finished.\n6. Win the last 30 seconds. Judges remember the finish.\n\nSave this before your next hard sparring day.\n\n#muaythai #boxing #fighter #sparring"
     }
   ]
 }
