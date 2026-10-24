@@ -389,9 +389,12 @@
       "text": "What did your first coach get wrong?\n\nOr what did they get right that you only understood a year later?",
       "chain": [],
       "from": "craft",
-      "status": "queued",
+      "status": "posted",
       "approved": true,
-      "approved_note": "Matteo: approved via dashboard (2026-10-18T15:34:38Z)"
+      "approved_note": "Matteo: approved via dashboard (2026-10-18T15:34:38Z)",
+      "posted_at": "2026-10-24T16:32:33Z",
+      "thread_id": "18439235605197095",
+      "url": "https://www.threads.com/@matteofights/post/De4kcQhlHsD"
     },
     {
       "id": "th-1024-3",
