@@ -44,6 +44,7 @@ Log: `media/2026-10-16-saenchai-bigger-men/renders/render_bc.log` (ends with `AL
 | Effects shots (nvision.media reference, 10-23) | **MATTEO** | Shot guide `production/shooting/effects-shots.md`. Film the first test shoot (cards 1, 2, 5, 7, 10), upload, Claude builds the effects. Gypsy Amazon version needs their colours, font, logo |
 | Carousels (10-24) | **MATTEO** | Built: frames from Drive, renderer (editorial + poster, animated cover), proven-hook bank + lint gate, Monday research (scout + report). Matteo picks the look from the sample sent in chat; then build posting (IG carousel, Threads, FB album, 11:00 NY slot). Lead-magnet upgrade (PROTOCOL) after. Doc: tools/carousel/README.md |
 | Profile conversion (10-24) | **MATTEO** | Grid frozen since 09-24 (all reels are MANUAL trials, never shared). Matteo: share best trials to followers, new bio + name field, pin 3. Claude: switch queue to `SS_PERFORMANCE` after his yes. Snapshot in context/social.md |
+| Knockout draw A/B/C (10-24) | **MATTEO** | Rendered on Modal (new "Submit render" workflow), sent in chat. Queued 15:30 NY on 26/28/30 Oct, `approved:false`: approve on the dashboard Home. Winner at 72 h gets shared to the grid and pinned |
 | TikTok | WAIT | App review |
 | Meta oEmbed | WAIT | Not approved; `ig_discovery` scans tracked competitors instead |
 | IG token | Expires 2026-12-13 | `ig.py refresh` before then |

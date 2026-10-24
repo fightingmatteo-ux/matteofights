@@ -1,6 +1,6 @@
 ---
 slug: 2026-10-24-knockout-draw
-status: editing (footage fetched from Drive 2026-10-24)
+status: rendered on Modal 2026-10-24, queued unapproved
 pillar: story (pinned profile reel)
 format: story, paradox payoff (KO -> draw), "you be the judge" debate, editorial look, loop
 test_variable: hook
@@ -23,3 +23,14 @@ Body: setup, warning, clinch/elbow/right hand, silence, "They called it a draw",
 chess line, "You can't control the judges. Only what you do." Target 30-40 s.
 
 Schedule: 15:30 NY slot, 48 h apart (Oct 26, 28, 30), unapproved until Matteo's yes.
+
+## Render (2026-10-24, Modal via the "Submit render" workflow)
+| V | Length | File (R2 renders/ + media release) |
+|---|---|---|
+| A | 41.0 s | 2026-10-24-knockout-draw-A-phone.mp4 |
+| B | 42.2 s | 2026-10-24-knockout-draw-B-phone.mp4 |
+| C | 39.2 s | 2026-10-24-knockout-draw-C-phone.mp4 |
+
+Takes: hook A take 1, B take 2, C take 1; body take 3 ("too late"), close from take 4. Tape: clinch 45.4 s, KO (right
+hand ~50.5 s on "throw", drop ~50.9 s), tighter replay on "some people say the right hand was too late". Cards: draw
+(slam), judge, chess. Music: epic-bold-drums. Queue: knockout-draw-A/B/C, 26/28/30 Oct 19:30Z, approved:false.
