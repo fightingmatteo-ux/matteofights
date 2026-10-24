@@ -24,7 +24,7 @@ from zoneinfo import ZoneInfo
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from render import render, candidate_windows, offsite  # noqa: E402
+from render import render, candidate_windows, offsite, protocol_cta, protocol_caption  # noqa: E402
 import footage_agent as agent  # noqa: E402
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "style"))
 from lab import assign as lab_assign  # noqa: E402
@@ -353,7 +353,7 @@ def main():
             clip, rot, rv = produce(h, work / asset, folder / "cover.jpg", None if a.audio else state["music_i"],
                                     a.seconds, clips, cat, uses, avoid, picked)
         review_sheet(work / asset, folder / "review.jpg")
-        (folder / "caption.txt").write_text(h["caption"].strip() + "\n", encoding="utf-8")
+        (folder / "caption.txt").write_text(protocol_caption(h, h["caption"]).strip() + "\n", encoding="utf-8")
 
         run("gh", "release", "upload", "media", str(work / asset), "--clobber", "-R", REPO)
         r2.upload_render(work / asset)  # posting prefers R2: never leave an older copy there
@@ -369,6 +369,7 @@ def main():
             "approved": False, "status": "queued", **({"rotate": rot} if rot else {}),
             **({"review": rv} if rv else {}),
             **({"test": test[2]} if test else {}),
+            "cta": "protocol" if protocol_cta(h) else "read",
             **({"app_audio": f"{sound} (add in the Instagram app)"} if sound else {})})
         if sound:
             music_copy(queue["items"][-1], h["id"], state["music_i"])

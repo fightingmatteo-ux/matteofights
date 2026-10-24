@@ -24,7 +24,14 @@ numbered list living in the caption. No talking, so it renders headless.
 - Clip window chosen by motion: the busiest steady stretch, skipping the first/last second and camera jolts.
 - Seamless loop: the end crossfades into the window's own start (seam measured = a normal frame step).
 - Slow push-in to 4.5% and back, sub-pixel (perspective filter, cubic), zero speed at the loop point. No jitter.
-- READ CAPTION rises and fades in at about 4.6 s, fades out before the loop. Music fades in and out, -14 LUFS.
+- 331k timing (watched 10-24, `content-bank/references/videos/own-born-to-be-a-fighter-331k/`): READ pill from ~1 s;
+  hooks.json `tease` (3-5 words pointing at one list item, like "Every fighter has #6") types out letter by letter
+  under the plate from 1.4 s and is gone ~2.9 s before the end. Every numbered listicle gets a tease.
+- COMMENT PROTOCOL: on `look.json` `protocol_cta` share of reels (0.75, stable per hook id; hooks.json `cta`
+  "protocol"/"read" overrides; never iykyk/builder) the READ pill hands over to a COMMENT PROTOCOL 🥊 pill for the
+  last ~2.6 s. Every listicle caption (not iykyk/builder) gets the PROTOCOL line above the hashtags; queue items
+  carry `cta` so the two can be compared. The DM itself: `signup-site/functions/api/ig-webhook.js`.
+- Music fades in and out, -14 LUFS.
 
 ## Local
 ```bash

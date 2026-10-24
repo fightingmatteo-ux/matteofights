@@ -1,3 +1,4 @@
 {
-  "hook_style": "native"
+  "hook_style": "native",
+  "protocol_cta": 0.75
 }

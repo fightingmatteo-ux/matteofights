@@ -12,15 +12,16 @@ Smoothness rules (from Matteo's feedback on earlier reels):
 - READ CAPTION eases in (rise + fade) and fades out before the loop point; no hard pops.
 Colour handling matches production/editing/reel-kit/scripts/prep_footage.sh (HDR -> SDR, full -> tv range, neutral).
 """
-import argparse, json, subprocess, tempfile
+import argparse, hashlib, json, subprocess, tempfile
 from pathlib import Path
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 ROOT = Path(__file__).resolve().parents[2]
 HOOKS = ROOT / "production" / "listicles" / "hooks.json"
 BEBAS = Path(__file__).parent / "fonts" / "BebasNeue-Regular.ttf"
 SERIF = Path(__file__).parent / "fonts" / "LiberationSerif-Bold.ttf"  # Times-metric, like IG's Classic
 EMOJI = Path("/usr/share/fonts/truetype/noto/NotoColorEmoji.ttf")
+INTER = Path(__file__).parent / "fonts" / "Inter-Bold.otf"  # the typewriter tease, like IG's own white text
 ANTON = ROOT / "production/reels/five-signs-real-fighter/assets/fonts/Anton-Regular.ttf"
 # Hook text looks (hooks.json "style" per hook, else production/listicles/look.json "hook_style", else "native"):
 #   native  the 331k / 161k look: Instagram's own text style, red bold serif on black highlights
@@ -41,6 +42,19 @@ def hook_style(h):
         return h["style"]
     look = json.loads(LOOK.read_text(encoding="utf-8")) if LOOK.exists() else {}
     return look.get("hook_style", "native") if look.get("hook_style") in HOOK_STYLES else "native"
+
+
+def protocol_cta(h):
+    """True when this reel ends on the COMMENT PROTOCOL pill (comment-to-DM, signup-site/functions/api/ig-webhook.js).
+    hooks.json "cta" ("protocol" | "read") wins, else look.json "protocol_cta" = share of reels (0-1), picked
+    stably per hook id so a re-render keeps its pill. iykyk reels have no pill at all."""
+    if h.get("format") in ("iykyk", "builder"):  # nothing to send people to / not the Protocol's audience
+        return False
+    if h.get("cta") in ("protocol", "read"):
+        return h["cta"] == "protocol"
+    look = json.loads(LOOK.read_text(encoding="utf-8")) if LOOK.exists() else {}
+    share = float(look.get("protocol_cta", 0))
+    return int(hashlib.md5(h["id"].encode()).hexdigest(), 16) % 100 < share * 100
 # Music library: production/listicles/music/ (tracks.json = title, artist, vibe, license) once it has tracks,
 # else the original 4 tracks. Each reel uses the track's strongest stretch (its drop), cut on a beat.
 MUSIC_DIR = ROOT / "production" / "listicles" / "music"
@@ -197,6 +211,20 @@ def place_plate(row_motion, height):
     return low if load(low) < 0.7 * load(top) else top
 
 
+PROTOCOL_LINE = "Comment PROTOCOL and I'll DM you my free training plan for fighters."
+
+
+def protocol_caption(h, caption):
+    """Every listicle caption (not iykyk/builder) gets the PROTOCOL comment line, above the hashtags."""
+    if h.get("format") in ("iykyk", "builder") or "PROTOCOL" in caption:
+        return caption
+    lines = caption.rstrip().split("\n")
+    i = len(lines)
+    while i > 0 and (lines[i - 1].startswith("#") or not lines[i - 1].strip()):
+        i -= 1
+    return "\n".join(lines[:i] + ["", PROTOCOL_LINE] + lines[i:])
+
+
 # ---------------------------------------------------------------- text layers
 def wrap(draw, text, font, width):
     lines, cur = [], ""
@@ -266,21 +294,25 @@ def fit_lines(draw, text, font, width):
     return wrap(draw, text, font, w)
 
 
-def cta_layer(base=1440):
-    """READ CAPTION pill; `base` = text baseline (low by default, high when the hook plate sits low)."""
+def cta_layer(base=1440, label="READ DESCRIPTION", red="", emoji="⬇️"):
+    """CTA pill: white `label`, then `red` in brand red, then `emoji`. Default READ DESCRIPTION ⬇️; the protocol
+    version is COMMENT + red PROTOCOL + 🥊. `base` = text baseline (low by default, high when the hook plate sits low)."""
     img = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     d = ImageDraw.Draw(img)
     f = ImageFont.truetype(str(BEBAS), 88)
-    label = "READ DESCRIPTION"
-    tw, em, gap = d.textlength(label, font=f), 76, 18
+    sp = d.textlength(" ", font=f) if red else 0
+    lw, rw = d.textlength(label, font=f), d.textlength(red, font=f) if red else 0
+    tw, em, gap = lw + sp + rw, 76, 18
     c = cap_h(f)
     x0 = (W - tw - gap - em) / 2
     d.rounded_rectangle([x0 - 30, base - c - 28, x0 + tw + gap + em + 30, base + 28], 18, fill=BLACK)
     d.text((x0, base), label, font=f, fill=WHITE, anchor="ls")
+    if red:
+        d.text((x0 + lw + sp, base), red, font=f, fill=RED, anchor="ls")
     ey = base - c + (c - em) // 2
     try:  # Noto Color Emoji only renders at its bitmap size (109); scale it down
         e = Image.new("RGBA", (136, 128), (0, 0, 0, 0))
-        ImageDraw.Draw(e).text((0, 0), "⬇️", font=ImageFont.truetype(str(EMOJI), 109), embedded_color=True)
+        ImageDraw.Draw(e).text((0, 0), emoji, font=ImageFont.truetype(str(EMOJI), 109), embedded_color=True)
         e = e.crop(e.getbbox()).resize((em, em), Image.LANCZOS)
         img.alpha_composite(e, (int(x0 + tw + gap), int(ey)))
     except OSError:  # no emoji font: plain red arrow
@@ -288,6 +320,42 @@ def cta_layer(base=1440):
         d.polygon([(cx - 34, ey + 36), (cx + 34, ey + 36), (cx, ey + em)], fill=RED)
         d.rectangle([cx - 12, ey, cx + 12, ey + 38], fill=RED)
     return img
+
+
+def tease_track(text, baseline, tmp, start, end, S, cps=20):
+    """The 331k's typewriter subhook ("Every fighter has #6"): white bold text with a soft shadow under the hook
+    plate, typed letter by letter from `start`, gone at `end`. Returns an ffconcat file (an RGBA video track)."""
+    tmp = Path(tmp)
+    blank = tmp / "t_blank.png"
+    Image.new("RGBA", (W, H), (0, 0, 0, 0)).save(blank)
+    if not text:
+        return blank, None
+    lines = ["ffconcat version 1.0"]
+    f = ImageFont.truetype(str(INTER), 62)
+
+    x0 = (W - ImageDraw.Draw(Image.new("RGBA", (1, 1))).textlength(text, font=f)) / 2  # typing grows rightwards
+
+    def frame(s, i):
+        img = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+        sh = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+        ImageDraw.Draw(sh).text((x0, baseline + 3), s, font=f, fill=(0, 0, 0, 170), anchor="ls")
+        img.alpha_composite(sh.filter(ImageFilter.GaussianBlur(5)))
+        ImageDraw.Draw(img).text((x0, baseline), s, font=f, fill=WHITE, anchor="ls")
+        out = tmp / f"t_{i:03d}.png"
+        img.save(out)
+        return out
+
+    step = 1 / cps
+    lines += [f"file '{blank}'", f"duration {start:.3f}"]
+    for i in range(1, len(text) + 1):
+        lines += [f"file '{frame(text[:i], i)}'", f"duration {step:.3f}"]
+    hold = max(0.1, end - start - len(text) * step)
+    full = tmp / f"t_{len(text):03d}.png"
+    lines += [f"file '{full}'", f"duration {hold:.3f}", f"file '{blank}'", f"duration {max(0.1, S - end):.3f}",
+              f"file '{blank}'"]
+    lst = tmp / "tease.ffconcat"
+    lst.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    return blank, lst
 
 
 # ---------------------------------------------------------------- render
@@ -312,7 +380,13 @@ def render(clip, hook_id, out, seconds=8.0, cover=None, music_i=0, rotate=0, cta
         seg = pix[i0:i0 + int((S + X) * 5)] or pix
         row_motion = [sum(sum(p[r * 36:(r + 1) * 36]) for p in seg) for r in range(64)]
         print(f"moment {start:.1f}s (coach-graded)", flush=True)
-    cta_in, cta_out = max(0.0, S - 3.4), S - 0.35
+    # 331k timing: READ pill from ~1 s, the typewriter tease from 1.4 s; protocol reels swap the READ pill for
+    # COMMENT PROTOCOL for the last ~2.6 s, after the tease has gone.
+    proto = protocol_cta(h) and cta
+    cta_in = min(1.0, S / 6)
+    cta_out = S - 2.9 if proto else S - 0.35
+    p_in, p_out = S - 2.6, S - 0.35
+    tz_in, tz_out = min(1.4, S / 5), S - 2.9
 
     trc, rng = probe(clip, "stream=color_transfer"), probe(clip, "stream=color_range")
     tm = ""
@@ -327,25 +401,37 @@ def render(clip, hook_id, out, seconds=8.0, cover=None, music_i=0, rotate=0, cta
     zoom = (f"perspective=x0=W*{a}:y0=H*{a}:x1=W-W*{a}:y1=H*{a}:x2=W*{a}:y2=H-H*{a}:x3=W-W*{a}:y3=H-H*{a}"
             f":interpolation=cubic:eval=frame")
     rise = f"if(lt(t\\,{cta_in:.2f})\\,0\\,22*pow(max(0\\,1-(t-{cta_in:.2f})/0.45)\\,3))"
+    rise_p = f"if(lt(t\\,{p_in:.2f})\\,0\\,22*pow(max(0\\,1-(t-{p_in:.2f})/0.45)\\,3))"
 
     with tempfile.TemporaryDirectory() as tmp:
-        hp, cp = Path(tmp, "hook.png"), Path(tmp, "cta.png")
+        hp, cp, pp = Path(tmp, "hook.png"), Path(tmp, "cta.png"), Path(tmp, "protocol.png")
         style = hook_style(h)
         _, bottom = hook_layer(h["hook"], style=style)
         top = place_plate(row_motion, bottom - TOP)
         hook_layer(h["hook"], top, style)[0].save(hp)
         print(f"hook style {style}", flush=True)
         LAYOUT.update(top=top, bottom=top + bottom - TOP)
+        pill_base = 1300 if top == TOP else top - 60  # low plate: pill sits just above it
         if h.get("format") == "iykyk" or not cta:  # one-line caption / list on screen: nothing to send people to
             Image.new("RGBA", (W, H), (0, 0, 0, 0)).save(cp)
         else:
-            cta_layer(1300 if top == TOP else top - 60).save(cp)  # low plate: pill sits just above it
+            cta_layer(pill_base).save(cp)
+        (cta_layer(pill_base, "COMMENT", "PROTOCOL", "🥊") if proto else Image.new("RGBA", (W, H), (0, 0, 0, 0))).save(pp)
+        # tease under the plate (top slot), or skipped when the plate sits low and there is no room
+        tease = (h.get("tease") or "").strip() if cta else ""
+        tz_base = top + bottom - TOP + 92
+        if top != TOP and tz_base > pill_base - 120 and tz_base > BOTTOM:
+            tease = ""
+        blank, tz = tease_track(tease, tz_base, tmp, tz_in, tz_out, S)
+        print(f"cta {'protocol' if proto else 'read'}, tease {tease!r}", flush=True)
         print(f"plate {'top' if top == TOP else 'low'} (y {top})", flush=True)
         # music_i=None: no music bed - the trending sound gets added in the Instagram app
         music = MUSIC[music_i % len(MUSIC)] if MUSIC and music_i is not None else None
         cmd = ["ffmpeg", "-v", "error", "-y", "-ss", f"{start:.3f}", "-t", f"{S + X:.3f}", "-i", str(clip),
                "-loop", "1", "-framerate", str(FPS), "-i", str(hp),
-               "-loop", "1", "-framerate", str(FPS), "-i", str(cp)]
+               "-loop", "1", "-framerate", str(FPS), "-i", str(cp),
+               "-loop", "1", "-framerate", str(FPS), "-i", str(pp)]
+        cmd += ["-f", "concat", "-safe", "0", "-i", str(tz)] if tz else ["-loop", "1", "-framerate", str(FPS), "-i", str(blank)]
         vf = (
             # footage: colour-correct, fill 9:16, 30 fps, a touch darker so red text reads on it
             f"[0:v]{turn}{tm}scale={W}:{H}:force_original_aspect_ratio=increase:flags=lanczos,crop={W}:{H},fps={FPS},"
@@ -357,18 +443,23 @@ def render(clip, hook_id, out, seconds=8.0, cover=None, music_i=0, rotate=0, cta
             f"[1:v]format=rgba,trim=duration={S:.3f}[hook];"
             f"[2:v]format=rgba,trim=duration={S:.3f},fade=t=in:st={cta_in:.2f}:d=0.4:alpha=1,"
             f"fade=t=out:st={cta_out:.2f}:d=0.3:alpha=1[cta];"
+            f"[3:v]format=rgba,trim=duration={S:.3f},fade=t=in:st={p_in:.2f}:d=0.4:alpha=1,"
+            f"fade=t=out:st={p_out:.2f}:d=0.3:alpha=1[pro];"
+            f"[4:v]format=rgba,fps={FPS},trim=duration={S:.3f},setpts=PTS-STARTPTS[tz];"
             f"[bg][hook]overlay=0:0[a];"
-            f"[a][cta]overlay=x=0:y='{rise}':eval=frame,format=yuv420p[v]")
+            f"[a][tz]overlay=0:0[a2];"
+            f"[a2][cta]overlay=x=0:y='{rise}':eval=frame[a3];"
+            f"[a3][pro]overlay=x=0:y='{rise_p}':eval=frame,format=yuv420p[v]")
         af = None
         if music:
             m0 = music_start(music, S)
             print(f"music {music.name} from {m0:.2f}s", flush=True)
             cmd += ["-ss", f"{m0:.3f}", "-i", str(music)]
             if has_audio(clip):  # music on top, the gym sound (bag, breathing) quietly underneath
-                af = (f"[3:a]volume=1.0[m];[0:a]atrim=start={X:.3f},asetpts=PTS-STARTPTS,highpass=f=120,"
+                af = (f"[5:a]volume=1.0[m];[0:a]atrim=start={X:.3f},asetpts=PTS-STARTPTS,highpass=f=120,"
                       f"volume={GYM_LEVEL}[g];[m][g]amix=inputs=2:duration=first:normalize=0,")
             else:
-                af = "[3:a]"
+                af = "[5:a]"
         elif has_audio(clip):
             af = f"[0:a]atrim=start={X:.3f},asetpts=PTS-STARTPTS,"
         fc, amap = vf, []
