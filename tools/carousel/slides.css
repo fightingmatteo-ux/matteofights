@@ -49,9 +49,10 @@ video.ph { object-fit: cover; object-position: center 40%; }
 /* 2 numeral: paper, giant outlined numeral bleeding off, round photo, handwritten line */
 .numeral .big { position: absolute; left: -30px; top: 40px; font: 560px/1 Anton; color: var(--ink); opacity: .9; }
 .numeral .disc { width: 470px; height: 470px; right: 80px; top: 330px; border-radius: 50%; border: 10px solid var(--red); }
-.numeral h2 { position: absolute; left: 72px; top: 880px; width: 900px; font: 124px/1 Serif; letter-spacing: -.01em; }
-.numeral .note { position: absolute; left: 80px; top: 1040px; font: 54px/1.1 Marker; color: var(--red); transform: rotate(-2deg); }
-.numeral .squiggle { position: absolute; left: 76px; top: 1120px; width: 560px; }
+.numeral .text { position: absolute; left: 72px; right: 90px; bottom: 120px; display: flex; flex-direction: column; gap: 22px; }
+.numeral h2 { font: 116px/1 Serif; letter-spacing: -.01em; }
+.numeral .note { font: 50px/1.15 Marker; color: var(--red); transform: rotate(-2deg); margin-left: 6px; }
+.numeral .squiggle { width: 520px; margin-top: -8px; }
 
 /* 3 tape: full-bleed photo, title on a tilted tape strip, gold marker line */
 .tape .full { inset: 0; filter: contrast(1.08) saturate(.9); }
@@ -84,9 +85,10 @@ video.ph { object-fit: cover; object-position: center 40%; }
 .quote .holes { position: absolute; left: 0; width: 1080px; height: 24px; background: repeating-linear-gradient(90deg, var(--ink) 0 26px, transparent 26px 52px); }
 
 /* 7 close: one CTA, save icon with a hand-drawn arrow toward Instagram's save button */
-.close h2 { position: absolute; left: 72px; top: 220px; font: 120px/1 Serif; }
-.close .big { position: absolute; left: 66px; top: 360px; font: 250px/.9 Anton; text-transform: uppercase; color: var(--red); }
-.close .cta { position: absolute; left: 72px; top: 860px; display: flex; gap: 34px; align-items: center; }
+.close .head { position: absolute; left: 72px; right: 72px; top: 170px; display: flex; flex-direction: column; gap: 20px; }
+.close h2 { font: 104px/1 Serif; }
+.close .big { font: 230px/.9 Anton; text-transform: uppercase; color: var(--red); margin-left: -6px; }
+.close .cta { position: absolute; left: 72px; top: 880px; display: flex; gap: 34px; align-items: center; }
 .close .cta .icon { width: 150px; height: 150px; border-radius: 34px; background: var(--ink); display: grid; place-items: center; }
 .close .cta .icon svg { width: 70px; height: 70px; }
 .close .cta p { font: 600 50px/1.1 Geist; width: 640px; }

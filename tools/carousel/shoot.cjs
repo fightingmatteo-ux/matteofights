@@ -13,7 +13,7 @@ const FPS = 30;
 const seekAll = (page, t) => page.evaluate(async (t) => {
   document.getAnimations().forEach((a) => { a.pause(); a.currentTime = t * 1000; });
   await Promise.all([...document.querySelectorAll("video")].map((v) => new Promise((ok) => {
-    const target = v.duration ? t % v.duration : 0;
+    const target = v.duration ? (t + Number(v.dataset.offset || 0)) % v.duration : 0;
     if (Math.abs(v.currentTime - target) < 1e-3 && v.readyState >= 2) return ok();
     v.addEventListener("seeked", ok, { once: true });
     v.currentTime = target;

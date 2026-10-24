@@ -14,10 +14,11 @@ names its `layout`; neighbours never share one (lint.py checks). Layouts, so a p
 Every slide but the last carries the swipe tab, and a red thread runs across the slide edges so the carousel reads
 as one strip when swiping. Copy rule: title <= 5 words, one short line under it.
 
-Slide fields: layout, title, line (the short line), photo, n (number). Cover: kicker + title as three parts
+Slide fields: layout, title, line (the short line), photo, focus (vertical crop focus, %), n (number). Cover: kicker + title as three parts
 "a|b|c" (a and c in Anton, b in italic serif). The moving detail: give the cover a `video` (a 4 s seamless loop from frames.py, on the media release as
 carousel-loop-<clip>-<t>.webm, pulled to media/) and the photo card plays it. --animate writes <id>-01.mp4: the
-card's footage loops, the SWIPE badge turns slowly, everything else stays still. Frame 0 is complete (it is the
+card's footage loops, the SWIPE badge turns slowly, everything else stays still. `video_offset` (s) starts the
+loop at the moment of the still so frame 0 shows the action (frames.py loops begin where the graded moment begins). Frame 0 is complete (it is the
 thumbnail); without --animate the cover is the still from the same moment.
 """
 import argparse, html, json, subprocess
@@ -41,11 +42,13 @@ def esc(s):
     return html.escape(s or "")
 
 
-def bg(photo):
+def bg(photo, focus=None):
+    """Photo as a CSS background; focus = vertical focus point in % (0 = keep the top, e.g. a head-height kick)."""
     if not photo:
         return ""
     p = Path(photo) if Path(photo).is_absolute() else ROOT / photo
-    return f"background-image:url('{p.as_uri()}')"
+    pos = f";background-position:center {focus}%;object-position:center {focus}%" if focus is not None else ""
+    return f"background-image:url('{p.as_uri()}'){pos}"
 
 
 def furniture(i, total, last):
@@ -59,8 +62,9 @@ def furniture(i, total, last):
 def media_card(s, cls):
     if s.get("video"):
         v = Path(s["video"]) if Path(s["video"]).is_absolute() else ROOT / s["video"]
-        return f'<video class="ph {cls}" src="{v.as_uri()}" muted playsinline preload="auto" style="{bg(s.get("photo"))}"></video>'
-    return f'<div class="ph {cls}" style="{bg(s.get("photo"))}"></div>'
+        return (f'<video class="ph {cls}" src="{v.as_uri()}" data-offset="{s.get("video_offset", 0)}" muted playsinline '
+                f'preload="auto" style="{bg(s.get("photo"), s.get("focus"))}"></video>')
+    return f'<div class="ph {cls}" style="{bg(s.get("photo"), s.get("focus"))}"></div>'
 
 
 def fit(word, width=780, top=210):
@@ -79,8 +83,8 @@ def cover(s, i, total):
 
 def numeral(s, i, total):
     return (f'<div class="slide paper numeral grain"><div class="big outline">{s.get("n", i - 1):02d}</div>'
-            f'<div class="ph disc" style="{bg(s.get("photo"))}"></div><h2>{esc(s["title"])}</h2>'
-            f'<div class="note">{esc(s.get("line"))}</div>{SQUIGGLE}{furniture(i, total, False)}</div>')
+            f'<div class="ph disc" style="{bg(s.get("photo"))}"></div><div class="text"><h2>{esc(s["title"])}</h2>'
+            f'<div class="note">{esc(s.get("line"))}</div>{SQUIGGLE}</div>{furniture(i, total, False)}</div>')
 
 
 def tape(s, i, total):
@@ -112,7 +116,7 @@ def quote(s, i, total):
 
 
 def close(s, i, total):
-    return (f'<div class="slide paper close grain"><h2>{esc(s["title"])}</h2><div class="big">{esc(s.get("big"))}</div>'
+    return (f'<div class="slide paper close grain"><div class="head"><h2>{esc(s["title"])}</h2><div class="big">{esc(s.get("big"))}</div></div>'
             f'<div class="cta"><div class="icon">{BOOKMARK}</div><p>{esc(s.get("cta"))}</p></div>'
             f'<div class="arrow-note">{esc(s.get("line") or "tap save")}</div>{CURVE}{furniture(i, total, True)}</div>')
 
