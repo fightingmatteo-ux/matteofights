@@ -953,17 +953,18 @@
       "clip_id": "1pEV6_Yyfz1n9hAaJg7USfvPZgDpvG6He"
     },
     {
-      "id": "first-fight-draw",
+      "id": "first-coach",
       "archetype": "identity",
-      "hook": "I KNOCKED HIM OUT IN MY FIRST FIGHT. IT WAS A DRAW.",
+      "hook": "YOUR FIRST COACH SHAPES HOW YOU FIGHT FOR YEARS",
       "subhook": [
-        "Sixteen, first Muay Thai fight.",
-        "The judges saw something else."
+        "You copy their stance first.",
+        "Then their habits, the good and the bad."
       ],
-      "caption": "Sixteen, first Muay Thai fight.\nThe judges saw something else.\n\nI learned more from that draw than from any win.\n\n1. Nobody owes you the result\n2. Do your job so clearly they can't argue\n3. Then let it go and get back in the gym\n\nRepost this so someone who got robbed finds it.\n\n#muaythai #fightnight #fighter",
+      "caption": "You copy their stance first.\nThen their habits, the good and the bad.\n\nYou can tell who trained someone by how they stand.\n\n1. Keep what works\n2. Notice what you copied without thinking\n3. Train with a second coach when you can\n\nRepost this so your first coach sees it.\n\n#muaythai #boxing #fighter",
       "status": "ready",
       "format": "statement",
-      "clip_id": "10ZOgp_5ZZjc-djf0ZVNkQTZGHbn6kEE_"
+      "clip_id": "1dydRhSqH8ZDmLQrfCRPfkAGBkB-Ur_YW",
+      "moment": 231.0
     },
     {
       "id": "rest-days",

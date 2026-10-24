@@ -29,5 +29,16 @@
     "answer": "Yes: the Drive files are named 'Muay Thai fight matteo' (resolved by Claude, no tap needed)",
     "answered_at": "2026-10-17T11:01:10Z",
     "via": "Claude"
+  },
+  {
+    "id": "q-1024-talking-head",
+    "question": "Can you film a talking head this week? From Mon 26 Oct the 15:30 New York slot is empty.",
+    "context": "Saenchai v3 fills 15:30 through Sunday. Ready talking points: production/reels/2026-10-20-you-be-the-judge/TALKING-POINTS.md (your first fight, KO that went down as a draw; needs the KO clip from the fight video on Drive). Your talking heads hold 15-16 s average watch vs 7-8 s for listicles and get 2-7x the saves.",
+    "options": [
+      "Filming this week",
+      "Skip the slot for now",
+      "Send me other talking points"
+    ],
+    "status": "open"
   }
 ]
