@@ -2,8 +2,9 @@
 
     python3 -P tools/carousel/frames.py CLIP_ID [CLIP_ID ...] [--per-clip 4]
 
-For each clip: downloads it by Drive id, looks at candidate moments (the graded good moments in
-production/listicles/moments.json first, then evenly spread), keeps the sharpest frames at least 3 s apart,
+For each clip: downloads it by Drive id and keeps one frame from each graded good moment in
+production/listicles/moments.json (clean technique per context/boxing-technique.md, best first; the sharpest frame
+inside the moment), then fills up with the sharpest evenly spread frames, all at least 3 s apart,
 rotated per clips.json, as production/carousels/frames/<clip id>/<seconds>.jpg (long edge 1440, q88).
 production/carousels/frames/index.json lists them per clip with a sharpness score. Claude looks at them to pick
 the photo for each slide; render.py takes a frame path or any photo Matteo provides.
@@ -55,10 +56,12 @@ def sharpness(im):
 
 
 def candidates(clip_id, dur):
+    """(t, rank, start): frames inside the graded good moments (rank = grading order, best first; start = where the
+    clean stretch begins, which is where its loop starts), then evenly spread frames (rank None)."""
     good = json.loads(MOMENTS.read_text(encoding="utf-8")).get(clip_id, {}).get("good", [])
-    near = [t + d for t in good for d in (0.5, 2.0, 4.0, 6.0)]
-    spread = [dur * i / 13 for i in range(1, 13)]
-    return [t for t in near + spread if 1.0 <= t <= dur - 1.0]
+    near = [(g + d, r, g) for r, g in enumerate(good) for d in (0.5, 2.0, 4.0, 6.0)]
+    spread = [(dur * i / 13, None, dur * i / 13) for i in range(1, 13)]
+    return [c for c in near + spread if 1.0 <= c[0] <= dur - 1.0]
 
 
 def frames_for(clip_id, per_clip, cat):
@@ -68,23 +71,24 @@ def frames_for(clip_id, per_clip, cat):
         run("rclone", "backend", "copyid", "gdrive:", clip_id, str(local))
     rotate = cat.get(clip_id, {}).get("rotate_fix", 0)
     scored = []
-    for t in candidates(clip_id, duration(local)):
+    for t, rank, start in candidates(clip_id, duration(local)):
         im = grab(local, t, rotate, WORK / "probe.jpg")
-        scored.append((sharpness(im), round(t, 1), im))
+        scored.append((sharpness(im), round(t, 1), im, rank, start))
     out_dir = OUT / clip_id
     out_dir.mkdir(parents=True, exist_ok=True)
     loops = WORK / "loops"
     loops.mkdir(exist_ok=True)
     dur = duration(local)
     kept = []
-    for score, t, im in sorted(scored, key=lambda s: -s[0]):
-        if all(abs(t - k["t"]) >= 3 for k in kept):
+    # graded good moments first (one frame each, the sharpest inside it), in grading order; then the sharpest of the rest
+    for score, t, im, rank, start in sorted(scored, key=lambda s: (s[3] is None, s[3] or 0, -s[0])):
+        if all(abs(t - k["t"]) >= 3 for k in kept) and (rank is None or rank not in {k.get("rank") for k in kept}):
             name = f"{t:06.1f}.jpg"
             im.save(out_dir / name, quality=88)
             lname = f"carousel-loop-{clip_id}-{t:06.1f}.webm"
-            loop(local, min(t, max(0.0, dur - 4.6)), rotate, loops / lname)
+            loop(local, min(start, max(0.0, dur - 4.6)), rotate, loops / lname)
             kept.append({"t": t, "file": f"production/carousels/frames/{clip_id}/{name}", "sharpness": score,
-                         "size": list(im.size), "loop": lname})
+                         "size": list(im.size), "loop": lname, "good": rank is not None, "rank": rank})
         if len(kept) == per_clip:
             break
     local.unlink()
