@@ -64,7 +64,11 @@ export async function onRequestGet({ request, env }) {
   const dm = await env.DB.prepare(
     `SELECT count(*) AS comments, sum(json_extract(data, '$.dm') = 'sent') AS dms_sent FROM docs WHERE kind = 'protocol_dm'`,
   ).first();
-  return reply(request, { ...r, protocol_comments: dm.comments, protocol_dms_sent: dm.dms_sent });
+  const hits = await env.DB.prepare(
+    "SELECT count(*) AS n, max(id) AS last, (SELECT data FROM docs WHERE kind = 'ig_hit' ORDER BY id DESC LIMIT 1) AS last_data FROM docs WHERE kind = 'ig_hit'",
+  ).first();
+  return reply(request, { ...r, protocol_comments: dm.comments, protocol_dms_sent: dm.dms_sent,
+    webhook_calls: hits.n, webhook_last: hits.last, webhook_last_data: hits.last_data ? JSON.parse(hits.last_data) : null });
 }
 
 export async function onRequestPost({ request, env, waitUntil }) {

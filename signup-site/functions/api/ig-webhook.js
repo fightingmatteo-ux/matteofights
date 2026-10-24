@@ -44,6 +44,12 @@ async function remember(env, id, data) {
   ).bind(id, JSON.stringify(data)).run();
 }
 
+// Every call Meta makes, so a failed test shows where it stopped (kind "ig_hit", counts on GET /api/signup).
+async function logHit(env, data) {
+  const id = new Date().toISOString() + "-" + crypto.randomUUID().slice(0, 4);
+  await env.DB.prepare("INSERT INTO docs (kind, id, data) VALUES ('ig_hit', ?, ?)").bind(id, JSON.stringify(data)).run();
+}
+
 async function handleComment(env, v) {
   const id = v.id;
   if (!id || !KEYWORD.test(v.text || "") || (v.from && v.from.username === OWN) || await handled(env, id)) return;
@@ -93,7 +99,10 @@ export async function onRequestPost({ request, env, waitUntil }) {
   }
   // Answer Meta fast (it retries slow webhooks); do the sending after.
   if (env.IG_ACCESS_TOKEN && comments.length) {
-    waitUntil(Promise.all(comments.map((v) => handleComment(env, v).catch((err) => console.log("comment", v.id, String(err))))));
+    waitUntil(Promise.all(comments.map((v) => handleComment(env, v).catch((err) =>
+      logHit(env, { error: String(err.message || err).slice(0, 300), comment: v.id }).catch(() => {})))));
   }
+  waitUntil(logHit(env, { fields: (body.entry || []).flatMap((e) => (e.changes || []).map((c) => c.field).concat(e.messaging ? ["messaging"] : [])),
+    comments: comments.map((v) => ({ id: v.id, keyword: KEYWORD.test(v.text || "") })), token: !!env.IG_ACCESS_TOKEN }).catch(() => {}));
   return new Response("ok", { status: 200 });
 }
