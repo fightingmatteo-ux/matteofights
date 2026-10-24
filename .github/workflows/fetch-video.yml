@@ -10,6 +10,8 @@
 # Instagram often blocks logged-out downloads from cloud IPs. yt-dlp uses the IG_COOKIES secret
 # (Netscape cookies.txt) when set; if it still fails, Instagram links fall back to Business Discovery
 # (tools/video/ig_discovery.py, FB_USER_TOKEN), which works for creator/business accounts.
+# Instagram carousels (swipe posts) and photo posts: yt-dlp finds no video, the fallback saves every slide
+# to <dir>/slides/NN.jpg and they are committed with the analysis.
 name: Fetch video
 
 on:
@@ -89,12 +91,14 @@ jobs:
           if [ "$KIND" = reference ]; then dir="content-bank/references/videos/$NAME"
           else dir="content-bank/real-footage/analysis/$NAME"; fi
           if [ -n "$NO_VIDEO" ]; then mkdir -p "$dir"; else python3 tools/video/watch.py "dl/$NAME.mp4" "$dir"; fi
+          if [ -d dl/slides ]; then cp -r dl/slides "$dir/"; fi
           if [ -f dl/video.info.json ]; then
             python3 - "$dir" <<'PY'
           import json, sys
           i = json.load(open("dl/video.info.json"))
           keep = {k: i.get(k) for k in ["uploader", "uploader_id", "channel", "title", "description",
-                  "timestamp", "view_count", "like_count", "comment_count", "webpage_url", "track", "artist", "followers"]}
+                  "timestamp", "view_count", "like_count", "comment_count", "webpage_url", "track", "artist", "followers",
+                  "media_type"]}
           json.dump(keep, open(f"{sys.argv[1]}/source.json", "w"), indent=2, ensure_ascii=False)
           PY
           fi

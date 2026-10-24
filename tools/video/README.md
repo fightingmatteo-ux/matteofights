@@ -12,6 +12,8 @@ cloud session ──► media.sh pull ──► reel.py edits ──► finished
 ## Watch a video
 - **Someone else's reel:** Actions tab → **Fetch video** → Run workflow → paste the link, a slug, `reference`.
   Works from the GitHub mobile app. Or just give Claude the link and it triggers the run.
+- **Carousel (swipe post) or photo post:** same workflow, same link. Every slide lands in
+  `<dir>/slides/NN.jpg` (via Business Discovery, so creator/business accounts only; fill `user`).
 - **Your own footage:** share the Drive file as "Anyone with the link", run the same workflow with
   that link and `footage`. Or upload it to the `media` release from github.com (up to 2 GB per file).
 - Output lands in `content-bank/references/videos/<slug>/` (or `real-footage/analysis/<slug>/`):

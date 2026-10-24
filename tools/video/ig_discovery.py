@@ -4,7 +4,8 @@
 
 Fallback for the Fetch video workflow when yt-dlp is blocked. Finds the reel in the creator's media by
 its shortcode, downloads media_url to OUTDIR/video.mp4 and writes OUTDIR/video.info.json in yt-dlp's
-field names so the workflow's source.json step works unchanged. If Meta withholds the video (licensed
+field names so the workflow's source.json step works unchanged. Photo posts and carousels (swipe posts)
+save every image slide to OUTDIR/slides/NN.jpg instead (video slides as NN.mp4). If Meta withholds the video (licensed
 audio), only video.info.json is written and the workflow commits the caption and stats alone. Without --user the username comes from
 oEmbed (needs Meta app review) or, failing that, from scanning the accounts in
 production/competitors/accounts.json. Needs FB_USER_TOKEN; only creator/business accounts are visible.
@@ -15,7 +16,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 GRAPH = "https://graph.facebook.com/v23.0"
 IG_ID = "17841465098113052"
-FIELDS = "timestamp,caption,like_count,comments_count,media_product_type,permalink,view_count,media_url"
+FIELDS = ("timestamp,caption,like_count,comments_count,media_product_type,media_type,permalink,view_count,media_url,"
+          "children{media_type,media_url}")
 
 
 class ApiError(Exception):
@@ -103,11 +105,28 @@ def embed_video_url(permalink):
     return hit.group(1).replace("u0026", "&")
 
 
+def save_slides(post, out):
+    """Carousel or photo post: every slide to out/slides/NN.jpg (video slides NN.mp4). Returns the count."""
+    kids = post.get("children", {}).get("data") or [post]
+    (out / "slides").mkdir(exist_ok=True)
+    n = 0
+    for i, kid in enumerate(kids, 1):
+        if not kid.get("media_url"):
+            print(f"slide {i}: no media_url")
+            continue
+        ext = "mp4" if kid.get("media_type") == "VIDEO" else "jpg"
+        urllib.request.urlretrieve(kid["media_url"], out / "slides" / f"{i:02d}.{ext}")
+        n += 1
+    print(f"{n}/{len(kids)} slides saved")
+    return n
+
+
 def save(post, prof, outdir):
     out = Path(outdir)
     out.mkdir(parents=True, exist_ok=True)
-    url = post.get("media_url") or embed_video_url(post.get("permalink") or "")
-    if url:
+    if post.get("media_type") in ("CAROUSEL_ALBUM", "IMAGE"):
+        save_slides(post, out)
+    elif url := post.get("media_url") or embed_video_url(post.get("permalink") or ""):
         urllib.request.urlretrieve(url, out / "video.mp4")
     else:
         print("Meta API returned no media_url (licensed audio) and the embed page had none: saving caption and stats only")
@@ -115,7 +134,7 @@ def save(post, prof, outdir):
             "followers": prof.get("followers_count"), "description": post.get("caption"),
             "timestamp": post.get("timestamp"), "view_count": post.get("view_count"),
             "like_count": post.get("like_count"), "comment_count": post.get("comments_count"),
-            "webpage_url": post.get("permalink")}
+            "webpage_url": post.get("permalink"), "media_type": post.get("media_type")}
     (out / "video.info.json").write_text(json.dumps(info, indent=2, ensure_ascii=False), encoding="utf-8")
     print(f"@{prof.get('username')}: {post.get('view_count')} views -> {out}")
 
