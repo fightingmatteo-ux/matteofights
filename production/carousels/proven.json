@@ -1,6 +1,6 @@
 {
   "note": "Proven hooks for carousels. Every carousel in posts.json needs hook_ref = a 'read' entry's code (other creators' outlier carousels, found weekly by tools/carousel/scout.py) or an 'own' id (our own reels that proved the hook on our audience). Adapt the pattern to Matteo's topic; never copy another creator's slides word for word.",
-  "updated": "2026-10-24T11:26Z",
+  "updated": "2026-10-24T12:16Z",
   "own": [
     {
       "id": "own-born-fighter",
@@ -186,5 +186,24 @@
       "found": "2026-10-24"
     }
   ],
-  "errors": []
+  "errors": [
+    "@basicallyboxing: (#4) Application request limit reached",
+    "@espnmma: (#4) Application request limit reached",
+    "@ringmagazine: (#4) Application request limit reached",
+    "@mmajunkie: (#4) Application request limit reached",
+    "@ufc: (#4) Application request limit reached",
+    "@onechampionship: (#4) Application request limit reached",
+    "@evolvemma: (#4) Application request limit reached",
+    "@jayhiette: (#4) Application request limit reached",
+    "@danesmithfit: (#4) Application request limit reached",
+    "@firas_zahabi: (#4) Application request limit reached",
+    "@chewjitsu: (#4) Application request limit reached",
+    "@themuaythaiguy: (#4) Application request limit reached",
+    "@tinapham.co: (#4) Application request limit reached",
+    "@deepaksharma.co: (#4) Application request limit reached",
+    "@radu_rewers: (#4) Application request limit reached",
+    "@brezojr: (#4) Application request limit reached",
+    "@ramseydewey: (#4) Application request limit reached",
+    "@_coachdino_: (#4) Application request limit reached"
+  ]
 }
