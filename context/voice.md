@@ -19,9 +19,10 @@ Bad: "Unlock your potential and transform your training journey."
 - **End with one CTA.** Three that work here, matched to the post's goal:
   - **Save/learn:** "Save this before your next session."
   - **Share/reach (identity posts):** "Repost this so real fighters find it." ← drove the 320k reel.
-  - **Convert/DM:** "Comment HELP" or "DM 'HELP'" for free boxing advice. **Always use `HELP`** —
-    it's the standardized trigger. Do not vary it per reel (older posts used FIGHT/POWER/IQ/etc.;
-    that's deprecated — one word keeps the funnel clean).
+  - **Convert/DM:** "Comment PROTOCOL and I'll DM you my free training plan for fighters." **Always use
+    `PROTOCOL`** (Matteo, 2026-10-24): commenting it triggers an automatic DM with matteofights.me/protocol
+    (`signup-site/functions/api/ig-webhook.js`). HELP and the older words (FIGHT/POWER/IQ) are retired: nothing
+    answers them.
 - **2–4 hashtags, niche-specific.** Combat sports only.
 
 ## Language to use (mirror the audience)
