@@ -1,0 +1,43 @@
+language: en
+[   0.2-   5.6] And that's why one of the best nights in my life, I knocked him out and they called it a draw.
+[   6.3-  13.5] And that's the story of how at 16, my first fight stacked against me, I still knocked him out.
+[  19.0-  25.7] And that's the story of how at 16, my first fight stacked against me, I still knocked him out.
+[  26.8-  33.3] And that's the story of how at 16, at my first fight stacked against me, I still knocked him out.
+[  33.3-  39.7] And that's the story of how at 16, my first fight stacked against me, I still knocked him out.
+[  40.5-  48.9] And I still think about that night, every time I train. I was 16, it was his sixth fight, and my first.
+[  49.6-  56.9] And I still think about that night, every time I train. I was 16, it was his sixth fight, and it was my first one.
+[  56.9-  64.3] And I still think about that night, every time I train. I was 16, it was his sixth fight, and my first one.
+[  65.0-  71.2] And I still think about that night, every time I train. I was 16, it was his sixth fight, and it was my first one.
+[  71.9-  78.2] And I can still hear what someone told me, before I walked out. If you don't knock him out, you're gonna lose.
+[  79.2-  85.5] And I can still hear what someone told me, before I walked out. If you don't knock him out, you're gonna lose.
+[  86.2-  91.9] And I can still hear what someone told me before I walked out if you don't knock him out you're gonna lose I
+[  93.1-  95.4] Was 16 and this was my first fight
+[  95.4- 102.5] It was this guy's sixth fight and he knew the referee and he fought at that venue before so before I walked out
+[ 102.5- 106.8] My contact who got me the fight told me that if I don't knock this guy out
+[ 106.8- 111.8] I'm gonna lose so I got in there and I was I was trying my best to knock him out
+[ 111.8- 117.4] I was ready and I was swinging and it was not pretty at all. He was clenching on to me
+[ 117.4- 122.0] I elbowed the top of his head and then the ref was separating us. I threw the right hand and he slept
+[ 124.6- 128.8] 16 my first fight and his sixth the ref knew him
+[ 129.7- 135.2] My contact who got me the fight told me if it's down to points you're gonna lose
+[ 136.0- 138.9] Ever had something earned taken from you
+[ 139.6- 142.0] Comment it send this to someone who has
+[ 143.3- 148.0] I was 16 and it was my first fight. It was his sixth one. He knew the referee
+[ 149.1- 154.7] The contact who got me the fight told me if it's down to point you're gonna lose so I step in the ring
+[ 154.7- 159.8] We clinch I elbowed the top of his head and the referee steps in and I throw the right hand
+[ 159.8- 166.9] He's out they called it a draw my coach has said their elbows were legal and some people say the right hand came
+[ 166.9- 172.7] Too late you be the judge tell me in the comments that night told me that fighting isn't just violence
+[ 172.7- 180.1] It's chess except you get punched. You can't control what the judges do. You can only control what you do. I
+[ 180.1- 185.5] Was 16 and it was my first fight. It was his sixth one. He knew the referee
+[ 185.5- 191.3] The contact who got me the fight told me if it's down to points you're gonna lose
+[ 191.3- 197.8] We clinch I elbowed the top of his head the ref steps in and I throw the right hand. He's out
+[ 197.8- 201.9] They called it a draw my coaches said the elbows were legal
+[ 201.9- 207.4] Some people say the right hand was too late. You be the judge. Tell me in the comments
+[ 207.4- 213.2] That night taught me that fighting isn't just about violence. It's chess except you get punched
+[ 213.2- 216.6] You can't control what the judges do only what you do
+[ 217.9- 224.1] I was 16 and it was my first fight and his sixth one the referee knew him
+[ 224.1- 229.2] The contact who got me the fight told me if it's down to points, you're gonna lose
+[ 229.2- 236.2] So we clinch I elbow the top of his head the referee steps in and I throw the right hand. He's out
+[ 236.2- 239.9] They called it a draw my coaches said the elbows were legal
+[ 239.9- 245.1] Some people say the right hand came too early. You be the judge. Tell me in the comments
+[ 245.6- 251.6] That night taught me fighting isn't just violence. It's chess except you get punched
+[ 251.6- 254.8] You can't control the judges only what you do
