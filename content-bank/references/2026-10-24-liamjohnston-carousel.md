@@ -72,7 +72,9 @@ you're the problem" (contrast + identity) in `production/carousels/proven.json`.
 Other topics that fit the same 9 beats: "Why you gas in round 2 (it's not cardio)", "What your coach says vs
 what he means", "You don't lack discipline. You lack this.", "The 3 a.m. thoughts before your first fight".
 
-## How we build it (proposal, not built yet)
+## How we build it
+Prototype (10-24): `tools/carousel/motion/sparring.html` (Carousel A, all 9 slides) + `motion/shoot.cjs`
+(one 10 s mp4 per slide, deterministic frame capture, ~2.5 min a slide). Not wired into render.py / posts.json yet.
 Our renderer (`tools/carousel/render.py`) already does HTML/CSS slides in Chromium and an animated cover.
 This style needs every slide animated:
 - One HTML component per beat (`scale`, `counter-grid`, `checklist`, `bars`, `chat-steps`, `say-mean`,
