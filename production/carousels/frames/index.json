@@ -48,40 +48,40 @@
     "name": "padwork super8.mp4",
     "frames": [
       {
-        "t": 40.6,
-        "file": "production/carousels/frames/1VQckuhsKET3bhVHRsVsgANM797wcP7dM/0040.6.jpg",
-        "sharpness": 1368.5,
+        "t": 5.0,
+        "file": "production/carousels/frames/1VQckuhsKET3bhVHRsVsgANM797wcP7dM/0005.0.jpg",
+        "sharpness": 1283.4,
         "size": [
           480,
           848
-        ]
+        ],
+        "loop": "carousel-loop-1VQckuhsKET3bhVHRsVsgANM797wcP7dM-0005.0.webm",
+        "good": true,
+        "rank": 0
       },
       {
-        "t": 49.0,
-        "file": "production/carousels/frames/1VQckuhsKET3bhVHRsVsgANM797wcP7dM/0049.0.jpg",
-        "sharpness": 1520.4,
+        "t": 24.2,
+        "file": "production/carousels/frames/1VQckuhsKET3bhVHRsVsgANM797wcP7dM/0024.2.jpg",
+        "sharpness": 888.2,
         "size": [
           480,
           848
-        ]
+        ],
+        "loop": "carousel-loop-1VQckuhsKET3bhVHRsVsgANM797wcP7dM-0024.2.webm",
+        "good": true,
+        "rank": 1
       },
       {
-        "t": 56.0,
-        "file": "production/carousels/frames/1VQckuhsKET3bhVHRsVsgANM797wcP7dM/0056.0.jpg",
-        "sharpness": 1488.0,
+        "t": 50.2,
+        "file": "production/carousels/frames/1VQckuhsKET3bhVHRsVsgANM797wcP7dM/0050.2.jpg",
+        "sharpness": 1330.3,
         "size": [
           480,
           848
-        ]
-      },
-      {
-        "t": 77.1,
-        "file": "production/carousels/frames/1VQckuhsKET3bhVHRsVsgANM797wcP7dM/0077.1.jpg",
-        "sharpness": 1298.5,
-        "size": [
-          480,
-          848
-        ]
+        ],
+        "loop": "carousel-loop-1VQckuhsKET3bhVHRsVsgANM797wcP7dM-0050.2.webm",
+        "good": true,
+        "rank": 2
       }
     ]
   },
@@ -137,27 +137,9 @@
           810,
           1440
         ],
-        "loop": "carousel-loop-1vBV91hZz8OBFh2bAdw1Z7j1WC_aFJR-p-0005.0.webm"
-      },
-      {
-        "t": 11.1,
-        "file": "production/carousels/frames/1vBV91hZz8OBFh2bAdw1Z7j1WC_aFJR-p/0011.1.jpg",
-        "sharpness": 1613.8,
-        "size": [
-          810,
-          1440
-        ],
-        "loop": "carousel-loop-1vBV91hZz8OBFh2bAdw1Z7j1WC_aFJR-p-0011.1.webm"
-      },
-      {
-        "t": 16.5,
-        "file": "production/carousels/frames/1vBV91hZz8OBFh2bAdw1Z7j1WC_aFJR-p/0016.5.jpg",
-        "sharpness": 1716.9,
-        "size": [
-          810,
-          1440
-        ],
-        "loop": "carousel-loop-1vBV91hZz8OBFh2bAdw1Z7j1WC_aFJR-p-0016.5.webm"
+        "loop": "carousel-loop-1vBV91hZz8OBFh2bAdw1Z7j1WC_aFJR-p-0005.0.webm",
+        "good": true,
+        "rank": 2
       },
       {
         "t": 27.0,
@@ -167,7 +149,21 @@
           810,
           1440
         ],
-        "loop": "carousel-loop-1vBV91hZz8OBFh2bAdw1Z7j1WC_aFJR-p-0027.0.webm"
+        "loop": "carousel-loop-1vBV91hZz8OBFh2bAdw1Z7j1WC_aFJR-p-0027.0.webm",
+        "good": true,
+        "rank": 0
+      },
+      {
+        "t": 35.8,
+        "file": "production/carousels/frames/1vBV91hZz8OBFh2bAdw1Z7j1WC_aFJR-p/0035.8.jpg",
+        "sharpness": 1361.6,
+        "size": [
+          810,
+          1440
+        ],
+        "loop": "carousel-loop-1vBV91hZz8OBFh2bAdw1Z7j1WC_aFJR-p-0035.8.webm",
+        "good": true,
+        "rank": 1
       }
     ]
   },
@@ -181,7 +177,10 @@
         "size": [
           810,
           1440
-        ]
+        ],
+        "loop": "carousel-loop-1kY_fR5PwN07yk9dasbW4Q_5k39muHf-T-0002.0.webm",
+        "good": false,
+        "rank": null
       },
       {
         "t": 7.5,
@@ -190,25 +189,22 @@
         "size": [
           810,
           1440
-        ]
+        ],
+        "loop": "carousel-loop-1kY_fR5PwN07yk9dasbW4Q_5k39muHf-T-0007.5.webm",
+        "good": true,
+        "rank": 1
       },
       {
-        "t": 11.0,
-        "file": "production/carousels/frames/1kY_fR5PwN07yk9dasbW4Q_5k39muHf-T/0011.0.jpg",
-        "sharpness": 659.3,
+        "t": 17.4,
+        "file": "production/carousels/frames/1kY_fR5PwN07yk9dasbW4Q_5k39muHf-T/0017.4.jpg",
+        "sharpness": 656.1,
         "size": [
           810,
           1440
-        ]
-      },
-      {
-        "t": 20.2,
-        "file": "production/carousels/frames/1kY_fR5PwN07yk9dasbW4Q_5k39muHf-T/0020.2.jpg",
-        "sharpness": 732.9,
-        "size": [
-          810,
-          1440
-        ]
+        ],
+        "loop": "carousel-loop-1kY_fR5PwN07yk9dasbW4Q_5k39muHf-T-0017.4.webm",
+        "good": true,
+        "rank": 0
       }
     ]
   },
@@ -248,40 +244,204 @@
     "name": "pads super8.mp4",
     "frames": [
       {
-        "t": 14.0,
-        "file": "production/carousels/frames/1cO7ZS2vB0GficgdhERknFjIt1zkldbU6/0014.0.jpg",
-        "sharpness": 1528.6,
+        "t": 7.0,
+        "file": "production/carousels/frames/1cO7ZS2vB0GficgdhERknFjIt1zkldbU6/0007.0.jpg",
+        "sharpness": 1435.4,
         "size": [
           480,
           848
-        ]
+        ],
+        "loop": "carousel-loop-1cO7ZS2vB0GficgdhERknFjIt1zkldbU6-0007.0.webm",
+        "good": true,
+        "rank": 2
       },
       {
-        "t": 21.0,
-        "file": "production/carousels/frames/1cO7ZS2vB0GficgdhERknFjIt1zkldbU6/0021.0.jpg",
-        "sharpness": 1511.9,
+        "t": 64.6,
+        "file": "production/carousels/frames/1cO7ZS2vB0GficgdhERknFjIt1zkldbU6/0064.6.jpg",
+        "sharpness": 1560.0,
         "size": [
           480,
           848
-        ]
+        ],
+        "loop": "carousel-loop-1cO7ZS2vB0GficgdhERknFjIt1zkldbU6-0064.6.webm",
+        "good": true,
+        "rank": 0
       },
       {
-        "t": 63.0,
-        "file": "production/carousels/frames/1cO7ZS2vB0GficgdhERknFjIt1zkldbU6/0063.0.jpg",
-        "sharpness": 1640.4,
+        "t": 78.2,
+        "file": "production/carousels/frames/1cO7ZS2vB0GficgdhERknFjIt1zkldbU6/0078.2.jpg",
+        "sharpness": 1403.7,
         "size": [
           480,
           848
-        ]
+        ],
+        "loop": "carousel-loop-1cO7ZS2vB0GficgdhERknFjIt1zkldbU6-0078.2.webm",
+        "good": true,
+        "rank": 1
+      }
+    ]
+  },
+  "1NIGqz7ZgwDky9Ri9fLtQXE8U4jzWicJK": {
+    "name": "pads chaiya.MOV",
+    "frames": [
+      {
+        "t": 15.4,
+        "file": "production/carousels/frames/1NIGqz7ZgwDky9Ri9fLtQXE8U4jzWicJK/0015.4.jpg",
+        "sharpness": 1369.4,
+        "size": [
+          810,
+          1440
+        ],
+        "loop": "carousel-loop-1NIGqz7ZgwDky9Ri9fLtQXE8U4jzWicJK-0015.4.webm",
+        "good": true,
+        "rank": 2
       },
       {
-        "t": 77.1,
-        "file": "production/carousels/frames/1cO7ZS2vB0GficgdhERknFjIt1zkldbU6/0077.1.jpg",
-        "sharpness": 1526.7,
+        "t": 24.6,
+        "file": "production/carousels/frames/1NIGqz7ZgwDky9Ri9fLtQXE8U4jzWicJK/0024.6.jpg",
+        "sharpness": 1287.8,
+        "size": [
+          810,
+          1440
+        ],
+        "loop": "carousel-loop-1NIGqz7ZgwDky9Ri9fLtQXE8U4jzWicJK-0024.6.webm",
+        "good": true,
+        "rank": 0
+      },
+      {
+        "t": 33.4,
+        "file": "production/carousels/frames/1NIGqz7ZgwDky9Ri9fLtQXE8U4jzWicJK/0033.4.jpg",
+        "sharpness": 1372.2,
+        "size": [
+          810,
+          1440
+        ],
+        "loop": "carousel-loop-1NIGqz7ZgwDky9Ri9fLtQXE8U4jzWicJK-0033.4.webm",
+        "good": true,
+        "rank": 1
+      }
+    ]
+  },
+  "1i9iXjD3ZNLP9o_TUUsOUsiz8CROpoTEW": {
+    "name": "bagwork fitness first.MOV",
+    "frames": [
+      {
+        "t": 30.2,
+        "file": "production/carousels/frames/1i9iXjD3ZNLP9o_TUUsOUsiz8CROpoTEW/0030.2.jpg",
+        "sharpness": 1519.6,
+        "size": [
+          810,
+          1440
+        ],
+        "loop": "carousel-loop-1i9iXjD3ZNLP9o_TUUsOUsiz8CROpoTEW-0030.2.webm",
+        "good": true,
+        "rank": 2
+      },
+      {
+        "t": 46.2,
+        "file": "production/carousels/frames/1i9iXjD3ZNLP9o_TUUsOUsiz8CROpoTEW/0046.2.jpg",
+        "sharpness": 1550.6,
+        "size": [
+          810,
+          1440
+        ],
+        "loop": "carousel-loop-1i9iXjD3ZNLP9o_TUUsOUsiz8CROpoTEW-0046.2.webm",
+        "good": true,
+        "rank": 0
+      },
+      {
+        "t": 99.8,
+        "file": "production/carousels/frames/1i9iXjD3ZNLP9o_TUUsOUsiz8CROpoTEW/0099.8.jpg",
+        "sharpness": 1480.6,
+        "size": [
+          810,
+          1440
+        ],
+        "loop": "carousel-loop-1i9iXjD3ZNLP9o_TUUsOUsiz8CROpoTEW-0099.8.webm",
+        "good": true,
+        "rank": 1
+      }
+    ]
+  },
+  "1oVEdYjTgppKfNtH5xykXcXyQOu03TCVO": {
+    "name": "sparring ryan.mp4",
+    "frames": [
+      {
+        "t": 129.0,
+        "file": "production/carousels/frames/1oVEdYjTgppKfNtH5xykXcXyQOu03TCVO/0129.0.jpg",
+        "sharpness": 361.2,
         "size": [
           480,
-          848
-        ]
+          640
+        ],
+        "loop": "carousel-loop-1oVEdYjTgppKfNtH5xykXcXyQOu03TCVO-0129.0.webm",
+        "good": true,
+        "rank": 1
+      },
+      {
+        "t": 137.4,
+        "file": "production/carousels/frames/1oVEdYjTgppKfNtH5xykXcXyQOu03TCVO/0137.4.jpg",
+        "sharpness": 484.1,
+        "size": [
+          480,
+          640
+        ],
+        "loop": "carousel-loop-1oVEdYjTgppKfNtH5xykXcXyQOu03TCVO-0137.4.webm",
+        "good": true,
+        "rank": 2
+      },
+      {
+        "t": 154.2,
+        "file": "production/carousels/frames/1oVEdYjTgppKfNtH5xykXcXyQOu03TCVO/0154.2.jpg",
+        "sharpness": 540.2,
+        "size": [
+          480,
+          640
+        ],
+        "loop": "carousel-loop-1oVEdYjTgppKfNtH5xykXcXyQOu03TCVO-0154.2.webm",
+        "good": true,
+        "rank": 0
+      }
+    ]
+  },
+  "1dhTH0QynPgwnao6gG9stMknnucO89drM": {
+    "name": "bagwork fitness first.MOV",
+    "frames": [
+      {
+        "t": 65.0,
+        "file": "production/carousels/frames/1dhTH0QynPgwnao6gG9stMknnucO89drM/0065.0.jpg",
+        "sharpness": 1435.4,
+        "size": [
+          810,
+          1440
+        ],
+        "loop": "carousel-loop-1dhTH0QynPgwnao6gG9stMknnucO89drM-0065.0.webm",
+        "good": true,
+        "rank": 1
+      },
+      {
+        "t": 100.6,
+        "file": "production/carousels/frames/1dhTH0QynPgwnao6gG9stMknnucO89drM/0100.6.jpg",
+        "sharpness": 1491.1,
+        "size": [
+          810,
+          1440
+        ],
+        "loop": "carousel-loop-1dhTH0QynPgwnao6gG9stMknnucO89drM-0100.6.webm",
+        "good": true,
+        "rank": 2
+      },
+      {
+        "t": 111.0,
+        "file": "production/carousels/frames/1dhTH0QynPgwnao6gG9stMknnucO89drM/0111.0.jpg",
+        "sharpness": 1394.2,
+        "size": [
+          810,
+          1440
+        ],
+        "loop": "carousel-loop-1dhTH0QynPgwnao6gG9stMknnucO89drM-0111.0.webm",
+        "good": true,
+        "rank": 0
       }
     ]
   }
