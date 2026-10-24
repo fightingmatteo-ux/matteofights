@@ -1,0 +1,46 @@
+{
+ "carousels": {
+  "18064163249760384": {
+   "media_id": "18064163249760384",
+   "posted": "2026-08-13T14:44:47+0000",
+   "permalink": "https://www.instagram.com/p/Db--4VKEzfo/",
+   "hook": "You're not weak. You just don't breathe.",
+   "post_id": null,
+   "hook_ref": null,
+   "look": null,
+   "animated": null,
+   "reach": 203,
+   "views": 568,
+   "saved": 2,
+   "shares": 2,
+   "likes": 17,
+   "comments": 0,
+   "follows": 0,
+   "profile_visits": 2,
+   "total_interactions": 21,
+   "views_per_reach": 2.8,
+   "saves_per_k": 9.9,
+   "shares_per_k": 9.9,
+   "follows_per_k": 0.0,
+   "visits_per_k": 9.9,
+   "vs_median": {
+    "reach": 1.0,
+    "views_per_reach": 1.0,
+    "saves_per_k": 1.0,
+    "shares_per_k": 1.0,
+    "visits_per_k": 1.0
+   },
+   "reach_vs_reels": 0.11
+  }
+ },
+ "updated": "2026-10-24",
+ "median": {
+  "reach": 203,
+  "views_per_reach": 2.8,
+  "saves_per_k": 9.9,
+  "shares_per_k": 9.9,
+  "follows_per_k": 0.0,
+  "visits_per_k": 9.9
+ },
+ "reel_median_reach": 1782.5
+}

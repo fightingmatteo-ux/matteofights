@@ -1,13 +1,190 @@
 {
   "note": "Proven hooks for carousels. Every carousel in posts.json needs hook_ref = a 'read' entry's code (other creators' outlier carousels, found weekly by tools/carousel/scout.py) or an 'own' id (our own reels that proved the hook on our audience). Adapt the pattern to Matteo's topic; never copy another creator's slides word for word.",
-  "updated": null,
+  "updated": "2026-10-24T11:26Z",
   "own": [
-    {"id": "own-born-fighter", "hook": "6 SIGNS YOU WERE BORN TO BE A FIGHTER", "pattern": "N signs you were born/built to be X (identity)", "proof": "reel, 331k views, 233 shares (2026-06)"},
-    {"id": "own-killer-without-sparring", "hook": "8 WAYS TO FIGHT LIKE A KILLER WITHOUT SPARRING 5X/WEEK", "pattern": "N ways to <outcome> without <requirement> (tactical)", "proof": "reel, 161k views, 1,937 saves"},
-    {"id": "own-fight-iq", "hook": "7 WAYS TO BUILD FIGHT IQ WITHOUT SPARRING EVERYDAY", "pattern": "N ways to <outcome> without <requirement> (tactical)", "proof": "reel, 32k views"},
-    {"id": "own-round-three", "hook": "6 WAYS TO SURVIVE ROUND THREE WHEN YOUR CARDIO IS GONE", "pattern": "N ways to survive <fight moment> (tactical + fight moment)", "proof": "trial reel 2026-10-20, 2.07x normal views"},
-    {"id": "own-hit-harder", "hook": "8 WAYS TO HIT HARDER WITHOUT LIFTING A SINGLE WEIGHT", "pattern": "N ways to <outcome> without <requirement> (tactical)", "proof": "trial reel 2026-10-20, 1.66x views, 50 saves"}
+    {
+      "id": "own-born-fighter",
+      "hook": "6 SIGNS YOU WERE BORN TO BE A FIGHTER",
+      "pattern": "N signs you were born/built to be X (identity)",
+      "proof": "reel, 331k views, 233 shares (2026-06)"
+    },
+    {
+      "id": "own-killer-without-sparring",
+      "hook": "8 WAYS TO FIGHT LIKE A KILLER WITHOUT SPARRING 5X/WEEK",
+      "pattern": "N ways to <outcome> without <requirement> (tactical)",
+      "proof": "reel, 161k views, 1,937 saves"
+    },
+    {
+      "id": "own-fight-iq",
+      "hook": "7 WAYS TO BUILD FIGHT IQ WITHOUT SPARRING EVERYDAY",
+      "pattern": "N ways to <outcome> without <requirement> (tactical)",
+      "proof": "reel, 32k views"
+    },
+    {
+      "id": "own-round-three",
+      "hook": "6 WAYS TO SURVIVE ROUND THREE WHEN YOUR CARDIO IS GONE",
+      "pattern": "N ways to survive <fight moment> (tactical + fight moment)",
+      "proof": "trial reel 2026-10-20, 2.07x normal views"
+    },
+    {
+      "id": "own-hit-harder",
+      "hook": "8 WAYS TO HIT HARDER WITHOUT LIFTING A SINGLE WEIGHT",
+      "pattern": "N ways to <outcome> without <requirement> (tactical)",
+      "proof": "trial reel 2026-10-20, 1.66x views, 50 saves"
+    }
   ],
-  "carousels": [],
+  "carousels": [
+    {
+      "code": "DdoxPx0jRk0",
+      "user": "jayhiette",
+      "followers": 24084,
+      "permalink": "https://www.instagram.com/p/DdoxPx0jRk0/",
+      "posted": "2026-09-23T16:45:04+0000",
+      "likes": 304,
+      "comments": 51,
+      "x_median": 10.88,
+      "caption_first_line": "follow and comment “recording” for a private internal video on how to implement these best.",
+      "slides": [
+        "production/carousels/proven/DdoxPx0jRk0/01.jpg",
+        "production/carousels/proven/DdoxPx0jRk0/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-10-24"
+    },
+    {
+      "code": "DeBwZ9XE2_C",
+      "user": "danesmithfit",
+      "followers": 22371,
+      "permalink": "https://www.instagram.com/p/DeBwZ9XE2_C/",
+      "posted": "2026-10-03T09:38:44+0000",
+      "likes": 3080,
+      "comments": 111,
+      "x_median": 59.88,
+      "caption_first_line": "One of the most common things I hear in client check-ins after someone has lost a decent amount of weight is that friends or family have started telling them th",
+      "slides": [
+        "production/carousels/proven/DeBwZ9XE2_C/01.jpg",
+        "production/carousels/proven/DeBwZ9XE2_C/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-10-24"
+    },
+    {
+      "code": "DP_XJRYDi8x",
+      "user": "firas_zahabi",
+      "followers": 206485,
+      "permalink": "https://www.instagram.com/p/DP_XJRYDi8x/",
+      "posted": "2025-10-19T12:00:00+0000",
+      "likes": 3792,
+      "comments": 64,
+      "x_median": 2.54,
+      "caption_first_line": "Congratulations to both aiemannzahabi and manonfiorot_mma training out of tristargym_mtl and both getting their hands raised tonight at UFC in Vancouver. Manon ",
+      "slides": [
+        "production/carousels/proven/DP_XJRYDi8x/01.jpg",
+        "production/carousels/proven/DP_XJRYDi8x/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-10-24"
+    },
+    {
+      "code": "Dblr8jGlXTP",
+      "user": "chewjitsu",
+      "followers": 158516,
+      "permalink": "https://www.instagram.com/p/Dblr8jGlXTP/",
+      "posted": "2026-08-03T18:58:15+0000",
+      "likes": 2625,
+      "comments": 47,
+      "x_median": 3.65,
+      "caption_first_line": "1 of the best decisions I ever made.  ",
+      "slides": [
+        "production/carousels/proven/Dblr8jGlXTP/01.jpg",
+        "production/carousels/proven/Dblr8jGlXTP/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-10-24"
+    },
+    {
+      "code": "DX2sd9oFYtH",
+      "user": "chewjitsu",
+      "followers": 158516,
+      "permalink": "https://www.instagram.com/p/DX2sd9oFYtH/",
+      "posted": "2026-05-02T23:24:19+0000",
+      "likes": 4597,
+      "comments": 88,
+      "x_median": 6.42,
+      "caption_first_line": "Double gold today in the gi.  ",
+      "slides": [
+        "production/carousels/proven/DX2sd9oFYtH/01.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-10-24"
+    },
+    {
+      "code": "DV9fYwwFdBq",
+      "user": "chewjitsu",
+      "followers": 158516,
+      "permalink": "https://www.instagram.com/p/DV9fYwwFdBq/",
+      "posted": "2026-03-16T21:41:54+0000",
+      "likes": 1790,
+      "comments": 58,
+      "x_median": 2.59,
+      "caption_first_line": "Got the 4th stripe on my black belt from teamshawnhammonds and turned 41 this weekend.  ",
+      "slides": [
+        "production/carousels/proven/DV9fYwwFdBq/01.jpg",
+        "production/carousels/proven/DV9fYwwFdBq/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-10-24"
+    },
+    {
+      "code": "C60Zab3JNip",
+      "user": "ramseydewey",
+      "followers": 8645,
+      "permalink": "https://www.instagram.com/p/C60Zab3JNip/",
+      "posted": "2024-05-11T06:48:54+0000",
+      "likes": 1043,
+      "comments": 35,
+      "x_median": 2.47,
+      "caption_first_line": "We’re back at the Shanghai Natural History museum today. I had to make another pilgrimage to see Derp the Lion.",
+      "slides": [
+        "production/carousels/proven/C60Zab3JNip/01.jpg",
+        "production/carousels/proven/C60Zab3JNip/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-10-24"
+    },
+    {
+      "code": "CvY2bgTLCKD",
+      "user": "ramseydewey",
+      "followers": 8645,
+      "permalink": "https://www.instagram.com/p/CvY2bgTLCKD/",
+      "posted": "2023-08-01T04:18:23+0000",
+      "likes": 907,
+      "comments": 38,
+      "x_median": 2.2,
+      "caption_first_line": "Today someone told me they wanted to see a Ramsey Dewey comic book. Apparently, the AI robots want the same thing. I don’t know what the plot will be about… pro",
+      "slides": [
+        "production/carousels/proven/CvY2bgTLCKD/01.jpg",
+        "production/carousels/proven/CvY2bgTLCKD/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-10-24"
+    }
+  ],
   "errors": []
 }
