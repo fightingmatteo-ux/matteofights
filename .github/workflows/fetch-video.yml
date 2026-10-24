@@ -122,8 +122,8 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          shopt -s nullglob
-          files=(dl/$NAME.mp4 dl/$NAME-slide*.mp4)
+          files=()
+          for f in "dl/$NAME.mp4" dl/"$NAME"-slide*.mp4; do [ -e "$f" ] && files+=("$f"); done
           [ ${#files[@]} -gt 0 ] || exit 0
           gh release view media > /dev/null 2>&1 || \
             gh release create media --title Media --notes "Raw footage, references and renders. Managed by tools/video/media.sh."
