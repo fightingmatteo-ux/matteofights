@@ -1,0 +1,66 @@
+{
+  "freeze-in-sparring": {
+    "decided_at": "2026-10-24T17:12:46Z",
+    "winner": "freeze-C",
+    "too_close": false,
+    "metrics_used": [
+      "hold",
+      "watch",
+      "reach",
+      "keep"
+    ],
+    "variants": [
+      {
+        "id": "freeze-C",
+        "variant": "C",
+        "hook": "Beginners try to win every exchange. Fighters don't.",
+        "opening": "contrast",
+        "length": "full",
+        "media_id": "17949258072324239",
+        "permalink": "https://www.instagram.com/reel/DefsPO_ih7V/",
+        "score": 0.947,
+        "views": 4289,
+        "reach": 3076,
+        "shares": 9,
+        "saves": 50,
+        "avg_watch_s": 13.8,
+        "skip_rate": 32.5,
+        "follows": null
+      },
+      {
+        "id": "freeze-A",
+        "variant": "A",
+        "hook": "Your freeze isn't a technique problem. It's your head.",
+        "opening": "reframe",
+        "length": "full",
+        "media_id": "18131444773684044",
+        "permalink": "https://www.instagram.com/reel/Dee3EmfE--u/",
+        "score": 0.82,
+        "views": 2781,
+        "reach": 2077,
+        "shares": 13,
+        "saves": 43,
+        "avg_watch_s": 10.0,
+        "skip_rate": 37.7,
+        "follows": null
+      },
+      {
+        "id": "freeze-B",
+        "variant": "B",
+        "hook": "Fighters and beginners spar with the same hands. Not the same head.",
+        "opening": "contrast",
+        "length": "full",
+        "media_id": "18167111158483588",
+        "permalink": "https://www.instagram.com/reel/DefWU45CpKI/",
+        "score": 0.793,
+        "views": 3036,
+        "reach": 2164,
+        "shares": 3,
+        "saves": 19,
+        "avg_watch_s": 12.5,
+        "skip_rate": 34.3,
+        "follows": null
+      }
+    ]
+  }
+}
