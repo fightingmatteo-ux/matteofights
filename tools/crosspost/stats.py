@@ -109,11 +109,29 @@ def main():
                                      "url": p.get("permalink_url"),
                                      "answered": any((r.get("from") or {}).get("id") == page for r in (c.get("comments") or {}).get("data", []))})
         out["platforms"]["facebook"] = fb
+        insights_ok = None  # needs read_insights on the Page token (tools/crosspost/README.md, Facebook)
         for qid, recs in state["posts"].items():
             for name in ("facebook", "facebook_slides"):
                 r = recs.get(name)
                 if r and r.get("status") == "posted":
-                    out["posts"].setdefault(qid, {})[name] = {"views": views.get(r.get("id")), "url": r.get("url")}
+                    rec = out["posts"].setdefault(qid, {})[name] = {"views": views.get(r.get("id")), "url": r.get("url")}
+                    if name != "facebook" or insights_ok is False or (r.get("at") or "") < recent_iso(10):
+                        continue
+                    try:  # reach, plays, replays and watch time per reel
+                        ins = get(f"{xp.FB}/{r['id']}/video_insights", access_token=fb_tok,
+                                  metric="post_impressions_unique,blue_reels_play_count,fb_reels_replay_count,"
+                                         "post_video_avg_time_watched,post_video_followers,post_video_social_actions")
+                        m = {x["name"]: (x.get("values") or [{}])[0].get("value") for x in ins.get("data", [])}
+                        rec.update(reach=m.get("post_impressions_unique"), plays=m.get("blue_reels_play_count"),
+                                   replays=m.get("fb_reels_replay_count"), follows=m.get("post_video_followers"),
+                                   avg_watch_s=round(m["post_video_avg_time_watched"] / 1000, 1) if m.get("post_video_avg_time_watched") else None)
+                        if rec.get("views") is None and rec.get("plays") is not None:
+                            rec["views"] = rec["plays"]
+                        insights_ok = True
+                    except Exception as e:
+                        insights_ok = False  # one clear line instead of 20 identical failures
+                        print("  ! facebook insights (add read_insights to the Page token):", str(e)[:160])
+        fb["insights"] = bool(insights_ok)
 
     # ------------------------------------------------ Threads
     th_tok, th_uid = os.environ.get("THREADS_ACCESS_TOKEN"), os.environ.get("THREADS_USER_ID")

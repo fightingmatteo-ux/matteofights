@@ -66,6 +66,13 @@ Google Cloud project `matteofights`, YouTube Data API v3 on, Google Auth Platfor
 Uploads stay **private** until the API audit passes (support.google.com/youtube/contact/yt_api_form); then set
 `platforms.youtube.privacy` to `public`.
 
+**Browser-only refresh (no laptop, 2026-10-25):** developers.facebook.com/tools/explorer → app
+`matteofights-poster` → "User or Page": Get User Access Token → tick `pages_show_list`, `pages_read_engagement`,
+`pages_manage_posts`, `read_insights` → Generate, allow for the Matteo Fights Page → copy the token →
+developers.facebook.com/tools/debug/accesstoken → paste → Debug → **Extend Access Token** → copy the long-lived token
+→ back in the Explorer, paste it into the token box and run `GET me/accounts` → copy the Matteo Fights
+`access_token` (a Page token from a long-lived user token never expires) → GitHub secret `FB_PAGE_TOKEN`.
+
 ### Threads
 Use case "Access the Threads API" on `matteofights-poster`, Threads Tester role accepted in the Threads app, token
 from the User Token Generator → `THREADS_ACCESS_TOKEN` → `crosspost.py threads-check` → GitHub secrets
