@@ -334,5 +334,45 @@
   {
     "id": "health-job:2026-10-24-knockout-draw-A-20261024T165237:failed-2026102417",
     "text": "⚠️ Cloud render 2026-10-24-knockout-draw-A-20261024T165237 failed: , 12, 13, 14, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44]. Render again.\n\n[notice] A new release of pip is available: 25.0.1 -> 26.2.2\n[notice] To update, run: python -m pip install --upgrade pip\n"
+  },
+  {
+    "id": "health-queue:lst-2026-10-24-nerves-without-faking:missed-2026102510",
+    "text": "⏰ lst-2026-10-24-nerves-without-faking was due 2026-10-24T22:30:00Z and still hasn't posted."
+  },
+  {
+    "id": "health-queue:lst-2026-10-24-training-too-long:missed-2026102510",
+    "text": "⏰ lst-2026-10-24-training-too-long was due 2026-10-25T01:30:00Z and still hasn't posted."
+  },
+  {
+    "id": "health-queue:saenchai-v3-B:missed-2026102510",
+    "text": "⏰ saenchai-v3-B was due 2026-10-24T19:30:00Z and still hasn't posted."
+  },
+  {
+    "id": "health-run:Cross-post-2026102510",
+    "text": "⚠️ Workflow 'Cross-post' failed: https://github.com/fightingmatteo-ux/matteofights/actions/runs/40178887299"
+  },
+  {
+    "id": "health-run:Deploy control center-2026102510",
+    "text": "⚠️ Workflow 'Deploy control center' failed: https://github.com/fightingmatteo-ux/matteofights/actions/runs/40183091105"
+  },
+  {
+    "id": "health-run:Fetch video-2026102510",
+    "text": "⚠️ Workflow 'Fetch video' failed: https://github.com/fightingmatteo-ux/matteofights/actions/runs/40180540367"
+  },
+  {
+    "id": "health-run:Hook tests-2026102510",
+    "text": "⚠️ Workflow 'Hook tests' failed: https://github.com/fightingmatteo-ux/matteofights/actions/runs/40164698042"
+  },
+  {
+    "id": "health-run:Platform stats-2026102510",
+    "text": "⚠️ Workflow 'Platform stats' failed: https://github.com/fightingmatteo-ux/matteofights/actions/runs/40163693383"
+  },
+  {
+    "id": "health-run:Post queue-2026102510",
+    "text": "⚠️ Workflow 'Post queue' failed: https://github.com/fightingmatteo-ux/matteofights/actions/runs/40182986173"
+  },
+  {
+    "id": "health-run:State backup-2026102510",
+    "text": "⚠️ Workflow 'State backup' failed: https://github.com/fightingmatteo-ux/matteofights/actions/runs/40179519358"
   }
 ]

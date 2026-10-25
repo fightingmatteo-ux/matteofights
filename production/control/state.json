@@ -207,7 +207,17 @@
     "xp-4a7bb123",
     "xp-8cbebb49",
     "trial-freeze-in-sparring",
-    "health-job:2026-10-24-knockout-draw-A-20261024T165237:failed-2026102417"
+    "health-job:2026-10-24-knockout-draw-A-20261024T165237:failed-2026102417",
+    "health-queue:lst-2026-10-24-nerves-without-faking:missed-2026102510",
+    "health-queue:lst-2026-10-24-training-too-long:missed-2026102510",
+    "health-queue:saenchai-v3-B:missed-2026102510",
+    "health-run:Cross-post-2026102510",
+    "health-run:Deploy control center-2026102510",
+    "health-run:Fetch video-2026102510",
+    "health-run:Hook tests-2026102510",
+    "health-run:Platform stats-2026102510",
+    "health-run:Post queue-2026102510",
+    "health-run:State backup-2026102510"
   ],
   "announced_week": "lst-2026-10-21-same-shot,lst-2026-10-22-jab-hurt,lst-2026-10-23-hands-up-tired,lst-2026-10-24-smaller-clinch,lst-2026-10-25-coach-thinks-ready,lst-2026-10-25-read-round-one,lst-2026-10-26-better-than-it-feels,lst-2026-10-26-three-days-a-week,lst-2026-10-27-bad-sparring-day,lst-2026-10-27-breathes-better,lst-2026-10-28-sleep-rules"
 }
