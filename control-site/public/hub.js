@@ -2,8 +2,8 @@
 // and Grow (automations and money, each one tap away from Claude's idea inbox). Uses app.js helpers
 // ($, esc, n, ago, F, PLAT, calm, act, toast, render, go, D, sent, VIEWS) like studio.js.
 "use strict";
-const PL = ["instagram", "facebook", "youtube", "threads"];
-const PL_SHORT = { instagram: "IG", facebook: "FB", youtube: "YT", threads: "TH" };
+let PL = ["instagram", "facebook", "youtube", "threads"]; // + tiktok once the stats job has it (platStats)
+const PL_SHORT = { instagram: "IG", facebook: "FB", youtube: "YT", threads: "TH", tiktok: "TT" };
 let psub = (() => { try { return localStorage.getItem("psub") || "overview"; } catch { return "overview"; } })();
 let lsub = "leads"; // Leads tab: leads | grow
 let lfilter = "todo";
@@ -18,10 +18,11 @@ const median = (a) => {
 function platStats() {
   const posts = D.platforms?.posts || {}, P = D.platforms?.platforms || {};
   const when = Object.fromEntries((D.reels || []).map((r) => [r.id, r.posted_at || r.time]));
+  PL = ["instagram", "facebook", "youtube", "threads", ...(P.tiktok ? ["tiktok"] : [])];
   const out = {};
   for (const k of PL) {
     const list = Object.entries(posts).filter(([, v]) => v[k] && v[k].views != null)
-      .map(([id, v]) => ({ id, views: v[k].views, url: v[k].url, at: when[id] || "" }))
+      .map(([id, v]) => ({ id, views: v[k].views, url: v[k].url, title: v[k].title, pct: v[k].avg_view_pct, at: when[id] || v[k].at || "" }))
       .sort((a, b) => (a.at > b.at ? 1 : -1));
     const views = list.reduce((a, p) => a + p.views, 0);
     out[k] = { k, list, views, posts: list.length, med: median(list.map((p) => p.views)), best: list.slice().sort((a, b) => b.views - a.views)[0],
@@ -49,6 +50,7 @@ const PLAYBOOK = {
   instagram: { role: "Source and growth engine", what: ["Identity and contrast hooks (\"6 signs you were born to be a fighter\").", "Trial reels first, share the 72 h winner to the grid and pin it.", "Answer every comment in the first hour; keyword comments trigger DMs."], fix: "Below normal: test a new opening type in the 15:30 hook test, not a new topic." },
   facebook: { role: "Older, broader reach", what: ["Only proven Instagram winners, 1 a day.", "List on screen + music: Facebook plays muted and skims.", "Short story caption, a question last, max 3 hashtags."], fix: "Low reach: check Page quality and recommendation eligibility in the Professional dashboard first." },
   youtube: { role: "Search and long tail", what: ["Keyword title a fighter would type (\"how to stop gassing out\").", "Loops: the last line flows into the first.", "1 long-form a week later on builds subscribers for the Partner Program."], fix: "Low reach: retitle the 3 best Shorts as search questions." },
+  tiktok: { role: "Discovery with sound", what: ["Drafts land in your TikTok inbox: add a trending sound before posting.", "The first second is the whole game: text on screen from frame one.", "Post the Instagram 72 h winners first; TikTok rewards proven hooks."], fix: "Low reach: swap the sound for one trending in the fight niche this week." },
   threads: { role: "Voice and conversation", what: ["Written takes and questions beat reposted reels.", "Reply to every reply: replies are the reach.", "One topic tag (Fight Psychology), no hashtags."], fix: "Low reach: more questions, fewer lists, reply within the hour." },
 };
 
@@ -69,7 +71,7 @@ function kpiStrip() {
     <div class="kpi main"><span class="cap">Views, last 10 days</span><span class="big num">${n(S.total)}</span>
       <span class="sub">${n(S.followers)} followers across platforms</span></div>
     <ul class="kpi-pl">${PL.map((k) => { const s = S.by[k], v = verdict(s); return `<li><button data-goto="platforms" data-psub="${k}" aria-label="${PLAT[k]}: ${n(s.views)} views, ${v.txt}">
-      <span class="pl"><i class="dot ${v.cls}"></i>${PL_SHORT[k]}</span><span class="num">${n(s.views)}</span>
+      <span class="pl"><i class="dot ${v.cls}"></i>${PL_SHORT[k]}</span><span class="num">${s.views >= 1000 && s.views < 10000 ? (s.views / 1000).toFixed(1) + "k" : n(s.views)}</span>
       <span class="pbar"><i style="width:${Math.round(100 * s.share)}%"></i></span></button></li>`; }).join("")}</ul>
     ${newLeads ? `<button class="kpi-lead" data-goto="leads"><span class="num">${newLeads}</span> lead${newLeads === 1 ? "" : "s"} to message <span aria-hidden="true">→</span></button>` : ""}
   </section>`;
@@ -113,12 +115,13 @@ function platformDetail(s) {
     : `<p class="hint">Instagram times come from the listicle factory and hook tests (09:00, 12:30, 15:30, 18:30, 21:30 NY).</p>`;
   return `<section class="pdetail">
     <div class="pd-head hud"><div><span class="cap">${esc(pb.role)}</span><h2 class="h2">${PLAT[k]}</h2></div><span class="chip ${v.cls}">${v.txt}</span></div>
-    <div class="pd-figs">${[["Views, 10 days", n(s.views)], ["Per post", s.med != null ? n(s.med) : "n/a"], ["Followers", s.followers != null ? n(s.followers) : "n/a"], ["Posts, 7 days", `${s.live.posted_7d ?? 0}/${(s.live.plan_per_day || 0) * 7}`]].map(([l, x]) => `<div class="hud"><span class="cap">${l}</span><span class="num mid">${x}</span></div>`).join("")}</div>
+    <div class="pd-figs">${[["Views, 10 days", n(s.views)], ["Per post", s.med != null ? n(s.med) : "n/a"], ["Followers", s.followers != null ? n(s.followers) : "n/a"],
+      median(s.list.map((p) => p.pct)) != null ? ["Watched, median", `${Math.round(median(s.list.map((p) => p.pct)))}%`] : ["Posts, 7 days", `${s.live.posted_7d ?? 0}/${(s.live.plan_per_day || 0) * 7}`]].map(([l, x]) => `<div class="hud"><span class="cap">${l}</span><span class="num mid">${x}</span></div>`).join("")}</div>
     <div class="hud chart"><span class="cap">Views per post, oldest to newest</span>${spark(s.list, "tall " + v.cls)}<p class="why">${esc(v.why)}</p></div>
     <div class="two-col">
       <section class="hud"><h3 class="h3">What works here</h3><ul class="ticks">${pb.what.map((w) => `<li>${esc(w)}</li>`).join("")}</ul>
         ${v.cls === "red" ? `<p class="fixit"><b>Fix first</b>${esc(pb.fix)}</p>` : ""}</section>
-      <section class="hud"><h3 class="h3">Top posts</h3>${top.length ? `<ol class="toplist">${top.map((p) => `<li><a href="${esc(p.url || "#")}" target="_blank" rel="noopener"><span class="num">${n(p.views)}</span><span>${esc(hook(p.id))}</span></a></li>`).join("")}</ol>` : `<p class="hint">No posts with numbers yet.</p>`}</section>
+      <section class="hud"><h3 class="h3">Top posts</h3>${top.length ? `<ol class="toplist">${top.map((p) => `<li><a href="${esc(p.url || "#")}" target="_blank" rel="noopener"><span class="num">${n(p.views)}</span><span>${esc(p.title || hook(p.id))}</span></a></li>`).join("")}</ol>` : `<p class="hint">No posts with numbers yet.</p>`}</section>
     </div>
     <section class="hud tailor"><h3 class="h3">Tailor ${PLAT[k]}</h3>
       ${settings}
@@ -269,7 +272,11 @@ document.addEventListener("click", async (ev) => {
   const t = ev.target.closest("button,a");
   if (!t) return;
   if (t.dataset.psub && t.dataset.goto) { psub = t.dataset.psub; try { localStorage.setItem("psub", psub); } catch {} return; } // app.js switches the tab
-  if (t.dataset.psub) { psub = t.dataset.psub; try { localStorage.setItem("psub", psub); } catch {} render(); return window.scrollTo(0, 0); }
+  if (t.dataset.psub) {
+    psub = t.dataset.psub; try { localStorage.setItem("psub", psub); } catch {}
+    render(); window.scrollTo(0, 0);
+    return $(".seg-tabs [aria-selected=true]")?.scrollIntoView({ inline: "center", block: "nearest" });
+  }
   if (t.dataset.lsub) { lsub = t.dataset.lsub; return render(); }
   if (t.dataset.lfilter) { lfilter = t.dataset.lfilter; return render(); }
   if (t.dataset.dm) {

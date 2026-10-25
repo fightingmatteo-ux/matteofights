@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TikTok connected — @matteofights</title>
+  <style>
+    :root { --bg: #0B0B0D; --text: #e8e8e8; --mid: #aaa; --red: #C82020; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: var(--bg); color: var(--text); font: 16px/1.65 Inter, system-ui, sans-serif; padding: 48px 16px; }
+    main { max-width: 680px; margin: 0 auto; }
+    h1 { font-size: 28px; margin-bottom: 8px; }
+    h2 { font-size: 18px; margin: 28px 0 8px; }
+    p, li { color: var(--mid); }
+    ul { padding-left: 20px; }
+    a { color: var(--text); }
+    .date { font-size: 14px; }
+  </style>
+  <meta name="robots" content="noindex">
+</head>
+<body>
+  <main>
+    <h1 id="t">Connecting TikTok…</h1>
+    <p id="m">Copy the code below and paste it into the terminal window that asked for it.</p>
+    <p><code id="c" style="display:block;margin-top:16px;padding:12px;background:#151518;color:#fff;word-break:break-all;font-size:14px"></code></p>
+    <button id="b" style="margin-top:12px;padding:10px 16px;font:inherit;cursor:pointer">Copy code</button>
+  </main>
+  <script>
+    // TikTok sends people back here after "Authorize" (redirect URI of the matteofights poster app). The code is shown
+    // only to the person who just logged in; tools/crosspost/crosspost.py tiktok-auth exchanges it for a token.
+    const q = new URLSearchParams(location.search), code = q.get("code"), err = q.get("error_description") || q.get("error");
+    const c = document.getElementById("c"), b = document.getElementById("b");
+    if (code) { c.textContent = code + "|" + (q.get("state") || ""); }
+    else { document.getElementById("t").textContent = "TikTok didn't connect"; document.getElementById("m").textContent = err || "No code came back. Run the connect command again."; c.remove(); b.remove(); }
+    b && b.addEventListener("click", () => navigator.clipboard.writeText(c.textContent).then(() => (b.textContent = "Copied")));
+  </script>
+</body>
+</html>

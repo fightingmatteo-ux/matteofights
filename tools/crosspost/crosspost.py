@@ -19,6 +19,7 @@ The same video file and caption as Instagram (production/schedule/queue.json -> 
 a listicle whose Instagram sound is attached in the app has a silent-ish file, so YouTube and Threads take its music
 copy (video_asset_music) and Facebook its Facebook version (video_asset_fb).
 Secrets (env, or secrets/crosspost.env locally): YT_CLIENT_ID, YT_CLIENT_SECRET, YT_REFRESH_TOKEN,
+TIKTOK_CLIENT_KEY, TIKTOK_CLIENT_SECRET, TIKTOK_REFRESH_TOKEN (first time; later the rotating one in D1),
 FB_PAGE_TOKEN, THREADS_ACCESS_TOKEN, THREADS_USER_ID (+ THREADS_APP_SECRET locally, only to make a token long-lived), GH_TOKEN.
 """
 import argparse, datetime as dt, json, os, re, secrets as rnd, sys, time, urllib.error, urllib.parse
@@ -143,7 +144,8 @@ def title(item, cap):
 
 # ---------------------------------------------------------------- YouTube
 GOOGLE_TOKEN = "https://oauth2.googleapis.com/token"
-YT_SCOPE = "https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/youtube.readonly"  # readonly: stats.py reads views
+YT_SCOPE = ("https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/youtube.readonly "
+            "https://www.googleapis.com/auth/yt-analytics.readonly")  # stats.py: views, watch time, subs gained
 
 
 def yt_access():
@@ -357,13 +359,114 @@ def facebook_setup():
     print(f"Page token for {p['name']} saved; expires: {'never' if not exp else dt.datetime.fromtimestamp(exp)}")
 
 
+# ---------------------------------------------------------------- TikTok
+# App "matteofights poster" on developers.tiktok.com (Login Kit + Content Posting API, setup: tools/crosspost/README.md).
+# Videos go to Matteo's TikTok inbox as drafts (scope video.upload): he adds a trending sound in the app and posts.
+# The refresh token lives in D1 (kind "token", id "tiktok"; never in the public repo) because TikTok can hand back a
+# new one on every refresh; env TIKTOK_REFRESH_TOKEN seeds it the first time.
+TT = "https://open.tiktokapis.com/v2"
+TT_REDIRECT = "https://matteofights.me/tiktok-callback.html"
+TT_SCOPES = "user.info.basic,user.info.stats,video.upload,video.list"
+TT_CHUNK = 10 * 1024 * 1024
+
+
+def _tt_db():
+    return store.backend("d1") if os.environ.get("CLOUDFLARE_D1_TOKEN") or os.environ.get("CLOUDFLARE_BUILD_TOKEN") else None
+
+
+def tiktok_access():
+    db = _tt_db()
+    saved = (db.get("token", "tiktok") if db else None) or {}
+    refresh = saved.get("refresh_token") or os.environ.get("TIKTOK_REFRESH_TOKEN")
+    if not refresh:
+        raise RuntimeError("TikTok not connected: run crosspost.py tiktok-auth")
+    _, _, t = http("POST", f"{TT}/oauth/token/", {"client_key": os.environ["TIKTOK_CLIENT_KEY"],
+                                                  "client_secret": os.environ["TIKTOK_CLIENT_SECRET"],
+                                                  "grant_type": "refresh_token", "refresh_token": refresh},
+                   headers={"Content-Type": "application/x-www-form-urlencoded"})
+    if not t.get("access_token"):
+        raise RuntimeError(f"TikTok refresh failed: {str(t)[:200]}")
+    if db and t.get("refresh_token") and t["refresh_token"] != saved.get("refresh_token"):
+        db.put("token", "tiktok", {"refresh_token": t["refresh_token"], "open_id": t.get("open_id"), "at": now(),
+                                   "refresh_expires_in": t.get("refresh_expires_in")})
+    return t["access_token"]
+
+
+def tiktok_caption(item):
+    """TikTok drafts carry no caption through the API: this is what Matteo pastes (hook, list, 3 hashtags)."""
+    cap = without_hashtags(caption(item))
+    return shorten(cap, 2000) + "\n\n#fighter #muaythai #fightmindset"
+
+
+def post_tiktok(item, cfg):
+    video = download(offsite_asset(item))
+    size = len(video)
+    chunk = size if size <= 64 * 1024 * 1024 else TT_CHUNK
+    count = max(1, size // chunk)
+    tok = tiktok_access()
+    hdr = {"Authorization": f"Bearer {tok}", "Content-Type": "application/json; charset=UTF-8"}
+    _, _, d = http("POST", f"{TT}/post/publish/inbox/video/init/", raw=json.dumps({"source_info": {
+        "source": "FILE_UPLOAD", "video_size": size, "chunk_size": chunk, "total_chunk_count": count}}).encode(), headers=hdr)
+    if (d.get("error") or {}).get("code") not in (None, "ok"):
+        raise RuntimeError(f"TikTok init: {d['error']}")
+    up, pid = d["data"]["upload_url"], d["data"]["publish_id"]
+    for k in range(count):
+        a = k * chunk
+        b = size if k == count - 1 else a + chunk  # the last chunk takes the remainder
+        http("PUT", up, raw=video[a:b], headers={"Content-Type": "video/mp4", "Content-Length": str(b - a),
+                                                  "Content-Range": f"bytes {a}-{b - 1}/{size}"})
+    status = "PROCESSING_UPLOAD"
+    for _ in range(20):
+        time.sleep(6)
+        _, _, st = http("POST", f"{TT}/post/publish/status/fetch/", raw=json.dumps({"publish_id": pid}).encode(), headers=hdr)
+        status = (st.get("data") or {}).get("status", status)
+        if status in ("SEND_TO_USER_INBOX", "PUBLISH_COMPLETE", "FAILED"):
+            break
+    if status == "FAILED":
+        raise RuntimeError(f"TikTok upload failed: {(st.get('data') or {}).get('fail_reason')}")
+    note(f"🎵 TikTok draft ready: {item.get('hook') or item['id']}\nOpen TikTok > inbox notification, add a trending sound, paste:\n\n{tiktok_caption(item)}")
+    return {"id": pid, "url": None, "mode": "inbox", "tiktok_status": status}
+
+
+def tiktok_auth():
+    """One time, on the laptop: opens TikTok's consent page; the callback page shows a code to paste back here."""
+    load_env()
+    for k in ("TIKTOK_CLIENT_KEY", "TIKTOK_CLIENT_SECRET"):
+        if not os.environ.get(k):
+            sys.exit(f"{k} missing in secrets/crosspost.env")
+    state = rnd.token_urlsafe(12)
+    url = "https://www.tiktok.com/v2/auth/authorize/?" + urllib.parse.urlencode({
+        "client_key": os.environ["TIKTOK_CLIENT_KEY"], "scope": TT_SCOPES, "response_type": "code",
+        "redirect_uri": TT_REDIRECT, "state": state})
+    print("Opening TikTok. Log in as @matteofights and tap Authorize, then copy the code the page shows.")
+    webbrowser.open(url)
+    got = input("Paste the code here: ").strip()
+    code, _, back = got.partition("|")
+    if back and back != state:
+        sys.exit("That code is from a different attempt. Run tiktok-auth again.")
+    _, _, t = http("POST", f"{TT}/oauth/token/", {"client_key": os.environ["TIKTOK_CLIENT_KEY"],
+                                                  "client_secret": os.environ["TIKTOK_CLIENT_SECRET"], "code": code,
+                                                  "grant_type": "authorization_code", "redirect_uri": TT_REDIRECT},
+                   headers={"Content-Type": "application/x-www-form-urlencoded"})
+    if not t.get("refresh_token"):
+        sys.exit(f"TikTok said no: {str(t)[:300]}")
+    set_env("TIKTOK_REFRESH_TOKEN", t["refresh_token"])
+    db = _tt_db()
+    if db:
+        db.put("token", "tiktok", {"refresh_token": t["refresh_token"], "open_id": t.get("open_id"), "at": now(),
+                                   "refresh_expires_in": t.get("refresh_expires_in")})
+    print(f"Connected (scopes: {t.get('scope')}). Saved TIKTOK_REFRESH_TOKEN to secrets/crosspost.env"
+          f"{' and D1' if db else ''}. Add TIKTOK_CLIENT_KEY, TIKTOK_CLIENT_SECRET, TIKTOK_REFRESH_TOKEN as GitHub secrets.")
+
+
 # ---------------------------------------------------------------- run
 POSTERS = {"youtube": (post_youtube, ("YT_CLIENT_ID", "YT_CLIENT_SECRET", "YT_REFRESH_TOKEN")),
            "threads": (post_threads, ("THREADS_ACCESS_TOKEN", "THREADS_USER_ID")),
            "facebook": (post_facebook, ("FB_PAGE_TOKEN",)),
-           "facebook_slides": (post_facebook_slides, ("FB_PAGE_TOKEN",))}
+           "facebook_slides": (post_facebook_slides, ("FB_PAGE_TOKEN",)),
+           "tiktok": (post_tiktok, ("TIKTOK_CLIENT_KEY", "TIKTOK_CLIENT_SECRET"))}
 LABEL = {"youtube": "YouTube Shorts", "threads": "Threads", "facebook": "Facebook Reels",
-         "facebook_slides": "Facebook slides", "threads_text": "Threads post"}
+         "facebook_slides": "Facebook slides", "threads_text": "Threads post", "tiktok": "TikTok drafts"}
 
 
 def note(text):
@@ -529,10 +632,10 @@ def run(dry=False):
 
 def main():
     p = argparse.ArgumentParser()
-    p.add_argument("cmd", choices=["run", "youtube-auth", "threads-check", "threads-refresh", "facebook-setup"])
+    p.add_argument("cmd", choices=["run", "youtube-auth", "tiktok-auth", "threads-check", "threads-refresh", "facebook-setup"])
     p.add_argument("--dry", action="store_true")
     a = p.parse_args()
-    {"run": lambda: run(a.dry), "youtube-auth": youtube_auth, "threads-check": threads_check,
+    {"run": lambda: run(a.dry), "youtube-auth": youtube_auth, "tiktok-auth": tiktok_auth, "threads-check": threads_check,
      "threads-refresh": threads_refresh, "facebook-setup": facebook_setup}[a.cmd]()
 
 

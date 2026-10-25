@@ -21,7 +21,7 @@ OUT = xp.ROOT / "production" / "control" / "platforms.json"
 IG = "https://graph.instagram.com/v21.0"
 INBOX_DAYS = 4
 # Instagram login tokens can't be inspected through the API; set when refreshed (see tools/instagram/README.md)
-KNOWN_EXPIRY = {"instagram": "2026-12-13", "threads": None, "facebook": None, "youtube": None}
+KNOWN_EXPIRY = {"instagram": "2026-12-13", "threads": None, "facebook": None, "youtube": None, "tiktok": None}
 
 
 def get(url, **params):
@@ -164,16 +164,16 @@ def main():
     yt = {"followers": None}
     api_key = os.environ.get("YT_API_KEY")
     auth = {}
-    if not api_key and all(os.environ.get(k) for k in ("YT_CLIENT_ID", "YT_CLIENT_SECRET", "YT_REFRESH_TOKEN")):
+    if all(os.environ.get(k) for k in ("YT_CLIENT_ID", "YT_CLIENT_SECRET", "YT_REFRESH_TOKEN")):
         tok = safe(xp.yt_access)
         if tok:
             auth = {"Authorization": f"Bearer {tok}"}
     YT = "https://www.googleapis.com/youtube/v3"
 
     def yt_get(path, **params):
-        if api_key:
+        if api_key:  # public numbers with the key; the login is only needed for Analytics below
             params["key"] = api_key
-        _, _, d = xp.http("GET", f"{YT}/{path}?" + urllib.parse.urlencode(params), headers=auth)
+        _, _, d = xp.http("GET", f"{YT}/{path}?" + urllib.parse.urlencode(params), headers={} if api_key else auth)
         return d
 
     if api_key or auth:
@@ -203,7 +203,46 @@ def main():
             print("  ! youtube:", msg[:200])
     else:
         yt["stats_missing"] = "No view numbers yet: add a YT_API_KEY secret (tools/crosspost/README.md)"
+    # YouTube Analytics (needs the login with yt-analytics.readonly: re-run crosspost.py youtube-auth once):
+    # how much of each Short people watch, and the subscribers it brought
+    if auth and yt_recs:
+        try:
+            ids = ",".join(r["id"] for _, r in yt_recs[:200])
+            _, _, a = xp.http("GET", "https://youtubeanalytics.googleapis.com/v2/reports?" + urllib.parse.urlencode({
+                "ids": "channel==MINE", "startDate": recent_iso(30)[:10], "endDate": xp.now()[:10], "dimensions": "video",
+                "metrics": "averageViewDuration,averageViewPercentage,subscribersGained", "filters": f"video=={ids}"}), headers=auth)
+            byid = {row[0]: row[1:] for row in a.get("rows") or []}
+            for qid, r in yt_recs:
+                if r["id"] in byid and qid in out["posts"] and "youtube" in out["posts"][qid]:
+                    dur, pct, subs = byid[r["id"]]
+                    out["posts"][qid]["youtube"].update(avg_view_s=dur, avg_view_pct=round(pct, 1), subs_gained=subs)
+            yt["analytics"] = True
+        except Exception as e:
+            print("  ! youtube analytics (re-run youtube-auth to grant it):", str(e)[:160])
     out["platforms"]["youtube"] = yt
+
+    # ------------------------------------------------ TikTok (after the app is approved and crosspost.py tiktok-auth ran)
+    if os.environ.get("TIKTOK_CLIENT_KEY"):
+        try:
+            tok = xp.tiktok_access()
+            hdr = {"Authorization": f"Bearer {tok}", "Content-Type": "application/json"}
+            _, _, u = xp.http("GET", f"{xp.TT}/user/info/?fields=follower_count,video_count", headers=hdr)
+            tt = {"followers": ((u.get("data") or {}).get("user") or {}).get("follower_count")}
+            _, _, vl = xp.http("POST", f"{xp.TT}/video/list/?fields=id,title,view_count,like_count,comment_count,share_count,create_time,share_url",
+                               raw=json.dumps({"max_count": 20}).encode(), headers=hdr)
+            cutoff = dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=10)
+            for v in (vl.get("data") or {}).get("videos") or []:
+                at = dt.datetime.fromtimestamp(v.get("create_time", 0), dt.timezone.utc)
+                if at < cutoff:
+                    continue
+                # TikTok posts are made in the app from drafts, so they are keyed by their own id, not a queue id
+                out["posts"].setdefault(f"tt:{v['id']}", {})["tiktok"] = {
+                    "views": v.get("view_count"), "likes": v.get("like_count"), "comments": v.get("comment_count"),
+                    "shares": v.get("share_count"), "url": v.get("share_url"), "title": (v.get("title") or "")[:90], "at": xp.iso(at)}
+            out["platforms"]["tiktok"] = tt
+        except Exception as e:
+            print("  ! tiktok:", str(e)[:200])
+            out["platforms"]["tiktok"] = {"followers": None, "stats_missing": f"TikTok numbers failed: {str(e)[:100]}"}
 
     # ------------------------------------------------ status per platform (from crosspost state)
     t_now = dt.datetime.now(dt.timezone.utc)

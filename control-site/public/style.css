@@ -830,3 +830,5 @@ body {
 .pv { grid-template-columns: minmax(0, 1fr); }
 .pv > * { min-width: 0; }
 @media (min-width: 960px) { .pv { grid-template-columns: minmax(0, 1fr) 400px; } }
+.kpi-pl:has(> li:nth-child(5)) { grid-template-columns: repeat(5, 1fr); }
+@media (min-width: 1100px) { .pcards:has(> :nth-child(5)) { grid-template-columns: repeat(5, 1fr); } }

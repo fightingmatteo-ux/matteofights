@@ -54,7 +54,8 @@ must pass `tools/threads/lint.py` before pushing. Results are kept for good in `
 
 ### Facebook (Page "Matteo Fights")
 Graph API Explorer → app `matteofights-poster` → User Token with `pages_manage_posts`, `pages_read_engagement`,
-`pages_show_list` (the app needs the "Manage everything on your Page" use case) → Extend in the Access Token Tool →
+`pages_show_list`, **`read_insights`** (reach and watch time per reel, added 2026-10-25) (the app needs the
+"Manage everything on your Page" use case) → Extend in the Access Token Tool →
 `FB_USER_TOKEN=` in `secrets/meta.env` → `crosspost.py facebook-setup` (Page token that never expires) → GitHub
 secret `FB_PAGE_TOKEN`.
 
@@ -71,8 +72,42 @@ from the User Token Generator → `THREADS_ACCESS_TOKEN` → `crosspost.py threa
 `THREADS_ACCESS_TOKEN`, `THREADS_USER_ID`. The token expires ~2026-12-14: `crosspost.py threads-refresh`, then update
 the GitHub secret.
 
+### TikTok (started 2026-10-25)
+Plan: videos go to Matteo's TikTok **drafts** (scope `video.upload`), he adds a trending sound in the app and posts.
+Drafts need no audit; direct posting (`video.publish`) stays private-only until TikTok audits the app, so we skip it.
+
+1. developers.tiktok.com → log in with the @matteofights TikTok → Manage apps → **Connect an app** → name
+   `matteofights poster`, type: Individual/personal developer.
+2. App details (copy exactly):
+   - Category: **Entertainment** (or Lifestyle). Platform: **Web**.
+   - Description: "Private tool that sends Matteo's own short fight-training videos from his production pipeline to
+     his own TikTok drafts, and shows his own follower and view counts on his private dashboard. Not offered to
+     other users."
+   - Website URL: `https://matteofights.me` → Verify: pick **URL prefix**, download TikTok's signature file and send
+     it to Claude (it goes into `docs/` and is live in a minute), then press Verify.
+   - Terms of service: `https://matteofights.me/terms.html`. Privacy policy: `https://matteofights.me/privacy.html`.
+   - App icon: `docs/avatar.jpg` (1024×1024 if it asks; Claude can resize).
+3. Products: add **Login Kit** (redirect URI `https://matteofights.me/tiktok-callback.html`) and **Content Posting
+   API** (leave Direct Post off). Scopes: `user.info.basic`, `user.info.stats`, `video.upload`, `video.list`.
+4. **Sandbox** first: create a sandbox, add @matteofights as a target user. Put the sandbox Client key and Client
+   secret in `secrets/crosspost.env` as `TIKTOK_CLIENT_KEY=` / `TIKTOK_CLIENT_SECRET=` and run
+   `python -P tools/crosspost/crosspost.py tiktok-auth` (log in, Authorize, paste the code the page shows).
+5. Test one draft (Claude runs it with you), **screen-record** it: dashboard → reel → TikTok inbox notification →
+   draft opens in TikTok. That recording is the demo video the review asks for.
+6. Submit for review with the recording. Explain: "Single-user tool. The creator connects his own account with
+   Login Kit; videos he produced are uploaded to his TikTok inbox as drafts with the Content Posting API (upload
+   only); he edits and posts them himself in the TikTok app. user.info.stats and video.list show his own follower
+   and view counts on his private dashboard."
+7. Approved: swap in the production key/secret, run `tiktok-auth` again, add GitHub secrets `TIKTOK_CLIENT_KEY`,
+   `TIKTOK_CLIENT_SECRET`, `TIKTOK_REFRESH_TOKEN`. Turning TikTok on in `crosspost.json` (`platforms.tiktok`,
+   slots ~12:30 and 19:30 NY) is Matteo's yes, like every platform.
+
+The refresh token is kept in D1 (`token/tiktok`), never in this public repo, because TikTok may rotate it.
+Stats (`stats.py`) read followers and the last 20 videos' views once the secrets exist.
+
 ## GitHub secrets used
-`FB_PAGE_TOKEN`, `YT_CLIENT_ID`, `YT_CLIENT_SECRET`, `YT_REFRESH_TOKEN`, `THREADS_ACCESS_TOKEN`, `THREADS_USER_ID`,
+`FB_PAGE_TOKEN`, `YT_CLIENT_ID`, `YT_CLIENT_SECRET`, `YT_REFRESH_TOKEN`, `YT_API_KEY`, `THREADS_ACCESS_TOKEN`, `THREADS_USER_ID`,
+`TIKTOK_CLIENT_KEY`, `TIKTOK_CLIENT_SECRET`, `TIKTOK_REFRESH_TOKEN`,
 `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`.
 
 ## YouTube numbers on the dashboard (2026-10-25)
@@ -83,7 +118,9 @@ comments per Short and the subscriber count with either:
 1. **`YT_API_KEY`** (simplest, public numbers only): Google Cloud console, the same project as `YT_CLIENT_ID` →
    APIs & Services → Credentials → Create credentials → API key → restrict it to "YouTube Data API v3". Add it as the
    GitHub Actions secret `YT_API_KEY`. The next Platform stats run fills the dashboard.
-2. Or re-run `python -P tools/crosspost/crosspost.py youtube-auth` on the laptop (it now asks for upload + read) and
-   update the `YT_REFRESH_TOKEN` secret.
+2. Re-run `python -P tools/crosspost/crosspost.py youtube-auth` on the laptop (it now asks for upload + read +
+   YouTube Analytics) and update the `YT_REFRESH_TOKEN` secret. Needed for watch time (% viewed, average view
+   duration, subscribers gained per Short): turn on **YouTube Analytics API** in the project first
+   (console.cloud.google.com/apis/library/youtubeanalytics.googleapis.com).
 
 Until one of them is set, the dashboard's YouTube card says "No view numbers yet" instead of showing 0.
