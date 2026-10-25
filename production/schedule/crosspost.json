@@ -27,7 +27,7 @@
         "19:00"
       ],
       "privacy_note": "Matteo: 'youtube approved' (2026-10-16). If YouTube still forces private, the audit isn't through yet.",
-      "last_slot": "2026-10-24T16:30:00Z"
+      "last_slot": "2026-10-24T20:00:00Z"
     },
     "threads": {
       "enabled": true,
@@ -39,7 +39,7 @@
         "21:00"
       ],
       "topic": "Fight Psychology",
-      "last_slot": "2026-10-24T14:00:00Z"
+      "last_slot": "2026-10-24T19:30:00Z"
     },
     "facebook_slides": {
       "enabled": false,
@@ -521,6 +521,22 @@
         "id": "w8XkHmTbSqE",
         "url": "https://youtube.com/shorts/w8XkHmTbSqE",
         "privacy": "public"
+      }
+    },
+    "saenchai-C": {},
+    "lst-2026-10-22-fighters-mindset": {
+      "youtube": {
+        "status": "posted",
+        "at": "2026-10-25T11:36:00Z",
+        "id": "Z_rp3Vy6Efo",
+        "url": "https://youtube.com/shorts/Z_rp3Vy6Efo",
+        "privacy": "public"
+      },
+      "threads": {
+        "status": "posted",
+        "at": "2026-10-25T11:36:39Z",
+        "id": "18095640239680376",
+        "url": "https://www.threads.com/@matteofights/post/De6nUpvmU8m"
       }
     }
   }

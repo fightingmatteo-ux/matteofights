@@ -404,7 +404,7 @@
       "text": "Slept five hours? Do technique rounds today, not hard ones.\n\nTired sparring teaches bad habits and gets people hurt. Save the war for a day you can actually think.",
       "chain": [],
       "from": "craft",
-      "status": "queued",
+      "status": "missed",
       "approved": true,
       "approved_note": "Matteo: approved via dashboard (2026-10-18T15:34:38Z)"
     },
@@ -416,9 +416,12 @@
       "text": "Comparing yourself to the guy a year ahead is how people quit.\n\nHe's already made a year of mistakes you haven't. Compare yourself to you in March.",
       "chain": [],
       "from": "craft",
-      "status": "queued",
+      "status": "posted",
       "approved": true,
-      "approved_note": "Matteo: approved via dashboard (2026-10-18T15:34:38Z)"
+      "approved_note": "Matteo: approved via dashboard (2026-10-18T15:34:38Z)",
+      "posted_at": "2026-10-25T11:36:48Z",
+      "thread_id": "17914318209497626",
+      "url": "https://www.threads.com/@matteofights/post/De6nY9VkfhK"
     },
     {
       "id": "th-1025-2",
