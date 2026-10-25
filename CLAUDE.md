@@ -66,6 +66,7 @@ task needs it. Open items: [STATUS.md](STATUS.md) (read at session start, update
 | Render a reel | [tools/render/README.md](tools/render/README.md) |
 | Any caption, hook, Threads post, carousel copy | [context/creator-voice.md](context/creator-voice.md), skill `platform-captions` |
 | Weekly Threads batch | skill `threads-writer` |
+| **Write a talking-head script / hooks (A/B/C)** | skill `studio-script` (wired to this repo, read its top section), with `viral-hooks`, `viral-instagram-reels`, `going-viral`. Latest slate: `production/reels/IDEAS-2026-10-25.md` |
 | Hook + caption from a hook | [production/captions/CAPTION-ENGINE.md](production/captions/CAPTION-ENGINE.md) |
 | The proven viral reel format | [context/viral-format.md](context/viral-format.md) |
 | What is working, from our numbers | `python -P tools/threads/report.py` |
