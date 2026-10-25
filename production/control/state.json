@@ -226,7 +226,9 @@
     "health-run:Hook tests-2026102510",
     "health-run:Platform stats-2026102510",
     "health-run:Post queue-2026102510",
-    "health-run:State backup-2026102510"
+    "health-run:State backup-2026102510",
+    "xp-75d4dc09",
+    "xp-db903a3c"
   ],
   "announced_week": "lst-2026-10-29-gym-second-home,lst-2026-10-30-not-a-beginner,lst-2026-10-31-fighting-therapy,lst-2026-11-01-ten-years,lst-2026-11-02-fight-iq,lst-2026-11-03-fighter-not-fit,lst-2026-11-04-kicks-caught"
 }
