@@ -69,6 +69,7 @@ task needs it. Open items: [STATUS.md](STATUS.md) (read at session start, update
 | Task | Read |
 |---|---|
 | **Make or edit a reel (watch, plan, edit, test). Read first.** | [production/editing/reel-kit/PIPELINE.md](production/editing/reel-kit/PIPELINE.md) |
+| How Matteo wants his reels to look (rules learned from his frame notes) | [production/editing/taste.md](production/editing/taste.md) |
 | Render a reel | [tools/render/README.md](tools/render/README.md) |
 | Any caption, hook, Threads post, carousel copy | [context/creator-voice.md](context/creator-voice.md), skill `platform-captions` |
 | Weekly Threads batch | skill `threads-writer` |

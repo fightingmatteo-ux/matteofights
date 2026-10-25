@@ -2,6 +2,7 @@
 
     python3 -P tools/edit/requests_cli.py open                    # open uploads + revision requests, oldest first (JSON)
     python3 -P tools/edit/requests_cli.py fetch <upload_id> <dir> # download an upload's footage from R2
+    python3 -P tools/edit/requests_cli.py notes <request_id> <dir>   # download a revision's annotated frames from R2
     python3 -P tools/edit/requests_cli.py finish <kind> <id> <status> [--note "what was done"]
     python3 -P tools/edit/requests_cli.py tp-add "<title>" --hook A --hook B --hook C --point ... [--source URL] [--why ...]
     python3 -P tools/edit/requests_cli.py tps                     # talking points not filmed yet (JSON)
@@ -9,7 +10,9 @@
 
 Kinds (all D1-only, written by the dashboard's /api functions):
   upload/<id>         {status: uploaded|working|done|failed, key (R2), name, size, note, talking_point, at, result}
-  request/<id>        {status: open|working|done|failed, target (reel or queue id), text, at, result}
+  request/<id>        {status: open|working|done|failed, target (reel or queue id), text, at, result,
+                       from the reel player: asset, round (1 = first revision of this reel), tags[],
+                       notes[{t (seconds), text, tags[], image (R2 key of the frame with Matteo's drawing)}]}
   talking_point/<id>  {status: new|filmed|skipped, title, hooks[3], points[], source, why, at}
 """
 import argparse
@@ -67,6 +70,7 @@ def main():
     sub = ap.add_subparsers(dest="cmd", required=True)
     sub.add_parser("open")
     f = sub.add_parser("fetch"); f.add_argument("id"); f.add_argument("dir")
+    nt = sub.add_parser("notes"); nt.add_argument("id"); nt.add_argument("dir")
     fi = sub.add_parser("finish"); fi.add_argument("kind"); fi.add_argument("id"); fi.add_argument("status")
     fi.add_argument("--note")
     t = sub.add_parser("tp-add"); t.add_argument("title"); t.add_argument("--hook", action="append", default=[])
@@ -83,6 +87,14 @@ def main():
         r2.get_file(u["key"], dst)
         db().patch("upload", a.id, {"status": "working"})
         print(dst)
+    elif a.cmd == "notes":
+        import r2
+        r = db().get("request", a.id) or {}
+        for n in r.get("notes") or []:
+            if n.get("image"):
+                dst = Path(a.dir) / Path(n["image"]).name
+                r2.get_file(n["image"], dst)
+                print(f"{n['t']:.2f}s  {dst}  [{', '.join(n.get('tags') or [])}] {n.get('text', '')}")
     elif a.cmd == "finish":
         finish(a.kind, a.id, a.status, a.note)
     elif a.cmd == "tp-add":

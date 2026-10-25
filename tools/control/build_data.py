@@ -75,6 +75,26 @@ def fetch_videos(queue):
     return got
 
 
+def taste_rules():
+    """The edit worker's learned rules (production/editing/taste.md, "## Rules"): [{tag, rule, source}]."""
+    p = ROOT / "production/editing/taste.md"
+    if not p.exists():
+        return []
+    out, on = [], False
+    for line in p.read_text(encoding="utf-8").splitlines():
+        if line.startswith("## "):
+            on = line.strip() == "## Rules"
+        elif on and line.startswith("- "):
+            body = line[2:].strip()
+            tag = body[1:body.index("]")] if body.startswith("[") and "]" in body else "other"
+            body = body[body.index("]") + 1:].strip() if body.startswith("[") and "]" in body else body
+            src = ""
+            if body.endswith(")") and " (" in body:
+                body, src = body[:body.rindex(" (")], body[body.rindex(" (") + 2:-1]
+            out.append({"tag": tag, "rule": body, "source": src})
+    return out
+
+
 def main():
     queue = store.all("queue")
     hooks = load(ROOT / "production/listicles/hooks.json", {"hooks": []})["hooks"]
@@ -113,7 +133,7 @@ def main():
         if label and (i.get("variant") or "") .isalpha():
             label = f"{i['variant']}: {label}"
         reels.append({
-            "id": i["id"], "hook": label or i.get("reel", i["id"]),
+            "id": i["id"], "hook": label or i.get("reel", i["id"]), "asset": i.get("video_asset"), "reel": i.get("reel"),
             "format": i.get("format") or ("talking head" if not i["id"].startswith("lst-") else "listicle"),
             "time": i.get("not_before"), "state": state, "cover": cover,
             "clip": (i.get("clip") or "").split(" (")[0], "review": i.get("review"),
@@ -147,7 +167,8 @@ def main():
         "ideas": load(CTL / "ideas.json", [])[-50:],
         "log": load(CTL / "log.json", [])[-60:],
         "platforms": load(CTL / "platforms.json", {}),
-        "briefs": load(CTL / "briefs.json", {}),  # Matteo's per-platform direction (dashboard Platforms tab)
+        "briefs": load(CTL / "briefs.json", {}),
+        "taste": taste_rules(),  # what the edit worker has learned from Matteo's revisions  # Matteo's per-platform direction (dashboard Platforms tab)
         # other platforms (tools/crosspost): per-reel results + written Threads posts (approved weekly)
         "crosspost": {"platforms": store.get("crosspost", "platforms") or {}, "posts": xpost},
         "threads_posts": sorted(load(ROOT / "production/threads/posts.json", {"posts": []})["posts"],

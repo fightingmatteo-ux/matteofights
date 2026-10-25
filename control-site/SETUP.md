@@ -36,6 +36,16 @@ which the platform-captions and threads-writer skills read), Leads and Grow. `/a
 the signup doc (`lead_status`, `contacted_at`, `lead_note`) or kind `lead` (`ig:<handle>`). "Message" copies a
 personal DM and opens `ig.me/m/<handle>`: Instagram's API can't cold-DM someone who never messaged the account.
 
+## Reel player and edit taste (2026-10-25)
+
+Tapping any reel opens `public/player.js`: the video streams through `/api/media?asset=` (R2 `renders/<asset>`,
+else the public `media` release, proxied so it is same-origin and frames can be drawn into a canvas). "Note this
+frame" pauses, lets Matteo draw (pen, box, arrow) and tag the change; "Send" posts every note to `/api/studio`
+`revision`: frames go to R2 `revisions/<id>/`, the doc to D1 `request/<id>` (`notes`, `tags`, `round`), and the edit
+worker starts. The worker downloads the frames (`requests_cli.py notes`), applies them, and writes a general rule to
+`production/editing/taste.md`. Studio's "Your edit taste" shows those rules and `/api/taste` (rounds per reel by
+week, most-asked change types, revised vs first-cut views).
+
 ## Cloudflare (account `849fbd13419572f8d5e345f23dd3de11`, fightingmatteo@gmail.com)
 
 - **DNS:** `matteofights.me` zone on Cloudflare (nameservers `derek`/`melinda.ns.cloudflare.com`, set at

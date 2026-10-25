@@ -663,7 +663,7 @@ document.addEventListener("click", (ev) => {
     t.disabled = true;
     return act({ action: "idea", text }, "rival:" + c.id, "Sent to your ideas. Claude picks it up on the next check.");
   }
-  if (t.dataset.open) return openSheet(t.dataset.open);
+  if (t.dataset.open) return (typeof openPlayer === "function" && openPlayer(t.dataset.open)) || openSheet(t.dataset.open); // player.js: watch + annotate
   if ("review" in t.dataset) return openReview();
   if ("undo" in t.dataset) return undoAnswer();
   if (t.dataset.act === "idea") {

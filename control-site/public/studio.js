@@ -94,6 +94,7 @@ function studio() {
       <div class="row-actions"><button class="btn line" data-tppick="${esc(t.id)}">Film this</button><button class="link" data-tpskip="${esc(t.id)}">Skip</button>
       ${t.source ? `<a class="link" href="${esc(t.source)}" target="_blank" rel="noopener">Original</a>` : ""}</div></div>`).join("")
       : `<p class="empty-note">None waiting. New ones arrive Monday.</p>`}</section>`;
+  if (typeof tastePanel === "function") h += tastePanel(); // player.js
   return h;
 }
 
