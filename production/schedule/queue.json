@@ -600,7 +600,7 @@
       "not_before": "2026-10-24T22:30:00Z",
       "min_gap_hours": 2.5,
       "approved": true,
-      "status": "queued",
+      "status": "posted",
       "test": {
         "exp": "exp-1016-hook_style",
         "variant": "a",
@@ -611,7 +611,11 @@
       "video_asset_music": "lst-2026-10-24-nerves-without-faking-music.mp4",
       "audio_id": "530317382955170",
       "audio_title": "Echo Sax End (Take 2)",
-      "audio_artist": "caleb.arredondo"
+      "audio_artist": "caleb.arredondo",
+      "posting_since": "2026-10-25T13:05:53Z",
+      "media_id": "17904143727671253",
+      "permalink": "https://www.instagram.com/reel/De6xoDHihaE/",
+      "posted_at": "2026-10-25T13:06:52Z"
     },
     {
       "id": "lst-2026-10-25-light-sparring",
