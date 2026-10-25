@@ -8,6 +8,7 @@ Legend: **DO** = needs action now, **MATTEO** = only Matteo can do it, **WAIT** 
 
 | # | Item | Status | Next step |
 |---|---|---|---|
+| 0 | **GitHub Actions blocked by billing (since 2026-10-25 ~00:30 UTC)** | **MATTEO** | Every run fails before starting: "recent account payments have failed or your spending limit needs to be increased". Post queue, Cross-post, Hook tests, State backup, Deploy control center, Fetch video all down; last success 2026-10-24 18:28 UTC. Fix at github.com/settings/billing, then check the next Post queue run. Knockout-draw trials (Oct 26) need it |
 | 1 | Saenchai v3 render A | OK | Rendered, on `media` release (10-18 12:55Z), Drive upload triggered 13:05Z |
 | 2 | Saenchai v3 render B | **DO / MATTEO** | Render died ~17:44 local, nothing running. Matteo starts it (command below). Then `media.sh push` + `drive-upload.yml` |
 | 3 | Saenchai v3 render C | **DO / MATTEO** | Not started. Run after B finishes, never in parallel |

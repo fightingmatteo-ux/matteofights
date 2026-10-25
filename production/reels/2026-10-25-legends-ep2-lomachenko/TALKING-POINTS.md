@@ -33,7 +33,8 @@ No fight footage (rights + originality): LOMACHENKO name card + Matteo demonstra
 
 ## Body (reading script, ~22 s after the hook; say it your way except the hook and the loop)
 
-1. "It wasn't because he hit the hardest. They just couldn't find him."
+1. B and C only: "Four straight opponents quit on their stool against him." Then all: "It wasn't because he hit
+   the hardest. They just couldn't find him."
 2. "When most of us get pressured, we step back. And back is where the ropes are."
 3. "Loma steps around. A small pivot off their lead foot, and suddenly they're facing nothing."
 4. Re-hook (slow down): "And here's the part that breaks people."
@@ -41,12 +42,30 @@ No fight footage (rights + originality): LOMACHENKO name card + Matteo demonstra
 6. (Optional, only if true) "First time I tried it in sparring, the guy just stopped and looked for me."
 7. Pearl (leave 0.5 s after): "Don't move back. Move around."
 
-**Loop line (one breath with the pearl):**
-- A: "...Move around. That's why four straight opponents quit on their stool against Lomachenko."
-- B: "...Move around. So next time you're always getting pushed to the ropes, steal this from Lomachenko."
-- C: "...Move around. Because most boxers move back. Lomachenko moves around."
+## The one-take loop (how the end becomes the start)
 
-**Short D (~15 s):** Hook C → "When we get pressured, we step back. Back is where the ropes are." → beat 3 → pearl → loop C.
+Each variant has ONE loop take: **pearl → bridge → hook → first body line**, said in one breath, no stop, no
+reset of your face or hands. The edit **starts** the video on the hook inside that take and **ends** it on the
+bridge word, right before the hook. On replay, the last frame and the first frame are neighbouring frames of the
+same take: same light, same head position, same sentence. It never looks like it stopped.
+
+| V | Loop take (say it all, one breath) | Video ends after | Video starts on |
+|---|---|---|---|
+| A | "Don't move back. Move around. **That's why** four straight opponents quit on their stool against Lomachenko. It wasn't because he hit the hardest." | "That's why" | "Four straight..." |
+| B | "Don't move back. Move around. **So if you're** always getting pushed to the ropes, steal this from Lomachenko. Four straight opponents quit on their stool against him." | "So if you're" | "Always getting pushed..." |
+| C | "Don't move back. Move around. **Because** most boxers move back. Lomachenko moves around. Four straight opponents quit on their stool against him." | "Because" | "Most boxers..." |
+| D | Uses the C loop take | "Because" | "Most boxers..." |
+
+Rules for the loop take:
+- **No pause between the bridge word and the hook.** The seam is that gap; keep it under a breath.
+- **Same energy at both ends.** Say the pearl at hook energy, not winding down.
+- **Don't move.** No nod, no lean, no hand drop across the seam. Hands stay where they are at the hook.
+- Film the 3 loop takes **right after the hooks**, same spot, so the body takes in between match too.
+- Edit note: the CTA overlay leaves 0.4 s before the end and the frame-0 layout (hook word behind the head)
+  fades in over the last 0.3 s, so the graphics match across the seam as well as the face.
+
+**Short D (~15 s):** C loop take start (hook C) → "When we get pressured, we step back. Back is where the ropes
+are." → beat 3 → pearl + "Because" from the C loop take.
 
 ## On screen (editorial look)
 
@@ -83,7 +102,7 @@ Send this to the guy in your gym who lives on the ropes.
 | 2 | "Hook B" | Always getting pushed to the ropes? Steal this from Lomachenko. | 3 |
 | 3 | "Hook C" | Most boxers move back. Lomachenko moves around. | 3 |
 | 4 | "Body" | Beats 1 to 6 in one go | 3 |
-| 5 | "Loop A" / "Loop B" / "Loop C" | Pearl + its loop line, one breath each | 2 each |
+| 5 | "Loop A" / "Loop B" / "Loop C" | The full loop take from the table above, one breath each | 3 each |
 | 6 | "Demo back" | Guard up, step straight back twice into a wall or corner (no talking) | 2 |
 | 7 | "Demo pivot" | Same start, pivot around an imaginary lead foot, finish at an angle throwing a 1-2 (side view, then from above if you can) | 3 |
 
