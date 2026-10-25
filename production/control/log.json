@@ -228,5 +228,10 @@
     "at": "2026-10-25T14:10:08Z",
     "who": "system",
     "text": "Sent the week (13 reels) to Telegram"
+  },
+  {
+    "at": "2026-10-25T14:27:59Z",
+    "who": "Claude",
+    "text": "Sunday: crons didn't fire, rendered next week by hand (27 of 28). Swapped 7 clips (head under text, sideways, legs only) and re-rendered. night-before-fight on hold: food clips are 1-2 s and crash the renderer, so 09:00 on 3 and 4 Nov is empty. Sent Matteo the 13 still unapproved."
   }
 ]
