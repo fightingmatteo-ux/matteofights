@@ -804,7 +804,10 @@
       },
       "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)",
       "app_audio": "id:496614019576474 Echo Sax Feeling Blue - Caleb Arredondo (add in the Instagram app)",
-      "video_asset_music": "lst-2026-10-24-training-too-long-music.mp4"
+      "video_asset_music": "lst-2026-10-24-training-too-long-music.mp4",
+      "audio_id": "496614019576474",
+      "audio_title": "Caleb Arredondo - Echo Sax Feeling Blue",
+      "audio_artist": "sovenhq"
     },
     {
       "id": "lst-2026-10-25-coach-sees",
