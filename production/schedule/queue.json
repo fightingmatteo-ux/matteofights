@@ -1463,13 +1463,17 @@
       "not_before": "2026-10-24T19:30:00Z",
       "min_gap_hours": 2.5,
       "approved": true,
-      "status": "queued",
+      "status": "posted",
       "crosspost_to": [],
       "slot_note": "15:30 NY talking-head slot. Old-style (v3 'film study') cut of the same hook, tested against the editorial cut posted 3 days earlier",
       "approved_note": "Matteo: approved the week via dashboard (2026-10-21T05:50:13Z)",
       "trial_set": "saenchai-v3",
       "opening": "question",
-      "length": "full"
+      "length": "full",
+      "posting_since": "2026-10-25T10:30:56Z",
+      "media_id": "18152424823555269",
+      "permalink": "https://www.instagram.com/reel/De6f422iGOu/",
+      "posted_at": "2026-10-25T10:31:41Z"
     },
     {
       "id": "saenchai-v3-C",
