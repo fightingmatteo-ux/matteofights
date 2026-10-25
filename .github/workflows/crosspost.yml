@@ -25,7 +25,11 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: master
+      - name: Lock (one runner at a time, tools/ops/lock.py)
+        id: lock
+        run: python3 -P tools/ops/lock.py acquire crosspost
       - name: Cross-post
+        if: steps.lock.outputs.go == 'yes'
         env:
           GH_TOKEN: ${{ github.token }}
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
@@ -38,7 +42,7 @@ jobs:
           R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
         run: python3 -m pip install -q pillow boto3 && python3 -P tools/crosspost/crosspost.py run
       - name: Save results and tell Matteo
-        if: always()
+        if: always() && steps.lock.outputs.go == 'yes'
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
@@ -57,10 +61,13 @@ jobs:
           git commit -qm "control: telegram sent"
           for n in 1 2 3; do git pull --rebase -q origin master && git push -q origin HEAD:master && break; sleep 5; done
       - name: Mirror state to D1
-        if: always()
+        if: always() && steps.lock.outputs.go == 'yes'
         continue-on-error: true
         env:
           CLOUDFLARE_D1_TOKEN: ${{ secrets.CLOUDFLARE_D1_TOKEN }}
         run: |
           git pull --rebase -q origin master || true
           python3 -P tools/state_mirror.py sync
+      - name: Release lock
+        if: always() && steps.lock.outputs.go == 'yes'
+        run: python3 -P tools/ops/lock.py release crosspost

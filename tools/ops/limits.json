@@ -1,0 +1,36 @@
+{
+  "_how": "Every free-tier limit the system lives inside, read by tools/ops/budget.py. Change a number here when a plan changes. Sources checked 2026-10-25: GitHub billing page (Pro via Student Pack), Modal Starter ($30/month credits, costbench.com), Cloudflare free plan (eastondev.com, verified 2026-06-01).",
+  "github": {
+    "plan": "Pro (GitHub Student Developer Pack, free until 2028)",
+    "included_minutes": 3000,
+    "switch_to_backup_pct": 85,
+    "billing_resets": "1st of the month (UTC)"
+  },
+  "modal": {
+    "plan": "Starter",
+    "monthly_credit_usd": 30,
+    "cpu_usd_per_core_second": 0.0000131,
+    "memory_usd_per_gib_second": 0.00000222,
+    "safety_factor": 1.5,
+    "profiles": {
+      "light": {"cpu": 1.0, "gib": 2},
+      "heavy": {"cpu": 4.0, "gib": 8},
+      "render": {"cpu": 8.0, "gib": 16},
+      "endpoint_per_call": {"cpu": 0.25, "gib": 0.25, "seconds": 70},
+      "watchdog_per_month": {"cpu": 0.25, "gib": 0.25, "seconds": 14400}
+    },
+    "essential_only_pct": 75,
+    "off_pct": 100
+  },
+  "cloudflare": {
+    "r2_storage_gb": 10,
+    "r2_class_a_ops_month": 1000000,
+    "r2_class_b_ops_month": 10000000,
+    "d1_storage_gb": 5,
+    "d1_rows_written_day": 100000,
+    "d1_rows_read_day": 5000000,
+    "workers_requests_day": 100000,
+    "pages_builds_month": 500
+  },
+  "alert_levels_pct": [70, 85, 95]
+}

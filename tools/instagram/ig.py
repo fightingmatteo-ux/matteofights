@@ -95,7 +95,7 @@ def refresh():
         lines = [l for l in ENV_FILE.read_text(encoding="utf-8").splitlines() if not l.startswith("IG_ACCESS_TOKEN=")]
         lines.insert(0, f"IG_ACCESS_TOKEN={r['access_token']}")
         ENV_FILE.write_text("\n".join(lines) + "\n", encoding="utf-8")
-    print(f"Token refreshed, valid for {r.get('expires_in', 0) // 86400} days." + ("" if ENV_FILE.exists() else " Update the IG_ACCESS_TOKEN secret."))
+    print(f"Token refreshed, valid for {r.get('expires_in', 0) // 86400} days." + ("" if ENV_FILE.exists() else " Update the IG_ACCESS_TOKEN secret.") + " Then: bash tools/ops/sync-secrets.sh --github (GitHub + the Modal backup)")
 
 
 def status(cid):

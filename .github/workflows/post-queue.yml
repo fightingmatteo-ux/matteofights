@@ -23,8 +23,12 @@ jobs:
     timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
+      - name: Lock (one runner at a time, tools/ops/lock.py)
+        id: lock
+        run: python3 -P tools/ops/lock.py acquire post-queue
       - name: Post next due item
         id: run
+        if: steps.lock.outputs.go == 'yes'
         env:
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
           FB_USER_TOKEN: ${{ secrets.FB_USER_TOKEN }}   # Audio API: items with app_audio get the library sound attached
@@ -35,7 +39,7 @@ jobs:
           python3 -m pip install -q boto3 || true
           python3 -P tools/instagram/run_queue.py
       - name: Save queue status
-        if: always()
+        if: always() && steps.lock.outputs.go == 'yes'
         run: |
           git diff --quiet production/schedule/queue.json && exit 0
           git config user.name "post-queue[bot]"
@@ -44,7 +48,7 @@ jobs:
           git commit -m "queue: $(python3 -c "import json;q=json.load(open('production/schedule/queue.json'));print(', '.join(i['id']+' '+i['status'] for i in q['items'] if i['status']!='queued'))")"
           for n in 1 2 3; do git pull --rebase -q && git push -q && break; sleep 5; done
       - name: Telegram (anything new for Matteo)
-        if: always()
+        if: always() && steps.lock.outputs.go == 'yes'
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
@@ -59,10 +63,13 @@ jobs:
           git commit -qm "control: telegram sent"
           for n in 1 2 3; do git pull --rebase -q && git push -q && break; sleep 5; done
       - name: Mirror state to D1
-        if: always()
+        if: always() && steps.lock.outputs.go == 'yes'
         continue-on-error: true
         env:
           CLOUDFLARE_D1_TOKEN: ${{ secrets.CLOUDFLARE_D1_TOKEN }}
         run: |
           git pull --rebase -q origin master || true
           python3 -P tools/state_mirror.py sync
+      - name: Release lock
+        if: always() && steps.lock.outputs.go == 'yes'
+        run: python3 -P tools/ops/lock.py release post-queue

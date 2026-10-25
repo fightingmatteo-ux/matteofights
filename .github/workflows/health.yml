@@ -22,6 +22,17 @@ jobs:
       - uses: actions/checkout@v4
       - name: Check
         run: python3 -P tools/health/check.py
+      - name: Free limits (GitHub minutes, Modal credits, R2, Pages; tools/ops/budget.py)
+        continue-on-error: true
+        env:
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          BILLING_TOKEN: ${{ secrets.BILLING_TOKEN }}   # optional: exact minutes from GitHub's billing API
+        run: |
+          python3 -m pip install -q boto3 pyyaml 2>/dev/null || true
+          python3 -P tools/ops/budget.py
       - name: Tell Matteo (new problems only)
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}

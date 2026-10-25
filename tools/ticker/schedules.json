@@ -1,0 +1,43 @@
+{
+  "carousel.yml": [
+    "20 6 * * 1"
+  ],
+  "competitors.yml": [
+    "0 6 * * 1"
+  ],
+  "control-deploy.yml": [
+    "50 */6 * * *"
+  ],
+  "crosspost.yml": [
+    "15 */6 * * *"
+  ],
+  "health.yml": [
+    "25 */6 * * *"
+  ],
+  "hook-tests.yml": [
+    "40 */6 * * *"
+  ],
+  "listicle-factory.yml": [
+    "0 7 * * 6",
+    "0 9 * * 0",
+    "40 9 * * 0",
+    "20 10 * * 0",
+    "0 11 * * 0",
+    "10 20 * * *"
+  ],
+  "platform-stats.yml": [
+    "20 */6 * * *"
+  ],
+  "post-queue.yml": [
+    "5 */3 * * *"
+  ],
+  "signup-deploy.yml": [
+    "17 6 * * *"
+  ],
+  "sound-scout.yml": [
+    "40 6 * * 1"
+  ],
+  "state-export.yml": [
+    "17 4 * * *"
+  ]
+}

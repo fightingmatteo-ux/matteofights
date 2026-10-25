@@ -286,7 +286,7 @@ def threads_refresh():
         {"grant_type": "th_refresh_token", "access_token": os.environ["THREADS_ACCESS_TOKEN"]}))
     set_env("THREADS_ACCESS_TOKEN", t["access_token"])
     print(f"Refreshed (~{t.get('expires_in', 0) // 86400} days). Update the GitHub secret: "
-          "gh secret set THREADS_ACCESS_TOKEN < (value from secrets/crosspost.env)")
+          "bash tools/ops/sync-secrets.sh --github  (GitHub + the Modal backup, values from secrets/*.env)")
 
 
 # ---------------------------------------------------------------- Facebook (Page "Matteo Fights" Reels)

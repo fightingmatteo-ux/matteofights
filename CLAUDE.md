@@ -22,7 +22,9 @@ task needs it. Open items: [STATUS.md](STATUS.md) (read at session start, update
 - Copy: no em dashes in user-facing text. Voice: [context/voice.md](context/voice.md).
 - **Free-tier Actions budget (2026-10-25):** private repos get 2,000 min/month (3,000 with GitHub Pro / Student
   Pack). Never add a workflow that runs on every push or more often than every 3 h; timed work goes through the
-  Cloudflare ticker (free), heavy work (renders) through Modal. Each job bills at least 1 minute.
+  Cloudflare ticker (free), heavy work (renders) through Modal. Each job bills at least 1 minute. Every job has a
+  free backup (Modal, same workflow file; [tools/ops/README.md](tools/ops/README.md)); keep new workflows runnable
+  there (`python3 -P tools/ops/runner.py check`) and new limits in `tools/ops/limits.json`.
 - Analytics files are dated snapshots: pull live (Buzzfy first, Windsor `instagram` 17841465098113052 as
   fallback) when current numbers matter, then write a fresh snapshot.
 
@@ -52,7 +54,8 @@ task needs it. Open items: [STATUS.md](STATUS.md) (read at session start, update
 | Live state (queue, cross-posts, render jobs) | Cloudflare D1 `matteofights`; JSON files in `production/schedule` are the truth until the cutover flag in `tools/cloud/cloud.json` | [tools/cloud/README.md](tools/cloud/README.md) |
 | Videos | R2 `matteofights-media` (`renders/`), `media` GitHub release as fallback | [tools/cloud/README.md](tools/cloud/README.md) |
 | Renders | Modal app `matteofights-render` (`tools/render/submit.py`) | [tools/render/README.md](tools/render/README.md) |
-| Posting timer | Cloudflare Worker `matteo-ticker` (every 5 min: slots + due queue items) | `tools/ticker/worker.js` |
+| Posting timer + router | Cloudflare Worker `matteo-ticker` (every 5 min: slots, due queue items; sends each job to GitHub or the Modal backup) | `tools/ticker/worker.js`, [tools/ops/README.md](tools/ops/README.md) |
+| Backup runner (free) | Modal `matteofights-ops` runs the same workflow files when GitHub can't (minutes, billing, outage); D1 lease stops doubles; budget watcher in Health check | [tools/ops/README.md](tools/ops/README.md) |
 | Posting / cross-posting / listicles | GitHub Actions: Post queue, Cross-post, Listicle factory, Control | `.github/workflows/` |
 | Control center (Matteo works from here) | control.matteofights.me: Home (approve), Studio (upload footage, revision notes, talking points, live edits/renders), Results, Decide; Telegram @matteofights_control_bot | [control-site/SETUP.md](control-site/SETUP.md) |
 | Edit worker / talking points (Claude, Sonnet, capped) | GitHub "Edit worker" (started by uploads + notes, 3 runs/day), "Talking points" (Mondays) | [tools/edit/WORKER.md](tools/edit/WORKER.md), [TALKING-POINTS.md](tools/edit/TALKING-POINTS.md) |
