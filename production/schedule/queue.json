@@ -796,7 +796,7 @@
       "not_before": "2026-10-25T01:30:00Z",
       "min_gap_hours": 2.5,
       "approved": true,
-      "status": "queued",
+      "status": "posted",
       "test": {
         "exp": "exp-1016-hook_style",
         "variant": "b",
@@ -807,7 +807,11 @@
       "video_asset_music": "lst-2026-10-24-training-too-long-music.mp4",
       "audio_id": "496614019576474",
       "audio_title": "Caleb Arredondo - Echo Sax Feeling Blue",
-      "audio_artist": "sovenhq"
+      "audio_artist": "sovenhq",
+      "posting_since": "2026-10-25T16:00:06Z",
+      "media_id": "18077274071460612",
+      "permalink": "https://www.instagram.com/reel/De7FklVj_4F/",
+      "posted_at": "2026-10-25T16:01:00Z"
     },
     {
       "id": "lst-2026-10-25-coach-sees",
