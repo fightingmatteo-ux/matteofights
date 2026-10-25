@@ -531,19 +531,26 @@ def run_platform(name, cfg, state, items, done, dry):
     t_now = dt.datetime.now(dt.timezone.utc)
     since = max(cfg.get("since") or now(), iso(t_now - dt.timedelta(days=LOOKBACK_DAYS)))
     last = parse_iso(cfg["last_slot"]) + dt.timedelta(minutes=1) if cfg.get("last_slot") else None
-    winners = bool(cfg.get("winners"))  # Facebook: only the daily pick, timed from when it was picked
-    ref = (lambda x: (x.get("fb_pick") or {}).get("at") or "") if winners else (lambda x: x.get("posted_at") or "")
-    for it in sorted(items, key=ref):
-        if it.get("status") != "posted" or ref(it) < since or not it.get("video_asset"):
+    winners = bool(cfg.get("winners"))  # Facebook: daily pick or talking-head winner
+    def get_ref(x):
+        if winners and x.get("format") != "talking head":
+            return (x.get("fb_pick") or {}).get("at") or ""
+        return x.get("posted_at") or ""
+    for it in sorted(items, key=get_ref):
+        ref_val = get_ref(it)
+        if it.get("status") != "posted" or ref_val < since or not it.get("video_asset"):
             continue
-        if winners and ((it.get("posted_at") or "") < cfg.get("since", "") or not it.get("video_asset_fb")):
-            continue
+        if winners:
+            if (it.get("posted_at") or "") < cfg.get("since", ""):
+                continue
+            if it.get("format") != "talking head" and not (it.get("video_asset_fb") or it.get("video_asset_music")):
+                continue
         rec = state["posts"].setdefault(it["id"], {}).get(name, {})
         if rec.get("status") in ("posted", "skipped") or rec.get("tries", 0) >= MAX_TRIES:
             continue
         if "crosspost_to" in it and name not in it["crosspost_to"]:
             continue  # hook variants of one video: each goes to its own platform, never the same clip twice
-        after = parse_iso(ref(it)) + dt.timedelta(minutes=cfg.get("min_delay_min", 0))
+        after = parse_iso(get_ref(it)) + dt.timedelta(minutes=cfg.get("min_delay_min", 0))
         after = max(after, last) if last else after
         slot = next_slot(after, cfg["slots"]) if cfg.get("slots") else after
         if slot > t_now:

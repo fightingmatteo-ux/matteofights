@@ -482,7 +482,8 @@
       "approved": true,
       "status": "posted",
       "crosspost_to": [
-        "threads"
+        "threads",
+        "facebook"
       ],
       "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:32Z)",
       "slot_note": "15:30 NY talking-head slot (Matteo 2026-10-20)",
@@ -508,9 +509,7 @@
       "min_gap_hours": 2.5,
       "approved": true,
       "status": "posted",
-      "crosspost_to": [
-        "facebook"
-      ],
+      "crosspost_to": [],
       "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:32Z)",
       "slot_note": "15:30 NY talking-head slot (Matteo 2026-10-20)",
       "posting_since": "2026-10-22T19:31:01Z",
@@ -942,7 +941,11 @@
       "media_id": "18160145677526865",
       "permalink": "https://www.instagram.com/reel/Detl951FIOw/",
       "posted_at": "2026-10-20T10:14:43Z",
-      "video_asset_music": "lst-2026-10-18-round-three-music.mp4"
+      "video_asset_music": "lst-2026-10-18-round-three-music.mp4",
+      "fb_pick": {
+        "at": "2026-10-25T19:30:00Z",
+        "reason": "6452 views top winner"
+      }
     },
     {
       "id": "lst-2026-10-19-first-body-shot",
@@ -1481,7 +1484,9 @@
       "min_gap_hours": 2.5,
       "approved": true,
       "status": "posted",
-      "crosspost_to": [],
+      "crosspost_to": [
+        "facebook"
+      ],
       "slot_note": "15:30 NY talking-head slot. Old-style (v3 'film study') cut of the same hook, tested against the editorial cut posted 3 days earlier",
       "approved_note": "Matteo: approved the week via dashboard (2026-10-21T05:50:13Z)",
       "trial_set": "saenchai-v3",
