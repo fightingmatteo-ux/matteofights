@@ -1198,9 +1198,12 @@
         "One bad month doesn't end what you're building."
       ],
       "caption": "One bad round doesn't lose you the fight.\nOne bad month doesn't end what you're building.\n\nFighters know how to lose a round and still win the night.\n\n1. Sit on the stool\n2. Fix one thing\n3. Go out for the next round\n\nFollow for the fighter's side of building something.\n\n#fightermindset #entrepreneur #discipline",
-      "status": "ready",
+      "status": "rendered",
       "format": "builder",
-      "clip_id": "1i9iXjD3ZNLP9o_TUUsOUsiz8CROpoTEW"
+      "clip_id": "1i9iXjD3ZNLP9o_TUUsOUsiz8CROpoTEW",
+      "clip": "bagwork fitness first.MOV (1i9iXjD3ZNLP9o_TUUsOUsiz8CROpoTEW)",
+      "queue_id": "lst-2026-10-31-bad-round-building",
+      "rendered_at": "2026-10-25T13:37Z"
     },
     {
       "id": "footwork-drills",
@@ -1211,10 +1214,13 @@
         "Their feet decide if the hands ever land."
       ],
       "caption": "Most people train their hands.\nTheir feet decide if the hands ever land.\n\n6 footwork drills that make you harder to hit:\n\n1. Line drill: step in and out on a line, stay in stance\n2. Pivot off the lead foot, 20 times each side\n3. One round of shadowboxing with steps only, no punches\n4. Mirror drill: copy a partner's feet for a round\n5. Agility ladder in your stance, not running\n6. Cut off an imaginary ring, never cross your feet\n\nSave this before your next session.\n\n#boxingtraining #footwork #boxing #muaythai",
-      "status": "ready",
+      "status": "rendered",
       "format": "listicle",
       "clip_id": "1uVAp54Z25ALdUMjvgzyrxX3xELKaNQN-",
-      "tease": "Do #6 every session"
+      "tease": "Do #6 every session",
+      "clip": "IMG_1543.MOV (1uVAp54Z25ALdUMjvgzyrxX3xELKaNQN-)",
+      "queue_id": "lst-2026-11-01-footwork-drills",
+      "rendered_at": "2026-10-25T13:39Z"
     },
     {
       "id": "sparring-isnt-fighting",
@@ -1225,9 +1231,12 @@
         "Learn nothing for a year."
       ],
       "caption": "Win every round in sparring.\nLearn nothing for a year.\n\nSparring is where you try the thing you're bad at. Fight night is where you use the thing you're good at.\n\n1. Lose rounds on purpose\n2. Try the new combo\n3. Save winning for the fight\n\nSave this before your next session.\n\n#sparring #boxing #muaythai",
-      "status": "ready",
+      "status": "rendered",
       "format": "statement",
-      "clip_id": "1jDHxrjde9bZ4aWlA2BqIfwFLqYdfEqCR"
+      "clip_id": "1jDHxrjde9bZ4aWlA2BqIfwFLqYdfEqCR",
+      "clip": "sparring success gym hero.mov (1jDHxrjde9bZ4aWlA2BqIfwFLqYdfEqCR)",
+      "queue_id": "lst-2026-11-02-sparring-isnt-fighting",
+      "rendered_at": "2026-10-25T13:41Z"
     }
   ]
 }
