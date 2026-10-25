@@ -8,7 +8,7 @@
       "slots": [
         "19:30"
       ],
-      "last_slot": "2026-10-21T23:30:00Z",
+      "last_slot": "2026-10-25T23:30:00Z",
       "winners": {
         "min_age_hours": 72,
         "max_age_days": 7,
@@ -570,7 +570,14 @@
       }
     },
     "saenchai-v3-A": {},
-    "saenchai-v3-B": {},
+    "saenchai-v3-B": {
+      "facebook": {
+        "status": "posted",
+        "at": "2026-10-25T23:36:32Z",
+        "id": "1050971574665685",
+        "url": "https://www.facebook.com/reel/1050971574665685"
+      }
+    },
     "lst-2026-10-23-recovery-twice-a-day": {
       "threads": {
         "status": "posted",
