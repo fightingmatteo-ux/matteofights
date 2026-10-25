@@ -187,7 +187,7 @@
     "energy": 2,
     "mood": "neutral",
     "usable": true,
-    "problems": "orientation flips mid clip, small",
+    "problems": "orientation flips mid clip, small; good moment 37.0 renders sideways (10-25)",
     "catalogued": "2026-10-16T11:02:27Z",
     "by": "Claude (session, clip sheet)"
   },

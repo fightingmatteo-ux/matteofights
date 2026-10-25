@@ -29,14 +29,13 @@
     "by": "Claude (session, rubric context/boxing-technique.md)"
   },
   "14FI6N5qWI7__IS40ii1DpUcrxnnVMmKT": {
-    "good": [
-      37.0
-    ],
+    "good": [],
     "bad": [
-      50.2,
       2.6,
+      14.6,
       25.8,
-      14.6
+      37.0,
+      50.2
     ],
     "notes": "ring sparring through ropes; phone rotates mid-clip, only B holds; others tiny or flip orientation",
     "graded": "2026-10-15T20:00:47Z",
