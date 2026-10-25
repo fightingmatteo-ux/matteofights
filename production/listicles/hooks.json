@@ -1183,10 +1183,11 @@
         "Fighters eat what they always eat."
       ],
       "caption": "Try something new and you'll feel it in round one.\nFighters eat what they always eat.\n\nWhat fighters eat the night before a fight:\n\n1. Rice or pasta, food they've eaten a hundred times\n2. A normal portion of chicken or fish\n3. Nothing spicy, nothing new\n4. Water through the day, not a litre at midnight\n5. Done eating a few hours before bed\n\nSave this for your fight week.\n\n#fighter #muaythai #fightnight #boxing",
-      "status": "ready",
+      "status": "hold",
       "format": "lifestyle",
       "clip_id": "1TvIhoAsluCfJNG6Z-14q3Ku0KuSRCaiw",
-      "tease": "Not what you think"
+      "tease": "Not what you think",
+      "hold_reason": "lifestyle food clips are 1-2 s; the renderer crashes on them (STATUS 10-25). Needs a longer food clip."
     },
     {
       "id": "bad-round-building",

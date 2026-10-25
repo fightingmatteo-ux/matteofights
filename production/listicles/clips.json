@@ -619,7 +619,7 @@
     "energy": 2,
     "mood": "lifestyle",
     "usable": true,
-    "problems": "messy table, paper bag",
+    "problems": "messy table, paper bag; about 2 s long: renderer crashes on it, 2026-10-25",
     "catalogued": "2026-10-16T11:02:27Z",
     "by": "Claude (session, clip sheet)"
   },
