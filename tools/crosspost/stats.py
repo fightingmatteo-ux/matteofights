@@ -60,7 +60,7 @@ def main():
     old = json.loads(OUT.read_text(encoding="utf-8")) if OUT.exists() else {}
     out = {"updated": xp.now(), "platforms": {}, "posts": {}, "inbox": []}
     since_inbox = recent_iso(INBOX_DAYS)
-    recent_posts = [i for i in queue if i.get("status") == "posted" and (i.get("posted_at") or "") >= recent_iso(10)]
+    recent_posts = [i for i in queue if i.get("status") == "posted" and (i.get("posted_at") or "") >= recent_iso(35)]
 
     # ------------------------------------------------ Instagram
     ig_tok = os.environ.get("IG_ACCESS_TOKEN")
