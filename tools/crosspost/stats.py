@@ -110,6 +110,28 @@ def main():
                                      "answered": any((r.get("from") or {}).get("id") == page for r in (c.get("comments") or {}).get("data", []))})
         out["platforms"]["facebook"] = fb
         insights_ok = None  # needs read_insights on the Page token (tools/crosspost/README.md, Facebook)
+        FB_METRICS = ["post_impressions_unique", "blue_reels_play_count", "fb_reels_total_plays", "fb_reels_replay_count",
+                      "post_video_avg_time_watched", "post_video_followers", "post_video_social_actions"]
+        fb_valid = None  # Meta renames reel metrics now and then: the first reel finds which ones still exist
+
+        def fb_insights(vid):
+            nonlocal fb_valid
+            if fb_valid is None:
+                fb_valid, seen = [], {}
+                for mname in FB_METRICS:
+                    try:
+                        d = get(f"{xp.FB}/{vid}/video_insights", access_token=fb_tok, metric=mname)
+                        fb_valid.append(mname)
+                        seen.update({x["name"]: x for x in d.get("data", [])})
+                    except Exception as e:
+                        if "valid insights metric" not in str(e):
+                            fb_valid = None
+                            raise
+                print("  facebook insight metrics:", ", ".join(fb_valid) or "none")
+                return list(seen.values())
+            if not fb_valid:
+                return []
+            return get(f"{xp.FB}/{vid}/video_insights", access_token=fb_tok, metric=",".join(fb_valid)).get("data", [])
         for qid, recs in state["posts"].items():
             for name in ("facebook", "facebook_slides"):
                 r = recs.get(name)
@@ -118,11 +140,8 @@ def main():
                     if name != "facebook" or insights_ok is False or (r.get("at") or "") < recent_iso(10):
                         continue
                     try:  # reach, plays, replays and watch time per reel
-                        ins = get(f"{xp.FB}/{r['id']}/video_insights", access_token=fb_tok,
-                                  metric="post_impressions_unique,blue_reels_play_count,fb_reels_replay_count,"
-                                         "post_video_avg_time_watched,post_video_followers,post_video_social_actions")
-                        m = {x["name"]: (x.get("values") or [{}])[0].get("value") for x in ins.get("data", [])}
-                        rec.update(reach=m.get("post_impressions_unique"), plays=m.get("blue_reels_play_count"),
+                        m = {x["name"]: (x.get("values") or [{}])[0].get("value") for x in fb_insights(r["id"])}
+                        rec.update(reach=m.get("post_impressions_unique"), plays=m.get("blue_reels_play_count") or m.get("fb_reels_total_plays"),
                                    replays=m.get("fb_reels_replay_count"), follows=m.get("post_video_followers"),
                                    avg_watch_s=round(m["post_video_avg_time_watched"] / 1000, 1) if m.get("post_video_avg_time_watched") else None)
                         if rec.get("views") is None and rec.get("plays") is not None:
