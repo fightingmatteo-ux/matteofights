@@ -9,10 +9,10 @@ Each platform gets its own shape (research 2026-10-16, see tools/crosspost/READM
 import re
 
 IG_ONLY = re.compile(r"(link in (my )?bio|repost this|follow @|on instagram|comment help|dm .?help)", re.I)
-QUESTION = "Which one is you? Drop the number."
+QUESTION = "Which one took you the longest to learn?"
 FB_TAGS = "#fightermindset #mma #boxing"
 YT_TAGS = "#fightermindset #mma #boxing"
-TOPIC = "Fight Psychology"
+TOPIC = "Combat Sports"
 
 
 def parse(text, hook=""):
