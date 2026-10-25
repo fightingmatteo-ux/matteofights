@@ -27,6 +27,8 @@ Sort by follows per 1k views when looking for what grows the account.
 | 2026-10-20 | lst-2026-10-20-nerves-never-leave | - | 18122787526941210 | THE NERVES BEFORE SPARRING NEVER FULLY GO AWAY | statement (identity) | text-on-clip | trial | 2644 (1.00x) | ? | 1 | 1 | 0 | no | flat |
 | 2026-10-20 | lst-2026-10-20-dangerous-without-a-partner | - | 17944591215360078 | 8 WAYS TO GET DANGEROUS WITHOUT A TRAINING PARTNER | listicle (tactical) | text-on-clip | trial | 3327 (1.26x) | ? | 3 | 21 | 0 | no | tactical saves again (21) |
 | 2026-10-21 | lst-2026-10-20-go-anyway | - | 18603509794071360 | FIGHTERS AREN'T FEARLESS. THEY JUST GO ANYWAY. | statement (identity) | text-on-clip | trial | 1199 (0.45x) | ? | 1 | 1 | 0 | no | worst reel of the run: 0.45x, 4.4 s watch, 49% skip |
+| 2026-10-25 | saenchai-editorial | B | 18124280446899296 | Always sparring someone bigger? Steal this from Saenchai | talking head, question opening, full | own experience | trial | 2568 (0.97x) | ? | 6 | 33 | | **WINNER** | 68% past 3 s, 16.3 s watch, score 1.0 (auto verdict) |
+| 2026-10-25 | saenchai-editorial | C | 17912911344520196 | Bigger guys win the trade. Saenchai never traded | talking head, contrast opening, full | own experience | trial | 1857 (0.70x) | ? | 2 | 14 | | no | 62% past 3 s, 15.5 s watch, score 0.823 (auto verdict) |
 
 ## Patterns so far
 - _Add a line whenever a test is decided. Keep it to what the numbers showed._
@@ -35,3 +37,4 @@ Sort by follows per 1k views when looking for what grows the account.
 - 2026-10-23 (normal 3097): first 2x winner is tactical (round three, 6397). Top 3 listicles by views: 2 tactical + 1 identity; top 3 by saves all tactical (50, 50, 34). n=17 text-on-clip.
 - 2026-10-24 (normal dropped to 2651 with 5 a day): statements are the weakest format so far, n=4 (hint, not yet a rule), 0.45-1.09x views and 1-3 saves each (go anyway 1199, worst of the run). Tactical listicles keep 21-50 saves (n=8). Saenchai talking heads (n=3) save 13-33 at 15-16 s watch.
 - 2026-10-24 (auto, freeze-in-sparring): contrast opening won over reframe, contrast.
+- 2026-10-25 (auto, saenchai-editorial): question opening won over story, contrast.

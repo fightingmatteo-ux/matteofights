@@ -62,5 +62,69 @@
         "follows": null
       }
     ]
+  },
+  "saenchai-editorial": {
+    "decided_at": "2026-10-25T21:13:18Z",
+    "winner": "saenchai-B",
+    "too_close": false,
+    "metrics_used": [
+      "hold",
+      "watch",
+      "reach",
+      "keep"
+    ],
+    "variants": [
+      {
+        "id": "saenchai-B",
+        "variant": "B",
+        "hook": "Always sparring someone bigger? Steal this from Saenchai",
+        "opening": "question",
+        "length": "full",
+        "media_id": "18124280446899296",
+        "permalink": "https://www.instagram.com/reel/DexKfNuDZUl/",
+        "score": 1.0,
+        "views": 2568,
+        "reach": 2196,
+        "shares": 6,
+        "saves": 33,
+        "avg_watch_s": 16.3,
+        "skip_rate": 32.3,
+        "follows": null
+      },
+      {
+        "id": "saenchai-A",
+        "variant": "A",
+        "hook": "Saenchai fought bigger men his whole career",
+        "opening": "story",
+        "length": "full",
+        "media_id": "18033600278853405",
+        "permalink": "https://www.instagram.com/reel/DeupTI6AQXt/",
+        "score": 0.899,
+        "views": 2036,
+        "reach": 1789,
+        "shares": 7,
+        "saves": 23,
+        "avg_watch_s": 15.3,
+        "skip_rate": 38.9,
+        "follows": null
+      },
+      {
+        "id": "saenchai-C",
+        "variant": "C",
+        "hook": "Bigger guys win the trade. Saenchai never traded",
+        "opening": "contrast",
+        "length": "full",
+        "media_id": "17912911344520196",
+        "permalink": "https://www.instagram.com/reel/DezvTk8DwrQ/",
+        "score": 0.823,
+        "views": 1857,
+        "reach": 1639,
+        "shares": 2,
+        "saves": 14,
+        "avg_watch_s": 15.5,
+        "skip_rate": 38.4,
+        "follows": null
+      }
+    ]
   }
 }
