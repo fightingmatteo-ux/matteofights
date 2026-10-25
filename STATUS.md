@@ -59,6 +59,7 @@ Log: `media/2026-10-16-saenchai-bigger-men/renders/render_bc.log` (ends with `AL
 | Next week's 21 listicles (18 to 28 Oct) | **MATTEO** | Reviewed, 6 clips swapped and re-rendered 10-18 15:00Z. Waiting on his yes (dashboard / Telegram / chat). #1 posts 12:30 NY today only if approved |
 | control.matteofights.me | OK | Live behind Cloudflare Access (checked 10-18) |
 | Style lab next aspect (10-24) | OPEN | hook_style is fully tested (native won). Add a new lab aspect before the next Saturday proposal: hook position (lower plate, faces kept clear; the 10-20 review swapped 6 clips for text over the face) or sound. Code in tools/style/lab.py ASPECTS + tools/listicle/render.py |
+| Renderer crash on very short clips (10-25) | OPEN | tools/listicle/render.py: a ~1 s clip (cooking 1rf6iJDQ) gives a negative fade start (st=-1.90) and ffmpeg exits 222, killing the whole factory run. Clamp fade starts or skip clips under ~3 s; until then don't pick that clip |
 
 ## Rules (short)
 

@@ -667,7 +667,7 @@
     "energy": 2,
     "mood": "lifestyle",
     "usable": true,
-    "problems": "",
+    "problems": "; about 1 s long: the new renderer crashes on it (negative fade start in render.py), 2026-10-25",
     "catalogued": "2026-10-16T11:02:27Z",
     "by": "Claude (session, clip sheet)"
   },
