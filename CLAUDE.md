@@ -23,6 +23,17 @@ task needs it. Open items: [STATUS.md](STATUS.md) (read at session start, update
 - Analytics files are dated snapshots: pull live (Buzzfy first, Windsor `instagram` 17841465098113052 as
   fallback) when current numbers matter, then write a fresh snapshot.
 
+## Delegation (save the Claude weekly limit)
+
+- **Claude decides and does; free models draft and read.** Hand bulk text work to `tools/ai/ask.py` (Gemini first,
+  then OpenRouter free, then local Ollama; daily caps, free keys only, billing stays OFF; see its docstring).
+  Delegate: batches of rough hook angles, summaries of long logs/transcripts/competitor data, first-draft captions.
+  Keep on Claude: final hooks and captions, anything touching the queue, posting or `tools/state.py`, editing,
+  agent work. Never send tokens, secrets or private DMs to a free model.
+- Exit 2/3 from `ask.py` means no free model is available: do the job yourself, do not retry in a loop.
+- Default to Sonnet (`/model sonnet`); Opus only for hard problems. Read files in parts, not whole dumps.
+- Adding a tool later = one entry in `tools/ai/providers.json`.
+
 ## Content direction (Matteo, standing)
 
 - **Topic:** combat-sport psychology and fighter mindset, not injury stories. Adjacent lifestyle lane (nutrition,

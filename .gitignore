@@ -63,3 +63,6 @@ control-site/public/videos/
 # RVM model + venv for the editorial cut-out (make.sh)
 *.onnx
 .superpowers/
+
+# AI helper daily counters
+.ai-usage.json

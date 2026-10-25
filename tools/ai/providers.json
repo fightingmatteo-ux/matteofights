@@ -1,0 +1,14 @@
+{
+  "_doc": "Free models Claude can hand work to. Tried in order per task; a provider with no key, or past its daily cap, is skipped. To add a tool later: add an entry (kind 'gemini' or 'openai' = any OpenAI-compatible API: OpenRouter, Groq, Mistral, a local Ollama). Caps are ours, set below the real free limit.",
+  "providers": [
+    {"name": "gemini-flash", "kind": "gemini", "model": "gemini-2.5-flash", "key_env": "GEMINI_API_KEY", "daily_cap": 15},
+    {"name": "gemini-lite", "kind": "gemini", "model": "gemini-2.5-flash-lite", "key_env": "GEMINI_API_KEY", "daily_cap": 15},
+    {"name": "openrouter-free", "kind": "openai", "base_url": "https://openrouter.ai/api/v1", "model": "openrouter/free", "key_env": "OPENROUTER_API_KEY", "daily_cap": 30},
+    {"name": "ollama-local", "kind": "openai", "base_url": "http://localhost:11434/v1", "model": "qwen3:4b", "key_env": null, "daily_cap": 500}
+  ],
+  "tasks": {
+    "bulk": ["gemini-lite", "gemini-flash", "openrouter-free", "ollama-local"],
+    "draft": ["gemini-flash", "openrouter-free", "gemini-lite", "ollama-local"],
+    "summarize": ["gemini-lite", "gemini-flash", "openrouter-free", "ollama-local"]
+  }
+}
