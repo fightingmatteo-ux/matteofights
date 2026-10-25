@@ -1,7 +1,7 @@
 {
   "_how": "Every free-tier limit the system lives inside, read by tools/ops/budget.py. Change a number here when a plan changes. Sources checked 2026-10-25: GitHub billing page (Pro via Student Pack), Modal Starter ($30/month credits, costbench.com), Cloudflare free plan (eastondev.com, verified 2026-06-01).",
   "github": {
-    "plan": "Pro (GitHub Student Developer Pack, free until 2028)",
+    "plan": "Pro (GitHub Student Developer Pack, free until 2028). Repo made PUBLIC 2026-10-25: unlimited free minutes; the budget below only applies if it goes private again",
     "included_minutes": 3000,
     "switch_to_backup_pct": 85,
     "billing_resets": "1st of the month (UTC)"

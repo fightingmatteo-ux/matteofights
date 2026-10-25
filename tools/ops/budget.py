@@ -54,6 +54,11 @@ def _ts(s):
 # ---------------------------------------------------------------- GitHub
 
 def github_minutes(month_start):
+    try:  # public repos get unlimited free minutes on standard runners: nothing to budget
+        if not _gh(f"/repos/{REPOSITORY}").get("private", True):
+            return 0, "public repo: unlimited free minutes"
+    except Exception as e:  # noqa: BLE001
+        print(f"repo visibility unreadable ({e}); budgeting as private", file=sys.stderr)
     tok = os.environ.get("BILLING_TOKEN")
     if tok:
         try:

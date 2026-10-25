@@ -8,7 +8,7 @@ Legend: **DO** = needs action now, **MATTEO** = only Matteo can do it, **WAIT** 
 
 | # | Item | Status | Next step |
 |---|---|---|---|
-| 0 | **GitHub Actions out of minutes (Pro via Student Pack = 3,000/month, used up 2026-10-25 ~00:30 UTC; resets Nov 1)** | **MATTEO: run `bash tools/ops/deploy.sh` on the laptop** | Cause: ~3,500 min this month (Deploy control center on every push, Post queue every 30 min); triggers cut ~70% on 10-25. Fix built 10-25 (tools/ops/README.md): free Modal backup runs the same workflow files, the ticker routes jobs (GitHub -> Modal on refusal or >= 85% minutes), D1 lease stops doubles, budget watcher alerts at 70/85/95% of every free limit. Nothing posts until deploy.sh runs. After that: posting resumes within 5 min; Telegram confirms the switch |
+| 0 | GitHub Actions out of minutes (2026-10-25 ~00:30 UTC) | OK (10-25 17:15 BKK) / **MATTEO later** | Fixed by making the repo PUBLIC (unlimited free minutes; history scanned clean for keys first). Health check ran OK at 10:16Z. Triggers also cut ~70%. Still to do when at the laptop: `bash tools/ops/deploy.sh` (free Modal backup + ticker router, tools/ops/README.md) so a GitHub outage never stops posting again. Media release is public too (incl. ~22 third-party reference videos; Matteo OK with it) |
 | 1 | Saenchai v3 render A | OK | Rendered, on `media` release (10-18 12:55Z), Drive upload triggered 13:05Z |
 | 2 | Saenchai v3 render B | **DO / MATTEO** | Render died ~17:44 local, nothing running. Matteo starts it (command below). Then `media.sh push` + `drive-upload.yml` |
 | 3 | Saenchai v3 render C | **DO / MATTEO** | Not started. Run after B finishes, never in parallel |
