@@ -39,6 +39,9 @@
       "Skip the slot for now",
       "Send me other talking points"
     ],
-    "status": "open"
+    "status": "answered",
+    "answer": "Filming this week",
+    "answered_at": "2026-10-25T12:24:54Z",
+    "via": "dashboard"
   }
 ]
