@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-25T14:59:32Z",
+  "updated": "2026-10-25T15:01:38Z",
   "platforms": {
     "instagram": {
       "followers": 2046,
@@ -14,7 +14,7 @@
     },
     "facebook": {
       "followers": 1293,
-      "insights": false,
+      "insights": true,
       "enabled": true,
       "last_post": "2026-10-21T23:36:19Z",
       "failed": [],
@@ -66,7 +66,12 @@
       },
       "facebook": {
         "views": 107,
-        "url": "https://www.facebook.com/reel/29282185481389743"
+        "url": "https://www.facebook.com/reel/29282185481389743",
+        "reach": null,
+        "plays": 76,
+        "replays": 31,
+        "follows": 0,
+        "avg_watch_s": 4.5
       },
       "facebook_slides": {
         "views": null,
@@ -98,7 +103,12 @@
       },
       "facebook": {
         "views": 30,
-        "url": "https://www.facebook.com/reel/1835746304451116"
+        "url": "https://www.facebook.com/reel/1835746304451116",
+        "reach": null,
+        "plays": 21,
+        "replays": 9,
+        "follows": 0,
+        "avg_watch_s": 7.2
       },
       "facebook_slides": {
         "views": null,
@@ -130,7 +140,12 @@
       },
       "facebook": {
         "views": 14,
-        "url": "https://www.facebook.com/reel/1463427735631609"
+        "url": "https://www.facebook.com/reel/1463427735631609",
+        "reach": null,
+        "plays": 12,
+        "replays": 2,
+        "follows": 0,
+        "avg_watch_s": 75.3
       },
       "facebook_slides": {
         "views": null,
@@ -145,7 +160,7 @@
         "url": "https://www.threads.com/@matteofights/post/Dek42IGkr_W"
       },
       "youtube": {
-        "views": 2238,
+        "views": 2241,
         "likes": 21,
         "comments": 2,
         "url": "https://youtube.com/shorts/gxcBdiuSDpU"
@@ -162,7 +177,12 @@
       },
       "facebook": {
         "views": 38,
-        "url": "https://www.facebook.com/reel/987115153732256"
+        "url": "https://www.facebook.com/reel/987115153732256",
+        "reach": null,
+        "plays": 25,
+        "replays": 13,
+        "follows": 0,
+        "avg_watch_s": 15.9
       },
       "facebook_slides": {
         "views": null,
@@ -194,7 +214,12 @@
       },
       "facebook": {
         "views": 39,
-        "url": "https://www.facebook.com/reel/1751464386119278"
+        "url": "https://www.facebook.com/reel/1751464386119278",
+        "reach": null,
+        "plays": 19,
+        "replays": 20,
+        "follows": 0,
+        "avg_watch_s": 8.0
       },
       "threads": {
         "views": 18,
@@ -222,7 +247,12 @@
       },
       "facebook": {
         "views": 17,
-        "url": "https://www.facebook.com/reel/1076072028571420"
+        "url": "https://www.facebook.com/reel/1076072028571420",
+        "reach": null,
+        "plays": 13,
+        "replays": 4,
+        "follows": 0,
+        "avg_watch_s": 4.8
       },
       "facebook_slides": {
         "views": null,
@@ -254,7 +284,12 @@
       },
       "facebook": {
         "views": 10,
-        "url": "https://www.facebook.com/reel/1635879197909351"
+        "url": "https://www.facebook.com/reel/1635879197909351",
+        "reach": null,
+        "plays": 7,
+        "replays": 3,
+        "follows": 0,
+        "avg_watch_s": 6.2
       },
       "facebook_slides": {
         "views": null,
@@ -286,7 +321,12 @@
       },
       "facebook": {
         "views": 23,
-        "url": "https://www.facebook.com/reel/28558684847159932"
+        "url": "https://www.facebook.com/reel/28558684847159932",
+        "reach": null,
+        "plays": 16,
+        "replays": 7,
+        "follows": 0,
+        "avg_watch_s": 6.9
       },
       "threads": {
         "views": 24,
@@ -314,7 +354,12 @@
       },
       "facebook": {
         "views": 1,
-        "url": "https://www.facebook.com/reel/2247042829361677"
+        "url": "https://www.facebook.com/reel/2247042829361677",
+        "reach": null,
+        "plays": 1,
+        "replays": 0,
+        "follows": 0,
+        "avg_watch_s": 1.8
       },
       "threads": {
         "views": 27,
@@ -342,7 +387,12 @@
       },
       "facebook": {
         "views": 5,
-        "url": "https://www.facebook.com/reel/1127207633178582"
+        "url": "https://www.facebook.com/reel/1127207633178582",
+        "reach": null,
+        "plays": 4,
+        "replays": 1,
+        "follows": 0,
+        "avg_watch_s": 1.7
       },
       "threads": {
         "views": 25,
@@ -370,7 +420,12 @@
       },
       "facebook": {
         "views": 3,
-        "url": "https://www.facebook.com/reel/2252053825339456"
+        "url": "https://www.facebook.com/reel/2252053825339456",
+        "reach": null,
+        "plays": 3,
+        "replays": 0,
+        "follows": 0,
+        "avg_watch_s": 3.6
       },
       "facebook_slides": {
         "views": null,
@@ -402,7 +457,12 @@
       },
       "facebook": {
         "views": 21,
-        "url": "https://www.facebook.com/reel/1855631859213825"
+        "url": "https://www.facebook.com/reel/1855631859213825",
+        "reach": null,
+        "plays": 16,
+        "replays": 5,
+        "follows": 0,
+        "avg_watch_s": 3.4
       },
       "threads": {
         "views": 113,
@@ -430,7 +490,12 @@
       },
       "facebook": {
         "views": 18,
-        "url": "https://www.facebook.com/reel/28827941603535737"
+        "url": "https://www.facebook.com/reel/28827941603535737",
+        "reach": null,
+        "plays": 13,
+        "replays": 5,
+        "follows": 0,
+        "avg_watch_s": 5.0
       },
       "threads": {
         "views": 176,
@@ -458,7 +523,12 @@
       },
       "facebook": {
         "views": 39,
-        "url": "https://www.facebook.com/reel/1773940297206633"
+        "url": "https://www.facebook.com/reel/1773940297206633",
+        "reach": null,
+        "plays": 26,
+        "replays": 13,
+        "follows": 0,
+        "avg_watch_s": 5.2
       },
       "threads": {
         "views": 15,
@@ -486,7 +556,12 @@
       },
       "facebook": {
         "views": 31,
-        "url": "https://www.facebook.com/reel/1660392892284770"
+        "url": "https://www.facebook.com/reel/1660392892284770",
+        "reach": null,
+        "plays": 26,
+        "replays": 5,
+        "follows": 0,
+        "avg_watch_s": 5.1
       },
       "threads": {
         "views": 21,
@@ -521,7 +596,7 @@
         "url": "https://www.threads.com/@matteofights/post/De2URJej5S3"
       },
       "youtube": {
-        "views": 1041,
+        "views": 1042,
         "likes": 3,
         "comments": 0,
         "url": "https://youtube.com/shorts/7rW44jf2Knc"
@@ -545,7 +620,7 @@
         "url": "https://www.threads.com/@matteofights/post/DezvgFRFd22"
       },
       "youtube": {
-        "views": 1309,
+        "views": 1311,
         "likes": 12,
         "comments": 0,
         "url": "https://youtube.com/shorts/Lhn4VgB85_0"
@@ -593,7 +668,7 @@
         "url": "https://www.threads.com/@matteofights/post/De1u5UHEUso"
       },
       "youtube": {
-        "views": 1013,
+        "views": 1017,
         "likes": 6,
         "comments": 1,
         "url": "https://youtube.com/shorts/RWq6jbBuAkw"
@@ -617,7 +692,7 @@
         "url": "https://www.threads.com/@matteofights/post/De6xoShlgTI"
       },
       "youtube": {
-        "views": 330,
+        "views": 340,
         "likes": 2,
         "comments": 0,
         "url": "https://youtube.com/shorts/9IL239c9H7Q"
@@ -665,7 +740,7 @@
         "url": "https://www.threads.com/@matteofights/post/De6nUpvmU8m"
       },
       "youtube": {
-        "views": 670,
+        "views": 678,
         "likes": 10,
         "comments": 0,
         "url": "https://youtube.com/shorts/Z_rp3Vy6Efo"
@@ -689,7 +764,7 @@
         "url": "https://www.threads.com/@matteofights/post/De26bFTFNdN"
       },
       "youtube": {
-        "views": 1107,
+        "views": 1116,
         "likes": 9,
         "comments": 0,
         "url": "https://youtube.com/shorts/2gzNag5FFyk"
@@ -745,7 +820,7 @@
     },
     "lst-2026-10-24-morning-session-fuel": {
       "instagram": {
-        "views": 2100,
+        "views": 2101,
         "likes": 17,
         "comments": 0,
         "shares": 0,
@@ -755,7 +830,7 @@
     },
     "lst-2026-10-24-nerves-without-faking": {
       "instagram": {
-        "views": 2642,
+        "views": 2668,
         "likes": 44,
         "comments": 1,
         "shares": 0,
@@ -829,7 +904,7 @@
     },
     "saenchai-v3-B": {
       "instagram": {
-        "views": 2072,
+        "views": 2074,
         "likes": 53,
         "comments": 0,
         "shares": 2,
