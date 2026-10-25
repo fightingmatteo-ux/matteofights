@@ -1282,7 +1282,7 @@
       "not_before": "2026-10-25T13:00:00Z",
       "min_gap_hours": 2.5,
       "approved": true,
-      "status": "queued",
+      "status": "posted",
       "test": {
         "exp": "exp-1016-hook_style",
         "variant": "b",
@@ -1293,7 +1293,11 @@
       "video_asset_music": "lst-2026-10-25-read-round-one-music.mp4",
       "audio_id": "530317382955170",
       "audio_title": "Echo Sax End (Take 2)",
-      "audio_artist": "caleb.arredondo"
+      "audio_artist": "caleb.arredondo",
+      "posting_since": "2026-10-25T19:00:52Z",
+      "media_id": "17989638402114541",
+      "permalink": "https://www.instagram.com/reel/De7aPhYkrhf/",
+      "posted_at": "2026-10-25T19:01:43Z"
     },
     {
       "id": "lst-2026-10-26-three-days-a-week",
