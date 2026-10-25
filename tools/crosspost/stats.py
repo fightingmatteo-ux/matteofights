@@ -7,7 +7,9 @@ Writes production/control/platforms.json (shown on the dashboard by tools/contro
   posts.<queue id>.<name>  views/likes/replies/... for every cross-posted reel (Instagram from queue media ids)
   inbox  recent comments from other people on Instagram, Facebook and Threads, newest first, with "answered"
          when @matteofights already replied under it. Replying stays manual (the biggest growth lever).
-Read-only: never posts or replies. Secrets: IG_ACCESS_TOKEN, FB_PAGE_TOKEN, THREADS_ACCESS_TOKEN, THREADS_USER_ID.
+Read-only: never posts or replies. Secrets: IG_ACCESS_TOKEN, FB_PAGE_TOKEN, THREADS_ACCESS_TOKEN, THREADS_USER_ID,
+YouTube: YT_API_KEY (public numbers, simplest) or the uploader's YT_CLIENT_ID/SECRET/REFRESH_TOKEN once it has the
+youtube.readonly scope (crosspost.py youtube-auth asks for it since 2026-10-25; older logins are upload-only).
 """
 import datetime as dt, json, os, sys, urllib.parse
 from pathlib import Path
@@ -156,6 +158,53 @@ def main():
             out["threads_written"] = written
         out["platforms"]["threads"] = th
 
+    # ------------------------------------------------ YouTube (views, likes, comments per Short + subscribers)
+    yt_recs = [(qid, r["youtube"]) for qid, r in state["posts"].items()
+               if (r.get("youtube") or {}).get("status") == "posted" and r["youtube"].get("id") and r["youtube"].get("at", "") >= recent_iso(10)]
+    yt = {"followers": None}
+    api_key = os.environ.get("YT_API_KEY")
+    auth = {}
+    if not api_key and all(os.environ.get(k) for k in ("YT_CLIENT_ID", "YT_CLIENT_SECRET", "YT_REFRESH_TOKEN")):
+        tok = safe(xp.yt_access)
+        if tok:
+            auth = {"Authorization": f"Bearer {tok}"}
+    YT = "https://www.googleapis.com/youtube/v3"
+
+    def yt_get(path, **params):
+        if api_key:
+            params["key"] = api_key
+        _, _, d = xp.http("GET", f"{YT}/{path}?" + urllib.parse.urlencode(params), headers=auth)
+        return d
+
+    if api_key or auth:
+        try:
+            channel = None
+            for k in range(0, len(yt_recs), 50):
+                chunk = yt_recs[k:k + 50]
+                d = yt_get("videos", part="statistics,snippet", id=",".join(r["id"] for _, r in chunk))
+                stats = {v["id"]: v for v in d.get("items", [])}
+                for qid, r in chunk:
+                    v = stats.get(r["id"])
+                    if not v:
+                        continue
+                    channel = channel or v["snippet"].get("channelId")
+                    st = v.get("statistics", {})
+                    num = lambda key: int(st[key]) if key in st else None
+                    out["posts"].setdefault(qid, {})["youtube"] = {"views": num("viewCount"), "likes": num("likeCount"),
+                                                                    "comments": num("commentCount"), "url": r.get("url")}
+            ch = yt_get("channels", part="statistics", **({"id": channel} if channel else {"mine": "true"})) if (channel or auth) else {}
+            cs = ((ch.get("items") or [{}])[0]).get("statistics", {})
+            if cs and not cs.get("hiddenSubscriberCount"):
+                yt["followers"] = int(cs.get("subscriberCount", 0))
+        except Exception as e:
+            msg = str(e)
+            yt["stats_missing"] = ("No view numbers: the YouTube login can only upload. Add a YT_API_KEY secret "
+                                   "(tools/crosspost/README.md)" if "insufficient" in msg.lower() or "403" in msg else f"YouTube numbers failed: {msg[:120]}")
+            print("  ! youtube:", msg[:200])
+    else:
+        yt["stats_missing"] = "No view numbers yet: add a YT_API_KEY secret (tools/crosspost/README.md)"
+    out["platforms"]["youtube"] = yt
+
     # ------------------------------------------------ status per platform (from crosspost state)
     t_now = dt.datetime.now(dt.timezone.utc)
     for name in ("facebook", "youtube", "threads"):
@@ -190,7 +239,7 @@ def main():
     for name, p in out["platforms"].items():
         p["token_expires"] = KNOWN_EXPIRY.get(name)
         left = days_left(p["token_expires"])
-        p["warn"] = (f"Login expires in {left} days" if left is not None and left <= 21 else None) or \
+        p["warn"] = p.pop("stats_missing", None) or (f"Login expires in {left} days" if left is not None and left <= 21 else None) or \
                     (f"{len(p['failed'])} failed in the last 3 days" if p.get("failed") else None) or \
                     ("Uploads are private until the YouTube audit passes" if p.get("privacy") == "private" else None)
     out["inbox"].sort(key=lambda c: c.get("at") or "", reverse=True)

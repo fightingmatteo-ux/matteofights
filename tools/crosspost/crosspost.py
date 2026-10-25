@@ -143,7 +143,7 @@ def title(item, cap):
 
 # ---------------------------------------------------------------- YouTube
 GOOGLE_TOKEN = "https://oauth2.googleapis.com/token"
-YT_SCOPE = "https://www.googleapis.com/auth/youtube.upload"
+YT_SCOPE = "https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/youtube.readonly"  # readonly: stats.py reads views
 
 
 def yt_access():

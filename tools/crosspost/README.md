@@ -74,3 +74,16 @@ the GitHub secret.
 ## GitHub secrets used
 `FB_PAGE_TOKEN`, `YT_CLIENT_ID`, `YT_CLIENT_SECRET`, `YT_REFRESH_TOKEN`, `THREADS_ACCESS_TOKEN`, `THREADS_USER_ID`,
 `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`.
+
+## YouTube numbers on the dashboard (2026-10-25)
+
+The uploader's login is upload-only, so it can't read views. `stats.py` (Platform stats workflow) reads views, likes,
+comments per Short and the subscriber count with either:
+
+1. **`YT_API_KEY`** (simplest, public numbers only): Google Cloud console, the same project as `YT_CLIENT_ID` →
+   APIs & Services → Credentials → Create credentials → API key → restrict it to "YouTube Data API v3". Add it as the
+   GitHub Actions secret `YT_API_KEY`. The next Platform stats run fills the dashboard.
+2. Or re-run `python -P tools/crosspost/crosspost.py youtube-auth` on the laptop (it now asks for upload + read) and
+   update the `YT_REFRESH_TOKEN` secret.
+
+Until one of them is set, the dashboard's YouTube card says "No view numbers yet" instead of showing 0.
