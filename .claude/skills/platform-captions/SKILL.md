@@ -18,6 +18,8 @@ Instagram caption well **and in the shape captions.py can parse**, and every pla
    Lean the batch toward what grows the account; groups with n < 5 are hints only.
 3. Every existing hook and caption in `production/listicles/hooks.json`: never repeat a hook frame, list item or
    opener that's already there.
+4. **Matteo's direction per platform:** `production/control/briefs.json` (`{platform: {brief}}`, set on the dashboard
+   Platforms tab). His brief for a platform overrides the defaults here for that platform's version.
 
 ## 1. Choose before writing
 - **Format mix** (tools/listicle/README.md): ~7 listicles, ~3 statements, 1 to 2 iykyk, 2 to 3 lifestyle-for-fighters,

@@ -6,7 +6,9 @@ control.matteofights.me. He is not watching. Do the work, never ask questions, n
 ## 1. What to do
 
 `python3 -P tools/edit/requests_cli.py open` lists the open items, oldest first. Do **one** item per run (the
-workflow starts again for the next one). Read CLAUDE.md and `production/editing/reel-kit/PIPELINE.md` first.
+workflow starts again for the next one). Read CLAUDE.md and `production/editing/reel-kit/PIPELINE.md` first, then
+**`production/editing/taste.md`**: every rule there is a past note from Matteo. Break one and he has to send it
+again, which is the number the dashboard tracks.
 
 ### An upload (kind `upload`): raw footage, edit it into 4 trial-reel variants (a hook test)
 
@@ -37,11 +39,24 @@ workflow starts again for the next one). Read CLAUDE.md and `production/editing/
 
 ### A revision (kind `request`): Matteo's note on a reel
 
+From the reel player a revision carries `notes`: each one is a moment (`t` seconds into the posted file), what he
+wants changed, tags, and an `image` (that frame with his drawing on it: circles, boxes, arrows in red). Get them
+with `python3 -P tools/edit/requests_cli.py notes <id> media/revisions/<id>/` and **look at every image** before
+editing: the drawing shows where, the text says what. Map `t` to the right moment in your build (the posted file is
+the rendered variant named in `asset`).
+
 `target` is a reel folder slug or a queue id. Apply the note (hook text, caption, music, cut, b-roll), re-render
 only the variants it affects (step 3 above), keep the queue item's `approved` as it was **unless the picture or
 hook changed: then set `approved: false`** so he sees the new version first. Finish with a one-line note of
 what changed. A note that is really an idea or a question, not a change: finish it `done` with your answer as
 the note.
+
+### Learn (after every revision, before you finish it)
+
+Read the notes again and ask what general rule would have made them unnecessary. Add or rewrite one line per rule
+under `## Rules` in `production/editing/taste.md`: `- [tag] rule (request <id>, <date>)`. General, not about one
+clip ("hold b-roll at least 2 s", not "the pad clip at 0:07"). A note that repeats an existing rule means the rule
+was too vague: make it sharper. Commit `production/editing/taste.md` with the reel.
 
 ## 2. Rules
 

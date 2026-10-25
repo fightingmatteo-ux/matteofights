@@ -10,6 +10,8 @@ Files (all in production/control/, committed by the "Control" workflow):
   metrics.json    per-reel results + account baseline, written by Claude's daily check (Buzzfy)
   notes.json      messages Claude wants delivered to Telegram (winners, replies): {id, text}
   state.json      which weeks/questions/notes were already sent
+  briefs.json     Matteo's per-platform content direction from the dashboard: {platform: {brief, at, via}};
+                  read by the platform-captions and threads-writer skills before writing for that platform
 Approving a week = Matteo's explicit yes for exactly the reels in that batch (recorded with time + channel).
 Telegram only listens to TELEGRAM_CHAT_ID; the dashboard only accepts Matteo's Cloudflare Access login.
 """
@@ -136,6 +138,46 @@ def idea(text, via):
     return item
 
 
+SLOTTED = ("facebook", "youtube", "threads", "facebook_slides")  # tools/crosspost platforms with their own NY slots
+BRIEFED = ("instagram",) + SLOTTED
+
+
+def platform_set(name, payload, via):
+    """Matteo's per-platform settings: on/off and New York slots (tools/crosspost, through tools/state.py),
+    plus a free-text brief that the caption skills follow for that platform."""
+    if name not in BRIEFED:
+        raise SystemExit(f"unknown platform {name!r}")
+    changed = []
+    briefs = load("briefs.json", {})
+    text = str(payload.get("brief") or "").strip()[:1500]
+    if "brief" in payload and text != briefs.get(name, {}).get("brief", ""):
+        if text:
+            briefs[name] = {"brief": text, "at": now(), "via": via}
+        else:
+            briefs.pop(name, None)
+        save("briefs.json", briefs)
+        changed.append("brief")
+    fields = {}
+    cfg = (store.get("crosspost", "platforms") or {}).get(name) if name in SLOTTED else None
+    if name in SLOTTED and cfg is None:
+        raise SystemExit(f"{name} is not set up in crosspost.json yet")
+    if cfg is not None and "enabled" in payload and bool(payload["enabled"]) != bool(cfg.get("enabled")):
+        fields["enabled"] = bool(payload["enabled"])
+        fields["approved_note" if fields["enabled"] else "paused_note"] = f"Matteo: {'on' if fields['enabled'] else 'off'} via {via} ({now()})"
+    if name in SLOTTED and "slots" in payload:
+        slots = sorted({s.strip() for s in payload["slots"] if len(s.strip()) == 5 and s.strip()[2] == ":"
+                        and s.strip()[:2].isdigit() and s.strip()[3:].isdigit()
+                        and int(s.strip()[:2]) < 24 and int(s.strip()[3:]) < 60})
+        if slots and slots[:6] != cfg.get("slots"):
+            fields["slots"] = slots[:6]
+    if fields:
+        store.patch("crosspost", "platforms", {name: fields})
+        changed += [k for k in fields if not k.endswith("_note")]
+    if changed:
+        log(f"{name.replace('_', ' ').title()}: changed {', '.join(changed)}", "Matteo")
+    return changed
+
+
 def act(payload, via):
     a = payload.get("action")
     if a == "approve_week":  # the whole week: reels + written Threads posts
@@ -151,6 +193,8 @@ def act(payload, via):
         return {"answered": bool(answer(payload["id"], str(payload["choice"])[:500], via))}
     if a == "idea":
         return {"idea": idea(str(payload["text"]), via)}
+    if a == "platform_set":
+        return {"changed": platform_set(str(payload.get("platform")), payload, via)}
     raise SystemExit(f"unknown action {a!r}")
 
 

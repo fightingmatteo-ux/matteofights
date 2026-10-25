@@ -31,13 +31,15 @@ own, so the yes is the product: deliberate, informed, and reversible where possi
 - `data.json` is rebuilt from repo state on every push by `tools/control/build_data.py`; field names are a contract.
 - Buttons POST to `api/act`, which dispatches the `Control` GitHub workflow; Telegram is the parallel channel
   (`functions/api/telegram.js`). Changes appear on the page about a minute after an action.
-- Actions and payloads: `approve_week` with `ids`, `answer` with `id` + `choice`, `idea` with `text`.
+- Actions and payloads: `approve_week` with `ids`, `answer` with `id` + `choice`, `idea` with `text`, `platform_set`
+  with `platform` + `enabled` / `slots` / `brief`. Lead status goes to `/api/leads` (D1 directly).
 - All times shown in New York time (America/New_York); the audience is US-weighted.
 - Reels post at 6:30pm and 9:30pm New York; a new batch is made every Sunday morning.
 
 ## Capabilities and Constraints
 
-- Views: Home, Reels, Results, Decide, Activity.
+- Views: Home, Platforms (overview, one page per platform, formats, rivals, reels), Leads (PROTOCOL signups to DM,
+  Grow and earn), Studio, Decide; Activity behind the top-bar button.
 - Approving the week is press-and-hold so a slip cannot post 14 reels.
 - Formats tracked: listicle, statement, iykyk, builder, lifestyle, talking head. Results compare views per reel and
   follows per 1,000 views; a winner is 2x the median.
