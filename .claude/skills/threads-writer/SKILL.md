@@ -17,6 +17,8 @@ account. Not motivation-page content, not jargon only fighters get.
 3. `production/threads/posts.json` (everything already written, never repeat it) and the coming week's source
    listicles: `lst-*` items in `production/schedule/queue.json` + their `caption.txt`. Skim
    `production/reels/LEDGER.md` "Patterns so far" for angles that win on Instagram.
+4. `production/control/briefs.json` → `threads.brief`: Matteo's standing direction for Threads from the dashboard.
+   It wins over the defaults in this skill.
 
 ## 1. Plan the week before writing a word
 - **Which week:** the 7 New York dates starting the day after the latest `at` in posts.json. If all 7 already

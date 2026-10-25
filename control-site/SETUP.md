@@ -25,6 +25,17 @@ Pages bindings `DB` (D1 `matteofights`) and `MEDIA` (R2 `matteofights-media`), s
 `uploads/` in 50 MB parts, then starts the "Edit worker" workflow), `/api/studio` (revision notes, talking-point
 skip, retry). All check the Access login like `/api/act`.
 
+## Platforms, Leads, Grow (2026-10-25)
+
+Nav is Home, Platforms, Leads, Studio, Decide; the activity log sits behind the pulse button in the top bar.
+`public/hub.js` draws Platforms (views per platform and in total from `production/control/platforms.json`, a
+verdict per platform from its own per-post median, on/off + NY slots + a free-text brief, saved through
+`/api/act` `platform_set` → `control.py` → `crosspost.json` via `tools/state.py` and `production/control/briefs.json`,
+which the platform-captions and threads-writer skills read), Leads and Grow. `/api/leads` reads D1 `signup`
+(the PROTOCOL page) and `protocol_dm` (commenters who got the auto-DM, no signup yet); follow-up status is stored on
+the signup doc (`lead_status`, `contacted_at`, `lead_note`) or kind `lead` (`ig:<handle>`). "Message" copies a
+personal DM and opens `ig.me/m/<handle>`: Instagram's API can't cold-DM someone who never messaged the account.
+
 ## Cloudflare (account `849fbd13419572f8d5e345f23dd3de11`, fightingmatteo@gmail.com)
 
 - **DNS:** `matteofights.me` zone on Cloudflare (nameservers `derek`/`melinda.ns.cloudflare.com`, set at

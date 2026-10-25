@@ -1,6 +1,6 @@
 # STATUS: open items, one place
 
-_Updated 2026-10-24 11:50 UTC. Every session: read this after CLAUDE.md, update it when you close or add an item._
+_Updated 2026-10-25 14:30 UTC. Every session: read this after CLAUDE.md, update it when you close or add an item._
 
 Legend: **DO** = needs action now, **MATTEO** = only Matteo can do it, **WAIT** = blocked on someone else, **OK** = done, kept for one cycle.
 
@@ -49,6 +49,7 @@ Log: `media/2026-10-16-saenchai-bigger-men/renders/render_bc.log` (ends with `AL
 | Comment PROTOCOL auto-DM (10-24) | OK | Live and tested by Matteo 10-24 (Meta app switched to Live, account subscribed to comments + messages). Any comment containing "protocol" gets a DM with matteofights.me/protocol + a public reply; counts + last webhook call at matteo-signup.pages.dev/api/signup. Token: daily Deploy signup endpoint run copies IG_ACCESS_TOKEN, so after `ig.py refresh` just update the secret |
 | Signups off Make.com (10-24) | OK / verify | Protocol page posts to `matteo-signup.pages.dev/api/signup`: all answers + STANCE tag in D1 (kind `signup`), still forwarded to Make/Notion, Telegram per new lead. Old Notion export (89 rows, 10-24): Oct had 2 signups, 74 IG handles never followed up |
 | Hook tests (talktosev reference, 10-24) | OK / **MATTEO** | Live: 4 variants same day 15:00-16:00 NY, each labelled with an opening type; "Hook tests" workflow (every 3 h) calls the winner at 72 h, writes LEDGER rows + `production/trials/learnings.md`, Telegram says which to share to followers. Knockout-draw A/B/C moved to Oct 26 15:00/15:20/15:40 NY (no short cut D rendered), still `approved:false`. Next: Tests page on the dashboard, learnings feeding talking points (docs updated) |
+| Dashboard v2 (10-25) | **MATTEO** | Built on branch `claude/dashboard-v2`, not live yet: 5 tabs (Home, Platforms, Leads, Studio, Decide), views per platform + total, per-platform on/off, slots and brief (`production/control/briefs.json`, read by the caption skills), Leads tab from D1 signups + PROTOCOL commenters with one-tap DM copy, Grow and earn (automation + money cards that send to ideas). Goes live when merged to master. Next: lead follow-up nudge, then paid PROTOCOL plan |
 | TikTok | WAIT | App review |
 | Meta oEmbed | WAIT | Not approved; `ig_discovery` scans tracked competitors instead |
 | IG token | Expires 2026-12-13 | `ig.py refresh` before then |

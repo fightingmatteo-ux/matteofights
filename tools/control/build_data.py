@@ -147,6 +147,7 @@ def main():
         "ideas": load(CTL / "ideas.json", [])[-50:],
         "log": load(CTL / "log.json", [])[-60:],
         "platforms": load(CTL / "platforms.json", {}),
+        "briefs": load(CTL / "briefs.json", {}),  # Matteo's per-platform direction (dashboard Platforms tab)
         # other platforms (tools/crosspost): per-reel results + written Threads posts (approved weekly)
         "crosspost": {"platforms": store.get("crosspost", "platforms") or {}, "posts": xpost},
         "threads_posts": sorted(load(ROOT / "production/threads/posts.json", {"posts": []})["posts"],

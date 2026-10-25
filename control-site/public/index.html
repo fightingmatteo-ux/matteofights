@@ -19,17 +19,17 @@
 <body>
 <a class="skip" href="#view">Skip to content</a>
 <header class="bar">
-  <a class="mark" href="#" data-tab="home" aria-label="Matteo Fights control, home">MATTEO FIGHTS</a>
-  <p class="bar-meta"><span id="nyclock" class="ny" title="Current time in New York"></span><span id="fresh" class="fresh"></span></p>
+  <a class="mark" href="#" data-tab="home" aria-label="Matteo Fights control, home"><span class="mk-dot" aria-hidden="true"></span>MATTEO FIGHTS<small>CONTROL</small></a>
+  <div class="bar-right"><p class="bar-meta"><span id="nyclock" class="ny" title="Current time in New York"></span><span id="fresh" class="fresh"></span></p>
+    <button id="sys" class="sys" data-tab="activity" aria-label="System and activity log"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h4l3-7 4 14 3-7h4"/></svg></button></div>
 </header>
 
 <nav class="nav" aria-label="Sections">
   <button data-tab="home"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="7.5"/><path d="M12 9.5V13l2.5 1.5M10 3h4"/></svg><span>Home</span></button>
-  <button data-tab="reels"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3.5" width="7" height="12" rx="1.5"/><rect x="13" y="3.5" width="7" height="12" rx="1.5"/><path d="M4 19.5h16"/></svg><span>Reels</span></button>
-  <button data-tab="results"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h9M4 12h15M4 18h6"/><path d="M15 4v4M15 16v4" opacity=".5"/></svg><span>Results</span></button>
+  <button data-tab="platforms"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg><span>Platforms</span></button>
+  <button data-tab="leads"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.6 3.3-5.5 6.5-5.5s5.7 1.9 6.5 5.5M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.8c1.6.8 2.6 2.5 3 5.2"/></svg><span>Leads</span><b id="lbadge" class="badge" hidden></b></button>
   <button data-tab="studio"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="6" width="12" height="12" rx="2"/><path d="M15.5 10.5l5-3v9l-5-3"/></svg><span>Studio</span></button>
   <button data-tab="decide"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h14v10H9l-4 4z"/></svg><span>Decide</span><b id="badge" class="badge" hidden></b></button>
-  <button data-tab="activity"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h4l3-7 4 14 3-7h4"/></svg><span>Activity</span></button>
 </nav>
 
 <main id="view" tabindex="-1"><div class="skeleton" aria-label="Loading"><span></span><span></span><span></span></div></main>
@@ -40,5 +40,6 @@
 <p id="sr" class="sr" aria-live="assertive"></p>
 <script src="app.js"></script>
 <script src="studio.js"></script>
+<script src="hub.js"></script>
 </body>
 </html>

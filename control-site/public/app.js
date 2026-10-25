@@ -47,7 +47,7 @@ const hidden = (() => { try { return new Set(JSON.parse(localStorage.getItem("in
 const saveHidden = () => { try { localStorage.setItem("inboxDone", JSON.stringify([...hidden].slice(-400))); } catch {} };
 
 let D = null;
-let tab = (() => { try { return localStorage.getItem("tab") || "home"; } catch { return "home"; } })();
+let tab = (() => { try { const t = localStorage.getItem("tab") || "home"; return t === "results" || t === "reels" ? "platforms" : t; } catch { return "home"; } })();
 let filter = "all";
 let by = "views"; // results ranking: views per reel or follows per 1k
 let rview = (() => { try { return localStorage.getItem("rview") || "you"; } catch { return "you"; } })(); // Results: you | rivals
@@ -224,9 +224,9 @@ function bout(r) {
 
 function weekList() {
   const today = dayKey(new Date());
-  const R = D.reels.filter((r) => r.time && dayKey(new Date(r.time)) >= today && +new Date(r.time) < Date.now() + 8 * 864e5).sort(byTime);
+  const R = D.reels.filter((r) => r.time && dayKey(new Date(r.time)) >= today && +new Date(r.time) < Date.now() + (tab === "home" ? 3 : 8) * 864e5).sort(byTime);
   if (!R.length) return `<h2 class="h2">Schedule</h2><p class="empty-note">No reels this week yet. The factory makes them every Sunday, and you approve them here.</p>`;
-  let h = `<div class="head"><h2 class="h2" id="fc-h">Schedule</h2><span class="label">New York time</span></div>`, cur = "";
+  let h = `<div class="head"><h2 class="h2" id="fc-h">Next 3 days</h2><button class="link" data-goto="platforms" data-psub="reels">All reels</button></div>`, cur = "";
   for (const r of R) {
     const k = dayKey(new Date(r.time));
     if (k !== cur) {
@@ -264,7 +264,7 @@ function trialsWaiting() {
 }
 
 function home() {
-  return `<div class="home"><div class="left">${clock()}${waiting()}${trialsWaiting()}${threadsWaiting()}${splits()}</div><section class="right" aria-labelledby="fc-h">${weekList()}</section></div>`;
+  return `<div class="home"><div class="left">${typeof kpiStrip === "function" ? kpiStrip() : ""}${clock()}${waiting()}${trialsWaiting()}${threadsWaiting()}${splits()}</div><section class="right" aria-labelledby="fc-h">${weekList()}</section></div>`;
 }
 
 // ---------------------------------------------------------------- reels
@@ -284,7 +284,7 @@ function reels() {
   D.reels.forEach((r) => { counts[r.state] = (counts[r.state] || 0) + 1; });
   const list = D.reels.filter((r) => filter === "all" || r.state === filter);
   const b = (k, l) => (k === "all" || counts[k] ? `<button data-filter="${k}" aria-pressed="${filter === k}">${l}<span class="n">${counts[k]}</span></button>` : "");
-  return `<div class="page-head"><h1 class="h1">Reels</h1></div>
+  return `${tab === "reels" ? `<div class="page-head"><h1 class="h1">Reels</h1></div>` : ""}
     <div class="filters" role="group" aria-label="Filter reels">${b("all", "All")}${b("needs_yes", "Needs yes")}${b("scheduled", "Set")}${b("posted", "Posted")}${b("failed", "Failed")}</div>
     ${list.length ? `<div class="grid">${list.map(tile).join("")}</div>` : `<p class="empty-note">No reels with this status.</p>`}`;
 }
@@ -306,7 +306,7 @@ const ADAPTED = { tiktok: "TikTok", facebook: "Facebook", threads: "Threads" };
 function rivals(sw) {
   const C = D.competitors || {};
   const ideas = C.ideas || [], outs = C.outliers || [], accs = C.accounts || [];
-  const head = `<div class="page-head"><div class="head"><h1 class="h1">Results</h1>${sw}</div>
+  const head = `<div class="page-head">${sw ? `<div class="head"><h1 class="h1">Results</h1>${sw}</div>` : ""}
     <p class="lede">Posts from creators close to you that did at least 3× their own normal, and what you'd make from them.</p></div>`;
   if (!ideas.length && !outs.length) return head + `<p class="empty-note">No competitor data yet. The Competitors workflow measures the creators in production/competitors/accounts.json every Monday.</p>`;
   const chips = ["all", "instagram", "youtube", "tiktok", "facebook", "threads"].map((k) =>
@@ -351,7 +351,7 @@ function resultsYou(sw) {
   const rows = Object.entries(D.formats).map(([k, v]) => ({ k, ...v, avg: v.views / v.reels, fpk: v.views ? (1000 * v.follows) / v.views : 0 }))
     .sort((a, b) => b.avg - a.avg);
   if (!rows.length) {
-    return `<div class="page-head"><div class="head"><h1 class="h1">Results</h1>${sw}</div></div>
+    return `${sw ? `<div class="page-head"><div class="head"><h1 class="h1">Results</h1>${sw}</div></div>` : ""}
       <p class="empty-note">Results show up 72 hours after a reel posts. Claude pulls the numbers from Instagram every morning and compares each reel with your normal${med ? ` ${n(med)}` : ""} views.</p>`;
   }
   const tot = rows.reduce((a, r) => ({ v: a.v + r.views, f: a.f + r.follows }), { v: 0, f: 0 });
@@ -369,7 +369,7 @@ function resultsYou(sw) {
         <p class="meta">From ${sample(bestV)}. Your normal is ${n(med)} views; your average is ${avgF.toFixed(1)} follows per 1k.</p></article></div>`
     : `<div class="verdicts split"><article class="verdict"><h2 class="big">${fmtName(bestV.k)} wins views</h2>${figV(bestV)}<p class="meta">From ${sample(bestV)}. Your normal is ${n(med)}.</p></article>
         <article class="verdict"><h2 class="big">${fmtName(bestF.k)} wins follows</h2>${figF(bestF)}<p class="meta">From ${sample(bestF)}. Your average is ${avgF.toFixed(1)}.</p></article></div>`;
-  return `<div class="page-head"><div class="head"><h1 class="h1">Results</h1>${sw}</div><p class="lede">Which formats earn views, and which turn views into followers.</p></div>
+  return `<div class="page-head">${sw ? `<div class="head"><h1 class="h1">Results</h1>${sw}</div>` : ""}<p class="lede">Which formats earn views, and which turn views into followers.</p></div>
     ${verdicts}
     <section aria-labelledby="l-h"><div class="head"><h2 class="h2" id="l-h">Every format</h2>
         <span class="toggle" role="group" aria-label="Rank formats by"><button data-by="views" aria-pressed="${by === "views"}">Views</button><button data-by="fpk" aria-pressed="${by === "fpk"}">Follows per 1k</button></span></div>
@@ -617,7 +617,7 @@ function openEdit(id) {
 $("#sheet").addEventListener("click", (e) => { if (e.target === e.currentTarget || e.target.closest("[data-close]")) e.currentTarget.close(); });
 
 // ---------------------------------------------------------------- render + events
-const VIEWS = { home, reels, results, decide, activity };
+const VIEWS = { home, reels, results, decide, activity }; // + platforms, leads (hub.js), studio (studio.js)
 
 function render() {
   if (!D) return;
@@ -632,6 +632,12 @@ function render() {
   const badge = $("#badge"); badge.hidden = !open; badge.textContent = open;
   badge.closest("button").setAttribute("aria-label", open ? `Decide, ${open} waiting` : "Decide");
   $("#fresh").textContent = `Updated ${ago(D.generated_at)}`;
+  const sysWarn = (D.health?.failed || []).length || PL.some((k) => D.platforms?.platforms?.[k]?.warn);
+  $("#sys").classList.toggle("warn", !!sysWarn);
+  $("#sys").setAttribute("aria-current", tab === "activity" ? "page" : "false");
+  const todo = typeof LEADS !== "undefined" && LEADS ? LEADS.filter((l) => l.status === "new" && l.handle).length : 0;
+  const lb = $("#lbadge"); lb.hidden = !todo; lb.textContent = todo;
+  lb.closest("button").setAttribute("aria-label", todo ? `Leads, ${todo} to message` : "Leads");
 }
 
 function go(next, f) {
@@ -645,7 +651,7 @@ document.addEventListener("click", (ev) => {
   if (!t) return;
   if (t.dataset.tab) { ev.preventDefault(); return go(t.dataset.tab); }
   if (t.dataset.goto) return go(t.dataset.goto, t.dataset.filter);
-  if (t.dataset.filter && tab === "reels") { filter = t.dataset.filter; return render(); }
+  if (t.dataset.filter && (tab === "reels" || tab === "platforms")) { filter = t.dataset.filter; return render(); }
   if (t.dataset.by) { by = t.dataset.by; return render(); }
   if (t.dataset.rview) { rview = t.dataset.rview; try { localStorage.setItem("rview", rview); } catch {} return render(); }
   if (t.dataset.rplat) { rplat = t.dataset.rplat; return render(); }
