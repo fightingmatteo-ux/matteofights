@@ -37,7 +37,7 @@
     "avg_watch_s": 15.3,
     "skip_rate": 38.9,
     "follows": null,
-    "at": "2026-10-24T17:12:40Z"
+    "at": "2026-10-25T16:48:14Z"
   },
   "18124280446899296": {
     "views": 2568,
@@ -47,26 +47,36 @@
     "avg_watch_s": 16.3,
     "skip_rate": 32.3,
     "follows": null,
-    "at": "2026-10-24T17:12:43Z"
+    "at": "2026-10-25T16:48:16Z"
   },
   "17912911344520196": {
-    "views": 1845,
-    "reach": 1621,
+    "views": null,
+    "reach": 1639,
     "shares": 2,
-    "saves": 13,
-    "avg_watch_s": 15.4,
+    "saves": 14,
+    "avg_watch_s": 15.5,
     "skip_rate": 38.4,
     "follows": null,
-    "at": "2026-10-24T17:12:44Z"
+    "at": "2026-10-25T16:48:24Z"
   },
   "17989846548098278": {
-    "views": 1778,
-    "reach": 1621,
+    "views": 1783,
+    "reach": 1624,
     "shares": 2,
-    "saves": 4,
+    "saves": 5,
     "avg_watch_s": 11.6,
-    "skip_rate": 46.2,
+    "skip_rate": 46.3,
     "follows": null,
-    "at": "2026-10-24T17:12:46Z"
+    "at": "2026-10-25T16:48:26Z"
+  },
+  "18152424823555269": {
+    "views": 2150,
+    "reach": 1886,
+    "shares": 3,
+    "saves": 22,
+    "avg_watch_s": 15.7,
+    "skip_rate": 38.4,
+    "follows": null,
+    "at": "2026-10-25T16:48:28Z"
   }
 }
