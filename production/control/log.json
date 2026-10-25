@@ -223,5 +223,10 @@
     "at": "2026-10-25T14:10:05Z",
     "who": "Matteo",
     "text": "Approved 14 reels via dashboard"
+  },
+  {
+    "at": "2026-10-25T14:10:08Z",
+    "who": "system",
+    "text": "Sent the week (13 reels) to Telegram"
   }
 ]
