@@ -20,6 +20,9 @@ task needs it. Open items: [STATUS.md](STATUS.md) (read at session start, update
   push; `git add <your paths>`, never `-a`. Never commit `secrets/`, `media/`, `data.json`, `covers/`, renders.
 - Python: `python -P` (scripts) on this PC, `python3 -P` in workflows. Modal CLI on Windows: `PYTHONUTF8=1`.
 - Copy: no em dashes in user-facing text. Voice: [context/voice.md](context/voice.md).
+- **Free-tier Actions budget (2026-10-25):** private repos get 2,000 min/month (3,000 with GitHub Pro / Student
+  Pack). Never add a workflow that runs on every push or more often than every 3 h; timed work goes through the
+  Cloudflare ticker (free), heavy work (renders) through Modal. Each job bills at least 1 minute.
 - Analytics files are dated snapshots: pull live (Buzzfy first, Windsor `instagram` 17841465098113052 as
   fallback) when current numbers matter, then write a fresh snapshot.
 
@@ -53,8 +56,8 @@ task needs it. Open items: [STATUS.md](STATUS.md) (read at session start, update
 | Posting / cross-posting / listicles | GitHub Actions: Post queue, Cross-post, Listicle factory, Control | `.github/workflows/` |
 | Control center (Matteo works from here) | control.matteofights.me: Home (approve), Studio (upload footage, revision notes, talking points, live edits/renders), Results, Decide; Telegram @matteofights_control_bot | [control-site/SETUP.md](control-site/SETUP.md) |
 | Edit worker / talking points (Claude, Sonnet, capped) | GitHub "Edit worker" (started by uploads + notes, 3 runs/day), "Talking points" (Mondays) | [tools/edit/WORKER.md](tools/edit/WORKER.md), [TALKING-POINTS.md](tools/edit/TALKING-POINTS.md) |
-| Hook tests (no AI) | GitHub "Hook tests" every 3 h: variant numbers, 72 h verdict, LEDGER rows, Telegram "share the winner" | `tools/trials/trials.py` |
-| Health check (no AI) | GitHub "Health check" every 2 h: stuck/failed/missed reels, failed renders and workflows to Telegram | `tools/health/check.py` |
+| Hook tests (no AI) | GitHub "Hook tests" every 6 h: variant numbers, 72 h verdict, LEDGER rows, Telegram "share the winner" | `tools/trials/trials.py` |
+| Health check (no AI) | GitHub "Health check" every 6 h: stuck/failed/missed reels, failed renders and workflows to Telegram | `tools/health/check.py` |
 | Secrets | `secrets/*.env` locally (git-ignored), GitHub/Modal/Worker secrets remotely; `tools/cloud/set-secrets.sh` | [tools/cloud/README.md](tools/cloud/README.md) |
 | Roadmap | Phases 1-4 built 2026-10-20 (D1 cutover pending, see STATUS.md) | [spec](docs/superpowers/specs/2026-10-18-run-from-anywhere-design.md) |
 

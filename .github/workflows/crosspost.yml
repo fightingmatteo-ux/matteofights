@@ -4,11 +4,8 @@
 name: Cross-post
 
 on:
-  workflow_run:
-    workflows: [Post queue]
-    types: [completed]
   schedule:
-    - cron: "0 */3 * * *"   # backup only: the Cloudflare ticker starts it at every cross-post slot
+    - cron: "15 */6 * * *"  # backup only: the Cloudflare ticker starts it at every cross-post slot (free-tier budget 2026-10-25)
   workflow_dispatch:
 
 permissions:

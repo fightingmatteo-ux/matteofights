@@ -3,7 +3,7 @@
 name: Health check
 on:
   schedule:
-    - cron: "25 */2 * * *"
+    - cron: "25 */6 * * *"
   workflow_dispatch:
 permissions:
   contents: write

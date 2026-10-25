@@ -4,7 +4,7 @@ name: Platform stats
 
 on:
   schedule:
-    - cron: "20 */2 * * *"
+    - cron: "20 */6 * * *"
   workflow_dispatch:
 
 permissions:

@@ -4,11 +4,17 @@
 name: Deploy control center
 
 on:
+  # Free-tier budget (2026-10-25): this used to run on EVERY push + after 7 workflows (~1,200 min in 5 days, the
+  # main reason the account ran out of Actions minutes). Now: dashboard code changes, approvals, and a data refresh
+  # every 6 h. Need fresh data now? Run it by hand.
   push:
     branches: [master]
+    paths: ["control-site/**", "tools/control/**", ".github/workflows/control-deploy.yml"]
   workflow_run:
-    workflows: [Control, Post queue, Listicle factory, Post trial reel, Cross-post, Platform stats, Edit worker]
+    workflows: [Control, Post trial reel]
     types: [completed]
+  schedule:
+    - cron: "50 */6 * * *"
   workflow_dispatch:
 
 # Every run builds the latest master, so a newer run can replace an older one.
