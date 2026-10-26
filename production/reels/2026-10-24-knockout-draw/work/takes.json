@@ -56,5 +56,6 @@
  },
  "fix": {
   "COACH": "COACHES"
- }
+ },
+  "frame": {"loopA": {"zoom": 1.15, "y": 0.096}, "loopB": {"zoom": 1.15, "y": 0.096}, "loopC": {"zoom": 1.15, "y": 0.096}}
 }

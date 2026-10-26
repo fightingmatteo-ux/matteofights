@@ -66,7 +66,7 @@ window.Editorial = {
         show(q(id), t - 0.03);
         const cs = chars(id), orig = cs.map((c) => c.textContent), G = "#%&@$*+=?<>/01234567890abcdefxyz";
         const st = { p: 0 };
-        tl.fromTo(st, { p: 0 }, { p: 1, duration: 0.7, ease: "none", onUpdate() {
+        tl.fromTo(st, { p: 0 }, { p: 1, duration: 0.35, ease: "none", onUpdate() {
           cs.forEach((c, i) => { c.textContent = st.p >= (i + 1) / cs.length ? orig[i] : G[(Math.floor(st.p * 30) + i * 7) % G.length]; });
         } }, t - 0.03);
       },

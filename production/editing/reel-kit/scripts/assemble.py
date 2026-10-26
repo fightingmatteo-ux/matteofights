@@ -58,7 +58,10 @@ def build(cfg, variant):
             if cfg.get("audio_src"):  # voice from the untouched original recording (same timeline)
                 inputs += ["-ss", f"{a:.3f}", "-t", f"{d:.3f}", "-i", cfg["audio_src"]]
             vi, ai = (2 * k, 2 * k + 1) if cfg.get("audio_src") else (k, k)
-            fc.append(f"[{vi}:v]setpts=PTS-STARTPTS[v{k}];"
+            z = cfg.get("frame", {}).get(name)  # optional punch-in to match framing across takes: {"zoom", "y"}
+            zf = (f",scale=iw*{z['zoom']}:ih*{z['zoom']},crop=iw/{z['zoom']}:ih/{z['zoom']}:(iw-ow)/2:ih*{z.get('y', 0.5 - 0.5 / z['zoom'])}"
+                  if z else "")
+            fc.append(f"[{vi}:v]setpts=PTS-STARTPTS{zf}[v{k}];"
                       f"[{ai}:a]asetpts=PTS-STARTPTS,afade=t=in:d=0.012,"
                       f"afade=t=out:st={d - 0.015:.3f}:d=0.015[a{k}];")
             toks = []
