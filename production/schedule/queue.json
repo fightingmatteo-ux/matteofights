@@ -639,7 +639,10 @@
       },
       "approved_note": "Matteo: approved the week via dashboard (2026-10-20T08:39:38Z)",
       "app_audio": "id:530317382955170 Echo Sax End - Caleb Arredondo (add in the Instagram app)",
-      "video_asset_music": "lst-2026-10-25-light-sparring-music.mp4"
+      "video_asset_music": "lst-2026-10-25-light-sparring-music.mp4",
+      "audio_id": "530317382955170",
+      "audio_title": "Echo Sax End (Take 2)",
+      "audio_artist": "caleb.arredondo"
     },
     {
       "id": "lst-2026-10-26-fit-without-running",
