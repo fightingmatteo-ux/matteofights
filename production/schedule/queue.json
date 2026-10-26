@@ -834,7 +834,7 @@
       "not_before": "2026-10-26T01:30:00Z",
       "min_gap_hours": 2.5,
       "approved": true,
-      "status": "queued",
+      "status": "posted",
       "test": {
         "exp": "exp-1016-hook_style",
         "variant": "a",
@@ -845,7 +845,11 @@
       "video_asset_music": "lst-2026-10-25-coach-sees-music.mp4",
       "audio_id": "576492425503806",
       "audio_title": "Echo Sax Endless",
-      "audio_artist": "caleb.arredondo"
+      "audio_artist": "caleb.arredondo",
+      "posting_since": "2026-10-26T07:00:57Z",
+      "media_id": "17996364396056868",
+      "permalink": "https://www.instagram.com/reel/De8spe-Dj8L/",
+      "posted_at": "2026-10-26T07:01:43Z"
     },
     {
       "id": "lst-2026-10-26-partner-everyone-wants",
