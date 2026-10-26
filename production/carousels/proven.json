@@ -1,6 +1,6 @@
 {
   "note": "Proven hooks for carousels. Every carousel in posts.json needs hook_ref = a 'read' entry's code (other creators' outlier carousels, found weekly by tools/carousel/scout.py) or an 'own' id (our own reels that proved the hook on our audience). Adapt the pattern to Matteo's topic; never copy another creator's slides word for word.",
-  "updated": "2026-10-24T13:28Z",
+  "updated": "2026-10-26T13:20Z",
   "own": [
     {
       "id": "own-born-fighter",
@@ -495,6 +495,191 @@
       "pattern": "slides are video, slide 1 not readable from the API",
       "found": "2026-10-24",
       "read_by": "Claude 2026-10-24"
+    },
+    {
+      "code": "De5Erufncqt",
+      "user": "espnmma",
+      "followers": 5034126,
+      "permalink": "https://www.instagram.com/p/De5Erufncqt/",
+      "posted": "2026-10-24T21:14:09+0000",
+      "likes": 202537,
+      "comments": 1231,
+      "x_median": 2.17,
+      "caption_first_line": "VOLK FINISHES EVLOEV IN THE SECOND ROUND TO RETAIN HIS FEATHERWEIGHT TITLE 🏆 #UFC333",
+      "slides": [
+        "production/carousels/proven/De5Erufncqt/01.jpg",
+        "production/carousels/proven/De5Erufncqt/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-10-26"
+    },
+    {
+      "code": "De52fZhDQj6",
+      "user": "ringmagazine",
+      "followers": 1288132,
+      "permalink": "https://www.instagram.com/p/De52fZhDQj6/",
+      "posted": "2026-10-25T04:29:22+0000",
+      "likes": 20328,
+      "comments": 1261,
+      "x_median": 2.44,
+      "caption_first_line": "Shakur vs Shock? 🍿",
+      "slides": [
+        "production/carousels/proven/De52fZhDQj6/01.jpg",
+        "production/carousels/proven/De52fZhDQj6/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-10-26"
+    },
+    {
+      "code": "De5aLiFoKQs",
+      "user": "mmajunkie",
+      "followers": 1406127,
+      "permalink": "https://www.instagram.com/p/De5aLiFoKQs/",
+      "posted": "2026-10-25T00:22:00+0000",
+      "likes": 20492,
+      "comments": 309,
+      "x_median": 3.28,
+      "caption_first_line": "Movsar Evloev gives respect to “legend” Alexander Volkanovski for ending his undefeated run 👏 #UFC333",
+      "slides": [
+        "production/carousels/proven/De5aLiFoKQs/01.jpg",
+        "production/carousels/proven/De5aLiFoKQs/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-10-26"
+    },
+    {
+      "code": "De5sUtDkrC4",
+      "user": "ufc",
+      "followers": 50938645,
+      "permalink": "https://www.instagram.com/p/De5sUtDkrC4/",
+      "posted": "2026-10-25T03:00:06+0000",
+      "likes": 816930,
+      "comments": 2381,
+      "x_median": 14.7,
+      "caption_first_line": "AlexVolkanovski 🤝 Petr_Yan ",
+      "slides": [
+        "production/carousels/proven/De5sUtDkrC4/01.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-10-26"
+    },
+    {
+      "code": "De5KcltikCf",
+      "user": "ufc",
+      "followers": 50938645,
+      "permalink": "https://www.instagram.com/p/De5KcltikCf/",
+      "posted": "2026-10-24T22:04:31+0000",
+      "likes": 190083,
+      "comments": 617,
+      "x_median": 3.42,
+      "caption_first_line": "Standout performances worthy of recognition 💰",
+      "slides": [
+        "production/carousels/proven/De5KcltikCf/01.jpg",
+        "production/carousels/proven/De5KcltikCf/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-10-26"
+    },
+    {
+      "code": "De5I6TsihFv",
+      "user": "ufc",
+      "followers": 50938645,
+      "permalink": "https://www.instagram.com/p/De5I6TsihFv/",
+      "posted": "2026-10-24T21:51:06+0000",
+      "likes": 180849,
+      "comments": 953,
+      "x_median": 3.28,
+      "caption_first_line": "Like fine wine 🍷",
+      "slides": [
+        "production/carousels/proven/De5I6TsihFv/01.jpg",
+        "production/carousels/proven/De5I6TsihFv/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-10-26"
+    },
+    {
+      "code": "De46lQSjRkV",
+      "user": "ufc",
+      "followers": 50938645,
+      "permalink": "https://www.instagram.com/p/De46lQSjRkV/",
+      "posted": "2026-10-24T19:45:53+0000",
+      "likes": 144838,
+      "comments": 577,
+      "x_median": 2.62,
+      "caption_first_line": "Bringing out some stars 🤩",
+      "slides": [
+        "production/carousels/proven/De46lQSjRkV/01.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-10-26"
+    },
+    {
+      "code": "De2Qj-SGzaj",
+      "user": "ufc",
+      "followers": 50938645,
+      "permalink": "https://www.instagram.com/p/De2Qj-SGzaj/",
+      "posted": "2026-10-23T19:00:01+0000",
+      "likes": 210523,
+      "comments": 1072,
+      "x_median": 3.81,
+      "caption_first_line": "A NIGHT BUILT FOR THE HISTORY BOOKS",
+      "slides": [
+        "production/carousels/proven/De2Qj-SGzaj/01.jpg",
+        "production/carousels/proven/De2Qj-SGzaj/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-10-26"
+    },
+    {
+      "code": "De0bx4zmQWT",
+      "user": "onechampionship",
+      "followers": 12616556,
+      "permalink": "https://www.instagram.com/p/De0bx4zmQWT/",
+      "posted": "2026-10-23T01:59:46+0000",
+      "likes": 46051,
+      "comments": 171,
+      "x_median": 2.8,
+      "caption_first_line": "The show starts when Rodtang arrives 🦾 Can “The Iron Man” advance in the ONE Flyweight Muay Thai World Grand Prix against Nong-O at The Inner Circle 38? rodtang",
+      "slides": [],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-10-26"
+    },
+    {
+      "code": "De1k2uQiIrY",
+      "user": "brezojr",
+      "followers": 97748,
+      "permalink": "https://www.instagram.com/p/De1k2uQiIrY/",
+      "posted": "2026-10-23T12:38:19+0000",
+      "likes": 5700,
+      "comments": 54,
+      "x_median": 2.35,
+      "caption_first_line": "Sometimes I wonder if I’m the only one who feels this way.",
+      "slides": [
+        "production/carousels/proven/De1k2uQiIrY/01.jpg",
+        "production/carousels/proven/De1k2uQiIrY/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-10-26"
     }
   ],
   "errors": []
