@@ -438,7 +438,14 @@
       "media_id": "18006390869794303",
       "permalink": "https://www.instagram.com/reel/DexzuAhDjYP/",
       "posted_at": "2026-10-22T01:31:54Z",
-      "video_asset_music": "lst-2026-10-21-about-to-level-up-music.mp4"
+      "video_asset_music": "lst-2026-10-21-about-to-level-up-music.mp4",
+      "video_asset_fb": "lst-2026-10-21-about-to-level-up-fb.mp4",
+      "fb_pick": {
+        "at": "2026-10-26T23:51:09Z",
+        "ig_views": 4208,
+        "vs_median": 1.89,
+        "shares_saves_per_1k": 5.7
+      }
     },
     {
       "id": "saenchai-A",
