@@ -39,7 +39,7 @@
         "21:00"
       ],
       "topic": "Combat Sports",
-      "last_slot": "2026-10-26T14:00:00Z"
+      "last_slot": "2026-10-26T19:30:00Z"
     },
     "facebook_slides": {
       "enabled": false,
@@ -622,6 +622,17 @@
         "id": "EBucBG8eu4I",
         "url": "https://youtube.com/shorts/EBucBG8eu4I",
         "privacy": "public"
+      }
+    },
+    "2026-10-24-knockout-draw-A": {},
+    "2026-10-24-knockout-draw-B": {},
+    "2026-10-24-knockout-draw-C": {},
+    "lst-2026-10-24-smaller-clinch": {
+      "threads": {
+        "status": "posted",
+        "at": "2026-10-26T19:36:34Z",
+        "id": "18113398562269344",
+        "url": "https://www.threads.com/@matteofights/post/De-DC0Bis9M"
       }
     }
   }
