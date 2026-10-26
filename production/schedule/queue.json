@@ -1521,13 +1521,17 @@
       "not_before": "2026-10-25T19:30:00Z",
       "min_gap_hours": 2.5,
       "approved": true,
-      "status": "queued",
+      "status": "posted",
       "crosspost_to": [],
       "slot_note": "15:30 NY talking-head slot. Old-style (v3 'film study') cut of the same hook, tested against the editorial cut posted 3 days earlier",
       "approved_note": "Matteo: approved the week via dashboard (2026-10-21T05:50:13Z)",
       "trial_set": "saenchai-v3",
       "opening": "contrast",
-      "length": "full"
+      "length": "full",
+      "posting_since": "2026-10-26T01:00:50Z",
+      "media_id": "18128492534303106",
+      "permalink": "https://www.instagram.com/reel/De8DbrNjPfr/",
+      "posted_at": "2026-10-26T01:01:33Z"
     },
     {
       "id": "2026-10-24-knockout-draw-A",
