@@ -1417,7 +1417,7 @@
       "not_before": "2026-10-26T16:30:00Z",
       "min_gap_hours": 2.5,
       "approved": true,
-      "status": "queued",
+      "status": "posted",
       "test": {
         "exp": "exp-1016-hook_style",
         "variant": "b",
@@ -1425,7 +1425,14 @@
       },
       "app_audio": "id:530317382955170 Echo Sax End - Caleb Arredondo (add in the Instagram app)",
       "approved_note": "Matteo: approved the week via dashboard (2026-10-20T14:29:35Z)",
-      "video_asset_music": "lst-2026-10-26-better-than-it-feels-music.mp4"
+      "video_asset_music": "lst-2026-10-26-better-than-it-feels-music.mp4",
+      "audio_id": "530317382955170",
+      "audio_title": "Echo Sax End (Take 2)",
+      "audio_artist": "caleb.arredondo",
+      "posting_since": "2026-10-26T16:30:56Z",
+      "media_id": "18105370838635390",
+      "permalink": "https://www.instagram.com/reel/De9t4ENDMc2/",
+      "posted_at": "2026-10-26T16:31:42Z"
     },
     {
       "id": "lst-2026-10-27-breathes-better",
