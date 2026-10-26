@@ -1574,13 +1574,17 @@
       "not_before": "2026-10-26T18:00:00Z",
       "min_gap_hours": 1.0,
       "approved": true,
-      "status": "queued",
+      "status": "posted",
       "crosspost_to": [],
       "slot_note": "hook test, same day: 2026-10-26 18:00Z (moved up 10-26 at Matteo's ask, 20 min apart kept)",
       "trial_set": "knockout-draw",
       "opening": "result",
       "length": "full",
-      "approved_note": "Matteo: approved the week via dashboard (2026-10-24T18:28:37Z)"
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-24T18:28:37Z)",
+      "posting_since": "2026-10-26T18:00:54Z",
+      "media_id": "17914845648490434",
+      "permalink": "https://www.instagram.com/reel/De94LHYD-zs/",
+      "posted_at": "2026-10-26T18:01:36Z"
     },
     {
       "id": "2026-10-24-knockout-draw-B",
