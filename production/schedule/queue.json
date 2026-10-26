@@ -1624,13 +1624,17 @@
       "not_before": "2026-10-26T18:40:00Z",
       "min_gap_hours": 0.25,
       "approved": true,
-      "status": "queued",
+      "status": "posted",
       "crosspost_to": [],
       "slot_note": "hook test, same day: 2026-10-26 18:40Z (moved up 10-26 at Matteo's ask, 20 min apart kept)",
       "trial_set": "knockout-draw",
       "opening": "number",
       "length": "full",
-      "approved_note": "Matteo: approved the week via dashboard (2026-10-24T18:28:37Z)"
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-24T18:28:37Z)",
+      "posting_since": "2026-10-26T18:40:50Z",
+      "media_id": "18120129104061061",
+      "permalink": "https://www.instagram.com/reel/De982YIDMJb/",
+      "posted_at": "2026-10-26T18:42:30Z"
     },
     {
       "id": "lst-2026-10-29-gym-second-home",
