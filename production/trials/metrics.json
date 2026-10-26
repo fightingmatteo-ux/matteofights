@@ -60,23 +60,33 @@
     "at": "2026-10-25T21:13:15Z"
   },
   "17989846548098278": {
-    "views": 1784,
-    "reach": 1624,
+    "views": 1786,
+    "reach": 1626,
     "shares": 2,
-    "saves": 5,
+    "saves": 6,
     "avg_watch_s": 11.6,
-    "skip_rate": 46.3,
+    "skip_rate": 46.2,
     "follows": null,
-    "at": "2026-10-25T21:13:17Z"
+    "at": "2026-10-26T05:15:27Z"
   },
   "18152424823555269": {
-    "views": 2219,
-    "reach": 1956,
+    "views": 2243,
+    "reach": 1979,
     "shares": 3,
     "saves": 23,
     "avg_watch_s": 15.7,
-    "skip_rate": 38.6,
+    "skip_rate": 38.5,
     "follows": null,
-    "at": "2026-10-25T21:13:18Z"
+    "at": "2026-10-26T05:15:30Z"
+  },
+  "18128492534303106": {
+    "views": 1609,
+    "reach": 1309,
+    "shares": 2,
+    "saves": 11,
+    "avg_watch_s": 16.3,
+    "skip_rate": 40.7,
+    "follows": null,
+    "at": "2026-10-26T05:15:33Z"
   }
 }
