@@ -39,7 +39,7 @@
         "21:00"
       ],
       "topic": "Combat Sports",
-      "last_slot": "2026-10-26T01:00:00Z"
+      "last_slot": "2026-10-26T14:00:00Z"
     },
     "facebook_slides": {
       "enabled": false,
@@ -609,6 +609,13 @@
       }
     },
     "saenchai-v3-C": {},
-    "lst-2026-10-23-gym-teaches-business": {}
+    "lst-2026-10-23-gym-teaches-business": {
+      "threads": {
+        "status": "posted",
+        "at": "2026-10-26T14:06:30Z",
+        "id": "18120067393960491",
+        "url": "https://www.threads.com/@matteofights/post/De9dRYbCsD1"
+      }
+    }
   }
 }
