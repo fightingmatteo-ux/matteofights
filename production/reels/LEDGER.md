@@ -29,6 +29,14 @@ Sort by follows per 1k views when looking for what grows the account.
 | 2026-10-21 | lst-2026-10-20-go-anyway | - | 18603509794071360 | FIGHTERS AREN'T FEARLESS. THEY JUST GO ANYWAY. | statement (identity) | text-on-clip | trial | 1199 (0.45x) | ? | 1 | 1 | 0 | no | worst reel of the run: 0.45x, 4.4 s watch, 49% skip |
 | 2026-10-25 | saenchai-editorial | B | 18124280446899296 | Always sparring someone bigger? Steal this from Saenchai | talking head, question opening, full | own experience | trial | 2568 (0.97x) | ? | 6 | 33 | | **WINNER** | 68% past 3 s, 16.3 s watch, score 1.0 (auto verdict) |
 | 2026-10-25 | saenchai-editorial | C | 17912911344520196 | Bigger guys win the trade. Saenchai never traded | talking head, contrast opening, full | own experience | trial | 1857 (0.70x) | ? | 2 | 14 | | no | 62% past 3 s, 15.5 s watch, score 0.823 (auto verdict) |
+| 2026-10-21 | lst-2026-10-21-same-shot | - | 18017189024748329 | 7 WAYS TO STOP GETTING HIT WITH THE SAME SHOT | listicle (tactical) | text-on-clip | trial | 2183 (0.98x) | ? | 1 | 2 | 0 | no | tactical, flat: 2 saves |
+| 2026-10-21 | lst-2026-10-21-day-one-full-gear | - | 18413195857091439 | THE NEW GUY WHO SHOWS UP IN FULL FIGHT GEAR ON DAY ONE | iykyk (identity) | text-on-clip | trial | 2664 (1.20x) | ? | 1 | 3 | 0 | no | iykyk again: views ok, nothing kept |
+| 2026-10-21 | lst-2026-10-21-started-late | - | 18426809170159139 | 6 SIGNS YOU STARTED LATE AND ARE STILL GOING TO MAKE IT | listicle (identity) | text-on-clip | trial | 2690 (1.21x) | ? | 3 | 6 | 0 | no | identity, normal views |
+| 2026-10-22 | lst-2026-10-21-about-to-level-up | - | 18006390869794303 | 6 SIGNS YOU'RE ABOUT TO LEVEL UP AS A FIGHTER | listicle (identity) | text-on-clip | trial | 4208 (1.89x) | ? | 8 | 16 | 0 | no | 1.89x, best identity reel of the week, 8 shares |
+| 2026-10-22 | lst-2026-10-22-jab-hurt | - | 18341836051286540 | 6 WAYS TO MAKE YOUR JAB ACTUALLY HURT | listicle (tactical) | text-on-clip | trial | 2862 (1.29x) | ? | 4 | 33 | 0 | no | tactical saves again: 33 |
+| 2026-10-22 | lst-2026-10-22-fighter-groceries | - | 18131948600499044 | WHAT A FIGHTER'S GROCERY RUN ACTUALLY LOOKS LIKE | lifestyle (tactical) | text-on-clip | trial | 0 (0.00x) | ? | 0 | 0 | 0 | no | 0 views at 90 h: never distributed (held by Instagram?) |
+| 2026-10-22 | lst-2026-10-22-fighters-mindset | - | 18563291017072437 | 7 SIGNS YOU HAVE A FIGHTER'S MINDSET | listicle (identity) | text-on-clip | trial | 2914 (1.31x) | ? | 5 | 5 | 0 | no | identity: views ok, 5 saves |
+| 2026-10-23 | lst-2026-10-22-fight-trained-founder | - | 18414402283089109 | 6 SIGNS FIGHT TRAINING MADE YOU A DANGEROUS FOUNDER | builder (identity) | text-on-clip | trial | 2226 (1.00x) | ? | 3 | 4 | 0 | no | builder: exactly normal views, 4 saves (n=2 builder so far) |
 
 ## Patterns so far
 - _Add a line whenever a test is decided. Keep it to what the numbers showed._
@@ -38,3 +46,4 @@ Sort by follows per 1k views when looking for what grows the account.
 - 2026-10-24 (normal dropped to 2651 with 5 a day): statements are the weakest format so far, n=4 (hint, not yet a rule), 0.45-1.09x views and 1-3 saves each (go anyway 1199, worst of the run). Tactical listicles keep 21-50 saves (n=8). Saenchai talking heads (n=3) save 13-33 at 15-16 s watch.
 - 2026-10-24 (auto, freeze-in-sparring): contrast opening won over reframe, contrast.
 - 2026-10-25 (auto, saenchai-editorial): question opening won over story, contrast.
+- 2026-10-26 (normal 2226): saves split now n=22. Tactical 'N ways' 21-50 saves in 9 of 11 (same-shot 2 and hands-up-tired 8 the exceptions); identity 'N signs' 3-16 (n=9); iykyk 1-3 (n=4). Early: nerves-without-faking (tactical) 7012 views + 72 saves at 22 h, 3.15x.
