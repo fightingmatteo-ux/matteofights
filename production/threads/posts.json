@@ -512,9 +512,12 @@
       "text": "Try the new move in sparring. Even if you lose the round.\n\nWinning with your best three tricks teaches you nothing. Failing with a new one shows you what to fix.",
       "chain": [],
       "from": "craft",
-      "status": "queued",
+      "status": "posted",
       "approved": true,
-      "approved_note": "Matteo: approved via dashboard (2026-10-18T15:34:38Z)"
+      "approved_note": "Matteo: approved via dashboard (2026-10-18T15:34:38Z)",
+      "posted_at": "2026-10-27T11:36:02Z",
+      "thread_id": "18038501180896977",
+      "url": "https://www.threads.com/@matteofights/post/De_w5OWG9hV"
     },
     {
       "id": "th-1027-2",
