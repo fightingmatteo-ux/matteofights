@@ -542,9 +542,12 @@
       "text": "My first Muay Thai fight was a draw.\n\nI hit him with a right hand while the ref was separating us. He went down. It was not clean at all.\n\nOfficial result: a draw. The scorecard doesn't care what you remember.",
       "chain": [],
       "from": "founder",
-      "status": "queued",
+      "status": "posted",
       "approved": true,
-      "approved_note": "Matteo: approved via dashboard (2026-10-18T15:34:38Z)"
+      "approved_note": "Matteo: approved via dashboard (2026-10-18T15:34:38Z)",
+      "posted_at": "2026-10-27T21:36:05Z",
+      "thread_id": "18170030296478641",
+      "url": "https://www.threads.com/@matteofights/post/DfA1j4Cj9oh"
     },
     {
       "id": "th-1028-1",
