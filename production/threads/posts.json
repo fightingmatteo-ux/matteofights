@@ -527,9 +527,12 @@
       "text": "Music in the gym or no music?\n\nSome people can't think with it. Some can't start without it. Which one are you?",
       "chain": [],
       "from": "craft",
-      "status": "queued",
+      "status": "posted",
       "approved": true,
-      "approved_note": "Matteo: approved via dashboard (2026-10-18T15:34:38Z)"
+      "approved_note": "Matteo: approved via dashboard (2026-10-18T15:34:38Z)",
+      "posted_at": "2026-10-27T16:41:28Z",
+      "thread_id": "18127306924839913",
+      "url": "https://www.threads.com/@matteofights/post/DfAT2RplMM6"
     },
     {
       "id": "th-1027-3",
