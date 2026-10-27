@@ -1477,7 +1477,7 @@
       "not_before": "2026-10-27T16:30:00Z",
       "min_gap_hours": 2.5,
       "approved": true,
-      "status": "queued",
+      "status": "posted",
       "test": {
         "exp": "exp-1016-hook_style",
         "variant": "a",
@@ -1485,7 +1485,14 @@
       },
       "app_audio": "id:576492425503806 Echo Sax Endless - Caleb Arredondo (add in the Instagram app)",
       "approved_note": "Matteo: approved the week via dashboard (2026-10-20T14:29:35Z)",
-      "video_asset_music": "lst-2026-10-27-breathes-better-music.mp4"
+      "video_asset_music": "lst-2026-10-27-breathes-better-music.mp4",
+      "audio_id": "576492425503806",
+      "audio_title": "Echo Sax Endless",
+      "audio_artist": "caleb.arredondo",
+      "posting_since": "2026-10-27T16:30:59Z",
+      "media_id": "18199174084386139",
+      "permalink": "https://www.instagram.com/reel/DfASrcMkXVO/",
+      "posted_at": "2026-10-27T16:31:46Z"
     },
     {
       "id": "lst-2026-10-28-sleep-rules",
