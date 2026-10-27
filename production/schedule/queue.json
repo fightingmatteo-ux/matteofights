@@ -1381,7 +1381,7 @@
       "not_before": "2026-10-27T13:00:00Z",
       "min_gap_hours": 2.5,
       "approved": true,
-      "status": "queued",
+      "status": "posted",
       "test": {
         "exp": "exp-1016-hook_style",
         "variant": "b",
@@ -1389,7 +1389,14 @@
       },
       "app_audio": "id:530317382955170 Echo Sax End - Caleb Arredondo (add in the Instagram app)",
       "approved_note": "Matteo: approved the week via dashboard (2026-10-20T14:29:35Z)",
-      "video_asset_music": "lst-2026-10-27-bad-sparring-day-music.mp4"
+      "video_asset_music": "lst-2026-10-27-bad-sparring-day-music.mp4",
+      "audio_id": "530317382955170",
+      "audio_title": "Echo Sax End (Take 2)",
+      "audio_artist": "caleb.arredondo",
+      "posting_since": "2026-10-27T13:00:58Z",
+      "media_id": "18204962350378125",
+      "permalink": "https://www.instagram.com/reel/De_6qE-CqvB/",
+      "posted_at": "2026-10-27T13:01:55Z"
     },
     {
       "id": "lst-2026-10-25-coach-thinks-ready",
