@@ -60,63 +60,63 @@
     "at": "2026-10-25T21:13:15Z"
   },
   "17989846548098278": {
-    "views": 1787,
+    "views": 1790,
     "reach": 1628,
     "shares": 2,
     "saves": 6,
     "avg_watch_s": 11.6,
     "skip_rate": 46.3,
     "follows": null,
-    "at": "2026-10-27T05:33:53Z"
+    "at": "2026-10-27T12:39:23Z"
   },
   "18152424823555269": {
-    "views": 2265,
-    "reach": 2001,
+    "views": 2268,
+    "reach": 2004,
     "shares": 4,
     "saves": 23,
-    "avg_watch_s": 15.8,
-    "skip_rate": 38.4,
+    "avg_watch_s": 15.7,
+    "skip_rate": 38.5,
     "follows": null,
-    "at": "2026-10-27T05:33:55Z"
+    "at": "2026-10-27T12:39:24Z"
   },
   "18128492534303106": {
-    "views": 2358,
-    "reach": 2095,
+    "views": 2370,
+    "reach": 2104,
     "shares": 17,
     "saves": 22,
-    "avg_watch_s": 17.3,
-    "skip_rate": 41.7,
+    "avg_watch_s": 17.2,
+    "skip_rate": 41.9,
     "follows": null,
-    "at": "2026-10-27T05:33:56Z"
+    "at": "2026-10-27T12:39:25Z"
   },
   "17914845648490434": {
-    "views": 2238,
-    "reach": 1808,
+    "views": 2332,
+    "reach": 1855,
     "shares": 15,
     "saves": 3,
-    "avg_watch_s": 17.1,
-    "skip_rate": 33.9,
+    "avg_watch_s": 17.4,
+    "skip_rate": 33.6,
     "follows": null,
-    "at": "2026-10-27T05:33:48Z"
+    "at": "2026-10-27T12:39:19Z"
   },
   "18218137072358274": {
-    "views": 1218,
-    "reach": 1071,
-    "shares": 0,
+    "views": 1319,
+    "reach": 1154,
+    "shares": 1,
     "saves": 0,
-    "avg_watch_s": 12.0,
-    "skip_rate": 36.5,
+    "avg_watch_s": 12.3,
+    "skip_rate": 36.6,
     "follows": null,
-    "at": "2026-10-27T05:33:50Z"
+    "at": "2026-10-27T12:39:20Z"
   },
   "18120129104061061": {
-    "views": 1807,
-    "reach": 1450,
-    "shares": 1,
+    "views": 2026,
+    "reach": 1637,
+    "shares": 4,
     "saves": 5,
-    "avg_watch_s": 16.3,
-    "skip_rate": 38.6,
+    "avg_watch_s": 16.5,
+    "skip_rate": 38.8,
     "follows": null,
-    "at": "2026-10-27T05:33:52Z"
+    "at": "2026-10-27T12:39:22Z"
   }
 }
