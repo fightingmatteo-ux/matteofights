@@ -572,9 +572,12 @@
       "text": "Boxing or Muay Thai for a total beginner?\n\nSkip \"whichever your gym teaches\". Pick one and give me the reason.",
       "chain": [],
       "from": "craft",
-      "status": "queued",
+      "status": "posted",
       "approved": true,
-      "approved_note": "Matteo: approved via dashboard (2026-10-18T15:34:38Z)"
+      "approved_note": "Matteo: approved via dashboard (2026-10-18T15:34:38Z)",
+      "posted_at": "2026-10-28T16:41:29Z",
+      "thread_id": "18000975144012531",
+      "url": "https://www.threads.com/@matteofights/post/DfC4o7biRLj"
     },
     {
       "id": "th-1028-3",
