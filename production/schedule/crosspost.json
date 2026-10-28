@@ -8,7 +8,7 @@
       "slots": [
         "19:30"
       ],
-      "last_slot": "2026-10-27T23:30:00Z",
+      "last_slot": "2026-10-28T23:30:00Z",
       "winners": {
         "min_age_hours": 72,
         "max_age_days": 7,
@@ -597,6 +597,12 @@
         "id": "FRgxJM3ZY6c",
         "url": "https://youtube.com/shorts/FRgxJM3ZY6c",
         "privacy": "public"
+      },
+      "facebook": {
+        "status": "posted",
+        "at": "2026-10-28T23:36:37Z",
+        "id": "1848134216431842",
+        "url": "https://www.facebook.com/reel/1848134216431842"
       }
     },
     "lst-2026-10-23-rounds-nobody-sees": {
