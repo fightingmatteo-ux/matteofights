@@ -632,9 +632,12 @@
       "text": "Training in the morning? A banana and a glass of water is enough.\n\nSkip the big breakfast you can't hold down in round three. Eat the real meal after.",
       "chain": [],
       "from": "craft",
-      "status": "queued",
+      "status": "posted",
       "approved": true,
-      "approved_note": "Matteo: approved via dashboard (2026-10-18T15:34:38Z)"
+      "approved_note": "Matteo: approved via dashboard (2026-10-18T15:34:38Z)",
+      "posted_at": "2026-10-29T21:36:02Z",
+      "thread_id": "18089942492701829",
+      "url": "https://www.threads.com/@matteofights/post/DfF_JSrCanE"
     },
     {
       "id": "th-1030-1",
