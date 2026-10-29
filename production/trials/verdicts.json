@@ -190,5 +190,69 @@
         "follows": null
       }
     ]
+  },
+  "knockout-draw": {
+    "decided_at": "2026-10-29T22:57:48Z",
+    "winner": "2026-10-24-knockout-draw-A",
+    "too_close": false,
+    "metrics_used": [
+      "hold",
+      "watch",
+      "reach",
+      "keep"
+    ],
+    "variants": [
+      {
+        "id": "2026-10-24-knockout-draw-A",
+        "variant": "A",
+        "hook": "I knocked him out. They called it a draw.",
+        "opening": "result",
+        "length": "full",
+        "media_id": "17914845648490434",
+        "permalink": "https://www.instagram.com/reel/De94LHYD-zs/",
+        "score": 1.0,
+        "views": 2551,
+        "reach": 2003,
+        "shares": 15,
+        "saves": 5,
+        "avg_watch_s": 18.1,
+        "skip_rate": 33.8,
+        "follows": null
+      },
+      {
+        "id": "2026-10-24-knockout-draw-C",
+        "variant": "C",
+        "hook": "I was 16. His sixth fight. My first.",
+        "opening": "number",
+        "length": "full",
+        "media_id": "18120129104061061",
+        "permalink": "https://www.instagram.com/reel/De982YIDMJb/",
+        "score": 0.832,
+        "views": 2035,
+        "reach": 1646,
+        "shares": 4,
+        "saves": 5,
+        "avg_watch_s": 16.4,
+        "skip_rate": 38.7,
+        "follows": null
+      },
+      {
+        "id": "2026-10-24-knockout-draw-B",
+        "variant": "B",
+        "hook": "My first fight was stacked against me. I still knocked him out.",
+        "opening": "story",
+        "length": "full",
+        "media_id": "18218137072358274",
+        "permalink": "https://www.instagram.com/reel/De96c_Igojy/",
+        "score": 0.642,
+        "views": 1360,
+        "reach": 1191,
+        "shares": 1,
+        "saves": 0,
+        "avg_watch_s": 12.4,
+        "skip_rate": 36.9,
+        "follows": null
+      }
+    ]
   }
 }

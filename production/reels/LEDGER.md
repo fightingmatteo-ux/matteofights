@@ -52,6 +52,9 @@ Sort by follows per 1k views when looking for what grows the account.
 | 2026-10-25 | lst-2026-10-25-coach-thinks-ready | - | 18113954333125892 | 6 SIGNS YOUR COACH THINKS YOU'RE READY TO FIGHT | listicle (identity) | text-on-clip | trial | 520 (0.21x) | ? | 0 | 2 | 0 | no | 0.21x: blurry crowded clip, face unreadable (sent with a warning) |
 | 2026-10-26 | lst-2026-10-25-light-sparring | - | 17937728643403693 | "LIGHT SPARRING" UNTIL SOMEONE LANDS ONE CLEAN SHOT | iykyk (identity) | text-on-clip | trial | 2864 (1.15x) | ? | 7 | 1 | 0 | no | iykyk: shares 7, saves 1 |
 | 2026-10-26 | lst-2026-10-25-coach-sees | - | 17996364396056868 | 7 THINGS YOUR COACH SEES THAT YOU DON'T | listicle (tactical) | text-on-clip | trial | 2083 (0.83x) | ? | 0 | 5 | 0 | no | tactical list but 0.83x |
+| 2026-10-29 | knockout-draw | A | 17914845648490434 | I knocked him out. They called it a draw. | talking head, result opening, full | own experience | trial | 2551 (1.02x) | ? | 15 | 5 | | **WINNER** | 66% past 3 s, 18.1 s watch, score 1.0 (auto verdict) |
+| 2026-10-29 | knockout-draw | C | 18120129104061061 | I was 16. His sixth fight. My first. | talking head, number opening, full | own experience | trial | 2035 (0.81x) | ? | 4 | 5 | | no | 61% past 3 s, 16.4 s watch, score 0.832 (auto verdict) |
+| 2026-10-29 | knockout-draw | B | 18218137072358274 | My first fight was stacked against me. I still knocked him out. | talking head, story opening, full | own experience | trial | 1360 (0.54x) | ? | 1 | 0 | | no | 63% past 3 s, 12.4 s watch, score 0.642 (auto verdict) |
 
 ## Patterns so far
 - _Add a line whenever a test is decided. Keep it to what the numbers showed._
@@ -65,3 +68,4 @@ Sort by follows per 1k views when looking for what grows the account.
 - 2026-10-27 (normal 2064): statements now n=5, all 0.45-1.09x views and 0-3 saves: weakest format, cut from ~5 to ~2 per 28 next batch. Builder n=2 at ~1.0x. Lifestyle 'recovery twice a day' 1.95x with 29 saves (n=3 lifestyle: 0, 1.03x, 1.95x).
 - 2026-10-29 (auto, saenchai-v3): contrast opening won over question, story.
 - 2026-10-29 (normal 2500): all 3 winners so far are tactical 'N ways' tied to a fight moment (round three 2.07x, nerves 3.21x, round one 2.20x), n=3 of 14 tactical vs 0 of 12 identity. Lean harder: ~12 tactical fight-moment listicles per 28. A bad cover kills reach: coach-thinks-ready (blurry, face hidden) 0.21x.
+- 2026-10-29 (auto, knockout-draw): result opening won over number, story.
