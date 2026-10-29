@@ -39,7 +39,7 @@
         "21:00"
       ],
       "topic": "Combat Sports",
-      "last_slot": "2026-10-29T01:00:00Z"
+      "last_slot": "2026-10-29T14:00:00Z"
     },
     "facebook_slides": {
       "enabled": false,
@@ -759,6 +759,14 @@
         "url": "https://www.threads.com/@matteofights/post/DfDyZVoDC4_"
       }
     },
-    "lst-2026-10-26-three-days-a-week": {}
+    "lst-2026-10-26-three-days-a-week": {},
+    "lst-2026-10-26-better-than-it-feels": {
+      "threads": {
+        "status": "posted",
+        "at": "2026-10-29T14:06:31Z",
+        "id": "17938872819125440",
+        "url": "https://www.threads.com/@matteofights/post/DfFLqHBlwZi"
+      }
+    }
   }
 }
