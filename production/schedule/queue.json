@@ -692,7 +692,14 @@
       "posting_since": "2026-10-26T22:30:53Z",
       "media_id": "18013800395977603",
       "permalink": "https://www.instagram.com/reel/De-XEeRD96o/",
-      "posted_at": "2026-10-26T22:31:37Z"
+      "posted_at": "2026-10-26T22:31:37Z",
+      "video_asset_fb": "lst-2026-10-26-fit-without-running-fb.mp4",
+      "fb_pick": {
+        "at": "2026-10-29T23:56:11Z",
+        "ig_views": 13306,
+        "vs_median": 5.32,
+        "shares_saves_per_1k": 12.7
+      }
     },
     {
       "id": "lst-2026-10-27-quit-before-good",
