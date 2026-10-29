@@ -4,6 +4,9 @@ The @matteofights reel pipeline. Runs from this repo on the laptop or in a Claud
 **Goal (since 2026-10-12): followers + engaged, high-quality fighter audience.** Content = combat sport
 psychology and fighter mindset. No Stance plug in reels for now. Nothing is ever posted automatically.
 
+**Open (2026-10-29): before any filming or edit session, remind Matteo of the plan-reels plan and his pending
+yes/no: `production/reels/PLAN-REELS-2026-10-29.md`.** Remove this line once he has decided.
+
 Headless daily listicles (old 331k format, no filming): `tools/listicle/README.md`.
 
 Reference builds:

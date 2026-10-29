@@ -1,6 +1,6 @@
 # STATUS: open items, one place
 
-_Updated 2026-10-25 14:30 UTC. Every session: read this after CLAUDE.md, update it when you close or add an item._
+_Updated 2026-10-29 UTC. Every session: read this after CLAUDE.md, update it when you close or add an item._
 
 Legend: **DO** = needs action now, **MATTEO** = only Matteo can do it, **WAIT** = blocked on someone else, **OK** = done, kept for one cycle.
 
@@ -57,6 +57,7 @@ Log: `media/2026-10-16-saenchai-bigger-men/renders/render_bc.log` (ends with `AL
 | Threads token | Expires 2026-12-14 | `crosspost.py threads-refresh` before then |
 | IG_COOKIES secret | Expired, no longer blocking: Fetch video now retries yt-dlp without cookies (worked for Ferris 10-19) and falls back to the API, then the embed page | Optional refresh if logged-out downloads start failing |
 | FB_USER_TOKEN | Set 2026-10-15, 60-day token, so expires ~2026-12-14. Expiry not tracked | Add tracking |
+| **Plan reels + older, richer audience (10-29)** | **MATTEO** | Plan ready: `production/reels/PLAN-REELS-2026-10-29.md` (talk-to-camera 3-day plan reels in the 15:30 slot, 5 written and ready to film; listicle mix 3 ways : 1 signs from the Nov 5 batch, adult framing, no metric units; weekly grid share + pin; $35 boost test). Needs his yes/no on points 1-4. **Remind Matteo whenever he is filming or editing reels.** Also check the 2 dead nutrition reels (0 views) |
 | Listicle clip sheets | MATTEO | Waiting on his yes (Telegram or dashboard) |
 | Next week's 21 listicles (18 to 28 Oct) | **MATTEO** | Reviewed, 6 clips swapped and re-rendered 10-18 15:00Z. Waiting on his yes (dashboard / Telegram / chat). #1 posts 12:30 NY today only if approved |
 | control.matteofights.me | OK | Live behind Cloudflare Access (checked 10-18) |
