@@ -2207,11 +2207,18 @@
       "not_before": "2026-10-29T13:00:00Z",
       "min_gap_hours": 2.5,
       "approved": true,
-      "status": "queued",
+      "status": "posted",
       "cta": "protocol",
       "app_audio": "id:576492425503806 Echo Sax Endless - Caleb Arredondo (add in the Instagram app)",
       "video_asset_music": "lst-2026-10-29-boring-best-music.mp4",
-      "approved_note": "Matteo: approved the week via dashboard (2026-10-25T17:11:17Z)"
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-25T17:11:17Z)",
+      "audio_id": "576492425503806",
+      "audio_title": "Echo Sax Endless",
+      "audio_artist": "caleb.arredondo",
+      "posting_since": "2026-10-29T13:01:03Z",
+      "media_id": "18101450915181231",
+      "permalink": "https://www.instagram.com/reel/DfFEQTQDhwY/",
+      "posted_at": "2026-10-29T13:01:50Z"
     },
     {
       "id": "lst-2026-10-30-glove-smell",
