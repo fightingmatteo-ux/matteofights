@@ -621,7 +621,14 @@
       "posting_since": "2026-10-25T13:05:53Z",
       "media_id": "17904143727671253",
       "permalink": "https://www.instagram.com/reel/De6xoDHihaE/",
-      "posted_at": "2026-10-25T13:06:52Z"
+      "posted_at": "2026-10-25T13:06:52Z",
+      "video_asset_fb": "lst-2026-10-24-nerves-without-faking-fb.mp4",
+      "fb_pick": {
+        "at": "2026-10-29T00:00:11Z",
+        "ig_views": 7510,
+        "vs_median": 3.64,
+        "shares_saves_per_1k": 11.7
+      }
     },
     {
       "id": "lst-2026-10-25-light-sparring",
