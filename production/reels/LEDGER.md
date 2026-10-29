@@ -41,6 +41,9 @@ Sort by follows per 1k views when looking for what grows the account.
 | 2026-10-23 | lst-2026-10-23-recovery-twice-a-day | - | 18122055467473089 | 6 RECOVERY HABITS THAT LET FIGHTERS TRAIN TWICE A DAY | lifestyle (tactical) | text-on-clip | trial | 4019 (1.95x) | ? | 7 | 29 | 0 | no | 1.95x, best lifestyle reel yet: 29 saves, 7 shares |
 | 2026-10-24 | lst-2026-10-23-rounds-nobody-sees | - | 17986132824095194 | FIGHTS ARE WON IN THE ROUNDS NOBODY SEES | statement (identity) | text-on-clip | trial | 1354 (0.66x) | ? | 2 | 0 | 0 | no | statement: 0.66x, 0 saves |
 | 2026-10-24 | lst-2026-10-23-gym-teaches-business | - | 17912693520506520 | THE GYM TEACHES WHAT BUSINESS SCHOOL CAN'T | builder (identity) | text-on-clip | trial | 1995 (0.97x) | ? | 0 | 2 | 0 | no | builder: 0.97x, 2 saves (builder n=2: 1.0x and 0.97x) |
+| 2026-10-29 | saenchai-v3 | v3-C | 18128492534303106 | Bigger guys win the trade. Saenchai never traded | talking head, contrast opening, full | own experience | trial | 2463 (1.19x) | ? | 23 | 23 | | **WINNER** | 58% past 3 s, 17.1 s watch, score 0.984 (auto verdict) |
+| 2026-10-29 | saenchai-v3 | v3-B | 18152424823555269 | Always sparring someone bigger? Steal this from Saenchai | talking head, question opening, full | own experience | trial | 2279 (1.10x) | ? | 4 | 23 | | no | 61% past 3 s, 15.7 s watch, score 0.9 (auto verdict) |
+| 2026-10-29 | saenchai-v3 | v3-A | 17989846548098278 | Saenchai fought bigger men his whole career | talking head, story opening, full | own experience | trial | 1791 (0.87x) | ? | 2 | 6 | | no | 54% past 3 s, 11.6 s watch, score 0.682 (auto verdict) |
 
 ## Patterns so far
 - _Add a line whenever a test is decided. Keep it to what the numbers showed._
@@ -52,3 +55,4 @@ Sort by follows per 1k views when looking for what grows the account.
 - 2026-10-25 (auto, saenchai-editorial): question opening won over story, contrast.
 - 2026-10-26 (normal 2226): saves split now n=22. Tactical 'N ways' 21-50 saves in 9 of 11 (same-shot 2 and hands-up-tired 8 the exceptions); identity 'N signs' 3-16 (n=9); iykyk 1-3 (n=4). Early: nerves-without-faking (tactical) 7012 views + 72 saves at 22 h, 3.15x.
 - 2026-10-27 (normal 2064): statements now n=5, all 0.45-1.09x views and 0-3 saves: weakest format, cut from ~5 to ~2 per 28 next batch. Builder n=2 at ~1.0x. Lifestyle 'recovery twice a day' 1.95x with 29 saves (n=3 lifestyle: 0, 1.03x, 1.95x).
+- 2026-10-29 (auto, saenchai-v3): contrast opening won over question, story.
