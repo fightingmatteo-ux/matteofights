@@ -67,6 +67,10 @@ House layout 1080x1920: top-band cards 170–790 · subtitles centred ~y1440 · 
   dead space after every reveal line. Build tension (riser → slam), drop the music for the quiet line.
 - **No hard cut straight to the next line:** b-roll enters 0.12 s early (J-cut) with a zoom-blur;
   flashes only on big hits. Pattern interrupt every 2–4 s.
+- **Eye-trace cuts (2026-10-29, @liveairprod reference):** every new shot starts where the viewer's eyes were on the
+  last frame of the old one (eyes to eyes, eyes to the card's keyword, eyes to the fighter in the tape). Fight-tape
+  crops: `scripts/eyetrace.py` `crop_x()`. Check every render (step 6). Breakdown:
+  `content-bank/references/2026-10-29-liveairprod-eye-trace.md`.
 - **Face:** handheld footage, chin near the bottom → zoom ≤1.08x, `transform-origin: 50% 100%`.
   Whole face always in frame.
 - **Look = editorial (Matteo 2026-10-20, from the kaixerb reference; replaces the Tinos one-word subtitles).**
@@ -99,6 +103,9 @@ House layout 1080x1920: top-band cards 170–790 · subtitles centred ~y1440 · 
 ## 6. Build, check, review, render
 Editorial reels: after the render, `python3 -I ../../editing/reel-kit/editorial/check_render.py <render> assets/media/aroll_<V>.mp4`
 (catches black / jumpy first frames; on FAIL render again).
+Every render: `python3 -I ../../editing/reel-kit/scripts/eyetrace.py <render> eyetrace.jpg` (needs
+`opencv-python-headless<5`). Read the sheet: any cut marked HUNT (focus jumps > 30% of the frame) gets re-cropped or
+re-timed before Matteo sees it. Our 10-24 knockout cut: median 10%; the reference: 11%.
 ```bash
 bash build.sh && npx hyperframes check                      # must pass
 npx hyperframes snapshot --at <beat times> --no-end         # read contact sheets, not every frame

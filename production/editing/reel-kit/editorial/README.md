@@ -27,6 +27,11 @@ The talking-head look since 2026-10-20, from the @kaixerb reference
 Override per reel: `plan.build(..., fx={"WORD": "effect"})`. Add an effect = a function in `editorial.js` FX + a
 sound in `make_audio.py` + a row in `plan.FX_SFX`. Everything is seeded, so renders repeat exactly.
 
+## Eye-trace (keep it)
+Cards and tape already start near his eyes: the card box top (640 px) puts the keyword at eye height, and tape is
+centred. Keep it that way: don't move `.ed-cardbox` up or down without re-running `scripts/eyetrace.py` on the render.
+In a `make_broll.py`, pick the crop with `eyetrace.crop_x(SRC, a, w, 0.5)` so the action lands where his eyes were.
+
 ## Cutaways (b-roll / fight tape)
 `work/broll.json` ({name: {start, dur}}, clips at `assets/media/b_<name>.mp4`, e.g. from a `make_broll.py`) is picked up
 by build.py: clips sit above his cut-out, whip in with a motion blur, and phrases during them always go in front.
