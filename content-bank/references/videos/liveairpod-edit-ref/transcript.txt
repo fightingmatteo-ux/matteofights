@@ -1,0 +1,7 @@
+language: en
+[   0.0-   4.3] how to cut shots invisibly, just like in the movies. Let me show you.
+[   4.8-   9.1] Right now your eyes are here. The next shot should start in exactly the same place.
+[   9.5-  12.4] I move your gaze and this becomes the new point of focus.
+[  12.8-  16.9] Every new shot should begin where the viewer's eyes were at the end of the previous one.
+[  17.0-  21.1] This simple technique lets you cut without any visual discomfort for the audience.
+[  21.4-  24.2] Use it in all of your videos. Follow for more.
