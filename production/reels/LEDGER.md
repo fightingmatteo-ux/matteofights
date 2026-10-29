@@ -44,6 +44,14 @@ Sort by follows per 1k views when looking for what grows the account.
 | 2026-10-29 | saenchai-v3 | v3-C | 18128492534303106 | Bigger guys win the trade. Saenchai never traded | talking head, contrast opening, full | own experience | trial | 2463 (1.19x) | ? | 23 | 23 | | **WINNER** | 58% past 3 s, 17.1 s watch, score 0.984 (auto verdict) |
 | 2026-10-29 | saenchai-v3 | v3-B | 18152424823555269 | Always sparring someone bigger? Steal this from Saenchai | talking head, question opening, full | own experience | trial | 2279 (1.10x) | ? | 4 | 23 | | no | 61% past 3 s, 15.7 s watch, score 0.9 (auto verdict) |
 | 2026-10-29 | saenchai-v3 | v3-A | 17989846548098278 | Saenchai fought bigger men his whole career | talking head, story opening, full | own experience | trial | 1791 (0.87x) | ? | 2 | 6 | | no | 54% past 3 s, 11.6 s watch, score 0.682 (auto verdict) |
+| 2026-10-24 | lst-2026-10-24-smaller-clinch | - | 18229051564336831 | 8 WAYS TO HANDLE A BIGGER GUY IN THE CLINCH | listicle (tactical) | text-on-clip | trial | 2318 (0.93x) | ? | 3 | 10 | 0 | no | tactical, flat views, 10 saves |
+| 2026-10-24 | lst-2026-10-24-morning-session-fuel | - | 18105677701998427 | HOW FIGHTERS EAT BEFORE A MORNING SESSION | lifestyle (tactical) | text-on-clip | trial | 2141 (0.86x) | ? | 0 | 8 | 0 | no | lifestyle: 0.86x |
+| 2026-10-25 | lst-2026-10-24-nerves-without-faking | - | 17904143727671253 | 7 WAYS TO KILL FIGHT NERVES WITHOUT FAKING CONFIDENCE | listicle (tactical) | text-on-clip | trial | 8027 (3.21x) | ? | 12 | 81 | 0 | **WINNER 3.21x** | tactical nerves fix + contrast subhook; 81 saves, best reel of the 5-a-day run |
+| 2026-10-25 | lst-2026-10-24-training-too-long | - | 18077274071460612 | 6 SIGNS YOU'VE BEEN TRAINING FIGHTING FOR TOO LONG | listicle (identity) | text-on-clip | trial | 4517 (1.81x) | ? | 2 | 6 | 0 | no | identity: 1.81x views, 6 saves |
+| 2026-10-25 | lst-2026-10-25-read-round-one | - | 17989638402114541 | 6 WAYS TO READ YOUR OPPONENT IN THE FIRST ROUND | listicle (tactical) | text-on-clip | trial | 5505 (2.20x) | ? | 15 | 106 | 0 | **WINNER 2.20x** | tactical fight-moment (round one); 106 saves = most ever |
+| 2026-10-25 | lst-2026-10-25-coach-thinks-ready | - | 18113954333125892 | 6 SIGNS YOUR COACH THINKS YOU'RE READY TO FIGHT | listicle (identity) | text-on-clip | trial | 520 (0.21x) | ? | 0 | 2 | 0 | no | 0.21x: blurry crowded clip, face unreadable (sent with a warning) |
+| 2026-10-26 | lst-2026-10-25-light-sparring | - | 17937728643403693 | "LIGHT SPARRING" UNTIL SOMEONE LANDS ONE CLEAN SHOT | iykyk (identity) | text-on-clip | trial | 2864 (1.15x) | ? | 7 | 1 | 0 | no | iykyk: shares 7, saves 1 |
+| 2026-10-26 | lst-2026-10-25-coach-sees | - | 17996364396056868 | 7 THINGS YOUR COACH SEES THAT YOU DON'T | listicle (tactical) | text-on-clip | trial | 2083 (0.83x) | ? | 0 | 5 | 0 | no | tactical list but 0.83x |
 
 ## Patterns so far
 - _Add a line whenever a test is decided. Keep it to what the numbers showed._
@@ -56,3 +64,4 @@ Sort by follows per 1k views when looking for what grows the account.
 - 2026-10-26 (normal 2226): saves split now n=22. Tactical 'N ways' 21-50 saves in 9 of 11 (same-shot 2 and hands-up-tired 8 the exceptions); identity 'N signs' 3-16 (n=9); iykyk 1-3 (n=4). Early: nerves-without-faking (tactical) 7012 views + 72 saves at 22 h, 3.15x.
 - 2026-10-27 (normal 2064): statements now n=5, all 0.45-1.09x views and 0-3 saves: weakest format, cut from ~5 to ~2 per 28 next batch. Builder n=2 at ~1.0x. Lifestyle 'recovery twice a day' 1.95x with 29 saves (n=3 lifestyle: 0, 1.03x, 1.95x).
 - 2026-10-29 (auto, saenchai-v3): contrast opening won over question, story.
+- 2026-10-29 (normal 2500): all 3 winners so far are tactical 'N ways' tied to a fight moment (round three 2.07x, nerves 3.21x, round one 2.20x), n=3 of 14 tactical vs 0 of 12 identity. Lean harder: ~12 tactical fight-moment listicles per 28. A bad cover kills reach: coach-thinks-ready (blurry, face hidden) 0.21x.
