@@ -39,7 +39,7 @@
         "21:00"
       ],
       "topic": "Combat Sports",
-      "last_slot": "2026-10-28T19:30:00Z"
+      "last_slot": "2026-10-29T01:00:00Z"
     },
     "facebook_slides": {
       "enabled": false,
@@ -751,7 +751,14 @@
         "id": "rUFHEv2RR7U",
         "url": "https://youtube.com/shorts/rUFHEv2RR7U",
         "privacy": "public"
+      },
+      "threads": {
+        "status": "posted",
+        "at": "2026-10-29T01:06:40Z",
+        "id": "18076480148482347",
+        "url": "https://www.threads.com/@matteofights/post/DfDyZVoDC4_"
       }
-    }
+    },
+    "lst-2026-10-26-three-days-a-week": {}
   }
 }
