@@ -8,7 +8,7 @@
       "slots": [
         "19:30"
       ],
-      "last_slot": "2026-10-28T23:30:00Z",
+      "last_slot": "2026-10-29T23:30:00Z",
       "winners": {
         "min_age_hours": 72,
         "max_age_days": 7,
@@ -682,6 +682,12 @@
         "id": "EiV1C5i_-do",
         "url": "https://youtube.com/shorts/EiV1C5i_-do",
         "privacy": "public"
+      },
+      "facebook": {
+        "status": "posted",
+        "at": "2026-10-29T23:36:29Z",
+        "id": "1447814254125131",
+        "url": "https://www.facebook.com/reel/1447814254125131"
       }
     },
     "lst-2026-10-24-training-too-long": {
