@@ -73,7 +73,19 @@ Unpin "Muay Thai vs Boxing technical sparring".
 `Matteo | Muay Thai Fighter` (searchable: "muay thai", "fighter").
 
 ### 4. Bio (pick one, all under 150 characters, no Stance, no injury)
-**A (recommended, uses the line from your best reel ever):**
+**Final pick (10-30, after Matteo: "the problem is the profile"). The name field already says Muay Thai Fighter,
+so line 1 is proof instead (148 characters):**
+```
+🇨🇭🇧🇷 Bangkok · trained in 5 countries
+For people who don't train for fun
+Fighter mindset + sparring IQ, daily
+⬇️ Free 4-week plan for your weak spot
+```
+Line 1 = why trust me, line 2 = who this is for (the subhook of the 331k reel), line 3 = what you get by
+following (what they just watched), line 4 = one free thing, named the way people already ask for it (the
+"Comment PLAN" reel got 164 comments). Link title: `Free fighter plan`.
+
+**A (first draft):**
 ```
 🇨🇭🇧🇷 Muay Thai fighter in Bangkok
 For people who don't train for fun
