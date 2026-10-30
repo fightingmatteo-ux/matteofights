@@ -91,19 +91,12 @@ If the builder test wins, line 2 becomes `Combat sports first. Building stuff to
 Rejected 10-30: "For people who don't train for fun", "Sparring, technique + gym life" (too narrow),
 "Combat sports first. Business + life too" (no business yet).
 
-### 4b. Builder test (proposal, needs Matteo's yes)
-Not "business" content: show the system that runs this account. It's about the account itself, so it's native to
-the fight audience. 3 talking-head trial reels over 2 weeks, replacing the generic builder listicles (those got
-~2k views, 5-7 s watch). Talking points, only say what's true:
-1. **"This account posts 5 reels a day. I don't edit them."** Screen: the control center Home, a listicle being
-   built, the queue. What the system does, what you still do (film, approve), why (time to train).
-2. **"I approve my reels from my phone between rounds."** Screen: Telegram / hold-to-approve. Short, one beat.
-3. **"My system tracked every reel I posted. Here's what you actually watch."** Identity beats instruction, the
-   331k reel, which openings win. About the viewer, so it still serves the fight audience.
-Never show keys, tokens or the secrets folder on screen. Judge each against the listicle median on follows per 1k
-views (app insights), sends and watch time. 2 of 3 at or above the median: becomes a regular lane, bio line 2 changes.
-All 3 well below: business/automation waits for its own account later. The free automation help: keep notes (with
-the people's OK) as future proof, don't post about it yet.
+### 4b. Builder test: DROPPED 10-30
+Matteo: showing the system that runs the account hurts credibility on the fight page. No behind-the-scenes system
+reels. Business / automation content waits until there's a business; then decide on a separate account.
+
+### 4c. START HERE highlight
+Script: `production/profile/START-HERE-2026-10-30.md`.
 
 Earlier drafts (A/B/C) removed 10-30: they used "Muay Thai fighter" and "fighter mindset" wording, both rejected.
 
