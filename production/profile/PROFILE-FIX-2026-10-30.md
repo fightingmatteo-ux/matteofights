@@ -73,21 +73,32 @@ Once the grid has fresh reels, archive the two 24 Sep Stance pitches (or just le
 Unpin "Muay Thai vs Boxing technical sparring".
 
 ### 3. Name field
-Draft: `Matteo | Muay Thai & Boxing` (the topic, not a title). Rejected: "Muay Thai Fighter" (hasn't fought in years),
-"Fighter Mindset" (not a mindset brand, cringe). Alternative: `Matteo Fights`. Waiting on Matteo.
+Now (set by Matteo 10-30): `Matteo | Muay Thai & Boxing`. Keep it while almost every post is combat sports (name
+changes are limited to 2 per 14 days, and the name should match what visitors just watched). When business posts are
+regular (about weekly), switch to `Matteo | Combat sports + business`. Rejected: "Muay Thai Fighter" (hasn't fought
+in years), "Fighter Mindset" (cringe as the label).
 
-### 4. Bio (under 150 characters, no Stance, no injury, no mindset branding, no current-fighter claim)
-**Draft (10-30, v3). No current-fighter claim, not a mindset brand, welcomes people who train for fun (143
-characters). Waiting on Matteo:**
+### 4. Bio (v4, 10-30: broaden but stay findable)
+How it works: niche = Matteo + one core topic that brings strangers in (combat sports). Broad = the other things he
+does (business, life), shown through the same person. Core first, so recommendations and visitors know what the
+account is; the rest is named so business posts don't feel random when they come. Builder reels so far: ~2k views
+each vs 13.4k for the best training reel, so business rides on the audience, it doesn't replace the way in.
+
+**Recommended (132 characters):**
 ```
 🇨🇭🇧🇷 Bangkok · trained in 5 countries
-Sparring, technique + gym life
-For anyone who trains, for fun or to fight
+Combat sports first. Business + life too
+For anyone who trains
 ⬇️ Free plan for your weak spot
 ```
-Line 1 = why trust me, line 2 = what you get by following (what they just watched), line 3 = who it's for (everyone
-who trains; Matteo 10-30: "sometimes I train for fun too"), line 4 = one free thing. Link title: `Free fighter plan`.
-Rejected 10-30: "For people who don't train for fun" (shuts out casual trainers).
+**Journey version:**
+```
+🇨🇭🇧🇷 Bangkok · trained in 5 countries
+Training, building a business, figuring it out
+Come along for all of it
+⬇️ Free plan for your weak spot
+```
+Link title: `Free fighter plan`. Rejected 10-30: "For people who don't train for fun", "Sparring, technique + gym life" (too narrow).
 
 Earlier drafts (A/B/C) removed 10-30: they used "Muay Thai fighter" and "fighter mindset" wording, both rejected.
 
