@@ -76,7 +76,7 @@ Unpin "Muay Thai vs Boxing technical sparring".
 Draft: `Matteo | Muay Thai & Boxing` (the topic, not a title). Rejected: "Muay Thai Fighter" (hasn't fought in years),
 "Fighter Mindset" (not a mindset brand, cringe). Alternative: `Matteo Fights`. Waiting on Matteo.
 
-### 4. Bio (pick one, all under 150 characters, no Stance, no injury)
+### 4. Bio (under 150 characters, no Stance, no injury, no mindset branding, no current-fighter claim)
 **Draft (10-30). No current-fighter claim, not a mindset brand (149 characters). Waiting on Matteo:**
 ```
 🇨🇭🇧🇷 Bangkok · trained in 5 countries
@@ -88,26 +88,8 @@ Line 1 = why trust me, line 2 = who this is for (the subhook of the 331k reel), 
 following (what they just watched), line 4 = one free thing, named the way people already ask for it (the
 "Comment PLAN" reel got 164 comments). Link title: `Free fighter plan`.
 
-**A (first draft):**
-```
-🇨🇭🇧🇷 Muay Thai fighter in Bangkok
-For people who don't train for fun
-Fighter mindset + training, daily
-⬇️ Free: find your weak spot, get the plan
-```
-**B:**
-```
-🇨🇭🇧🇷 Fighting out of Bangkok
-The mental side of fighting, from inside it
-New lesson every day
-⬇️ Free 4-week plan for your weakest area
-```
-**C:**
-```
-🇨🇭🇧🇷 Muay Thai fighter | trained in 5 countries
-I post what fighters think, not just how they train
-⬇️ Free: find your weak spot in 1 min
-```
+Earlier drafts (A/B/C) removed 10-30: they used "Muay Thai fighter" and "fighter mindset" wording, both rejected.
+
 The injury story isn't lost: it goes in the "START HERE" highlight (and the re-angled KO reel once made).
 
 ### 5. One link
@@ -124,7 +106,7 @@ it holds screenshots of people's progress, else drop it.
 
 ## Landing page (done, needs Matteo's yes to go live)
 Branch `claude/profile-conversion`, `docs/index.html` and `docs/links.html`:
-- Hero copy: "Muay Thai fighter. First fight at 16. Trained in 5 countries. I post the mental side of fighting,
+- Hero copy: "First Muay Thai fight at 16. Trained in 5 countries. I post sparring, technique and gym life,
   every day." (was the injury list, with em dashes).
 - Smaller hero on phones: the PROTOCOL card now starts at about half the screen (was at the bottom edge).
 - Card: "Free · 1 minute / Answer 5 questions. Find your weakest area. Get the 4-week plan to fix it."
