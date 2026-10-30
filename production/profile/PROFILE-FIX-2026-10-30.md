@@ -78,27 +78,32 @@ changes are limited to 2 per 14 days, and the name should match what visitors ju
 regular (about weekly), switch to `Matteo | Combat sports + business`. Rejected: "Muay Thai Fighter" (hasn't fought
 in years), "Fighter Mindset" (cringe as the label).
 
-### 4. Bio (v4, 10-30: broaden but stay findable)
-How it works: niche = Matteo + one core topic that brings strangers in (combat sports). Broad = the other things he
-does (business, life), shown through the same person. Core first, so recommendations and visitors know what the
-account is; the rest is named so business posts don't feel random when they come. Builder reels so far: ~2k views
-each vs 13.4k for the best training reel, so business rides on the audience, it doesn't replace the way in.
-
-**Recommended (132 characters):**
+### 4. Bio (v5, 10-30: keep it combat sports for now)
+Matteo has no business yet (fight account + free automation help), so the bio doesn't say "business". Combat sports
+is the core; "the life around it" leaves room for the builder test below without claiming anything (126 characters):
 ```
 🇨🇭🇧🇷 Bangkok · trained in 5 countries
-Combat sports first. Business + life too
+Combat sports + the life around it
 For anyone who trains
 ⬇️ Free plan for your weak spot
 ```
-**Journey version:**
-```
-🇨🇭🇧🇷 Bangkok · trained in 5 countries
-Training, building a business, figuring it out
-Come along for all of it
-⬇️ Free plan for your weak spot
-```
-Link title: `Free fighter plan`. Rejected 10-30: "For people who don't train for fun", "Sparring, technique + gym life" (too narrow).
+If the builder test wins, line 2 becomes `Combat sports first. Building stuff too`. Link title: `Free fighter plan`.
+Rejected 10-30: "For people who don't train for fun", "Sparring, technique + gym life" (too narrow),
+"Combat sports first. Business + life too" (no business yet).
+
+### 4b. Builder test (proposal, needs Matteo's yes)
+Not "business" content: show the system that runs this account. It's about the account itself, so it's native to
+the fight audience. 3 talking-head trial reels over 2 weeks, replacing the generic builder listicles (those got
+~2k views, 5-7 s watch). Talking points, only say what's true:
+1. **"This account posts 5 reels a day. I don't edit them."** Screen: the control center Home, a listicle being
+   built, the queue. What the system does, what you still do (film, approve), why (time to train).
+2. **"I approve my reels from my phone between rounds."** Screen: Telegram / hold-to-approve. Short, one beat.
+3. **"My system tracked every reel I posted. Here's what you actually watch."** Identity beats instruction, the
+   331k reel, which openings win. About the viewer, so it still serves the fight audience.
+Never show keys, tokens or the secrets folder on screen. Judge each against the listicle median on follows per 1k
+views (app insights), sends and watch time. 2 of 3 at or above the median: becomes a regular lane, bio line 2 changes.
+All 3 well below: business/automation waits for its own account later. The free automation help: keep notes (with
+the people's OK) as future proof, don't post about it yet.
 
 Earlier drafts (A/B/C) removed 10-30: they used "Muay Thai fighter" and "fighter mindset" wording, both rejected.
 
