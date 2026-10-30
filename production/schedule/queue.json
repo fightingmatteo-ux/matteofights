@@ -1770,11 +1770,16 @@
       "not_before": "2026-10-30T22:30:00Z",
       "min_gap_hours": 2.5,
       "approved": true,
-      "status": "queued",
+      "status": "failed",
       "cta": "protocol",
       "app_audio": "id:530317382955170 Echo Sax End - Caleb Arredondo (add in the Instagram app)",
       "video_asset_music": "lst-2026-10-30-not-a-beginner-music.mp4",
-      "approved_note": "Matteo: approved the week via dashboard (2026-10-25T14:10:05Z)"
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-25T14:10:05Z)",
+      "audio_id": "530317382955170",
+      "audio_title": "Echo Sax End (Take 2)",
+      "audio_artist": "caleb.arredondo",
+      "posting_since": "2026-10-30T22:30:56Z",
+      "error": "GET https://graph.facebook.com/v23.0/530317382955170 -> 404: {\"title\":\"Not Found\",\"detail\":\"No audio asset found for the given ID\",\"status\":404}"
     },
     {
       "id": "lst-2026-10-31-fighting-therapy",
