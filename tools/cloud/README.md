@@ -20,4 +20,11 @@ the truth and every state workflow runs `state_mirror.py sync` (files to D1 + co
 cutover: scripts read and write D1, sync stops, and the "State backup" workflow writes D1 back into the files
 every night. Scripts never touch the queue files directly; they use `tools/state.py`.
 
+## Keys in cloud sessions (any device)
+
+`python -P tools/cloud/env_block.py` on the laptop copies every key in `secrets/*.env` to the clipboard; paste it
+into claude.ai/code > environment menu > Edit > Environment variables. Scripts read env vars first, so cloud sessions
+(phone, browser, any laptop) then work with no `secrets/` folder. Rerun and repaste after a token refresh. Gypsy
+Amazon has the same script (`tools/env_block.py`) and needs its OWN environment: same names, different accounts.
+
 R2 keeps job bundles 2 days and renders 21 days (lifecycle rules in setup.sh).
