@@ -647,9 +647,12 @@
       "text": "The first body shot isn't the painful part.\n\nIt's the second where you realise you can't breathe and still have two minutes left.",
       "chain": [],
       "from": "craft",
-      "status": "queued",
+      "status": "posted",
       "approved": true,
-      "approved_note": "Matteo: approved via dashboard (2026-10-25T17:10:40Z)"
+      "approved_note": "Matteo: approved via dashboard (2026-10-25T17:10:40Z)",
+      "posted_at": "2026-10-30T11:36:00Z",
+      "thread_id": "17956202730299262",
+      "url": "https://www.threads.com/@matteofights/post/DfHfRqqltU6"
     },
     {
       "id": "th-1030-2",
