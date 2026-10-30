@@ -14,7 +14,7 @@ There's no reliable public benchmark for these rates (Meta removed profile views
 nobody can measure them across accounts). We measure against ourselves: target 20%+ follows per visit and 3%+ link
 taps per visit by 30 Nov.
 
-> **Never share or pin the 2024-10-24 knockout-draw cuts (A/B/C).** Matteo 10-30: the KO story gets redone from
+> **Never share or pin the 2026-10-24 knockout-draw cuts (A/B/C).** Matteo 10-30: the KO story gets redone from
 > a different angle; only the new version goes on the grid.
 
 ## Why visitors don't follow (in order of damage)
