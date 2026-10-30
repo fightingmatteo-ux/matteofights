@@ -37,6 +37,8 @@ task needs it. Open items: [STATUS.md](STATUS.md) (read at session start, update
 - **Broaden, stay findable** (Matteo 2026-10-30): combat sports stays the core that brings strangers in; business
   and life get added through the same person, gradually (builder lane now ~2 of 14 reels/week). Niche = Matteo +
   combat sports; broad = what else he does. Bio draft: production/profile/PROFILE-FIX-2026-10-30.md.
+- **Never show or mention the automation behind the account in public content** (Matteo 2026-10-30: it hurts
+  credibility on the fight page). No behind-the-scenes system reels, no "my system" lines in captions or stories.
 - **Everyone who trains is welcome** (Matteo 2026-10-30: "sometimes I train for fun too"). Profile, bio and
   evergreen copy never shut out people who train for fun.
 - **Lanes:** training, sparring and technique; fight breakdowns; gym life; fighter mindset (one lane, not the
