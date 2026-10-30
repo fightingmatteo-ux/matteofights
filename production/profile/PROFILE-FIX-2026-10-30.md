@@ -14,6 +14,9 @@ There's no reliable public benchmark for these rates (Meta removed profile views
 nobody can measure them across accounts). We measure against ourselves: target 20%+ follows per visit and 3%+ link
 taps per visit by 30 Nov.
 
+> **Never share or pin the 2024-10-24 knockout-draw cuts (A/B/C).** Matteo 10-30: the KO story gets redone from
+> a different angle; only the new version goes on the grid.
+
 ## Why visitors don't follow (in order of damage)
 
 1. **The grid stopped on 24 Sep.** Every reel since then (about 70) is a trial reel and never reached the grid. The
@@ -47,13 +50,12 @@ taps per visit by 30 Nov.
 
 ## The fix (Matteo, about 20 minutes, in this order)
 
-### 1. Share 6 reels to the grid (biggest lever)
+### 1. Share 5 reels to the grid (biggest lever)
 Open each reel, `...` > "Share to profile" (or the trial reel's "Share to followers"). Best of the last 5 weeks by
 saves and watch time:
 
 | Reel | Views | Why |
 |---|---|---|
-| I knocked him out. They called it a draw. (26 Oct) | 2.6k | Your face and story, 18 s watch, 66 comments. Tells visitors who you are |
 | 8 ways to get fight fit without running (26 Oct) | 13.4k | Best reel this month, 149 saves |
 | 7 ways to kill fight nerves (25 Oct) | 8.0k | Mindset, 81 saves |
 | 6 ways to read your opponent in round one (25 Oct) | 5.5k | 3.2% save rate, best of the month |
@@ -64,7 +66,8 @@ Then keep doing it: every Sunday share the week's best 2 (STATUS item "Plan reel
 Once the grid has fresh reels, archive the two 24 Sep Stance pitches (or just let them slide down).
 
 ### 2. Pin 3
-1. **KO story** (the 26 Oct "I knocked him out" cut): who you are.
+1. **Saenchai: "Always sparring someone bigger?"** (21 Oct, share it first): your face, 16 s watch. Holds the "who I
+   am" slot until the re-angled KO story exists; then that takes it.
 2. **Boxing power 3-day plan** (23 Aug, already pinned): proof you give real value; 6.8% save rate, best ever.
 3. **6 signs you were born to be a fighter** (Jun): 331k+ views, social proof.
 Unpin "Muay Thai vs Boxing technical sparring".
@@ -105,7 +108,7 @@ New lesson every day
 I post what fighters think, not just how they train
 ⬇️ Free: find your weak spot in 1 min
 ```
-The injury story isn't lost: it goes in a "MY STORY" highlight and the pinned KO reel.
+The injury story isn't lost: it goes in the "START HERE" highlight (and the re-angled KO reel once made).
 
 ### 5. One link
 Edit profile > Links: keep only `matteofights.me`, title it `Free fighter plan`. Remove the other 2.
