@@ -30,6 +30,9 @@ task needs it. Open items: [STATUS.md](STATUS.md) (read at session start, update
 
 ## Content direction (Matteo, standing)
 
+- **Not a "fighter mindset" brand** (Matteo 2026-10-30: being fully about fighting mindset is cringe). Never brand
+  the account/profile as "fighter mindset"; mindset is one ingredient, not the identity. Never present him as a
+  current fighter (he hasn't fought in years, see context/founder.md).
 - **Topic:** combat-sport psychology and fighter mindset, not injury stories. Adjacent lifestyle lane (nutrition,
   recovery, routine) always framed for fighters. **Builder lane:** about 2 of 14 reels/week on "fighter who
   builds", format `builder`; judged on follows per 1k views vs fight content.
