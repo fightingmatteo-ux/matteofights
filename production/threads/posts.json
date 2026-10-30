@@ -662,9 +662,12 @@
       "text": "Where do you feel it first when you're gassed?\n\nLegs, lungs or arms?\n\nAnd what do you do about it?",
       "chain": [],
       "from": "craft",
-      "status": "queued",
+      "status": "posted",
       "approved": true,
-      "approved_note": "Matteo: approved via dashboard (2026-10-25T17:10:40Z)"
+      "approved_note": "Matteo: approved via dashboard (2026-10-25T17:10:40Z)",
+      "posted_at": "2026-10-30T16:41:10Z",
+      "thread_id": "18155873737520390",
+      "url": "https://www.threads.com/@matteofights/post/DfICMDCFevp"
     },
     {
       "id": "th-1030-3",
