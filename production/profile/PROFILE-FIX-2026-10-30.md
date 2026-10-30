@@ -77,16 +77,17 @@ Draft: `Matteo | Muay Thai & Boxing` (the topic, not a title). Rejected: "Muay T
 "Fighter Mindset" (not a mindset brand, cringe). Alternative: `Matteo Fights`. Waiting on Matteo.
 
 ### 4. Bio (under 150 characters, no Stance, no injury, no mindset branding, no current-fighter claim)
-**Draft (10-30). No current-fighter claim, not a mindset brand (149 characters). Waiting on Matteo:**
+**Draft (10-30, v3). No current-fighter claim, not a mindset brand, welcomes people who train for fun (143
+characters). Waiting on Matteo:**
 ```
 🇨🇭🇧🇷 Bangkok · trained in 5 countries
-For people who don't train for fun
-Sparring, technique + gym life, daily
-⬇️ Free 4-week plan for your weak spot
+Sparring, technique + gym life
+For anyone who trains, for fun or to fight
+⬇️ Free plan for your weak spot
 ```
-Line 1 = why trust me, line 2 = who this is for (the subhook of the 331k reel), line 3 = what you get by
-following (what they just watched), line 4 = one free thing, named the way people already ask for it (the
-"Comment PLAN" reel got 164 comments). Link title: `Free fighter plan`.
+Line 1 = why trust me, line 2 = what you get by following (what they just watched), line 3 = who it's for (everyone
+who trains; Matteo 10-30: "sometimes I train for fun too"), line 4 = one free thing. Link title: `Free fighter plan`.
+Rejected 10-30: "For people who don't train for fun" (shuts out casual trainers).
 
 Earlier drafts (A/B/C) removed 10-30: they used "Muay Thai fighter" and "fighter mindset" wording, both rejected.
 
