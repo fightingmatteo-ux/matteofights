@@ -60,7 +60,7 @@ saves and watch time:
 | 7 ways to kill fight nerves (25 Oct) | 8.0k | Mindset, 81 saves |
 | 6 ways to read your opponent in round one (25 Oct) | 5.5k | 3.2% save rate, best of the month |
 | Saenchai: win the reset (21 Oct, "Always sparring someone bigger?") | 2.6k | Face + breakdown, 16 s watch |
-| Most adults quit by week three (5 Oct) | 2.1k | 10% engagement, 24 shares, older audience |
+| Most adults quit by week three (5 Oct) | 2.1k | 10% engagement, 24 shares, older audience. **Caption says "I've been fighting since I was 11"; edit to what's true before sharing** |
 
 Then keep doing it: every Sunday share the week's best 2 (STATUS item "Plan reels + older audience" point 3).
 Once the grid has fresh reels, archive the two 24 Sep Stance pitches (or just let them slide down).
@@ -73,15 +73,15 @@ Once the grid has fresh reels, archive the two 24 Sep Stance pitches (or just le
 Unpin "Muay Thai vs Boxing technical sparring".
 
 ### 3. Name field
-`Matteo | Muay Thai Fighter` (searchable: "muay thai", "fighter").
+`Matteo | Fighter Mindset` (Matteo 10-30: no "Muay Thai fighter" label, he hasn't fought in years and won't imply he has).
+Describes the content, claims nothing. Alternatives: `Matteo | Fight IQ`, `Matteo Fights`.
 
 ### 4. Bio (pick one, all under 150 characters, no Stance, no injury)
-**Final pick (10-30, after Matteo: "the problem is the profile"). The name field already says Muay Thai Fighter,
-so line 1 is proof instead (148 characters):**
+**Final pick (10-30). Honest: no claim of recent fights. Line 3 avoids repeating the name field (148 characters):**
 ```
 🇨🇭🇧🇷 Bangkok · trained in 5 countries
 For people who don't train for fun
-Fighter mindset + sparring IQ, daily
+Sparring IQ + the mental game, daily
 ⬇️ Free 4-week plan for your weak spot
 ```
 Line 1 = why trust me, line 2 = who this is for (the subhook of the 331k reel), line 3 = what you get by
@@ -115,7 +115,7 @@ Edit profile > Links: keep only `matteofights.me`, title it `Free fighter plan`.
 
 ### 6. Highlights: words, not emojis, in this order
 `START HERE` (who you are: first fight, 5 countries, the injury, 3-4 stories) · `FREE PLAN` (PROTOCOL walkthrough
-+ link sticker) · `MY FIGHTS` (fight clips) · `FUEL`. Drop or rename `ARCHIVE`; rename the 🧾 one to `RESULTS` if
++ link sticker) · `MY STORY` (first fight tape + the 5 countries; not "MY FIGHTS", which reads like a current record) · `FUEL`. Drop or rename `ARCHIVE`; rename the 🧾 one to `RESULTS` if
 it holds screenshots of people's progress, else drop it.
 
 ### 7. Small ones
