@@ -1381,7 +1381,14 @@
       "posting_since": "2026-10-25T19:00:52Z",
       "media_id": "17989638402114541",
       "permalink": "https://www.instagram.com/reel/De7aPhYkrhf/",
-      "posted_at": "2026-10-25T19:01:43Z"
+      "posted_at": "2026-10-25T19:01:43Z",
+      "video_asset_fb": "lst-2026-10-25-read-round-one-fb.mp4",
+      "fb_pick": {
+        "at": "2026-10-30T23:43:22Z",
+        "ig_views": 5505,
+        "vs_median": 2.38,
+        "shares_saves_per_1k": 22.0
+      }
     },
     {
       "id": "lst-2026-10-26-three-days-a-week",
