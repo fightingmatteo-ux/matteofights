@@ -55,6 +55,10 @@ Sort by follows per 1k views when looking for what grows the account.
 | 2026-10-29 | knockout-draw | A | 17914845648490434 | I knocked him out. They called it a draw. | talking head, result opening, full | own experience | trial | 2551 (1.02x) | ? | 15 | 5 | | **WINNER** | 66% past 3 s, 18.1 s watch, score 1.0 (auto verdict) |
 | 2026-10-29 | knockout-draw | C | 18120129104061061 | I was 16. His sixth fight. My first. | talking head, number opening, full | own experience | trial | 2035 (0.81x) | ? | 4 | 5 | | no | 61% past 3 s, 16.4 s watch, score 0.832 (auto verdict) |
 | 2026-10-29 | knockout-draw | B | 18218137072358274 | My first fight was stacked against me. I still knocked him out. | talking head, story opening, full | own experience | trial | 1360 (0.54x) | ? | 1 | 0 | | no | 63% past 3 s, 12.4 s watch, score 0.642 (auto verdict) |
+| 2026-10-26 | lst-2026-10-26-three-days-a-week | - | 18134712637724569 | 7 WAYS TO IMPROVE FAST WHEN YOU CAN ONLY TRAIN 3 TIMES A WEEK | listicle (tactical) | text-on-clip | trial | 2372 (1.03x) | ? | 3 | 15 | 0 | no | tactical, normal views, 15 saves |
+| 2026-10-26 | lst-2026-10-26-better-than-it-feels | - | 18105370838635390 | 7 SIGNS YOU'RE IMPROVING EVEN IF IT DOESN'T FEEL LIKE IT | listicle (identity) | text-on-clip | trial | 4750 (2.06x) | ? | 5 | 12 | 0 | **WINNER 2.06x** | first identity winner: 'improving even if it doesn't feel like it' |
+| 2026-10-26 | lst-2026-10-26-fit-without-running | - | 18013800395977603 | 8 WAYS TO GET FIGHT FIT WITHOUT RUNNING EVERY MORNING | listicle (tactical) | text-on-clip | trial | 13461 (5.83x) | ? | 20 | 149 | 0 | **WINNER 5.83x** | best reel of the run by far: 13.5k views, 149 saves, 20 shares; tactical + contrast subhook |
+| 2026-10-27 | lst-2026-10-26-partner-everyone-wants | - | 18131293301493046 | 6 SIGNS YOU'RE THE SPARRING PARTNER EVERYONE WANTS | listicle (identity) | text-on-clip | trial | 3270 (1.42x) | ? | 4 | 3 | 0 | no | identity: 1.42x views, 3 saves |
 
 ## Patterns so far
 - _Add a line whenever a test is decided. Keep it to what the numbers showed._
@@ -69,3 +73,4 @@ Sort by follows per 1k views when looking for what grows the account.
 - 2026-10-29 (auto, saenchai-v3): contrast opening won over question, story.
 - 2026-10-29 (normal 2500): all 3 winners so far are tactical 'N ways' tied to a fight moment (round three 2.07x, nerves 3.21x, round one 2.20x), n=3 of 14 tactical vs 0 of 12 identity. Lean harder: ~12 tactical fight-moment listicles per 28. A bad cover kills reach: coach-thinks-ready (blurry, face hidden) 0.21x.
 - 2026-10-29 (auto, knockout-draw): result opening won over number, story.
+- 2026-10-30 (normal 2310): 5 winners now, 4 tactical (fit without running 5.83x, nerves 3.21x, round one 2.20x, round three 2.07x) and 1 identity (improving 2.06x). Every winner opens with a two-line contrast subhook and names a concrete fight problem. Tactical win rate 4/16, identity 1/14.
