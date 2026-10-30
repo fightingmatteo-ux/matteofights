@@ -34,6 +34,9 @@ task needs it. Open items: [STATUS.md](STATUS.md) (read at session start, update
   stays open.** Fighter mindset is one lane (with training, sparring, gym life, builder), never the account's whole
   point or its label ("cringe"). Never present him as a current fighter (he hasn't fought in years, see
   context/founder.md).
+- **Broaden, stay findable** (Matteo 2026-10-30): combat sports stays the core that brings strangers in; business
+  and life get added through the same person, gradually (builder lane now ~2 of 14 reels/week). Niche = Matteo +
+  combat sports; broad = what else he does. Bio draft: production/profile/PROFILE-FIX-2026-10-30.md.
 - **Everyone who trains is welcome** (Matteo 2026-10-30: "sometimes I train for fun too"). Profile, bio and
   evergreen copy never shut out people who train for fun.
 - **Lanes:** training, sparring and technique; fight breakdowns; gym life; fighter mindset (one lane, not the
