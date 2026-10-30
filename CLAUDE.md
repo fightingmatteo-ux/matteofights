@@ -36,8 +36,8 @@ task needs it. Open items: [STATUS.md](STATUS.md) (read at session start, update
   context/founder.md).
 - **Everyone who trains is welcome** (Matteo 2026-10-30: "sometimes I train for fun too"). Profile, bio and
   evergreen copy never shut out people who train for fun.
-- **Topic:** combat-sport psychology and fighter mindset, not injury stories. Adjacent lifestyle lane (nutrition,
-  recovery, routine) always framed for fighters. **Builder lane:** about 2 of 14 reels/week on "fighter who
+- **Lanes:** training, sparring and technique; fight breakdowns; gym life; fighter mindset (one lane, not the
+  brand); not injury stories. Adjacent lifestyle lane (nutrition, recovery, routine) framed for people who train. **Builder lane:** about 2 of 14 reels/week on "fighter who
   builds", format `builder`; judged on follows per 1k views vs fight content.
 - **Cadence (2026-10-20): 5 posts a day** (New York): listicles 09:00, 12:30, 18:30, 21:30 with an Instagram
   sound attached, plus 1 talking-head variant 15:30. Listicles run themselves
