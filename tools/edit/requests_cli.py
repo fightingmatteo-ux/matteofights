@@ -12,7 +12,8 @@ Kinds (all D1-only, written by the dashboard's /api functions):
   upload/<id>         {status: uploaded|working|done|failed, key (R2), name, size, note, talking_point, at, result}
   request/<id>        {status: open|working|done|failed, target (reel or queue id), text, at, result,
                        from the reel player: asset, round (1 = first revision of this reel), tags[],
-                       notes[{t (seconds), text, tags[], image (R2 key of the frame with Matteo's drawing)}]}
+                       notes[{t (seconds), text, tags[], image (R2 key of the frame with Matteo's drawing)}];
+                       from the Hook tests verdict: kind_detail "iterate", brief (path), hold_until (round-2 re-edits)}
   talking_point/<id>  {status: new|filmed|skipped, title, hooks[3], points[], source, why, at}
 """
 import argparse
@@ -39,7 +40,8 @@ def now():
 def open_work():
     out = []
     for kind, status in OPEN.items():
-        out += [dict(d, kind=kind) for d in db().all(kind) if d.get("status") == status]
+        out += [dict(d, kind=kind) for d in db().all(kind)
+                if d.get("status") == status and d.get("hold_until", "") <= now()]   # iterate jobs wait for Matteo's note
     return sorted(out, key=lambda d: d.get("at", ""))
 
 

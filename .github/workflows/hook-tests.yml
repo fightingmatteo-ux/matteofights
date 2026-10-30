@@ -1,5 +1,6 @@
-# Every 3 hours: numbers for every hook-test variant (Instagram API), the 72 h verdict per test, the LEDGER rows,
-# the opening-type tally (production/trials/learnings.md) and a Telegram nudge to share the winner.
+# Every 6 hours: numbers for every hook-test variant (Instagram API), the 24 h verdict per test, the LEDGER rows,
+# the opening/edit tally (production/trials/learnings.md), a round-2 re-edit job for the Edit worker after round 1
+# ("trial reel maxing"), and a Telegram nudge (round 1: retention note wanted; round 2: share the winner).
 # tools/trials/trials.py. Read-only on Instagram: never posts, never approves.
 name: Hook tests
 
@@ -10,6 +11,7 @@ on:
 
 permissions:
   contents: write
+  actions: write   # starts the Edit worker when a round-2 job is due
 
 concurrency:
   group: hook-tests
@@ -46,3 +48,10 @@ jobs:
           git diff --cached --quiet && exit 0
           git commit -qm "control: telegram sent"
           for n in 1 2 3; do git pull --rebase -q origin master && git push -q origin HEAD:master && break; sleep 5; done
+      - name: Round-2 re-edit due? Start the Edit worker
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          n=$(python3 -P tools/edit/requests_cli.py open | python3 -c "import sys,json;print(sum(1 for d in json.load(sys.stdin) if d.get('kind_detail')=='iterate'))") || n=0
+          echo "iterate jobs due: $n"
+          [ "$n" = 0 ] || gh workflow run edit-worker.yml

@@ -9,11 +9,14 @@ Do NOT reuse the old talking head: its audio says "I knocked him out, they calle
 judge". Film new. Reuse the KO tape (`first-fight-2.mp4`, punch ~48.3 s) as b-roll. Look: editorial
 (`_TEMPLATE/editorial/`), leave headroom above your head.
 
-**Hook (verbatim, 3 openings for the same-day test):**
-- A, confession: "My first fight in Thailand, I knocked him out with an illegal punch. I should've been disqualified."
-- B, comment callback: "Sixty of you told me I should've been disqualified. You're right." (screenshot of the comments on screen)
-- C, paradox: "The best knockout of my life is the punch I'm least proud of."
-- D, short cut (~12 s): hook A, the tape, "Next one's going to be clean." End.
+**Hook (verbatim, film all 5 in one sitting; round 1 of the same-day test, "trial reel maxing" 2026-10-30):**
+- A, result: "My first fight in Thailand, I knocked him out with an illegal punch. I should've been disqualified."
+- B, comment callback (question row): "Sixty of you told me I should've been disqualified. You're right." (screenshot of the comments on screen)
+- C, paradox (result): "The best knockout of my life is the punch I'm least proud of."
+- D, question: "Ever won something you know you didn't really earn? My first fight, I did."
+- E, contrast: "Most fighters defend their worst moment. I'm owning mine."
+
+The old short cut D is gone: "shorter" is now one of the round-2 re-edits of whichever hook wins at 24 h.
 
 **Your points (free talk, short):**
 1. What happened, fast: 16, his sixth fight, your first. Clinch, elbows, ref steps in, you throw anyway. He's out. Draw.

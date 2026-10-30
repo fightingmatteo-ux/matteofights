@@ -37,7 +37,7 @@ Output: `content-bank/references/videos/<slug>/` — read `contact.jpg` + `trans
 
 ## 2. Plan: talking points, not a script
 Copy `production/reels/_TEMPLATE/` to `production/reels/<yyyy-mm-dd-slug>/`. Fill `TALKING-POINTS.md`:
-3 verbatim hook versions (the A/B/C test), one verifiable credibility beat (legend / system), 2–3 points
+5 verbatim hook versions (the A-E test, "trial reel maxing"; Matteo films all 5 in the same sitting), one verifiable credibility beat (legend / system), 2–3 points
 Matteo talks through freely, one real example, a growth CTA. Start `REEL.md`.
 
 ## 3. Footage in
@@ -121,13 +121,15 @@ Cover: copy `worst-decision/thumb/` (HyperFrames snapshot at 0.5 s). Keep text i
 - Or Claude posts them through our own Meta app: `tools/instagram/ig.py trial` (setup + usage in
   `tools/instagram/README.md`). Flow: preview → Matteo's explicit yes → `--confirm`. Never skip the yes.
   Remote: add the variants to the queue with `tools/state.py` (renders on the media release), label each with
-  `tools/trials/trials.py label`, slot them with `trials.py schedule <slug> <day>` (same day, 20 min apart,
-  15:00-16:00 NY); Matteo approves. The **Hook tests** Action calls the winner at 72 h and nudges him to share it.
+  `tools/trials/trials.py label`, slot them with `trials.py schedule <slug> <day>` (same day, 15 min apart,
+  15:00-16:00 NY); Matteo approves. The **Hook tests** Action calls the winner at 24 h, then the Edit worker re-cuts
+  that winner 5 ways (round 2, `tools/trials/trials.py` EDITS, aimed at the drop-off) into the next free day's slots;
+  only the round-2 verdict nudges Matteo to share to the grid. Reference: `content-bank/references/2026-10-30-browniegainz-trial-reel-maxing.md`.
 - Log every variant in the reel's `REEL.md` + `production/reels/LEDGER.md`.
 
 ## 8. Track
 Pull per-media metrics via **Buzzfy** (MCP; skills `reel-checkup`, `instagram-audit`) at 24 h / 72 h / 7 d;
 fallback Windsor (`instagram`, account `17841465098113052`). Before posting, run Buzzfy `reel-checkup` on the hook.
-Compare at 72 h. Winner metric: follows per 1k views, then shares, then avg watch time. Winner → shared
+Compare at 24 h (round 1, then the round-2 re-edits, see section 7). Winner → shared
 to the grid (and pinned if it's a profile reel). Write the one-line learning into
 `LEDGER.md` "Patterns so far". If trial reels don't show in the API, ask Matteo for the insights screenshot.

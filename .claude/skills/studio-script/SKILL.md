@@ -24,8 +24,8 @@ the skill expects, under other names. Use these, never create a `video-agent/` f
 | "The ask" | `context/voice.md` CTAs: comment PROTOCOL (the only live keyword), follow, or a named-persona send |
 
 House rules that win over this skill: Matteo films from **talking points, not a word-for-word script** (only hooks
-and the loop line are verbatim); every reel ships **3 hooks (A/B/C), each a different opening type from
-`tools/trials/trials.py` OPENINGS, + 1 short cut D**; editorial look; loop the end into the hook; no em dashes;
+and the loop line are verbatim); every reel ships **5 hooks (A-E), each a different opening type from
+`tools/trials/trials.py` OPENINGS** (the short cut is now a round-2 re-edit, not a hook variant); editorial look; loop the end into the hook; no em dashes;
 no invented fights, numbers or quotes. Use `viral-hooks` (three-layer hook, archetypes) and `viral-instagram-reels`
 (sends, trial reels) alongside this skill, and `going-viral` to pick the goal before scripting.
 

@@ -47,10 +47,11 @@ task needs it. Open items: [STATUS.md](STATUS.md) (read at session start, update
 - **Cadence (2026-10-20): 5 posts a day** (New York): listicles 09:00, 12:30, 18:30, 21:30 with an Instagram
   sound attached, plus 1 talking-head variant 15:30. Listicles run themselves
   ([tools/listicle/README.md](tools/listicle/README.md)).
-- **Talking heads:** Matteo films from talking points, not scripts. 4 variants per reel (3 hooks, each
-  labelled with an opening type, + 1 short cut), posted as trial reels the SAME day 15:00-16:00 NY; the "Hook tests"
-  workflow calls the winner at 72 h, logs [production/reels/LEDGER.md](production/reels/LEDGER.md), nudges Matteo to
-  share it, and tallies which openings win ([tools/trials/trials.py](tools/trials/trials.py),
+- **Talking heads ("trial reel maxing", Matteo 2026-10-30):** Matteo films from talking points, not scripts, and
+  films **5 hooks** per reel (each labelled with an opening type), posted as trial reels the SAME day 15:00-16:00 NY.
+  The "Hook tests" workflow calls the winner at **24 h**, then the Edit worker re-cuts that winner 5 ways (round 2,
+  aimed at the drop-off; Matteo's retention-graph note steers it), posted the next free day; only the round-2 winner
+  goes to the grid. Logs [production/reels/LEDGER.md](production/reels/LEDGER.md), tallies which openings and edits win ([tools/trials/trials.py](tools/trials/trials.py),
   `production/trials/learnings.md`). Look: **editorial**,
   start from `production/reels/_TEMPLATE/editorial/`.
 - **What wins:** identity and contrast beat instruction. Best ever: `6 SIGNS YOU WERE BORN TO BE A FIGHTER`
@@ -70,7 +71,7 @@ task needs it. Open items: [STATUS.md](STATUS.md) (read at session start, update
 | Posting / cross-posting / listicles | GitHub Actions: Post queue, Cross-post, Listicle factory, Control | `.github/workflows/` |
 | Control center (Matteo works from here) | control.matteofights.me: Home (approve), Studio (upload footage, revision notes, talking points, live edits/renders), Results, Decide; Telegram @matteofights_control_bot | [control-site/SETUP.md](control-site/SETUP.md) |
 | Edit worker / talking points (Claude, Sonnet, capped) | GitHub "Edit worker" (started by uploads + notes, 3 runs/day), "Talking points" (Mondays) | [tools/edit/WORKER.md](tools/edit/WORKER.md), [TALKING-POINTS.md](tools/edit/TALKING-POINTS.md) |
-| Hook tests (no AI) | GitHub "Hook tests" every 6 h: variant numbers, 72 h verdict, LEDGER rows, Telegram "share the winner" | `tools/trials/trials.py` |
+| Hook tests (no AI) | GitHub "Hook tests" every 6 h: variant numbers, 24 h verdict, round-2 re-edit job for the Edit worker, LEDGER rows, Telegram "share the winner" | `tools/trials/trials.py` |
 | Health check (no AI) | GitHub "Health check" every 6 h: stuck/failed/missed reels, failed renders and workflows to Telegram | `tools/health/check.py` |
 | Secrets | `secrets/*.env` locally (git-ignored), GitHub/Modal/Worker secrets remotely; `tools/cloud/set-secrets.sh` | [tools/cloud/README.md](tools/cloud/README.md) |
 | Roadmap | Phases 1-4 built 2026-10-20 (D1 cutover pending, see STATUS.md) | [spec](docs/superpowers/specs/2026-10-18-run-from-anywhere-design.md) |
@@ -84,7 +85,7 @@ task needs it. Open items: [STATUS.md](STATUS.md) (read at session start, update
 | Render a reel | [tools/render/README.md](tools/render/README.md) |
 | Any caption, hook, Threads post, carousel copy | [context/creator-voice.md](context/creator-voice.md), skill `platform-captions` |
 | Weekly Threads batch | skill `threads-writer` |
-| **Write a talking-head script / hooks (A/B/C)** | skill `studio-script` (wired to this repo, read its top section), with `viral-hooks`, `viral-instagram-reels`, `going-viral`. Latest slate: `production/reels/IDEAS-2026-10-25.md` |
+| **Write a talking-head script / hooks (A-E)** | skill `studio-script` (wired to this repo, read its top section), with `viral-hooks`, `viral-instagram-reels`, `going-viral`. Latest slate: `production/reels/IDEAS-2026-10-25.md` |
 | Hook + caption from a hook | [production/captions/CAPTION-ENGINE.md](production/captions/CAPTION-ENGINE.md) |
 | The proven viral reel format | [context/viral-format.md](context/viral-format.md) |
 | What is working, from our numbers | `python -P tools/threads/report.py` |
