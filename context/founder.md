@@ -57,6 +57,9 @@ broke his fibula, still built an app. The martial artist who became a builder. *
 hype guy.** Raw, direct, experienced in the life he talks about.
 
 ## What NOT to be
+- **Never present Matteo as an active / current fighter** (Matteo 2026-10-30: he hasn't fought in years and won't
+  pretend he has). No "Muay Thai fighter" label in name field, bio or copy, no "fighting since X", no implied record.
+  Say what's true: first fight at 16, trained in 5 countries, trains, studies fights.
 Not a generic fitness influencer. Not a hype machine. Not someone who preaches discipline without
 living it. Not so polished it reads fake.
 
