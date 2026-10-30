@@ -73,15 +73,15 @@ Once the grid has fresh reels, archive the two 24 Sep Stance pitches (or just le
 Unpin "Muay Thai vs Boxing technical sparring".
 
 ### 3. Name field
-`Matteo | Fighter Mindset` (Matteo 10-30: no "Muay Thai fighter" label, he hasn't fought in years and won't imply he has).
-Describes the content, claims nothing. Alternatives: `Matteo | Fight IQ`, `Matteo Fights`.
+Draft: `Matteo | Muay Thai & Boxing` (the topic, not a title). Rejected: "Muay Thai Fighter" (hasn't fought in years),
+"Fighter Mindset" (not a mindset brand, cringe). Alternative: `Matteo Fights`. Waiting on Matteo.
 
 ### 4. Bio (pick one, all under 150 characters, no Stance, no injury)
-**Final pick (10-30). Honest: no claim of recent fights. Line 3 avoids repeating the name field (148 characters):**
+**Draft (10-30). No current-fighter claim, not a mindset brand (149 characters). Waiting on Matteo:**
 ```
 🇨🇭🇧🇷 Bangkok · trained in 5 countries
 For people who don't train for fun
-Sparring IQ + the mental game, daily
+Sparring, technique + gym life, daily
 ⬇️ Free 4-week plan for your weak spot
 ```
 Line 1 = why trust me, line 2 = who this is for (the subhook of the 331k reel), line 3 = what you get by
