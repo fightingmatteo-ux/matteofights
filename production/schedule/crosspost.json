@@ -39,7 +39,7 @@
         "21:00"
       ],
       "topic": "Combat Sports",
-      "last_slot": "2026-10-30T19:30:00Z"
+      "last_slot": "2026-10-31T01:00:00Z"
     },
     "facebook_slides": {
       "enabled": false,
@@ -849,6 +849,12 @@
         "id": "8AT2YDsfv9M",
         "url": "https://youtube.com/shorts/8AT2YDsfv9M",
         "privacy": "public"
+      },
+      "threads": {
+        "status": "posted",
+        "at": "2026-10-31T01:06:37Z",
+        "id": "18136717276658214",
+        "url": "https://www.threads.com/@matteofights/post/DfI7_k0CFlj"
       }
     },
     "lst-2026-10-28-my-bad": {
@@ -859,6 +865,7 @@
         "url": "https://youtube.com/shorts/y-y2b4LyN2g",
         "privacy": "public"
       }
-    }
+    },
+    "lst-2026-10-28-sleep-rules": {}
   }
 }
