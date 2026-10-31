@@ -59,6 +59,10 @@ Sort by follows per 1k views when looking for what grows the account.
 | 2026-10-26 | lst-2026-10-26-better-than-it-feels | - | 18105370838635390 | 7 SIGNS YOU'RE IMPROVING EVEN IF IT DOESN'T FEEL LIKE IT | listicle (identity) | text-on-clip | trial | 4750 (2.06x) | ? | 5 | 12 | 0 | **WINNER 2.06x** | first identity winner: 'improving even if it doesn't feel like it' |
 | 2026-10-26 | lst-2026-10-26-fit-without-running | - | 18013800395977603 | 8 WAYS TO GET FIGHT FIT WITHOUT RUNNING EVERY MORNING | listicle (tactical) | text-on-clip | trial | 13461 (5.83x) | ? | 20 | 149 | 0 | **WINNER 5.83x** | best reel of the run by far: 13.5k views, 149 saves, 20 shares; tactical + contrast subhook |
 | 2026-10-27 | lst-2026-10-26-partner-everyone-wants | - | 18131293301493046 | 6 SIGNS YOU'RE THE SPARRING PARTNER EVERYONE WANTS | listicle (identity) | text-on-clip | trial | 3270 (1.42x) | ? | 4 | 3 | 0 | no | identity: 1.42x views, 3 saves |
+| 2026-10-27 | lst-2026-10-27-bad-sparring-day | - | 18204962350378125 | 6 WAYS TO BOUNCE BACK AFTER A BAD SPARRING DAY | listicle (tactical) | text-on-clip | trial | 2251 (0.88x) | ? | 0 | 7 | 0 | no | tactical but no fight moment: 0.88x |
+| 2026-10-27 | lst-2026-10-27-breathes-better | - | 18199174084386139 | THE FIGHTER WHO BREATHES BETTER USUALLY WINS | statement (tactical) | text-on-clip | trial | 1984 (0.78x) | ? | 4 | 20 | 0 | no | statement: 0.78x views, but 20 saves |
+| 2026-10-27 | lst-2026-10-27-quit-before-good | - | 17934543939408131 | MOST PEOPLE QUIT RIGHT BEFORE IT GETS GOOD | statement (identity) | text-on-clip | trial | 1882 (0.74x) | ? | 1 | 2 | 0 | no | statement: 0.74x, 2 saves |
+| 2026-10-28 | lst-2026-10-27-beginner-habits-hurt | - | 18013870892765364 | 7 SPARRING HABITS THAT GET BEGINNERS HURT | listicle (tactical) | text-on-clip | trial | 2747 (1.08x) | ? | 2 | 5 | 0 | no | tactical habits list: 1.08x, 5 saves |
 
 ## Patterns so far
 - _Add a line whenever a test is decided. Keep it to what the numbers showed._
@@ -74,3 +78,4 @@ Sort by follows per 1k views when looking for what grows the account.
 - 2026-10-29 (normal 2500): all 3 winners so far are tactical 'N ways' tied to a fight moment (round three 2.07x, nerves 3.21x, round one 2.20x), n=3 of 14 tactical vs 0 of 12 identity. Lean harder: ~12 tactical fight-moment listicles per 28. A bad cover kills reach: coach-thinks-ready (blurry, face hidden) 0.21x.
 - 2026-10-29 (auto, knockout-draw): result opening won over number, story.
 - 2026-10-30 (normal 2310): 5 winners now, 4 tactical (fit without running 5.83x, nerves 3.21x, round one 2.20x, round three 2.07x) and 1 identity (improving 2.06x). Every winner opens with a two-line contrast subhook and names a concrete fight problem. Tactical win rate 4/16, identity 1/14.
+- 2026-10-31 (normal 2552): statements n=7, none above 1.1x: cut to 2 per 28 in the 31 Oct batch. Batch mix 13 tactical / 5 identity / 4 builder / 2 lifestyle / 2 statement / 2 iykyk, per Matteo's 10-30 brand direction (open lanes, include people who train for fun).
