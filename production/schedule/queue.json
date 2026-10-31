@@ -2128,11 +2128,18 @@
       "not_before": "2026-10-31T16:30:00Z",
       "min_gap_hours": 2.5,
       "approved": true,
-      "status": "queued",
+      "status": "posted",
       "cta": "read",
       "app_audio": "id:496614019576474 Echo Sax Feeling Blue - Caleb Arredondo (add in the Instagram app)",
       "video_asset_music": "lst-2026-10-31-sparring-teaches-building-music.mp4",
-      "approved_note": "Matteo: approved the week via dashboard (2026-10-25T17:11:17Z)"
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-25T17:11:17Z)",
+      "audio_id": "496614019576474",
+      "audio_title": "Caleb Arredondo - Echo Sax Feeling Blue",
+      "audio_artist": "sovenhq",
+      "posting_since": "2026-10-31T16:30:53Z",
+      "media_id": "18435569284194314",
+      "permalink": "https://www.instagram.com/reel/DfKl2P9DbHb/",
+      "posted_at": "2026-10-31T16:31:38Z"
     },
     {
       "id": "lst-2026-11-01-habits-when-tired",
