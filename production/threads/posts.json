@@ -722,9 +722,12 @@
       "text": "I tore a knee ligament in a street fight and broke my fibula a while later.\n\nBoth times the training stopped and I had to find something else to do with my head.\n\nSo I learned to code.",
       "chain": [],
       "from": "founder",
-      "status": "queued",
+      "status": "posted",
       "approved": true,
-      "approved_note": "Matteo: approved via dashboard (2026-10-25T17:10:40Z)"
+      "approved_note": "Matteo: approved via dashboard (2026-10-25T17:10:40Z)",
+      "posted_at": "2026-10-31T21:33:32Z",
+      "thread_id": "18147554737600861",
+      "url": "https://www.threads.com/@matteofights/post/DfLIcqln0rC"
     },
     {
       "id": "th-1101-1",
