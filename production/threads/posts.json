@@ -692,9 +692,12 @@
       "text": "Bad at defence? Spar a round where you're not allowed to punch.\n\nOnly slip, block and move. You'll find out fast which punch you always see too late.",
       "chain": [],
       "from": "craft",
-      "status": "queued",
+      "status": "posted",
       "approved": true,
-      "approved_note": "Matteo: approved via dashboard (2026-10-25T17:10:40Z)"
+      "approved_note": "Matteo: approved via dashboard (2026-10-25T17:10:40Z)",
+      "posted_at": "2026-10-31T11:36:02Z",
+      "thread_id": "18108526130197342",
+      "url": "https://www.threads.com/@matteofights/post/DfKEEpzlbXC"
     },
     {
       "id": "th-1031-2",
