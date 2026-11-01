@@ -752,9 +752,12 @@
       "text": "Shadowboxing in front of a mirror is mostly vanity.\n\nTurn the mirror off and close your eyes for one round. Your feet will tell you the truth.",
       "chain": [],
       "from": "craft",
-      "status": "queued",
+      "status": "posted",
       "approved": true,
-      "approved_note": "Matteo: approved via dashboard (2026-10-25T17:10:40Z)"
+      "approved_note": "Matteo: approved via dashboard (2026-10-25T17:10:40Z)",
+      "posted_at": "2026-11-01T17:41:06Z",
+      "thread_id": "18121208284961424",
+      "url": "https://www.threads.com/@matteofights/post/DfNSpWjoIKe"
     },
     {
       "id": "th-1101-3",
