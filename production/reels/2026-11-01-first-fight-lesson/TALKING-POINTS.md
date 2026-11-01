@@ -127,7 +127,8 @@ variant.
 1. **Body take** (2-3 tries): from "I was sixteen. My first fight. His sixth." through "...you didn't earn it."
    Stop there. No send line.
 2. **Loop take A**, then **B, C, D, E** (2 tries each), straight after, without moving anything.
-3. Upload all of it in Studio with the note: `first-fight-lesson: 5 hooks, loop takes A-E, body take`.
+3. Upload all of it in Studio with the note: `first-fight-lesson: body + loops A-E, slated`. Teleprompter text and
+   take order: `TELEPROMPTER.txt` (every take starts with a spoken slate, "Body, one", "Loop A, two", ...).
 
 **How the Edit worker builds each variant:**
 `[loop take V: hook → "His sixth."]` → `[body take: after "His sixth." → before "It's about control."]` →
