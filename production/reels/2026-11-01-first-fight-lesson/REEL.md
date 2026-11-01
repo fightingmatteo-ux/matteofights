@@ -1,6 +1,6 @@
 ---
 slug: 2026-11-01-first-fight-lesson
-status: rendered locally 2026-11-01 (A-E), not queued, not approved
+status: rendered locally 2026-11-01 (A-E, v2 visual hooks), sent to Matteo, not queued, not approved
 pillar: story (pin candidate, replaces knockout-draw A/B/C)
 format: talking head, editorial look, one-take loop per hook, hook test round 1 (5 openings)
 test_variable: hook (opening type)
@@ -22,8 +22,12 @@ Raw: Drive 1f-4HVz4VmlbMkj-AgzVdlPdeB9odWGbX -> media release `first-fight-lesso
 C3 is the only C take that says "Should a knockout count" (C1/C2: "Shouldn't knockout"). A2 says "I'd know" (A1: "I would").
 
 ## Edit
-Hook: knockout tape full-bleed, hook lines build word by word, OFFICIAL RESULT plate: K.O. lands with the punch,
-struck through on the strike word, rolls to DRAW. Body: tape under "the ref steps in ... he's out" (KO on "right"),
+Hook: knockout tape full-bleed behind every variant, hook lines build word by word, plus a visual hook per variant
+(Matteo 2026-11-01): A WHAT HAPPENED: K.O. -> OFFICIAL RESULT: DRAW; B ENDED IN: K.O. -> SHOULD HAVE BEEN: L;
+C DOES IT COUNT? poll (YES / NO, vote in the comments); D PROUD OF IT meter 100% -> 3%; E stopwatch AFTER THE REF
+STEPPED IN +0.0s -> +0.4s (tape: ref 47.9 s, punch 48.33 s). Test note: each opening = line + its own graphic, so a
+win credits the package, not the opening type alone (learnings.md tallies read accordingly). Never "official K.O.":
+the official result was a draw. Body: tape under "the ref steps in ... he's out" (KO on "right"),
 "DQ or draw?" tag over it, DRAW slam card, freeze on the late punch with LATE / "the ref was already in", SEND key,
 CONTROL card. Face scrim (light wall). Music: drill-london-echoes, cut silent from just before "draw" to "they should have".
 
