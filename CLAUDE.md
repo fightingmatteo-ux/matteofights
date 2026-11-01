@@ -22,7 +22,8 @@ task needs it. Open items: [STATUS.md](STATUS.md) (read at session start, update
 - Copy: no em dashes in user-facing text. Voice: [context/voice.md](context/voice.md).
 - **Free-tier Actions budget (2026-10-25):** private repos get 2,000 min/month (3,000 with GitHub Pro / Student
   Pack). Never add a workflow that runs on every push or more often than every 3 h; timed work goes through the
-  Cloudflare ticker (free), heavy work (renders) through Modal. Each job bills at least 1 minute. Every job has a
+  Cloudflare ticker (free), heavy work (renders) through Modal. Exception (Matteo 2026-11-01): "Comment replies" may be started per comment by the webhook while the repo
+  is public (capped 1 per 90 s, 48 per day). Each job bills at least 1 minute. Every job has a
   free backup (Modal, same workflow file; [tools/ops/README.md](tools/ops/README.md)); keep new workflows runnable
   there (`python3 -P tools/ops/runner.py check`) and new limits in `tools/ops/limits.json`.
 - Analytics files are dated snapshots: pull live (Buzzfy first, Windsor `instagram` 17841465098113052 as
@@ -83,6 +84,7 @@ task needs it. Open items: [STATUS.md](STATUS.md) (read at session start, update
 | **Make or edit a reel (watch, plan, edit, test). Read first.** | [production/editing/reel-kit/PIPELINE.md](production/editing/reel-kit/PIPELINE.md) |
 | How Matteo wants his reels to look (rules learned from his frame notes) | [production/editing/taste.md](production/editing/taste.md) |
 | Render a reel | [tools/render/README.md](tools/render/README.md) |
+| Sound effects / sound design (every edit) | skill `reel-sound-design`, `production/editing/reel-kit/editorial/sound_design.py` |
 | Any caption, hook, Threads post, carousel copy | [context/creator-voice.md](context/creator-voice.md), skill `platform-captions` |
 | Weekly Threads batch | skill `threads-writer` |
 | **Write a talking-head script / hooks (A-E)** | skill `studio-script` (wired to this repo, read its top section), with `viral-hooks`, `viral-instagram-reels`, `going-viral`. Latest slate: `production/reels/IDEAS-2026-10-25.md` |
