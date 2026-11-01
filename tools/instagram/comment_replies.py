@@ -21,6 +21,7 @@ import os
 import re
 import sys
 import urllib.parse
+import urllib.error
 import urllib.request
 from pathlib import Path
 
@@ -42,8 +43,11 @@ def ig(path, method="GET", **params):
         req = urllib.request.Request(f"{IG}/{path}?{q}")
     else:
         req = urllib.request.Request(f"{IG}/{path}", data=q.encode(), method=method)
-    with urllib.request.urlopen(req, timeout=30) as r:
-        return json.load(r)
+    try:
+        with urllib.request.urlopen(req, timeout=30) as r:
+            return json.load(r)
+    except urllib.error.HTTPError as e:
+        raise RuntimeError(f"{e.code} {e.read().decode(errors='replace')[:300]}") from None
 
 
 def now():
@@ -77,10 +81,15 @@ def collect(out_path):
             per_user[(r.get("media"), r.get("user"))] = per_user.get((r.get("media"), r.get("user")), 0) + 1
     pending = []
     for m in recent_media():
-        try:
-            cs = ig(f"{m['id']}/comments", fields="id,text,username,from,timestamp,replies{id,text,username,from,timestamp}", limit=100).get("data", [])
-        except Exception as e:  # noqa: BLE001
-            print(m["id"], "comments:", e)
+        cs = None
+        for f in ("id,text,username,from,timestamp,replies{id,text,username,from,timestamp}",
+                  "id,text,username,timestamp,replies{id,text,username,timestamp}", "id,text,username,timestamp"):
+            try:
+                cs = ig(f"{m['id']}/comments", fields=f, limit=100).get("data", [])
+                break
+            except Exception as e:  # noqa: BLE001
+                print(m["id"], "comments:", e)
+        if cs is None:
             continue
         fresh = now() - dt.timedelta(days=3)   # never dig up old comments
         for x in cs + [r for c in cs for r in (c.get("replies") or {}).get("data", [])]:
