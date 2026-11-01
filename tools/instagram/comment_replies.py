@@ -78,17 +78,19 @@ def collect(out_path):
     pending = []
     for m in recent_media():
         try:
-            cs = ig(f"{m['id']}/comments", fields="id,text,username,timestamp,replies{id,text,username,timestamp}", limit=100).get("data", [])
+            cs = ig(f"{m['id']}/comments", fields="id,text,username,from,timestamp,replies{id,text,username,from,timestamp}", limit=100).get("data", [])
         except Exception as e:  # noqa: BLE001
             print(m["id"], "comments:", e)
             continue
         fresh = now() - dt.timedelta(days=3)   # never dig up old comments
+        for x in cs + [r for c in cs for r in (c.get("replies") or {}).get("data", [])]:
+            x["username"] = x.get("username") or (x.get("from") or {}).get("username") or ""
         for c in cs:
             if ts(c["timestamp"]) < fresh:
                 continue
             reps = (c.get("replies") or {}).get("data", [])
             ours = [r for r in reps if r.get("username") == OWN]
-            if (c.get("username") != OWN and c.get("text") and not KEYWORD.search(c["text"]) and not ours
+            if (c["username"] and c["username"] != OWN and c.get("text") and not KEYWORD.search(c["text"]) and not ours
                     and c["id"] not in done and per_user.get((m["id"], c["username"]), 0) < 2):
                 pending.append({"id": c["id"], "media": m["id"], "user": c["username"], "text": c["text"][:400],
                                 "caption": (m.get("caption") or "")[:500], "thread": ""})
@@ -96,7 +98,7 @@ def collect(out_path):
             if ours:
                 last_ours = max(ts(r["timestamp"]) for r in ours)
                 for r in reps:
-                    if (r.get("username") not in (OWN, None) and ts(r["timestamp"]) > last_ours and r["id"] not in done
+                    if (r["username"] not in (OWN, "") and ts(r["timestamp"]) > last_ours and r["id"] not in done
                             and r.get("text") and per_user.get((m["id"], r["username"]), 0) < 2):
                         pending.append({"id": r["id"], "reply_to": c["id"], "media": m["id"], "user": r["username"],
                                         "text": r["text"][:400], "caption": (m.get("caption") or "")[:500],
