@@ -39,7 +39,7 @@
         "21:00"
       ],
       "topic": "Combat Sports",
-      "last_slot": "2026-10-31T19:30:00Z"
+      "last_slot": "2026-11-01T01:00:00Z"
     },
     "facebook_slides": {
       "enabled": false,
@@ -902,6 +902,12 @@
         "id": "zILT7YxTf2A",
         "url": "https://youtube.com/shorts/zILT7YxTf2A",
         "privacy": "public"
+      },
+      "threads": {
+        "status": "posted",
+        "at": "2026-11-01T01:06:32Z",
+        "id": "18161628532455150",
+        "url": "https://www.threads.com/@matteofights/post/DfLgyKICPm1"
       }
     },
     "lst-2026-10-29-boring-best": {
@@ -912,6 +918,7 @@
         "url": "https://youtube.com/shorts/G_MEbLP8KcA",
         "privacy": "public"
       }
-    }
+    },
+    "lst-2026-10-29-first-coach": {}
   }
 }
