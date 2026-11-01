@@ -923,7 +923,14 @@
       "posting_since": "2026-10-27T01:30:53Z",
       "media_id": "18131293301493046",
       "permalink": "https://www.instagram.com/reel/De-rq_aAcTP/",
-      "posted_at": "2026-10-27T01:31:39Z"
+      "posted_at": "2026-10-27T01:31:39Z",
+      "video_asset_fb": "lst-2026-10-26-partner-everyone-wants-fb.mp4",
+      "fb_pick": {
+        "at": "2026-11-01T23:34:41Z",
+        "ig_views": 3270,
+        "vs_median": 1.28,
+        "shares_saves_per_1k": 2.1
+      }
     },
     {
       "id": "lst-2026-10-27-beginner-habits-hurt",
