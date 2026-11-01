@@ -15,4 +15,5 @@ charts the revisions they came from.
 - [framing] Leave headroom above the head so the top text never covers the face (editorial look, 2026-10-20)
 - [text] Hook text never sits over a face; move it to the lower plate instead (listicle review, 6 clips swapped, 2026-10-20)
 - [framing] Never post sideways footage: check rotation before render (09:00 batch review, 2026-10-25)
+- [audio] Every edit gets the audible sound-design layer (skill reel-sound-design): whooshes on cuts, hits on impacts, boom on the slam, silence before the big line (Matteo: "my sound effect game is lacking", 2026-11-01)
 - [broll] No clips under 3 s in listicles: they break the renderer and read as glitches (2026-10-25)

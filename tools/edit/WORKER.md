@@ -18,7 +18,8 @@ again, which is the number the dashboard tracks.
    it under `media/retention/<queue id>.<ext>`, finish it `done` ("retention graph filed"), nothing else.
    B-roll or other non-talking footage (the note says so, or there is no speech): file it under
    `media/uploads/`, finish the item with `done` and a note that says what it is. Nothing else.
-2. Talking head: follow PIPELINE.md steps 2 to 6 with the **editorial** template
+2. Talking head: follow PIPELINE.md steps 2 to 6 with the **editorial** template and the **reel-sound-design** skill
+   (`.claude/skills/reel-sound-design/SKILL.md`: every edit gets the audible SFX layer, round-2 re-cuts too)
    (`production/reels/_TEMPLATE/editorial/`): new folder `production/reels/<yyyy-mm-dd-slug>/`, `prep_footage.sh`,
    `transcribe.py` (model `small.en` on this runner), pick takes into `work/takes.json`, `assemble.py`, fill
    `build.py`, captions and hooks with the `platform-captions` skill and `context/creator-voice.md`. No talking

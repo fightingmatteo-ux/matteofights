@@ -83,6 +83,7 @@ task needs it. Open items: [STATUS.md](STATUS.md) (read at session start, update
 | **Make or edit a reel (watch, plan, edit, test). Read first.** | [production/editing/reel-kit/PIPELINE.md](production/editing/reel-kit/PIPELINE.md) |
 | How Matteo wants his reels to look (rules learned from his frame notes) | [production/editing/taste.md](production/editing/taste.md) |
 | Render a reel | [tools/render/README.md](tools/render/README.md) |
+| Sound effects / sound design (every edit) | skill `reel-sound-design`, `production/editing/reel-kit/editorial/sound_design.py` |
 | Any caption, hook, Threads post, carousel copy | [context/creator-voice.md](context/creator-voice.md), skill `platform-captions` |
 | Weekly Threads batch | skill `threads-writer` |
 | **Write a talking-head script / hooks (A-E)** | skill `studio-script` (wired to this repo, read its top section), with `viral-hooks`, `viral-instagram-reels`, `going-viral`. Latest slate: `production/reels/IDEAS-2026-10-25.md` |
