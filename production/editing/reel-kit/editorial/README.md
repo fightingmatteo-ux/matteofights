@@ -11,6 +11,7 @@ The talking-head look since 2026-10-20, from the @kaixerb reference
 | `make_audio.py` | synthesises `sfx/*.wav` (tick, key, whoom, shimmer, sub) and the per-reel piano bed |
 | `fonts/Geist-latin.woff2` | the caption face |
 | `cutout.py` | Robust Video Matting -> `fg_<V>.webm` (Matteo only, with alpha) for text **behind his head** |
+| `sound_design.py` | the audible SFX layer for every edit (hit, boom, whoosh x3, riser, rev, bell, heart, shutter, thud, glitch) + `auto_cues()`; rules in skill `reel-sound-design` |
 | `check_render.py` | fails a render whose first second has black / out-of-step frames (cold-start glitch) |
 
 ## Keyword effects (the word's meaning drives the motion + its sound)

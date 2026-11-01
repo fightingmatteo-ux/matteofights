@@ -15,6 +15,7 @@ import sys
 sys.path.insert(0, "../../editing/reel-kit/editorial")
 import cutout  # noqa: E402
 import plan  # noqa: E402
+import sound_design as sd  # noqa: E402  (audible SFX layer, skill reel-sound-design: on for every edit)
 
 # ---------------------------------------------------------------- fill this in per reel
 REEL = {
@@ -68,8 +69,14 @@ if REEL.get("bed"):
     os.makedirs("assets/media", exist_ok=True)
     shutil.copy(REEL["bed"], "assets/media/bed" + os.path.splitext(REEL["bed"])[1])
 
+# sound: the kit's quiet caption SFX + the audible retention layer (whooshes, boom on the slam, hits, shutter on freezes).
+# Reel-specific cues go in REEL["sfx"]: [(name, seconds, volume)], e.g. a bell on "first fight", a riser into the reveal.
+sd.make_all("assets/sfx/sd")
+cues = sd.auto_cues(d, ed["plan"], broll, hook_end=title_end) + [tuple(c) for c in REEL.get("sfx", [])]
+audio = (sd.strip_kit_sub(ed["audio"]) if REEL["slam"] else ed["audio"]) + "\n      " + sd.tags(cues, total=d["duration"] - 0.05)
+
 fill = {"ED_CSS": css, "ED_JS": js, "ED_HTML_CAPS": ed["caps"], "ED_HTML_CAPS_BACK": ed["caps_back"],
-        "ED_HTML_CARDS": ed["cards"], "ED_AUDIO": ed["audio"], "ED_PLAN": ed["plan"], "ED_BROLL": broll_html,
+        "ED_HTML_CARDS": ed["cards"], "ED_AUDIO": audio, "ED_PLAN": ed["plan"], "ED_BROLL": broll_html,
         "AROLL": f"assets/media/aroll_{V}.mp4", "FG": FG, "DUR": f"{d['duration']:.3f}",
         "HOOK_LEAD": "".join(f'<span class="lead">{x}</span>' for x in hook["lead"]), "HOOK_WORD": hook["word"],
         "HOOK_SIZE": str(hook_size), "BEHIND_TOP": str(behind_top), "TITLE_END": f"{title_end:.3f}",

@@ -310,5 +310,47 @@ def tags(cues, sfx_dir="assets/sfx/sd", track0=40, total=None, ntracks=6):
     return "\n      ".join(out)
 
 
+def auto_cues(d, ed_plan, broll=None, hook_end=None, slam=()):
+    """The default retention layer every editorial build gets (Matteo 2026-11-01: every edit uses it).
+    d = EDL, ed_plan = plan.build(...)["plan"] (json str or dict), broll = work/broll.json dict.
+    Adds: whoosh on every b-roll whip-in and every jump cut between takes on the face, whoosh out of the hook,
+    boom on the slam keyword (drop the kit's sub for it with strip_kit_sub), hit on impact/jab keywords,
+    thud on count keywords, shutter on held (frozen) b-roll. Reel-specific cues (bell, heart, riser) go on top."""
+    import json as _j
+    p = _j.loads(ed_plan) if isinstance(ed_plan, str) else ed_plan
+    broll = broll or {}
+    cues = []
+    covered = [(v["start"], v["start"] + v["dur"]) for v in broll.values()] + [(c["t0"], c["t1"]) for c in p.get("cards", [])]
+    inside = lambda t: any(a - 0.05 <= t <= b + 0.05 for a, b in covered)  # noqa: E731
+    for k, v in broll.items():
+        if not v.get("full"):
+            cues.append(("whoosh", v["start"] - 0.18, 0.42))
+        if v.get("hold") or k.startswith("freeze"):
+            cues.append(("shutter", v["start"] + 0.3, 0.55))
+    if hook_end:
+        cues.append(("whoosh", hook_end - 0.2, 0.42))
+    for t in d.get("joins", []):
+        if not inside(t) and (not hook_end or abs(t - hook_end) > 0.3):
+            cues.append(("whoosh", t - 0.18, 0.25))
+    for c in p.get("cards", []):
+        for w in c["words"]:
+            if w.get("slam"):
+                cues.append(("boom", w["s"] - 0.02, 0.7))
+    for ph in p.get("phrases", []):
+        for w in ph["words"]:
+            if w.get("key") and w.get("fx") in ("impact", "jab"):
+                cues.append(("hit", w["s"] - 0.02, 0.55))
+            elif w.get("key") and w.get("fx") == "count":
+                cues.append(("thud", w["s"], 0.4))
+    end = d["duration"] - 0.45
+    return [c for c in cues if 0 <= c[1] < end]
+
+
+def strip_kit_sub(audio_html):
+    """Remove the editorial kit's slam 'sub' tags when auto_cues puts a boom there."""
+    import re as _re
+    return _re.sub(r'\s*<audio id="ed-sfx\d+" src="[^"]*/sub.wav"[^>]*></audio>', "", audio_html)
+
+
 if __name__ == "__main__":
     print(make_all(sys.argv[1] if len(sys.argv) > 1 else "sfx_sd"))
