@@ -1,0 +1,53 @@
+# Comment replies: Claude Code on Matteo's subscription (CLAUDE_CODE_OAUTH_TOKEN, no API key) answers new comments on
+# recent reels in his voice (tools/instagram/reply-voice.md), posts the replies, copies them to Telegram.
+# Every 3 h (CLAUDE.md Actions rule) + on demand. Stops in seconds when nothing is new. Kill switch: repo variable
+# AUTO_REPLY=off. Script and rules: tools/instagram/comment_replies.py. Runnable on the Modal backup (no `uses:` actions
+# besides checkout/setup-node).
+name: Comment replies
+on:
+  schedule:
+    - cron: "40 */3 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: comment-replies
+  cancel-in-progress: false
+jobs:
+  reply:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      CLOUDFLARE_D1_TOKEN: ${{ secrets.CLOUDFLARE_D1_TOKEN }}
+      AUTO_REPLY: ${{ vars.AUTO_REPLY }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: New comments?
+        id: c
+        run: |
+          if [ "$AUTO_REPLY" = "off" ]; then echo "auto replies off"; echo "n=0" >> "$GITHUB_OUTPUT"; exit 0; fi
+          python3 -P tools/instagram/comment_replies.py collect work/pending.json
+      - if: steps.c.outputs.n != '0'
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Write the replies (Claude Code, Haiku, Matteo's subscription)
+        if: steps.c.outputs.n != '0'
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: |
+          npm install -g --silent @anthropic-ai/claude-code
+          python3 -P tools/instagram/comment_replies.py prompt work/pending.json work/prompt.txt
+          claude -p --model haiku --max-turns 1 < work/prompt.txt > work/replies.txt
+          head -c 3000 work/replies.txt
+      - name: Post them + remember
+        if: steps.c.outputs.n != '0'
+        run: |
+          python3 -P tools/instagram/comment_replies.py post work/pending.json work/replies.txt
+          git config user.name "comment-replies[bot]"
+          git config user.email "control@users.noreply.github.com"
+          git add production/state/ig_reply.json 2>/dev/null || true
+          git diff --cached --quiet || { git commit -qm "comment replies: $(date -u +%FT%H:%MZ)"; git pull -q --rebase --autostash; git push -q; }

@@ -39,9 +39,7 @@ jobs:
           TG_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TG_CHAT: ${{ secrets.TELEGRAM_CHAT_ID }}
           IG_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}   # comment PROTOCOL auto-DM (functions/api/ig-webhook.js)
-          ANTHROPIC_KEY: ${{ secrets.ANTHROPIC_API_KEY }}   # comment auto-replies (functions/api/ig-webhook.js); unset = no replies
         run: |
-          [ -z "$ANTHROPIC_KEY" ] || printf '%s' "$ANTHROPIC_KEY" | $W pages secret put ANTHROPIC_API_KEY --project-name matteo-signup
           printf '%s' "$IG_TOKEN" | $W pages secret put IG_ACCESS_TOKEN --project-name matteo-signup
           printf '%s' "$TG_TOKEN" | $W pages secret put TELEGRAM_BOT_TOKEN --project-name matteo-signup
           printf '%s' "$TG_CHAT" | $W pages secret put TELEGRAM_CHAT_ID --project-name matteo-signup
