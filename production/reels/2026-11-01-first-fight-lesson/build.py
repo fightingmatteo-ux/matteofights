@@ -2,7 +2,7 @@
 
 Each variant = open<V> (its loop take: hook + "I was sixteen. My first fight. His sixth.") -> body1 -> share ->
 body2 -> end<V> (the same loop take: "It's about control ... <bridge>"), so the replay lands on the hook as one
-unbroken sentence. Hook = the knockout tape full-bleed, the hook lines, an OFFICIAL RESULT plate whose K.O. gets
+unbroken sentence. Hook = the knockout tape full-bleed, the hook lines, a WHAT HAPPENED: K.O. plate that gets
 struck through and rolls to DRAW. Sound: the editorial kit's quiet caption SFX + the audible retention layer from
 sound_design.py (skill reel-sound-design) + the fight tape's own crowd audio.
 """
@@ -57,7 +57,7 @@ for li, line in enumerate(REEL["hooks"][V]):
     lines_html.append('<span class="ln">' + " ".join(spans) + "</span>")
 lead = '<div class="hk-lead">' + "".join(lines_html) + "</div>"
 chars = lambda s: "".join(f'<span class="ch">{c}</span>' for c in s)  # noqa: E731
-fig = (f'<div class="plate" id="plate"><div class="lbl mono">OFFICIAL RESULT</div><div class="slot">'
+fig = (f'<div class="plate" id="plate"><div class="lbl mono" id="koL">WHAT HAPPENED</div><div class="lbl mono red" id="drawL">OFFICIAL RESULT</div><div class="slot">'
        f'<div class="word" id="koW">{chars("K.O.")}</div><div class="word red" id="drawW">{chars("DRAW")}</div>'
        f'<div class="strike"></div></div></div>')
 ko = W("open", REEL["ko_word"][V]) + 0.05

@@ -30,6 +30,7 @@
       .plate { position: absolute; left: 110px; right: 110px; top: 760px; height: 470px; border-radius: 34px;
         background: rgba(10,10,12,0.72); border: 2px solid rgba(255,255,255,0.14); backdrop-filter: blur(6px); overflow: hidden; }
       .plate .lbl { position: absolute; left: 0; right: 0; top: 52px; text-align: center; font-size: 30px; font-weight: 600; color: rgba(255,255,255,0.7); }
+      .plate .lbl.red { color: #ff4d63; }
       .plate .slot { position: absolute; left: 0; right: 0; top: 120px; height: 300px; overflow: hidden; text-align: center; }
       .plate .word { position: absolute; left: 0; right: 0; top: 0; font-weight: 800; font-size: 250px; line-height: 300px; letter-spacing: -0.055em; white-space: nowrap; }
       .plate .ch { display: inline-block; will-change: transform, opacity; }
@@ -117,6 +118,8 @@
         // K.O. lands with the punch, gets struck through on "called", rolls over to DRAW on "draw"
         tl.fromTo("#koW", { scale: 1.12, filter: "blur(6px)" }, { scale: 1, filter: "blur(0px)", duration: 0.34, ease: "back.out(1.6)", immediateRender: false }, HK.ko);
         tl.fromTo("#plate .strike", { scaleX: 0 }, { scaleX: 1, duration: 0.24, ease: OUT4, immediateRender: true }, HK.strike);
+        tl.to("#koL", { opacity: 0, y: -12, duration: 0.2, ease: "power3.in" }, HK.draw - 0.2);
+        tl.fromTo("#drawL", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.3, ease: OUT4, immediateRender: true }, HK.draw - 0.04);
         tl.to("#koW .ch, #plate .strike", { yPercent: -110, opacity: 0, duration: 0.22, ease: "power3.in", stagger: 0.035 }, HK.draw - 0.2);
         tl.fromTo("#drawW .ch", { yPercent: 110, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 0.42, ease: OUT4, stagger: 0.045, immediateRender: true }, HK.draw - 0.04);
         tl.fromTo("#drawW", { scale: 1.08 }, { scale: 1, duration: 0.4, ease: "back.out(1.7)", immediateRender: false }, HK.draw + 0.12);
