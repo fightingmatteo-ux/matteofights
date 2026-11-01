@@ -1,16 +1,16 @@
 {
-  "updated": "2026-10-31T21:41:37Z",
+  "updated": "2026-11-01T06:16:50Z",
   "platforms": {
     "instagram": {
-      "followers": 2071,
-      "last_post": "2026-10-31T16:31:38Z",
+      "followers": 2072,
+      "last_post": "2026-11-01T01:32:25Z",
       "failed": [
         "lst-2026-10-30-not-a-beginner"
       ],
-      "next_slot": "2026-10-31T22:30:00Z",
+      "next_slot": "2026-11-01T14:00:00Z",
       "plan_per_day": 3,
       "plan_mix": "3 trial reels",
-      "posted_7d": 32,
+      "posted_7d": 34,
       "token_expires": "2026-12-13",
       "warn": "1 failed in the last 3 days"
     },
@@ -18,40 +18,40 @@
       "followers": 1292,
       "insights": true,
       "enabled": true,
-      "last_post": "2026-10-30T23:36:29Z",
+      "last_post": "2026-10-31T23:36:22Z",
       "failed": [],
       "errors": [],
-      "next_slot": "2026-10-31T23:30:00Z",
+      "next_slot": "2026-11-02T00:30:00Z",
       "plan_per_day": 1,
       "plan_mix": "1 reel (best Instagram reel at 72 h)",
-      "posted_7d": 5,
+      "posted_7d": 6,
       "token_expires": null,
       "warn": null
     },
     "threads": {
-      "followers": 44,
+      "followers": 45,
       "enabled": true,
-      "last_post": "2026-10-31T19:36:59Z",
+      "last_post": "2026-11-01T01:06:32Z",
       "failed": [],
       "errors": [],
-      "next_slot": "2026-11-01T01:00:00Z",
+      "next_slot": "2026-11-01T15:00:00Z",
       "plan_per_day": 6,
       "plan_mix": "3 reels + 3 written posts",
-      "posted_7d": 43,
+      "posted_7d": 44,
       "token_expires": "2026-12-14",
       "warn": null
     },
     "youtube": {
-      "followers": 26,
+      "followers": 28,
       "enabled": true,
-      "last_post": "2026-10-31T20:05:56Z",
+      "last_post": "2026-10-31T23:05:59Z",
       "failed": [],
       "errors": [],
-      "next_slot": "2026-10-31T23:00:00Z",
+      "next_slot": "2026-11-01T17:30:00Z",
       "privacy": "public",
       "plan_per_day": 3,
       "plan_mix": "3 Shorts",
-      "posted_7d": 22,
+      "posted_7d": 23,
       "token_expires": null,
       "warn": null
     }
@@ -89,7 +89,7 @@
     },
     "freeze-A": {
       "instagram": {
-        "views": 2956,
+        "views": 2958,
         "likes": 78,
         "comments": 0,
         "shares": 16,
@@ -109,7 +109,7 @@
     },
     "freeze-C": {
       "instagram": {
-        "views": 4347,
+        "views": 4349,
         "likes": 95,
         "comments": 0,
         "shares": 9,
@@ -205,7 +205,7 @@
     },
     "lst-2026-10-17-mentally-tougher": {
       "instagram": {
-        "views": 2699,
+        "views": 2701,
         "likes": 38,
         "comments": 0,
         "shares": 0,
@@ -255,7 +255,7 @@
     },
     "lst-2026-10-18-round-three": {
       "instagram": {
-        "views": 6674,
+        "views": 6686,
         "likes": 91,
         "comments": 0,
         "shares": 6,
@@ -301,7 +301,7 @@
     },
     "lst-2026-10-19-power-without-weights": {
       "instagram": {
-        "views": 5247,
+        "views": 5255,
         "likes": 69,
         "comments": 1,
         "shares": 10,
@@ -325,12 +325,6 @@
       "facebook": {
         "views": 20,
         "url": "https://www.facebook.com/reel/28827941603535737"
-      },
-      "youtube": {
-        "views": 1365,
-        "likes": 18,
-        "comments": 0,
-        "url": "https://youtube.com/shorts/DzWxkFqGpdw"
       }
     },
     "lst-2026-10-20-go-anyway": {
@@ -344,20 +338,7 @@
       },
       "facebook": {
         "views": 44,
-        "url": "https://www.facebook.com/reel/1773940297206633",
-        "reach": null,
-        "plays": 31,
-        "replays": 13,
-        "follows": 0,
-        "avg_watch_s": 4.9
-      },
-      "threads": {
-        "views": 16,
-        "likes": 0,
-        "replies": 0,
-        "reposts": 0,
-        "shares": 0,
-        "url": "https://www.threads.com/@matteofights/post/Dexwscij0nt"
+        "url": "https://www.facebook.com/reel/1773940297206633"
       },
       "youtube": {
         "views": 8,
@@ -559,7 +540,7 @@
     },
     "lst-2026-10-22-jab-hurt": {
       "instagram": {
-        "views": 2913,
+        "views": 2927,
         "likes": 70,
         "comments": 0,
         "shares": 4,
@@ -599,7 +580,7 @@
         "url": "https://www.threads.com/@matteofights/post/De9dRYbCsD1"
       },
       "youtube": {
-        "views": 560,
+        "views": 561,
         "likes": 5,
         "comments": 0,
         "url": "https://youtube.com/shorts/EBucBG8eu4I"
@@ -607,7 +588,7 @@
     },
     "lst-2026-10-23-hands-up-tired": {
       "instagram": {
-        "views": 3437,
+        "views": 3441,
         "likes": 33,
         "comments": 0,
         "shares": 0,
@@ -639,10 +620,10 @@
         "url": "https://www.instagram.com/reel/De1_ffDCsH2/"
       },
       "facebook": {
-        "views": 192,
+        "views": 193,
         "url": "https://www.facebook.com/reel/1848134216431842",
         "reach": null,
-        "plays": 173,
+        "plays": 174,
         "replays": 19,
         "follows": 0,
         "avg_watch_s": 4.0
@@ -720,13 +701,13 @@
         "url": "https://www.instagram.com/reel/De6xoDHihaE/"
       },
       "facebook": {
-        "views": 473,
+        "views": 475,
         "url": "https://www.facebook.com/reel/1447814254125131",
         "reach": null,
-        "plays": 363,
+        "plays": 365,
         "replays": 110,
         "follows": 0,
-        "avg_watch_s": 11.2
+        "avg_watch_s": 11.1
       },
       "threads": {
         "views": 90,
@@ -809,7 +790,7 @@
         "url": "https://www.threads.com/@matteofights/post/DfDyZVoDC4_"
       },
       "youtube": {
-        "views": 1193,
+        "views": 1202,
         "likes": 7,
         "comments": 0,
         "url": "https://youtube.com/shorts/rUFHEv2RR7U"
@@ -833,7 +814,7 @@
         "url": "https://www.threads.com/@matteofights/post/DfCm3eIjzEi"
       },
       "youtube": {
-        "views": 349,
+        "views": 350,
         "likes": 2,
         "comments": 0,
         "url": "https://youtube.com/shorts/pMU8nhgyJEM"
@@ -857,20 +838,29 @@
         "url": "https://www.threads.com/@matteofights/post/DfDMwMslc_H"
       },
       "youtube": {
-        "views": 1920,
-        "likes": 15,
+        "views": 1971,
+        "likes": 16,
         "comments": 0,
         "url": "https://youtube.com/shorts/5YfeNPcXDKY"
       }
     },
     "lst-2026-10-25-read-round-one": {
       "instagram": {
-        "views": 5574,
+        "views": 5581,
         "likes": 129,
         "comments": 4,
         "shares": 16,
-        "saves": 108,
+        "saves": 110,
         "url": "https://www.instagram.com/reel/De7aPhYkrhf/"
+      },
+      "facebook": {
+        "views": 281,
+        "url": "https://www.facebook.com/reel/1663534268451425",
+        "reach": null,
+        "plays": 255,
+        "replays": 26,
+        "follows": 0,
+        "avg_watch_s": 4.4
       },
       "threads": {
         "views": 36,
@@ -881,7 +871,7 @@
         "url": "https://www.threads.com/@matteofights/post/DfBNmPSE61-"
       },
       "youtube": {
-        "views": 137,
+        "views": 138,
         "likes": 2,
         "comments": 0,
         "url": "https://youtube.com/shorts/GHVyWFPqJoI"
@@ -889,7 +879,7 @@
     },
     "lst-2026-10-26-better-than-it-feels": {
       "instagram": {
-        "views": 4768,
+        "views": 4777,
         "likes": 70,
         "comments": 0,
         "shares": 5,
@@ -907,18 +897,18 @@
     },
     "lst-2026-10-26-fit-without-running": {
       "instagram": {
-        "views": 13686,
-        "likes": 187,
+        "views": 13766,
+        "likes": 191,
         "comments": 0,
         "shares": 20,
-        "saves": 150,
+        "saves": 151,
         "url": "https://www.instagram.com/reel/De-XEeRD96o/"
       },
       "facebook": {
-        "views": 306,
+        "views": 309,
         "url": "https://www.facebook.com/reel/1090089780501841",
         "reach": null,
-        "plays": 279,
+        "plays": 282,
         "replays": 27,
         "follows": 0,
         "avg_watch_s": 4.0
@@ -940,7 +930,7 @@
     },
     "lst-2026-10-26-partner-everyone-wants": {
       "instagram": {
-        "views": 3271,
+        "views": 3273,
         "likes": 35,
         "comments": 1,
         "shares": 4,
@@ -956,7 +946,7 @@
         "url": "https://www.threads.com/@matteofights/post/DfGXLz2kf7D"
       },
       "youtube": {
-        "views": 1220,
+        "views": 1226,
         "likes": 9,
         "comments": 2,
         "url": "https://youtube.com/shorts/A3_O9ugNZG8"
@@ -982,7 +972,7 @@
         "url": "https://www.instagram.com/reel/De_6qE-CqvB/"
       },
       "youtube": {
-        "views": 1080,
+        "views": 1083,
         "likes": 11,
         "comments": 0,
         "url": "https://youtube.com/shorts/B6EYxD8DYh4"
@@ -990,7 +980,7 @@
     },
     "lst-2026-10-27-beginner-habits-hurt": {
       "instagram": {
-        "views": 2747,
+        "views": 2748,
         "likes": 37,
         "comments": 0,
         "shares": 2,
@@ -1006,7 +996,7 @@
         "url": "https://www.threads.com/@matteofights/post/DfI7_k0CFlj"
       },
       "youtube": {
-        "views": 1171,
+        "views": 1205,
         "likes": 12,
         "comments": 0,
         "url": "https://youtube.com/shorts/8AT2YDsfv9M"
@@ -1014,7 +1004,7 @@
     },
     "lst-2026-10-27-breathes-better": {
       "instagram": {
-        "views": 1984,
+        "views": 1986,
         "likes": 38,
         "comments": 0,
         "shares": 4,
@@ -1048,7 +1038,7 @@
         "url": "https://www.threads.com/@matteofights/post/DfIWOm1AI1W"
       },
       "youtube": {
-        "views": 823,
+        "views": 973,
         "likes": 11,
         "comments": 2,
         "url": "https://youtube.com/shorts/5gdRgDZc-dw"
@@ -1056,23 +1046,31 @@
     },
     "lst-2026-10-28-fighting-pressure": {
       "instagram": {
-        "views": 2250,
+        "views": 2252,
         "likes": 27,
         "comments": 0,
         "shares": 3,
         "saves": 2,
         "url": "https://www.instagram.com/reel/DfD1TszCWtj/"
       },
+      "threads": {
+        "views": 22,
+        "likes": 1,
+        "replies": 0,
+        "reposts": 0,
+        "shares": 0,
+        "url": "https://www.threads.com/@matteofights/post/DfLgyKICPm1"
+      },
       "youtube": {
-        "views": 411,
-        "likes": 7,
-        "comments": 0,
+        "views": 1180,
+        "likes": 15,
+        "comments": 1,
         "url": "https://youtube.com/shorts/zILT7YxTf2A"
       }
     },
     "lst-2026-10-28-my-bad": {
       "instagram": {
-        "views": 2573,
+        "views": 2575,
         "likes": 36,
         "comments": 0,
         "shares": 2,
@@ -1080,8 +1078,8 @@
         "url": "https://www.instagram.com/reel/DfCfc_2jX6n/"
       },
       "youtube": {
-        "views": 1954,
-        "likes": 16,
+        "views": 4167,
+        "likes": 22,
         "comments": 0,
         "url": "https://youtube.com/shorts/y-y2b4LyN2g"
       }
@@ -1096,17 +1094,17 @@
         "url": "https://www.instagram.com/reel/DfDgqFaj9_d/"
       },
       "threads": {
-        "views": 12,
-        "likes": 0,
+        "views": 15,
+        "likes": 1,
         "replies": 0,
         "reposts": 0,
         "shares": 0,
         "url": "https://www.threads.com/@matteofights/post/DfK7CThgn76"
       },
       "youtube": {
-        "views": 587,
-        "likes": 7,
-        "comments": 1,
+        "views": 1095,
+        "likes": 8,
+        "comments": 2,
         "url": "https://youtube.com/shorts/MmFLANGJ7h4"
       }
     },
@@ -1130,7 +1128,7 @@
     },
     "lst-2026-10-29-body-kicks": {
       "instagram": {
-        "views": 3592,
+        "views": 3599,
         "likes": 33,
         "comments": 0,
         "shares": 0,
@@ -1146,6 +1144,12 @@
         "shares": 1,
         "saves": 5,
         "url": "https://www.instagram.com/reel/DfFEQTQDhwY/"
+      },
+      "youtube": {
+        "views": 9,
+        "likes": 1,
+        "comments": 0,
+        "url": "https://youtube.com/shorts/G_MEbLP8KcA"
       }
     },
     "lst-2026-10-29-first-coach": {
@@ -1160,7 +1164,7 @@
     },
     "lst-2026-10-29-gym-second-home": {
       "instagram": {
-        "views": 611,
+        "views": 612,
         "likes": 4,
         "comments": 2,
         "shares": 0,
@@ -1180,7 +1184,7 @@
     },
     "lst-2026-10-30-rest-days": {
       "instagram": {
-        "views": 3763,
+        "views": 3770,
         "likes": 31,
         "comments": 4,
         "shares": 4,
@@ -1190,7 +1194,7 @@
     },
     "lst-2026-10-30-southpaw": {
       "instagram": {
-        "views": 2863,
+        "views": 2876,
         "likes": 27,
         "comments": 0,
         "shares": 2,
@@ -1200,22 +1204,42 @@
     },
     "lst-2026-10-31-bad-round-building": {
       "instagram": {
-        "views": 544,
-        "likes": 6,
+        "views": 718,
+        "likes": 7,
         "comments": 0,
         "shares": 2,
-        "saves": 1,
+        "saves": 2,
         "url": "https://www.instagram.com/reel/DfKN5svDpmV/"
+      }
+    },
+    "lst-2026-10-31-fighting-therapy": {
+      "instagram": {
+        "views": 2701,
+        "likes": 32,
+        "comments": 0,
+        "shares": 0,
+        "saves": 10,
+        "url": "https://www.instagram.com/reel/DfLPDk7j22b/"
       }
     },
     "lst-2026-10-31-sparring-teaches-building": {
       "instagram": {
-        "views": 497,
-        "likes": 5,
+        "views": 623,
+        "likes": 7,
         "comments": 0,
         "shares": 0,
         "saves": 1,
         "url": "https://www.instagram.com/reel/DfKl2P9DbHb/"
+      }
+    },
+    "lst-2026-10-31-teep-like-thai": {
+      "instagram": {
+        "views": 2608,
+        "likes": 14,
+        "comments": 0,
+        "shares": 0,
+        "saves": 8,
+        "url": "https://www.instagram.com/reel/DfLju0tDuSU/"
       }
     },
     "saenchai-A": {
@@ -1230,8 +1254,8 @@
     },
     "saenchai-B": {
       "instagram": {
-        "views": 2689,
-        "likes": 85,
+        "views": 2694,
+        "likes": 86,
         "comments": 0,
         "shares": 7,
         "saves": 33,
@@ -1678,7 +1702,7 @@
       "url": "https://www.threads.com/@matteofights/post/DfIj8Mxn2d0"
     },
     "th-1031-1": {
-      "views": 78,
+      "views": 79,
       "likes": 0,
       "replies": 0,
       "reposts": 0,
@@ -1694,7 +1718,7 @@
       "url": "https://www.threads.com/@matteofights/post/DfKm_QamqUG"
     },
     "th-1031-3": {
-      "views": 0,
+      "views": 51,
       "likes": 0,
       "replies": 0,
       "reposts": 0,
