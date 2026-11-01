@@ -69,6 +69,8 @@ Log: `media/2026-10-16-saenchai-bigger-men/renders/render_bc.log` (ends with `AL
 | Style lab next aspect (10-24) | OPEN | hook_style is fully tested (native won). Add a new lab aspect before the next Saturday proposal: hook position (lower plate, faces kept clear; the 10-20 review swapped 6 clips for text over the face) or sound. Code in tools/style/lab.py ASPECTS + tools/listicle/render.py |
 | Renderer crash on very short clips (10-25) | OPEN | tools/listicle/render.py: a ~1 s clip (cooking 1rf6iJDQ) gives a negative fade start (st=-1.90) and ffmpeg exits 222, killing the whole factory run. Clamp fade starts or skip clips under ~3 s; until then don't pick that clip |
 
+| **Paid 4-Week Power Plan (11-01)** | **MATTEO** | Built on branch `claude/power-plan-stripe`, not live: Stripe checkout ($12, $6 low-income countries), private buyer link, day 1 test + day 28 retest, "comment PLAN" auto-DM. Matteo: Stripe account + `STRIPE_SECRET_KEY` secret, then merge (docs/plan/README.md). Research: money-research reports (session 2026-11-01). Next: plan reels with a "comment PLAN" CTA (production/reels/PLAN-REELS-2026-10-29.md). Notion signup rows: not reachable from cloud; Matteo exports CSV if wanted (public repo, so summary only, no emails/handles) |
+
 ## Rules (short)
 
 Never set `approved:true`. Never commit `secrets/`, `data.json`, `covers/`, `voice.wav`, `snaps/`. Commit only your own paths. Never run renders as session background jobs, and never render variants in parallel.

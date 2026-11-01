@@ -20,7 +20,7 @@ const LINK = "https://matteofights.me/protocol";
 const DM_TEXT = `Here it is 🥊 THE PROTOCOL, free: ${LINK}\n\nTake the 2 minute test first. It builds your workout around what you need most, no gym needed.`;
 // "comment PLAN" (plan reels, 2026-11-02): same free PROTOCOL link, worded as the plan they asked for. Shows in the
 // control center Leads tab like PROTOCOL commenters (kind protocol_dm, with keyword "plan").
-const PLAN_DM_TEXT = `Here's your plan 🥊 Free: ${LINK}\n\nTake the 2 minute test first. It builds the plan around what you need most, no gym needed.`;
+const PLAN_DM_TEXT = `Here's your plan 🥊 Free session to start: ${LINK}\n\nThe full 4 weeks (12 sessions, test on day 1, retest on day 28): https://matteofights.me/plan/?src=dm`;
 const keywordOf = (text) => (/\bprotocol\b/i.test(text || "") ? "protocol" : "plan");
 const PUBLIC_REPLIES = ["Sent it to your DMs 🥊", "Check your DMs 🥊", "In your DMs now 🥊"];
 const NOW_SQL = "strftime('%Y-%m-%dT%H:%M:%SZ','now')";
