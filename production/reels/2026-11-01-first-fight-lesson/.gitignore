@@ -6,3 +6,5 @@ rvm.onnx
 index.html
 work/gh_*
 __pycache__/
+work/broll.json
+snapshots/
