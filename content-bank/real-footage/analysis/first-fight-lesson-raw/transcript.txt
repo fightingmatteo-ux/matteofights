@@ -1,0 +1,58 @@
+language: en
+[   1.1-   5.4] Body one I was 16 my first fight his sixth
+[   5.4-  12.0] Someone told me knock him out or you're gonna lose so I hunted him the ref steps in to separate us
+[  12.0-  14.9] And I throw the right hand anyways. He's out
+[  14.9-  17.4] They called it a draw and to be honest
+[  17.4-  21.0] They should have disqualified me because I thought fighting was about hurting people
+[  21.0-  27.2] But in reality, it's about control if you break the rules to get the knockout. You didn't earn it
+[  30.3-  37.1] I was 16. It was my first fight. It was his sixth and someone told me knock him out or you lose
+[  37.1-  42.2] So I hunted him the ref steps in to separate us and I throw the right hand anyways
+[  42.2-  45.8] He's out. They called it a draw and to be honest
+[  45.8-  50.0] They should have disqualified me because I thought fighting was about hurting people in reality
+[  50.0-  54.6] It's about control if you break the rules to get the knockout. You didn't earn it
+[  56.7-  61.1] Body three I was 16 my first fight his sixth
+[  61.1-  67.0] Someone told me knock him out or you lose so I hunted him the ref steps in to separate us
+[  67.0-  69.6] And I throw the right hand anyways. He's out
+[  69.6-  72.1] They called it a draw and to be honest
+[  72.1-  75.9] They should have disqualified me because I thought fighting was about hurting people
+[  75.9-  80.9] But in reality, it's about control if you break the rules to get the knockout. You didn't earn it
+[  82.4-  87.1] Loop a it's about control if you break the rules to get a knockout
+[  87.1-  92.4] You didn't earn it and I would know I knocked him out in my first fight and it shouldn't have counted
+[  92.4-  95.5] I was 16 my first fight his sixth
+[  96.4- 102.0] It's about control if you break the rules to get a knockout. You didn't earn it and I'd know I
+[ 102.0- 107.8] Knocked him out in my first fight and it shouldn't have counted. I was 16 my first fight and his sixth
+[ 108.9- 112.1] It's about control if you break the rules to get the knockout
+[ 112.1- 117.6] You didn't earn it and I'd know my first fight ended in a knockout and I'm the one who should have lost
+[ 117.6- 120.8] I was 16 my first fight his sixth
+[ 121.6- 124.8] It's about control if you break the rules to get the knockout
+[ 124.8- 129.8] You didn't earn it and I know my first fight ended in a knockout and I'm the one who should have lost
+[ 129.8- 132.7] I was 16 my first fight in his sixth
+[ 133.8- 139.1] it's about control if you break the rules to get the knockout you didn't earn it so you tell me
+[ 139.1- 145.5] shouldn't knockout count if the refs already in between I was 16 my first fight his sixth
+[ 146.3- 151.6] it's about control if you break the rules to get the knockout you didn't earn it so you tell
+[ 151.6- 158.0] me shouldn't knockout count if the refs already in between I was 16 my first fight his sixth
+[ 158.9- 160.0] It's about control.
+[ 160.2- 163.5] If you break the rules to get the knockout, you didn't earn it, so you tell me.
+[ 164.0- 166.3] Should a knockout count if the refs are already in between?
+[ 167.0- 170.5] I was 16, my first fight is 6th.
+[ 170.5- 171.5] It's about control.
+[ 171.8- 174.5] If you break the rules to get the knockout, you didn't earn it.
+[ 174.6- 177.8] That's why my first knockout is the one I'm least proud of.
+[ 178.3- 181.0] I was 16, my first fight is 6th.
+[ 181.3- 182.3] It's about control.
+[ 182.5- 185.7] If you break the rules to get the knockout, you didn't earn it.
+[ 185.7- 191.7] That's why my first knockout is the one i'm least proud of i was 16 my first fight his sixth
+[ 192.4- 197.0] It's about control if you break the rules to get the knockout you didn't earn it
+[ 197.0- 203.3] Learned that from one punch half a second too late. I was 16 my firstembide his sixth
+[ 204.1- 208.5] It's about control if you break the rules to get the knockout you didn't earn it
+[ 208.5- 214.7] I learned that from one punch half a second too late. I was 16 my first fight in his sixth
+[ 215.7- 223.4] Share one. If you know someone with their first fight coming up, send them this. Here's what I wish I knew.
+[ 225.1- 231.2] Share two. If you know someone with their first fight coming up, send them this. Here's what I wish I knew.
+[ 232.6- 239.0] Share three. If you know someone with their first fight coming up, send them this. Here's what I wish I knew.
+[ 240.3- 244.9] Follow one. And if you think that's bad, wait till you hear about my appendix.
+[ 245.1- 248.8] It burst the day before a fight. Follow. That one's next.
+[ 250.3- 255.1] Follow two. And if you think that's bad, wait till you hear about my appendix.
+[ 255.3- 259.0] It burst the day before a fight. Follow. That one's next.
+[ 260.1- 264.0] Follow three. And if you think that's bad, wait till you hear about my appendix.
+[ 264.3- 266.1] It burst the day before a fight night.
+[ 266.1- 268.4] Okay, follow me because that one's next.
