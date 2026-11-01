@@ -265,9 +265,48 @@
       "lst-2026-11-09-train-for-fun",
       "lst-2026-11-10-stop-blinking",
       "lst-2026-11-11-cut-off-ring"
+    ],
+    "38cc1b4e": [
+      "lst-2026-11-05-fell-for-training",
+      "lst-2026-11-05-land-right-hand",
+      "lst-2026-11-06-first-spar",
+      "lst-2026-11-06-harder-to-hit",
+      "lst-2026-11-07-hands-when-kicking",
+      "lst-2026-11-07-partners-respect",
+      "lst-2026-11-08-taller-opponent",
+      "lst-2026-11-08-training-changed-you",
+      "lst-2026-11-09-chin-down",
+      "lst-2026-11-09-train-for-fun",
+      "lst-2026-11-10-better-without-more-sparring",
+      "lst-2026-11-10-stop-blinking",
+      "lst-2026-11-11-check-leg-kicks",
+      "lst-2026-11-11-cut-off-ring"
+    ],
+    "11473b1e": [
+      "th-1106-1",
+      "th-1106-2",
+      "th-1106-3",
+      "th-1107-1",
+      "th-1107-2",
+      "th-1107-3",
+      "th-1108-1",
+      "th-1108-2",
+      "th-1108-3",
+      "th-1109-1",
+      "th-1109-2",
+      "th-1109-3",
+      "th-1110-1",
+      "th-1110-2",
+      "th-1110-3",
+      "th-1111-1",
+      "th-1111-2",
+      "th-1111-3",
+      "th-1112-1",
+      "th-1112-2",
+      "th-1112-3"
     ]
   },
-  "announced_threads": "th-1030-1,th-1030-2,th-1030-3,th-1031-1,th-1031-2,th-1031-3,th-1101-1,th-1101-2,th-1101-3,th-1102-1,th-1102-2,th-1102-3,th-1103-1,th-1103-2,th-1103-3,th-1104-1,th-1104-2,th-1104-3,th-1105-1,th-1105-2,th-1105-3",
+  "announced_threads": "th-1106-1,th-1106-2,th-1106-3,th-1107-1,th-1107-2,th-1107-3,th-1108-1,th-1108-2,th-1108-3,th-1109-1,th-1109-2,th-1109-3,th-1110-1,th-1110-2,th-1110-3,th-1111-1,th-1111-2,th-1111-3,th-1112-1,th-1112-2,th-1112-3",
   "sent_questions": [
     "q-12d88f",
     "q-stadium",
@@ -436,7 +475,7 @@
     "xp-c16f3c2e",
     "health-queue:lst-2026-10-30-not-a-beginner:failed-2026110106"
   ],
-  "announced_week": "lst-2026-11-05-fell-for-training,lst-2026-11-06-harder-to-hit,lst-2026-11-07-partners-respect,lst-2026-11-08-training-changed-you,lst-2026-11-09-train-for-fun,lst-2026-11-10-stop-blinking,lst-2026-11-11-cut-off-ring",
+  "announced_week": "lst-2026-11-05-fell-for-training,lst-2026-11-05-land-right-hand,lst-2026-11-06-first-spar,lst-2026-11-06-harder-to-hit,lst-2026-11-07-hands-when-kicking,lst-2026-11-07-partners-respect,lst-2026-11-08-taller-opponent,lst-2026-11-08-training-changed-you,lst-2026-11-09-chin-down,lst-2026-11-09-train-for-fun,lst-2026-11-10-better-without-more-sparring,lst-2026-11-10-stop-blinking,lst-2026-11-11-check-leg-kicks,lst-2026-11-11-cut-off-ring",
   "sent_failed": [
     "lst-2026-10-30-not-a-beginner"
   ]
