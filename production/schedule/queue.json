@@ -3087,13 +3087,17 @@
       "not_before": "2026-11-01T21:00:00Z",
       "min_gap_hours": 0.2,
       "approved": true,
-      "status": "queued",
+      "status": "posted",
       "crosspost_to": [],
       "trial_set": "first-fight-lesson",
       "opening": "result",
       "length": "full",
       "slot_note": "hook test, same day: 2026-11-01 16:00 NY (favourite A last)",
-      "approved_note": "Matteo: \"yes, post all 5 today\" in Claude chat 2026-11-01 ~18:45Z, after watching the renders (recorded 2026-11-01T18:44Z)"
+      "approved_note": "Matteo: \"yes, post all 5 today\" in Claude chat 2026-11-01 ~18:45Z, after watching the renders (recorded 2026-11-01T18:44Z)",
+      "posting_since": "2026-11-01T21:30:56Z",
+      "media_id": "18142439116713907",
+      "permalink": "https://www.instagram.com/reel/DfNs-hRDCkG/",
+      "posted_at": "2026-11-01T21:31:40Z"
     }
   ]
 }
