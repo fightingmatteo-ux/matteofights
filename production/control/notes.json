@@ -626,5 +626,9 @@
   {
     "id": "health-queue:lst-2026-10-30-not-a-beginner:failed-2026110106",
     "text": "⚠️ lst-2026-10-30-not-a-beginner failed to post: GET https://graph.facebook.com/v23.0/530317382955170 -> 404: {\"title\":\"Not Found\",\"detail\":\"No audio asset found for the given ID\",\"status\":404}"
+  },
+  {
+    "id": "xp-06a05038",
+    "text": "📤 Threads: YOUR FIRST COACH SHAPES HOW YOU FIGHT FOR YEARS\nhttps://www.threads.com/@matteofights/post/DfNA6ysFSan"
   }
 ]
