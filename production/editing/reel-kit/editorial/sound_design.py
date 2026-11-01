@@ -352,5 +352,23 @@ def strip_kit_sub(audio_html):
     return _re.sub(r'\s*<audio id="ed-sfx\d+" src="[^"]*/sub.wav"[^>]*></audio>', "", audio_html)
 
 
+def fill_gaps(events, start, end, phrase_starts, max_gap=3.0):
+    """Attention rule (Matteo 2026-11-01): something visual or audible every <= 3 s.
+    events: times where a real change already happens (cuts, b-roll, cards, keywords, SFX hits).
+    Returns the extra beat times to add (camera punch-in + soft thud/whoosh), snapped to a phrase start inside
+    each long gap so the punch lands on speech, never in a pause."""
+    ev = sorted(t for t in events if start <= t <= end) + [end]
+    out, prev = [], start
+    for t in ev:
+        while t - prev > max_gap:
+            target = prev + min(max_gap - 0.4, (t - prev) / 2 if t - prev < 2 * max_gap else max_gap - 0.4)
+            near = [p for p in phrase_starts if prev + 0.8 <= p <= prev + max_gap - 0.1]
+            beat = min(near, key=lambda p: abs(p - target)) if near else target
+            out.append(round(beat, 3))
+            prev = beat
+        prev = t
+    return out
+
+
 if __name__ == "__main__":
     print(make_all(sys.argv[1] if len(sys.argv) > 1 else "sfx_sd"))
