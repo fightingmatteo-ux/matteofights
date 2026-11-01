@@ -622,5 +622,9 @@
   {
     "id": "xp-c16f3c2e",
     "text": "📤 Threads: 6 SIGNS FIGHTING CHANGED HOW YOU HANDLE PRESSURE\nhttps://www.threads.com/@matteofights/post/DfLgyKICPm1"
+  },
+  {
+    "id": "health-queue:lst-2026-10-30-not-a-beginner:failed-2026110106",
+    "text": "⚠️ lst-2026-10-30-not-a-beginner failed to post: GET https://graph.facebook.com/v23.0/530317382955170 -> 404: {\"title\":\"Not Found\",\"detail\":\"No audio asset found for the given ID\",\"status\":404}"
   }
 ]
