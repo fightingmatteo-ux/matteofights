@@ -16,6 +16,7 @@ RAW=../../../media/first-fight-lesson/raw.mp4
 [ -f assets/voice.wav ] || ffmpeg -v error -y -i "$RAW" -vn -c:a pcm_s16le -ar 48000 assets/voice.wav
 
 [ -f "assets/media/aroll_$V.mp4" ] || "$PY" -P ../../editing/reel-kit/scripts/assemble.py work/takes.json "$V"
+"$PY" work/postfix_edl.py "$V"   # drop Whisper spill-over words at the cuts (idempotent)
 
 # fight tape cut to this variant's lines (media/first-fight/first-fight-2.mp4)
 "$PY" -P make_broll.py "$V"
