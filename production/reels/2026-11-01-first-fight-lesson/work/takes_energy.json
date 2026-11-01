@@ -1,0 +1,668 @@
+[
+ {
+  "label": "Body 1",
+  "start": 2.97,
+  "end": 27.14,
+  "dur": 24.17,
+  "txt": "I was 16 my first fight his sixth Someone told me knock him out or you're gonna lose so I hunted him the ref steps in to separate us And I throw the right hand anyways. He's out They called it a draw and to be honest They should have disqualified me because I thought fighting was about hurting people But in reality, it's about control if you break the rules to get the knockout. You didn't earn it",
+  "mean_db": -28.4,
+  "p90": -20.8,
+  "speech_frac": 0.79,
+  "nwords": 79,
+  "gaps": [
+   [
+    5.41,
+    5.98,
+    0.57,
+    "sixth",
+    "Someone"
+   ],
+   [
+    8.47,
+    8.74,
+    0.27,
+    "lose",
+    "so"
+   ],
+   [
+    10.08,
+    10.45,
+    0.37,
+    "him",
+    "the"
+   ],
+   [
+    13.93,
+    14.19,
+    0.26,
+    "anyways.",
+    "He's"
+   ],
+   [
+    15.03,
+    15.58,
+    0.55,
+    "out",
+    "They"
+   ],
+   [
+    16.55,
+    16.83,
+    0.28,
+    "draw",
+    "and"
+   ],
+   [
+    21.03,
+    21.44,
+    0.41,
+    "people",
+    "But"
+   ],
+   [
+    22.19,
+    22.45,
+    0.26,
+    "reality,",
+    "it's"
+   ],
+   [
+    23.28,
+    23.74,
+    0.46,
+    "control",
+    "if"
+   ]
+  ]
+ },
+ {
+  "label": "Body 2",
+  "start": 31.03,
+  "end": 54.58,
+  "dur": 23.55,
+  "txt": "I was 16. It was my first fight. It was his sixth and someone told me knock him out or you lose So I hunted him the ref steps in to separate us and I throw the right hand anyways He's out. They called it a draw and to be honest They should have disqualified me because I thought fighting was about hurting people in reality It's about control if you break the rules to get the knockout. You didn't earn it",
+  "mean_db": -29.8,
+  "p90": -23.5,
+  "speech_frac": 0.77,
+  "nwords": 82,
+  "gaps": [
+   [
+    34.18,
+    34.83,
+    0.65,
+    "sixth",
+    "and"
+   ],
+   [
+    37.19,
+    37.57,
+    0.38,
+    "lose",
+    "So"
+   ],
+   [
+    38.81,
+    39.32,
+    0.51,
+    "him",
+    "the"
+   ],
+   [
+    49.14,
+    49.56,
+    0.42,
+    "people",
+    "in"
+   ],
+   [
+    51.35,
+    51.78,
+    0.43,
+    "control",
+    "if"
+   ]
+  ]
+ },
+ {
+  "label": "Body 3",
+  "start": 58.84,
+  "end": 80.79,
+  "dur": 21.95,
+  "txt": "I was 16 my first fight his sixth Someone told me knock him out or you lose so I hunted him the ref steps in to separate us And I throw the right hand anyways. He's out They called it a draw and to be honest They should have disqualified me because I thought fighting was about hurting people But in reality, it's about control if you break the rules to get the knockout. You didn't earn it",
+  "mean_db": -27.9,
+  "p90": -20.2,
+  "speech_frac": 0.79,
+  "nwords": 78,
+  "gaps": [
+   [
+    61.02,
+    61.53,
+    0.51,
+    "sixth",
+    "Someone"
+   ],
+   [
+    64.96,
+    65.54,
+    0.58,
+    "him",
+    "the"
+   ],
+   [
+    69.69,
+    70.12,
+    0.43,
+    "out",
+    "They"
+   ],
+   [
+    71.12,
+    71.56,
+    0.44,
+    "draw",
+    "and"
+   ],
+   [
+    73.51,
+    73.91,
+    0.4,
+    "me",
+    "because"
+   ],
+   [
+    77.87,
+    78.32,
+    0.45,
+    "control",
+    "if"
+   ]
+  ]
+ },
+ {
+  "label": "Loop A 1",
+  "start": 83.84,
+  "end": 95.58,
+  "dur": 11.74,
+  "txt": "it's about control if you break the rules to get a knockout You didn't earn it and I would know I knocked him out in my first fight and it shouldn't have counted I was 16 my first fight his sixth",
+  "mean_db": -27.4,
+  "p90": -19.3,
+  "speech_frac": 0.81,
+  "nwords": 41,
+  "gaps": [
+   [
+    89.1,
+    89.55,
+    0.45,
+    "know",
+    "I"
+   ],
+   [
+    92.47,
+    92.78,
+    0.31,
+    "counted",
+    "I"
+   ],
+   [
+    94.74,
+    95.0,
+    0.26,
+    "fight",
+    "his"
+   ]
+  ]
+ },
+ {
+  "label": "Loop A 2",
+  "start": 96.73,
+  "end": 107.91,
+  "dur": 11.18,
+  "txt": "It's about control if you break the rules to get a knockout. You didn't earn it and I'd know I Knocked him out in my first fight and it shouldn't have counted. I was 16 my first fight and his sixth",
+  "mean_db": -26.9,
+  "p90": -18.8,
+  "speech_frac": 0.85,
+  "nwords": 41,
+  "gaps": [
+   [
+    101.34,
+    101.86,
+    0.52,
+    "know",
+    "I"
+   ],
+   [
+    104.78,
+    105.09,
+    0.31,
+    "counted.",
+    "I"
+   ]
+  ]
+ },
+ {
+  "label": "Loop B 1",
+  "start": 109.13,
+  "end": 120.86,
+  "dur": 11.73,
+  "txt": "It's about control if you break the rules to get the knockout You didn't earn it and I'd know my first fight ended in a knockout and I'm the one who should have lost I was 16 my first fight his sixth",
+  "mean_db": -26.5,
+  "p90": -18.3,
+  "speech_frac": 0.83,
+  "nwords": 42,
+  "gaps": [
+   [
+    110.16,
+    110.45,
+    0.29,
+    "control",
+    "if"
+   ],
+   [
+    114.19,
+    114.49,
+    0.3,
+    "know",
+    "my"
+   ],
+   [
+    117.65,
+    118.1,
+    0.45,
+    "lost",
+    "I"
+   ]
+  ]
+ },
+ {
+  "label": "Loop B 2",
+  "start": 121.91,
+  "end": 132.82,
+  "dur": 10.91,
+  "txt": "It's about control if you break the rules to get the knockout You didn't earn it and I know my first fight ended in a knockout and I'm the one who should have lost I was 16 my first fight in his sixth",
+  "mean_db": -27.4,
+  "p90": -19.6,
+  "speech_frac": 0.89,
+  "nwords": 43,
+  "gaps": [
+   [
+    126.43,
+    126.85,
+    0.42,
+    "know",
+    "my"
+   ],
+   [
+    129.92,
+    130.35,
+    0.43,
+    "lost",
+    "I"
+   ]
+  ]
+ },
+ {
+  "label": "Loop C 1",
+  "start": 134.19,
+  "end": 145.57,
+  "dur": 11.38,
+  "txt": "it's about control if you break the rules to get the knockout you didn't earn it so you tell me shouldn't knockout count if the refs already in between I was 16 my first fight his sixth",
+  "mean_db": -26.9,
+  "p90": -19.0,
+  "speech_frac": 0.81,
+  "nwords": 37,
+  "gaps": [
+   [
+    135.24,
+    135.53,
+    0.29,
+    "control",
+    "if"
+   ],
+   [
+    139.18,
+    139.86,
+    0.68,
+    "me",
+    "shouldn't"
+   ],
+   [
+    142.35,
+    142.86,
+    0.51,
+    "between",
+    "I"
+   ],
+   [
+    143.8,
+    144.05,
+    0.25,
+    "16",
+    "my"
+   ]
+  ]
+ },
+ {
+  "label": "Loop C 2",
+  "start": 146.63,
+  "end": 158.15,
+  "dur": 11.52,
+  "txt": "it's about control if you break the rules to get the knockout you didn't earn it so you tell me shouldn't knockout count if the refs already in between I was 16 my first fight his sixth",
+  "mean_db": -26.2,
+  "p90": -18.1,
+  "speech_frac": 0.86,
+  "nwords": 37,
+  "gaps": [
+   [
+    147.58,
+    148.01,
+    0.43,
+    "control",
+    "if"
+   ],
+   [
+    151.98,
+    152.41,
+    0.43,
+    "me",
+    "shouldn't"
+   ],
+   [
+    155.12,
+    155.38,
+    0.26,
+    "between",
+    "I"
+   ]
+  ]
+ },
+ {
+  "label": "Loop C 3",
+  "start": 159.18,
+  "end": 169.58,
+  "dur": 10.4,
+  "txt": "It's about control. If you break the rules to get the knockout, you didn't earn it, so you tell me. Should a knockout count if the refs are already in between? I was 16, my first fight is 6th.",
+  "mean_db": -26.9,
+  "p90": -19.3,
+  "speech_frac": 0.86,
+  "nwords": 39,
+  "gaps": [
+   [
+    163.53,
+    164.11,
+    0.58,
+    "me.",
+    "Should"
+   ],
+   [
+    166.57,
+    167.06,
+    0.49,
+    "between?",
+    "I"
+   ]
+  ]
+ },
+ {
+  "label": "Loop D 1",
+  "start": 170.65,
+  "end": 180.87,
+  "dur": 10.22,
+  "txt": "It's about control. If you break the rules to get the knockout, you didn't earn it. That's why my first knockout is the one I'm least proud of. I was 16, my first fight is 6th.",
+  "mean_db": -27.4,
+  "p90": -19.9,
+  "speech_frac": 0.83,
+  "nwords": 36,
+  "gaps": [
+   [
+    171.56,
+    171.83,
+    0.27,
+    "control.",
+    "If"
+   ],
+   [
+    177.77,
+    178.33,
+    0.56,
+    "of.",
+    "I"
+   ]
+  ]
+ },
+ {
+  "label": "Loop D 2",
+  "start": 181.67,
+  "end": 191.78,
+  "dur": 10.11,
+  "txt": "It's about control. If you break the rules to get the knockout, you didn't earn it. That's why my first knockout is the one i'm least proud of i was 16 my first fight his sixth",
+  "mean_db": -27.8,
+  "p90": -19.7,
+  "speech_frac": 0.84,
+  "nwords": 36,
+  "gaps": [
+   [
+    185.61,
+    186.08,
+    0.47,
+    "it.",
+    "That's"
+   ],
+   [
+    189.08,
+    189.41,
+    0.33,
+    "of",
+    "i"
+   ]
+  ]
+ },
+ {
+  "label": "Loop E 1",
+  "start": 192.75,
+  "end": 203.3,
+  "dur": 10.55,
+  "txt": "It's about control if you break the rules to get the knockout you didn't earn it Learned that from one punch half a second too late. I was 16 my firstembide his sixth",
+  "mean_db": -28.2,
+  "p90": -20.3,
+  "speech_frac": 0.77,
+  "nwords": 33,
+  "gaps": [
+   [
+    193.82,
+    194.24,
+    0.42,
+    "control",
+    "if"
+   ],
+   [
+    196.89,
+    197.45,
+    0.56,
+    "it",
+    "Learned"
+   ],
+   [
+    199.23,
+    199.59,
+    0.36,
+    "punch",
+    "half"
+   ],
+   [
+    200.61,
+    200.86,
+    0.25,
+    "late.",
+    "I"
+   ]
+  ]
+ },
+ {
+  "label": "Loop E 2",
+  "start": 204.41,
+  "end": 214.76,
+  "dur": 10.35,
+  "txt": "It's about control if you break the rules to get the knockout you didn't earn it I learned that from one punch half a second too late. I was 16 my first fight in his sixth",
+  "mean_db": -28.1,
+  "p90": -19.6,
+  "speech_frac": 0.83,
+  "nwords": 36,
+  "gaps": [
+   [
+    208.44,
+    208.77,
+    0.33,
+    "it",
+    "I"
+   ],
+   [
+    209.69,
+    210.02,
+    0.33,
+    "from",
+    "one"
+   ],
+   [
+    211.92,
+    212.39,
+    0.47,
+    "late.",
+    "I"
+   ]
+  ]
+ },
+ {
+  "label": "Share 1",
+  "start": 217.76,
+  "end": 223.62,
+  "dur": 5.86,
+  "txt": "If you know someone with their first fight coming up, send them this. Here's what I wish I knew.",
+  "mean_db": -23.4,
+  "p90": -14.7,
+  "speech_frac": 0.86,
+  "nwords": 19,
+  "gaps": [
+   [
+    220.47,
+    220.73,
+    0.26,
+    "up,",
+    "send"
+   ],
+   [
+    221.77,
+    222.12,
+    0.35,
+    "this.",
+    "Here's"
+   ]
+  ]
+ },
+ {
+  "label": "Share 2",
+  "start": 226.35,
+  "end": 231.39,
+  "dur": 5.04,
+  "txt": "If you know someone with their first fight coming up, send them this. Here's what I wish I knew.",
+  "mean_db": -23.2,
+  "p90": -15.1,
+  "speech_frac": 0.88,
+  "nwords": 19,
+  "gaps": [
+   [
+    229.82,
+    230.15,
+    0.33,
+    "this.",
+    "Here's"
+   ]
+  ]
+ },
+ {
+  "label": "Share 3",
+  "start": 234.12,
+  "end": 239.14,
+  "dur": 5.02,
+  "txt": "If you know someone with their first fight coming up, send them this. Here's what I wish I knew.",
+  "mean_db": -24.2,
+  "p90": -15.7,
+  "speech_frac": 0.86,
+  "nwords": 19,
+  "gaps": [
+   [
+    236.49,
+    236.79,
+    0.3,
+    "up,",
+    "send"
+   ],
+   [
+    237.59,
+    237.92,
+    0.33,
+    "this.",
+    "Here's"
+   ]
+  ]
+ },
+ {
+  "label": "Follow 1",
+  "start": 241.75,
+  "end": 248.98,
+  "dur": 7.23,
+  "txt": "And if you think that's bad, wait till you hear about my appendix. It burst the day before a fight. Follow. That one's next.",
+  "mean_db": -26.1,
+  "p90": -16.8,
+  "speech_frac": 0.88,
+  "nwords": 24,
+  "gaps": [
+   [
+    247.31,
+    247.78,
+    0.47,
+    "fight.",
+    "Follow."
+   ]
+  ]
+ },
+ {
+  "label": "Follow 2",
+  "start": 252.14,
+  "end": 259.17,
+  "dur": 7.03,
+  "txt": "And if you think that's bad, wait till you hear about my appendix. It burst the day before a fight. Follow. That one's next.",
+  "mean_db": -26.3,
+  "p90": -18.5,
+  "speech_frac": 0.84,
+  "nwords": 24,
+  "gaps": [
+   [
+    257.32,
+    257.74,
+    0.42,
+    "fight.",
+    "Follow."
+   ]
+  ]
+ },
+ {
+  "label": "Follow 3",
+  "start": 261.67,
+  "end": 268.98,
+  "dur": 7.31,
+  "txt": "And if you think that's bad, wait till you hear about my appendix. It burst the day before a fight night. Okay, follow me because that one's next.",
+  "mean_db": -26.7,
+  "p90": -17.1,
+  "speech_frac": 0.81,
+  "nwords": 28,
+  "gaps": [
+   [
+    266.16,
+    266.89,
+    0.73,
+    "Okay,",
+    "follow"
+   ]
+  ]
+ }
+]
