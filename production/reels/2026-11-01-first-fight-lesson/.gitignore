@@ -1,0 +1,8 @@
+assets/raw.mp4
+assets/voice.wav
+assets/media/
+assets/sfx/
+rvm.onnx
+index.html
+work/gh_*
+__pycache__/
