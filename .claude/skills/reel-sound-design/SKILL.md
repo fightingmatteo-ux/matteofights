@@ -27,6 +27,9 @@ underneath; this is the layer you actually hear.
 | Pattern interrupt (one per reel max) | `glitch` | | 0.3 |
 
 ## Rules
+0. **Something visual or audible every 3 s, max** (Matteo 2026-11-01). Count cuts, b-roll, cards, keyword hits,
+   punch-ins and audible SFX (caption ticks don't count). `sd.fill_gaps()` finds every longer stretch and the build
+   adds a camera punch-in + a soft sound on the nearest phrase start.
 1. **Every visual change has a sound, every sound has a visual.** No orphan SFX.
 2. **Voice wins.** SFX peaks 6-10 dB under the voice; a hit/boom may touch -3 dB under it for one frame. Never cover a
    consonant attack of a word that isn't the hit word.

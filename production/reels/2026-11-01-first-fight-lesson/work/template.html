@@ -66,14 +66,14 @@
   </head>
   <body>
     <div id="root" data-composition-id="main" data-start="0" data-duration="{{DUR}}" data-width="1080" data-height="1920">
-      <div id="cam"><div id="cam-inner">
+      <div id="cam"><div id="cam-punch" style="position:absolute;inset:0;transform-origin:50% 38%"><div id="cam-inner">
         <video id="aroll" class="clip full" src="{{AROLL}}" data-start="0" data-duration="{{DUR}}" data-track-index="0" muted playsinline></video>
         <div id="ed-caps-back">
         {{ED_HTML_CAPS_BACK}}
         </div>
         <video id="fg" class="clip full" src="{{FG}}" data-start="0" data-duration="{{DUR}}" data-track-index="2" muted playsinline></video>
         {{ED_BROLL}}
-      </div></div>
+      </div></div></div>
 
       <video id="hooktape" class="clip full" src="assets/media/b_hook.mp4" data-start="0" data-duration="{{HOOK_END}}" data-track-index="5" muted playsinline></video>
       <div id="hk" class="clip" data-start="0" data-duration="{{HOOK_END}}" data-track-index="6">

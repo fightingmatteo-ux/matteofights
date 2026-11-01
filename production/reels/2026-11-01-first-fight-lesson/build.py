@@ -121,6 +121,21 @@ cues = [
 ]
 if first_after:
     cues.append(("bell", first_after[0]["s"] - 0.02, 0.32))
+# ---- attention rule: something visual or audible every <= 3 s (Matteo 2026-11-01)
+P = json.loads(ed["plan"])
+events = [hook_end] + [x for v in broll.values() for x in (v["start"], v["start"] + v["dur"])]
+events += [x for c in cards for x in c[:2]] + list(d.get("joins", []))
+events += [w["s"] for ph in P["phrases"] for w in ph["words"] if w.get("key")]
+events += [t for n, t, v in cues if n in ("hit", "boom", "whoosh", "bell", "heart", "shutter", "thud")]
+phrase_starts = [ph["t0"] for ph in P["phrases"]]
+beats = sd.fill_gaps(events, 0.0, DUR - 0.3, phrase_starts, max_gap=3.0)
+cues += [("thud" if i % 2 else "whoosh", t - (0 if i % 2 else 0.15), 0.22) for i, t in enumerate(beats)]
+punch_js = "".join(f'tl.to("#cam-punch", {{scale:{1.05 if i % 2 == 0 else 1.0}, duration:0.14, ease:"power3.out"}}, {t:.3f});'
+                   for i, t in enumerate(beats))
+# the face must be back at 1.0 before the loop seam and whenever a card/b-roll ends (fresh framing after cutaways)
+punch_js += f'tl.set("#cam-punch", {{scale:1}}, {max(0, DUR - 0.5):.3f});'
+for i, (t0, t1, _) in enumerate(cards):
+    punch_js += f'tl.set("#cam-punch", {{scale:1}}, {t1:.3f});'
 cues = [c for c in cues if c[1] < DUR - 0.45]       # nothing rings across the loop seam
 sd_audio = sd.tags(cues, sfx_dir="assets/sfx/sd", track0=40, total=DUR - 0.05)
 tape_audio = "\n      ".join(
@@ -142,9 +157,10 @@ fill = {"ED_CSS": css, "ED_JS": js, "ED_HTML_CAPS": ed["caps"], "ED_HTML_CAPS_BA
         "ED_HTML_CARDS": ed["cards"] + "\n      " + labels, "ED_AUDIO": audio + "\n      " + sd_audio + "\n      " + tape_audio,
         "ED_PLAN": ed["plan"], "ED_BROLL": broll_html,
         "AROLL": f"assets/media/aroll_{V}.mp4", "FG": FG, "DUR": f"{DUR:.3f}", "HOOK_END": f"{hook_end:.3f}",
-        "HOOK_HTML": lead + fig, "HOOK_PLAN": json.dumps(hook_plan), "HOOK_AUDIO": "", "EXTRA_JS": label_js,
+        "HOOK_HTML": lead + fig, "HOOK_PLAN": json.dumps(hook_plan), "HOOK_AUDIO": "", "EXTRA_JS": label_js + punch_js,
         "CAP_TOP": "330", "BACK_TOP": "0"}
 src = open("work/template.html", encoding="utf-8").read()
 open("index.html", "w", encoding="utf-8").write(re.sub(r"\{\{(\w+)\}\}", lambda m: fill[m.group(1)], src))
 print(f"{V}: index.html built, {DUR:.1f}s, hook {hook_end:.2f}s (ko {ko:.2f}, strike {strike:.2f}), "
-      f"{len(json.loads(ed['plan'])['phrases'])} phrases, {len(cards)} cards, tape {sorted(broll)}, {len(cues)} sd cues")
+      f"{len(json.loads(ed['plan'])['phrases'])} phrases, {len(cards)} cards, tape {sorted(broll)}, {len(cues)} sd cues, "
+      f"punch-ins at {beats}")
