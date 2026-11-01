@@ -914,6 +914,248 @@
       "status": "queued",
       "approved": true,
       "approved_note": "Matteo: approved via dashboard (2026-10-25T17:10:40Z)"
+    },
+    {
+      "id": "th-1106-1",
+      "at": "2026-11-06T12:30:00Z",
+      "kind": "take",
+      "topic": "Fight Psychology",
+      "text": "Nobody remembers how pretty your first round was.\n\nThey remember whether you were still throwing in the third.",
+      "chain": [],
+      "from": "craft",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1106-2",
+      "at": "2026-11-06T17:30:00Z",
+      "kind": "question",
+      "topic": "Combat Sports",
+      "text": "Your coach stopped correcting one of your habits.\n\nDid they give up on it, or did you?",
+      "chain": [],
+      "from": "craft",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1106-3",
+      "at": "2026-11-06T22:30:00Z",
+      "kind": "tip",
+      "topic": "Combat Sports",
+      "text": "Gloves smell? Pull the insoles out and leave them open overnight.\n\nStuffing them in the bag after sparring is how a bacteria farm starts. Your training partners will thank you.",
+      "chain": [],
+      "from": "craft",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1107-1",
+      "at": "2026-11-07T12:30:00Z",
+      "kind": "take",
+      "topic": "Fight Psychology",
+      "text": "Most people don't fear losing. They fear being watched while they lose.\n\nThat's why the empty gym feels easy and the packed one doesn't.",
+      "chain": [],
+      "from": "craft",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1107-2",
+      "at": "2026-11-07T17:30:00Z",
+      "kind": "question",
+      "topic": "Combat Sports",
+      "text": "Bag work or pad work: which one tells you the truth about your fitness?\n\nPick one and say why.",
+      "chain": [],
+      "from": "craft",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1107-3",
+      "at": "2026-11-07T22:30:00Z",
+      "kind": "chain",
+      "topic": "Combat Sports",
+      "text": "Four lies you tell yourself after a bad sparring round.",
+      "chain": [
+        "1. \"I was just tired.\"\nMaybe. But you were also tired last week. Tired is when the habits you never fixed come out.",
+        "2. \"He's just stronger.\"\nStrength wins the clinch and the first exchange. After that it's angles. Did you give him any?",
+        "3. \"I'll do better next time.\"\nNot without one specific thing to change. Pick one punch or one move and write it down in the car.",
+        "4. \"I wasn't ready.\"\nNobody is. The round starts when the timer does."
+      ],
+      "from": "craft",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1108-1",
+      "at": "2026-11-08T12:30:00Z",
+      "kind": "take",
+      "topic": "Combat Sports",
+      "text": "A southpaw who can't jab is just a guy standing the wrong way round.\n\nYou're facing the same lead hand, so use it. Everything else follows from that.",
+      "chain": [],
+      "from": "craft",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1108-2",
+      "at": "2026-11-08T17:30:00Z",
+      "kind": "question",
+      "topic": "Combat Sports",
+      "text": "Timer going off or your coach saying \"one more\".\n\nWhich one is the lie?",
+      "chain": [],
+      "from": "craft",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1108-3",
+      "at": "2026-11-08T22:30:00Z",
+      "kind": "tip",
+      "topic": "Combat Sports",
+      "text": "Bad night's sleep before training? Cut the volume, keep the intensity short.\n\nThree sharp rounds beat ten sloppy ones. Your reflexes are the first thing to go, so don't spend them on hard sparring.",
+      "chain": [],
+      "from": "craft",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1109-1",
+      "at": "2026-11-09T12:30:00Z",
+      "kind": "take",
+      "topic": "Fight Psychology",
+      "text": "Confidence in the gym is just evidence you've stored up.\n\nEvery round you survived is a receipt. People who feel confident have more receipts, not better personalities.",
+      "chain": [],
+      "from": "craft",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1109-2",
+      "at": "2026-11-09T17:30:00Z",
+      "kind": "question",
+      "topic": "Combat Sports",
+      "text": "Pick the one that annoys you most in sparring:\n\nA. The guy who never stops moving\nB. The guy who just walks you down\nC. The guy who waits and counters\n\nA, B or C?",
+      "chain": [],
+      "from": "craft",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1109-3",
+      "at": "2026-11-09T22:30:00Z",
+      "kind": "story",
+      "topic": "Combat Sports",
+      "text": "I trained boxing in Rome, a short walk from the Colosseum.\n\nAncient city outside. Same three-minute rounds inside.",
+      "chain": [],
+      "from": "founder",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1110-1",
+      "at": "2026-11-10T12:30:00Z",
+      "kind": "take",
+      "topic": "Combat Sports",
+      "text": "Training only what you're good at is practice for people you already beat.\n\nSpend one round a session on the thing that makes you look bad.",
+      "chain": [],
+      "from": "craft",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1110-2",
+      "at": "2026-11-10T17:30:00Z",
+      "kind": "question",
+      "topic": "Fight Psychology",
+      "text": "What do you do in the last ten seconds before the first round?\n\nBreathing, bouncing, staring at the floor, or talking to yourself?",
+      "chain": [],
+      "from": "craft",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1110-3",
+      "at": "2026-11-10T22:30:00Z",
+      "kind": "tip",
+      "topic": "Combat Sports",
+      "text": "Elbow sore after a week of heavy bag? Check your wrist before your arm.\n\nA tilted wrist sends the shock straight up. Straight line from knuckles to elbow, hit lighter until it feels normal.",
+      "chain": [],
+      "from": "craft",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1111-1",
+      "at": "2026-11-11T12:30:00Z",
+      "kind": "take",
+      "topic": "Combat Sports",
+      "text": "Counters win fights, but you can't counter what you've never seen.\n\nThat's why beginners should watch more sparring than they take part in.",
+      "chain": [],
+      "from": "craft",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1111-2",
+      "at": "2026-11-11T17:30:00Z",
+      "kind": "chain",
+      "topic": "Combat Sports",
+      "text": "First week back after time off? Here's the order I'd do it in.",
+      "chain": [
+        "Day 1: technique only, half speed, no sparring.\nYour skills come back faster than your fitness. Use them first.",
+        "Day 2: rope and shadowboxing, light.\nYou're checking if the body remembers, not proving you lost nothing.",
+        "Day 3: rest.\nEverything is sorer than you think and it shows up a day late.",
+        "Day 4: one easy sparring round.\nPick the calmest partner in the gym and ask for it.",
+        "Trying to make up for lost time in one session is what puts people out for another month."
+      ],
+      "from": "craft",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1111-3",
+      "at": "2026-11-11T22:30:00Z",
+      "kind": "tip",
+      "topic": "Combat Sports",
+      "text": "Long run the morning after a hard sparring session? Don't.\n\nWalk for 30 minutes instead. Blood flow helps and the legs you need for next time stay intact.",
+      "chain": [],
+      "from": "craft",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1112-1",
+      "at": "2026-11-12T12:30:00Z",
+      "kind": "take",
+      "topic": "Fight Psychology",
+      "text": "The first time someone hurts you is a bigger lesson than your first win.\n\nYou find out whether you still want to be here.",
+      "chain": [],
+      "from": "craft",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1112-2",
+      "at": "2026-11-12T17:30:00Z",
+      "kind": "question",
+      "topic": "Combat Sports",
+      "text": "First thing you notice about someone new in the gym?\n\nStance, shoes, warm up, or something else?",
+      "chain": [],
+      "from": "craft",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1112-3",
+      "at": "2026-11-12T22:30:00Z",
+      "kind": "story",
+      "topic": "Combat Sports",
+      "text": "I started karate at seven.\n\nIt was mostly standing in a line doing the same basic move over and over. Boring, and it still shows up in how I train.",
+      "chain": [],
+      "from": "founder",
+      "status": "queued",
+      "approved": false
     }
   ]
 }
