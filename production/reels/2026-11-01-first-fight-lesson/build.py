@@ -14,6 +14,7 @@ import shutil
 import sys
 
 sys.path.insert(0, "../../editing/reel-kit/editorial")
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import cutout  # noqa: E402
 import plan  # noqa: E402
 import sound_design as sd  # noqa: E402
@@ -61,7 +62,7 @@ fig = (f'<div class="plate" id="plate"><div class="lbl mono">OFFICIAL RESULT</di
        f'<div class="strike"></div></div></div>')
 ko = W("open", REEL["ko_word"][V]) + 0.05
 strike = W("open", REEL["strike"][V])
-draw_t = min(hook_end - 0.45, strike + 0.45)
+draw_t = max(W("open", REEL["draw"][V]), strike + 0.4)
 hook_plan = {"v": V, "plate": True, "end": round(hook_end, 3), "ko": round(ko, 3), "strike": round(strike, 3),
              "draw": round(draw_t, 3), "words": plan_words}
 

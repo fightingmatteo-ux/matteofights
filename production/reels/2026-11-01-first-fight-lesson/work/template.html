@@ -24,7 +24,7 @@
       .hk-lead .ln { display: block; }
       .hk-w { display: inline-block; will-change: transform, filter, opacity; }
       .red { color: #E8112D; }
-      .mono { font-family: ui-monospace, "SFMono-Regular", Menlo, monospace; letter-spacing: 0.18em; }
+      .mono { font-family: "Geist", sans-serif; letter-spacing: 0.18em; }
       .hk-flash { position: absolute; inset: 0; background: #fff; opacity: 0; }
       /* A: official result plate, K.O. struck through, rolls over to DRAW */
       .plate { position: absolute; left: 110px; right: 110px; top: 760px; height: 470px; border-radius: 34px;
@@ -34,7 +34,7 @@
       .plate .word { position: absolute; left: 0; right: 0; top: 0; font-weight: 800; font-size: 250px; line-height: 300px; letter-spacing: -0.055em; white-space: nowrap; }
       .plate .ch { display: inline-block; will-change: transform, opacity; }
       .plate .strike { position: absolute; left: 150px; right: 150px; top: 262px; height: 22px; border-radius: 11px; background: #E8112D;
-        transform-origin: 0 50%; transform: scaleX(0); }
+        transform-origin: 0 50%;  }
       /* B: his 6 fights stack against my 1, then the 1 knocks the stack over */
       .stk { position: absolute; left: 0; right: 0; top: 760px; height: 760px; }
       .col { position: absolute; bottom: 120px; width: 260px; display: flex; flex-direction: column-reverse; align-items: center; gap: 12px; }
@@ -58,8 +58,10 @@
         text-align: center; padding-top: 40px; will-change: transform, opacity, filter; }
       .rec .num { display: inline-flex; height: 170px; overflow: hidden; font-weight: 800; font-size: 170px; line-height: 170px; letter-spacing: -0.05em; }
       .rec .under { width: 120px; height: 12px; border-radius: 6px; margin: 4px auto 0; background: #E8112D; transform: scaleX(0); transform-origin: 0 50%; }
+      .facescrim { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, rgba(0,0,0,0.58) 0%, rgba(0,0,0,0.42) 22%, rgba(0,0,0,0.12) 40%, rgba(0,0,0,0) 50%); }
       .tag { position: absolute; left: 0; right: 0; top: 150px; text-align: center; font-family: "Geist", sans-serif; pointer-events: none; z-index: 30; }
       .tag span { display: inline-block; padding: 14px 30px; border-radius: 18px; background: rgba(0,0,0,0.55); color: #fff; font-weight: 700; font-size: 60px; letter-spacing: -0.02em; }
+      .tag.late { top: 1330px; }
       .tag.late span { background: #E8112D; font-size: 120px; font-weight: 800; padding: 6px 40px; }
       .tag small { display: block; margin-top: 18px; color: #fff; font-size: 42px; font-weight: 600; text-shadow: 0 2px 10px rgba(0,0,0,0.7); }
     </style>
@@ -68,6 +70,7 @@
     <div id="root" data-composition-id="main" data-start="0" data-duration="{{DUR}}" data-width="1080" data-height="1920">
       <div id="cam"><div id="cam-punch" style="position:absolute;inset:0;transform-origin:50% 38%"><div id="cam-inner">
         <video id="aroll" class="clip full" src="{{AROLL}}" data-start="0" data-duration="{{DUR}}" data-track-index="0" muted playsinline></video>
+        <div class="facescrim"></div>
         <div id="ed-caps-back">
         {{ED_HTML_CAPS_BACK}}
         </div>
@@ -113,7 +116,7 @@
       if (HK.plate) {
         // K.O. lands with the punch, gets struck through on "called", rolls over to DRAW on "draw"
         tl.fromTo("#koW", { scale: 1.12, filter: "blur(6px)" }, { scale: 1, filter: "blur(0px)", duration: 0.34, ease: "back.out(1.6)", immediateRender: false }, HK.ko);
-        tl.to("#plate .strike", { scaleX: 1, duration: 0.24, ease: OUT4 }, HK.strike);
+        tl.fromTo("#plate .strike", { scaleX: 0 }, { scaleX: 1, duration: 0.24, ease: OUT4, immediateRender: true }, HK.strike);
         tl.to("#koW .ch, #plate .strike", { yPercent: -110, opacity: 0, duration: 0.22, ease: "power3.in", stagger: 0.035 }, HK.draw - 0.2);
         tl.fromTo("#drawW .ch", { yPercent: 110, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 0.42, ease: OUT4, stagger: 0.045, immediateRender: true }, HK.draw - 0.04);
         tl.fromTo("#drawW", { scale: 1.08 }, { scale: 1, duration: 0.4, ease: "back.out(1.7)", immediateRender: false }, HK.draw + 0.12);
