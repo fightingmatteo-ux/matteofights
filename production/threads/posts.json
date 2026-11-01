@@ -737,9 +737,12 @@
       "text": "What do you still do from month one, even though you know it's wrong?\n\nStaring at the gloves instead of the chest is a classic. What's yours?",
       "chain": [],
       "from": "craft",
-      "status": "queued",
+      "status": "posted",
       "approved": true,
-      "approved_note": "Matteo: approved via dashboard (2026-10-25T17:10:40Z)"
+      "approved_note": "Matteo: approved via dashboard (2026-10-25T17:10:40Z)",
+      "posted_at": "2026-11-01T12:36:03Z",
+      "thread_id": "18115229729331913",
+      "url": "https://www.threads.com/@matteofights/post/DfMvvDZEdQa"
     },
     {
       "id": "th-1101-2",
