@@ -1,3 +1,8 @@
+// Fast comment replies (Matteo 2026-11-01, "option 1"): any other new comment starts the "Comment replies" workflow
+// (Claude Code on Matteo's subscription), so a reply lands in about a minute. Needs Pages secret GH_DISPATCH_TOKEN
+// (fine-grained PAT, this repo only, Actions read/write); without it the workflow's 3-hourly run still answers.
+// Cost guards: at most one start per 90 s (later comments set "pending" and the running job starts one more), at
+// most 48 starts per UTC day (D1 kind "reply_dispatch"), kill switch Pages secret AUTO_REPLY=off.
 // Comment-to-DM for "comment PROTOCOL": Meta's Instagram webhook (field "comments") calls this on every new comment
 // on @matteofights. A comment containing the keyword gets one private reply (a DM to the commenter, Instagram's
 // private-replies API) with the PROTOCOL link, plus a short public reply under the comment. One DM per comment,
@@ -73,6 +78,33 @@ async function handleComment(env, v) {
   await remember(env, id, out);
 }
 
+const DISPATCH_GAP_MS = 90e3;
+const DISPATCH_MAX_DAY = 48;
+
+async function kickReplies(env, v) {
+  if (!env.GH_DISPATCH_TOKEN || String(env.AUTO_REPLY || "").toLowerCase() === "off") return;
+  if (!v || !v.id || KEYWORD.test(v.text || "") || (v.from && v.from.username === OWN)) return;
+  const day = new Date().toISOString().slice(0, 10);
+  const row = await env.DB.prepare("SELECT data FROM docs WHERE kind = 'reply_dispatch' AND id = ?").bind(day).first();
+  const d = row ? JSON.parse(row.data) : { n: 0, last: 0 };
+  const save = (x) => env.DB.prepare(
+    `INSERT INTO docs (kind, id, data) VALUES ('reply_dispatch', ?, ?) ON CONFLICT (kind, id) DO UPDATE SET data = excluded.data, updated_at = ${NOW_SQL}`,
+  ).bind(day, JSON.stringify(x)).run();
+  if (d.n >= DISPATCH_MAX_DAY) return;                       // daily cap: the 3-hourly run picks the rest up
+  if (Date.now() - d.last < DISPATCH_GAP_MS) {               // a run just started: tell it to go once more
+    await save({ ...d, pending: Date.now() });
+    return;
+  }
+  const r = await fetch("https://api.github.com/repos/fightingmatteo-ux/matteofights/actions/workflows/comment-replies.yml/dispatches", {
+    method: "POST",
+    headers: { authorization: `Bearer ${env.GH_DISPATCH_TOKEN}`, accept: "application/vnd.github+json", "user-agent": "matteo-signup",
+      "content-type": "application/json" },
+    body: JSON.stringify({ ref: "master", inputs: { source: "webhook" } }),
+  });
+  if (!r.ok) throw new Error(`dispatch ${r.status} ${(await r.text()).slice(0, 200)}`);
+  await save({ n: d.n + 1, last: Date.now(), pending: 0 });
+}
+
 // Meta's subscription check.
 export async function onRequestGet({ request }) {
   const u = new URL(request.url);
@@ -101,6 +133,8 @@ export async function onRequestPost({ request, env, waitUntil }) {
   if (env.IG_ACCESS_TOKEN && comments.length) {
     waitUntil(Promise.all(comments.map((v) => handleComment(env, v).catch((err) =>
       logHit(env, { error: String(err.message || err).slice(0, 300), comment: v.id }).catch(() => {})))));
+    waitUntil(Promise.all(comments.map((v) => kickReplies(env, v).catch((err) =>
+      logHit(env, { reply_dispatch_error: String(err.message || err).slice(0, 300), comment: v.id }).catch(() => {})))));
   }
   waitUntil(logHit(env, { fields: (body.entry || []).flatMap((e) => (e.changes || []).map((c) => c.field).concat(e.messaging ? ["messaging"] : [])),
     comments: comments.map((v) => ({ id: v.id, keyword: KEYWORD.test(v.text || "") })), token: !!env.IG_ACCESS_TOKEN }).catch(() => {}));

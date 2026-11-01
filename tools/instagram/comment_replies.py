@@ -153,7 +153,13 @@ def post(pending_path, replies_path):
     pending = json.load(open(pending_path))
     raw = Path(replies_path).read_text()
     m = re.search(r"\[[\s\S]*\]", raw)
-    answers = {a.get("n"): a for a in (json.loads(m.group(0)) if m else [])}
+    try:
+        answers = {a.get("n"): a for a in json.loads(m.group(0))} if m else None
+    except ValueError:
+        answers = None
+    if not answers:   # Claude failed or hit the subscription limit: post and record nothing, a later run retries
+        print("no replies written this run; nothing posted, nothing recorded")
+        return
     sent, lines = 0, []
     for i, p in enumerate(pending):
         a = answers.get(i, {"skip": True, "why": "no answer"})
@@ -175,6 +181,20 @@ def post(pending_path, replies_path):
         tg(f"💬 Replied to {sent} comment{'s' if sent != 1 else ''}:\n\n" + "\n\n".join(lines))
 
 
+def again(started):
+    """Webhook comments that arrived while this run worked (D1 reply_dispatch pending) get one more run, same caps."""
+    import subprocess
+    d1 = state.backend("d1")
+    day = now().strftime("%Y-%m-%d")
+    d = d1.get("reply_dispatch", day) or {}
+    if (d.get("pending") or 0) / 1000 <= float(started) or d.get("n", 0) >= 48:
+        print("nothing came in meanwhile")
+        return
+    subprocess.run(["gh", "workflow", "run", "comment-replies.yml", "-f", "source=webhook"], check=True)
+    d1.put("reply_dispatch", day, {**d, "n": d.get("n", 0) + 1, "last": int(now().timestamp() * 1000), "pending": 0})
+    print("started one more run for comments that came in meanwhile")
+
+
 if __name__ == "__main__":
     cmd = sys.argv[1]
     if cmd == "collect":
@@ -185,5 +205,7 @@ if __name__ == "__main__":
         prompt(sys.argv[2], sys.argv[3])
     elif cmd == "post":
         post(sys.argv[2], sys.argv[3])
+    elif cmd == "again":
+        again(sys.argv[2])
     else:
         sys.exit(__doc__)

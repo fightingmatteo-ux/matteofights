@@ -39,7 +39,9 @@ jobs:
           TG_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TG_CHAT: ${{ secrets.TELEGRAM_CHAT_ID }}
           IG_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}   # comment PROTOCOL auto-DM (functions/api/ig-webhook.js)
+          GH_DISPATCH: ${{ secrets.GH_DISPATCH_TOKEN }}   # fast comment replies (ig-webhook.js starts comment-replies.yml)
         run: |
+          [ -z "$GH_DISPATCH" ] || printf '%s' "$GH_DISPATCH" | $W pages secret put GH_DISPATCH_TOKEN --project-name matteo-signup
           printf '%s' "$IG_TOKEN" | $W pages secret put IG_ACCESS_TOKEN --project-name matteo-signup
           printf '%s' "$TG_TOKEN" | $W pages secret put TELEGRAM_BOT_TOKEN --project-name matteo-signup
           printf '%s' "$TG_CHAT" | $W pages secret put TELEGRAM_CHAT_ID --project-name matteo-signup
