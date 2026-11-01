@@ -48,11 +48,28 @@ E is true to the tape: ref steps in 47.9 s, right hand 48.33 s (`2026-10-24-knoc
 ## Engagement, built in
 
 - **Comments:** on screen the whole fight clip: `DQ or draw? 👇`. C asks it out loud.
-- **Shares:** on screen over the lesson line (not spoken, it would break the loop):
-  `Send this to someone before their first fight.`
+- **Shares:** spoken SHARE insert mid-video (see Inserts), plus the caption line.
 - **Pinned comment (Matteo posts it):** "For the record: the punch was late. Glad it happened at 16 and not later."
 - **Replies:** "That's a DQ" → "Agreed." · "Ref was slow" → "Still my job to stop." · "A KO is a KO 🔥" → "Not that
   one." Reply to everyone in the first hour.
+
+## Inserts (Matteo 2026-11-01, filmed after the main takes, same setup)
+
+Both go **in the middle**, between "They should've disqualified me." and "I thought fighting was about hurting
+people." The ending (lesson → bridge → hook) is untouched, so the loop holds.
+
+| Insert | Lines | Used in |
+|---|---|---|
+| SHARE | "If you know someone with their first fight coming up, send them this. Here's what I wish I knew." | **All 5 round-1 cuts** (body identical across hooks, so the test stays fair). Replaces the on-screen send text over the lesson. |
+| FOLLOW | "And if you think that's bad, wait till you hear about my appendix. It burst the day before a fight. Follow, that one's next." | **Round 2 only**, as one of the 5 re-cuts: winner + FOLLOW right before SHARE, vs the winner without it. Measures follows per 1k views. All cuts get the on-screen text `Part 2: my appendix burst the day before a fight` over the last 2 s instead. |
+
+Why FOLLOW is not "my next fight": Matteo isn't presented as a current fighter (CLAUDE.md, context/founder.md).
+The appendix story is real (founder.md, "closest he came to quitting"), so the follow promise is one we can keep.
+**Part 2 must actually be filmed next** or the promise turns into a broken one in the comments.
+
+Edit order with inserts: `[loop V: hook → "His sixth."]` → `[body: "Someone told me" → "They should've disqualified
+me."]` → `[FOLLOW, round 2 only]` → `[SHARE]` → `[body: "I thought fighting was about hurting people."]` →
+`[loop V: "It's about control." → bridge]`. Adds ~4 s (SHARE) and ~5 s (FOLLOW).
 
 ## Edit notes (Edit worker)
 
