@@ -82,7 +82,10 @@ def collect(out_path):
         except Exception as e:  # noqa: BLE001
             print(m["id"], "comments:", e)
             continue
+        fresh = now() - dt.timedelta(days=3)   # never dig up old comments
         for c in cs:
+            if ts(c["timestamp"]) < fresh:
+                continue
             reps = (c.get("replies") or {}).get("data", [])
             ours = [r for r in reps if r.get("username") == OWN]
             if (c.get("username") != OWN and c.get("text") and not KEYWORD.search(c["text"]) and not ours
