@@ -57,14 +57,34 @@ for li, line in enumerate(REEL["hooks"][V]):
     lines_html.append('<span class="ln">' + " ".join(spans) + "</span>")
 lead = '<div class="hk-lead">' + "".join(lines_html) + "</div>"
 chars = lambda s: "".join(f'<span class="ch">{c}</span>' for c in s)  # noqa: E731
-fig = (f'<div class="plate" id="plate"><div class="lbl mono" id="koL">WHAT HAPPENED</div><div class="lbl mono red" id="drawL">OFFICIAL RESULT</div><div class="slot">'
-       f'<div class="word" id="koW">{chars("K.O.")}</div><div class="word red" id="drawW">{chars("DRAW")}</div>'
-       f'<div class="strike"></div></div></div>')
 ko = W("open", REEL["ko_word"][V]) + 0.05
 strike = W("open", REEL["strike"][V])
 draw_t = max(W("open", REEL["draw"][V]), strike + 0.4)
-hook_plan = {"v": V, "plate": True, "end": round(hook_end, 3), "ko": round(ko, 3), "strike": round(strike, 3),
-             "draw": round(draw_t, 3), "words": plan_words}
+# per-hook graphic (Matteo 2026-11-01: a different visual hook for every variant, the fight stays behind)
+if V == "A":    # result: what happened vs the official result
+    fig = (f'<div class="plate" id="plate"><div class="lbl mono" id="koL">WHAT HAPPENED</div><div class="lbl mono red" id="drawL">OFFICIAL RESULT</div><div class="slot">'
+           f'<div class="word" id="koW">{chars("K.O.")}</div><div class="word red" id="drawW">{chars("DRAW")}</div>'
+           f'<div class="strike"></div></div></div>')
+elif V == "B":  # contrast: ended in a K.O. -> should have been an L
+    fig = ('<div class="flipcard" id="flip"><div class="lbl mono" id="fL1">ENDED IN</div><div class="lbl mono red" id="fL2">SHOULD HAVE BEEN</div>'
+           '<div class="tile"><div class="fc" id="fKO">K.O.</div><div class="fc red" id="fL" style="font-size:330px">L</div></div></div>')
+elif V == "C":  # question: a poll that asks for the comment
+    fig = ('<div class="poll" id="poll"><div class="q" id="pQ">DOES IT COUNT?</div>'
+           '<div class="opt" id="pY"><span>YES</span></div><div class="opt no" id="pN"><span>NO</span></div>'
+           '<div class="hint mono" id="pH">VOTE IN THE COMMENTS</div></div>')
+elif V == "D":  # reframe: pride meter drains
+    fig = ('<div class="meter" id="meter"><div class="lbl mono">PROUD OF IT</div>'
+           '<div class="track"><div class="fill" id="mFill"></div></div>'
+           '<div class="pct"><span id="m100">100%</span><span class="red" id="m3">3%</span></div></div>')
+else:           # number: the stopwatch from the ref stepping in to the punch (tape: 47.9 s -> 48.33 s)
+    steps = "".join(f'<span class="st" id="sw{i}">+0.{i}s</span>' for i in range(5))
+    fig = (f'<div class="watch" id="watch"><div class="lbl mono">AFTER THE REF STEPPED IN</div>'
+           f'<div class="sw">{steps}</div><div class="bar"><div class="barf" id="swF"></div></div></div>')
+hook_t = {}
+for w in hw:
+    hook_t.setdefault(norm(w["w"]), w["s"])
+hook_plan = {"v": V, "plate": V == "A", "end": round(hook_end, 3), "ko": round(ko, 3), "strike": round(strike, 3),
+             "draw": round(draw_t, 3), "words": plan_words, "t": {k: round(x, 3) for k, x in hook_t.items()}}
 
 # ---- body: editorial captions, cards, tape cutaways
 cards = []
