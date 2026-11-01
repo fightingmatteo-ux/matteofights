@@ -2986,13 +2986,14 @@
       "thumb_offset_ms": 300,
       "not_before": "2026-11-01T20:00:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "crosspost_to": [],
       "trial_set": "first-fight-lesson",
       "opening": "number",
       "length": "full",
-      "slot_note": "hook test, same day: 2026-11-01 15:00 NY (favourite A last)"
+      "slot_note": "hook test, same day: 2026-11-01 15:00 NY (favourite A last)",
+      "approved_note": "Matteo: \"yes, post all 5 today\" in Claude chat 2026-11-01 ~18:45Z, after watching the renders (recorded 2026-11-01T18:44Z)"
     },
     {
       "id": "2026-11-01-first-fight-lesson-D",
@@ -3006,13 +3007,14 @@
       "thumb_offset_ms": 300,
       "not_before": "2026-11-01T20:15:00Z",
       "min_gap_hours": 0.2,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "crosspost_to": [],
       "trial_set": "first-fight-lesson",
       "opening": "reframe",
       "length": "full",
-      "slot_note": "hook test, same day: 2026-11-01 15:15 NY (favourite A last)"
+      "slot_note": "hook test, same day: 2026-11-01 15:15 NY (favourite A last)",
+      "approved_note": "Matteo: \"yes, post all 5 today\" in Claude chat 2026-11-01 ~18:45Z, after watching the renders (recorded 2026-11-01T18:44Z)"
     },
     {
       "id": "2026-11-01-first-fight-lesson-C",
@@ -3026,13 +3028,14 @@
       "thumb_offset_ms": 300,
       "not_before": "2026-11-01T20:30:00Z",
       "min_gap_hours": 0.2,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "crosspost_to": [],
       "trial_set": "first-fight-lesson",
       "opening": "question",
       "length": "full",
-      "slot_note": "hook test, same day: 2026-11-01 15:30 NY (favourite A last)"
+      "slot_note": "hook test, same day: 2026-11-01 15:30 NY (favourite A last)",
+      "approved_note": "Matteo: \"yes, post all 5 today\" in Claude chat 2026-11-01 ~18:45Z, after watching the renders (recorded 2026-11-01T18:44Z)"
     },
     {
       "id": "2026-11-01-first-fight-lesson-B",
@@ -3046,13 +3049,14 @@
       "thumb_offset_ms": 300,
       "not_before": "2026-11-01T20:45:00Z",
       "min_gap_hours": 0.2,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "crosspost_to": [],
       "trial_set": "first-fight-lesson",
       "opening": "contrast",
       "length": "full",
-      "slot_note": "hook test, same day: 2026-11-01 15:45 NY (favourite A last)"
+      "slot_note": "hook test, same day: 2026-11-01 15:45 NY (favourite A last)",
+      "approved_note": "Matteo: \"yes, post all 5 today\" in Claude chat 2026-11-01 ~18:45Z, after watching the renders (recorded 2026-11-01T18:44Z)"
     },
     {
       "id": "2026-11-01-first-fight-lesson-A",
@@ -3066,13 +3070,14 @@
       "thumb_offset_ms": 300,
       "not_before": "2026-11-01T21:00:00Z",
       "min_gap_hours": 0.2,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "crosspost_to": [],
       "trial_set": "first-fight-lesson",
       "opening": "result",
       "length": "full",
-      "slot_note": "hook test, same day: 2026-11-01 16:00 NY (favourite A last)"
+      "slot_note": "hook test, same day: 2026-11-01 16:00 NY (favourite A last)",
+      "approved_note": "Matteo: \"yes, post all 5 today\" in Claude chat 2026-11-01 ~18:45Z, after watching the renders (recorded 2026-11-01T18:44Z)"
     }
   ]
 }
