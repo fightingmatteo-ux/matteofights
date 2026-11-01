@@ -39,7 +39,8 @@ Nobody can call you out for something you already called out.
    - I kept swinging when the ref said stop.
 7. **The lesson (the line people save).** I thought fighting was about hurting the other guy. It's about
    control. If you have to break the rules to get the knockout, you didn't earn it.
-8. **Send line.** "Got someone with their first fight coming up? Send them this."
+8. **Send line (on screen, NOT spoken).** "Got someone with their first fight coming up? Send them this." Then
+   the loop takes you straight back into the hook.
 
 ## Full script (word for word, ~32 s after the hook)
 
@@ -71,11 +72,13 @@ Nobody can call you out for something you already called out.
 > I thought fighting was about hurting the other guy.
 > It's about control.
 > If you have to break the rules to get the knockout, you didn't earn it.
->
-> Got someone with their first fight coming up? Send them this.
+> **[BRIDGE → back into the HOOK: the loop, see below. Nothing is said after the lesson except the bridge.]**
 
-Read it a few times, then put the page down and talk. The hook, "That was fair", "That punch was late" and the
-"control" line are the only ones worth saying word for word.
+Read it a few times, then put the page down and talk. The hook, "That was fair", "That punch was late", the
+"control" line and the loop take are the only ones worth saying word for word.
+
+The send line ("Got someone with their first fight coming up? Send them this.") is **not spoken**: a spoken line
+after the lesson would break the loop. It goes on screen as text over the three mistakes, and in the caption.
 
 ## 5 hooks (film all five, same day, trial reels 15:00-16:00 NY)
 
@@ -93,25 +96,66 @@ reframe 50%, number 50%, story last (17%). No story openings here.
 A is the favourite: same shape as the old winner ("I knocked him out. They called it a draw.", 18.1 s avg watch)
 but it flips the ending from "I was wronged" to "I was wrong". That flip is the whole point of the redo.
 
-## The loop take (one per hook, one breath, no reset)
+## The loop: every hook is filmed INSIDE its loop take (mandatory)
 
-Say: **lesson line → bridge → hook → first body line.** The edit ends on the bridge word and starts on the hook.
+**How it works.** For each hook you film ONE continuous take: **lesson → bridge → hook → first body line**, in one
+breath. The edit **starts** the video on the hook inside that take and **ends** it on the bridge word, just before
+the hook. The last frame and the first frame are neighbouring frames of the same take: same light, same head
+position, same sentence. On replay it sounds like one sentence, so nobody can tell the video ended.
 
-| V | Loop take | Video ends after |
-|---|---|---|
-| A | "...you didn't earn it. **And I learned that the hard way.** I knocked him out in my first fight. It shouldn't have counted. I was sixteen." | "the hard way" |
-| B | "...you didn't earn it. **That's why** my first fight ended in a knockout. And I was the one who messed up. I was sixteen." | "That's why" |
-| C | "...you didn't earn it. **So if you've got a** first fight coming up? Don't do what I did. I was sixteen." | "So if you've got a" |
-| D | "...you didn't earn it. **Which is why** the knockout was the worst thing I did that night. I was sixteen." | "Which is why" |
-| E | "...you didn't earn it. **That's one of** three mistakes from my first fight. One of them knocked him out. I was sixteen." | "That's one of" |
+That also means **the hook you test comes from the loop take**, not from a separate hook take. No loop take = no
+variant.
 
-If you use the loop, film the send line as its own take and drop it on screen as text instead of speaking it.
+| V | Opening | Loop take (one breath; **bold** = bridge) | Video ENDS after | Video STARTS on |
+|---|---|---|---|---|
+| A | result | "It's about control. If you have to break the rules to get the knockout, you didn't earn it. **And I learned that the hard way.** I knocked him out in my first fight. It shouldn't have counted. I was sixteen. My first fight. His sixth." | "...the hard way." | "I knocked him out..." |
+| B | contrast | "It's about control. If you have to break the rules to get the knockout, you didn't earn it. **I know, because** my first fight ended in a knockout. And I was the one who messed up. I was sixteen. My first fight. His sixth." | "...I know, because" | "My first fight ended..." |
+| C | question | "It's about control. If you have to break the rules to get the knockout, you didn't earn it. **So, real talk.** First fight coming up? Don't do what I did. I was sixteen. My first fight. His sixth." | "...So, real talk." | "First fight coming up?" |
+| D | reframe | "It's about control. If you have to break the rules to get the knockout, you didn't earn it. **Which is why** the knockout was the worst thing I did that night. I was sixteen. My first fight. His sixth." | "...Which is why" | "The knockout was..." |
+| E | number | "It's about control. If you have to break the rules to get the knockout, you didn't earn it. **That was one of** three mistakes from my first fight. One of them knocked him out. I was sixteen. My first fight. His sixth." | "...That was one of" | "Three mistakes..." |
+
+**Rules for the loop takes**
+- **No gap between the bridge and the hook.** That gap is the seam. Keep it under a breath.
+- Say the lesson at the **same pace and energy** as in the body take. The end of the video is this take, the
+  middle is the body take, and they have to sound like the same person in the same minute.
+- Don't reset between the bridge and the hook: same face, same hands, no look-away, no smile.
+- Film the loop takes **right after** the body take, same seat, same light, same framing. Don't touch the camera.
+- 2 tries per hook is plenty. Keep the best one per hook.
+
+## Recording order (what to actually film, ~15 min)
+
+1. **Body take** (2-3 tries): from "I was sixteen. My first fight. His sixth." through "...you didn't earn it."
+   Stop there. No send line.
+2. **Loop take A**, then **B, C, D, E** (2 tries each), straight after, without moving anything.
+3. Upload all of it in Studio with the note: `first-fight-lesson: 5 hooks, loop takes A-E, body take`.
+
+**How the Edit worker builds each variant:**
+`[loop take V: hook → "His sixth."]` → `[body take: after "His sixth." → before "It's about control."]` →
+`[loop take V: "It's about control." → bridge word]` → (replay lands on the hook). Body and ending are the same in
+all 5 variants; only the hook and its loop take change, so the test is fair.
 
 ## Filming notes
 
 - Editorial look, headroom above your head (template note). Calm energy, not hyped. Lower voice on the verdict.
-- One pause only: half a second after "That was fair."
+- One pause only: half a second after "That was fair." Never pause near the end.
 - Target 35 to 40 s with the hook. The old cuts ran 39-42 s; don't go longer.
+
+## The test plan (round 1 → round 2 → grid)
+
+**Round 1, the 5 hooks.** All 5 go out as trial reels **the same day**, one every 15 minutes inside one hour:
+15:00, 15:15, 15:30, 15:45, 16:00 New York (`tools/trials/trials.py schedule`). The post queue publishes one reel
+per run, so "the same minute" isn't how it works; inside one hour is as close as the system gets, and the
+verdict waits 24 h after the **last** one, so every variant is judged on a full day. To keep it fair, the
+favourite goes **last** (any head start goes against it): **E 15:00, D 15:15, C 15:30, B 15:45, A 16:00.**
+One hour also means you can sit on the comments for the whole drop.
+
+**Round 2, the winner re-cut 5 ways.** At 24 h, Hook tests names the winner on Telegram. You then have **4 hours**
+to send the retention graph: open the winner's Insights, screenshot the graph, upload it in Studio with the note
+`retention <queue id>` (the id is in the Telegram message). The Edit worker re-cuts the winner 5 ways aimed at the
+drop-off, same-day slots on the next free day. **Every round-2 cut keeps the same loop** (it only changes what's
+in the middle, never the hook-to-bridge seam).
+
+**Grid.** Only the round-2 winner gets shared to your followers and pinned. Not any of the knockout-draw A/B/C cuts.
 
 ## Edit notes (for the Edit worker)
 
@@ -121,7 +165,9 @@ If you use the loop, film the send line as its own take and drop it on screen as
 - **Freeze** on the frame where the ref's arms are between you and the punch is leaving (~48.3 s) under "That
   punch was late". Circle or arrow on the ref. Text: **LATE**.
 - **Cards:** "DRAW. FAIR." (slam, white card) on the verdict; the three mistakes as a 1-2-3 list that builds
-  line by line; **CONTROL** on the lesson line.
+  line by line, with the send line as text under it; **CONTROL** on the lesson line.
+- **Loop seam:** end on the bridge word, start on the hook from the SAME loop take. No fade, no end card, no
+  music swell or stop at the end; the music bed must loop too (cut it on a bar that matches the start).
 - Music low and serious, not the epic-drums bed from the old cut.
 - **Do not reuse** any of the knockout-draw A/B/C cuts or their "you be the judge" card.
 
