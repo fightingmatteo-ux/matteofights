@@ -33,7 +33,7 @@ pro clips, plan cards and captions. Each ends on its own keyword (LOMA, TYSON, K
 | A. Day 1, 2, 3 (own credibility) | P0 to P5 (`FILM-2026-11-02-plan-reels.md`) | 3 cards |
 | B. Train like a pro, Monday to Friday | L1 to L4 below | 5 cards |
 
-Winner = **PLAN comments per 1,000 views** (leads), then saves per 1,000. Sunday report compares A vs B after
+Winner = **keyword comments per 1,000 views** (leads), then saves per 1,000. Sunday report compares A vs B after
 4 reels each. Each reel still runs its own 5-hook test (openings labelled).
 
 ## How to film
