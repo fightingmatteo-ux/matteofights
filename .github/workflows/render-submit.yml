@@ -71,7 +71,11 @@ jobs:
           done
 
       - name: Pre-cut big sources (reel's work/precut.sh trims long fight videos to seconds before packing)
-        run: '[ ! -f "$REEL/work/precut.sh" ] || bash "$REEL/work/precut.sh"'
+        run: |
+          if [ -f "$REEL/work/precut.sh" ]; then
+            command -v ffmpeg > /dev/null || { sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null; }
+            bash "$REEL/work/precut.sh"
+          fi
 
       - name: Render on Modal, one variant at a time
         run: |
