@@ -797,9 +797,12 @@
       "text": "Gym or home training for a beginner?\n\nPick one and say why. The answer changes more than people admit.",
       "chain": [],
       "from": "craft",
-      "status": "queued",
+      "status": "posted",
       "approved": true,
-      "approved_note": "Matteo: approved via dashboard (2026-10-25T17:10:40Z)"
+      "approved_note": "Matteo: approved via dashboard (2026-10-25T17:10:40Z)",
+      "posted_at": "2026-11-02T17:41:08Z",
+      "thread_id": "18141701557626506",
+      "url": "https://www.threads.com/@matteofights/post/DfP3ca-FJG0"
     },
     {
       "id": "th-1102-3",
