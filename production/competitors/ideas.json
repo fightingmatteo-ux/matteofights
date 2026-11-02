@@ -1,7 +1,137 @@
 {
  "_how": "Idea cards from competitor outliers (production/competitors/outliers.json), written by the competitor-ideas skill. Shown in the control center under Results > Rivals; 'Use this' sends the idea to production/control/ideas.json. 'skip' lists off-topic outlier ids hidden from the list (not combat sports or not makeable by Matteo).",
- "updated": "2026-10-20",
+ "updated": "2026-11-02",
  "ideas": [
+  {
+   "id": "signs-you-would-win",
+   "title": "Signs you'd win (self-test checklist)",
+   "status": "new",
+   "evidence": [
+    {
+     "id": "Derjcc2J-Cl",
+     "platform": "instagram",
+     "handle": "themuaythaiguy",
+     "name": "The Muay Thai Guy",
+     "views": 401122,
+     "x": 8.5,
+     "url": "https://www.instagram.com/reel/Derjcc2J-Cl/",
+     "hook": "How many can you honestly check off? 🥊"
+    },
+    {
+     "id": "Dew_uSGINKG",
+     "platform": "instagram",
+     "handle": "brezojr",
+     "name": "Brezo Jr",
+     "views": 53266,
+     "x": 9.1,
+     "url": "https://www.instagram.com/reel/Dew_uSGINKG/",
+     "hook": "10 signs you’d WIN your first fight ☠️"
+    }
+   ],
+   "pattern": "A numbered checklist the viewer scores themselves against, framed around the fight itself (would you win, how many can you honestly check off).",
+   "why": "Likely why: the viewer becomes the judge of their own answer, so they count, argue in their head and send it to a training partner. Two outliers from two creators: 8.5x and 9.1x their own medians (401k and 53k views). Our own 'signs' reels already carry the account's best numbers (331k best ever), so this is the same shape with a sharper test, not a new format.",
+   "version": {
+    "format": "listicle factory reel (signs), 6 items, 25-30 s, Instagram sound attached",
+    "hook": "6 SIGNS YOU'D WIN YOUR FIRST FIGHT",
+    "beats": [
+     "Open with the contrast line in the caption: 'Some people hope they're ready. Some people already are.'",
+     "Items are things you can SEE in a gym (stays calm when the round gets rough, keeps the hands up when tired, asks to spar the better guy), not abstract traits",
+     "Last item is the honest one: you still get nervous and go anyway",
+     "Close: repost this so someone with a fight booked finds it"
+    ],
+    "needs": "Nothing. Check the 6 items against hooks.json so none repeat a past listicle word for word."
+   },
+   "platforms": {
+    "instagram": "Listicle reel, caption opens with the 'Some people... Some people...' contrast, repost line at the end",
+    "facebook": "Same reel",
+    "tiktok": "Same reel",
+    "youtube": "Signs You'd Win Your First Fight (Muay Thai & Boxing) #shorts",
+    "threads": "Question: 'Be honest. Cornered in round three, tired, hands heavy: do you keep them up or do they drop? That one answer says more about your first fight than your cardio does.'"
+   }
+  },
+  {
+   "id": "my-non-negotiables",
+   "title": "My non-negotiables (training rules)",
+   "status": "new",
+   "evidence": [
+    {
+     "id": "DezAWDpxsSd",
+     "platform": "instagram",
+     "handle": "themuaythaiguy",
+     "name": "The Muay Thai Guy",
+     "views": 249410,
+     "x": 5.3,
+     "url": "https://www.instagram.com/reel/DezAWDpxsSd/",
+     "hook": "My non-negotiables:"
+    },
+    {
+     "id": "De2BJweovcn",
+     "platform": "instagram",
+     "handle": "brezojr",
+     "name": "Brezo Jr",
+     "views": 29475,
+     "x": 5.0,
+     "url": "https://www.instagram.com/reel/De2BJweovcn/",
+     "hook": "Everyone works hard when they feel good. The real work starts when you don’t☝🏻"
+    }
+   ],
+   "pattern": "A short personal list of rules said as fact ('My non-negotiables:'), no explanation, so viewers compare it to their own.",
+   "why": "Likely why: a list of rules signals a standard, and viewers measure theirs against it and send it on. Muay Thai Guy's version did 5.3x his median (249k views, 1.5k likes); Brezo Jr's 'the real work starts when you don't feel good' did 5.0x (29k). Caveat: both are first-person creators with a long track record, so only the format transfers, not the numbers.",
+   "version": {
+    "format": "talking head or voiceover on own training clips, 15-20 s, editorial look",
+    "hook": "MY NON-NEGOTIABLES. 4 THINGS I DON'T SKIP.",
+    "beats": [
+     "Say the rules flat, one per beat, a white keyword card each",
+     "Use only rules Matteo actually keeps (he picks them), concrete not abstract (a thing he does, not a mindset)",
+     "One rule should be about training around the injury, which is true and rare (founder.md: push-ups and pull-ups through recovery)",
+     "Close without a lesson: 'What's yours?' is the comment prompt"
+    ],
+    "needs": "Matteo's own 4 rules, in his words. Nothing here is invented; do not post the beats as written."
+   },
+   "platforms": {
+    "instagram": "Talking-head reel, 2 hooks: 'My non-negotiables:' (A) / 'What I still do when I can't train properly' (B)",
+    "facebook": "Same reel",
+    "tiktok": "Same reel",
+    "youtube": "My Training Non-Negotiables (Muay Thai & Boxing) #shorts",
+    "threads": "Question: 'The one thing in training you never skip, even on a bad week. What's yours?'"
+   }
+  },
+  {
+   "id": "calling-out-gym-types",
+   "title": "Calling out the gym type",
+   "status": "new",
+   "evidence": [
+    {
+     "id": "De4vF3Ilr13",
+     "platform": "instagram",
+     "handle": "tinapham.co",
+     "name": "Tina Pham",
+     "views": 139968,
+     "x": 63.6,
+     "url": "https://www.instagram.com/reel/De4vF3Ilr13/",
+     "hook": "Calling out ALL quad hiders, please explain yourself."
+    }
+   ],
+   "pattern": "A mock public call-out of one specific, recognisable gym behaviour ('Calling out ALL X, please explain yourself'), light and funny, no lesson.",
+   "why": "Likely why: people tag the friend who does it, and the 577 comments are people defending themselves. 63.6x the creator's median (140k views vs 2.2k). Single outlier from a small comedy-gym account, so treat it as a test, not a pattern; it is the same recognition mechanic as the gym-inside-joke card.",
+   "version": {
+    "format": "iykyk (one clip, one line, tag a partner) or statement reel",
+    "hook": "CALLING OUT EVERYONE WHO SAYS 'LIGHT SPARRING'",
+    "beats": [
+     "One clip from Matteo's own sparring or pad footage",
+     "One line: the call-out, then 'explain yourself'",
+     "No lesson, no CTA beyond tagging the person"
+    ],
+    "needs": "A real behaviour Matteo has seen in his gyms (Bangkok, Zurich, Rome...) and a matching clip. I picked 'light sparring' only as a placeholder."
+   },
+   "platforms": {
+    "instagram": "iykyk trial reel, call-out line as caption, tag-a-partner",
+    "facebook": "Same reel",
+    "tiktok": "Same reel",
+    "youtube": "Every Gym Has This Guy #shorts",
+    "threads": "Question: 'Calling out everyone who says light sparring and throws the first jab at 100%. Explain yourself. Who is this at your gym?'"
+   }
+  },
   {
    "id": "first-fight-nerves",
    "title": "Nerves before the first fight",
@@ -732,6 +862,39 @@
   "nhBrZHlcu4A",
   "qGgeMPkFPMw",
   "ryFk9iU33BU",
-  "zeP6aoD4x3c"
+  "zeP6aoD4x3c",
+  "De44UHEI0ZS",
+  "Dew1HtYEsv6",
+  "DewiT6fIBt3",
+  "Dey7S7yoHfD",
+  "De7AAYOsigJ",
+  "Dews9v7kgxV",
+  "Deri1gZlzcG",
+  "De12A7WEiGg",
+  "DeqAQ7VC4Tj",
+  "Dej0QrlALKB",
+  "De4rJd6sGGz",
+  "De2GJtMMh1S",
+  "DetoirZso0M",
+  "DercRITsGLJ",
+  "De7FwacqwiG",
+  "DeudN9OMKFP",
+  "DewMhH6MpiY",
+  "Dew7T_HMNXl",
+  "DeznSFssCEh",
+  "DerF27oM0cC",
+  "Dez6In3qJBC",
+  "De4cIEXqhJN",
+  "DeuGcSvoMik",
+  "Der0ak-IRng",
+  "Dew1AZyIqNz",
+  "DerU-v9Ii7V",
+  "De5FbDnoZka",
+  "De4a-K5IaQZ",
+  "De7SP59o3mO",
+  "DexDibII0Fc",
+  "DerY3pvJkz-",
+  "LW4PaL5foN4",
+  "DeHjHLFJGkl"
  ]
 }
