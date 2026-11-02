@@ -69,6 +69,8 @@ Log: `media/2026-10-16-saenchai-bigger-men/renders/render_bc.log` (ends with `AL
 | Style lab next aspect (10-24) | OPEN | hook_style is fully tested (native won). Add a new lab aspect before the next Saturday proposal: hook position (lower plate, faces kept clear; the 10-20 review swapped 6 clips for text over the face) or sound. Code in tools/style/lab.py ASPECTS + tools/listicle/render.py |
 | Renderer crash on very short clips (10-25) | OPEN | tools/listicle/render.py: a ~1 s clip (cooking 1rf6iJDQ) gives a negative fade start (st=-1.90) and ffmpeg exits 222, killing the whole factory run. Clamp fade starts or skip clips under ~3 s; until then don't pick that clip |
 
+| Per-reel free plans (11-02) | OK / **MATTEO** | "Comment PLAN" DMs the plan of the reel commented on (caption match phrase, `docs/plans/plans.json`, 10 plans for P0-P5 + L1-L4), else the PROTOCOL link. Leads tab shows keyword + plan. Matteo: film the two sheets (`production/reels/FILM-2026-11-02-*.md`), test by commenting PLAN from another account |
+
 ## Rules (short)
 
 Never set `approved:true`. Never commit `secrets/`, `data.json`, `covers/`, `voice.wav`, `snaps/`. Commit only your own paths. Never run renders as session background jobs, and never render variants in parallel.

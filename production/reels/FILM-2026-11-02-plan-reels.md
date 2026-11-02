@@ -6,6 +6,11 @@ queue with `approved: false`; nothing posts without his yes.
 
 Order to film: **P0 first** (it remakes the best plan reel and matches the paid plan), then P1 to P5.
 
+## Each reel sends its own plan (2026-11-02)
+The spoken ending stays "Comment PLAN and I'll send you the plan." The **caption** must name the plan so the DM sends
+the right one (docs/plans/README.md): "Comment PLAN and I'll send you the <match phrase>." Phrases: P0 "home power plan", P1 "9 to 5 plan", P2 "power after 30 plan", P3 "fight cardio plan", P4 "2 classes a week plan", P5 "hands up plan".
+PROTOCOL takes are no longer needed.
+
 ## How to film (about 40 min for all 6)
 
 - Phone selfie, eye level, face a window, room above your head (editorial look). Same spot and shirt for all 6.

@@ -21,6 +21,20 @@ const DM_TEXT = `Here it is 🥊 THE PROTOCOL, free: ${LINK}\n\nTake the 2 minut
 // "comment PLAN" (plan reels, 2026-11-02): same free PROTOCOL link, worded as the plan they asked for. Shows in the
 // control center Leads tab like PROTOCOL commenters (kind protocol_dm, with keyword "plan").
 const PLAN_DM_TEXT = `Here's your plan 🥊 Free: ${LINK}\n\nTake the 2 minute test first. It builds the plan around what you need most, no gym needed.`;
+// Per-reel plans (docs/plans/plans.json): the first plan whose `match` phrase is in the reel's caption.
+const PLANS_URL = "https://matteofights.me/plans/plans.json";
+async function planFor(caption) {
+  if (!caption) return null;
+  try {
+    const r = await fetch(PLANS_URL, { cf: { cacheTtl: 300, cacheEverything: true } });
+    const { plans } = await r.json();
+    const low = caption.toLowerCase();
+    return plans.find((p) => p.match && low.includes(p.match.toLowerCase())) || null;
+  } catch {
+    return null;
+  }
+}
+const reelPlanText = (p) => `Here's your ${p.title} 🥊 Free: https://matteofights.me/plans/?p=${p.slug}\n\nScreenshot it or save the link. Run it for 4 weeks.`;
 const keywordOf = (text) => (/\bprotocol\b/i.test(text || "") ? "protocol" : "plan");
 const PUBLIC_REPLIES = ["Sent it to your DMs 🥊", "Check your DMs 🥊", "In your DMs now 🥊"];
 const NOW_SQL = "strftime('%Y-%m-%dT%H:%M:%SZ','now')";
@@ -67,8 +81,17 @@ async function handleComment(env, v) {
   if (!KEYWORD.test(c.text || "") || c.username === OWN) return;
   if (Date.now() - Date.parse(c.timestamp) > 7 * 864e5) return;
   const out = { comment: id, media: c.media && c.media.id, user: c.username, keyword: keywordOf(c.text), at: new Date().toISOString() };
+  let plan = null;
+  if (out.keyword === "plan" && out.media) {
+    try {
+      plan = await planFor((await ig(env, "GET", out.media, { fields: "caption" })).caption);
+    } catch {
+      plan = null; // caption unreadable: fall back to the PROTOCOL link
+    }
+  }
+  if (plan) out.plan = plan.slug;
   try {
-    await ig(env, "POST", "me/messages", { recipient: JSON.stringify({ comment_id: id }), message: JSON.stringify({ text: out.keyword === "plan" ? PLAN_DM_TEXT : DM_TEXT }) });
+    await ig(env, "POST", "me/messages", { recipient: JSON.stringify({ comment_id: id }), message: JSON.stringify({ text: plan ? reelPlanText(plan) : out.keyword === "plan" ? PLAN_DM_TEXT : DM_TEXT }) });
     out.dm = "sent";
   } catch (e) {
     out.dm = "failed: " + String(e.message || e).slice(0, 300);

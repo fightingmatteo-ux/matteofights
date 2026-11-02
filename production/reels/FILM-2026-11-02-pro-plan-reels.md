@@ -3,6 +3,11 @@
 Credibility from the pro's name and footage, delivered by Matteo's face. Matteo films the talking; Claude adds the
 pro clips, plan cards and captions. All end on "comment PLAN" (live auto-DM, free PROTOCOL link, Leads tab).
 
+## Each reel sends its own plan (2026-11-02)
+The spoken ending stays "Comment PLAN and I'll send you the plan." The **caption** must name the plan so the DM sends
+the right one (docs/plans/README.md): "Comment PLAN and I'll send you the <match phrase>." Phrases: L1 "lomachenko footwork plan", L2 "tyson peek-a-boo plan", L3 "khabib pressure plan", L4 "usyk balance plan".
+PROTOCOL takes are no longer needed.
+
 ## Rules (credibility without lying)
 - It's always **"the at-home version"** or **"inspired by"**, never "his exact workout". Only facts that are widely
   documented (listed per reel). No "endorsed", no "his coach told me".
