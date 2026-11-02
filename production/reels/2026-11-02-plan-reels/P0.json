@@ -1,3 +1,63 @@
-{"footage": "/tmp/claude-0/-home-user-matteofights/768d2191-c274-55b5-bdf2-1189e012dd9d/scratchpad/media/P0.mp4",
+{
+ "footage": "/tmp/claude-0/-home-user-matteofights/768d2191-c274-55b5-bdf2-1189e012dd9d/scratchpad/media/P0.mp4",
  "words": "content-bank/real-footage/analysis/2026-11-02-plan-P0-power/words.json",
- "plan": "power-at-home", "keyword": "POWER", "title": "3-DAY HOME POWER PLAN", "broll": []}
+ "plan": "power-at-home",
+ "keyword": "POWER",
+ "title": "3-DAY HOME POWER PLAN",
+ "fix": [
+  [
+   [
+    "what"
+   ],
+   [
+    "want"
+   ]
+  ]
+ ],
+ "broll": [],
+ "broll_A": [
+  {
+   "match": "^power",
+   "clip": "/tmp/claude-0/-home-user-matteofights/768d2191-c274-55b5-bdf2-1189e012dd9d/scratchpad/media/broll-kicking.mp4",
+   "in": 16.4,
+   "dur": 1.7,
+   "mode": "full"
+  }
+ ],
+ "broll_B": [
+  {
+   "match": "^legs",
+   "clip": "/tmp/claude-0/-home-user-matteofights/768d2191-c274-55b5-bdf2-1189e012dd9d/scratchpad/media/broll-kicking.mp4",
+   "in": 0.5,
+   "dur": 1.9,
+   "mode": "full"
+  }
+ ],
+ "broll_C": [
+  {
+   "match": "^legs",
+   "clip": "/tmp/claude-0/-home-user-matteofights/768d2191-c274-55b5-bdf2-1189e012dd9d/scratchpad/media/broll-kicking.mp4",
+   "in": 0.5,
+   "dur": 2.0,
+   "mode": "full"
+  }
+ ],
+ "broll_D": [
+  {
+   "match": "^training",
+   "clip": "/tmp/claude-0/-home-user-matteofights/768d2191-c274-55b5-bdf2-1189e012dd9d/scratchpad/media/broll-kicking.mp4",
+   "in": 19.5,
+   "dur": 1.7,
+   "mode": "full"
+  }
+ ],
+ "broll_E": [
+  {
+   "match": "^hard",
+   "clip": "/tmp/claude-0/-home-user-matteofights/768d2191-c274-55b5-bdf2-1189e012dd9d/scratchpad/media/broll-kicking.mp4",
+   "in": 16.4,
+   "dur": 1.7,
+   "mode": "full"
+  }
+ ]
+}

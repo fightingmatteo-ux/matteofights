@@ -77,6 +77,23 @@ def card_png(day, keyword, path):
     img.save(path)
 
 
+def apply_fixes(seg, fixes):
+    """Fix misheard words for the captions: [[["loma","chenco"], ["Lomachenko"]], ...] (first match of each)."""
+    seg = [dict(w) for w in seg]
+    for src, dst in [[["common"], ["comment"]]] + fixes:
+        n = len(src)
+        for i in range(len(seg) - n + 1):
+            if [norm(w["w"]) for w in seg[i:i + n]] == [norm(x) for x in src]:
+                s, e = seg[i]["s"], seg[i + n - 1]["e"]
+                step = (e - s) / len(dst)
+                tail = seg[i + n - 1]["w"][-1] if seg[i + n - 1]["w"][-1] in ".,?!" else ""
+                new = [{"w": d + (tail if k == len(dst) - 1 else ""), "s": s + k * step, "e": s + (k + 1) * step}
+                       for k, d in enumerate(dst)]
+                seg[i:i + n] = new
+                break
+    return seg
+
+
 def ass_time(t):
     t = max(t, 0)
     return f"{int(t // 3600)}:{int(t % 3600 // 60):02d}:{t % 60:05.2f}"
@@ -109,7 +126,6 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
             return
         txt = " ".join(("{\\c&H2020C8&}" + w["w"].upper() + "{\\c&HFFFFFF&}") if norm(w["w"]) in (norm(keyword), "common")
                        else w["w"].upper() for w in group)
-        txt = txt.replace("COMMON", "COMMENT")
         ev.append(f"Dialogue: 0,{ass_time(s)},{ass_time(e + 0.08)},Cap,,0,0,0,,{txt.rstrip('.,')}")
         group.clear()
 
@@ -140,13 +156,13 @@ def main(spec_path, variant, out):
     tmp = Path(tempfile.mkdtemp())
     for k, day in enumerate(plan["days"]):
         card_png(day, spec["keyword"], tmp / f"card{k}.png")
-    captions_ass(seg, t0, windows, spec["title"], spec["keyword"], tmp / "cap.ass")
+    captions_ass(apply_fixes(seg, spec.get("fix", [])), t0, windows, spec["title"], spec["keyword"], tmp / "cap.ass")
 
     inputs = ["-ss", f"{t0:.3f}", "-t", f"{dur:.3f}", "-i", spec["footage"]]
     fc = [f"[0:v]scale={W}:{H},lut3d='{LUT}',eq=contrast=1.04:saturation=1.05,setsar=1[base]"]
     last = "base"
     idx = 1
-    for br in spec.get("broll", []):
+    for br in spec.get(f"broll_{variant}", spec.get("broll", [])):
         hit = next((w for w in seg if re.search(br["match"], w["w"], re.I)), None)
         if not hit:
             continue
@@ -162,7 +178,7 @@ def main(spec_path, variant, out):
         last, idx = f"v{idx}", idx + 1
     for k, (s, e) in enumerate(windows):
         inputs += ["-i", str(tmp / f"card{k}.png")]
-        fc.append(f"[{last}][{idx}:v]overlay=(W-w)/2:H*0.48:enable='between(t,{s:.3f},{e:.3f})'[c{k}]")
+        fc.append(f"[{last}][{idx}:v]overlay=(W-w)/2:H*0.585:enable='between(t,{s:.3f},{e:.3f})'[c{k}]")
         last, idx = f"c{k}", idx + 1
     fc.append(f"[{last}]subtitles='{tmp / 'cap.ass'}':fontsdir='{FONT}'[out]")
     fc.append("[0:a]loudnorm=I=-14:TP=-1.5:LRA=11[aout]")
