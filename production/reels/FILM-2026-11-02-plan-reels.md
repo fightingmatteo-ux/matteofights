@@ -6,6 +6,11 @@ queue with `approved: false`; nothing posts without his yes.
 
 Order to film: **P0 first** (it remakes the best plan reel and matches the paid plan), then P1 to P5.
 
+## Own keyword per reel (Matteo 2026-11-02, supersedes the PLAN ending below)
+Ending: "Comment <WORD> and I'll send you the full plan." Keywords: P0 POWER, P1 BUSY, P2 HIPS, P3 CARDIO, P4 HOME,
+P5 GUARD. The DM sends that reel's full plan (docs/plans/plans.json) + the PROTOCOL test. The cut shows Day 1 only,
+then a locked "DAY 2 · DAY 3: comment <WORD>" card.
+
 ## Each reel sends its own plan (2026-11-02)
 The spoken ending stays "Comment PLAN and I'll send you the plan." The **caption** must name the plan so the DM sends
 the right one (docs/plans/README.md): "Comment PLAN and I'll send you the <match phrase>." Phrases: P0 "home power plan", P1 "9 to 5 plan", P2 "power after 30 plan", P3 "fight cardio plan", P4 "2 classes a week plan", P5 "hands up plan".

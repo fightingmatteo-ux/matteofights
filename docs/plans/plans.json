@@ -2,7 +2,7 @@
   "_how": "One free plan per plan reel. The comment-PLAN auto-DM (signup-site/functions/api/ig-webhook.js) reads the commented reel's caption and sends matteofights.me/plans/?p=<slug> for the first plan whose `match` phrase is in the caption (case-insensitive), else the PROTOCOL link. So every plan reel caption must contain its plan's match phrase, e.g. 'Comment PLAN and I'll send you the Lomachenko footwork plan.' Fighter plans also have `keywords` (first one is the CTA word, e.g. 'Comment LOMA'): a comment of up to 4 words containing one gets that plan on any reel. Items: [exercise, dose, how]. No metric units. Docs: docs/plans/README.md.",
   "plans": [
     {
-      "slug": "power-at-home", "reel": "P0", "match": "home power plan",
+      "slug": "power-at-home", "keywords": ["power"], "reel": "P0", "match": "home power plan",
       "title": "Home Power Plan", "sub": "3 days a week, about 25 minutes, no equipment.",
       "days": [
         { "d": "Day 1 · Power", "items": [
@@ -21,7 +21,7 @@
       ]
     },
     {
-      "slug": "9-to-5", "reel": "P1", "match": "9 to 5 plan",
+      "slug": "9-to-5", "keywords": ["busy"], "reel": "P1", "match": "9 to 5 plan",
       "title": "The 9 to 5 Plan", "sub": "3 days a week, 30 minutes a day.",
       "days": [
         { "d": "Day 1 · Power", "items": [
@@ -45,7 +45,7 @@
       ]
     },
     {
-      "slug": "power-after-30", "reel": "P2", "match": "power after 30 plan",
+      "slug": "power-after-30", "keywords": ["hips"], "reel": "P2", "match": "power after 30 plan",
       "title": "Power After 30", "sub": "3 days a week. Hips first, joints happy.",
       "days": [
         { "d": "Day 1 · Hips", "items": [
@@ -66,7 +66,7 @@
       ]
     },
     {
-      "slug": "fight-cardio", "reel": "P3", "match": "fight cardio plan",
+      "slug": "fight-cardio", "keywords": ["cardio"], "reel": "P3", "match": "fight cardio plan",
       "title": "Fight Cardio in 20 Minutes", "sub": "3 days a week. Fights are bursts, so train bursts.",
       "days": [
         { "d": "Day 1 · Rounds", "items": [
@@ -79,7 +79,7 @@
       ]
     },
     {
-      "slug": "2-classes", "reel": "P4", "match": "2 classes a week plan",
+      "slug": "2-classes", "keywords": ["home"], "reel": "P4", "match": "2 classes a week plan",
       "title": "2 Classes a Week", "sub": "What to do at home on the other days.",
       "days": [
         { "d": "Day 1 · Fix it", "items": [
@@ -98,7 +98,7 @@
       ]
     },
     {
-      "slug": "hands-up", "reel": "P5", "match": "hands up plan",
+      "slug": "hands-up", "keywords": ["guard"], "reel": "P5", "match": "hands up plan",
       "title": "Keep Your Hands Up", "sub": "3 days a week. Your shoulders quit before your guard does.",
       "days": [
         { "d": "Day 1 · Hold", "items": [
