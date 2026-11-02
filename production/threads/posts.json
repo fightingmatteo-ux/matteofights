@@ -782,9 +782,12 @@
       "text": "Being nervous the night before is normal.\n\nBeing the person who goes to bed anyway is the skill.",
       "chain": [],
       "from": "craft",
-      "status": "queued",
+      "status": "posted",
       "approved": true,
-      "approved_note": "Matteo: approved via dashboard (2026-10-25T17:10:40Z)"
+      "approved_note": "Matteo: approved via dashboard (2026-10-25T17:10:40Z)",
+      "posted_at": "2026-11-02T12:36:09Z",
+      "thread_id": "18602469472067535",
+      "url": "https://www.threads.com/@matteofights/post/DfPUif-EbqM"
     },
     {
       "id": "th-1102-2",
