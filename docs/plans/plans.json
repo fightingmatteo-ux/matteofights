@@ -1,198 +1,877 @@
 {
-  "_how": "One free plan per plan reel. The comment-PLAN auto-DM (signup-site/functions/api/ig-webhook.js) reads the commented reel's caption and sends matteofights.me/plans/?p=<slug> for the first plan whose `match` phrase is in the caption (case-insensitive), else the PROTOCOL link. So every plan reel caption must contain its plan's match phrase, e.g. 'Comment PLAN and I'll send you the Lomachenko footwork plan.' Fighter plans also have `keywords` (first one is the CTA word, e.g. 'Comment LOMA'): a comment of up to 4 words containing one gets that plan on any reel. Items: [exercise, dose, how]. No metric units. Docs: docs/plans/README.md.",
-  "plans": [
+ "_how": "One free plan per plan reel. The comment-PLAN auto-DM (signup-site/functions/api/ig-webhook.js) reads the commented reel's caption and sends matteofights.me/plans/?p=<slug> for the first plan whose `match` phrase is in the caption (case-insensitive), else the PROTOCOL link. So every plan reel caption must contain its plan's match phrase, e.g. 'Comment PLAN and I'll send you the Lomachenko footwork plan.' Fighter plans also have `keywords` (first one is the CTA word, e.g. 'Comment LOMA'): a comment of up to 4 words containing one gets that plan on any reel. Items: [exercise, dose, how]. No metric units. Docs: docs/plans/README.md.",
+ "plans": [
+  {
+   "slug": "power-at-home",
+   "keywords": [
+    "power"
+   ],
+   "reel": "P0",
+   "match": "home power plan",
+   "title": "Home Power Plan",
+   "sub": "3 days a week, about 25 minutes, no equipment.",
+   "days": [
     {
-      "slug": "power-at-home", "keywords": ["power"], "reel": "P0", "match": "home power plan",
-      "title": "Home Power Plan", "sub": "3 days a week, about 25 minutes, no equipment.",
-      "days": [
-        { "d": "Day 1 · Power", "items": [
-          ["Squat jumps", "3 x 5", "Explode up, land soft and quiet, reset between reps."],
-          ["Broad jumps", "3 x 3", "Jump for distance and stick the landing."],
-          ["Explosive push-ups", "3 x 5", "Push hard enough that your hands leave the floor, or as fast as you can."],
-          ["Wall press", "5 x 5 s", "Push the wall like you're trying to move it."],
-          ["Pivot punches", "3 x 6 / side", "Rear straight driven from the back foot through the hip."] ] },
-        { "d": "Day 2 · Gas tank", "items": [
-          ["Gas tank rounds", "3 x 3 min, 1 min rest", "30 s hard combos, 30 s burpees, repeat. Effort 8 to 9 out of 10."],
-          ["Easy skipping or jog in place", "5 min", "Pace where you can still talk in short phrases."] ] },
-        { "d": "Day 3 · Both", "items": [
-          ["Squat jumps", "2 x 5", ""],
-          ["Explosive push-ups", "2 x 5", ""],
-          ["Gas tank rounds", "2 x 3 min, 1 min rest", "Same as day 2."] ] }
+     "d": "Day 1 \u00b7 Power",
+     "items": [
+      [
+       "Squat jumps",
+       "3 x 5",
+       "Explode up, land soft and quiet, reset between reps."
+      ],
+      [
+       "Broad jumps",
+       "3 x 3",
+       "Jump for distance and stick the landing."
+      ],
+      [
+       "Explosive push-ups",
+       "3 x 5",
+       "Push hard enough that your hands leave the floor, or as fast as you can."
+      ],
+      [
+       "Wall press",
+       "5 x 5 s",
+       "Push the wall like you're trying to move it."
+      ],
+      [
+       "Pivot punches",
+       "3 x 6 / side",
+       "Rear straight driven from the back foot through the hip."
       ]
+     ]
     },
     {
-      "slug": "9-to-5", "keywords": ["busy"], "reel": "P1", "match": "9 to 5 plan",
-      "title": "The 9 to 5 Plan", "sub": "3 days a week, 30 minutes a day.",
-      "days": [
-        { "d": "Day 1 · Power", "items": [
-          ["Explosive push-ups", "4 x 5", "Fast and hard, full rest between sets."],
-          ["Squat jumps", "4 x 6", "Land soft, reset each rep."],
-          ["Towel slams", "4 x 8", "Fold a towel, slam it down hard from overhead, hips drive it."],
-          ["Plank punches", "3 x 20", "From a high plank, punch forward alternating arms, hips stay still."],
-          ["Shadowboxing", "3 x 2 min", ""] ] },
-        { "d": "Day 2 · Engine", "items": [
-          ["Burpees", "4 x 8", ""],
-          ["High knees", "4 x 30 s", ""],
-          ["Mountain climbers", "4 x 30 s", ""],
-          ["Jump rope (or fake rope)", "5 x 1 min", ""],
-          ["Shadowboxing", "3 x 2 min", ""] ] },
-        { "d": "Day 3 · Speed", "items": [
-          ["Fast jabs", "5 x 20 s", "Snap it back as fast as it goes out."],
-          ["Lateral shuffles", "4 x 20 s", ""],
-          ["Skater jumps", "3 x 10", "Side to side, stick each landing."],
-          ["Slip drill", "3 x 2 min", "Slip left and right under a string or along a wall line."],
-          ["Shadowboxing", "3 x 2 min", ""] ] }
+     "d": "Day 2 \u00b7 Gas tank",
+     "items": [
+      [
+       "Gas tank rounds",
+       "3 x 3 min, 1 min rest",
+       "30 s hard combos, 30 s burpees, repeat. Effort 8 to 9 out of 10."
+      ],
+      [
+       "Easy skipping or jog in place",
+       "5 min",
+       "Pace where you can still talk in short phrases."
       ]
+     ]
     },
     {
-      "slug": "power-after-30", "keywords": ["hips"], "reel": "P2", "match": "power after 30 plan",
-      "title": "Power After 30", "sub": "3 days a week. Hips first, joints happy.",
-      "days": [
-        { "d": "Day 1 · Hips", "items": [
-          ["Glute bridges", "3 x 12", "Squeeze at the top for 1 s."],
-          ["Band or towel rotations", "3 x 10 / side", "Turn from the hips, arms just follow."],
-          ["Split squats", "3 x 8 / leg", ""],
-          ["Shadowboxing, power shots only", "4 x 2 min", "Every punch starts from the floor."] ] },
-        { "d": "Day 2 · Core", "items": [
-          ["Dead bugs", "3 x 10", "Lower back stays on the floor."],
-          ["Side plank", "3 x 30 s / side", ""],
-          ["Pallof press (band) or slow plank reaches", "3 x 10 / side", ""],
-          ["Bag or shadow rounds, relaxed until impact", "4 x 2 min", "Loose arms, snap at the end."] ] },
-        { "d": "Day 3 · Snap", "items": [
-          ["Chest pass (ball or bag) or explosive push-ups", "4 x 6", ""],
-          ["Broad jumps", "3 x 5", ""],
-          ["Band punches or fast shadow punches", "3 x 15 / side", ""],
-          ["Shadowboxing", "3 x 2 min", ""] ] }
+     "d": "Day 3 \u00b7 Both",
+     "items": [
+      [
+       "Squat jumps",
+       "2 x 5",
+       ""
+      ],
+      [
+       "Explosive push-ups",
+       "2 x 5",
+       ""
+      ],
+      [
+       "Gas tank rounds",
+       "2 x 3 min, 1 min rest",
+       "Same as day 2."
       ]
-    },
-    {
-      "slug": "fight-cardio", "keywords": ["cardio"], "reel": "P3", "match": "fight cardio plan",
-      "title": "Fight Cardio in 20 Minutes", "sub": "3 days a week. Fights are bursts, so train bursts.",
-      "days": [
-        { "d": "Day 1 · Rounds", "items": [
-          ["Shadowboxing rounds", "6 x 3 min, 1 min rest", "Last 30 s of every round all-out."] ] },
-        { "d": "Day 2 · Bursts", "items": [
-          ["Bag or shadow sprints", "10 x (30 s hard + 30 s easy)", ""],
-          ["Jump rope cooldown", "3 min", ""] ] },
-        { "d": "Day 3 · Base", "items": [
-          ["Easy jog, bike or brisk walk", "20 min", "Nose breathing only. If you can't, slow down."] ] }
-      ]
-    },
-    {
-      "slug": "2-classes", "keywords": ["home"], "reel": "P4", "match": "2 classes a week plan",
-      "title": "2 Classes a Week", "sub": "What to do at home on the other days.",
-      "days": [
-        { "d": "Day 1 · Fix it", "items": [
-          ["Shadowbox the one mistake your coach called out", "4 x 2 min", "Slow first, then at speed."],
-          ["Mirror guard check", "2 min", "Hands back to your face after every punch."] ] },
-        { "d": "Day 2 · Feet", "items": [
-          ["In-out steps", "3 x 1 min", ""],
-          ["Pivots", "3 x 1 min", ""],
-          ["Angle exits", "3 x 1 min", "Throw 2, step off the line."],
-          ["Jump rope", "5 min", ""] ] },
-        { "d": "Day 3 · Build", "items": [
-          ["Push-ups", "4 x 12", ""],
-          ["Split squats", "3 x 10 / leg", ""],
-          ["Plank", "3 x 45 s", ""],
-          ["Shadowboxing", "3 x 2 min", ""] ] }
-      ]
-    },
-    {
-      "slug": "hands-up", "keywords": ["guard"], "reel": "P5", "match": "hands up plan",
-      "title": "Keep Your Hands Up", "sub": "3 days a week. Your shoulders quit before your guard does.",
-      "days": [
-        { "d": "Day 1 · Hold", "items": [
-          ["Guard hold with light weights (2 lb or water bottles)", "4 x 1 min", ""],
-          ["Shadowboxing, hands glued up", "3 x 2 min", ""] ] },
-        { "d": "Day 2 · Endure", "items": [
-          ["Shoulder taps", "3 x 20", "From a high plank."],
-          ["Band pull-aparts (or towel pulls)", "3 x 15", ""],
-          ["Punch-outs", "4 x 30 s", "Nonstop straight punches, fast."] ] },
-        { "d": "Day 3 · Under fatigue", "items": [
-          ["20 burpees, then 2 min shadowboxing hands up", "4 rounds", "The guard is the whole point. Hands drop, round restarts."] ] }
-      ]
-    },
-    {
-      "slug": "lomachenko-footwork", "keywords": ["loma", "lomachenko", "lomachenco"], "reel": "L1", "match": "lomachenko footwork plan",
-      "title": "Lomachenko Footwork, at Home", "sub": "Monday to Friday. Inspired by how Lomachenko trains, not his exact program.",
-      "note": "As a kid, Lomachenko spent about 4 years in traditional Ukrainian dance before going back to boxing. His footwork is drilled, not gifted.",
-      "days": [
-        { "d": "Monday · Feet", "items": [
-          ["Quick feet", "4 x 30 s", "Fast small steps on the balls of your feet."],
-          ["In-out steps", "3 x 1 min", ""],
-          ["Pivots", "3 x 1 min", "Both directions."] ] },
-        { "d": "Tuesday · Hands and eyes", "items": [
-          ["Tennis ball wall catch", "3 x 1 min", "Throw at a wall, catch with the other hand."],
-          ["3 punches, then angle out", "4 x 2 min", ""] ] },
-        { "d": "Wednesday · Engine", "items": [
-          ["Skipping", "5 x 2 min", ""],
-          ["Burpees", "3 x 10", ""] ] },
-        { "d": "Thursday · Reaction", "items": [
-          ["Slip or punch on a called cue", "4 x 2 min", "A partner or a random-call app says slip or punch."],
-          ["Ball drop catch", "3 x 1 min", "Partner drops a ball, catch before the second bounce."] ] },
-        { "d": "Friday · Rounds", "items": [
-          ["Shadowboxing", "6 x 3 min", "Angle off after every combo."] ] }
-      ]
-    },
-    {
-      "slug": "tyson-peekaboo", "keywords": ["tyson"], "reel": "L2", "match": "tyson peek-a-boo plan",
-      "title": "Tyson Peek-a-Boo, at Home", "sub": "Monday to Friday. Inspired by the peek-a-boo style, not Tyson's exact program.",
-      "note": "Tyson's coach Cus D'Amato built the peek-a-boo style: high guard, constant head movement, punches from angles.",
-      "days": [
-        { "d": "Monday · Slips", "items": [
-          ["Slip line", "4 x 2 min", "Tie a string between 2 chairs at chin height, slip left and right along it."],
-          ["Bob and weave under the line", "3 x 1 min", ""] ] },
-        { "d": "Tuesday · Neck and core", "items": [
-          ["Hand-resisted neck holds", "3 x 20 s each way", "Gentle pressure with your hand, hold still."],
-          ["Sit-ups", "4 x 20", ""] ] },
-        { "d": "Wednesday · Power", "items": [
-          ["Squat jumps", "4 x 5", ""],
-          ["Explosive push-ups", "4 x 5", ""] ] },
-        { "d": "Thursday · Peek-a-boo", "items": [
-          ["High-guard shadowboxing: slip, slip, hook", "5 x 2 min", "Gloves on your cheeks, move your head before every punch."] ] },
-        { "d": "Friday · Engine", "items": [
-          ["Jump rope", "6 x 3 min", ""] ] }
-      ]
-    },
-    {
-      "slug": "khabib-pressure", "keywords": ["khabib", "khabeeb"], "reel": "L3", "match": "khabib pressure plan",
-      "title": "Khabib Pressure, at Home", "sub": "Monday to Friday. Inspired by how Khabib fought, not his exact program.",
-      "note": "Khabib wrestled from early childhood under his father. His pressure works because his cardio lets him keep it up.",
-      "days": [
-        { "d": "Monday · Sprawls", "items": [
-          ["Sprawls", "5 x 10", "Hips to the floor fast, back up to stance."],
-          ["Level changes", "4 x 8", "Drop your hips, not your head, then back to stance."] ] },
-        { "d": "Tuesday · Grip", "items": [
-          ["Towel or dead hangs", "4 x max", ""],
-          ["Bag carries", "4 x 1 min", "Any heavy bag or backpack, walk tall."] ] },
-        { "d": "Wednesday · Engine", "items": [
-          ["Burpees", "10 x (30 s on, 30 s rest)", ""] ] },
-        { "d": "Thursday · Drive", "items": [
-          ["Wall drive", "5 x 20 s", "Hands on the wall, drive with your legs like you're pushing someone to the cage."],
-          ["Bear crawls", "4 x 20 steps", ""] ] },
-        { "d": "Friday · Grind", "items": [
-          ["1 min each: sprawls, push-ups, squats, mountain climbers, rest", "5 rounds", ""] ] }
-      ]
-    },
-    {
-      "slug": "usyk-balance", "keywords": ["usyk", "usik"], "reel": "L4", "match": "usyk balance plan",
-      "title": "Usyk Balance, at Home", "sub": "Monday to Friday. Inspired by Usyk's balance and coordination drills, not his exact program.",
-      "note": "Usyk's training videos are famous for odd-looking balance and coordination drills. That's the point.",
-      "days": [
-        { "d": "Monday · Balance", "items": [
-          ["Single-leg stand, eyes closed", "3 x 30 s / leg", ""],
-          ["Single-leg shadowboxing", "3 x 1 min / leg", "Light punches, stay tall."] ] },
-        { "d": "Tuesday · Coordination", "items": [
-          ["2-ball juggling (or toss and catch)", "3 x 2 min", ""],
-          ["Cross crawls", "3 x 1 min", "Opposite elbow to knee, standing."] ] },
-        { "d": "Wednesday · Feet", "items": [
-          ["Lateral shuffles", "4 x 30 s", ""],
-          ["Switch-stance shadowboxing", "4 x 2 min", "Change stance every 30 s."] ] },
-        { "d": "Thursday · Engine", "items": [
-          ["Skipping", "5 x 3 min", ""] ] },
-        { "d": "Friday · Rounds", "items": [
-          ["Shadowboxing", "6 x 3 min", "Angles both ways."] ] }
-      ]
+     ]
     }
-  ]
+   ]
+  },
+  {
+   "slug": "9-to-5",
+   "keywords": [
+    "busy"
+   ],
+   "reel": "P1",
+   "match": "9 to 5 plan",
+   "title": "The 9 to 5 Plan",
+   "sub": "3 days a week, 30 minutes a day.",
+   "days": [
+    {
+     "d": "Day 1 \u00b7 Power",
+     "items": [
+      [
+       "Explosive push-ups",
+       "4 x 5",
+       "Fast and hard, full rest between sets."
+      ],
+      [
+       "Squat jumps",
+       "4 x 6",
+       "Land soft, reset each rep."
+      ],
+      [
+       "Towel slams",
+       "4 x 8",
+       "Fold a towel, slam it down hard from overhead, hips drive it."
+      ],
+      [
+       "Plank punches",
+       "3 x 20",
+       "From a high plank, punch forward alternating arms, hips stay still."
+      ],
+      [
+       "Shadowboxing",
+       "3 x 2 min",
+       ""
+      ]
+     ]
+    },
+    {
+     "d": "Day 2 \u00b7 Engine",
+     "items": [
+      [
+       "Burpees",
+       "4 x 8",
+       ""
+      ],
+      [
+       "High knees",
+       "4 x 30 s",
+       ""
+      ],
+      [
+       "Mountain climbers",
+       "4 x 30 s",
+       ""
+      ],
+      [
+       "Jump rope (or fake rope)",
+       "5 x 1 min",
+       ""
+      ],
+      [
+       "Shadowboxing",
+       "3 x 2 min",
+       ""
+      ]
+     ]
+    },
+    {
+     "d": "Day 3 \u00b7 Speed",
+     "items": [
+      [
+       "Fast jabs",
+       "5 x 20 s",
+       "Snap it back as fast as it goes out."
+      ],
+      [
+       "Lateral shuffles",
+       "4 x 20 s",
+       ""
+      ],
+      [
+       "Skater jumps",
+       "3 x 10",
+       "Side to side, stick each landing."
+      ],
+      [
+       "Slip drill",
+       "3 x 2 min",
+       "Slip left and right under a string or along a wall line."
+      ],
+      [
+       "Shadowboxing",
+       "3 x 2 min",
+       ""
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "power-after-30",
+   "keywords": [
+    "hips"
+   ],
+   "reel": "P2",
+   "match": "power after 30 plan",
+   "title": "Power After 30",
+   "sub": "3 days a week. Hips first, joints happy.",
+   "days": [
+    {
+     "d": "Day 1 \u00b7 Hips",
+     "items": [
+      [
+       "Glute bridges",
+       "3 x 12",
+       "Squeeze at the top for 1 s."
+      ],
+      [
+       "Band or towel rotations",
+       "3 x 10 / side",
+       "Turn from the hips, arms just follow."
+      ],
+      [
+       "Split squats",
+       "3 x 8 / leg",
+       ""
+      ],
+      [
+       "Shadowboxing, power shots only",
+       "4 x 2 min",
+       "Every punch starts from the floor."
+      ]
+     ]
+    },
+    {
+     "d": "Day 2 \u00b7 Core",
+     "items": [
+      [
+       "Dead bugs",
+       "3 x 10",
+       "Lower back stays on the floor."
+      ],
+      [
+       "Side plank",
+       "3 x 30 s / side",
+       ""
+      ],
+      [
+       "Pallof press (band) or slow plank reaches",
+       "3 x 10 / side",
+       ""
+      ],
+      [
+       "Bag or shadow rounds, relaxed until impact",
+       "4 x 2 min",
+       "Loose arms, snap at the end."
+      ]
+     ]
+    },
+    {
+     "d": "Day 3 \u00b7 Snap",
+     "items": [
+      [
+       "Chest pass (ball or bag) or explosive push-ups",
+       "4 x 6",
+       ""
+      ],
+      [
+       "Broad jumps",
+       "3 x 5",
+       ""
+      ],
+      [
+       "Band punches or fast shadow punches",
+       "3 x 15 / side",
+       ""
+      ],
+      [
+       "Shadowboxing",
+       "3 x 2 min",
+       ""
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "fight-cardio",
+   "keywords": [
+    "cardio"
+   ],
+   "reel": "P3",
+   "match": "fight cardio plan",
+   "title": "Fight Cardio in 20 Minutes",
+   "sub": "3 days a week. Fights are bursts, so train bursts.",
+   "days": [
+    {
+     "d": "Day 1 \u00b7 Rounds",
+     "items": [
+      [
+       "Shadowboxing rounds",
+       "6 x 3 min, 1 min rest",
+       "Last 30 s of every round all-out."
+      ]
+     ]
+    },
+    {
+     "d": "Day 2 \u00b7 Bursts",
+     "items": [
+      [
+       "Bag or shadow sprints",
+       "10 x (30 s hard + 30 s easy)",
+       ""
+      ],
+      [
+       "Jump rope cooldown",
+       "3 min",
+       ""
+      ]
+     ]
+    },
+    {
+     "d": "Day 3 \u00b7 Base",
+     "items": [
+      [
+       "Easy jog, bike or brisk walk",
+       "20 min",
+       "Nose breathing only. If you can't, slow down."
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "2-classes",
+   "keywords": [
+    "home"
+   ],
+   "reel": "P4",
+   "match": "2 classes a week plan",
+   "title": "2 Classes a Week",
+   "sub": "What to do at home on the other days.",
+   "days": [
+    {
+     "d": "Day 1 \u00b7 Fix it",
+     "items": [
+      [
+       "Shadowbox the one mistake your coach called out",
+       "4 x 2 min",
+       "Slow first, then at speed."
+      ],
+      [
+       "Mirror guard check",
+       "2 min",
+       "Hands back to your face after every punch."
+      ]
+     ]
+    },
+    {
+     "d": "Day 2 \u00b7 Feet",
+     "items": [
+      [
+       "In-out steps",
+       "3 x 1 min",
+       ""
+      ],
+      [
+       "Pivots",
+       "3 x 1 min",
+       ""
+      ],
+      [
+       "Angle exits",
+       "3 x 1 min",
+       "Throw 2, step off the line."
+      ],
+      [
+       "Jump rope",
+       "5 min",
+       ""
+      ]
+     ]
+    },
+    {
+     "d": "Day 3 \u00b7 Build",
+     "items": [
+      [
+       "Push-ups",
+       "4 x 12",
+       ""
+      ],
+      [
+       "Split squats",
+       "3 x 10 / leg",
+       ""
+      ],
+      [
+       "Plank",
+       "3 x 45 s",
+       ""
+      ],
+      [
+       "Shadowboxing",
+       "3 x 2 min",
+       ""
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "hands-up",
+   "keywords": [
+    "guard"
+   ],
+   "reel": "P5",
+   "match": "hands up plan",
+   "title": "Keep Your Hands Up",
+   "sub": "3 days a week. Your shoulders quit before your guard does.",
+   "days": [
+    {
+     "d": "Day 1 \u00b7 Hold",
+     "items": [
+      [
+       "Guard hold with light weights (2 lb or water bottles)",
+       "4 x 1 min",
+       ""
+      ],
+      [
+       "Shadowboxing, hands glued up",
+       "3 x 2 min",
+       ""
+      ]
+     ]
+    },
+    {
+     "d": "Day 2 \u00b7 Endure",
+     "items": [
+      [
+       "Shoulder taps",
+       "3 x 20",
+       "From a high plank."
+      ],
+      [
+       "Band pull-aparts (or towel pulls)",
+       "3 x 15",
+       ""
+      ],
+      [
+       "Punch-outs",
+       "4 x 30 s",
+       "Nonstop straight punches, fast."
+      ]
+     ]
+    },
+    {
+     "d": "Day 3 \u00b7 Under fatigue",
+     "items": [
+      [
+       "20 burpees, then 2 min shadowboxing hands up",
+       "4 rounds",
+       "The guard is the whole point. Hands drop, round restarts."
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "lomachenko-footwork",
+   "keywords": [
+    "loma",
+    "lomachenko",
+    "lomachenco"
+   ],
+   "reel": "L1",
+   "match": "lomachenko footwork plan",
+   "title": "Lomachenko Footwork, at Home",
+   "sub": "Monday to Friday. Inspired by how Lomachenko trains, not his exact program.",
+   "note": "As a kid, Lomachenko spent about 4 years in traditional Ukrainian dance before going back to boxing. His footwork is drilled, not gifted.",
+   "days": [
+    {
+     "d": "Monday \u00b7 Feet",
+     "items": [
+      [
+       "Quick feet",
+       "4 x 30 s",
+       "Fast small steps on the balls of your feet."
+      ],
+      [
+       "In-out steps",
+       "3 x 1 min",
+       ""
+      ],
+      [
+       "Pivots",
+       "3 x 1 min",
+       "Both directions."
+      ]
+     ]
+    },
+    {
+     "d": "Tuesday \u00b7 Hands and eyes",
+     "items": [
+      [
+       "Tennis ball wall catch",
+       "3 x 1 min",
+       "Throw at a wall, catch with the other hand."
+      ],
+      [
+       "3 punches, then angle out",
+       "4 x 2 min",
+       ""
+      ]
+     ]
+    },
+    {
+     "d": "Wednesday \u00b7 Engine",
+     "items": [
+      [
+       "Skipping",
+       "5 x 2 min",
+       ""
+      ],
+      [
+       "Burpees",
+       "3 x 10",
+       ""
+      ]
+     ]
+    },
+    {
+     "d": "Thursday \u00b7 Reaction",
+     "items": [
+      [
+       "Slip or punch on a called cue",
+       "4 x 2 min",
+       "A partner or a random-call app says slip or punch."
+      ],
+      [
+       "Ball drop catch",
+       "3 x 1 min",
+       "Partner drops a ball, catch before the second bounce."
+      ]
+     ]
+    },
+    {
+     "d": "Friday \u00b7 Rounds",
+     "items": [
+      [
+       "Shadowboxing",
+       "6 x 3 min",
+       "Angle off after every combo."
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "tyson-peekaboo",
+   "keywords": [
+    "tyson"
+   ],
+   "reel": "L2",
+   "match": "tyson peek-a-boo plan",
+   "title": "Tyson Peek-a-Boo, at Home",
+   "sub": "Monday to Friday. Inspired by the peek-a-boo style, not Tyson's exact program.",
+   "note": "Tyson's coach Cus D'Amato built the peek-a-boo style: high guard, constant head movement, punches from angles.",
+   "days": [
+    {
+     "d": "Monday \u00b7 Slips",
+     "items": [
+      [
+       "Slip line",
+       "4 x 2 min",
+       "Tie a string between 2 chairs at chin height, slip left and right along it."
+      ],
+      [
+       "Bob and weave under the line",
+       "3 x 1 min",
+       ""
+      ]
+     ]
+    },
+    {
+     "d": "Tuesday \u00b7 Neck and core",
+     "items": [
+      [
+       "Hand-resisted neck holds",
+       "3 x 20 s each way",
+       "Gentle pressure with your hand, hold still."
+      ],
+      [
+       "Sit-ups",
+       "4 x 20",
+       ""
+      ]
+     ]
+    },
+    {
+     "d": "Wednesday \u00b7 Power",
+     "items": [
+      [
+       "Squat jumps",
+       "4 x 5",
+       ""
+      ],
+      [
+       "Explosive push-ups",
+       "4 x 5",
+       ""
+      ]
+     ]
+    },
+    {
+     "d": "Thursday \u00b7 Peek-a-boo",
+     "items": [
+      [
+       "High-guard shadowboxing: slip, slip, hook",
+       "5 x 2 min",
+       "Gloves on your cheeks, move your head before every punch."
+      ]
+     ]
+    },
+    {
+     "d": "Friday \u00b7 Engine",
+     "items": [
+      [
+       "Jump rope",
+       "6 x 3 min",
+       ""
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "khabib-pressure",
+   "keywords": [
+    "khabib",
+    "khabeeb"
+   ],
+   "reel": "L3",
+   "match": "khabib pressure plan",
+   "title": "Khabib Pressure, at Home",
+   "sub": "Monday to Friday. Inspired by how Khabib fought, not his exact program.",
+   "note": "Khabib wrestled from early childhood under his father. His pressure works because his cardio lets him keep it up.",
+   "days": [
+    {
+     "d": "Monday \u00b7 Sprawls",
+     "items": [
+      [
+       "Sprawls",
+       "5 x 10",
+       "Hips to the floor fast, back up to stance."
+      ],
+      [
+       "Level changes",
+       "4 x 8",
+       "Drop your hips, not your head, then back to stance."
+      ]
+     ]
+    },
+    {
+     "d": "Tuesday \u00b7 Grip",
+     "items": [
+      [
+       "Towel or dead hangs",
+       "4 x max",
+       ""
+      ],
+      [
+       "Bag carries",
+       "4 x 1 min",
+       "Any heavy bag or backpack, walk tall."
+      ]
+     ]
+    },
+    {
+     "d": "Wednesday \u00b7 Engine",
+     "items": [
+      [
+       "Burpees",
+       "10 x (30 s on, 30 s rest)",
+       ""
+      ]
+     ]
+    },
+    {
+     "d": "Thursday \u00b7 Drive",
+     "items": [
+      [
+       "Wall drive",
+       "5 x 20 s",
+       "Hands on the wall, drive with your legs like you're pushing someone to the cage."
+      ],
+      [
+       "Bear crawls",
+       "4 x 20 steps",
+       ""
+      ]
+     ]
+    },
+    {
+     "d": "Friday \u00b7 Grind",
+     "items": [
+      [
+       "1 min each: sprawls, push-ups, squats, mountain climbers, rest",
+       "5 rounds",
+       ""
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "usyk-balance",
+   "keywords": [
+    "usyk",
+    "usik"
+   ],
+   "reel": "L4",
+   "match": "usyk balance plan",
+   "title": "Usyk Balance, at Home",
+   "sub": "Monday to Friday. Inspired by Usyk's balance and coordination drills, not his exact program.",
+   "note": "Usyk's training videos are famous for odd-looking balance and coordination drills. That's the point.",
+   "days": [
+    {
+     "d": "Monday \u00b7 Balance",
+     "items": [
+      [
+       "Single-leg stand, eyes closed",
+       "3 x 30 s / leg",
+       ""
+      ],
+      [
+       "Single-leg shadowboxing",
+       "3 x 1 min / leg",
+       "Light punches, stay tall."
+      ]
+     ]
+    },
+    {
+     "d": "Tuesday \u00b7 Coordination",
+     "items": [
+      [
+       "2-ball juggling (or toss and catch)",
+       "3 x 2 min",
+       ""
+      ],
+      [
+       "Cross crawls",
+       "3 x 1 min",
+       "Opposite elbow to knee, standing."
+      ]
+     ]
+    },
+    {
+     "d": "Wednesday \u00b7 Feet",
+     "items": [
+      [
+       "Lateral shuffles",
+       "4 x 30 s",
+       ""
+      ],
+      [
+       "Switch-stance shadowboxing",
+       "4 x 2 min",
+       "Change stance every 30 s."
+      ]
+     ]
+    },
+    {
+     "d": "Thursday \u00b7 Engine",
+     "items": [
+      [
+       "Skipping",
+       "5 x 3 min",
+       ""
+      ]
+     ]
+    },
+    {
+     "d": "Friday \u00b7 Rounds",
+     "items": [
+      [
+       "Shadowboxing",
+       "6 x 3 min",
+       "Angles both ways."
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "floyd-shoulder-roll",
+   "keywords": [
+    "floyd",
+    "mayweather"
+   ],
+   "reel": "L5",
+   "match": "floyd shoulder roll plan",
+   "title": "Floyd's Shoulder Roll, at Home",
+   "sub": "Monday to Friday. Inspired by Floyd Mayweather's defence, not his exact program.",
+   "note": "The shoulder roll (Philly shell): lead shoulder up to take the right hand, lead hand low to catch the jab and guard the body, rear hand by the chin. Floyd's signature finish is the pull counter: lean back out of range, then fire the right hand.",
+   "days": [
+    {
+     "d": "Monday \u00b7 The shell",
+     "items": [
+      [
+       "Mirror shell holds",
+       "4 x 1 min",
+       "Lead shoulder up, chin tucked behind it, lead hand across your stomach, rear hand on your cheek."
+      ],
+      [
+       "Slow shadowboxing in the shell",
+       "3 x 2 min",
+       "Every punch returns to the shell."
+      ],
+      [
+       "Shoulder rolls off an imaginary right hand",
+       "3 x 1 min",
+       "Turn the lead shoulder in and roll, don't lean back."
+      ]
+     ]
+    },
+    {
+     "d": "Tuesday \u00b7 The roll",
+     "items": [
+      [
+       "Slip line rolls",
+       "4 x 2 min",
+       "String at chin height: roll under it to the lead side, come up in the shell."
+      ],
+      [
+       "Roll and counter",
+       "3 x 2 min",
+       "Roll, then fire the right hand straight back."
+      ],
+      [
+       "Plank",
+       "3 x 45 s",
+       ""
+      ]
+     ]
+    },
+    {
+     "d": "Wednesday \u00b7 Pull counter",
+     "items": [
+      [
+       "Pull back",
+       "4 x 1 min",
+       "Shift weight to the back foot, lean just out of range, eyes on the target."
+      ],
+      [
+       "Pull counter",
+       "4 x 2 min",
+       "Pull, then right hand as you come forward. Snap it back to the shell."
+      ],
+      [
+       "Check hook",
+       "3 x 1 min / side",
+       "Pivot on the lead foot as you hook."
+      ]
+     ]
+    },
+    {
+     "d": "Thursday \u00b7 Engine",
+     "items": [
+      [
+       "Jump rope",
+       "5 x 3 min",
+       "Light and fast, like Floyd's rope sessions."
+      ],
+      [
+       "Speed punches",
+       "4 x 30 s",
+       "Fast straight punches, shell between bursts."
+      ]
+     ]
+    },
+    {
+     "d": "Friday \u00b7 Rounds",
+     "items": [
+      [
+       "Shell rounds",
+       "6 x 3 min",
+       "Roll or pull every 3rd punch you imagine, counter every time."
+      ]
+     ]
+    }
+   ]
+  }
+ ]
 }
