@@ -1,0 +1,8 @@
+language: en
+[   8.7-  11.1] See, you're a stupid scholar of boxing.
+[  21.2-  23.2] That's it. There you go. Again, again.
+[  23.9-  24.9] Who's the last guy to stop?
+[  40.0-  42.6] While in the gym, he practiced the model's pickable style,
+[  43.2-  46.2] fighting with one's hands high as if on a defensive screen.
+[  52.7-  56.4] Right to the body, left jab, right to the heart.
+[  77.8-  80.3] There's a method of invading the punches coming at me.
