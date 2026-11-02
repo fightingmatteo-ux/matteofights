@@ -4,4 +4,7 @@ set -euo pipefail
 R=production/reels/2026-11-02-plan-L2
 mkdir -p "$R/assets/media"
 ffmpeg -v error -y -ss 1418.2 -t 2.62 -i "media/plan/yt-tyson-1987-training-kos.mp4" -an -vf "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,setsar=1,fps=30" -c:v libx264 -crf 16 -pix_fmt yuv420p "$R/assets/media/hookcut_A.mp4"
+ffmpeg -v error -y -ss 1340.4 -t 4.88 -i "media/plan/yt-tyson-1987-training-kos.mp4" -an -vf "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,setsar=1,fps=30" -c:v libx264 -crf 16 -pix_fmt yuv420p "$R/assets/media/hookcut_B.mp4"
+ffmpeg -v error -y -ss 1246.8 -t 3.14 -i "media/plan/yt-tyson-1987-training-kos.mp4" -an -vf "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,setsar=1,fps=30" -c:v libx264 -crf 16 -pix_fmt yuv420p "$R/assets/media/hookcut_C.mp4"
 ffmpeg -v error -y -ss 1400.0 -t 3.46 -i "media/plan/yt-tyson-1987-training-kos.mp4" -an -vf "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,setsar=1,fps=30" -c:v libx264 -crf 16 -pix_fmt yuv420p "$R/assets/media/hookcut_D.mp4"
+ffmpeg -v error -y -ss 726.0 -t 3.20 -i "media/plan/yt-tyson-1987-training-kos.mp4" -an -vf "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,setsar=1,fps=30" -c:v libx264 -crf 16 -pix_fmt yuv420p "$R/assets/media/hookcut_E.mp4"

@@ -50,3 +50,8 @@ Khabib still pushing; "nobody could get up" = Khabib on top, opponent pinned.
 ## L4 USYK (when filmed)
 "training videos look weird" = Usyk's own balance/coordination drill clips; "never off balance" = Usyk pivoting out of
 the corner; "big guys train strength" = a heavyweight lifting heavy (contrast).
+
+## Picked (2026-11-02, real fight footage, one different clip per hook)
+- Tyson (yt-tyson-1987-training-kos.mp4, HD 1987 comp): A 1418.2 bob/weave inside vs Biggs; B 1340.4 rolls under a punch;
+  C 1246.8 overhead bob-and-weave; D 1400.0 combination into the Biggs knockdown; E 726.0 inside work vs Thomas.
+- Power A: fight-ufc-rudeboy-ko.mp4 0.0 (KO punch lands, opponent drops).

@@ -49,7 +49,9 @@ REELS = {
         "C": ("Lomachenko's footwork isn't talent. It's years of drills nobody films.", ["Lomachenko's footwork isn't talent.", "It's years of drills nobody"], "films.", ("FILMS", 1), ("HERE'S", 1)),
         "D": ("Most people drill punches. Lomachenko drilled his feet.", ["Most people drill punches.", "Lomachenko drilled his"], "feet.", ("FEET", 1), ("HERE'S", 1)),
         "E": ("If your feet ever feel stuck when you shadowbox, this is for you.", ["If your feet ever feel", "stuck when you"], "shadowbox,", ("SHADOWBOX", 1), ("THIS", 1))}),
-    "L2": dict(hook={"A": ("yt-tyson-1987-training-kos.mp4", 1418.2), "D": ("yt-tyson-1987-training-kos.mp4", 1400.0)}, raw="L2.mp4", an="2026-11-02-plan-L2-tyson", plan="tyson-peekaboo", k="TYSON", body=L_BODY, hooks={
+    "L2": dict(hook={"A": ("yt-tyson-1987-training-kos.mp4", 1418.2), "B": ("yt-tyson-1987-training-kos.mp4", 1340.4),
+                    "C": ("yt-tyson-1987-training-kos.mp4", 1246.8), "D": ("yt-tyson-1987-training-kos.mp4", 1400.0),
+                    "E": ("yt-tyson-1987-training-kos.mp4", 726.0)}, raw="L2.mp4", an="2026-11-02-plan-L2-tyson", plan="tyson-peekaboo", k="TYSON", body=L_BODY, hooks={
         "A": ("Want head movement like prime Tyson?", ["Want head movement", "like prime"], "Tyson?", ("TYSON", 1), ("HERE'S", 1)),
         "B": ("Steal this from Mike Tyson. Your head is never where they're aiming.", ["Steal this from Mike Tyson.", "Your head is never where they're"], "aiming.", ("AIMING", 1), ("HERE'S", 1)),
         "C": ("Most people block punches. Tyson made them miss.", ["Most people block punches.", "Tyson made them"], "miss.", ("MISS", 1), ("HERE'S", 1)),
