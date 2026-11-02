@@ -1,6 +1,6 @@
 {
   "note": "Proven hooks for carousels. Every carousel in posts.json needs hook_ref = a 'read' entry's code (other creators' outlier carousels, found weekly by tools/carousel/scout.py) or an 'own' id (our own reels that proved the hook on our audience). Adapt the pattern to Matteo's topic; never copy another creator's slides word for word.",
-  "updated": "2026-10-26T13:20Z",
+  "updated": "2026-11-02T16:20Z",
   "own": [
     {
       "id": "own-born-fighter",
@@ -680,7 +680,342 @@
       "hook": null,
       "pattern": null,
       "found": "2026-10-26"
+    },
+    {
+      "code": "DfIh8LfFVWc",
+      "user": "espnmma",
+      "followers": 5040606,
+      "permalink": "https://www.instagram.com/p/DfIh8LfFVWc/",
+      "posted": "2026-10-30T21:18:25+0000",
+      "likes": 241896,
+      "comments": 2034,
+      "x_median": 2.23,
+      "caption_first_line": "Islam Makhachev reveals that his final fight could be next 👀",
+      "slides": [
+        "production/carousels/proven/DfIh8LfFVWc/01.jpg",
+        "production/carousels/proven/DfIh8LfFVWc/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-02"
+    },
+    {
+      "code": "DfNHNSbDXQw",
+      "user": "ringmagazine",
+      "followers": 1300459,
+      "permalink": "https://www.instagram.com/p/DfNHNSbDXQw/",
+      "posted": "2026-11-01T16:01:01+0000",
+      "likes": 13771,
+      "comments": 2350,
+      "x_median": 2.69,
+      "caption_first_line": "Still thinking about this brutal Bek Nurmaganbet KO on the Canelo vs Mbilli undercard 😳",
+      "slides": [],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-02"
+    },
+    {
+      "code": "DfM5AJ6DXAO",
+      "user": "ringmagazine",
+      "followers": 1300459,
+      "permalink": "https://www.instagram.com/p/DfM5AJ6DXAO/",
+      "posted": "2026-11-01T13:56:54+0000",
+      "likes": 22728,
+      "comments": 335,
+      "x_median": 3.07,
+      "caption_first_line": "Canelo Alvarez has come a long way 🥹🇲🇽",
+      "slides": [
+        "production/carousels/proven/DfM5AJ6DXAO/01.jpg",
+        "production/carousels/proven/DfM5AJ6DXAO/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-02"
+    },
+    {
+      "code": "DfLXDsXG0vA",
+      "user": "ringmagazine",
+      "followers": 1300459,
+      "permalink": "https://www.instagram.com/p/DfLXDsXG0vA/",
+      "posted": "2026-10-31T23:41:02+0000",
+      "likes": 32692,
+      "comments": 297,
+      "x_median": 4.34,
+      "caption_first_line": "📋 Canelo Alvarez has won in his legendary career:",
+      "slides": [
+        "production/carousels/proven/DfLXDsXG0vA/01.jpg",
+        "production/carousels/proven/DfLXDsXG0vA/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-02"
+    },
+    {
+      "code": "DfLVDC5G6Qr",
+      "user": "ringmagazine",
+      "followers": 1300459,
+      "permalink": "https://www.instagram.com/p/DfLVDC5G6Qr/",
+      "posted": "2026-10-31T23:23:28+0000",
+      "likes": 17503,
+      "comments": 264,
+      "x_median": 2.37,
+      "caption_first_line": "Canelo Alvarez reacts after becoming champion once again 👏",
+      "slides": [
+        "production/carousels/proven/DfLVDC5G6Qr/01.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-02"
+    },
+    {
+      "code": "DfLRRjGm8g0",
+      "user": "ringmagazine",
+      "followers": 1300459,
+      "permalink": "https://www.instagram.com/p/DfLRRjGm8g0/",
+      "posted": "2026-10-31T22:50:30+0000",
+      "likes": 45584,
+      "comments": 979,
+      "x_median": 6.28,
+      "caption_first_line": "EL REY REIGNS AGAIN 👑",
+      "slides": [
+        "production/carousels/proven/DfLRRjGm8g0/01.jpg",
+        "production/carousels/proven/DfLRRjGm8g0/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-02"
+    },
+    {
+      "code": "DfIZbNDAfPa",
+      "user": "ringmagazine",
+      "followers": 1300459,
+      "permalink": "https://www.instagram.com/p/DfIZbNDAfPa/",
+      "posted": "2026-10-30T20:04:00+0000",
+      "likes": 26213,
+      "comments": 148,
+      "x_median": 3.45,
+      "caption_first_line": "TITLES AND TREATS 🤩🎃",
+      "slides": [
+        "production/carousels/proven/DfIZbNDAfPa/01.jpg",
+        "production/carousels/proven/DfIZbNDAfPa/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-02"
+    },
+    {
+      "code": "DfIW3hmIOOQ",
+      "user": "mmajunkie",
+      "followers": 1405477,
+      "permalink": "https://www.instagram.com/p/DfIW3hmIOOQ/",
+      "posted": "2026-10-30T19:41:39+0000",
+      "likes": 12482,
+      "comments": 739,
+      "x_median": 2.28,
+      "caption_first_line": "Islam Makhachev says his title unifier vs. the #UFC336 winner will be one of his final fights",
+      "slides": [
+        "production/carousels/proven/DfIW3hmIOOQ/01.jpg",
+        "production/carousels/proven/DfIW3hmIOOQ/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-02"
+    },
+    {
+      "code": "De7wbvsIAFk",
+      "user": "mmajunkie",
+      "followers": 1405477,
+      "permalink": "https://www.instagram.com/p/De7wbvsIAFk/",
+      "posted": "2026-10-25T22:14:56+0000",
+      "likes": 14487,
+      "comments": 356,
+      "x_median": 2.41,
+      "caption_first_line": "Israel Adesanya worries for Alex Pereira’s mindset ahead of facing Sergei Pavlovich at #UFC335",
+      "slides": [
+        "production/carousels/proven/De7wbvsIAFk/01.jpg",
+        "production/carousels/proven/De7wbvsIAFk/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-02"
+    },
+    {
+      "code": "DfOLwvBlGSt",
+      "user": "ufc",
+      "followers": 50919155,
+      "permalink": "https://www.instagram.com/p/DfOLwvBlGSt/",
+      "posted": "2026-11-02T02:00:02+0000",
+      "likes": 88914,
+      "comments": 854,
+      "x_median": 2.05,
+      "caption_first_line": "LOOKING TO MAKE MORE HISTORY 🔥",
+      "slides": [
+        "production/carousels/proven/DfOLwvBlGSt/01.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-02"
+    },
+    {
+      "code": "DfNwU3cEuyv",
+      "user": "ufc",
+      "followers": 50919155,
+      "permalink": "https://www.instagram.com/p/DfNwU3cEuyv/",
+      "posted": "2026-11-01T22:00:02+0000",
+      "likes": 552072,
+      "comments": 1692,
+      "x_median": 12.5,
+      "caption_first_line": "SOME BAD MFs 😈",
+      "slides": [
+        "production/carousels/proven/DfNwU3cEuyv/01.jpg",
+        "production/carousels/proven/DfNwU3cEuyv/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-02"
+    },
+    {
+      "code": "DfJQAwJgbnA",
+      "user": "ufc",
+      "followers": 50919155,
+      "permalink": "https://www.instagram.com/p/DfJQAwJgbnA/",
+      "posted": "2026-10-31T04:00:02+0000",
+      "likes": 125654,
+      "comments": 422,
+      "x_median": 2.85,
+      "caption_first_line": "A NIGHT FULL OF SURPRISES 🔮",
+      "slides": [
+        "production/carousels/proven/DfJQAwJgbnA/01.jpg",
+        "production/carousels/proven/DfJQAwJgbnA/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-02"
+    },
+    {
+      "code": "DfIxQwij1yS",
+      "user": "ufc",
+      "followers": 50919155,
+      "permalink": "https://www.instagram.com/p/DfIxQwij1yS/",
+      "posted": "2026-10-30T23:32:18+0000",
+      "likes": 155604,
+      "comments": 1040,
+      "x_median": 3.56,
+      "caption_first_line": "A UFC fan and a showman 😂",
+      "slides": [],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-02"
+    },
+    {
+      "code": "DfIf4g0Ekga",
+      "user": "ufc",
+      "followers": 50919155,
+      "permalink": "https://www.instagram.com/p/DfIf4g0Ekga/",
+      "posted": "2026-10-30T21:00:03+0000",
+      "likes": 232903,
+      "comments": 1129,
+      "x_median": 5.3,
+      "caption_first_line": "STEPPING UP 😤",
+      "slides": [
+        "production/carousels/proven/DfIf4g0Ekga/01.jpg",
+        "production/carousels/proven/DfIf4g0Ekga/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-02"
+    },
+    {
+      "code": "DfGdbGwjz0h",
+      "user": "ufc",
+      "followers": 50919155,
+      "permalink": "https://www.instagram.com/p/DfGdbGwjz0h/",
+      "posted": "2026-10-30T02:00:02+0000",
+      "likes": 138440,
+      "comments": 558,
+      "x_median": 3.14,
+      "caption_first_line": "NO MOMENT TOO BIG 😎",
+      "slides": [
+        "production/carousels/proven/DfGdbGwjz0h/01.jpg",
+        "production/carousels/proven/DfGdbGwjz0h/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-02"
+    },
+    {
+      "code": "DfFK_9FGcfX",
+      "user": "ufc",
+      "followers": 50919155,
+      "permalink": "https://www.instagram.com/p/DfFK_9FGcfX/",
+      "posted": "2026-10-29T14:00:02+0000",
+      "likes": 144938,
+      "comments": 508,
+      "x_median": 3.29,
+      "caption_first_line": "He knows how to finish a fight 🤩",
+      "slides": [],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-02"
+    },
+    {
+      "code": "DfDq_FHmaSj",
+      "user": "ufc",
+      "followers": 50919155,
+      "permalink": "https://www.instagram.com/p/DfDq_FHmaSj/",
+      "posted": "2026-10-29T00:01:15+0000",
+      "likes": 90805,
+      "comments": 541,
+      "x_median": 2.07,
+      "caption_first_line": "Just days away 🗓️",
+      "slides": [
+        "production/carousels/proven/DfDq_FHmaSj/01.jpg",
+        "production/carousels/proven/DfDq_FHmaSj/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-02"
+    },
+    {
+      "code": "DeZUYqFjlGf",
+      "user": "themuaythaiguy",
+      "followers": 288172,
+      "permalink": "https://www.instagram.com/p/DeZUYqFjlGf/",
+      "posted": "2026-10-12T13:15:40+0000",
+      "likes": 1734,
+      "comments": 155,
+      "x_median": 10.83,
+      "caption_first_line": "Everything I wish someone told me before I started Muay Thai.",
+      "slides": [
+        "production/carousels/proven/DeZUYqFjlGf/01.jpg",
+        "production/carousels/proven/DeZUYqFjlGf/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-02"
     }
   ],
-  "errors": []
+  "errors": [
+    "@brezojr: (#4) Application request limit reached",
+    "@ramseydewey: (#4) Application request limit reached",
+    "@_coachdino_: (#4) Application request limit reached"
+  ]
 }

@@ -9,8 +9,8 @@
    "hook_ref": null,
    "look": null,
    "animated": null,
-   "reach": 203,
-   "views": 568,
+   "reach": 204,
+   "views": 570,
    "saved": 2,
    "shares": 2,
    "likes": 17,
@@ -18,11 +18,11 @@
    "follows": 0,
    "profile_visits": 2,
    "total_interactions": 21,
-   "views_per_reach": 2.8,
-   "saves_per_k": 9.9,
-   "shares_per_k": 9.9,
+   "views_per_reach": 2.79,
+   "saves_per_k": 9.8,
+   "shares_per_k": 9.8,
    "follows_per_k": 0.0,
-   "visits_per_k": 9.9,
+   "visits_per_k": 9.8,
    "vs_median": {
     "reach": 1.0,
     "views_per_reach": 1.0,
@@ -33,14 +33,14 @@
    "reach_vs_reels": 0.12
   }
  },
- "updated": "2026-10-26",
+ "updated": "2026-11-02",
  "median": {
-  "reach": 203,
-  "views_per_reach": 2.8,
-  "saves_per_k": 9.9,
-  "shares_per_k": 9.9,
+  "reach": 204,
+  "views_per_reach": 2.79,
+  "saves_per_k": 9.8,
+  "shares_per_k": 9.8,
   "follows_per_k": 0.0,
-  "visits_per_k": 9.9
+  "visits_per_k": 9.8
  },
- "reel_median_reach": 1720.0
+ "reel_median_reach": 1651.0
 }
