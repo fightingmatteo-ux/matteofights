@@ -682,5 +682,25 @@
   {
     "id": "xp-05fdfb48",
     "text": "📤 YouTube Shorts: ONE BAD ROUND DOESN'T LOSE THE FIGHT. SAME WITH BUILDING.\nhttps://youtube.com/shorts/hdqBV7G-r3c"
+  },
+  {
+    "id": "health-job:2026-11-02-plan-P0-A-20261102T124603:failed-2026110221",
+    "text": "⚠️ Cloud render 2026-11-02-plan-P0-A-20261102T124603 failed: ailable: 25.1.1 -> 26.2.2\n[notice] To update, run: pip install --upgrade pip\n\n[notice] A new release of pip is available: 25.0.1 -> 26.2.2\n[notice] To update, run: python -m pip install --upgrade pip\n"
+  },
+  {
+    "id": "health-job:2026-11-02-plan-P0-A-20261102T124855:failed-2026110221",
+    "text": "⚠️ Cloud render 2026-11-02-plan-P0-A-20261102T124855 failed: ailable: 25.1.1 -> 26.2.2\n[notice] To update, run: pip install --upgrade pip\n\n[notice] A new release of pip is available: 25.0.1 -> 26.2.2\n[notice] To update, run: python -m pip install --upgrade pip\n"
+  },
+  {
+    "id": "health-job:2026-11-02-plan-P0-A-20261102T125319:failed-2026110221",
+    "text": "⚠️ Cloud render 2026-11-02-plan-P0-A-20261102T125319 failed: ailable: 25.1.1 -> 26.2.2\n[notice] To update, run: pip install --upgrade pip\n\n[notice] A new release of pip is available: 25.0.1 -> 26.2.2\n[notice] To update, run: python -m pip install --upgrade pip\n"
+  },
+  {
+    "id": "health-job:2026-11-02-yt-fetch-1-20261102T123714:failed-2026110221",
+    "text": "⚠️ Cloud render 2026-11-02-yt-fetch-1-20261102T123714 failed: H]  to your command/config. YouTube extraction without a JS runtime has been deprecated, and some formats may be missing. See  https://github.com/yt-dlp/yt-dlp/wiki/EJS  for details on installing one\n"
+  },
+  {
+    "id": "health-job:2026-11-02-yt-fetch-1-20261102T124336:failed-2026110221",
+    "text": "⚠️ Cloud render 2026-11-02-yt-fetch-1-20261102T124336 failed: -do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies\n"
   }
 ]
