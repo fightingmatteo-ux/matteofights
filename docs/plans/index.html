@@ -24,6 +24,11 @@ h1 { font-size: 52px; } h2 { font-size: 28px; margin: 0 0 8px; }
 .cta { display: block; text-align: center; background: var(--red); color: #fff; border-radius: 10px; padding: 16px; font-weight: 600; text-decoration: none; margin: 18px 0 8px; }
 ul.rules { padding-left: 20px; } ul.rules li { margin: 6px 0; }
 a { color: var(--text); }
+.levels { display: flex; gap: 8px; margin: 18px 0 6px; } .levels button { flex: 1; background: none; color: var(--dim); border: 1px solid var(--border); border-radius: 999px; padding: 10px 6px; font: 600 14px Inter, sans-serif; cursor: pointer; }
+.levels button.on { background: var(--red); border-color: var(--red); color: #fff; }
+.lvl-note { font-size: 14px; color: var(--dim); margin: 6px 0 4px; }
+.extra { font-size: 14px; color: var(--dim); border-top: 1px dashed var(--border); margin-top: 8px; padding-top: 8px; }
+.swap { display: block; font-size: 13px; color: var(--gold); margin-top: 2px; }
 .fine { font-size: 12px; color: var(--dim); margin-top: 36px; }
 .ghost { display: block; width: 100%; background: none; color: var(--text); border: 1px solid var(--border); border-radius: 10px; padding: 14px; font: 500 16px Inter, sans-serif; margin: 8px 0; cursor: pointer; }
 @media print { :root { --bg:#fff; --bg-2:#fff; --text:#111; --dim:#555; --border:#ccc; } .cta, .ghost, #next h2:last-of-type, #next p, .fine { display: none !important; } .day { break-inside: avoid; } }
@@ -50,32 +55,96 @@ a { color: var(--text); }
 (function () {
   var slug = (new URLSearchParams(location.search).get("p") || "").replace(/[^\w-]/g, "");
   var box = document.getElementById("plan");
+  var LEVELS = {
+    beginner: "New to training or coming back. Fewer sets, the easier version of each move, stop 2 reps before your form breaks.",
+    amateur: "Training 2 to 3 times a week for a few months. Do it exactly as written.",
+    advanced: "Training 4+ times a week or getting ready to compete. More volume, the harder version, keep rest honest."
+  };
+  // easier / harder version of common moves (matched by name)
+  var SWAPS = [
+    [/explosive push-ups|clap push-ups/i, "Push-ups from your knees", "Clap push-ups"],
+    [/^push-ups/i, "Push-ups from your knees", "Decline push-ups"],
+    [/squat jumps/i, "Fast bodyweight squats", "Tuck jumps"],
+    [/broad jumps/i, "Squat to calf raise", "Single-leg broad jumps"],
+    [/burpees/i, "Step-back burpees, no jump", "Burpee into a broad jump"],
+    [/split squats/i, "Split squat holding a chair", "Jumping split squats"],
+    [/mountain climbers/i, "Slow mountain climbers", "Cross-body mountain climbers"],
+    [/skipping|jump rope/i, "Fake rope (no rope, same bounce)", "Double-unders every 10th jump"],
+    [/plank/i, "Plank from your knees", "Plank with shoulder taps"],
+    [/sprawls/i, "Hands on a bench, sprawl back", "Sprawl into a burpee"],
+    [/bear crawls/i, "Bear hold, knees an inch off the floor", "Backwards bear crawls"],
+    [/hangs/i, "Hang with feet touching the floor", "Hang with a towel grip"],
+    [/shadowboxing|rounds/i, "Shorter rounds, longer rest", "Add 30 s to every round"]
+  ];
+  var WARM = "Warm-up, 5 min: hip and ankle circles, 10 easy squats, 90 s light shadowboxing, 20 s pogo hops.";
+  var COOL = "Cool-down, 3 min: easy shadowboxing, then 1 min of slow nose breathing.";
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text) e.textContent = text; return e; }
-  fetch("plans.json").then(function (r) { return r.json(); }).then(function (data) {
-    var p = data.plans.filter(function (x) { return x.slug === slug; })[0];
-    box.innerHTML = "";
-    if (!p) {
-      box.appendChild(el("p", "kicker", "Free plans"));
-      box.appendChild(el("h1", "", "Pick a plan"));
-      data.plans.forEach(function (x) { var a = el("a", "", x.title); a.href = "?p=" + x.slug; var d = el("p"); d.appendChild(a); box.appendChild(d); });
-      return;
+  function round5(n) { return Math.max(5, Math.round(n / 5) * 5); }
+  function scale(dose, lvl) {
+    if (lvl === "amateur") return dose;
+    var up = lvl === "advanced", m;
+    if ((m = dose.match(/^(\d+) rounds?$/))) return Math.max(2, +m[1] + (up ? 1 : -1)) + " rounds";
+    if ((m = dose.match(/^(\d+) min$/))) return (up ? Math.round(+m[1] * 1.3) : Math.max(5, Math.round(+m[1] * 0.75))) + " min";
+    if ((m = dose.match(/^(\d+) x (\d+|max)( s| min)?(.*)$/))) {
+      var sets = Math.max(2, +m[1] + (up ? 1 : -1)), rep = m[2], unit = m[3] || "", rest = m[4] || "";
+      if (rep !== "max") {
+        if (unit === " s") rep = up ? round5(+rep * 1.35) : round5(+rep * 0.7);
+        else if (unit === "") rep = up ? Math.round(+rep * 1.25 + 1) : Math.max(3, Math.round(+rep * 0.75));
+      }
+      return sets + " x " + rep + unit + rest;
     }
+    return dose;
+  }
+  function swapFor(name, lvl) {
+    if (lvl === "amateur") return "";
+    for (var i = 0; i < SWAPS.length; i++) if (SWAPS[i][0].test(name)) return (lvl === "beginner" ? "Easier: " + SWAPS[i][1] : "Harder: " + SWAPS[i][2]);
+    return "";
+  }
+  var level = "amateur", plan = null;
+  try { level = localStorage.getItem("plan_level") || "amateur"; } catch (e) {}
+  function render() {
+    box.innerHTML = "";
+    var p = plan;
     document.title = p.title + " · Matteo Fights";
     box.appendChild(el("p", "kicker", "Your free plan"));
     box.appendChild(el("h1", "", p.title));
     box.appendChild(el("p", "dim", p.sub));
     if (p.note) box.appendChild(el("p", "note", p.note));
+    var lv = el("div", "levels");
+    ["beginner", "amateur", "advanced"].forEach(function (l) {
+      var b = el("button", l === level ? "on" : "", l.charAt(0).toUpperCase() + l.slice(1));
+      b.type = "button";
+      b.onclick = function () { level = l; try { localStorage.setItem("plan_level", l); } catch (e) {} render(); };
+      lv.appendChild(b);
+    });
+    box.appendChild(lv);
+    box.appendChild(el("p", "lvl-note", LEVELS[level]));
     p.days.forEach(function (d) {
       var card = el("div", "day"); card.appendChild(el("h2", "", d.d));
+      card.appendChild(el("p", "extra", WARM));
       var ol = el("ol");
       d.items.forEach(function (it) {
-        var li = el("li"); li.appendChild(el("b", "", it[0] + " ")); li.appendChild(el("span", "dose", it[1]));
+        var li = el("li"); li.appendChild(el("b", "", it[0] + " ")); li.appendChild(el("span", "dose", scale(it[1], level)));
         if (it[2]) li.appendChild(el("span", "how", it[2]));
+        var sw = swapFor(it[0], level); if (sw) li.appendChild(el("span", "swap", sw));
         ol.appendChild(li);
       });
-      card.appendChild(ol); box.appendChild(card);
+      card.appendChild(ol);
+      card.appendChild(el("p", "extra", COOL));
+      box.appendChild(card);
     });
     document.getElementById("next").hidden = false;
+  }
+  fetch("plans.json").then(function (r) { return r.json(); }).then(function (data) {
+    plan = data.plans.filter(function (x) { return x.slug === slug; })[0];
+    if (!plan) {
+      box.innerHTML = "";
+      box.appendChild(el("p", "kicker", "Free plans"));
+      box.appendChild(el("h1", "", "Pick a plan"));
+      data.plans.forEach(function (x) { var a = el("a", "", x.title); a.href = "?p=" + x.slug; var d = el("p"); d.appendChild(a); box.appendChild(d); });
+      return;
+    }
+    render();
   }).catch(function () { box.innerHTML = '<p class="dim">Couldn\'t load the plan. Refresh, or DM @matteofights.</p>'; });
 })();
 </script>
