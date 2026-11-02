@@ -3,6 +3,11 @@
 Credibility from the pro's name and footage, delivered by Matteo's face. Matteo films the talking; Claude adds the
 pro clips, plan cards and captions. Each ends on its own keyword (LOMA, TYSON, KHABIB, USYK): live auto-DM sends that plan + the PROTOCOL test; commenters land in the Leads tab.
 
+**One-take format (Matteo 2026-11-02, final):** every version (hook A to E) is recorded as ONE continuous take:
+hook, body, ending, no pauses. The cut uses the take as-is: start on the first word, end on the last word, no trims
+inside, so the end loops straight back into the start. Cards and b-roll go on top as overlays; the voice never cuts.
+Matteo says a label ("POWER, TAKE A"), then 2 s silence, then the take; the label is the only thing cut away.
+
 ## Lead magnet per reel (Matteo 2026-11-02)
 - **Each reel has its own keyword and its own full plan.** Comment the fighter's word, get that plan (full week,
   download as PDF) plus the 2-minute PROTOCOL test in the same DM. Plans: `docs/plans/plans.json`.

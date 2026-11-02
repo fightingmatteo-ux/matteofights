@@ -6,6 +6,11 @@ queue with `approved: false`; nothing posts without his yes.
 
 Order to film: **P0 first** (it remakes the best plan reel and matches the paid plan), then P1 to P5.
 
+**One-take format (Matteo 2026-11-02, final):** every version (hook A to E) is recorded as ONE continuous take:
+hook, body, ending, no pauses. The cut uses the take as-is: start on the first word, end on the last word, no trims
+inside, so the end loops straight back into the start. Cards and b-roll go on top as overlays; the voice never cuts.
+Matteo says a label ("POWER, TAKE A"), then 2 s silence, then the take; the label is the only thing cut away.
+
 ## Own keyword per reel (Matteo 2026-11-02, supersedes the PLAN ending below)
 Ending: "Comment <WORD> and I'll send it to you so you can save it." Keywords: P0 POWER, P1 BUSY, P2 HIPS, P3 CARDIO,
 P4 HOME, P5 GUARD. The DM sends that reel's plan as a saveable page/PDF (docs/plans/plans.json) + the PROTOCOL test.
