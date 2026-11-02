@@ -33,7 +33,7 @@ permissions:
   contents: write   # copy the renders to the media release
 
 concurrency:
-  group: submit-render
+  group: submit-render-${{ inputs.reel }}   # one queue per reel, so different reels render in parallel on Modal
   cancel-in-progress: false
 
 jobs:
