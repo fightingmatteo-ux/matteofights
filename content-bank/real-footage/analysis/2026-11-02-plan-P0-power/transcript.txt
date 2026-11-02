@@ -1,0 +1,27 @@
+language: en
+[   0.5-   2.2] Power take a
+[   3.0-   9.6] One more punching power, but don't have a gym. Here's a three-day plan. They one day to day three come in power
+[   9.6-  11.5] And I'll send it to you so you can save it
+[  12.2-  13.6] power take B
+[  14.3-  17.9] Most people train their arms for power your power comes from your legs
+[  17.9-  23.7] Here's a three-day plan day one day two day three come in power and I'll send it to you so you can save it
+[  25.0-  26.4] Power take C
+[  27.6-  31.7] Most of your punching power comes from your legs and hips not your arms
+[  31.7-  36.8] Here's a three-day plan day one day two day three common power and I'll send it to you so you can save it
+[  37.9-  39.2] power take D
+[  40.1-  46.2] You're not weak. You're training power the wrong way. Here's a three-day plan day one day two day three
+[  46.2-  48.8] Common power and I'll send it to you so you can save it
+[  49.9-  51.3] power take E
+[  52.0-  55.8] If you train at home and still want to hit hard, this is for you
+[  55.8-  61.9] Here's a three-day plan day one day two day three common power and I'll send it to you so you can save it
+[  64.1-  72.1] Power take a what more punching power, but don't have a gym. Here's a three-day plan day one day two day three
+[  72.1-  75.3] Common power and I'll send it to you so you can save it
+[  76.9-  78.2] Power take B
+[  78.2-  82.3] Most people train their arms for power your power comes from your legs
+[  82.3-  88.6] Here's a three-day plan day one day two day three common power and I'll send it to you so you can save it
+[  88.6-  94.9] Power take C most of your punching power comes from your legs and hips not your arms
+[  94.9- 101.6] Here's a three-day plan day one day two day three common power and I'll send it to you so you can save it
+[ 102.3- 106.8] Power take D. You're not weak. You're training power the wrong way
+[ 106.8- 113.6] Here's a three-day plan day one day two day three common power and I'll send it to you so you can save it
+[ 115.0- 120.3] Power take E if you train at home and you still want to hit hard. This is for you
+[ 120.3- 126.5] Here's a three-day plan day one day two day three common power and I'll send it to you so you can save it
