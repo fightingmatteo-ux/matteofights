@@ -1,27 +1,10 @@
 // The buyer's personal link calls this. GET /api/plan/me?k=TOKEN -> { paid, paid_at, baseline, retest }.
-// First visit after paying checks the Stripe session and marks the doc paid (+ Telegram ping). No webhook needed.
+// "paid" is set by the Lemon Squeezy webhook (webhook.js), usually a few seconds after checkout; the page retries.
 // POST /api/plan/me { k, test: "baseline"|"retest", results: { jump, pushups, burpees } } saves a test.
 import { PLAN } from "../../../lib/plan_content.js";
-import { cors, json, load, save, stripe, telegram, validToken, PRODUCT } from "../../../lib/plan.js";
+import { cors, json, load, save, telegram, validToken } from "../../../lib/plan.js";
 
 const FIELDS = { jump: [10, 400], pushups: [0, 200], burpees: [0, 200] }; // jump in cm; page converts inches
-
-async function confirm(env, k, doc) {
-  if (doc.status === "paid") return doc;
-  const s = await stripe(env, "GET", `checkout/sessions/${doc.session}`);
-  if (s.payment_status !== "paid" || (s.metadata && s.metadata.token !== k)) return doc;
-  const patch = {
-    status: "paid",
-    paid_at: new Date().toISOString(),
-    email: (s.customer_details && s.customer_details.email) || "",
-    amount: s.amount_total,
-    currency: s.currency,
-  };
-  await save(env, k, patch);
-  await telegram(env, `💰 ${PRODUCT} sold: ${(patch.amount / 100).toFixed(2)} ${patch.currency.toUpperCase()}` +
-    `${doc.country ? ` (${doc.country})` : ""}${doc.src ? `, from ${doc.src}` : ""}`);
-  return { ...doc, ...patch };
-}
 
 const view = (d) => ({ paid: d.status === "paid", plan: d.status === "paid" ? PLAN : undefined, paid_at: d.paid_at || null, baseline: d.baseline || null, retest: d.retest || null });
 
@@ -32,13 +15,8 @@ export async function onRequestOptions({ request }) {
 export async function onRequestGet({ request, env }) {
   const k = new URL(request.url).searchParams.get("k");
   if (!validToken(k)) return json(request, { error: "bad link" }, 400);
-  let doc = await load(env, k);
+  const doc = await load(env, k);
   if (!doc) return json(request, { error: "unknown link" }, 404);
-  try {
-    doc = await confirm(env, k, doc);
-  } catch (e) {
-    return json(request, { error: "could not check payment, refresh in a minute" }, 502);
-  }
   return json(request, view(doc));
 }
 

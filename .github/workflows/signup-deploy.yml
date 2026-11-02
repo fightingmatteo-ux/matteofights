@@ -40,9 +40,11 @@ jobs:
           TG_CHAT: ${{ secrets.TELEGRAM_CHAT_ID }}
           IG_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}   # comment PROTOCOL auto-DM (functions/api/ig-webhook.js)
           GH_DISPATCH: ${{ secrets.GH_DISPATCH_TOKEN }}   # fast comment replies (ig-webhook.js starts comment-replies.yml)
-          STRIPE_KEY: ${{ secrets.STRIPE_SECRET_KEY }}   # paid 4-week plan checkout (functions/api/plan/, docs/plan/README.md)
+          LS_KEY: ${{ secrets.LEMONSQUEEZY_API_KEY }}   # paid 4-week plan checkout (functions/api/plan/, docs/plan/README.md)
+          LS_HOOK: ${{ secrets.LEMONSQUEEZY_WEBHOOK_SECRET }}   # plan payment webhook (functions/api/plan/webhook.js)
         run: |
-          [ -z "$STRIPE_KEY" ] || printf '%s' "$STRIPE_KEY" | $W pages secret put STRIPE_SECRET_KEY --project-name matteo-signup
+          [ -z "$LS_KEY" ] || printf '%s' "$LS_KEY" | $W pages secret put LEMONSQUEEZY_API_KEY --project-name matteo-signup
+          [ -z "$LS_HOOK" ] || printf '%s' "$LS_HOOK" | $W pages secret put LEMONSQUEEZY_WEBHOOK_SECRET --project-name matteo-signup
           [ -z "$GH_DISPATCH" ] || printf '%s' "$GH_DISPATCH" | $W pages secret put GH_DISPATCH_TOKEN --project-name matteo-signup
           printf '%s' "$IG_TOKEN" | $W pages secret put IG_ACCESS_TOKEN --project-name matteo-signup
           printf '%s' "$TG_TOKEN" | $W pages secret put TELEGRAM_BOT_TOKEN --project-name matteo-signup

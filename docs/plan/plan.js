@@ -57,7 +57,7 @@
     fetch(API + "/me?k=" + token).then(function (r) { return r.json(); }).then(function (d) {
       if (d.error) return status(d.error === "unknown link" ? "This link isn't a plan link. Check your receipt email for yours." : d.error);
       if (!d.paid) {
-        if (tries < 6) return (status("Confirming your payment..."), setTimeout(function () { load(tries + 1); }, 2500));
+        if (tries < 15) return (status("Confirming your payment..."), setTimeout(function () { load(tries + 1); }, 2500));
         return status("Payment not confirmed yet. If you paid, refresh in a minute or DM @matteofights your receipt.");
       }
       status("");
