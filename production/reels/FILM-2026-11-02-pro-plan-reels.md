@@ -9,13 +9,13 @@ pro clips, plan cards and captions. Each ends on its own keyword (LOMA, TYSON, K
 
 | Reel | Say at the end | Plan page |
 |---|---|---|
-| L1 | "Comment LOMA and I'll send you the full week." | /plans/?p=lomachenko-footwork |
-| L2 | "Comment TYSON and I'll send you the full week." | /plans/?p=tyson-peekaboo |
-| L3 | "Comment KHABIB and I'll send you the full week." | /plans/?p=khabib-pressure |
-| L4 | "Comment USYK and I'll send you the full week." | /plans/?p=usyk-balance |
+| L1 | "Comment LOMA and I'll send it to you so you can save it." | /plans/?p=lomachenko-footwork |
+| L2 | "Comment TYSON and I'll send it to you so you can save it." | /plans/?p=tyson-peekaboo |
+| L3 | "Comment KHABIB and I'll send it to you so you can save it." | /plans/?p=khabib-pressure |
+| L4 | "Comment USYK and I'll send it to you so you can save it." | /plans/?p=usyk-balance |
 
-- **Show part, sell the rest:** the cut flashes only **Monday and Tuesday** cards, then a locked-looking card
-  "WED · THU · FRI: comment LOMA". The full week is the reason to comment.
+- **Nothing is locked (Matteo 2026-11-02: free value, no gatekeeping):** the cut flashes ALL five days, Monday to
+  Friday. The comment gets a clean copy to save (plan page + PDF) instead of screenshotting the video.
 - Caption ends with the same CTA plus the plan name, e.g. "Comment LOMA and I'll send you the full Lomachenko
   footwork plan." (keyword works on its own; the plan name keeps "PLAN" comments working too).
 
@@ -38,7 +38,7 @@ Winner = **keyword comments per 1,000 views** (leads), then saves per 1,000. Sun
 
 ## How to film
 Same setup as the other sheet: selfie, window light, each hook its own take, hold 1 s. Then the middle line once:
-**"Here's the at-home version. Here's Monday and Tuesday."** Then the ending from the table above (one take).
+**"Here's the at-home version. Monday to Friday."** Then the ending from the table above (one take).
 Upload names: `L1-A` ... `L1-body`, `L1-cta`.
 
 ## L1. Lomachenko footwork
@@ -77,5 +77,5 @@ Fact used: his training videos are famous for unusual balance and coordination d
 - E (reframe): "You're not slow. You're off balance."
 - Cards: MON BALANCE: single-leg stand eyes closed 3x30 s/leg · single-leg shadowbox 3x1 min/leg | TUE COORDINATION: 2-ball juggling 3x2 min · cross crawls 3x1 min | WED FEET: lateral shuffles 4x30 s · switch-stance shadowbox 4x2 min | THU ENGINE: skipping 5x3 min | FRI ROUNDS: 6x3 min shadowboxing, angles both ways
 
-Captions: one contrast line, "Here's Monday and Tuesday.", the CTA line from the table, 4 hashtags incl. the
+Captions: one contrast line, "Save this and run it this week.", the CTA line from the table, 4 hashtags incl. the
 fighter's discipline. Claude writes them with the cut.

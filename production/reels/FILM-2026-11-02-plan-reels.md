@@ -7,9 +7,10 @@ queue with `approved: false`; nothing posts without his yes.
 Order to film: **P0 first** (it remakes the best plan reel and matches the paid plan), then P1 to P5.
 
 ## Own keyword per reel (Matteo 2026-11-02, supersedes the PLAN ending below)
-Ending: "Comment <WORD> and I'll send you the full plan." Keywords: P0 POWER, P1 BUSY, P2 HIPS, P3 CARDIO, P4 HOME,
-P5 GUARD. The DM sends that reel's full plan (docs/plans/plans.json) + the PROTOCOL test. The cut shows Day 1 only,
-then a locked "DAY 2 · DAY 3: comment <WORD>" card.
+Ending: "Comment <WORD> and I'll send it to you so you can save it." Keywords: P0 POWER, P1 BUSY, P2 HIPS, P3 CARDIO,
+P4 HOME, P5 GUARD. The DM sends that reel's plan as a saveable page/PDF (docs/plans/plans.json) + the PROTOCOL test.
+**Nothing is locked (Matteo 2026-11-02: free value, no gatekeeping):** the cut flashes ALL days (Day 1, 2, 3); the
+comment is for a clean copy to keep instead of screenshots.
 
 ## Each reel sends its own plan (2026-11-02)
 The spoken ending stays "Comment PLAN and I'll send you the plan." The **caption** must name the plan so the DM sends
