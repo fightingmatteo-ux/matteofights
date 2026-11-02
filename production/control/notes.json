@@ -702,5 +702,9 @@
   {
     "id": "health-job:2026-11-02-yt-fetch-1-20261102T124336:failed-2026110221",
     "text": "⚠️ Cloud render 2026-11-02-yt-fetch-1-20261102T124336 failed: -do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies\n"
+  },
+  {
+    "id": "trial-first-fight-lesson",
+    "text": "🏆 Hook test done: first-fight-lesson (24 h, 5 variants)\n\nWinner: B, contrast opening\n\"My first fight ended in a knockout and I'm the one who should have lost.\"\n69% stayed past 3 s, 13.0 s avg watch, 2,601 views (1.15x normal), 3 saves+shares per 1k\n\nThe others: C 67% stayed past 3 s, 11.4 s avg watch, 2,139 views, 1 saves+shares per 1k; A 59% stayed past 3 s, 11.7 s avg watch, 1,387 views, 0 saves+shares per 1k; D 45% stayed past 3 s, 8.4 s avg watch, 496 views, 0 saves+shares per 1k; E 44% stayed past 3 s, 7.5 s avg watch, 231 views, 0 saves+shares per 1k\n\nRound 2 next: I re-cut B 5 ways, aimed at where people drop off, and queue them unapproved for your yes. Want the cuts to follow the exact drop-offs? In the next 4 h open the reel's Insights, look at the retention graph and send where it drops (a Studio revision note on 2026-11-01-first-fight-lesson-B, e.g. \"drops at 3 s and 12 s\", or a screenshot upload with the note \"retention 2026-11-01-first-fight-lesson-B\"). Don't share it to the grid yet. https://www.instagram.com/reel/DfNpiXzD44-/\n\nAcross all tests so far: question openings place best (75% avg placing, 1 clear wins in 3 variants)."
   }
 ]

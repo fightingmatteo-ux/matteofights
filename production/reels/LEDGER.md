@@ -71,6 +71,11 @@ Sort by follows per 1k views when looking for what grows the account.
 | 2026-10-29 | lst-2026-10-29-first-coach | - | 17894923212682270 | YOUR FIRST COACH SHAPES HOW YOU FIGHT FOR YEARS | statement (identity) | text-on-clip | trial | 1845 (0.82x) | ? | 1 | 3 | 0 | no | statement: 0.82x |
 | 2026-10-29 | lst-2026-10-29-gym-second-home | - | 18102625025548674 | 6 SIGNS THE GYM IS YOUR SECOND HOME | listicle (identity) | text-on-clip | trial | 616 (0.27x) | ? | 0 | 0 | 2 | no | identity: 0.27x, skip 57% |
 | 2026-10-30 | lst-2026-10-29-body-kicks | - | 18072120599787634 | 7 WAYS TO STOP EATING BODY KICKS | listicle (tactical) | text-on-clip | trial | 3612 (1.60x) | ? | 0 | 13 | 0 | no | tactical fight problem: 1.60x, 13 saves (2.6x) |
+| 2026-11-02 | first-fight-lesson | B | 18114748997521583 | My first fight ended in a knockout and I'm the one who should have lost. | talking head, contrast opening, full | own experience | trial | 2601 (1.15x) | ? | 3 | 4 | | **WINNER** | 69% past 3 s, 13.0 s watch, score 1.0 (auto verdict) |
+| 2026-11-02 | first-fight-lesson | C | 18125732224931879 | Should a knockout count if the refs are already in between? | talking head, question opening, full | own experience | trial | 2139 (0.95x) | ? | 1 | 2 | | no | 67% past 3 s, 11.4 s watch, score 0.839 (auto verdict) |
+| 2026-11-02 | first-fight-lesson | A | 18142439116713907 | I knocked him out in my first fight and it shouldn't have counted. | talking head, result opening, full | own experience | trial | 1387 (0.62x) | ? | 0 | 0 | | no | 59% past 3 s, 11.7 s watch, score 0.653 (auto verdict) |
+| 2026-11-02 | first-fight-lesson | D | 18208640077374596 | My first knockout is the one I'm least proud of. | talking head, reframe opening, full | own experience | trial | 496 (0.22x) | ? | 0 | 0 | | no | 45% past 3 s, 8.4 s watch, score 0.441 (auto verdict) |
+| 2026-11-02 | first-fight-lesson | E | 17913053517559998 | One punch. Half a second too late. | talking head, number opening, full | own experience | trial | 231 (0.10x) | ? | 0 | 0 | | no | 44% past 3 s, 7.5 s watch, score 0.392 (auto verdict) |
 
 ## Patterns so far
 - _Add a line whenever a test is decided. Keep it to what the numbers showed._
@@ -88,3 +93,4 @@ Sort by follows per 1k views when looking for what grows the account.
 - 2026-10-30 (normal 2310): 5 winners now, 4 tactical (fit without running 5.83x, nerves 3.21x, round one 2.20x, round three 2.07x) and 1 identity (improving 2.06x). Every winner opens with a two-line contrast subhook and names a concrete fight problem. Tactical win rate 4/16, identity 1/14.
 - 2026-10-31 (normal 2552): statements n=7, none above 1.1x: cut to 2 per 28 in the 31 Oct batch. Batch mix 13 tactical / 5 identity / 4 builder / 2 lifestyle / 2 statement / 2 iykyk, per Matteo's 10-30 brand direction (open lanes, include people who train for fun).
 - 2026-11-02 (normal 2252, Buzzfy median of 7): no new winner in the 28-29 Oct batch (best body-kicks 1.60x, 13 saves; quiet-threat 1.36x with 11 shares). Statements now n=9, all 0.45-1.09x (boring-best 0.97x, first-coach 0.82x): keep at 2 per 28. sleep-rules got 0 views at 114 h with no posting error (Instagram never distributed it), n=1.
+- 2026-11-02 (auto, first-fight-lesson): contrast opening won over question, result, reframe, number.
