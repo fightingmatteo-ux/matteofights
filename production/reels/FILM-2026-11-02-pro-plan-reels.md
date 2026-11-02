@@ -14,8 +14,9 @@ pro clips, plan cards and captions. Each ends on its own keyword (LOMA, TYSON, K
 | L3 | "Comment KHABIB and I'll send it to you so you can save it." | /plans/?p=khabib-pressure |
 | L4 | "Comment USYK and I'll send it to you so you can save it." | /plans/?p=usyk-balance |
 
-- **Nothing is locked (Matteo 2026-11-02: free value, no gatekeeping):** the cut flashes ALL five days, Monday to
-  Friday. The comment gets a clean copy to save (plan page + PDF) instead of screenshotting the video.
+**Day cards (Matteo 2026-11-02, final):** flash every day. On days with 3+ exercises, blur ONLY the last exercise
+with a tag beside it: "🔒 comment <WORD>". Days with 1-2 items stay fully visible. The DM plan has everything
+(blurred items + a how-to per move + PDF).
 - Caption ends with the same CTA plus the plan name, e.g. "Comment LOMA and I'll send you the full Lomachenko
   footwork plan." (keyword works on its own; the plan name keeps "PLAN" comments working too).
 

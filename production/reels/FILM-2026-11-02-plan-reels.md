@@ -9,8 +9,9 @@ Order to film: **P0 first** (it remakes the best plan reel and matches the paid 
 ## Own keyword per reel (Matteo 2026-11-02, supersedes the PLAN ending below)
 Ending: "Comment <WORD> and I'll send it to you so you can save it." Keywords: P0 POWER, P1 BUSY, P2 HIPS, P3 CARDIO,
 P4 HOME, P5 GUARD. The DM sends that reel's plan as a saveable page/PDF (docs/plans/plans.json) + the PROTOCOL test.
-**Nothing is locked (Matteo 2026-11-02: free value, no gatekeeping):** the cut flashes ALL days (Day 1, 2, 3); the
-comment is for a clean copy to keep instead of screenshots.
+**Day cards (Matteo 2026-11-02, final):** flash every day. On days with 3+ exercises, blur ONLY the last exercise
+with a tag beside it: "🔒 comment <WORD>". Days with 1-2 items stay fully visible. The DM plan has everything
+(blurred items + a how-to per move + PDF).
 
 ## Each reel sends its own plan (2026-11-02)
 The spoken ending stays "Comment PLAN and I'll send you the plan." The **caption** must name the plan so the DM sends
