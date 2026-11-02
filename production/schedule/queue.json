@@ -1873,11 +1873,18 @@
       "not_before": "2026-11-02T23:30:00Z",
       "min_gap_hours": 2.5,
       "approved": true,
-      "status": "queued",
+      "status": "posted",
       "cta": "read",
       "app_audio": "id:496614019576474 Echo Sax Feeling Blue - Caleb Arredondo (add in the Instagram app)",
       "video_asset_music": "lst-2026-11-02-fight-iq-music.mp4",
-      "approved_note": "Matteo: approved the week via dashboard (2026-10-25T14:10:05Z)"
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-25T14:10:05Z)",
+      "audio_id": "496614019576474",
+      "audio_title": "Caleb Arredondo - Echo Sax Feeling Blue",
+      "audio_artist": "sovenhq",
+      "posting_since": "2026-11-02T23:30:57Z",
+      "media_id": "18122065310066340",
+      "permalink": "https://www.instagram.com/reel/DfQfgjmgNl9/",
+      "posted_at": "2026-11-02T23:31:43Z"
     },
     {
       "id": "lst-2026-11-03-fighter-not-fit",
