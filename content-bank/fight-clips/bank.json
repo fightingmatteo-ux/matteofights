@@ -1,0 +1,14 @@
+{"sources": [
+  {"file": "yt-tyson-1987-training-kos.mp4", "url": "https://www.youtube.com/watch?v=-sZ8zfyS3qQ", "res": "1080p",
+   "note": "Prime Tyson 1987: training + Pinklon Thomas (10:00-12:40) + Tyrell Biggs (19:20-24:20)",
+   "moments": [
+     {"t": 1418.2, "dur": 2.2, "fighter": "Tyson", "action": "bob and weave inside", "used": "L2-A"},
+     {"t": 1340.4, "dur": 2.5, "fighter": "Tyson", "action": "rolls under a punch", "used": "L2-B"},
+     {"t": 1246.8, "dur": 2.6, "fighter": "Tyson", "action": "overhead bob and weave, punches miss", "used": "L2-C"},
+     {"t": 1400.0, "dur": 2.9, "fighter": "Tyson", "action": "combination into knockdown (Biggs)", "used": "L2-D"},
+     {"t": 726.0, "dur": 2.5, "fighter": "Tyson", "action": "inside work vs Thomas", "used": "L2-E"},
+     {"t": 736.0, "dur": 7.0, "fighter": "Tyson", "action": "combinations, Thomas KO round 6 (knockdown ~742)"},
+     {"t": 1420.0, "dur": 7.0, "fighter": "Tyson", "action": "Biggs KO sequence round 7"}]},
+  {"file": "fight-ufc-rudeboy-ko.mp4", "url": "https://www.instagram.com/reel/DfAO3nAuTW1/", "res": "1080x1920",
+   "moments": [{"t": 0.0, "dur": 2.2, "fighter": "UFC", "action": "knockout punch lands, opponent drops", "used": "P0-A"}]}
+], "wanted": ["Loma angle changes / pivots / KO (5)", "power KOs, slow-mo impact (4)", "gassed fighters late (5, e.g. Tyson-Douglas 07bWUk1k6Vs)"]}

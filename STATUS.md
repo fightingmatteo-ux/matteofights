@@ -71,6 +71,8 @@ Log: `media/2026-10-16-saenchai-bigger-men/renders/render_bc.log` (ends with `AL
 
 | Per-reel free plans (11-02) | OK / **MATTEO** | "Comment PLAN" DMs the plan of the reel commented on (caption match phrase, `docs/plans/plans.json`, 10 plans for P0-P5 + L1-L4), else the PROTOCOL link. Leads tab shows keyword + plan. Matteo: film the two sheets (`production/reels/FILM-2026-11-02-*.md`), test by commenting PLAN from another account |
 
+| Fight-clip footage route (11-02) | **MATTEO** (5 min, laptop) | YouTube blocks GitHub/Modal; cookies get flagged after 1-2 downloads. Durable route: Claude desktop app -> Settings -> Claude Code -> Remote Control -> add the matteofights folder, then Claude downloads via `yt-dlp --cookies-from-browser chrome` on the laptop. Bank + rules: content-bank/fight-clips/README.md. Still needed: Loma (5), power KOs (4), gassed (5) for the 2026-11-02 plan reels |
+
 ## Rules (short)
 
 Never set `approved:true`. Never commit `secrets/`, `data.json`, `covers/`, `voice.wav`, `snaps/`. Commit only your own paths. Never run renders as session background jobs, and never render variants in parallel.
