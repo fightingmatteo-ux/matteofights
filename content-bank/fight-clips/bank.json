@@ -1,14 +1,169 @@
-{"sources": [
-  {"file": "yt-tyson-1987-training-kos.mp4", "url": "https://www.youtube.com/watch?v=-sZ8zfyS3qQ", "res": "1080p",
+{
+ "sources": [
+  {
+   "file": "yt-tyson-1987-training-kos.mp4",
+   "url": "https://www.youtube.com/watch?v=-sZ8zfyS3qQ",
+   "res": "1080p",
    "note": "Prime Tyson 1987: training + Pinklon Thomas (10:00-12:40) + Tyrell Biggs (19:20-24:20)",
    "moments": [
-     {"t": 1418.2, "dur": 2.2, "fighter": "Tyson", "action": "bob and weave inside", "used": "L2-A"},
-     {"t": 1340.4, "dur": 2.5, "fighter": "Tyson", "action": "rolls under a punch", "used": "L2-B"},
-     {"t": 1246.8, "dur": 2.6, "fighter": "Tyson", "action": "overhead bob and weave, punches miss", "used": "L2-C"},
-     {"t": 1400.0, "dur": 2.9, "fighter": "Tyson", "action": "combination into knockdown (Biggs)", "used": "L2-D"},
-     {"t": 726.0, "dur": 2.5, "fighter": "Tyson", "action": "inside work vs Thomas", "used": "L2-E"},
-     {"t": 736.0, "dur": 7.0, "fighter": "Tyson", "action": "combinations, Thomas KO round 6 (knockdown ~742)"},
-     {"t": 1420.0, "dur": 7.0, "fighter": "Tyson", "action": "Biggs KO sequence round 7"}]},
-  {"file": "fight-ufc-rudeboy-ko.mp4", "url": "https://www.instagram.com/reel/DfAO3nAuTW1/", "res": "1080x1920",
-   "moments": [{"t": 0.0, "dur": 2.2, "fighter": "UFC", "action": "knockout punch lands, opponent drops", "used": "P0-A"}]}
-], "wanted": ["Loma angle changes / pivots / KO (5)", "power KOs, slow-mo impact (4)", "gassed fighters late (5, e.g. Tyson-Douglas 07bWUk1k6Vs)"]}
+    {
+     "t": 1418.2,
+     "dur": 2.2,
+     "fighter": "Tyson",
+     "action": "bob and weave inside",
+     "used": "L2-A"
+    },
+    {
+     "t": 1340.4,
+     "dur": 2.5,
+     "fighter": "Tyson",
+     "action": "rolls under a punch",
+     "used": "L2-B"
+    },
+    {
+     "t": 1246.8,
+     "dur": 2.6,
+     "fighter": "Tyson",
+     "action": "overhead bob and weave, punches miss",
+     "used": "L2-C"
+    },
+    {
+     "t": 1400.0,
+     "dur": 2.9,
+     "fighter": "Tyson",
+     "action": "combination into knockdown (Biggs)",
+     "used": "L2-D"
+    },
+    {
+     "t": 726.0,
+     "dur": 2.5,
+     "fighter": "Tyson",
+     "action": "inside work vs Thomas",
+     "used": "L2-E"
+    },
+    {
+     "t": 736.0,
+     "dur": 7.0,
+     "fighter": "Tyson",
+     "action": "combinations, Thomas KO round 6 (knockdown ~742)"
+    },
+    {
+     "t": 1420.0,
+     "dur": 7.0,
+     "fighter": "Tyson",
+     "action": "Biggs KO sequence round 7"
+    },
+    {
+     "t": 1426.0,
+     "action": "Biggs hurt/exhausted close-up",
+     "used": "P3-A"
+    },
+    {
+     "t": 1431.0,
+     "action": "Biggs on the ropes, spent",
+     "used": "P3-D"
+    },
+    {
+     "t": 739.0,
+     "action": "Thomas hit then dropped",
+     "used": "P3-E"
+    }
+   ]
+  },
+  {
+   "file": "fight-ufc-rudeboy-ko.mp4",
+   "url": "https://www.instagram.com/reel/DfAO3nAuTW1/",
+   "res": "1080x1920",
+   "moments": [
+    {
+     "t": 0.0,
+     "dur": 2.2,
+     "fighter": "UFC",
+     "action": "knockout punch lands, opponent drops",
+     "used": "P0-A"
+    }
+   ]
+  },
+  {
+   "file": "yt-power-slowmo-kos.mp4",
+   "res": "1080p",
+   "note": "Top Rank slow-mo KOs",
+   "moments": [
+    {
+     "t": 4.0,
+     "action": "punch lands, knockdown",
+     "used": "P0-B"
+    },
+    {
+     "t": 74.0,
+     "action": "exchange into KO",
+     "used": "P0-C"
+    },
+    {
+     "t": 122.0,
+     "action": "KO punch",
+     "used": "P0-D"
+    },
+    {
+     "t": 146.0,
+     "action": "KO, fighter drops",
+     "used": "P0-E"
+    },
+    {
+     "t": 40.0,
+     "action": "fast exchange (bursts)",
+     "used": "P3-B"
+    },
+    {
+     "t": 20.0,
+     "action": "exchange in close (bursts)",
+     "used": "P3-C"
+    }
+   ]
+  },
+  {
+   "file": "yt-loma-highlights.mp4",
+   "res": "1080p",
+   "note": "Lomachenko training: footwork drills, shadowboxing, underwater",
+   "moments": [
+    {
+     "t": 34.0,
+     "action": "footwork drill in ring",
+     "used": "L1-A"
+    },
+    {
+     "t": 89.0,
+     "action": "underwater pool training",
+     "used": "L1-C"
+    }
+   ]
+  },
+  {
+   "file": "yt-loma-angles-footwork.mp4",
+   "res": "720p",
+   "note": "Loma (yellow/blue) + Canizales fight footage",
+   "moments": [
+    {
+     "t": 29.0,
+     "action": "Loma moving/angles in a fight",
+     "used": "L1-B"
+    },
+    {
+     "t": 189.0,
+     "action": "Loma pivots around opponent",
+     "used": "L1-D"
+    },
+    {
+     "t": 59.0,
+     "action": "Loma angle work",
+     "used": "L1-E"
+    }
+   ]
+  }
+ ],
+ "wanted": [
+  "Loma angle changes / pivots / KO (5)",
+  "power KOs, slow-mo impact (4)",
+  "gassed fighters late (5, e.g. Tyson-Douglas 07bWUk1k6Vs)"
+ ]
+}

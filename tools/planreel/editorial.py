@@ -27,7 +27,8 @@ PLANS = {p["slug"]: p for p in json.loads((ROOT / "docs/plans/plans.json").read_
 P_BODY, L_BODY = "Here's a three day plan. Day one. Day two. Day three.", "Here's the at home version. Monday to Friday."
 CTA = "Comment {k} and I'll send it to you so you can save it."
 REELS = {
-    "P0": dict(hook={"A": ("fight-ufc-rudeboy-ko.mp4", 0.0)}, clips={"A": [("POWER", "kick1", "broll-kicking.mp4", 16.4, 1.6)], "B": [("LEGS", "kick2", "broll-kicking.mp4", 0.5, 1.8)],
+    "P0": dict(hook={"A": ("fight-ufc-rudeboy-ko.mp4", 0.0), "B": ("yt-power-slowmo-kos.mp4", 4.0), "C": ("yt-power-slowmo-kos.mp4", 74.0),
+                    "D": ("yt-power-slowmo-kos.mp4", 122.0), "E": ("yt-power-slowmo-kos.mp4", 146.0)}, clips={"A": [("POWER", "kick1", "broll-kicking.mp4", 16.4, 1.6)], "B": [("LEGS", "kick2", "broll-kicking.mp4", 0.5, 1.8)],
                "C": [("LEGS", "kick2", "broll-kicking.mp4", 0.5, 1.8)], "D": [("TRAINING", "kick3", "broll-kicking.mp4", 19.5, 1.6)],
                "E": [("HARD", "kick1", "broll-kicking.mp4", 16.4, 1.6)]}, raw="P0.mp4", an="2026-11-02-plan-P0-power", plan="power-at-home", k="POWER", body=P_BODY, hooks={
         "A": ("Want more punching power but don't have a gym?", ["Want more punching power", "but don't have a"], "gym?", ("GYM", 1), ("HERE'S", 1)),
@@ -37,13 +38,17 @@ REELS = {
         "E": ("If you train at home and still want to hit hard, this is for you.", ["If you train at home", "and still want to hit"], "hard.", ("HARD", 1), ("THIS", 1))}),
     # b-roll per variant: (spoken word token, clip name, release file, in, dur)
     # hook: (release file, in) per variant: spliced under the hook so the hook word sits behind the fighters
-    "P3": dict(raw="P3.mp4", an="2026-11-02-plan-P3-cardio", plan="fight-cardio", k="CARDIO", body=P_BODY, hooks={
+    "P3": dict(hook={"A": ("yt-tyson-1987-training-kos.mp4", 1426.0), "B": ("yt-power-slowmo-kos.mp4", 40.0),
+                    "C": ("yt-power-slowmo-kos.mp4", 20.0), "D": ("yt-tyson-1987-training-kos.mp4", 1431.0),
+                    "E": ("yt-tyson-1987-training-kos.mp4", 739.0)}, raw="P3.mp4", an="2026-11-02-plan-P3-cardio", plan="fight-cardio", k="CARDIO", body=P_BODY, hooks={
         "A": ("Do you gas out in round two?", ["Do you gas out", "in round"], "two?", ("TWO", 1), ("HERE'S", 1)),
         "B": ("You don't need more running. Fights aren't jogs, they're bursts.", ["You don't need more running.", "Fights aren't jogs, they're"], "bursts.", ("BURSTS", 1), ("HERE'S", 1)),
         "C": ("Runners pace. Fighters burst. Train like a fighter.", ["Runners pace.", "Fighters"], "burst.", ("BURST", 1), ("TRAIN", 1)),
         "D": ("20 minutes a day. That's enough to stop gassing out.", ["20 minutes a day.", "That's enough to stop gassing"], "out.", ("OUT", 1), ("HERE'S", 1)),
         "E": ("If you're dead by round two, this is for you.", ["If you're dead", "by round"], "two,", ("TWO", 1), ("THIS", 1))}),
-    "L1": dict(raw="L1.mp4", an="2026-11-02-plan-L1-loma", plan="lomachenko-footwork", k="LOMA", body=L_BODY, hooks={
+    "L1": dict(hook={"A": ("yt-loma-highlights.mp4", 34.0), "B": ("yt-loma-angles-footwork.mp4", 29.0),
+                    "C": ("yt-loma-highlights.mp4", 89.0), "D": ("yt-loma-angles-footwork.mp4", 189.0),
+                    "E": ("yt-loma-angles-footwork.mp4", 59.0)}, raw="L1.mp4", an="2026-11-02-plan-L1-loma", plan="lomachenko-footwork", k="LOMA", body=L_BODY, hooks={
         "A": ("Lomachenko spent 4 years doing dance instead of boxing.", ["Lomachenko spent 4 years", "doing dance instead of"], "boxing.", ("BOXING", 1), ("HERE'S", 1)),
         "B": ("Ever wonder why Lomachenko's footwork looks like that?", ["Ever wonder why", "Lomachenko's footwork looks like"], "that?", ("THAT", 1), ("HERE'S", 1)),
         "C": ("Lomachenko's footwork isn't talent. It's years of drills nobody films.", ["Lomachenko's footwork isn't talent.", "It's years of drills nobody"], "films.", ("FILMS", 1), ("HERE'S", 1)),
