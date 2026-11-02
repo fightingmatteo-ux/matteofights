@@ -4,5 +4,6 @@
  "t_hi": 62.01,
  "plan": "fight-cardio",
  "keyword": "CARDIO",
- "plans": "../../../docs/plans/plans.json"
+ "plans": "../../../docs/plans/plans.json",
+ "clips": []
 }

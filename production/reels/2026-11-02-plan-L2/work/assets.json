@@ -4,5 +4,6 @@
  "t_hi": 107.55,
  "plan": "tyson-peekaboo",
  "keyword": "TYSON",
- "plans": "../../../docs/plans/plans.json"
+ "plans": "../../../docs/plans/plans.json",
+ "clips": []
 }

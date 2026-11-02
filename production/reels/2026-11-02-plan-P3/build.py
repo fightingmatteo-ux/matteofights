@@ -13,6 +13,7 @@ import shutil
 import sys
 
 sys.path.insert(0, "../../editing/reel-kit/editorial")
+sys.path.insert(0, "../../../tools/planreel")
 import cutout  # noqa: E402
 import plan  # noqa: E402
 
@@ -42,9 +43,15 @@ behind_top = min(head(t) for t in (0.0, swap / 2, swap)) - int(127 * hook_size /
 
 # cutaways: make_broll.py-style work/broll.json ({name: {start, dur}}, files assets/media/b_<name>.mp4), if the reel has any
 broll = json.load(open(f"work/broll_{V}.json", encoding="utf-8")) if os.path.exists(f"work/broll_{V}.json") else {}
+import daycards  # noqa: E402
+_pl = json.load(open("work/plan.json", encoding="utf-8"))
+_win = [(c["start"], c["dur"]) for n, c in sorted(broll.items()) if n.startswith("day")]
+DC_HTML, DC_JS = daycards.cards(_pl, _pl["keyword"], _win)
+_cardspans = [(a, a + d) for a, d in _win]
+broll = {n: c for n, c in broll.items() if not n.startswith("day")}
 broll_html, broll_spans = plan.broll_html(broll)
 ed = plan.build(d, keys=set(REEL["keys"]), cards=cards, slam=set(REEL["slam"]), fx=REEL["fx"],
-                hide=[(0, title_end)] + [(c['start'], c['start'] + c['dur']) for n, c in broll.items() if n.startswith('day')], title_end=title_end, back_top=lambda t: head(t) - 235, broll=broll_spans,
+                hide=[(0, title_end)] + _cardspans, title_end=title_end, back_top=lambda t: head(t) - 235, broll=broll_spans,
                 **({"bed": "assets/media/bed" + os.path.splitext(REEL["bed"])[1]} if REEL.get("bed") else {}))
 css, js = plan.install(".", bed_seconds=None if REEL.get("bed") else d["duration"] + 1)
 if REEL.get("bed"):
@@ -57,7 +64,7 @@ fill = {"ED_CSS": css, "ED_JS": js, "ED_HTML_CAPS": ed["caps"], "ED_HTML_CAPS_BA
         "HOOK_LEAD": "".join(f'<span class="lead">{x}</span>' for x in hook["lead"]), "HOOK_WORD": hook["word"],
         "HOOK_SIZE": str(hook_size), "BEHIND_TOP": str(behind_top), "TITLE_END": f"{title_end:.3f}",
         "HEAD_SWAP": f"{swap:.3f}", "FRONT_DUR": f"{title_end - swap:.3f}", "HEAD_SFX": f"{swap - 0.09:.3f}",
-        "CAP_TOP": "330", "BACK_TOP": "0"}
+        "CAP_TOP": "330", "BACK_TOP": "0", "DAYCARDS_HTML": DC_HTML, "DAYCARDS_JS": DC_JS}
 src = open("work/template.html", encoding="utf-8").read()
 open("index.html", "w", encoding="utf-8").write(re.sub(r"\{\{(\w+)\}\}", lambda m: fill[m.group(1)], src))
 print(f"{V}: index.html built, {d['duration']:.1f}s, {len(json.loads(ed['plan'])['phrases'])} phrases, {len(cards)} cards")

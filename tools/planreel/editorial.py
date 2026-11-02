@@ -96,6 +96,11 @@ def build(code):
     (out / "work").mkdir(parents=True, exist_ok=True)
     for f in ["make.sh", "work/template.html"]:
         shutil.copy(TPL / f, out / f)
+    t = (out / "work/template.html").read_text()
+    t = t.replace("{{ED_HTML_CARDS}}", "{{ED_HTML_CARDS}}\n      {{DAYCARDS_HTML}}").replace(
+        'window.__timelines["main"] = tl;', '{{DAYCARDS_JS}}\n      window.__timelines["main"] = tl;')
+    (out / "work/template.html").write_text(t)
+    (out / "work/plan.json").write_text(json.dumps({**PLANS[R["plan"]], "keyword": R["k"]}))
     for f in ["package.json", "hyperframes.json"]:
         shutil.copy(REF / f, out / f)
     (out / "assets/lib").mkdir(parents=True, exist_ok=True)
@@ -143,6 +148,16 @@ def build(code):
     b = b.replace('broll = json.load(open("work/broll.json", encoding="utf-8")) if os.path.exists("work/broll.json") else {}',
                   'broll = json.load(open(f"work/broll_{V}.json", encoding="utf-8")) if os.path.exists(f"work/broll_{V}.json") else {}')
     b = b.replace("hide=[(0, title_end)]", "hide=[(0, title_end)] + [(c['start'], c['start'] + c['dur']) for n, c in broll.items() if n.startswith('day')]")
+    b = b.replace("broll_html, broll_spans = plan.broll_html(broll)", """import daycards  # noqa: E402
+_pl = json.load(open("work/plan.json", encoding="utf-8"))
+_win = [(c["start"], c["dur"]) for n, c in sorted(broll.items()) if n.startswith("day")]
+DC_HTML, DC_JS = daycards.cards(_pl, _pl["keyword"], _win)
+_cardspans = [(a, a + d) for a, d in _win]
+broll = {n: c for n, c in broll.items() if not n.startswith("day")}
+broll_html, broll_spans = plan.broll_html(broll)""")
+    b = b.replace("[(c['start'], c['start'] + c['dur']) for n, c in broll.items() if n.startswith('day')]", "_cardspans")
+    b = b.replace('"CAP_TOP": "330", "BACK_TOP": "0"}', '"CAP_TOP": "330", "BACK_TOP": "0", "DAYCARDS_HTML": DC_HTML, "DAYCARDS_JS": DC_JS}')
+    b = b.replace('sys.path.insert(0, "../../editing/reel-kit/editorial")', 'sys.path.insert(0, "../../editing/reel-kit/editorial")\nsys.path.insert(0, "../../../tools/planreel")')
     (out / "build.py").write_text(b)
     m = (out / "make.sh").read_text().replace('V="${1:-A}"', 'V="${1:-A}"\n[ -f assets/raw.mp4 ] || { "$(command -v python3)" -m pip install -q pillow; python3 ../../../tools/planreel/assets.py work/assets.json; }')
     (out / "make.sh").write_text(m)

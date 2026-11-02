@@ -109,9 +109,6 @@ subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", str(cfg["t_lo"]), "-to", s
                 "-vf", "scale=1080:1920", "-c:v", "libx264", "-crf", "17", "-preset", "medium", "-pix_fmt", "yuv420p",
                 "-c:a", "aac", "-b:a", "192k", "assets/raw.mp4"], check=True)
 plan = next(p for p in json.loads(Path(cfg["plans"]).read_text())["plans"] if p["slug"] == cfg["plan"])
-for k, day in enumerate(plan["days"]):
-    big_card(day, cfg["keyword"], plan["title"], k + 1, len(plan["days"]), "assets/media/card_full.png")
-    card_clip("assets/media/card_full.png", f"assets/media/b_day{k + 1}.mp4")
 for c in cfg.get("clips", []):  # b-roll cutaways: cut, fill 9:16, mute
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", str(c["in"]), "-t", str(c["dur"] + 0.3), "-i", c["src"], "-an",
                     "-vf", "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,setsar=1", "-r", "30",

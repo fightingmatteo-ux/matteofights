@@ -46,6 +46,7 @@
       {{ED_HTML_CAPS}}
       </div>
       {{ED_HTML_CARDS}}
+      {{DAYCARDS_HTML}}
       <div id="ed-flash"></div>
       <div id="ed-dip"></div>
 
@@ -68,6 +69,7 @@
       tl.to("#title", { opacity: 0, y: -20, filter: "blur(10px)", duration: 0.12, ease: "power1.in" }, {{TITLE_END}} - 0.12);
       tl.to("#front-head", { opacity: 0, filter: "blur(10px)", duration: 0.12, ease: "power1.in" }, {{TITLE_END}} - 0.12);
       Editorial.animate(tl, PLAN, { cam: "#cam-inner", shake: "#cam" });
+      {{DAYCARDS_JS}}
       window.__timelines["main"] = tl;
     </script>
   </body>

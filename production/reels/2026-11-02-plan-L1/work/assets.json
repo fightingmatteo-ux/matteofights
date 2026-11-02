@@ -4,5 +4,6 @@
  "t_hi": 128.0,
  "plan": "lomachenko-footwork",
  "keyword": "LOMA",
- "plans": "../../../docs/plans/plans.json"
+ "plans": "../../../docs/plans/plans.json",
+ "clips": []
 }
