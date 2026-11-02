@@ -1,0 +1,53 @@
+language: en
+[   0.0-   2.5] you finished your career 22 fight win streak.
+[   3.0-   3.9] What clicked for you?
+[   3.9-   5.8] Were you just like on a professional level,
+[   5.8-   7.5] you knew what to do to win fights?
+[   7.7-   8.0] Yeah.
+[   8.2-   9.1] So I was a striker.
+[   9.3-  10.1] That's right, they knew me.
+[  10.3-  11.8] But you know, after you start knocking people out,
+[  11.8-  12.3] what do they do?
+[  12.4-  13.2] They start taking it out.
+[  13.3-  15.3] And then I lost my third loss by submission
+[  15.3-  16.7] and that really pissed me off.
+[  16.7-  17.7] But I had nobody to train with.
+[  17.9-  18.5] Leon van Dijk.
+[  18.6-  19.5] Very good striker.
+[  19.6-  20.8] Also very good in his body.
+[  21.0-  21.9] Knows exactly what to do.
+[  22.0-  22.7] And we just started rolling.
+[  22.9-  24.4] And then I realized the possibility.
+[  24.6-  26.3] Before I thought I was just two guys in a gut.
+[  26.4-  27.8] And then I realized, oh my God,
+[  28.1-  29.8] this is way bigger power than knocking people out.
+[  29.8-  31.9] You can dislocate any joint in the body.
+[  32.1-  33.4] You can break any joint in the body.
+[  33.5-  34.0] You can choke your eye.
+[  34.1-  35.1] You can do whatever I want with you.
+[  35.2-  36.0] Neutralizing strikers.
+[  36.1-  37.0] Yeah, whatever I want to do.
+[  37.1-  39.1] On the street, I can literally do freaking requests.
+[  39.3-  39.8] They say, what do you want?
+[  39.9-  41.7] I'm like, okay, I have done that in Japan
+[  41.7-  43.3] with the fighters with some crazy guys.
+[  43.4-  44.3] But that was the thing.
+[  44.4-  44.8] I lost.
+[  45.2-  46.1] And then I started training.
+[  46.5-  48.1] And then I became obsessed with it.
+[  48.2-  50.5] When I say obsessed with it, that means 24-7.
+[  50.7-  51.5] Or you do it at night.
+[  51.6-  52.7] Oh yeah, I will wake up my wife.
+[  52.8-  53.6] I will dream of submission.
+[  53.8-  54.6] Put her in that submission.
+[  54.8-  56.2] Say it hurts the shoulder, hurts this, hurts this.
+[  56.3-  57.1] They'll be writing it down.
+[  57.2-  58.5] Next year in class, fight new setups.
+[  59.8-  60.7] It became this thing.
+[  60.8-  62.2] So my last fight, I lost by submission.
+[  62.4-  64.0] I won my next eight fights by submission.
+[  64.3-  65.6] And that was the end of my losing.
+[  65.8-  66.3] I never lost again.
+[  66.3-  67.7] And your wife never tapped though.
+[  67.9-  68.3] She's all right.
+[  68.7-  69.3] I stopped.
