@@ -11,4 +11,5 @@ curl -fsSL https://deno.land/install.sh | sh -s -- -y > /dev/null 2>&1 || true
 export PATH="$HOME/.deno/bin:$PATH"
 python3 -m yt_dlp --no-playlist -f "bv*[height<=1080][ext=mp4]+ba[ext=m4a]/b[height<=1080]/b" \
   --merge-output-format mp4 -o "$OUT" "$URL"
-ls -la "$OUT"
+ffmpeg -v error -y -i "$OUT" -vf scale=-2:480 -c:v libx264 -crf 30 -preset veryfast -an "${OUT%.mp4}-phone.mp4"
+ls -la "$OUT" "${OUT%.mp4}-phone.mp4"

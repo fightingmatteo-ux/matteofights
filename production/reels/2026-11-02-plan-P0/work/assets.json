@@ -1,0 +1,8 @@
+{
+ "raw": "../../../media/plan/2026-11-02-plan-P0-power.mp4",
+ "t_lo": 64.54,
+ "t_hi": 127.1,
+ "plan": "power-at-home",
+ "keyword": "POWER",
+ "plans": "../../../docs/plans/plans.json"
+}
