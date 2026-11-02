@@ -27,7 +27,7 @@
         "19:00"
       ],
       "privacy_note": "Matteo: 'youtube approved' (2026-10-16). If YouTube still forces private, the audit isn't through yet.",
-      "last_slot": "2026-11-01T21:00:00Z"
+      "last_slot": "2026-11-02T00:00:00Z"
     },
     "threads": {
       "enabled": true,
@@ -948,6 +948,15 @@
         "at": "2026-11-01T21:05:58Z",
         "id": "tOy0y8Fm-r4",
         "url": "https://youtube.com/shorts/tOy0y8Fm-r4",
+        "privacy": "public"
+      }
+    },
+    "lst-2026-10-30-glove-smell": {
+      "youtube": {
+        "status": "posted",
+        "at": "2026-11-02T00:06:02Z",
+        "id": "tGEBcvr3dqY",
+        "url": "https://youtube.com/shorts/tGEBcvr3dqY",
         "privacy": "public"
       }
     }
