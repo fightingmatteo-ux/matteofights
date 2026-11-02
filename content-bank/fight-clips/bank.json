@@ -86,6 +86,7 @@
   },
   {
    "file": "yt-power-slowmo-kos.mp4",
+   "url": "https://www.youtube.com/watch?v=Z3QtJLdJuDA",
    "res": "1080p",
    "note": "Top Rank slow-mo KOs",
    "moments": [
@@ -123,6 +124,7 @@
   },
   {
    "file": "yt-loma-highlights.mp4",
+   "url": "https://www.youtube.com/watch?v=cgW4UhjPJrE",
    "res": "1080p",
    "note": "Lomachenko training: footwork drills, shadowboxing, underwater",
    "moments": [
@@ -140,6 +142,7 @@
   },
   {
    "file": "yt-loma-angles-footwork.mp4",
+   "url": "https://www.youtube.com/watch?v=jeNAB1fgNOs",
    "res": "720p",
    "note": "Loma (yellow/blue) + Canizales fight footage",
    "moments": [
@@ -159,6 +162,24 @@
      "used": "L1-E"
     }
    ]
+  },
+  {
+   "file": "yt-loma-skillr.mp4",
+   "url": "https://www.youtube.com/watch?v=HKU49EclMX8",
+   "res": "1080p",
+   "moments": []
+  },
+  {
+   "file": "yt-tyson-every-ko-hd.mp4",
+   "url": "https://www.youtube.com/watch?v=-a-9ltV8oYE",
+   "res": "1620x1080",
+   "moments": []
+  },
+  {
+   "file": "yt-tyson-douglas.mp4",
+   "url": "https://www.youtube.com/watch?v=07bWUk1k6Vs",
+   "res": "720p",
+   "moments": []
   }
  ],
  "wanted": [
