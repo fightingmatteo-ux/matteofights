@@ -2226,11 +2226,18 @@
       "not_before": "2026-11-02T17:30:00Z",
       "min_gap_hours": 2.5,
       "approved": true,
-      "status": "queued",
+      "status": "posted",
       "cta": "protocol",
       "app_audio": "id:576492425503806 Echo Sax Endless - Caleb Arredondo (add in the Instagram app)",
       "video_asset_music": "lst-2026-11-02-getting-hit-skill-music.mp4",
-      "approved_note": "Matteo: approved the week via dashboard (2026-10-25T17:11:17Z)"
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-25T17:11:17Z)",
+      "audio_id": "576492425503806",
+      "audio_title": "Echo Sax Endless",
+      "audio_artist": "caleb.arredondo",
+      "posting_since": "2026-11-02T17:31:00Z",
+      "media_id": "18100587368436187",
+      "permalink": "https://www.instagram.com/reel/DfP2UQfjqTi/",
+      "posted_at": "2026-11-02T17:31:42Z"
     },
     {
       "id": "lst-2026-11-03-shin-bruises",
