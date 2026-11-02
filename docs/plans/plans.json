@@ -1,5 +1,5 @@
 {
-  "_how": "One free plan per plan reel. The comment-PLAN auto-DM (signup-site/functions/api/ig-webhook.js) reads the commented reel's caption and sends matteofights.me/plans/?p=<slug> for the first plan whose `match` phrase is in the caption (case-insensitive), else the PROTOCOL link. So every plan reel caption must contain its plan's match phrase, e.g. 'Comment PLAN and I'll send you the Lomachenko footwork plan.' Items: [exercise, dose, how]. No metric units. Docs: docs/plans/README.md.",
+  "_how": "One free plan per plan reel. The comment-PLAN auto-DM (signup-site/functions/api/ig-webhook.js) reads the commented reel's caption and sends matteofights.me/plans/?p=<slug> for the first plan whose `match` phrase is in the caption (case-insensitive), else the PROTOCOL link. So every plan reel caption must contain its plan's match phrase, e.g. 'Comment PLAN and I'll send you the Lomachenko footwork plan.' Fighter plans also have `keywords` (first one is the CTA word, e.g. 'Comment LOMA'): a comment of up to 4 words containing one gets that plan on any reel. Items: [exercise, dose, how]. No metric units. Docs: docs/plans/README.md.",
   "plans": [
     {
       "slug": "power-at-home", "reel": "P0", "match": "home power plan",
@@ -113,7 +113,7 @@
       ]
     },
     {
-      "slug": "lomachenko-footwork", "reel": "L1", "match": "lomachenko footwork plan",
+      "slug": "lomachenko-footwork", "keywords": ["loma", "lomachenko", "lomachenco"], "reel": "L1", "match": "lomachenko footwork plan",
       "title": "Lomachenko Footwork, at Home", "sub": "Monday to Friday. Inspired by how Lomachenko trains, not his exact program.",
       "note": "As a kid, Lomachenko spent about 4 years in traditional Ukrainian dance before going back to boxing. His footwork is drilled, not gifted.",
       "days": [
@@ -135,7 +135,7 @@
       ]
     },
     {
-      "slug": "tyson-peekaboo", "reel": "L2", "match": "tyson peek-a-boo plan",
+      "slug": "tyson-peekaboo", "keywords": ["tyson"], "reel": "L2", "match": "tyson peek-a-boo plan",
       "title": "Tyson Peek-a-Boo, at Home", "sub": "Monday to Friday. Inspired by the peek-a-boo style, not Tyson's exact program.",
       "note": "Tyson's coach Cus D'Amato built the peek-a-boo style: high guard, constant head movement, punches from angles.",
       "days": [
@@ -155,7 +155,7 @@
       ]
     },
     {
-      "slug": "khabib-pressure", "reel": "L3", "match": "khabib pressure plan",
+      "slug": "khabib-pressure", "keywords": ["khabib", "khabeeb"], "reel": "L3", "match": "khabib pressure plan",
       "title": "Khabib Pressure, at Home", "sub": "Monday to Friday. Inspired by how Khabib fought, not his exact program.",
       "note": "Khabib wrestled from early childhood under his father. His pressure works because his cardio lets him keep it up.",
       "days": [
@@ -175,7 +175,7 @@
       ]
     },
     {
-      "slug": "usyk-balance", "reel": "L4", "match": "usyk balance plan",
+      "slug": "usyk-balance", "keywords": ["usyk", "usik"], "reel": "L4", "match": "usyk balance plan",
       "title": "Usyk Balance, at Home", "sub": "Monday to Friday. Inspired by Usyk's balance and coordination drills, not his exact program.",
       "note": "Usyk's training videos are famous for odd-looking balance and coordination drills. That's the point.",
       "days": [

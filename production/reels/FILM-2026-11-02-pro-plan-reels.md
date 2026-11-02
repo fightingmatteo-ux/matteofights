@@ -1,12 +1,23 @@
 # Filming sheet: "train like a pro" plan reels (2026-11-02)
 
 Credibility from the pro's name and footage, delivered by Matteo's face. Matteo films the talking; Claude adds the
-pro clips, plan cards and captions. All end on "comment PLAN" (live auto-DM, free PROTOCOL link, Leads tab).
+pro clips, plan cards and captions. Each ends on its own keyword (LOMA, TYSON, KHABIB, USYK): live auto-DM sends that plan + the PROTOCOL test; commenters land in the Leads tab.
 
-## Each reel sends its own plan (2026-11-02)
-The spoken ending stays "Comment PLAN and I'll send you the plan." The **caption** must name the plan so the DM sends
-the right one (docs/plans/README.md): "Comment PLAN and I'll send you the <match phrase>." Phrases: L1 "lomachenko footwork plan", L2 "tyson peek-a-boo plan", L3 "khabib pressure plan", L4 "usyk balance plan".
-PROTOCOL takes are no longer needed.
+## Lead magnet per reel (Matteo 2026-11-02)
+- **Each reel has its own keyword and its own full plan.** Comment the fighter's word, get that plan (full week,
+  download as PDF) plus the 2-minute PROTOCOL test in the same DM. Plans: `docs/plans/plans.json`.
+
+| Reel | Say at the end | Plan page |
+|---|---|---|
+| L1 | "Comment LOMA and I'll send you the full week." | /plans/?p=lomachenko-footwork |
+| L2 | "Comment TYSON and I'll send you the full week." | /plans/?p=tyson-peekaboo |
+| L3 | "Comment KHABIB and I'll send you the full week." | /plans/?p=khabib-pressure |
+| L4 | "Comment USYK and I'll send you the full week." | /plans/?p=usyk-balance |
+
+- **Show part, sell the rest:** the cut flashes only **Monday and Tuesday** cards, then a locked-looking card
+  "WED · THU · FRI: comment LOMA". The full week is the reason to comment.
+- Caption ends with the same CTA plus the plan name, e.g. "Comment LOMA and I'll send you the full Lomachenko
+  footwork plan." (keyword works on its own; the plan name keeps "PLAN" comments working too).
 
 ## Rules (credibility without lying)
 - It's always **"the at-home version"** or **"inspired by"**, never "his exact workout". Only facts that are widely
@@ -27,8 +38,8 @@ Winner = **PLAN comments per 1,000 views** (leads), then saves per 1,000. Sunday
 
 ## How to film
 Same setup as the other sheet: selfie, window light, each hook its own take, hold 1 s. Then the middle line once:
-**"Here's the at-home version. Monday to Friday."** Then the ending: **"Comment PLAN and I'll send you the plan."**
-Upload names: `L1-A` ... `L1-body`, `L1-plan`.
+**"Here's the at-home version. Here's Monday and Tuesday."** Then the ending from the table above (one take).
+Upload names: `L1-A` ... `L1-body`, `L1-cta`.
 
 ## L1. Lomachenko footwork
 Fact used: as a kid his father took him out of boxing for about 4 years to do traditional Ukrainian dance.
@@ -66,5 +77,5 @@ Fact used: his training videos are famous for unusual balance and coordination d
 - E (reframe): "You're not slow. You're off balance."
 - Cards: MON BALANCE: single-leg stand eyes closed 3x30 s/leg · single-leg shadowbox 3x1 min/leg | TUE COORDINATION: 2-ball juggling 3x2 min · cross crawls 3x1 min | WED FEET: lateral shuffles 4x30 s · switch-stance shadowbox 4x2 min | THU ENGINE: skipping 5x3 min | FRI ROUNDS: 6x3 min shadowboxing, angles both ways
 
-Captions follow the P-series pattern: one contrast line, "Save this and run it this week.", "Comment PLAN and I'll
-send you the plan.", 4 hashtags incl. the fighter's discipline. Claude writes them with the cut.
+Captions: one contrast line, "Here's Monday and Tuesday.", the CTA line from the table, 4 hashtags incl. the
+fighter's discipline. Claude writes them with the cut.

@@ -14,7 +14,7 @@
 
 const IG = "https://graph.instagram.com/v21.0";
 const VERIFY_TOKEN = "matteofights-protocol";
-const KEYWORD = /\b(protocol|plan)\b/i;
+const KEYWORD = /\b(protocol|plan)\b/i; // log only; the real check is wants() (adds per-plan keywords)
 const OWN = "matteofights";
 const LINK = "https://matteofights.me/protocol";
 const DM_TEXT = `Here it is 🥊 THE PROTOCOL, free: ${LINK}\n\nTake the 2 minute test first. It builds your workout around what you need most, no gym needed.`;
@@ -23,19 +23,32 @@ const DM_TEXT = `Here it is 🥊 THE PROTOCOL, free: ${LINK}\n\nTake the 2 minut
 const PLAN_DM_TEXT = `Here's your plan 🥊 Free: ${LINK}\n\nTake the 2 minute test first. It builds the plan around what you need most, no gym needed.`;
 // Per-reel plans (docs/plans/plans.json): the first plan whose `match` phrase is in the reel's caption.
 const PLANS_URL = "https://matteofights.me/plans/plans.json";
-async function planFor(caption) {
-  if (!caption) return null;
+async function planList() {
   try {
     const r = await fetch(PLANS_URL, { cf: { cacheTtl: 300, cacheEverything: true } });
-    const { plans } = await r.json();
-    const low = caption.toLowerCase();
-    return plans.find((p) => p.match && low.includes(p.match.toLowerCase())) || null;
+    return (await r.json()).plans || [];
   } catch {
-    return null;
+    return [];
   }
 }
-const reelPlanText = (p) => `Here's your ${p.title} 🥊 Free: https://matteofights.me/plans/?p=${p.slug}\n\nScreenshot it or save the link. Run it for 4 weeks.`;
-const keywordOf = (text) => (/\bprotocol\b/i.test(text || "") ? "protocol" : "plan");
+async function planFor(caption) {
+  if (!caption) return null;
+  const low = caption.toLowerCase();
+  return (await planList()).find((p) => p.match && low.includes(p.match.toLowerCase())) || null;
+}
+// What a comment asks for: PROTOCOL / PLAN anywhere in it, or a plan's own keyword (e.g. LOMA, TYSON) in a short
+// comment (<= 4 words, so "Khabib is the goat" on some other reel doesn't get a DM).
+async function wants(text) {
+  if (!text) return null;
+  if (/\bprotocol\b/i.test(text)) return { keyword: "protocol" };
+  if (/\bplan\b/i.test(text)) return { keyword: "plan" };
+  if (text.trim().split(/\s+/).length > 4) return null;
+  const low = text.toLowerCase();
+  const plan = (await planList()).find((p) => (p.keywords || []).some((k) => new RegExp(`\\b${k}\\b`, "i").test(low)));
+  return plan ? { keyword: plan.keywords[0], plan } : null;
+}
+const reelPlanText = (p) => `Here's your ${p.title} 🥊 Full plan, free: https://matteofights.me/plans/?p=${p.slug}\n\n` +
+  `Want one built around your own weak spot? 2 minute test: ${LINK}`;
 const PUBLIC_REPLIES = ["Sent it to your DMs 🥊", "Check your DMs 🥊", "In your DMs now 🥊"];
 const NOW_SQL = "strftime('%Y-%m-%dT%H:%M:%SZ','now')";
 
@@ -75,14 +88,15 @@ async function logHit(env, data) {
 
 async function handleComment(env, v) {
   const id = v.id;
-  if (!id || !KEYWORD.test(v.text || "") || (v.from && v.from.username === OWN) || await handled(env, id)) return;
+  if (!id || !(await wants(v.text)) || (v.from && v.from.username === OWN) || await handled(env, id)) return;
   // Re-read the comment from Instagram: proves it is real, on our media and still says the keyword.
   const c = await ig(env, "GET", id, { fields: "id,text,username,timestamp,media{id}" });
-  if (!KEYWORD.test(c.text || "") || c.username === OWN) return;
+  const want = await wants(c.text);
+  if (!want || c.username === OWN) return;
   if (Date.now() - Date.parse(c.timestamp) > 7 * 864e5) return;
-  const out = { comment: id, media: c.media && c.media.id, user: c.username, keyword: keywordOf(c.text), at: new Date().toISOString() };
-  let plan = null;
-  if (out.keyword === "plan" && out.media) {
+  const out = { comment: id, media: c.media && c.media.id, user: c.username, keyword: want.keyword, at: new Date().toISOString() };
+  let plan = want.plan || null;
+  if (!plan && out.keyword === "plan" && out.media) {
     try {
       plan = await planFor((await ig(env, "GET", out.media, { fields: "caption" })).caption);
     } catch {
@@ -110,7 +124,7 @@ const DISPATCH_MAX_DAY = 48;
 
 async function kickReplies(env, v) {
   if (!env.GH_DISPATCH_TOKEN || String(env.AUTO_REPLY || "").toLowerCase() === "off") return;
-  if (!v || !v.id || KEYWORD.test(v.text || "") || (v.from && v.from.username === OWN)) return;
+  if (!v || !v.id || (await wants(v.text)) || (v.from && v.from.username === OWN)) return;
   const day = new Date().toISOString().slice(0, 10);
   const row = await env.DB.prepare("SELECT data FROM docs WHERE kind = 'reply_dispatch' AND id = ?").bind(day).first();
   const d = row ? JSON.parse(row.data) : { n: 0, last: 0 };

@@ -25,12 +25,15 @@ h1 { font-size: 52px; } h2 { font-size: 28px; margin: 0 0 8px; }
 ul.rules { padding-left: 20px; } ul.rules li { margin: 6px 0; }
 a { color: var(--text); }
 .fine { font-size: 12px; color: var(--dim); margin-top: 36px; }
+.ghost { display: block; width: 100%; background: none; color: var(--text); border: 1px solid var(--border); border-radius: 10px; padding: 14px; font: 500 16px Inter, sans-serif; margin: 8px 0; cursor: pointer; }
+@media print { :root { --bg:#fff; --bg-2:#fff; --text:#111; --dim:#555; --border:#ccc; } .cta, .ghost, #next h2:last-of-type, #next p, .fine { display: none !important; } .day { break-inside: avoid; } }
 </style>
 </head>
 <body>
 <main>
   <div id="plan"><p class="dim">Loading your plan...</p></div>
   <section id="next" hidden>
+    <button class="ghost" type="button" onclick="window.print()">Download as PDF</button>
     <h2 style="margin-top:28px">Run it for 4 weeks</h2>
     <ul class="rules">
       <li>Week 1: exactly as written. Week 2: add 1 rep or 1 round. Week 3: hold it, push the pace. Week 4: lighter.</li>

@@ -31,7 +31,19 @@ import state  # noqa: E402
 
 IG = "https://graph.instagram.com/v21.0"
 OWN = "matteofights"
-KEYWORD = re.compile(r"\b(protocol|plan)\b", re.I)  # the auto-DM webhook answers these
+# The auto-DM webhook answers these: PROTOCOL / PLAN, plus each plan's own keyword (docs/plans/plans.json) in a
+# short comment. Same rule as wants() in signup-site/functions/api/ig-webhook.js.
+KEYWORD = re.compile(r"\b(protocol|plan)\b", re.I)
+try:
+    PLAN_WORDS = [k for p in json.loads((Path(__file__).resolve().parents[2] / "docs/plans/plans.json").read_text())["plans"]
+                  for k in p.get("keywords", [])]
+except Exception:
+    PLAN_WORDS = []
+PLAN_KEYWORD = re.compile(r"\b(" + "|".join(map(re.escape, PLAN_WORDS)) + r")\b", re.I) if PLAN_WORDS else None
+
+
+def auto_dm_handles(text):
+    return bool(KEYWORD.search(text) or (PLAN_KEYWORD and len(text.split()) <= 4 and PLAN_KEYWORD.search(text)))
 MAX_PER_RUN = 60
 GUARD = re.compile(r"https?:|www\.|\b(ai|bots?|automat\w*|chatgpt|claude)\b", re.I)
 
@@ -99,7 +111,7 @@ def collect(out_path):
                 continue
             reps = (c.get("replies") or {}).get("data", [])
             ours = [r for r in reps if r.get("username") == OWN]
-            if (c["username"] and c["username"] != OWN and c.get("text") and not KEYWORD.search(c["text"]) and not ours
+            if (c["username"] and c["username"] != OWN and c.get("text") and not auto_dm_handles(c["text"]) and not ours
                     and c["id"] not in done and per_user.get((m["id"], c["username"]), 0) < 2):
                 pending.append({"id": c["id"], "media": m["id"], "user": c["username"], "text": c["text"][:400],
                                 "caption": (m.get("caption") or "")[:500], "thread": ""})
