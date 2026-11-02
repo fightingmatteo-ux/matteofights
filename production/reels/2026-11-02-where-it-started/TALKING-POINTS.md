@@ -51,7 +51,9 @@ The edit ends just before the hook, so the replay continues the sentence.
 ## Visual notes (montage)
 
 - Each era cuts on the line, place plate in the corner (Zurich / Essaouira / Rome / São Paulo / Koh Samui / Bangkok).
-- Footage: karate clip or photo at 7 {{need from you: Drive or your camera roll}} · Zurich `Bag work impact mma.MOV`
+- Karate at 7: no photo exists (Matteo 11-02). Say it on camera; white card `7` / `KARATE` in the editorial style.
+  Any childhood photo of Matteo (not training) can sit under the plate for 1 s if he finds one. Never stock of a kid.
+- Footage: Zurich `Bag work impact mma.MOV`
   · Essaouira `padwork morocco 2.mov` · Rome `sparring audace.mov` or `sunrise skipping rome.mp4` · Koh Samui and
   São Paulo {{any clip of you there}} · first fight: `Muay Thai fight matteo .MOV`, walkout or the first exchanges
   ONLY, nothing from the clinch on · knee: 1 s from the Drive "Knee surgery" folder · now: a recent Bangkok session.
@@ -82,5 +84,5 @@ Where did you learn to fight? 👇
 **Judge it on:** follows per 1k views and comment sentiment (target: zero "cheater" threads). Round-2 winner goes
 to the grid and replaces Saenchai in the pin's "who I am" slot.
 
-**To fill before filming:** a karate-at-7 clip or photo, a Koh Samui and a São Paulo clip, your answer for hook C,
+**To fill before filming:** a Koh Samui and a São Paulo clip, your answer for hook C,
 one real line per country.
