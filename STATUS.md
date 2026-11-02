@@ -73,6 +73,8 @@ Log: `media/2026-10-16-saenchai-bigger-men/renders/render_bc.log` (ends with `AL
 
 | Fight-clip footage route (11-02) | **MATTEO** (5 min, laptop) | YouTube blocks GitHub/Modal; cookies get flagged after 1-2 downloads. Durable route: Claude desktop app -> Settings -> Claude Code -> Remote Control -> add the matteofights folder, then Claude downloads via `yt-dlp --cookies-from-browser chrome` on the laptop. Bank + rules: content-bank/fight-clips/README.md. Still needed: Loma (5), power KOs (4), gassed (5) for the 2026-11-02 plan reels |
 
+| **Plan reels 2026-11-02 (HANDOFF)** | **DO** | 4 reels x 5 hooks (P0 Power, P3 Cardio, L1 Loma, L2 Tyson), editorial style on Modal. Folders production/reels/2026-11-02-plan-{P0,P3,L1,L2}, generator tools/planreel/editorial.py (REELS: hook clip per variant spliced under the hook word, day cards = tools/planreel/daycards.py). Final renders with real fight clips triggered 15:20 UTC via "Submit render" (per-reel queues). Next: download each 2026-11-02-plan-<R>-<V>-phone.mp4 from the media release, check variant A hook (word behind fighters), send to Matteo. Clip picks + sources: content-bank/fight-clips/bank.json. Missing YouTube (laptop prompt failed these): PBC KOs, Tyson every-KO, Tyson-Douglas. Nothing queued to post: Matteo approves first |
+
 ## Rules (short)
 
 Never set `approved:true`. Never commit `secrets/`, `data.json`, `covers/`, `voice.wav`, `snaps/`. Commit only your own paths. Never run renders as session background jobs, and never render variants in parallel.
