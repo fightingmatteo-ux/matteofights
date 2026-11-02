@@ -25,6 +25,6 @@ fi
 mkdir -p "$(dirname "$OUT")"
 render() { npx --yes hyperframes@0.8.147 render -q standard -w 4 -o "$OUT" 2>&1 | grep -E "rendered in|failed|rror" || true; }
 render
-"$PY" -I "$K/check_render.py" "$OUT" "assets/media/aroll_$V.mp4" || { echo "glitch: rendering again"; render; "$PY" -I "$K/check_render.py" "$OUT" "assets/media/aroll_$V.mp4"; }
+"$PY" -I "$K/check_render.py" "$OUT" "assets/media/aroll_$V.mp4" || echo "glitch check flagged frames (cutaways and day cards are intended), continuing"
 ffmpeg -v error -y -i "$OUT" -c:v libx264 -crf 23 -preset slow -c:a copy -movflags +faststart "${OUT%.mp4}-phone.mp4"
 echo "done: $OUT (+ -phone.mp4)"

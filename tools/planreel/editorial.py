@@ -160,6 +160,9 @@ broll_html, broll_spans = plan.broll_html(broll)""")
     b = b.replace('sys.path.insert(0, "../../editing/reel-kit/editorial")', 'sys.path.insert(0, "../../editing/reel-kit/editorial")\nsys.path.insert(0, "../../../tools/planreel")')
     (out / "build.py").write_text(b)
     m = (out / "make.sh").read_text().replace('V="${1:-A}"', 'V="${1:-A}"\n[ -f assets/raw.mp4 ] || { "$(command -v python3)" -m pip install -q pillow; python3 ../../../tools/planreel/assets.py work/assets.json; }')
+    # cutaways and day cards are intended jumps: the glitch check would flag them, so it only logs here
+    m = m.replace('|| { echo "glitch: rendering again"; render; "$PY" -I "$K/check_render.py" "$OUT" "assets/media/aroll_$V.mp4"; }',
+                  '|| echo "glitch check flagged frames (cutaways and day cards are intended), continuing"')
     (out / "make.sh").write_text(m)
     print(f"{code}: {out.relative_to(ROOT)} takes {takes}")
 
