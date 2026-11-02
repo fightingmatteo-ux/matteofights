@@ -24,10 +24,10 @@ REF = ROOT / "production/reels/2026-10-20-freeze-editorial"
 AN = ROOT / "content-bank/real-footage/analysis"
 PLANS = {p["slug"]: p for p in json.loads((ROOT / "docs/plans/plans.json").read_text())["plans"]}
 
-P_BODY, L_BODY = "Here's a three day plan. Day one. Day two. Day three.", "Here's the at-home version. Monday to Friday."
+P_BODY, L_BODY = "Here's a three day plan. Day one. Day two. Day three.", "Here's the at home version. Monday to Friday."
 CTA = "Comment {k} and I'll send it to you so you can save it."
 REELS = {
-    "P0": dict(clips={"A": [("POWER", "kick1", "broll-kicking.mp4", 16.4, 1.6)], "B": [("LEGS", "kick2", "broll-kicking.mp4", 0.5, 1.8)],
+    "P0": dict(hook={"A": ("fight-ufc-rudeboy-ko.mp4", 0.0)}, clips={"A": [("POWER", "kick1", "broll-kicking.mp4", 16.4, 1.6)], "B": [("LEGS", "kick2", "broll-kicking.mp4", 0.5, 1.8)],
                "C": [("LEGS", "kick2", "broll-kicking.mp4", 0.5, 1.8)], "D": [("TRAINING", "kick3", "broll-kicking.mp4", 19.5, 1.6)],
                "E": [("HARD", "kick1", "broll-kicking.mp4", 16.4, 1.6)]}, raw="P0.mp4", an="2026-11-02-plan-P0-power", plan="power-at-home", k="POWER", body=P_BODY, hooks={
         "A": ("Want more punching power but don't have a gym?", ["Want more punching power", "but don't have a"], "gym?", ("GYM", 1), ("HERE'S", 1)),
@@ -36,6 +36,7 @@ REELS = {
         "D": ("You're not weak. You're training power the wrong way.", ["You're not weak.", "You're training power the wrong"], "way.", ("WAY", 1), ("HERE'S", 1)),
         "E": ("If you train at home and still want to hit hard, this is for you.", ["If you train at home", "and still want to hit"], "hard.", ("HARD", 1), ("THIS", 1))}),
     # b-roll per variant: (spoken word token, clip name, release file, in, dur)
+    # hook: (release file, in) per variant: spliced under the hook so the hook word sits behind the fighters
     "P3": dict(raw="P3.mp4", an="2026-11-02-plan-P3-cardio", plan="fight-cardio", k="CARDIO", body=P_BODY, hooks={
         "A": ("Do you gas out in round two?", ["Do you gas out", "in round"], "two?", ("TWO", 1), ("HERE'S", 1)),
         "B": ("You don't need more running. Fights aren't jogs, they're bursts.", ["You don't need more running.", "Fights aren't jogs, they're"], "bursts.", ("BURSTS", 1), ("HERE'S", 1)),
@@ -48,7 +49,7 @@ REELS = {
         "C": ("Lomachenko's footwork isn't talent. It's years of drills nobody films.", ["Lomachenko's footwork isn't talent.", "It's years of drills nobody"], "films.", ("FILMS", 1), ("HERE'S", 1)),
         "D": ("Most people drill punches. Lomachenko drilled his feet.", ["Most people drill punches.", "Lomachenko drilled his"], "feet.", ("FEET", 1), ("HERE'S", 1)),
         "E": ("If your feet ever feel stuck when you shadowbox, this is for you.", ["If your feet ever feel", "stuck when you"], "shadowbox,", ("SHADOWBOX", 1), ("THIS", 1))}),
-    "L2": dict(raw="L2.mp4", an="2026-11-02-plan-L2-tyson", plan="tyson-peekaboo", k="TYSON", body=L_BODY, hooks={
+    "L2": dict(hook={"A": ("yt-tyson-1987-training-kos.mp4", 1418.2), "D": ("yt-tyson-1987-training-kos.mp4", 1400.0)}, raw="L2.mp4", an="2026-11-02-plan-L2-tyson", plan="tyson-peekaboo", k="TYSON", body=L_BODY, hooks={
         "A": ("Want head movement like prime Tyson?", ["Want head movement", "like prime"], "Tyson?", ("TYSON", 1), ("HERE'S", 1)),
         "B": ("Steal this from Mike Tyson. Your head is never where they're aiming.", ["Steal this from Mike Tyson.", "Your head is never where they're"], "aiming.", ("AIMING", 1), ("HERE'S", 1)),
         "C": ("Most people block punches. Tyson made them miss.", ["Most people block punches.", "Tyson made them"], "miss.", ("MISS", 1), ("HERE'S", 1)),
@@ -110,7 +111,7 @@ def build(code):
     segs = {v: take_segment(raw_words, v) for v in "ABCDE"}
     t_lo = min(raw_words[i0]["s"] for i0, _ in segs.values()) - 0.6
     t_hi = max(raw_words[i1]["e"] for _, i1 in segs.values()) + 0.6
-    words, takes, variants, hooks, clips = [], {}, {}, {}, {}
+    words, takes, variants, hooks, clips, precut = [], {}, {}, {}, {}, []
     plan = PLANS[R["plan"]]
     for v, (i0, i1) in segs.items():
         hook, lead, word, on, until = R["hooks"][v]
@@ -135,9 +136,23 @@ def build(code):
             t = next(w["start"] for w in sw if up(w) == tok)
             broll[name] = {"start": round(t - s0, 3), "dur": cdur}
             clips[name] = {"name": name, "src": f"../../../media/plan/{src}", "in": cin, "dur": cdur}
+        hk = R.get("hook", {}).get(v)
+        if hk:
+            src, cin = hk
+            on_t = next(w["start"] for w in sw if up(w) == on[0]) - s0
+            hstart, hdur = 0.4, round(on_t + 0.7 - 0.4, 3)
+            (out / f"work/hook_{v}.json").write_text(json.dumps({"clip": f"assets/media/hookcut_{v}.mp4", "start": hstart, "dur": hdur}))
+            precut.append(f'ffmpeg -v error -y -ss {cin} -t {hdur + 0.2:.2f} -i "media/plan/{src}" -an -vf "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,setsar=1,fps=30" '
+                          f'-c:v libx264 -crf 16 -pix_fmt yuv420p "$R/assets/media/hookcut_{v}.mp4"')
         (out / f"work/broll_{v}.json").write_text(json.dumps(broll, indent=1))
     (out / "work/assets.json").write_text(json.dumps({"raw": f"../../../media/plan/{R['an']}.mp4", "t_lo": round(t_lo, 3),
         "t_hi": round(t_hi, 3), "plan": R["plan"], "keyword": R["k"], "plans": "../../../docs/plans/plans.json", "clips": list(clips.values())}, indent=1))
+    pc = out / "work/precut.sh"
+    if precut:
+        pc.write_text("#!/usr/bin/env bash\n# run by the Submit render workflow on the runner: trims long fight videos to the hook seconds\nset -euo pipefail\n"
+                      f"R={out.relative_to(ROOT)}\nmkdir -p \"$R/assets/media\"\n" + "\n".join(precut) + "\n")
+    elif pc.exists():
+        pc.unlink()
     (out / "work/words.json").write_text(json.dumps(words))
     (out / "work/takes.json").write_text(json.dumps({"src": "assets/raw.mp4", "words": "work/words.json", "speed": 1.0,
                                                      "takes": takes, "variants": variants, "fix": {}}, indent=1))
@@ -159,7 +174,11 @@ broll_html, broll_spans = plan.broll_html(broll)""")
     b = b.replace('"CAP_TOP": "330", "BACK_TOP": "0"}', '"CAP_TOP": "330", "BACK_TOP": "0", "DAYCARDS_HTML": DC_HTML, "DAYCARDS_JS": DC_JS}')
     b = b.replace('sys.path.insert(0, "../../editing/reel-kit/editorial")', 'sys.path.insert(0, "../../editing/reel-kit/editorial")\nsys.path.insert(0, "../../../tools/planreel")')
     (out / "build.py").write_text(b)
-    m = (out / "make.sh").read_text().replace('V="${1:-A}"', 'V="${1:-A}"\n[ -f assets/raw.mp4 ] || { "$(command -v python3)" -m pip install -q pillow; python3 ../../../tools/planreel/assets.py work/assets.json; }')
+    m = (out / "make.sh").read_text()
+    m = m.replace('[ -f "assets/media/aroll_$V.mp4" ] || "$PY" -P ../../editing/reel-kit/scripts/assemble.py work/takes.json "$V"',
+                  '[ -f "assets/media/aroll_$V.mp4" ] || { "$PY" -P ../../editing/reel-kit/scripts/assemble.py work/takes.json "$V"; '
+                  '[ ! -f "work/hook_$V.json" ] || "$PY" ../../../tools/planreel/splice.py "work/hook_$V.json" "assets/media/aroll_$V.mp4"; }')
+    m = m.replace('V="${1:-A}"', 'V="${1:-A}"\n[ -f assets/raw.mp4 ] || { "$(command -v python3)" -m pip install -q pillow; python3 ../../../tools/planreel/assets.py work/assets.json; }')
     # cutaways and day cards are intended jumps: the glitch check would flag them, so it only logs here
     m = m.replace('|| { echo "glitch: rendering again"; render; "$PY" -I "$K/check_render.py" "$OUT" "assets/media/aroll_$V.mp4"; }',
                   '|| echo "glitch check flagged frames (cutaways and day cards are intended), continuing"')

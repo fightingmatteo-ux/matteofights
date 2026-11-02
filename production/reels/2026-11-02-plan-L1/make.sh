@@ -11,7 +11,7 @@ PY=$(command -v python3 || command -v python)
 SLUG=$(basename "$PWD")
 OUT="../../../media/$SLUG/$SLUG-$V.mp4"
 
-[ -f "assets/media/aroll_$V.mp4" ] || "$PY" -P ../../editing/reel-kit/scripts/assemble.py work/takes.json "$V"
+[ -f "assets/media/aroll_$V.mp4" ] || { "$PY" -P ../../editing/reel-kit/scripts/assemble.py work/takes.json "$V"; [ ! -f "work/hook_$V.json" ] || "$PY" ../../../tools/planreel/splice.py "work/hook_$V.json" "assets/media/aroll_$V.mp4"; }
 
 if [ ! -f "assets/media/fg_${V}_full.webm" ]; then
   [ -d .venv ] || "$PY" -m venv .venv

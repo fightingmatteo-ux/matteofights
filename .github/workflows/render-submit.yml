@@ -70,6 +70,9 @@ jobs:
             ls -la "$dest"
           done
 
+      - name: Pre-cut big sources (reel's work/precut.sh trims long fight videos to seconds before packing)
+        run: '[ ! -f "$REEL/work/precut.sh" ] || bash "$REEL/work/precut.sh"'
+
       - name: Render on Modal, one variant at a time
         run: |
           args=(); for p in $INCLUDE; do args+=(--include "$p"); done
