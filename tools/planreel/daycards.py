@@ -4,7 +4,8 @@ Design (impeccable craft floor + Emil Kowalski motion): full-frame OLED black, t
 800, tight tracking), the day position as tabular numerals in the one accent (brand red), a hairline list of moves
 with doses, the last move on 3+ move days blurred behind a drawn-lock pill "Comment WORD for this one", plan name +
 level segmented control at the foot. Motion: one moment per card, 240 ms expo.out from 0.97 scale + 8 px blur,
-rows stagger 40 ms, nothing animates from zero, no ease-in.
+rows stagger 40 ms, nothing animates from zero, no ease-in. The surface enters once; later days swap only
+content (Emil cohesion); the exit back to the video is quicker than the entrance (150 ms).
 """
 import html
 
@@ -55,9 +56,15 @@ def cards(plan, keyword, windows):
                    f'<div class="dc-top"><h2 class="dc-h">{head}</h2><span class="dc-pos">{pos}</span></div>'
                    f'<ol class="dc-list">{"".join(rows)}</ol>'
                    f'<div class="dc-foot"><div class="dc-plan">{html.escape(plan["title"])}</div><div class="dc-lv">{lv}</div></div></div></div>')
-        js.append(f'tl.fromTo("#dc{k} .dc-in", {{opacity:0, scale:0.97, filter:"blur(8px)"}}, {{opacity:1, scale:1, filter:"blur(0px)", duration:0.24, ease:"expo.out"}}, {s:.3f});')
-        js.append(f'tl.fromTo("#dc{k} .dc-h", {{y:28}}, {{y:0, duration:0.26, ease:"expo.out"}}, {s:.3f});')
-        js.append(f'tl.fromTo("#dc{k} .dc-list li", {{y:22, opacity:0}}, {{y:0, opacity:1, duration:0.24, ease:"expo.out", stagger:0.04}}, {s + 0.04:.3f});')
+        if k == 0:  # the surface arrives once, from the video: 240 ms expo.out from 0.97 + 8 px blur
+            js.append(f'tl.fromTo("#dc{k} .dc-in", {{opacity:0, scale:0.97, filter:"blur(8px)"}}, {{opacity:1, scale:1, filter:"blur(0px)", duration:0.24, ease:"expo.out"}}, {s:.3f});')
+        # later days: the surface stays, only the content changes (heading + rows bridge with a small blur)
+        js.append(f'tl.fromTo("#dc{k} .dc-h, #dc{k} .dc-pos", {{y:24, opacity:0.001, filter:"blur(6px)"}}, {{y:0, opacity:1, filter:"blur(0px)", duration:0.22, ease:"expo.out"}}, {s:.3f});')
+        js.append(f'tl.fromTo("#dc{k} .dc-list li", {{y:18, opacity:0.001}}, {{y:0, opacity:1, duration:0.22, ease:"expo.out", stagger:0.035}}, {s + 0.03:.3f});')
+        js.append(f'tl.fromTo("#dc{k} .dc-foot", {{opacity:0.001}}, {{opacity:1, duration:0.2, ease:"expo.out"}}, {s:.3f});' if k == 0 else
+                  f'tl.set("#dc{k} .dc-foot", {{opacity:1}}, {s:.3f});')
+        if k == len(days) - 1:  # system exit back to Matteo: quicker than the entrance (150 ms)
+            js.append(f'tl.to("#dc{k} .dc-in", {{opacity:0, scale:1.01, filter:"blur(6px)", duration:0.15, ease:"power2.out"}}, {s + dur - 0.15:.3f});')
         if lock:
             js.append(f'tl.fromTo("#dc{k} .dc-pill", {{scale:0.94}}, {{scale:1, duration:0.22, ease:"expo.out"}}, {s + 0.16:.3f});')
     return "\n".join(out), "\n      ".join(js)
