@@ -31,7 +31,7 @@ import state  # noqa: E402
 
 IG = "https://graph.instagram.com/v21.0"
 OWN = "matteofights"
-KEYWORD = re.compile(r"\bprotocol\b", re.I)
+KEYWORD = re.compile(r"\b(protocol|plan)\b", re.I)  # the auto-DM webhook answers these
 MAX_PER_RUN = 60
 GUARD = re.compile(r"https?:|www\.|\b(ai|bots?|automat\w*|chatgpt|claude)\b", re.I)
 
