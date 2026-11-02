@@ -22,4 +22,8 @@ for k, day in enumerate(plan["days"]):
     bg.save("assets/media/card_full.png")
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-loop", "1", "-i", "assets/media/card_full.png", "-t", "2.2", "-r", "30",
                     "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "16", f"assets/media/b_day{k + 1}.mp4"], check=True)
+for c in cfg.get("clips", []):  # b-roll cutaways: cut, fill 9:16, mute
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", str(c["in"]), "-t", str(c["dur"] + 0.3), "-i", c["src"], "-an",
+                    "-vf", "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,setsar=1", "-r", "30",
+                    "-c:v", "libx264", "-crf", "17", "-pix_fmt", "yuv420p", f"assets/media/b_{c['name']}.mp4"], check=True)
 print("assets ready")

@@ -27,12 +27,15 @@ PLANS = {p["slug"]: p for p in json.loads((ROOT / "docs/plans/plans.json").read_
 P_BODY, L_BODY = "Here's a three day plan. Day one. Day two. Day three.", "Here's the at-home version. Monday to Friday."
 CTA = "Comment {k} and I'll send it to you so you can save it."
 REELS = {
-    "P0": dict(raw="P0.mp4", an="2026-11-02-plan-P0-power", plan="power-at-home", k="POWER", body=P_BODY, hooks={
+    "P0": dict(clips={"A": [("POWER", "kick1", "broll-kicking.mp4", 16.4, 1.6)], "B": [("LEGS", "kick2", "broll-kicking.mp4", 0.5, 1.8)],
+               "C": [("LEGS", "kick2", "broll-kicking.mp4", 0.5, 1.8)], "D": [("TRAINING", "kick3", "broll-kicking.mp4", 19.5, 1.6)],
+               "E": [("HARD", "kick1", "broll-kicking.mp4", 16.4, 1.6)]}, raw="P0.mp4", an="2026-11-02-plan-P0-power", plan="power-at-home", k="POWER", body=P_BODY, hooks={
         "A": ("Want more punching power but don't have a gym?", ["Want more punching power", "but don't have a"], "gym?", ("GYM", 1), ("HERE'S", 1)),
         "B": ("Most people train their arms for power. Your power comes from your legs.", ["Most people train their arms", "for power. Your power comes from your"], "legs.", ("LEGS", 1), ("HERE'S", 1)),
         "C": ("Most of your punching power comes from your legs and hips, not your arms.", ["Most of your punching power comes", "from your legs and hips, not your"], "arms.", ("ARMS", 1), ("HERE'S", 1)),
         "D": ("You're not weak. You're training power the wrong way.", ["You're not weak.", "You're training power the wrong"], "way.", ("WAY", 1), ("HERE'S", 1)),
         "E": ("If you train at home and still want to hit hard, this is for you.", ["If you train at home", "and still want to hit"], "hard.", ("HARD", 1), ("THIS", 1))}),
+    # b-roll per variant: (spoken word token, clip name, release file, in, dur)
     "P3": dict(raw="P3.mp4", an="2026-11-02-plan-P3-cardio", plan="fight-cardio", k="CARDIO", body=P_BODY, hooks={
         "A": ("Do you gas out in round two?", ["Do you gas out", "in round"], "two?", ("TWO", 1), ("HERE'S", 1)),
         "B": ("You don't need more running. Fights aren't jogs, they're bursts.", ["You don't need more running.", "Fights aren't jogs, they're"], "bursts.", ("BURSTS", 1), ("HERE'S", 1)),
@@ -102,9 +105,7 @@ def build(code):
     segs = {v: take_segment(raw_words, v) for v in "ABCDE"}
     t_lo = min(raw_words[i0]["s"] for i0, _ in segs.values()) - 0.6
     t_hi = max(raw_words[i1]["e"] for _, i1 in segs.values()) + 0.6
-    (out / "work/assets.json").write_text(json.dumps({"raw": f"../../../media/plan/{R['an']}.mp4", "t_lo": round(t_lo, 3),
-        "t_hi": round(t_hi, 3), "plan": R["plan"], "keyword": R["k"], "plans": "../../../docs/plans/plans.json"}, indent=1))
-    words, takes, variants, hooks = [], {}, {}, {}
+    words, takes, variants, hooks, clips = [], {}, {}, {}, {}
     plan = PLANS[R["plan"]]
     for v, (i0, i1) in segs.items():
         hook, lead, word, on, until = R["hooks"][v]
@@ -125,7 +126,13 @@ def build(code):
         n = len(plan["days"])
         step = (cs - hs + 0.25) / n
         broll = {f"day{k + 1}": {"start": round(hs - s0 - 0.1 + k * step, 3), "dur": round(step, 3)} for k in range(n)}
+        for tok, name, src, cin, cdur in R.get("clips", {}).get(v, []):
+            t = next(w["start"] for w in sw if up(w) == tok)
+            broll[name] = {"start": round(t - s0, 3), "dur": cdur}
+            clips[name] = {"name": name, "src": f"../../../media/plan/{src}", "in": cin, "dur": cdur}
         (out / f"work/broll_{v}.json").write_text(json.dumps(broll, indent=1))
+    (out / "work/assets.json").write_text(json.dumps({"raw": f"../../../media/plan/{R['an']}.mp4", "t_lo": round(t_lo, 3),
+        "t_hi": round(t_hi, 3), "plan": R["plan"], "keyword": R["k"], "plans": "../../../docs/plans/plans.json", "clips": list(clips.values())}, indent=1))
     (out / "work/words.json").write_text(json.dumps(words))
     (out / "work/takes.json").write_text(json.dumps({"src": "assets/raw.mp4", "words": "work/words.json", "speed": 1.0,
                                                      "takes": takes, "variants": variants, "fix": {}}, indent=1))

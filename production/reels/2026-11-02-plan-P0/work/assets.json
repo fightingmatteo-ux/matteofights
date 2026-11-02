@@ -4,5 +4,25 @@
  "t_hi": 127.1,
  "plan": "power-at-home",
  "keyword": "POWER",
- "plans": "../../../docs/plans/plans.json"
+ "plans": "../../../docs/plans/plans.json",
+ "clips": [
+  {
+   "name": "kick1",
+   "src": "../../../media/plan/broll-kicking.mp4",
+   "in": 16.4,
+   "dur": 1.6
+  },
+  {
+   "name": "kick2",
+   "src": "../../../media/plan/broll-kicking.mp4",
+   "in": 0.5,
+   "dur": 1.8
+  },
+  {
+   "name": "kick3",
+   "src": "../../../media/plan/broll-kicking.mp4",
+   "in": 19.5,
+   "dur": 1.6
+  }
+ ]
 }
