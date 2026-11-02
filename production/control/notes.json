@@ -662,5 +662,9 @@
   {
     "id": "health-queue:lst-2026-10-30-not-a-beginner:failed-2026110206",
     "text": "⚠️ lst-2026-10-30-not-a-beginner failed to post: GET https://graph.facebook.com/v23.0/530317382955170 -> 404: {\"title\":\"Not Found\",\"detail\":\"No audio asset found for the given ID\",\"status\":404}"
+  },
+  {
+    "id": "n-1102-sleep-rules",
+    "text": "Heads up: '6 sleep rules fighters use to recover faster' (28 Oct) has 0 views after 4 days. It posted without an error, so Instagram just never showed it. Worth a look in the app (Professional dashboard / account status) in case it got flagged. No winner in the 28-29 Oct batch: best was 7 ways to stop eating body kicks at 1.6x with 13 saves."
   }
 ]

@@ -53,9 +53,10 @@
       "Skip the slot for now",
       "Send me other talking points"
     ],
-    "status": "answered",
+    "status": "closed",
     "answer": "Send me other talking points",
     "answered_at": "2026-11-01T17:54:48Z",
-    "via": "dashboard"
+    "via": "dashboard",
+    "resolution": "New talking points sent 2 Nov: where-it-started (origin reel) and the 6 plan reels filming sheet (production/reels/FILM-2026-11-02-plan-reels.md)."
   }
 ]
