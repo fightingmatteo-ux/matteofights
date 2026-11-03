@@ -2160,7 +2160,14 @@
       "posting_since": "2026-10-30T16:30:58Z",
       "media_id": "18131061478868853",
       "permalink": "https://www.instagram.com/reel/DfIBD0ejC_s/",
-      "posted_at": "2026-10-30T16:31:42Z"
+      "posted_at": "2026-10-30T16:31:42Z",
+      "video_asset_fb": "lst-2026-10-30-rest-days-fb.mp4",
+      "fb_pick": {
+        "at": "2026-11-03T02:16:59Z",
+        "ig_views": 3813,
+        "vs_median": 1.69,
+        "shares_saves_per_1k": 6.6
+      }
     },
     {
       "id": "lst-2026-10-31-sparring-teaches-building",
