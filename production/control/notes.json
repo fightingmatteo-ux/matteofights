@@ -722,5 +722,9 @@
   {
     "id": "health-queue:lst-2026-10-30-not-a-beginner:failed-2026110306",
     "text": "⚠️ lst-2026-10-30-not-a-beginner failed to post: GET https://graph.facebook.com/v23.0/530317382955170 -> 404: {\"title\":\"Not Found\",\"detail\":\"No audio asset found for the given ID\",\"status\":404}"
+  },
+  {
+    "id": "n-1103-week-waiting",
+    "text": "Next week's 28 listicles (3-11 Nov) are still waiting for your yes, so today's 09:00 and 12:30 slots won't post until you approve. Approve the week on the dashboard or here."
   }
 ]

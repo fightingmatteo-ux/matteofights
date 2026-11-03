@@ -76,6 +76,9 @@ Sort by follows per 1k views when looking for what grows the account.
 | 2026-11-02 | first-fight-lesson | A | 18142439116713907 | I knocked him out in my first fight and it shouldn't have counted. | talking head, result opening, full | own experience | trial | 1387 (0.62x) | ? | 0 | 0 | | no | 59% past 3 s, 11.7 s watch, score 0.653 (auto verdict) |
 | 2026-11-02 | first-fight-lesson | D | 18208640077374596 | My first knockout is the one I'm least proud of. | talking head, reframe opening, full | own experience | trial | 496 (0.22x) | ? | 0 | 0 | | no | 45% past 3 s, 8.4 s watch, score 0.441 (auto verdict) |
 | 2026-11-02 | first-fight-lesson | E | 17913053517559998 | One punch. Half a second too late. | talking head, number opening, full | own experience | trial | 231 (0.10x) | ? | 0 | 0 | | no | 44% past 3 s, 7.5 s watch, score 0.392 (auto verdict) |
+| 2026-10-30 | lst-2026-10-30-glove-smell | - | 18644404438002412 | THE SMELL OF YOUR GLOVES AFTER A WEEK IN THE BAG | iykyk (identity) | text-on-clip | trial | n/a | ? | 0 | 0 | 0 | no | not found on Instagram at 94 h (deleted from the account?), no numbers |
+| 2026-10-30 | lst-2026-10-30-rest-days | - | 18131061478868853 | 6 THINGS FIGHTERS ACTUALLY DO ON REST DAYS | lifestyle (tactical) | text-on-clip | trial | 3824 (1.30x) | ? | 4 | 21 | 6 | no | lifestyle recovery: 1.30x, 21 saves (2.1x), 6 comments |
+| 2026-10-31 | lst-2026-10-30-southpaw | - | 18128550844883062 | 6 WAYS TO FIGHT A SOUTHPAW WHEN YOU NEVER SPAR ONE | listicle (tactical) | text-on-clip | trial | 2935 (1.00x) | ? | 2 | 17 | 0 | no | tactical fight problem: 1.00x, 17 saves (1.7x) |
 
 ## Patterns so far
 - _Add a line whenever a test is decided. Keep it to what the numbers showed._
