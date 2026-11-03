@@ -39,7 +39,7 @@
         "21:00"
       ],
       "topic": "Combat Sports",
-      "last_slot": "2026-11-03T15:00:00Z"
+      "last_slot": "2026-11-03T20:30:00Z"
     },
     "facebook_slides": {
       "enabled": false,
@@ -1043,7 +1043,14 @@
         "id": "ibfR9Vx1ugY",
         "url": "https://youtube.com/shorts/ibfR9Vx1ugY",
         "privacy": "public"
+      },
+      "threads": {
+        "status": "posted",
+        "at": "2026-11-03T20:38:39Z",
+        "id": "18384700624301021",
+        "url": "https://www.threads.com/@matteofights/post/DfSwgZChYQa"
       }
-    }
+    },
+    "lst-2026-10-31-teep-like-thai": {}
   }
 }
