@@ -3167,13 +3167,14 @@
       "thumb_offset_ms": 300,
       "not_before": "2026-11-03T16:00:00Z",
       "min_gap_hours": 2,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "crosspost_to": [],
       "trial_set": "plan-power",
       "opening": "contrast",
       "length": "full",
-      "slot_note": "plan reels spread 2/day (11:00 + 15:30 NY), one reel per slot, best-predicted hook first (Matteo 2026-11-02)"
+      "slot_note": "plan reels spread 2/day (11:00 + 15:30 NY), one reel per slot, best-predicted hook first (Matteo 2026-11-02)",
+      "approved_note": "Matteo: approved the week via dashboard (2026-11-03T13:06:19Z)"
     },
     {
       "id": "2026-11-02-plan-L2-A",
@@ -3187,13 +3188,14 @@
       "thumb_offset_ms": 300,
       "not_before": "2026-11-03T20:30:00Z",
       "min_gap_hours": 2,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "crosspost_to": [],
       "trial_set": "plan-tyson",
       "opening": "question",
       "length": "full",
-      "slot_note": "plan reels spread 2/day (11:00 + 15:30 NY), one reel per slot, best-predicted hook first (Matteo 2026-11-02)"
+      "slot_note": "plan reels spread 2/day (11:00 + 15:30 NY), one reel per slot, best-predicted hook first (Matteo 2026-11-02)",
+      "approved_note": "Matteo: approved the week via dashboard (2026-11-03T13:06:19Z)"
     },
     {
       "id": "2026-11-02-plan-P3-A",
@@ -3207,13 +3209,14 @@
       "thumb_offset_ms": 300,
       "not_before": "2026-11-04T16:00:00Z",
       "min_gap_hours": 2,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "crosspost_to": [],
       "trial_set": "plan-cardio",
       "opening": "question",
       "length": "full",
-      "slot_note": "plan reels spread 2/day (11:00 + 15:30 NY), one reel per slot, best-predicted hook first (Matteo 2026-11-02)"
+      "slot_note": "plan reels spread 2/day (11:00 + 15:30 NY), one reel per slot, best-predicted hook first (Matteo 2026-11-02)",
+      "approved_note": "Matteo: approved the week via dashboard (2026-11-03T13:06:19Z)"
     },
     {
       "id": "2026-11-02-plan-L1-D",
@@ -3227,13 +3230,14 @@
       "thumb_offset_ms": 300,
       "not_before": "2026-11-04T20:30:00Z",
       "min_gap_hours": 2,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "crosspost_to": [],
       "trial_set": "plan-loma",
       "opening": "contrast",
       "length": "full",
-      "slot_note": "plan reels spread 2/day (11:00 + 15:30 NY), one reel per slot, best-predicted hook first (Matteo 2026-11-02)"
+      "slot_note": "plan reels spread 2/day (11:00 + 15:30 NY), one reel per slot, best-predicted hook first (Matteo 2026-11-02)",
+      "approved_note": "Matteo: approved the week via dashboard (2026-11-03T13:06:19Z)"
     }
   ]
 }
