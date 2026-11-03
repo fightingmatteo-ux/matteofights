@@ -2275,14 +2275,18 @@
       "not_before": "2026-11-03T17:30:00Z",
       "min_gap_hours": 2.5,
       "approved": true,
-      "status": "queued",
+      "status": "posted",
       "cta": "read",
       "app_audio": "id:530317382955170 Echo Sax End - Caleb Arredondo (add in the Instagram app)",
       "video_asset_music": "lst-2026-11-03-shin-bruises-music.mp4",
       "approved_note": "Matteo: approved the week via dashboard (2026-10-25T17:11:17Z)",
       "audio_id": "530317382955170",
       "audio_title": "Echo Sax End (Take 2)",
-      "audio_artist": "caleb.arredondo"
+      "audio_artist": "caleb.arredondo",
+      "posting_since": "2026-11-03T19:32:51Z",
+      "media_id": "18194950774404627",
+      "permalink": "https://www.instagram.com/reel/DfSpDxfgcFW/",
+      "posted_at": "2026-11-03T19:33:35Z"
     },
     {
       "id": "lst-2026-11-04-strength-not-slow",
