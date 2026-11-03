@@ -863,9 +863,12 @@
       "text": "Feedback right after the round, or the next day?\n\nMost people say next day. Then they wish they'd asked straight away.",
       "chain": [],
       "from": "craft",
-      "status": "queued",
+      "status": "posted",
       "approved": true,
-      "approved_note": "Matteo: approved via dashboard (2026-10-25T17:10:40Z)"
+      "approved_note": "Matteo: approved via dashboard (2026-10-25T17:10:40Z)",
+      "posted_at": "2026-11-03T22:37:05Z",
+      "thread_id": "18190374733410662",
+      "url": "https://www.threads.com/@matteofights/post/DfS-G5YD34d"
     },
     {
       "id": "th-1104-1",
