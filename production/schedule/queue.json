@@ -2058,11 +2058,18 @@
       "not_before": "2026-11-03T02:30:00Z",
       "min_gap_hours": 2.5,
       "approved": true,
-      "status": "queued",
+      "status": "posted",
       "cta": "protocol",
       "app_audio": "id:530317382955170 Echo Sax End - Caleb Arredondo (add in the Instagram app)",
       "video_asset_music": "lst-2026-11-02-adrenaline-dump-music.mp4",
-      "approved_note": "Matteo: approved the week via dashboard (2026-10-25T14:10:05Z)"
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-25T14:10:05Z)",
+      "audio_id": "530317382955170",
+      "audio_title": "Echo Sax End (Take 2)",
+      "audio_artist": "caleb.arredondo",
+      "posting_since": "2026-11-03T02:30:56Z",
+      "media_id": "18194589373401310",
+      "permalink": "https://www.instagram.com/reel/DfQ0G0EivZL/",
+      "posted_at": "2026-11-03T02:31:38Z"
     },
     {
       "id": "lst-2026-11-03-countered-after-combo",
