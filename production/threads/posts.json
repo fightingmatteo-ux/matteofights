@@ -827,9 +827,12 @@
       "text": "Hard session tonight?\n\nEat a real meal 3 hours before, not 30 minutes.\n\nOtherwise your stomach is doing round one without you.",
       "chain": [],
       "from": "craft",
-      "status": "queued",
+      "status": "posted",
       "approved": true,
-      "approved_note": "Matteo: approved via dashboard (2026-10-25T17:10:40Z)"
+      "approved_note": "Matteo: approved via dashboard (2026-10-25T17:10:40Z)",
+      "posted_at": "2026-11-03T12:36:08Z",
+      "thread_id": "18338561929276750",
+      "url": "https://www.threads.com/@matteofights/post/DfR5Vdbm6Wl"
     },
     {
       "id": "th-1103-2",
