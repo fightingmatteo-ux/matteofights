@@ -1963,7 +1963,14 @@
       "posting_since": "2026-10-30T01:30:52Z",
       "media_id": "18072120599787634",
       "permalink": "https://www.instagram.com/reel/DfGaJ4GDN_K/",
-      "posted_at": "2026-10-30T01:32:30Z"
+      "posted_at": "2026-10-30T01:32:30Z",
+      "video_asset_fb": "lst-2026-10-29-body-kicks-fb.mp4",
+      "fb_pick": {
+        "at": "2026-11-04T00:37:35Z",
+        "ig_views": 3612,
+        "vs_median": 1.23,
+        "shares_saves_per_1k": 3.6
+      }
     },
     {
       "id": "lst-2026-10-30-southpaw",
