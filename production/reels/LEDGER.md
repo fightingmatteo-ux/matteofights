@@ -79,6 +79,10 @@ Sort by follows per 1k views when looking for what grows the account.
 | 2026-10-30 | lst-2026-10-30-glove-smell | - | 18644404438002412 | THE SMELL OF YOUR GLOVES AFTER A WEEK IN THE BAG | iykyk (identity) | text-on-clip | trial | n/a | ? | 0 | 0 | 0 | no | not found on Instagram at 94 h (deleted from the account?), no numbers |
 | 2026-10-30 | lst-2026-10-30-rest-days | - | 18131061478868853 | 6 THINGS FIGHTERS ACTUALLY DO ON REST DAYS | lifestyle (tactical) | text-on-clip | trial | 3824 (1.30x) | ? | 4 | 21 | 6 | no | lifestyle recovery: 1.30x, 21 saves (2.1x), 6 comments |
 | 2026-10-31 | lst-2026-10-30-southpaw | - | 18128550844883062 | 6 WAYS TO FIGHT A SOUTHPAW WHEN YOU NEVER SPAR ONE | listicle (tactical) | text-on-clip | trial | 2935 (1.00x) | ? | 2 | 17 | 0 | no | tactical fight problem: 1.00x, 17 saves (1.7x) |
+| 2026-10-31 | lst-2026-10-31-bad-round-building | - | 18043312127836126 | ONE BAD ROUND DOESN'T LOSE THE FIGHT. SAME WITH BUILDING. | builder (identity) | text-on-clip | trial | 932 (0.40x) | ? | 2 | 2 | 0 | no | builder: 0.40x, skip 49% |
+| 2026-10-31 | lst-2026-10-31-sparring-teaches-building | - | 18435569284194314 | 6 THINGS SPARRING TEACHES YOU ABOUT BUILDING ANYTHING | builder (identity) | text-on-clip | trial | 1514 (0.66x) | ? | 0 | 4 | 0 | no | builder: 0.66x |
+| 2026-10-31 | lst-2026-10-31-fighting-therapy | - | 18054939758612177 | 6 SIGNS COMBAT SPORTS IS HOW YOU DEAL WITH LIFE | listicle (identity) | text-on-clip | trial | 2778 (1.20x) | ? | 0 | 10 | 0 | no | identity: 1.20x, 10 saves |
+| 2026-11-01 | lst-2026-10-31-teep-like-thai | - | 18096080225170784 | 6 WAYS TO USE THE TEEP LIKE A THAI | listicle (tactical) | text-on-clip | trial | 2969 (1.29x) | ? | 0 | 9 | 0 | no | tactical technique: 1.29x, 9 saves |
 
 ## Patterns so far
 - _Add a line whenever a test is decided. Keep it to what the numbers showed._
@@ -97,3 +101,4 @@ Sort by follows per 1k views when looking for what grows the account.
 - 2026-10-31 (normal 2552): statements n=7, none above 1.1x: cut to 2 per 28 in the 31 Oct batch. Batch mix 13 tactical / 5 identity / 4 builder / 2 lifestyle / 2 statement / 2 iykyk, per Matteo's 10-30 brand direction (open lanes, include people who train for fun).
 - 2026-11-02 (normal 2252, Buzzfy median of 7): no new winner in the 28-29 Oct batch (best body-kicks 1.60x, 13 saves; quiet-threat 1.36x with 11 shares). Statements now n=9, all 0.45-1.09x (boring-best 0.97x, first-coach 0.82x): keep at 2 per 28. sleep-rules got 0 views at 114 h with no posting error (Instagram never distributed it), n=1.
 - 2026-11-02 (auto, first-fight-lesson): contrast opening won over question, result, reframe, number.
+- 2026-11-04 (normal 2310, Buzzfy median of 10): builder lane now n=4, all at or under normal (1.00x, 0.97x, 0.66x, 0.40x; 2-4 saves each). Follows per reel aren't in the data yet, so the lane can't be judged on its own metric (follows per 1k views); views alone say it trails fight content.
