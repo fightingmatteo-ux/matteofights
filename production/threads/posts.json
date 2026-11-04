@@ -878,9 +878,12 @@
       "text": "A good jab beats a fancy combination.\n\nIf you can't land one clean straight punch against a moving partner, the three-punch combo is just noise.",
       "chain": [],
       "from": "craft",
-      "status": "queued",
+      "status": "posted",
       "approved": true,
-      "approved_note": "Matteo: approved via dashboard (2026-10-25T17:10:40Z)"
+      "approved_note": "Matteo: approved via dashboard (2026-10-25T17:10:40Z)",
+      "posted_at": "2026-11-04T12:36:05Z",
+      "thread_id": "17878815972573934",
+      "url": "https://www.threads.com/@matteofights/post/DfUeHzTkedU"
     },
     {
       "id": "th-1104-2",
