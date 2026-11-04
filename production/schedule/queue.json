@@ -1929,7 +1929,7 @@
       "not_before": "2026-11-04T23:30:00Z",
       "min_gap_hours": 2.5,
       "approved": true,
-      "status": "queued",
+      "status": "posted",
       "cta": "protocol",
       "app_audio": "id:576492425503806 Echo Sax Endless - Caleb Arredondo (add in the Instagram app)",
       "video_asset_music": "lst-2026-11-04-kicks-caught-music.mp4",
@@ -1937,7 +1937,11 @@
       "approved_note": "Matteo: approved the week via dashboard (2026-10-25T14:10:05Z)",
       "audio_id": "576492425503806",
       "audio_title": "Echo Sax Endless",
-      "audio_artist": "caleb.arredondo"
+      "audio_artist": "caleb.arredondo",
+      "posting_since": "2026-11-04T23:45:53Z",
+      "media_id": "18125217079939225",
+      "permalink": "https://www.instagram.com/reel/DfVq5VxDNYn/",
+      "posted_at": "2026-11-04T23:47:19Z"
     },
     {
       "id": "lst-2026-10-29-body-kicks",
