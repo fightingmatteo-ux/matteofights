@@ -3320,13 +3320,17 @@
       "not_before": "2026-11-04T20:30:00Z",
       "min_gap_hours": 2,
       "approved": true,
-      "status": "queued",
+      "status": "posted",
       "crosspost_to": [],
       "trial_set": "plan-loma",
       "opening": "contrast",
       "length": "full",
       "slot_note": "plan reels spread 2/day (11:00 + 15:30 NY), one reel per slot, best-predicted hook first (Matteo 2026-11-02)",
-      "approved_note": "Matteo: approved the week via dashboard (2026-11-03T13:06:19Z)"
+      "approved_note": "Matteo: approved the week via dashboard (2026-11-03T13:06:19Z)",
+      "posting_since": "2026-11-04T21:14:23Z",
+      "media_id": "18357958825168661",
+      "permalink": "https://www.instagram.com/reel/DfVZdwDkfbD/",
+      "posted_at": "2026-11-04T21:15:01Z"
     }
   ]
 }
