@@ -2104,7 +2104,10 @@
       "cta": "protocol",
       "app_audio": "id:496614019576474 Echo Sax Feeling Blue - Caleb Arredondo (add in the Instagram app)",
       "video_asset_music": "lst-2026-11-03-countered-after-combo-music.mp4",
-      "approved_note": "Matteo: approved the week via dashboard (2026-10-25T14:10:05Z)"
+      "approved_note": "Matteo: approved the week via dashboard (2026-10-25T14:10:05Z)",
+      "audio_id": "496614019576474",
+      "audio_title": "Caleb Arredondo - Echo Sax Feeling Blue",
+      "audio_artist": "sovenhq"
     },
     {
       "id": "lst-2026-11-04-learn-from-sparring",
