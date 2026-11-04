@@ -39,7 +39,7 @@
         "21:00"
       ],
       "topic": "Combat Sports",
-      "last_slot": "2026-11-04T15:00:00Z"
+      "last_slot": "2026-11-04T20:30:00Z"
     },
     "facebook_slides": {
       "enabled": false,
@@ -1098,7 +1098,14 @@
         "id": "9K3BMzwvDZ8",
         "url": "https://youtube.com/shorts/9K3BMzwvDZ8",
         "privacy": "public"
+      },
+      "threads": {
+        "status": "posted",
+        "at": "2026-11-04T20:36:36Z",
+        "id": "17876632032638691",
+        "url": "https://www.threads.com/@matteofights/post/DfVVD_6S3Uq"
       }
-    }
+    },
+    "lst-2026-11-01-pressure-fighter": {}
   }
 }
