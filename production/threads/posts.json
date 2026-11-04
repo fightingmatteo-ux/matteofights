@@ -893,9 +893,12 @@
       "text": "Who got you into this?\n\nA friend, a movie, a bully, an older brother. Last one's my guess for half of you.",
       "chain": [],
       "from": "craft",
-      "status": "queued",
+      "status": "posted",
       "approved": true,
-      "approved_note": "Matteo: approved via dashboard (2026-10-25T17:10:40Z)"
+      "approved_note": "Matteo: approved via dashboard (2026-10-25T17:10:40Z)",
+      "posted_at": "2026-11-04T17:41:09Z",
+      "thread_id": "18084962567345269",
+      "url": "https://www.threads.com/@matteofights/post/DfVBCVQiZAQ"
     },
     {
       "id": "th-1104-3",
