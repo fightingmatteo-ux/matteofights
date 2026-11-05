@@ -27,7 +27,7 @@
         "19:00"
       ],
       "privacy_note": "Matteo: 'youtube approved' (2026-10-16). If YouTube still forces private, the audit isn't through yet.",
-      "last_slot": "2026-11-04T21:00:00Z"
+      "last_slot": "2026-11-05T00:00:00Z"
     },
     "threads": {
       "enabled": true,
@@ -1112,6 +1112,15 @@
         "at": "2026-11-04T21:05:57Z",
         "id": "Aj5ClkiHegM",
         "url": "https://youtube.com/shorts/Aj5ClkiHegM",
+        "privacy": "public"
+      }
+    },
+    "lst-2026-11-02-sparring-isnt-fighting": {
+      "youtube": {
+        "status": "posted",
+        "at": "2026-11-05T00:06:02Z",
+        "id": "VolBfAaX2Ns",
+        "url": "https://youtube.com/shorts/VolBfAaX2Ns",
         "privacy": "public"
       }
     }
