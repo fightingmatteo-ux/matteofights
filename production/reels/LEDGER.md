@@ -83,6 +83,10 @@ Sort by follows per 1k views when looking for what grows the account.
 | 2026-10-31 | lst-2026-10-31-sparring-teaches-building | - | 18435569284194314 | 6 THINGS SPARRING TEACHES YOU ABOUT BUILDING ANYTHING | builder (identity) | text-on-clip | trial | 1514 (0.66x) | ? | 0 | 4 | 0 | no | builder: 0.66x |
 | 2026-10-31 | lst-2026-10-31-fighting-therapy | - | 18054939758612177 | 6 SIGNS COMBAT SPORTS IS HOW YOU DEAL WITH LIFE | listicle (identity) | text-on-clip | trial | 2778 (1.20x) | ? | 0 | 10 | 0 | no | identity: 1.20x, 10 saves |
 | 2026-11-01 | lst-2026-10-31-teep-like-thai | - | 18096080225170784 | 6 WAYS TO USE THE TEEP LIKE A THAI | listicle (tactical) | text-on-clip | trial | 2969 (1.29x) | ? | 0 | 9 | 0 | no | tactical technique: 1.29x, 9 saves |
+| 2026-11-01 | lst-2026-11-01-footwork-drills | - | 18084518942379726 | 6 FOOTWORK DRILLS THAT MAKE YOU HARDER TO HIT | listicle (tactical) | text-on-clip | trial | 2479 (0.86x) | ? | 7 | 34 | 0 | no | tactical drills: 0.86x views but 34 saves (6x), skip 65% |
+| 2026-11-01 | lst-2026-11-01-habits-when-tired | - | 18050587088815104 | YOUR REAL HABITS ONLY SHOW UP WHEN YOU'RE TIRED | statement (identity) | text-on-clip | trial | 1695 (0.59x) | ? | 0 | 3 | 0 | no | statement: 0.59x |
+| 2026-11-02 | lst-2026-11-01-ten-years | - | 18112201892350877 | 6 SIGNS YOU'LL STILL BE TRAINING IN 10 YEARS | listicle (identity) | text-on-clip | trial | 3098 (1.08x) | ? | 0 | 7 | 0 | no | identity: 1.08x |
+| 2026-11-02 | lst-2026-11-01-pressure-fighter | - | 18134570593739399 | 7 WAYS TO BEAT A PRESSURE FIGHTER WITHOUT RUNNING | listicle (tactical) | text-on-clip | trial | 3957 (1.38x) | ? | 0 | 25 | 0 | no | tactical fight problem: 1.38x, 25 saves (4.5x) |
 
 ## Patterns so far
 - _Add a line whenever a test is decided. Keep it to what the numbers showed._

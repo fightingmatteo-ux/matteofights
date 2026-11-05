@@ -58,5 +58,16 @@
     "answered_at": "2026-11-01T17:54:48Z",
     "via": "dashboard",
     "resolution": "New talking points sent 2 Nov: where-it-started (origin reel) and the 6 plan reels filming sheet (production/reels/FILM-2026-11-02-plan-reels.md)."
+  },
+  {
+    "id": "q-1105-talking-head",
+    "question": "Next talking head? The 15:30 New York slot is empty from today.",
+    "context": "P0, P3, L1 and L2 plan reels posted 3-4 Nov. Still unfilmed on the filming sheet (production/reels/FILM-2026-11-02-plan-reels.md): P1 the 9-to-5 fighter, P2 punching power after 30, P4 only 2 classes a week, P5 hands drop when you're tired. Also ready: where-it-started (origin reel talking points). 5 hooks each, about 40 min for all.",
+    "options": [
+      "Filming this week",
+      "Skip the slot for now",
+      "Send me other talking points"
+    ],
+    "status": "open"
   }
 ]
