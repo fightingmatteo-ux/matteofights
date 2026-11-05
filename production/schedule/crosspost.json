@@ -39,7 +39,7 @@
         "21:00"
       ],
       "topic": "Combat Sports",
-      "last_slot": "2026-11-05T02:00:00Z"
+      "last_slot": "2026-11-05T15:00:00Z"
     },
     "facebook_slides": {
       "enabled": false,
@@ -1138,6 +1138,13 @@
     },
     "2026-11-02-plan-P3-A": {},
     "2026-11-02-plan-L1-D": {},
-    "lst-2026-11-02-getting-hit-skill": {}
+    "lst-2026-11-02-getting-hit-skill": {
+      "threads": {
+        "status": "posted",
+        "at": "2026-11-05T15:06:37Z",
+        "id": "18117760100599992",
+        "url": "https://www.threads.com/@matteofights/post/DfXUGPnRk3v"
+      }
+    }
   }
 }
