@@ -1856,7 +1856,14 @@
       "posting_since": "2026-11-02T00:30:53Z",
       "media_id": "18112201892350877",
       "permalink": "https://www.instagram.com/reel/DfOBk9sFVBy/",
-      "posted_at": "2026-11-02T00:31:36Z"
+      "posted_at": "2026-11-02T00:31:36Z",
+      "video_asset_fb": "lst-2026-11-01-ten-years-fb.mp4",
+      "fb_pick": {
+        "at": "2026-11-05T00:53:13Z",
+        "ig_views": 3098,
+        "vs_median": 1.34,
+        "shares_saves_per_1k": 2.3
+      }
     },
     {
       "id": "lst-2026-11-02-fight-iq",
