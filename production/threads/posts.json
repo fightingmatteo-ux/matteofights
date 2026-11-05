@@ -938,9 +938,12 @@
       "text": "Sparring tomorrow? Cut your nails, wash your mouthguard and pack the bag tonight.\n\nOne less thing to think about means one less thing that goes wrong.",
       "chain": [],
       "from": "craft",
-      "status": "queued",
+      "status": "posted",
       "approved": true,
-      "approved_note": "Matteo: approved via dashboard (2026-10-25T17:10:40Z)"
+      "approved_note": "Matteo: approved via dashboard (2026-10-25T17:10:40Z)",
+      "posted_at": "2026-11-05T17:41:13Z",
+      "thread_id": "17969767284194268",
+      "url": "https://www.threads.com/@matteofights/post/DfXl1g-nGb9"
     },
     {
       "id": "th-1105-3",
