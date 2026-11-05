@@ -953,9 +953,12 @@
       "text": "Best conditioning of your life, or best technique?\n\nPick one. Then say what you'd lose first.",
       "chain": [],
       "from": "craft",
-      "status": "queued",
+      "status": "posted",
       "approved": true,
-      "approved_note": "Matteo: approved via dashboard (2026-10-25T17:10:40Z)"
+      "approved_note": "Matteo: approved via dashboard (2026-10-25T17:10:40Z)",
+      "posted_at": "2026-11-05T22:36:05Z",
+      "thread_id": "17953012590323499",
+      "url": "https://www.threads.com/@matteofights/post/DfYHlQUGyic"
     },
     {
       "id": "th-1106-1",
