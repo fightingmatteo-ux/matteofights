@@ -794,5 +794,9 @@
   {
     "id": "xp-186a1a39",
     "text": "📤 YouTube Shorts: 6 SIGNS YOU HAVE HIGH FIGHT IQ\nhttps://youtube.com/shorts/yhyBjbxdyBo"
+  },
+  {
+    "id": "health-queue:lst-2026-10-30-not-a-beginner:failed-2026110520",
+    "text": "⚠️ lst-2026-10-30-not-a-beginner failed to post: GET https://graph.facebook.com/v23.0/530317382955170 -> 404: {\"title\":\"Not Found\",\"detail\":\"No audio asset found for the given ID\",\"status\":404}"
   }
 ]
