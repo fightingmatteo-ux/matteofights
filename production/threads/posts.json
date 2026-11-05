@@ -923,9 +923,12 @@
       "text": "Trash talk before a fight is for the crowd.\n\nThe fighter who needs to talk is usually the one doing the convincing.",
       "chain": [],
       "from": "craft",
-      "status": "queued",
+      "status": "posted",
       "approved": true,
-      "approved_note": "Matteo: approved via dashboard (2026-10-25T17:10:40Z)"
+      "approved_note": "Matteo: approved via dashboard (2026-10-25T17:10:40Z)",
+      "posted_at": "2026-11-05T12:36:03Z",
+      "thread_id": "17948864283090593",
+      "url": "https://www.threads.com/@matteofights/post/DfXC6iMG_r1"
     },
     {
       "id": "th-1105-2",
