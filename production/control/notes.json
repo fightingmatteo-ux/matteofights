@@ -1,9 +1,5 @@
 [
   {
-    "id": "xp-975a9852",
-    "text": "📤 Facebook Reels: 7 WAYS TO BUILD A FIGHTER'S MINDSET WITHOUT A SINGLE FIGHT\nhttps://www.facebook.com/reel/1463427735631609"
-  },
-  {
     "id": "xp-ef1c48aa",
     "text": "⚠️ YouTube Shorts gave up on: 7 WAYS TO BUILD A FIGHTER'S MINDSET WITHOUT A SINGLE FIGHT\nPOST https://www.googleapis.com/upload/youtube/v3/videos -> 401: {\n  \"error\": {\n    \"code\": 401,\n    \"message\": \"Unauthorized\",\n    \"errors\": [\n      {\n        \"message\": \"Unauthorized\",\n        \"domain\": \"youtube.header\",\n        \"reason\": \"youtubeSignupRequired\",\n        \"location\": \"Authorization"
   },
@@ -798,5 +794,9 @@
   {
     "id": "xp-42b5d311",
     "text": "📤 Threads: 6 SIGNS YOU'RE A FIGHTER, NOT JUST FIT\nhttps://www.threads.com/@matteofights/post/DfaeqFjz7R8"
+  },
+  {
+    "id": "xp-326e6258",
+    "text": "📤 YouTube Shorts: 6 SIGNS YOU'RE A FIGHTER, NOT JUST FIT\nhttps://youtube.com/shorts/J-ZKudrNLVs"
   }
 ]
