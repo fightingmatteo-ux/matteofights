@@ -3094,11 +3094,18 @@
       "not_before": "2026-11-06T14:00:00Z",
       "min_gap_hours": 2.5,
       "approved": true,
-      "status": "queued",
+      "status": "posted",
       "cta": "read",
       "app_audio": "id:530317382955170 Echo Sax End - Caleb Arredondo (add in the Instagram app)",
       "video_asset_music": "lst-2026-11-06-sparring-rules-business-music.mp4",
-      "approved_note": "Matteo: approved the week via dashboard (2026-11-03T13:27:04Z)"
+      "approved_note": "Matteo: approved the week via dashboard (2026-11-03T13:27:04Z)",
+      "audio_id": "530317382955170",
+      "audio_title": "Echo Sax End (Take 2)",
+      "audio_artist": "caleb.arredondo",
+      "posting_since": "2026-11-06T14:00:58Z",
+      "media_id": "17886961380514107",
+      "permalink": "https://www.instagram.com/reel/DfZxeQFnH1R/",
+      "posted_at": "2026-11-06T14:01:47Z"
     },
     {
       "id": "lst-2026-11-07-training-vs-school",
