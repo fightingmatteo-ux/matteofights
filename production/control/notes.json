@@ -1,9 +1,5 @@
 [
   {
-    "id": "xp-8adc29d4",
-    "text": "📤 Facebook Reels: 7 WAYS TO BUILD REAL TECHNIQUE WITHOUT A COACH\nhttps://www.facebook.com/reel/1835746304451116"
-  },
-  {
     "id": "xp-5afb7839",
     "text": "⚠️ YouTube Shorts gave up on: 7 WAYS TO BUILD REAL TECHNIQUE WITHOUT A COACH\nPOST https://www.googleapis.com/upload/youtube/v3/videos -> 401: {\n  \"error\": {\n    \"code\": 401,\n    \"message\": \"Unauthorized\",\n    \"errors\": [\n      {\n        \"message\": \"Unauthorized\",\n        \"domain\": \"youtube.header\",\n        \"reason\": \"youtubeSignupRequired\",\n        \"location\": \"Authorization"
   },
@@ -798,5 +794,9 @@
   {
     "id": "xp-db1ddad9",
     "text": "📤 YouTube Shorts: TRYING TO EXPLAIN YOUR SHIN BRUISES TO YOUR MOM\nhttps://youtube.com/shorts/-vI1LoDHa4c"
+  },
+  {
+    "id": "health-queue:2026-11-02-plan-L1-E:missed-2026110619",
+    "text": "⏰ 2026-11-02-plan-L1-E was due 2026-11-06T16:00:00Z and still hasn't posted."
   }
 ]
