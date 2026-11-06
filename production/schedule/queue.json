@@ -2702,11 +2702,18 @@
       "not_before": "2026-11-06T02:30:00Z",
       "min_gap_hours": 2.5,
       "approved": true,
-      "status": "queued",
+      "status": "posted",
       "cta": "protocol",
       "app_audio": "id:576492425503806 Echo Sax Endless - Caleb Arredondo (add in the Instagram app)",
       "video_asset_music": "lst-2026-11-05-land-right-hand-music.mp4",
-      "approved_note": "Matteo: approved the week via dashboard (2026-11-03T13:27:04Z)"
+      "approved_note": "Matteo: approved the week via dashboard (2026-11-03T13:27:04Z)",
+      "audio_id": "576492425503806",
+      "audio_title": "Echo Sax Endless",
+      "audio_artist": "caleb.arredondo",
+      "posting_since": "2026-11-06T02:30:56Z",
+      "media_id": "18120773428952964",
+      "permalink": "https://www.instagram.com/reel/DfYifv4EsSf/",
+      "posted_at": "2026-11-06T02:31:45Z"
     },
     {
       "id": "lst-2026-11-06-first-spar",
