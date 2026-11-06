@@ -170,13 +170,33 @@
     "at": "2026-11-02T21:55:29Z"
   },
   "18357958825168661": {
-    "views": 2292,
-    "reach": 1772,
+    "views": 2296,
+    "reach": 1779,
     "shares": 15,
     "saves": 43,
     "avg_watch_s": 5.8,
     "skip_rate": 44.3,
     "follows": null,
-    "at": "2026-11-06T07:22:34Z"
+    "at": "2026-11-06T19:40:25Z"
+  },
+  "18041900690844548": {
+    "views": 129,
+    "reach": 2,
+    "shares": 0,
+    "saves": 0,
+    "avg_watch_s": 1.8,
+    "skip_rate": 1.8,
+    "follows": null,
+    "at": "2026-11-06T19:40:22Z"
+  },
+  "18287478829293619": {
+    "views": 349,
+    "reach": 269,
+    "shares": 1,
+    "saves": 2,
+    "avg_watch_s": 4.9,
+    "skip_rate": 50.5,
+    "follows": null,
+    "at": "2026-11-06T19:40:23Z"
   }
 }
