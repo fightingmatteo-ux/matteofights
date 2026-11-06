@@ -3411,9 +3411,10 @@
       "hook": "Lomachenko's footwork isn't talent. It's years of drills nobody films.",
       "opening": "contrast",
       "not_before": "2026-11-05T16:00:00Z",
-      "approved": false,
+      "approved": true,
       "status": "queued",
-      "slot_note": "Loma wave 2: D (contrast) got 43 comments, 43 saves, 15 shares in 19 h (save rate 2.5%); remaining hooks 2/day, contrast/question first, story last"
+      "slot_note": "Loma wave 2: D (contrast) got 43 comments, 43 saves, 15 shares in 19 h (save rate 2.5%); remaining hooks 2/day, contrast/question first, story last",
+      "approved_note": "Matteo: approved the week via dashboard (2026-11-06T16:27:07Z)"
     },
     {
       "reel": "2026-11-02-plan-L1",
@@ -3431,9 +3432,10 @@
       "hook": "Ever wonder why Lomachenko's footwork looks like that?",
       "opening": "question",
       "not_before": "2026-11-05T20:30:00Z",
-      "approved": false,
+      "approved": true,
       "status": "queued",
-      "slot_note": "Loma wave 2: D (contrast) got 43 comments, 43 saves, 15 shares in 19 h (save rate 2.5%); remaining hooks 2/day, contrast/question first, story last"
+      "slot_note": "Loma wave 2: D (contrast) got 43 comments, 43 saves, 15 shares in 19 h (save rate 2.5%); remaining hooks 2/day, contrast/question first, story last",
+      "approved_note": "Matteo: approved the week via dashboard (2026-11-06T16:27:07Z)"
     },
     {
       "reel": "2026-11-02-plan-L1",
@@ -3451,9 +3453,10 @@
       "hook": "If your feet ever feel stuck when you shadowbox, this is for you.",
       "opening": "question",
       "not_before": "2026-11-06T16:00:00Z",
-      "approved": false,
+      "approved": true,
       "status": "queued",
-      "slot_note": "Loma wave 2: D (contrast) got 43 comments, 43 saves, 15 shares in 19 h (save rate 2.5%); remaining hooks 2/day, contrast/question first, story last"
+      "slot_note": "Loma wave 2: D (contrast) got 43 comments, 43 saves, 15 shares in 19 h (save rate 2.5%); remaining hooks 2/day, contrast/question first, story last",
+      "approved_note": "Matteo: approved the week via dashboard (2026-11-06T16:27:07Z)"
     },
     {
       "reel": "2026-11-02-plan-L1",
@@ -3471,9 +3474,10 @@
       "hook": "Lomachenko spent 4 years doing dance instead of boxing.",
       "opening": "story",
       "not_before": "2026-11-06T20:30:00Z",
-      "approved": false,
+      "approved": true,
       "status": "queued",
-      "slot_note": "Loma wave 2: D (contrast) got 43 comments, 43 saves, 15 shares in 19 h (save rate 2.5%); remaining hooks 2/day, contrast/question first, story last"
+      "slot_note": "Loma wave 2: D (contrast) got 43 comments, 43 saves, 15 shares in 19 h (save rate 2.5%); remaining hooks 2/day, contrast/question first, story last",
+      "approved_note": "Matteo: approved the week via dashboard (2026-11-06T16:27:07Z)"
     }
   ]
 }
