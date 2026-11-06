@@ -328,5 +328,10 @@
     "at": "2026-11-05T11:01:21Z",
     "who": "Claude",
     "text": "Daily check: LEDGER +4 (1 Nov), no winner (normal 2876; pressure-fighter 1.38x / 25 saves, footwork 34 saves at 0.86x). Metrics +16. No talking head queued for the next 3 days: card asks Matteo to film P1/P2/P4/P5 or where-it-started."
+  },
+  {
+    "at": "2026-11-06T11:00:30Z",
+    "who": "Claude",
+    "text": "Daily check: LEDGER +4 (2 Nov), no winner (listicle normal 2570; adrenaline-dump 1.56x). Metrics +17, vs_median now against listicle median (Buzzfy median 1287 is dragged down by plan-reel trials). Loma A/B/C/E still waiting for Matteo's approval; talking-head card q-1105 still open."
   }
 ]

@@ -87,6 +87,10 @@ Sort by follows per 1k views when looking for what grows the account.
 | 2026-11-01 | lst-2026-11-01-habits-when-tired | - | 18050587088815104 | YOUR REAL HABITS ONLY SHOW UP WHEN YOU'RE TIRED | statement (identity) | text-on-clip | trial | 1695 (0.59x) | ? | 0 | 3 | 0 | no | statement: 0.59x |
 | 2026-11-02 | lst-2026-11-01-ten-years | - | 18112201892350877 | 6 SIGNS YOU'LL STILL BE TRAINING IN 10 YEARS | listicle (identity) | text-on-clip | trial | 3098 (1.08x) | ? | 0 | 7 | 0 | no | identity: 1.08x |
 | 2026-11-02 | lst-2026-11-01-pressure-fighter | - | 18134570593739399 | 7 WAYS TO BEAT A PRESSURE FIGHTER WITHOUT RUNNING | listicle (tactical) | text-on-clip | trial | 3957 (1.38x) | ? | 0 | 25 | 0 | no | tactical fight problem: 1.38x, 25 saves (4.5x) |
+| 2026-11-02 | lst-2026-11-02-sparring-isnt-fighting | - | 17991412163867000 | WIN EVERY SPARRING ROUND AND YOU'LL LEARN NOTHING | statement (identity) | text-on-clip | trial | 1027 (0.40x) | ? | 0 | 0 | 0 | no | statement: 0.40x, 0 saves |
+| 2026-11-02 | lst-2026-11-02-getting-hit-skill | - | 18100587368436187 | GETTING HIT IS A SKILL. ALMOST NOBODY TRAINS IT. | statement (tactical) | text-on-clip | trial | 2660 (1.04x) | ? | 0 | 4 | 0 | no | statement: 1.04x |
+| 2026-11-02 | lst-2026-11-02-fight-iq | - | 18122065310066340 | 6 SIGNS YOU HAVE HIGH FIGHT IQ | listicle (identity) | text-on-clip | trial | 3107 (1.21x) | ? | 7 | 14 | 0 | no | identity: 1.21x, 7 shares |
+| 2026-11-03 | lst-2026-11-02-adrenaline-dump | - | 18194589373401310 | 6 WAYS TO STOP GASSING OUT IN YOUR FIRST FIGHT | listicle (tactical) | text-on-clip | trial | 4012 (1.56x) | ? | 2 | 24 | 0 | no | tactical fight problem: 1.56x, 24 saves |
 
 ## Patterns so far
 - _Add a line whenever a test is decided. Keep it to what the numbers showed._
@@ -106,3 +110,5 @@ Sort by follows per 1k views when looking for what grows the account.
 - 2026-11-02 (normal 2252, Buzzfy median of 7): no new winner in the 28-29 Oct batch (best body-kicks 1.60x, 13 saves; quiet-threat 1.36x with 11 shares). Statements now n=9, all 0.45-1.09x (boring-best 0.97x, first-coach 0.82x): keep at 2 per 28. sleep-rules got 0 views at 114 h with no posting error (Instagram never distributed it), n=1.
 - 2026-11-02 (auto, first-fight-lesson): contrast opening won over question, result, reframe, number.
 - 2026-11-04 (normal 2310, Buzzfy median of 10): builder lane now n=4, all at or under normal (1.00x, 0.97x, 0.66x, 0.40x; 2-4 saves each). Follows per reel aren't in the data yet, so the lane can't be judged on its own metric (follows per 1k views); views alone say it trails fight content.
+
+- 2026-11-06 (normal 2570 = median of the last 20 listicles; Buzzfy's own median fell to 1287 because the plan-reel trials at 216-341 views are in it, so listicles are judged against listicles): no winner on 2 Nov, best adrenaline-dump 1.56x / 24 saves. Plan reel Loma D (contrast, fight-legend name in the hook) 2293 views but 101 likes, 41 comments, 43 saves, 15 shares at 38 h, while power/Tyson/cardio plan reels got 216-341 views (n=4).
