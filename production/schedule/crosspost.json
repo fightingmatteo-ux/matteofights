@@ -39,7 +39,7 @@
         "21:00"
       ],
       "topic": "Combat Sports",
-      "last_slot": "2026-11-06T15:00:00Z"
+      "last_slot": "2026-11-06T20:30:00Z"
     },
     "facebook_slides": {
       "enabled": false,
@@ -1204,6 +1204,14 @@
         "id": "-vI1LoDHa4c",
         "url": "https://youtube.com/shorts/-vI1LoDHa4c",
         "privacy": "public"
+      }
+    },
+    "lst-2026-11-03-fighter-not-fit": {
+      "threads": {
+        "status": "posted",
+        "at": "2026-11-06T20:36:25Z",
+        "id": "18123283588953691",
+        "url": "https://www.threads.com/@matteofights/post/DfaeqFjz7R8"
       }
     }
   }
