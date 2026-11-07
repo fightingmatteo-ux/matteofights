@@ -1,9 +1,5 @@
 [
   {
-    "id": "xp-ef1c48aa",
-    "text": "⚠️ YouTube Shorts gave up on: 7 WAYS TO BUILD A FIGHTER'S MINDSET WITHOUT A SINGLE FIGHT\nPOST https://www.googleapis.com/upload/youtube/v3/videos -> 401: {\n  \"error\": {\n    \"code\": 401,\n    \"message\": \"Unauthorized\",\n    \"errors\": [\n      {\n        \"message\": \"Unauthorized\",\n        \"domain\": \"youtube.header\",\n        \"reason\": \"youtubeSignupRequired\",\n        \"location\": \"Authorization"
-  },
-  {
     "id": "xp-b2ff88dc",
     "text": "📤 Threads: 7 WAYS TO BUILD A FIGHTER'S MINDSET WITHOUT A SINGLE FIGHT\nhttps://www.threads.com/@matteofights/post/Dek42IGkr_W"
   },
@@ -798,5 +794,9 @@
   {
     "id": "xp-326e6258",
     "text": "📤 YouTube Shorts: 6 SIGNS YOU'RE A FIGHTER, NOT JUST FIT\nhttps://youtube.com/shorts/J-ZKudrNLVs"
+  },
+  {
+    "id": "xp-4aebde2b",
+    "text": "📤 YouTube Shorts: 6 WAYS TO STOP GETTING COUNTERED AFTER YOUR COMBO\nhttps://youtube.com/shorts/2X1psVFp69g"
   }
 ]
