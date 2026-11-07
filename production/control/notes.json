@@ -1,9 +1,5 @@
 [
   {
-    "id": "xp-781c0ff3",
-    "text": "📤 Facebook Reels: THERE'S NO SUCH THING AS AN EX-FIGHTER\nhttps://www.facebook.com/reel/987115153732256"
-  },
-  {
     "id": "xp-3a987354",
     "text": "⚠️ YouTube Shorts gave up on: THERE'S NO SUCH THING AS AN EX-FIGHTER\nPOST https://www.googleapis.com/upload/youtube/v3/videos -> 401: {\n  \"error\": {\n    \"code\": 401,\n    \"message\": \"Unauthorized\",\n    \"errors\": [\n      {\n        \"message\": \"Unauthorized\",\n        \"domain\": \"youtube.header\",\n        \"reason\": \"youtubeSignupRequired\",\n        \"location\": \"Authorization"
   },
@@ -798,5 +794,9 @@
   {
     "id": "xp-03c03daa",
     "text": "📤 Threads: HOW FIGHTERS GET STRONGER WITHOUT GETTING SLOW\nhttps://www.threads.com/@matteofights/post/DfcdtEnh5Gt"
+  },
+  {
+    "id": "xp-89023cbd",
+    "text": "📤 YouTube Shorts: HOW FIGHTERS GET STRONGER WITHOUT GETTING SLOW\nhttps://youtube.com/shorts/Y_XmUgyGI3A"
   }
 ]
