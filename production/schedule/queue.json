@@ -2104,7 +2104,14 @@
       "posting_since": "2026-11-03T02:30:56Z",
       "media_id": "18194589373401310",
       "permalink": "https://www.instagram.com/reel/DfQ0G0EivZL/",
-      "posted_at": "2026-11-03T02:31:38Z"
+      "posted_at": "2026-11-03T02:31:38Z",
+      "video_asset_fb": "lst-2026-11-02-adrenaline-dump-fb.mp4",
+      "fb_pick": {
+        "at": "2026-11-07T00:06:30Z",
+        "ig_views": 4012,
+        "vs_median": 1.56,
+        "shares_saves_per_1k": 6.5
+      }
     },
     {
       "id": "lst-2026-11-03-countered-after-combo",
