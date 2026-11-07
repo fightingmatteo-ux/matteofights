@@ -1,9 +1,5 @@
 [
   {
-    "id": "xp-3a987354",
-    "text": "⚠️ YouTube Shorts gave up on: THERE'S NO SUCH THING AS AN EX-FIGHTER\nPOST https://www.googleapis.com/upload/youtube/v3/videos -> 401: {\n  \"error\": {\n    \"code\": 401,\n    \"message\": \"Unauthorized\",\n    \"errors\": [\n      {\n        \"message\": \"Unauthorized\",\n        \"domain\": \"youtube.header\",\n        \"reason\": \"youtubeSignupRequired\",\n        \"location\": \"Authorization"
-  },
-  {
     "id": "xp-4269d1bb",
     "text": "⚠️ YouTube Shorts gave up on: 6 SIGNS YOU'RE MENTALLY TOUGHER THAN YOU THINK\nPOST https://www.googleapis.com/upload/youtube/v3/videos -> 401: {\n  \"error\": {\n    \"code\": 401,\n    \"message\": \"Unauthorized\",\n    \"errors\": [\n      {\n        \"message\": \"Unauthorized\",\n        \"domain\": \"youtube.header\",\n        \"reason\": \"youtubeSignupRequired\",\n        \"location\": \"Authorization"
   },
@@ -798,5 +794,9 @@
   {
     "id": "xp-89023cbd",
     "text": "📤 YouTube Shorts: HOW FIGHTERS GET STRONGER WITHOUT GETTING SLOW\nhttps://youtube.com/shorts/Y_XmUgyGI3A"
+  },
+  {
+    "id": "xp-157cf7a8",
+    "text": "📤 Threads: 7 WAYS TO THROW KICKS THAT DON'T GET CAUGHT\nhttps://www.threads.com/@matteofights/post/DfdDc3eJW6C"
   }
 ]
