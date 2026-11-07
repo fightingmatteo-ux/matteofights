@@ -1919,7 +1919,14 @@
       "posting_since": "2026-11-04T00:30:55Z",
       "media_id": "17918608239262835",
       "permalink": "https://www.instagram.com/reel/DfTLKaakbxD/",
-      "posted_at": "2026-11-04T00:31:37Z"
+      "posted_at": "2026-11-04T00:31:37Z",
+      "video_asset_fb": "lst-2026-11-03-fighter-not-fit-fb.mp4",
+      "fb_pick": {
+        "at": "2026-11-07T23:38:08Z",
+        "ig_views": 3817,
+        "vs_median": 1.49,
+        "shares_saves_per_1k": 1.8
+      }
     },
     {
       "id": "lst-2026-11-04-kicks-caught",
