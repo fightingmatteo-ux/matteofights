@@ -1,13 +1,5 @@
 [
   {
-    "id": "n-c839a062",
-    "text": "📊 7 reels in: all 7 beat your normal 2.3k views (1.2x to 1.8x), US share of reach up to 20% this week. But the listicles earn views without saves or shares: 'Built for fight night' 3 saves, 0 shares; 'No ex-fighter' 3 saves. The talking-head 'Beginners try to win every exchange' still leads at 4.2k with 48 saves. First winner call Sunday night."
-  },
-  {
-    "id": "xp-7b9c683b",
-    "text": "📤 Facebook slides: 7 WAYS TO BUILD REAL TECHNIQUE WITHOUT A COACH\nhttps://www.facebook.com/1070947222779004_122155378989352578"
-  },
-  {
     "id": "xp-9c3aeda3",
     "text": "📤 Threads: THERE'S NO SUCH THING AS AN EX-FIGHTER\nhttps://www.threads.com/@matteofights/post/DemSHOvlZkK"
   },
@@ -798,5 +790,13 @@
   {
     "id": "xp-a5455d24",
     "text": "📤 Threads: 6 WAYS TO STOP GETTING COUNTERED AFTER YOUR COMBO\nhttps://www.threads.com/@matteofights/post/DfbEb4tvWX6"
+  },
+  {
+    "id": "health-queue:lst-2026-10-30-not-a-beginner:failed-2026110706",
+    "text": "⚠️ lst-2026-10-30-not-a-beginner failed to post: GET https://graph.facebook.com/v23.0/530317382955170 -> 404: {\"title\":\"Not Found\",\"detail\":\"No audio asset found for the given ID\",\"status\":404}"
+  },
+  {
+    "id": "health-queue:lst-2026-11-06-first-spar:missed-2026110706",
+    "text": "⏰ lst-2026-11-06-first-spar was due 2026-11-07T02:30:00Z and still hasn't posted."
   }
 ]
