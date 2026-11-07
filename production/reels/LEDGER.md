@@ -91,6 +91,10 @@ Sort by follows per 1k views when looking for what grows the account.
 | 2026-11-02 | lst-2026-11-02-getting-hit-skill | - | 18100587368436187 | GETTING HIT IS A SKILL. ALMOST NOBODY TRAINS IT. | statement (tactical) | text-on-clip | trial | 2660 (1.04x) | ? | 0 | 4 | 0 | no | statement: 1.04x |
 | 2026-11-02 | lst-2026-11-02-fight-iq | - | 18122065310066340 | 6 SIGNS YOU HAVE HIGH FIGHT IQ | listicle (identity) | text-on-clip | trial | 3107 (1.21x) | ? | 7 | 14 | 0 | no | identity: 1.21x, 7 shares |
 | 2026-11-03 | lst-2026-11-02-adrenaline-dump | - | 18194589373401310 | 6 WAYS TO STOP GASSING OUT IN YOUR FIRST FIGHT | listicle (tactical) | text-on-clip | trial | 4012 (1.56x) | ? | 2 | 24 | 0 | no | tactical fight problem: 1.56x, 24 saves |
+| 2026-11-03 | lst-2026-11-03-warm-up-right | - | 18174617512456797 | 7 WAYS TO WARM UP SO YOU DON'T GET HURT | listicle (tactical) | text-on-clip | trial | 634 (0.25x) | ? | 0 | 5 | 0 | no | tactical, not a fight moment: 0.25x, skip 65% |
+| 2026-11-03 | lst-2026-11-03-shin-bruises | - | 18194950774404627 | TRYING TO EXPLAIN YOUR SHIN BRUISES TO YOUR MOM | iykyk (identity) | text-on-clip | trial | 1170 (0.46x) | ? | 1 | 1 | 0 | no | iykyk: 0.46x |
+| 2026-11-04 | lst-2026-11-03-fighter-not-fit | - | 17918608239262835 | 6 SIGNS YOU'RE A FIGHTER, NOT JUST FIT | listicle (identity) | text-on-clip | trial | 3817 (1.49x) | ? | 0 | 7 | 0 | no | identity contrast: 1.49x, skip 39% (low) |
+| 2026-11-04 | lst-2026-11-03-countered-after-combo | - | 18111703811353503 | 6 WAYS TO STOP GETTING COUNTERED AFTER YOUR COMBO | listicle (tactical) | text-on-clip | trial | 1409 (0.55x) | ? | 0 | 8 | 0 | no | tactical fight problem: 0.55x |
 
 ## Patterns so far
 - _Add a line whenever a test is decided. Keep it to what the numbers showed._
@@ -112,3 +116,4 @@ Sort by follows per 1k views when looking for what grows the account.
 - 2026-11-04 (normal 2310, Buzzfy median of 10): builder lane now n=4, all at or under normal (1.00x, 0.97x, 0.66x, 0.40x; 2-4 saves each). Follows per reel aren't in the data yet, so the lane can't be judged on its own metric (follows per 1k views); views alone say it trails fight content.
 
 - 2026-11-06 (normal 2570 = median of the last 20 listicles; Buzzfy's own median fell to 1287 because the plan-reel trials at 216-341 views are in it, so listicles are judged against listicles): no winner on 2 Nov, best adrenaline-dump 1.56x / 24 saves. Plan reel Loma D (contrast, fight-legend name in the hook) 2293 views but 101 likes, 41 comments, 43 saves, 15 shares at 38 h, while power/Tyson/cardio plan reels got 216-341 views (n=4).
+- 2026-11-07 (listicle normal 2570): no winner on 3 Nov (best fighter-not-fit 1.49x). Loma plan reel, all 5 hooks out: D contrast 2302 views / 101 likes / 41 comments / 43 saves at 62 h; A story 2424 / 74 likes / 14 comments at 8 h; B question 1695; C contrast 1282; E callout ('if your feet...') 314. Naming a fight legend lifts comments 5-10x over plan reels without one (n=5 vs 3). Story opening led this test, against the trial learnings (n=1).
