@@ -95,6 +95,11 @@ Sort by follows per 1k views when looking for what grows the account.
 | 2026-11-03 | lst-2026-11-03-shin-bruises | - | 18194950774404627 | TRYING TO EXPLAIN YOUR SHIN BRUISES TO YOUR MOM | iykyk (identity) | text-on-clip | trial | 1170 (0.46x) | ? | 1 | 1 | 0 | no | iykyk: 0.46x |
 | 2026-11-04 | lst-2026-11-03-fighter-not-fit | - | 17918608239262835 | 6 SIGNS YOU'RE A FIGHTER, NOT JUST FIT | listicle (identity) | text-on-clip | trial | 3817 (1.49x) | ? | 0 | 7 | 0 | no | identity contrast: 1.49x, skip 39% (low) |
 | 2026-11-04 | lst-2026-11-03-countered-after-combo | - | 18111703811353503 | 6 WAYS TO STOP GETTING COUNTERED AFTER YOUR COMBO | listicle (tactical) | text-on-clip | trial | 1409 (0.55x) | ? | 0 | 8 | 0 | no | tactical fight problem: 0.55x |
+| 2026-11-08 | plan-loma | D | 18357958825168661 | Most people drill punches. Lomachenko drilled his feet. | talking head, contrast opening, full | own experience | trial | 2303 (0.90x) | ? | 15 | 43 | | **WINNER** | 56% past 3 s, 5.8 s watch, score 0.961 (auto verdict) |
+| 2026-11-08 | plan-loma | C | 18287478829293619 | Lomachenko's footwork isn't talent. It's years of drills nobody films. | talking head, contrast opening, full | own experience | trial | 2420 (0.94x) | ? | 7 | 33 | | no | 52% past 3 s, 5.7 s watch, score 0.888 (auto verdict) |
+| 2026-11-08 | plan-loma | A | 18169771873473069 | Lomachenko spent 4 years doing dance instead of boxing. | talking head, story opening, full | own experience | trial | 2456 (0.96x) | ? | 3 | 14 | | no | 58% past 3 s, 6.1 s watch, score 0.879 (auto verdict) |
+| 2026-11-08 | plan-loma | E | 18442321336195624 | If your feet ever feel stuck when you shadowbox, this is for you. | talking head, question opening, full | own experience | trial | 1239 (0.48x) | ? | 7 | 19 | | no | 56% past 3 s, 5.0 s watch, score 0.806 (auto verdict) |
+| 2026-11-08 | plan-loma | B | 18041900690844548 | Ever wonder why Lomachenko's footwork looks like that? | talking head, question opening, full | own experience | trial | 2117 (0.82x) | ? | 6 | 19 | | no | 54% past 3 s, 4.8 s watch, score 0.803 (auto verdict) |
 
 ## Patterns so far
 - _Add a line whenever a test is decided. Keep it to what the numbers showed._
@@ -117,3 +122,4 @@ Sort by follows per 1k views when looking for what grows the account.
 
 - 2026-11-06 (normal 2570 = median of the last 20 listicles; Buzzfy's own median fell to 1287 because the plan-reel trials at 216-341 views are in it, so listicles are judged against listicles): no winner on 2 Nov, best adrenaline-dump 1.56x / 24 saves. Plan reel Loma D (contrast, fight-legend name in the hook) 2293 views but 101 likes, 41 comments, 43 saves, 15 shares at 38 h, while power/Tyson/cardio plan reels got 216-341 views (n=4).
 - 2026-11-07 (listicle normal 2570): no winner on 3 Nov (best fighter-not-fit 1.49x). Loma plan reel, all 5 hooks out: D contrast 2302 views / 101 likes / 41 comments / 43 saves at 62 h; A story 2424 / 74 likes / 14 comments at 8 h; B question 1695; C contrast 1282; E callout ('if your feet...') 314. Naming a fight legend lifts comments 5-10x over plan reels without one (n=5 vs 3). Story opening led this test, against the trial learnings (n=1).
+- 2026-11-08 (auto, plan-loma): contrast opening won over contrast, story, question, question.
