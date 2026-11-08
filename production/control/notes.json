@@ -1,13 +1,5 @@
 [
   {
-    "id": "xp-1a308dba",
-    "text": "📤 YouTube Shorts: THERE'S NO SUCH THING AS AN EX-FIGHTER\nhttps://youtube.com/shorts/i26BtcNqHZ4"
-  },
-  {
-    "id": "xp-ae4b2b2d",
-    "text": "📤 YouTube Shorts: 6 SIGNS YOU'RE MENTALLY TOUGHER THAN YOU THINK\nhttps://youtube.com/shorts/v2iHG5l0XGc"
-  },
-  {
     "id": "xp-8a3dce9c",
     "text": "📤 YouTube Shorts: 6 SIGNS YOU'RE A FIGHTER EVEN IF YOU'VE NEVER HAD A FIGHT\nhttps://youtube.com/shorts/JCFV9lMYA8A"
   },
@@ -798,5 +790,13 @@
   {
     "id": "xp-d01178a8",
     "text": "📤 YouTube Shorts: 7 WAYS TO LAND YOUR RIGHT HAND MORE OFTEN\nhttps://youtube.com/shorts/-9ynjxFc-a0"
+  },
+  {
+    "id": "health-run:Edit worker-2026110822",
+    "text": "⚠️ Workflow 'Edit worker' failed: https://github.com/fightingmatteo-ux/matteofights/actions/runs/42508095001"
+  },
+  {
+    "id": "health-run:Listicle factory-2026110822",
+    "text": "⚠️ Workflow 'Listicle factory' failed: https://github.com/fightingmatteo-ux/matteofights/actions/runs/42502596364"
   }
 ]
