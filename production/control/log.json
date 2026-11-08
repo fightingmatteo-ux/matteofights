@@ -378,5 +378,10 @@
     "at": "2026-11-08T10:59:24Z",
     "who": "Claude",
     "text": "Sunday: factory crons didn't fire again; dispatched 18:30 batch by hand (others follow one at a time). LEDGER +4 (4 Nov), no winner (kicks-caught 1.21x best)."
+  },
+  {
+    "at": "2026-11-08T11:27:15Z",
+    "who": "system",
+    "text": "Sent the week (7 reels) to Telegram"
   }
 ]

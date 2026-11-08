@@ -474,6 +474,15 @@
       "th-1112-1",
       "th-1112-2",
       "th-1112-3"
+    ],
+    "52af142a": [
+      "lst-2026-11-12-good-gym",
+      "lst-2026-11-13-walking-onto-punches",
+      "lst-2026-11-14-more-disciplined",
+      "lst-2026-11-15-faster-opponent",
+      "lst-2026-11-16-new-people-watch",
+      "lst-2026-11-17-steal-from-loma",
+      "lst-2026-11-18-calm-when-panic"
     ]
   },
   "announced_threads": "th-1108-1,th-1108-2,th-1108-3,th-1109-1,th-1109-2,th-1109-3,th-1110-1,th-1110-2,th-1110-3,th-1111-1,th-1111-2,th-1111-3,th-1112-1,th-1112-2,th-1112-3",
@@ -713,7 +722,7 @@
     "health-queue:lst-2026-10-30-not-a-beginner:failed-2026110806",
     "trial-plan-loma"
   ],
-  "announced_week": "lst-2026-11-03-warm-up-right,lst-2026-11-04-shadowboxing-counts,lst-2026-11-05-back-foot,lst-2026-11-05-fell-for-training,lst-2026-11-05-gym-habits-work,lst-2026-11-05-land-right-hand,lst-2026-11-06-breathe-hard-round,lst-2026-11-06-first-spar,lst-2026-11-06-harder-to-hit,lst-2026-11-06-sparring-rules-business,lst-2026-11-07-bodyweight-carryover,lst-2026-11-07-hands-when-kicking,lst-2026-11-07-partners-respect,lst-2026-11-07-training-vs-school,lst-2026-11-08-bag-doesnt-hit-back,lst-2026-11-08-taller-opponent,lst-2026-11-08-training-changed-you,lst-2026-11-08-twice-a-day-week,lst-2026-11-09-bag-insulted-family,lst-2026-11-09-chin-down,lst-2026-11-09-pad-work-teaches,lst-2026-11-09-train-for-fun,lst-2026-11-10-best-were-worst,lst-2026-11-10-better-without-more-sparring,lst-2026-11-10-stop-blinking,lst-2026-11-11-check-leg-kicks,lst-2026-11-11-cut-off-ring,lst-2026-11-11-new-guy-partner",
+  "announced_week": "lst-2026-11-12-good-gym,lst-2026-11-13-walking-onto-punches,lst-2026-11-14-more-disciplined,lst-2026-11-15-faster-opponent,lst-2026-11-16-new-people-watch,lst-2026-11-17-steal-from-loma,lst-2026-11-18-calm-when-panic",
   "sent_failed": [
     "lst-2026-10-30-not-a-beginner"
   ]
