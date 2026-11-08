@@ -1201,6 +1201,248 @@
       "from": "founder",
       "status": "queued",
       "approved": false
+    },
+    {
+      "id": "th-1113-1",
+      "at": "2026-11-13T12:30:00Z",
+      "kind": "take",
+      "topic": "Fight Psychology",
+      "text": "Confidence isn't the absence of nerves.\n\nIt's walking in with your hands shaking anyway and still doing the first thing you planned.",
+      "chain": [],
+      "from": "craft",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1113-2",
+      "at": "2026-11-13T17:30:00Z",
+      "kind": "question",
+      "topic": "Combat Sports",
+      "text": "Skipping rope or shadowboxing as a warm-up for a total beginner?\n\nPick one and say why.",
+      "chain": [],
+      "from": "craft",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1113-3",
+      "at": "2026-11-13T22:30:00Z",
+      "kind": "tip",
+      "topic": "Combat Sports",
+      "text": "Hands numb on the heavy bag? Your wraps are probably too tight.\n\nLoosen the last turn across the knuckles and make a fist. If it hurts to close, redo them.",
+      "chain": [],
+      "from": "craft",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1114-1",
+      "at": "2026-11-14T12:30:00Z",
+      "kind": "question",
+      "topic": "Combat Sports",
+      "text": "What's the one drill you skip when the coach isn't looking?",
+      "chain": [],
+      "from": "craft",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1114-2",
+      "at": "2026-11-14T17:30:00Z",
+      "kind": "tip",
+      "topic": "Combat Sports",
+      "text": "Feet cold and heavy on the third round? Check your shoes before your cardio.\n\nWorn out soles make you flat footed and tired faster.",
+      "chain": [],
+      "from": "craft",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1114-3",
+      "at": "2026-11-14T22:30:00Z",
+      "kind": "chain",
+      "topic": "Fight Psychology",
+      "text": "Five things that change after your first year of training.",
+      "chain": [
+        "1. You stop flinching at everything.\nNot all at once. One day a jab comes in and you just watch it.",
+        "2. You get quieter.\nThe loudest person in week one is rarely there in month twelve.",
+        "3. You notice other people's bad habits first.\nThen you notice you have the same ones.",
+        "4. Your sore days feel different.\nSome are normal. Some are a warning. You start to know which is which.",
+        "5. You care less about winning the round and more about what you did in it."
+      ],
+      "from": "craft",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1115-1",
+      "at": "2026-11-15T12:30:00Z",
+      "kind": "take",
+      "topic": "Fight Psychology",
+      "text": "Sparring partners who go 100% every round are scared of looking slow.\n\nThe good ones adjust to who is in front of them.",
+      "chain": [],
+      "from": "craft",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1115-2",
+      "at": "2026-11-15T17:30:00Z",
+      "kind": "question",
+      "topic": "Combat Sports",
+      "text": "Do you warm up for ten minutes or just start the first round?\n\nBe honest.",
+      "chain": [],
+      "from": "craft",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1115-3",
+      "at": "2026-11-15T22:30:00Z",
+      "kind": "story",
+      "topic": "Combat Sports",
+      "text": "My first Muay Thai fight was at sixteen.\n\nSomeone told me beforehand that if I didn't knock him out, I'd lose. Official result: a draw.",
+      "chain": [],
+      "from": "founder",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1116-1",
+      "at": "2026-11-16T12:30:00Z",
+      "kind": "tip",
+      "topic": "Combat Sports",
+      "text": "Shin pain from the bag? Don't toughen it up by hitting harder.\n\nStart with light rounds on a soft bag and build up over weeks.",
+      "chain": [],
+      "from": "craft",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1116-2",
+      "at": "2026-11-16T17:30:00Z",
+      "kind": "question",
+      "topic": "Combat Sports",
+      "text": "Boxing gym or Muay Thai gym for someone who has never trained?",
+      "chain": [],
+      "from": "craft",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1116-3",
+      "at": "2026-11-16T22:30:00Z",
+      "kind": "take",
+      "topic": "Fight Psychology",
+      "text": "Watching your own sparring footage is worse than the sparring.\n\nThat's why it works. You can't argue with what you see.",
+      "chain": [],
+      "from": "craft",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1117-1",
+      "at": "2026-11-17T12:30:00Z",
+      "kind": "take",
+      "topic": "Combat Sports",
+      "text": "Footwork gets coached last and matters first.\n\nWhoever controls the angle chooses which punches land. A fast hand can't fix a bad position.",
+      "chain": [],
+      "from": "craft",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1117-2",
+      "at": "2026-11-17T17:30:00Z",
+      "kind": "question",
+      "topic": "Combat Sports",
+      "text": "Which hurts more the next day: a hard bag round or a hard run?",
+      "chain": [],
+      "from": "craft",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1117-3",
+      "at": "2026-11-17T22:30:00Z",
+      "kind": "tip",
+      "topic": "Combat Sports",
+      "text": "Forget to drink during long sessions?\n\nTake two sips between every round, not one big drink at the end. Small and often keeps your stomach settled.",
+      "chain": [],
+      "from": "craft",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1118-1",
+      "at": "2026-11-18T12:30:00Z",
+      "kind": "question",
+      "topic": "Fight Psychology",
+      "text": "What gets in your head first before a round?\n\nThe opponent, the crowd, or yourself?",
+      "chain": [],
+      "from": "craft",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1118-2",
+      "at": "2026-11-18T17:30:00Z",
+      "kind": "chain",
+      "topic": "Combat Sports",
+      "text": "What to do the night before a big sparring day.",
+      "chain": [
+        "1. Eat a normal dinner.\nNothing new. Rice, chicken, vegetables. This is not the night to try something strange.",
+        "2. Pack the bag now.\nGloves, wraps, mouthguard, water. Two minutes tonight saves you from panic tomorrow.",
+        "3. Stop scrolling an hour before bed.\nBad sleep makes you slow and it makes you take more shots.",
+        "4. Pick one thing you want to work on.\nJust one. Write it on your hand if you have to."
+      ],
+      "from": "craft",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1118-3",
+      "at": "2026-11-18T22:30:00Z",
+      "kind": "take",
+      "topic": "Fight Psychology",
+      "text": "Being nervous before sparring doesn't mean you're not ready.\n\nIt usually means you care what happens. The ones who feel nothing worry me.",
+      "chain": [],
+      "from": "craft",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1119-1",
+      "at": "2026-11-19T12:30:00Z",
+      "kind": "tip",
+      "topic": "Combat Sports",
+      "text": "Keep dropping your right hand? Throw slow jabs with it glued to your cheek.\n\nTen minutes a day beats hoping you'll remember mid-round.",
+      "chain": [],
+      "from": "craft",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1119-2",
+      "at": "2026-11-19T17:30:00Z",
+      "kind": "question",
+      "topic": "Combat Sports",
+      "text": "Mouthguard in the bag or already in your mouth when the bell rings?\n\nSerious question.",
+      "chain": [],
+      "from": "craft",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1119-3",
+      "at": "2026-11-19T22:30:00Z",
+      "kind": "story",
+      "topic": "Fight Psychology",
+      "text": "I broke my fibula and couldn't kick, run or spar for months.\n\nPush-ups and pull-ups were what I could still do, so I did them.",
+      "chain": [],
+      "from": "founder",
+      "status": "queued",
+      "approved": false
     }
   ]
 }
