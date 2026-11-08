@@ -2573,7 +2573,14 @@
       "posting_since": "2026-11-05T23:31:00Z",
       "media_id": "17913495681559440",
       "permalink": "https://www.instagram.com/reel/DfYN6cfm142/",
-      "posted_at": "2026-11-05T23:31:46Z"
+      "posted_at": "2026-11-05T23:31:46Z",
+      "video_asset_fb": "lst-2026-11-05-fell-for-training-fb.mp4",
+      "fb_pick": {
+        "at": "2026-11-08T23:41:46Z",
+        "ig_views": 3256,
+        "vs_median": 1.27,
+        "shares_saves_per_1k": 2.8
+      }
     },
     {
       "id": "lst-2026-11-06-harder-to-hit",
