@@ -483,6 +483,22 @@
       "lst-2026-11-16-new-people-watch",
       "lst-2026-11-17-steal-from-loma",
       "lst-2026-11-18-calm-when-panic"
+    ],
+    "f0f3c3ef": [
+      "lst-2026-11-12-good-gym",
+      "lst-2026-11-12-slip-the-jab",
+      "lst-2026-11-13-off-the-ropes",
+      "lst-2026-11-13-walking-onto-punches",
+      "lst-2026-11-14-counter-puncher",
+      "lst-2026-11-14-more-disciplined",
+      "lst-2026-11-15-catch-a-kick",
+      "lst-2026-11-15-faster-opponent",
+      "lst-2026-11-16-body-without-counter",
+      "lst-2026-11-16-new-people-watch",
+      "lst-2026-11-17-finish-round-stronger",
+      "lst-2026-11-17-steal-from-loma",
+      "lst-2026-11-18-calm-when-panic",
+      "lst-2026-11-18-left-hook"
     ]
   },
   "announced_threads": "th-1108-1,th-1108-2,th-1108-3,th-1109-1,th-1109-2,th-1109-3,th-1110-1,th-1110-2,th-1110-3,th-1111-1,th-1111-2,th-1111-3,th-1112-1,th-1112-2,th-1112-3",
@@ -722,7 +738,7 @@
     "health-queue:lst-2026-10-30-not-a-beginner:failed-2026110806",
     "trial-plan-loma"
   ],
-  "announced_week": "lst-2026-11-12-good-gym,lst-2026-11-13-walking-onto-punches,lst-2026-11-14-more-disciplined,lst-2026-11-15-faster-opponent,lst-2026-11-16-new-people-watch,lst-2026-11-17-steal-from-loma,lst-2026-11-18-calm-when-panic",
+  "announced_week": "lst-2026-11-12-good-gym,lst-2026-11-12-slip-the-jab,lst-2026-11-13-off-the-ropes,lst-2026-11-13-walking-onto-punches,lst-2026-11-14-counter-puncher,lst-2026-11-14-more-disciplined,lst-2026-11-15-catch-a-kick,lst-2026-11-15-faster-opponent,lst-2026-11-16-body-without-counter,lst-2026-11-16-new-people-watch,lst-2026-11-17-finish-round-stronger,lst-2026-11-17-steal-from-loma,lst-2026-11-18-calm-when-panic,lst-2026-11-18-left-hook",
   "sent_failed": [
     "lst-2026-10-30-not-a-beginner"
   ]
