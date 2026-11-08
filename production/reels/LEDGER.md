@@ -100,6 +100,10 @@ Sort by follows per 1k views when looking for what grows the account.
 | 2026-11-08 | plan-loma | A | 18169771873473069 | Lomachenko spent 4 years doing dance instead of boxing. | talking head, story opening, full | own experience | trial | 2456 (0.96x) | ? | 3 | 14 | | no | 58% past 3 s, 6.1 s watch, score 0.879 (auto verdict) |
 | 2026-11-08 | plan-loma | E | 18442321336195624 | If your feet ever feel stuck when you shadowbox, this is for you. | talking head, question opening, full | own experience | trial | 1239 (0.48x) | ? | 7 | 19 | | no | 56% past 3 s, 5.0 s watch, score 0.806 (auto verdict) |
 | 2026-11-08 | plan-loma | B | 18041900690844548 | Ever wonder why Lomachenko's footwork looks like that? | talking head, question opening, full | own experience | trial | 2117 (0.82x) | ? | 6 | 19 | | no | 54% past 3 s, 4.8 s watch, score 0.803 (auto verdict) |
+| 2026-11-04 | lst-2026-11-04-shadowboxing-counts | - | 18341851606274977 | 6 WAYS TO SHADOWBOX SO IT ACTUALLY COUNTS | listicle (tactical) | text-on-clip | trial | 2305 (0.90x) | ? | 10 | 23 | 0 | no | tactical drill: 0.90x, 23 saves, 10 shares |
+| 2026-11-04 | lst-2026-11-04-strength-not-slow | - | 18086812361520554 | HOW FIGHTERS GET STRONGER WITHOUT GETTING SLOW | lifestyle (tactical) | text-on-clip | trial | 2638 (1.03x) | ? | 0 | 31 | 2 | no | lifestyle strength: 1.03x, 31 saves |
+| 2026-11-04 | lst-2026-11-04-kicks-caught | - | 18125217079939225 | 7 WAYS TO THROW KICKS THAT DON'T GET CAUGHT | listicle (tactical) | text-on-clip | trial | 3101 (1.21x) | ? | 3 | 11 | 0 | no | tactical fight problem: 1.21x |
+| 2026-11-05 | lst-2026-11-04-learn-from-sparring | - | 18125141699297137 | 6 WAYS TO LEARN MORE FROM EVERY SPARRING ROUND | listicle (tactical) | text-on-clip | trial | 2823 (1.10x) | ? | 3 | 18 | 0 | no | tactical: 1.10x, 18 saves |
 
 ## Patterns so far
 - _Add a line whenever a test is decided. Keep it to what the numbers showed._

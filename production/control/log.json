@@ -373,5 +373,10 @@
     "at": "2026-11-07T22:35:55Z",
     "who": "system",
     "text": "Sent 15 Threads posts to Telegram"
+  },
+  {
+    "at": "2026-11-08T10:59:24Z",
+    "who": "Claude",
+    "text": "Sunday: factory crons didn't fire again; dispatched 18:30 batch by hand (others follow one at a time). LEDGER +4 (4 Nov), no winner (kicks-caught 1.21x best)."
   }
 ]
