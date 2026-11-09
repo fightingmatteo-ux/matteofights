@@ -1,7 +1,168 @@
 {
  "_how": "Idea cards from competitor outliers (production/competitors/outliers.json), written by the competitor-ideas skill. Shown in the control center under Results > Rivals; 'Use this' sends the idea to production/control/ideas.json. 'skip' lists off-topic outlier ids hidden from the list (not combat sports or not makeable by Matteo).",
- "updated": "2026-11-02",
+ "updated": "2026-11-09",
  "ideas": [
+  {
+   "id": "sparring-someone-close",
+   "title": "Sparring someone you can't hit back",
+   "status": "new",
+   "evidence": [
+    {
+     "id": "De_frwzIQ_K",
+     "platform": "instagram",
+     "handle": "brezojr",
+     "name": "Brezo Jr",
+     "views": 262750,
+     "x": 12.6,
+     "url": "https://www.instagram.com/reel/De_frwzIQ_K/",
+     "hook": "Always listen dad 🫡😂"
+    },
+    {
+     "id": "DfDFXptInIx",
+     "platform": "instagram",
+     "handle": "brezojr",
+     "name": "Brezo Jr",
+     "views": 183538,
+     "x": 8.8,
+     "url": "https://www.instagram.com/reel/DfDFXptInIx/",
+     "hook": "Always listen dad 🫡😂"
+    },
+    {
+     "id": "DfK2nxmo8qp",
+     "platform": "instagram",
+     "handle": "brezojr",
+     "name": "Brezo Jr",
+     "views": 203712,
+     "x": 9.8,
+     "url": "https://www.instagram.com/reel/DfK2nxmo8qp/",
+     "hook": "This sparrings was the most personal😂"
+    },
+    {
+     "id": "DfPDVAfoYa-",
+     "platform": "instagram",
+     "handle": "brezojr",
+     "name": "Brezo Jr",
+     "views": 79990,
+     "x": 3.8,
+     "url": "https://www.instagram.com/reel/DfPDVAfoYa-/",
+     "hook": "Why mom😭😭"
+    }
+   ],
+   "pattern": "A sparring clip with someone close to the creator (family or a friend), captioned with one deadpan line and no lesson, so the relationship is the joke.",
+   "why": "Likely why: the relationship makes a 10-second clip funny with no setup, and it is easy to tag a person in. Brezo Jr posted this shape four times in a week at 3.8x to 12.6x his 20.8k median ('Always listen dad' 263k and 184k, 'This sparrings was the most personal' 204k, 'Why mom' 80k). Caveat: one creator, and his family appears on camera. Only the shape transfers, the numbers will not.",
+   "version": {
+    "format": "voiceover b-roll on one own sparring clip, 8-12 s, no talking, one on-screen line",
+    "hook": "SPARRING SOMEONE YOU'RE NOT ALLOWED TO HIT HARD",
+    "beats": [
+     "Open on the clip with the line already on screen, no intro",
+     "Let the exchange play out, one cut at most",
+     "Second on-screen line is the punchline, in Matteo's own words",
+     "End on the clip, no lesson, no question card"
+    ],
+    "needs": "A real sparring clip of Matteo with someone he knows personally (a friend, a coach, a training partner) and the joke in his own words. If there is no such clip, drop this card."
+   },
+   "platforms": {
+    "instagram": "Sparring reel, one on-screen line, caption is one dry sentence",
+    "facebook": "Same reel",
+    "tiktok": "Same reel, on-screen line in the first second",
+    "youtube": "Sparring With A Friend Is Different (Muay Thai & Boxing) #shorts",
+    "threads": "Observation: 'Sparring a friend is the only time you hold back and still feel guilty about it.'"
+   }
+  },
+  {
+   "id": "first-fight-sixth-fight",
+   "title": "My first fight was his sixth",
+   "status": "new",
+   "evidence": [
+    {
+     "id": "DfAG4itodAC",
+     "platform": "instagram",
+     "handle": "brezojr",
+     "name": "Brezo Jr",
+     "views": 78487,
+     "x": 3.8,
+     "url": "https://www.instagram.com/reel/DfAG4itodAC/",
+     "hook": "Don’t let other people’s opinions define what you’re capable of. They may see someone stronger, bigger, older, or more experienced, but that"
+    },
+    {
+     "id": "DfFUWLrIGof",
+     "platform": "instagram",
+     "handle": "brezojr",
+     "name": "Brezo Jr",
+     "views": 84007,
+     "x": 4.0,
+     "url": "https://www.instagram.com/reel/DfFUWLrIGof/",
+     "hook": "Don’t let other people’s opinions define what you’re capable of."
+    }
+   ],
+   "pattern": "A statement about being judged on looks or experience ('they may see someone stronger, bigger, older, more experienced') that the viewer reads as their own underdog story.",
+   "why": "Likely why: the line lets every viewer cast themselves as the underdog, so it gets liked and sent. Brezo Jr's text-led clip did 3.8x and 4.0x his 20.8k median (78k and 84k views, about 2.4k and 3.0k likes) when posted twice. Caveat: it is the generic motivation shape the account's voice rules ban, so only the underdog idea transfers, and only with a real fact in place of the inspiration line.",
+   "version": {
+    "format": "voiceover b-roll on own fight footage, 15-20 s, editorial look",
+    "hook": "MY FIRST FIGHT WAS HIS SIXTH.",
+    "beats": [
+     "State it flat: first Muay Thai fight at 16, the opponent's 6th (founder.md)",
+     "Show the clinch and the right hand on the real footage, no slow-mo hype",
+     "Say the official result: a draw, and that it was not clean (his own words)",
+     "Close on what he actually took from it, in Matteo's words, no moral"
+    ],
+    "needs": "Matteo's own telling and the fight clip from Drive; he confirms the details and who said the pre-fight line (founder.md says still to confirm). Past tense only, he is not presented as a current fighter."
+   },
+   "platforms": {
+    "instagram": "Voiceover on the fight clip, caption opens with the fact, no inspiration line",
+    "facebook": "Same reel",
+    "tiktok": "Same reel",
+    "youtube": "My First Muay Thai Fight at 16 (Draw After a Knockout) #shorts",
+    "threads": "Story: 'My first fight was the other guy\\'s sixth. Official result was a draw. I still think about the right hand more than the result.' (Matteo confirms the last sentence is true before use)"
+   }
+  },
+  {
+   "id": "pick-one-round-three",
+   "title": "Pick one for round three",
+   "status": "new",
+   "evidence": [
+    {
+     "id": "DfMy4U9oYtN",
+     "platform": "instagram",
+     "handle": "brezojr",
+     "name": "Brezo Jr",
+     "views": 131943,
+     "x": 6.3,
+     "url": "https://www.instagram.com/reel/DfMy4U9oYtN/",
+     "hook": "Write in comments ⬇️"
+    },
+    {
+     "id": "DfMkyZgovmJ",
+     "platform": "instagram",
+     "handle": "brezojr",
+     "name": "Brezo Jr",
+     "views": 95974,
+     "x": 4.6,
+     "url": "https://www.instagram.com/reel/DfMkyZgovmJ/",
+     "hook": "Which one would you choose?"
+    }
+   ],
+   "pattern": "A forced choice between concrete options with no answer given, so the comments become the content.",
+   "why": "Likely why: a two-option choice takes five seconds to answer and everyone has a side. Brezo Jr's 'Write in comments' did 6.3x his 20.8k median (132k views) with 3,000 comments, about 2.3 per 100 views; 'Which one would you choose?' did 4.6x (96k) with 93 comments. Caveat: the 3,000 comments came from an explicit instruction, which is bait by our voice rules, so copy the choice, not the instruction.",
+   "version": {
+    "format": "listicle or statement factory reel, 8-10 s, three options as white keyword cards",
+    "hook": "CARDIO, HANDS OR HEAD MOVEMENT. ONE GOES FIRST IN ROUND THREE.",
+    "beats": [
+     "Card 1 to 3: one option each, short, concrete",
+     "Hold on the three cards for one beat",
+     "No answer in the video, the question is the last frame",
+     "Caption names a side without justifying it, so people argue"
+    ],
+    "needs": "Nothing. Matteo may pick a side for the caption, only if it is a real opinion."
+   },
+   "platforms": {
+    "instagram": "Statement reel, three cards, caption states a side",
+    "facebook": "Same reel",
+    "tiktok": "Same reel",
+    "youtube": "Cardio, Hands Or Head Movement: Which Fails First In Round 3 #shorts",
+    "threads": "Choice: 'Round three. Cardio, hands or head movement: which one goes first for you?'"
+   }
+  },
   {
    "id": "signs-you-would-win",
    "title": "Signs you'd win (self-test checklist)",
@@ -109,6 +270,26 @@
      "views": 139968,
      "x": 63.6,
      "url": "https://www.instagram.com/reel/De4vF3Ilr13/",
+     "hook": "Calling out ALL quad hiders, please explain yourself."
+    },
+    {
+     "id": "De9kCiejxVl",
+     "platform": "instagram",
+     "handle": "tinapham.co",
+     "name": "Tina Pham",
+     "views": 25243,
+     "x": 13.7,
+     "url": "https://www.instagram.com/reel/De9kCiejxVl/",
+     "hook": "Calling out ALL quad hiders, please explain yourself."
+    },
+    {
+     "id": "DfCtooqjsuA",
+     "platform": "instagram",
+     "handle": "tinapham.co",
+     "name": "Tina Pham",
+     "views": 9529,
+     "x": 5.2,
+     "url": "https://www.instagram.com/reel/DfCtooqjsuA/",
      "hook": "Calling out ALL quad hiders, please explain yourself."
     }
    ],
@@ -895,6 +1076,19 @@
   "DexDibII0Fc",
   "DerY3pvJkz-",
   "LW4PaL5foN4",
-  "DeHjHLFJGkl"
+  "DeHjHLFJGkl",
+  "DfH3lI_j0oI",
+  "DfDWDEtj3dB",
+  "De4cEr1BZfg",
+  "De93XtbzwDh",
+  "De1-fCGBnVT",
+  "DfC2kr0u6Tw",
+  "DeuHShYNRrd",
+  "DevQLIbOnVf",
+  "DfKpZF4sJqM",
+  "DfCfL_BsSN0",
+  "DfFgKsgotfr",
+  "DfKBzEsoD1i",
+  "DfFwEXDqCDq"
  ]
 }
