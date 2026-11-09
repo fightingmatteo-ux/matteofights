@@ -27,7 +27,7 @@
         "19:00"
       ],
       "privacy_note": "Matteo: 'youtube approved' (2026-10-16). If YouTube still forces private, the audit isn't through yet.",
-      "last_slot": "2026-11-08T21:00:00Z"
+      "last_slot": "2026-11-09T00:00:00Z"
     },
     "threads": {
       "enabled": true,
@@ -1328,6 +1328,15 @@
         "at": "2026-11-08T21:05:59Z",
         "id": "-9ynjxFc-a0",
         "url": "https://youtube.com/shorts/-9ynjxFc-a0",
+        "privacy": "public"
+      }
+    },
+    "lst-2026-11-06-sparring-rules-business": {
+      "youtube": {
+        "status": "posted",
+        "at": "2026-11-09T00:05:58Z",
+        "id": "Enu1SwIqEMY",
+        "url": "https://youtube.com/shorts/Enu1SwIqEMY",
         "privacy": "public"
       }
     }
