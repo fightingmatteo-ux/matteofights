@@ -1,9 +1,5 @@
 [
   {
-    "id": "xp-5fe989ed",
-    "text": "📤 Threads: 8 WAYS TO STAY CALM IN A FIGHT WITHOUT YEARS OF EXPERIENCE\nhttps://www.threads.com/@matteofights/post/DeqCb_dCuSH"
-  },
-  {
     "id": "n-5b715ff0",
     "text": "📊 First two listicles hit 72 h: 'Built for fight night' 3.5k (1.3x normal), 'Technique without a coach' 3.2k (1.2x). No winner yet (winner = 2x).\n\nEarly pattern (n=7): the 'N ways' listicles get 22-33 saves, the 'N signs' ones only 3-12.\n\n⏳ Next week's 21 reels still need your yes. Yesterday's 12:30 slot ('Round three') already passed unposted, and today's 12:30 ('First body shot') goes only if you approve before 16:30 UTC."
   },
@@ -798,5 +794,9 @@
   {
     "id": "xp-488493cb",
     "text": "📤 Threads: 7 WAYS TO LAND YOUR RIGHT HAND MORE OFTEN\nhttps://www.threads.com/@matteofights/post/DfgOAhQBmL9"
+  },
+  {
+    "id": "health-queue:lst-2026-10-30-not-a-beginner:failed-2026110906",
+    "text": "⚠️ lst-2026-10-30-not-a-beginner failed to post: GET https://graph.facebook.com/v23.0/530317382955170 -> 404: {\"title\":\"Not Found\",\"detail\":\"No audio asset found for the given ID\",\"status\":404}"
   }
 ]
