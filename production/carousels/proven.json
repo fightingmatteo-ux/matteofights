@@ -1,6 +1,6 @@
 {
   "note": "Proven hooks for carousels. Every carousel in posts.json needs hook_ref = a 'read' entry's code (other creators' outlier carousels, found weekly by tools/carousel/scout.py) or an 'own' id (our own reels that proved the hook on our audience). Adapt the pattern to Matteo's topic; never copy another creator's slides word for word.",
-  "updated": "2026-11-02T16:20Z",
+  "updated": "2026-11-09T16:41Z",
   "own": [
     {
       "id": "own-born-fighter",
@@ -1011,11 +1011,369 @@
       "hook": null,
       "pattern": null,
       "found": "2026-11-02"
+    },
+    {
+      "code": "Dfd1crUkcKb",
+      "user": "espnmma",
+      "followers": 5056391,
+      "permalink": "https://www.instagram.com/p/Dfd1crUkcKb/",
+      "posted": "2026-11-08T03:52:55+0000",
+      "likes": 222549,
+      "comments": 951,
+      "x_median": 2.21,
+      "caption_first_line": "Israel Adesanya will face Shara Magomedov in a middleweight bout at a UFC Fight Night in Saudi Arabia, UFC announced on Saturday.",
+      "slides": [
+        "production/carousels/proven/Dfd1crUkcKb/01.jpg",
+        "production/carousels/proven/Dfd1crUkcKb/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-09"
+    },
+    {
+      "code": "DfX9QRqgfx_",
+      "user": "ringmagazine",
+      "followers": 1305728,
+      "permalink": "https://www.instagram.com/p/DfX9QRqgfx_/",
+      "posted": "2026-11-05T21:05:42+0000",
+      "likes": 14618,
+      "comments": 335,
+      "x_median": 2.14,
+      "caption_first_line": "How many more belts will Canelo claim before he retires? 🤔",
+      "slides": [
+        "production/carousels/proven/DfX9QRqgfx_/01.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-09"
+    },
+    {
+      "code": "DfXVf5yjaS6",
+      "user": "ringmagazine",
+      "followers": 1305728,
+      "permalink": "https://www.instagram.com/p/DfXVf5yjaS6/",
+      "posted": "2026-11-05T15:18:18+0000",
+      "likes": 21921,
+      "comments": 495,
+      "x_median": 3.21,
+      "caption_first_line": "✍️ ANNOUNCED: Vasiliy Lomachenko has re-signed with Top Rank in a multi-year co-promotional deal alongside Loma Power Promotions.",
+      "slides": [
+        "production/carousels/proven/DfXVf5yjaS6/01.jpg",
+        "production/carousels/proven/DfXVf5yjaS6/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-09"
+    },
+    {
+      "code": "DfXMPOnDaZ4",
+      "user": "ringmagazine",
+      "followers": 1305728,
+      "permalink": "https://www.instagram.com/p/DfXMPOnDaZ4/",
+      "posted": "2026-11-05T13:57:23+0000",
+      "likes": 20190,
+      "comments": 359,
+      "x_median": 2.91,
+      "caption_first_line": "🗓️ Dmitry Bivol delivered a masterful performance to defend his WBA light heavyweight title against Gilberto ‘Zurdo’ Ramirez on this day in 2022 🙌",
+      "slides": [
+        "production/carousels/proven/DfXMPOnDaZ4/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-09"
+    },
+    {
+      "code": "DfUyEqMCIcL",
+      "user": "ringmagazine",
+      "followers": 1305728,
+      "permalink": "https://www.instagram.com/p/DfUyEqMCIcL/",
+      "posted": "2026-11-04T15:30:16+0000",
+      "likes": 45777,
+      "comments": 873,
+      "x_median": 6.63,
+      "caption_first_line": "🥊 Deontay Wilder vs Jai Opetaia",
+      "slides": [
+        "production/carousels/proven/DfUyEqMCIcL/01.jpg",
+        "production/carousels/proven/DfUyEqMCIcL/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-09"
+    },
+    {
+      "code": "DfUgwofCDQc",
+      "user": "ringmagazine",
+      "followers": 1305728,
+      "permalink": "https://www.instagram.com/p/DfUgwofCDQc/",
+      "posted": "2026-11-04T12:58:59+0000",
+      "likes": 18818,
+      "comments": 1366,
+      "x_median": 3.14,
+      "caption_first_line": "Terence Crawford hints at a ring return, and targets Ryan Garcia and Gervonta ‘Tank’ Davis 👀",
+      "slides": [
+        "production/carousels/proven/DfUgwofCDQc/01.jpg",
+        "production/carousels/proven/DfUgwofCDQc/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-09"
+    },
+    {
+      "code": "DfRt8DbiEGJ",
+      "user": "ringmagazine",
+      "followers": 1305728,
+      "permalink": "https://www.instagram.com/p/DfRt8DbiEGJ/",
+      "posted": "2026-11-03T10:56:25+0000",
+      "likes": 26929,
+      "comments": 563,
+      "x_median": 3.92,
+      "caption_first_line": "“It was an honor to share the ring” 👏",
+      "slides": [
+        "production/carousels/proven/DfRt8DbiEGJ/01.jpg",
+        "production/carousels/proven/DfRt8DbiEGJ/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-09"
+    },
+    {
+      "code": "DfQiu7rG6_h",
+      "user": "ringmagazine",
+      "followers": 1305728,
+      "permalink": "https://www.instagram.com/p/DfQiu7rG6_h/",
+      "posted": "2026-11-02T23:59:16+0000",
+      "likes": 13032,
+      "comments": 2273,
+      "x_median": 2.72,
+      "caption_first_line": "Plenty of fights to make at super middleweight for Canelo 👀",
+      "slides": [
+        "production/carousels/proven/DfQiu7rG6_h/01.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-09"
+    },
+    {
+      "code": "DfPy2QXjVDb",
+      "user": "ringmagazine",
+      "followers": 1305728,
+      "permalink": "https://www.instagram.com/p/DfPy2QXjVDb/",
+      "posted": "2026-11-02T17:00:50+0000",
+      "likes": 18760,
+      "comments": 356,
+      "x_median": 2.72,
+      "caption_first_line": "All fun and games in training with Shakur Stevenson and Uzbek prospect Javokhir Ummataliev 😅🇺🇿",
+      "slides": [
+        "production/carousels/proven/DfPy2QXjVDb/01.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-09"
+    },
+    {
+      "code": "Dfc8pkTIEa3",
+      "user": "mmajunkie",
+      "followers": 1404891,
+      "permalink": "https://www.instagram.com/p/Dfc8pkTIEa3/",
+      "posted": "2026-11-07T19:36:37+0000",
+      "likes": 15592,
+      "comments": 1545,
+      "x_median": 3.43,
+      "caption_first_line": "President Trump announces Dana White has been offered the job of US Press Secretary.",
+      "slides": [
+        "production/carousels/proven/Dfc8pkTIEa3/01.jpg",
+        "production/carousels/proven/Dfc8pkTIEa3/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-09"
+    },
+    {
+      "code": "DfgNX9KlKpZ",
+      "user": "ufc",
+      "followers": 50918601,
+      "permalink": "https://www.instagram.com/p/DfgNX9KlKpZ/",
+      "posted": "2026-11-09T02:00:29+0000",
+      "likes": 203118,
+      "comments": 812,
+      "x_median": 6.6,
+      "caption_first_line": "There’s no shortage of memorable knockouts at TheGarden! Which KO was the best? 🤔",
+      "slides": [],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-09"
+    },
+    {
+      "code": "Dff_lx9Gxjj",
+      "user": "ufc",
+      "followers": 50918601,
+      "permalink": "https://www.instagram.com/p/Dff_lx9Gxjj/",
+      "posted": "2026-11-09T00:00:07+0000",
+      "likes": 115735,
+      "comments": 645,
+      "x_median": 3.78,
+      "caption_first_line": "Relentless in pursuit 🏆",
+      "slides": [],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-09"
+    },
+    {
+      "code": "Dffx7fGFDXw",
+      "user": "ufc",
+      "followers": 50918601,
+      "permalink": "https://www.instagram.com/p/Dffx7fGFDXw/",
+      "posted": "2026-11-08T22:00:02+0000",
+      "likes": 240201,
+      "comments": 3575,
+      "x_median": 8.05,
+      "caption_first_line": "A knockout for the ages 🤯",
+      "slides": [],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-09"
+    },
+    {
+      "code": "DffB29dj_j0",
+      "user": "ufc",
+      "followers": 50918601,
+      "permalink": "https://www.instagram.com/p/DffB29dj_j0/",
+      "posted": "2026-11-08T15:00:37+0000",
+      "likes": 94195,
+      "comments": 581,
+      "x_median": 3.08,
+      "caption_first_line": "About last night...",
+      "slides": [
+        "production/carousels/proven/DffB29dj_j0/01.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-09"
+    },
+    {
+      "code": "Dfdz1TCG3PB",
+      "user": "ufc",
+      "followers": 50918601,
+      "permalink": "https://www.instagram.com/p/Dfdz1TCG3PB/",
+      "posted": "2026-11-08T03:38:49+0000",
+      "likes": 378356,
+      "comments": 4502,
+      "x_median": 12.58,
+      "caption_first_line": "Back like we never left 🤩",
+      "slides": [
+        "production/carousels/proven/Dfdz1TCG3PB/01.jpg",
+        "production/carousels/proven/Dfdz1TCG3PB/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-09"
+    },
+    {
+      "code": "DfbYYhCmYQ4",
+      "user": "ufc",
+      "followers": 50918601,
+      "permalink": "https://www.instagram.com/p/DfbYYhCmYQ4/",
+      "posted": "2026-11-07T05:00:02+0000",
+      "likes": 119622,
+      "comments": 280,
+      "x_median": 3.87,
+      "caption_first_line": "The clock is winding down ⌛️",
+      "slides": [
+        "production/carousels/proven/DfbYYhCmYQ4/01.jpg",
+        "production/carousels/proven/DfbYYhCmYQ4/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-09"
+    },
+    {
+      "code": "DfbDmLdG3VO",
+      "user": "ufc",
+      "followers": 50918601,
+      "permalink": "https://www.instagram.com/p/DfbDmLdG3VO/",
+      "posted": "2026-11-07T01:58:50+0000",
+      "likes": 211070,
+      "comments": 564,
+      "x_median": 6.83,
+      "caption_first_line": "Our last trip to TheGarden was unreal 🙌",
+      "slides": [
+        "production/carousels/proven/DfbDmLdG3VO/01.jpg",
+        "production/carousels/proven/DfbDmLdG3VO/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-09"
+    },
+    {
+      "code": "DfdooZ7D-96",
+      "user": "onechampionship",
+      "followers": 12653728,
+      "permalink": "https://www.instagram.com/p/DfdooZ7D-96/",
+      "posted": "2026-11-08T02:00:56+0000",
+      "likes": 32872,
+      "comments": 119,
+      "x_median": 2.29,
+      "caption_first_line": "Happy Birthday to Islay Erika Bomogao 🇵🇭🥳 Wishing the Filipina star another year of success! i.slay_erika",
+      "slides": [
+        "production/carousels/proven/DfdooZ7D-96/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-09"
+    },
+    {
+      "code": "DfcBlHaCS54",
+      "user": "onechampionship",
+      "followers": 12653728,
+      "permalink": "https://www.instagram.com/p/DfcBlHaCS54/",
+      "posted": "2026-11-07T11:00:27+0000",
+      "likes": 34703,
+      "comments": 98,
+      "x_median": 2.41,
+      "caption_first_line": "Never gets old 🦾 🫨 Can “The Iron Man” deliver another statement performance when he faces Nong-O at The Inner Circle 38 and earn a spot in the ONE Flyweight Mua",
+      "slides": [],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-09"
+    },
+    {
+      "code": "DfUgIfrCLyU",
+      "user": "brezojr",
+      "followers": 103730,
+      "permalink": "https://www.instagram.com/p/DfUgIfrCLyU/",
+      "posted": "2026-11-04T12:53:30+0000",
+      "likes": 1774,
+      "comments": 59,
+      "x_median": 2.14,
+      "caption_first_line": "Nobody takes you seriously until you prove them wrong.",
+      "slides": [
+        "production/carousels/proven/DfUgIfrCLyU/01.jpg",
+        "production/carousels/proven/DfUgIfrCLyU/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-09"
     }
   ],
-  "errors": [
-    "@brezojr: (#4) Application request limit reached",
-    "@ramseydewey: (#4) Application request limit reached",
-    "@_coachdino_: (#4) Application request limit reached"
-  ]
+  "errors": []
 }

@@ -30,10 +30,10 @@
     "shares_per_k": 1.0,
     "visits_per_k": 1.0
    },
-   "reach_vs_reels": 0.12
+   "reach_vs_reels": 0.1
   }
  },
- "updated": "2026-11-02",
+ "updated": "2026-11-09",
  "median": {
   "reach": 204,
   "views_per_reach": 2.79,
@@ -42,5 +42,5 @@
   "follows_per_k": 0.0,
   "visits_per_k": 9.8
  },
- "reel_median_reach": 1651.0
+ "reel_median_reach": 1959.0
 }
