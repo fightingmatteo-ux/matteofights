@@ -8,7 +8,7 @@
       "slots": [
         "19:30"
       ],
-      "last_slot": "2026-11-08T00:30:00Z",
+      "last_slot": "2026-11-09T00:30:00Z",
       "winners": {
         "min_age_hours": 72,
         "max_age_days": 7,
@@ -1231,6 +1231,12 @@
         "id": "J-ZKudrNLVs",
         "url": "https://youtube.com/shorts/J-ZKudrNLVs",
         "privacy": "public"
+      },
+      "facebook": {
+        "status": "posted",
+        "at": "2026-11-09T00:36:31Z",
+        "id": "1584928926731470",
+        "url": "https://www.facebook.com/reel/1584928926731470"
       }
     },
     "lst-2026-11-03-countered-after-combo": {
