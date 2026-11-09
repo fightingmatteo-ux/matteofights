@@ -104,6 +104,10 @@ Sort by follows per 1k views when looking for what grows the account.
 | 2026-11-04 | lst-2026-11-04-strength-not-slow | - | 18086812361520554 | HOW FIGHTERS GET STRONGER WITHOUT GETTING SLOW | lifestyle (tactical) | text-on-clip | trial | 2638 (1.03x) | ? | 0 | 31 | 2 | no | lifestyle strength: 1.03x, 31 saves |
 | 2026-11-04 | lst-2026-11-04-kicks-caught | - | 18125217079939225 | 7 WAYS TO THROW KICKS THAT DON'T GET CAUGHT | listicle (tactical) | text-on-clip | trial | 3101 (1.21x) | ? | 3 | 11 | 0 | no | tactical fight problem: 1.21x |
 | 2026-11-05 | lst-2026-11-04-learn-from-sparring | - | 18125141699297137 | 6 WAYS TO LEARN MORE FROM EVERY SPARRING ROUND | listicle (tactical) | text-on-clip | trial | 2823 (1.10x) | ? | 3 | 18 | 0 | no | tactical: 1.10x, 18 saves |
+| 2026-11-05 | lst-2026-11-05-gym-habits-work | - | 18042423440842176 | 6 HABITS FROM THE GYM THAT MAKE YOU BETTER AT WORK | builder (identity) | text-on-clip | trial | 1395 (0.54x) | ? | 0 | 3 | 0 | no | builder: 0.54x |
+| 2026-11-05 | lst-2026-11-05-back-foot | - | 17962932867239608 | 6 WAYS TO FIGHT OFF THE BACK FOOT | listicle (tactical) | text-on-clip | trial | 2305 (0.90x) | ? | 3 | 12 | 0 | no | tactical fight problem: 0.90x |
+| 2026-11-05 | lst-2026-11-05-fell-for-training | - | 17913495681559440 | 6 SIGNS YOU'VE FALLEN IN LOVE WITH TRAINING | listicle (identity) | text-on-clip | trial | 3263 (1.27x) | ? | 0 | 9 | 0 | no | identity: 1.27x, 51 likes |
+| 2026-11-06 | lst-2026-11-05-land-right-hand | - | 18120773428952964 | 7 WAYS TO LAND YOUR RIGHT HAND MORE OFTEN | listicle (tactical) | text-on-clip | trial | 2901 (1.13x) | ? | 2 | 11 | 0 | no | tactical fight problem: 1.13x, skip 40% |
 
 ## Patterns so far
 - _Add a line whenever a test is decided. Keep it to what the numbers showed._
@@ -127,3 +131,4 @@ Sort by follows per 1k views when looking for what grows the account.
 - 2026-11-06 (normal 2570 = median of the last 20 listicles; Buzzfy's own median fell to 1287 because the plan-reel trials at 216-341 views are in it, so listicles are judged against listicles): no winner on 2 Nov, best adrenaline-dump 1.56x / 24 saves. Plan reel Loma D (contrast, fight-legend name in the hook) 2293 views but 101 likes, 41 comments, 43 saves, 15 shares at 38 h, while power/Tyson/cardio plan reels got 216-341 views (n=4).
 - 2026-11-07 (listicle normal 2570): no winner on 3 Nov (best fighter-not-fit 1.49x). Loma plan reel, all 5 hooks out: D contrast 2302 views / 101 likes / 41 comments / 43 saves at 62 h; A story 2424 / 74 likes / 14 comments at 8 h; B question 1695; C contrast 1282; E callout ('if your feet...') 314. Naming a fight legend lifts comments 5-10x over plan reels without one (n=5 vs 3). Story opening led this test, against the trial learnings (n=1).
 - 2026-11-08 (auto, plan-loma): contrast opening won over contrast, story, question, question.
+- 2026-11-09 (listicle normal 2570): builder lane now n=5, all at or under normal (1.00x, 0.97x, 0.66x, 0.54x, 0.40x). On views it trails fight content every time; follows per reel are still not in the data.
