@@ -1955,7 +1955,14 @@
       "posting_since": "2026-11-04T23:45:53Z",
       "media_id": "18125217079939225",
       "permalink": "https://www.instagram.com/reel/DfVq5VxDNYn/",
-      "posted_at": "2026-11-04T23:47:19Z"
+      "posted_at": "2026-11-04T23:47:19Z",
+      "video_asset_fb": "lst-2026-11-04-kicks-caught-fb.mp4",
+      "fb_pick": {
+        "at": "2026-11-10T02:44:10Z",
+        "ig_views": 3101,
+        "vs_median": 1.21,
+        "shares_saves_per_1k": 4.5
+      }
     },
     {
       "id": "lst-2026-10-29-body-kicks",
