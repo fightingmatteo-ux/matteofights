@@ -108,6 +108,10 @@ Sort by follows per 1k views when looking for what grows the account.
 | 2026-11-05 | lst-2026-11-05-back-foot | - | 17962932867239608 | 6 WAYS TO FIGHT OFF THE BACK FOOT | listicle (tactical) | text-on-clip | trial | 2305 (0.90x) | ? | 3 | 12 | 0 | no | tactical fight problem: 0.90x |
 | 2026-11-05 | lst-2026-11-05-fell-for-training | - | 17913495681559440 | 6 SIGNS YOU'VE FALLEN IN LOVE WITH TRAINING | listicle (identity) | text-on-clip | trial | 3263 (1.27x) | ? | 0 | 9 | 0 | no | identity: 1.27x, 51 likes |
 | 2026-11-06 | lst-2026-11-05-land-right-hand | - | 18120773428952964 | 7 WAYS TO LAND YOUR RIGHT HAND MORE OFTEN | listicle (tactical) | text-on-clip | trial | 2901 (1.13x) | ? | 2 | 11 | 0 | no | tactical fight problem: 1.13x, skip 40% |
+| 2026-11-06 | lst-2026-11-06-sparring-rules-business | - | 17886961380514107 | 5 RULES FROM SPARRING THAT WORK IN BUSINESS | builder (identity) | text-on-clip | trial | 2507 (0.98x) | ? | 0 | 11 | 0 | no | builder: 0.98x, 48 likes (best builder engagement) |
+| 2026-11-07 | lst-2026-11-06-breathe-hard-round | - | 18110365757211907 | 6 WAYS TO BREATHE THROUGH A HARD ROUND | listicle (tactical) | text-on-clip | trial | 2645 (1.03x) | ? | 2 | 18 | 0 | no | tactical fight problem: 1.03x, 18 saves |
+| 2026-11-07 | lst-2026-11-06-harder-to-hit | - | 18089086031317687 | 6 SIGNS YOU'RE GETTING HARDER TO HIT | listicle (identity) | text-on-clip | trial | 2945 (1.15x) | ? | 2 | 6 | 0 | no | identity: 1.15x |
+| 2026-11-07 | lst-2026-11-06-first-spar | - | 18051318701813798 | 6 WAYS TO SURVIVE YOUR FIRST SPARRING SESSION | listicle (tactical) | text-on-clip | trial | 2790 (1.09x) | ? | 3 | 5 | 3 | no | tactical: 1.09x |
 
 ## Patterns so far
 - _Add a line whenever a test is decided. Keep it to what the numbers showed._

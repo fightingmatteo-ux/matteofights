@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-09T11:03:23Z",
+  "updated": "2026-11-10T11:00:43Z",
   "median_views": 2570,
   "median_basis": "Buzzfy: latest 15 own reels older than 48h (5 to 18 Oct)",
   "audience": {
@@ -864,40 +864,40 @@
       "vs_median_x": 0.9
     },
     "18089086031317687": {
-      "views": 2878,
-      "reach": 2011,
+      "views": 2945,
+      "reach": 2046,
       "shares": 2,
-      "saves": 5,
+      "saves": 6,
       "follows": null,
       "skip_rate": 44.1,
-      "vs_median_x": 1.12
+      "vs_median_x": 1.15
     },
     "18051318701813798": {
-      "views": 2480,
-      "reach": 1630,
-      "shares": 1,
-      "saves": 4,
+      "views": 2790,
+      "reach": 2038,
+      "shares": 3,
+      "saves": 5,
       "follows": null,
-      "skip_rate": 42.2,
-      "vs_median_x": 0.96
+      "skip_rate": 48.2,
+      "vs_median_x": 1.09
     },
     "18110365757211907": {
-      "views": 2572,
-      "reach": 1887,
-      "shares": 1,
+      "views": 2645,
+      "reach": 1957,
+      "shares": 2,
       "saves": 18,
       "follows": null,
-      "skip_rate": 49.1,
-      "vs_median_x": 1.0
+      "skip_rate": 49.2,
+      "vs_median_x": 1.03
     },
     "17886961380514107": {
-      "views": 2437,
-      "reach": 1704,
+      "views": 2507,
+      "reach": 1760,
       "shares": 0,
       "saves": 11,
       "follows": null,
-      "skip_rate": 51.6,
-      "vs_median_x": 0.95
+      "skip_rate": 51.2,
+      "vs_median_x": 0.98
     },
     "18287478829293619": {
       "views": 1282,
