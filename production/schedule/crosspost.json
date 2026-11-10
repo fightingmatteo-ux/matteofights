@@ -39,7 +39,7 @@
         "21:00"
       ],
       "topic": "Combat Sports",
-      "last_slot": "2026-11-10T15:00:00Z"
+      "last_slot": "2026-11-10T20:30:00Z"
     },
     "facebook_slides": {
       "enabled": false,
@@ -1419,7 +1419,14 @@
         "id": "cK_IxkRzv3k",
         "url": "https://youtube.com/shorts/cK_IxkRzv3k",
         "privacy": "public"
+      },
+      "threads": {
+        "status": "posted",
+        "at": "2026-11-10T20:36:58Z",
+        "id": "17922320856240721",
+        "url": "https://www.threads.com/@matteofights/post/Dfkx2IQhDam"
       }
-    }
+    },
+    "lst-2026-11-07-hands-when-kicking": {}
   }
 }
