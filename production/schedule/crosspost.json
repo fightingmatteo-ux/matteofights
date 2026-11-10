@@ -39,7 +39,7 @@
         "21:00"
       ],
       "topic": "Combat Sports",
-      "last_slot": "2026-11-09T20:30:00Z"
+      "last_slot": "2026-11-10T02:00:00Z"
     },
     "facebook_slides": {
       "enabled": false,
@@ -1395,7 +1395,14 @@
         "id": "4YR6tcR-pbQ",
         "url": "https://youtube.com/shorts/4YR6tcR-pbQ",
         "privacy": "public"
+      },
+      "threads": {
+        "status": "posted",
+        "at": "2026-11-10T02:06:36Z",
+        "id": "18102085535545646",
+        "url": "https://www.threads.com/@matteofights/post/Dfiyz23Pirl"
       }
-    }
+    },
+    "lst-2026-11-07-training-vs-school": {}
   }
 }
