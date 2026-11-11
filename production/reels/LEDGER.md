@@ -112,6 +112,10 @@ Sort by follows per 1k views when looking for what grows the account.
 | 2026-11-07 | lst-2026-11-06-breathe-hard-round | - | 18110365757211907 | 6 WAYS TO BREATHE THROUGH A HARD ROUND | listicle (tactical) | text-on-clip | trial | 2645 (1.03x) | ? | 2 | 18 | 0 | no | tactical fight problem: 1.03x, 18 saves |
 | 2026-11-07 | lst-2026-11-06-harder-to-hit | - | 18089086031317687 | 6 SIGNS YOU'RE GETTING HARDER TO HIT | listicle (identity) | text-on-clip | trial | 2945 (1.15x) | ? | 2 | 6 | 0 | no | identity: 1.15x |
 | 2026-11-07 | lst-2026-11-06-first-spar | - | 18051318701813798 | 6 WAYS TO SURVIVE YOUR FIRST SPARRING SESSION | listicle (tactical) | text-on-clip | trial | 2790 (1.09x) | ? | 3 | 5 | 3 | no | tactical: 1.09x |
+| 2026-11-07 | lst-2026-11-07-training-vs-school | - | 18004219217798503 | 6 THINGS TRAINING TEACHES YOU THAT SCHOOL DOESN'T | builder (identity) | text-on-clip | trial | 2332 (0.91x) | ? | 0 | 12 | 0 | no | builder: 0.91x, 12 saves |
+| 2026-11-07 | lst-2026-11-07-bodyweight-carryover | - | 17977344759238526 | 6 BODYWEIGHT EXERCISES THAT ACTUALLY HELP YOUR STRIKING | lifestyle (tactical) | text-on-clip | trial | 2686 (1.05x) | ? | 1 | 22 | 0 | no | lifestyle strength: 1.05x, 22 saves |
+| 2026-11-07 | lst-2026-11-07-partners-respect | - | 18398747608160951 | 6 SIGNS YOUR SPARRING PARTNERS RESPECT YOU | listicle (identity) | text-on-clip | trial | 4647 (1.81x) | ? | 0 | 5 | 0 | no | identity contrast: 1.81x, skip 40%, near-winner |
+| 2026-11-08 | lst-2026-11-07-hands-when-kicking | - | 17882028045633798 | 6 WAYS TO STOP DROPPING YOUR HANDS WHEN YOU KICK | listicle (tactical) | text-on-clip | trial | 1511 (0.59x) | ? | 0 | 3 | 0 | no | tactical: 0.59x, skip 59% |
 
 ## Patterns so far
 - _Add a line whenever a test is decided. Keep it to what the numbers showed._

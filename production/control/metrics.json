@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-10T11:00:43Z",
+  "updated": "2026-11-11T10:59:46Z",
   "median_views": 2570,
   "median_basis": "Buzzfy: latest 15 own reels older than 48h (5 to 18 Oct)",
   "audience": {
@@ -934,6 +934,42 @@
       "follows": null,
       "skip_rate": 42.4,
       "vs_median_x": 0.94
+    },
+    "18398747608160951": {
+      "views": 4647,
+      "reach": 2711,
+      "shares": 0,
+      "saves": 5,
+      "follows": null,
+      "skip_rate": 40.1,
+      "vs_median_x": 1.81
+    },
+    "17882028045633798": {
+      "views": 1511,
+      "reach": 1203,
+      "shares": 0,
+      "saves": 3,
+      "follows": null,
+      "skip_rate": 59.0,
+      "vs_median_x": 0.59
+    },
+    "17977344759238526": {
+      "views": 2686,
+      "reach": 2011,
+      "shares": 1,
+      "saves": 22,
+      "follows": null,
+      "skip_rate": 55.5,
+      "vs_median_x": 1.05
+    },
+    "18004219217798503": {
+      "views": 2332,
+      "reach": 1735,
+      "shares": 0,
+      "saves": 12,
+      "follows": null,
+      "skip_rate": 48.4,
+      "vs_median_x": 0.91
     }
   }
 }
