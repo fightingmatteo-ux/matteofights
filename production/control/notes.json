@@ -1,13 +1,5 @@
 [
   {
-    "id": "xp-496ceecb",
-    "text": "📤 Threads: THE NERVES BEFORE SPARRING NEVER FULLY GO AWAY\nhttps://www.threads.com/@matteofights/post/DewlT4oj8j-"
-  },
-  {
-    "id": "xp-827af129",
-    "text": "📤 Facebook Reels: THE NERVES BEFORE SPARRING NEVER FULLY GO AWAY\nhttps://www.facebook.com/reel/1660392892284770"
-  },
-  {
     "id": "xp-ef9d23ea",
     "text": "📤 YouTube Shorts: THE NERVES BEFORE SPARRING NEVER FULLY GO AWAY\nhttps://youtube.com/shorts/xVjCpraCWCM"
   },
@@ -798,5 +790,13 @@
   {
     "id": "xp-1813f806",
     "text": "📤 YouTube Shorts: 6 SIGNS TRAINING CHANGED YOU MORE THAN YOUR BODY\nhttps://youtube.com/shorts/iAnoCy6M4rk"
+  },
+  {
+    "id": "health-queue:lst-2026-10-30-not-a-beginner:failed-2026111119",
+    "text": "⚠️ lst-2026-10-30-not-a-beginner failed to post: GET https://graph.facebook.com/v23.0/530317382955170 -> 404: {\"title\":\"Not Found\",\"detail\":\"No audio asset found for the given ID\",\"status\":404}"
+  },
+  {
+    "id": "health-queue:lst-2026-11-09-train-for-fun:failed-2026111119",
+    "text": "⚠️ lst-2026-11-09-train-for-fun failed to post: Processing failed: {'id': '17977598316169938', 'status': 'Error: Media upload has failed with error code 2207082', 'status_code': 'ERROR'}"
   }
 ]
