@@ -27,7 +27,7 @@
         "19:00"
       ],
       "privacy_note": "Matteo: 'youtube approved' (2026-10-16). If YouTube still forces private, the audit isn't through yet.",
-      "last_slot": "2026-11-10T21:00:00Z"
+      "last_slot": "2026-11-11T00:00:00Z"
     },
     "threads": {
       "enabled": true,
@@ -1433,6 +1433,15 @@
         "at": "2026-11-10T21:06:07Z",
         "id": "7x4qk1xyHk8",
         "url": "https://youtube.com/shorts/7x4qk1xyHk8",
+        "privacy": "public"
+      }
+    },
+    "lst-2026-11-08-bag-doesnt-hit-back": {
+      "youtube": {
+        "status": "posted",
+        "at": "2026-11-11T00:06:00Z",
+        "id": "Q7QxYpKpx2E",
+        "url": "https://youtube.com/shorts/Q7QxYpKpx2E",
         "privacy": "public"
       }
     }
