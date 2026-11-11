@@ -2643,7 +2643,14 @@
       "posting_since": "2026-11-07T23:30:55Z",
       "media_id": "18398747608160951",
       "permalink": "https://www.instagram.com/reel/DfdXe_4nTXG/",
-      "posted_at": "2026-11-07T23:31:42Z"
+      "posted_at": "2026-11-07T23:31:42Z",
+      "video_asset_fb": "lst-2026-11-07-partners-respect-fb.mp4",
+      "fb_pick": {
+        "at": "2026-11-11T00:39:36Z",
+        "ig_views": 4641,
+        "vs_median": 1.81,
+        "shares_saves_per_1k": 1.1
+      }
     },
     {
       "id": "lst-2026-11-08-training-changed-you",
