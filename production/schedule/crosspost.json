@@ -39,7 +39,7 @@
         "21:00"
       ],
       "topic": "Combat Sports",
-      "last_slot": "2026-11-12T02:00:00Z"
+      "last_slot": "2026-11-12T15:00:00Z"
     },
     "facebook_slides": {
       "enabled": false,
@@ -1510,6 +1510,13 @@
         "privacy": "public"
       }
     },
-    "lst-2026-11-09-pad-work-teaches": {}
+    "lst-2026-11-09-pad-work-teaches": {
+      "threads": {
+        "status": "posted",
+        "at": "2026-11-12T15:06:40Z",
+        "id": "18035410697883975",
+        "url": "https://www.threads.com/@matteofights/post/DfpVrEMqEHD"
+      }
+    }
   }
 }
