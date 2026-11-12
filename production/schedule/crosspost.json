@@ -27,7 +27,7 @@
         "19:00"
       ],
       "privacy_note": "Matteo: 'youtube approved' (2026-10-16). If YouTube still forces private, the audit isn't through yet.",
-      "last_slot": "2026-11-11T21:00:00Z"
+      "last_slot": "2026-11-12T00:00:00Z"
     },
     "threads": {
       "enabled": true,
@@ -1486,6 +1486,15 @@
         "at": "2026-11-11T21:06:08Z",
         "id": "OwffCTcDDdc",
         "url": "https://youtube.com/shorts/OwffCTcDDdc",
+        "privacy": "public"
+      }
+    },
+    "lst-2026-11-09-bag-insulted-family": {
+      "youtube": {
+        "status": "posted",
+        "at": "2026-11-12T00:06:05Z",
+        "id": "hcGn7a3B5ws",
+        "url": "https://youtube.com/shorts/hcGn7a3B5ws",
         "privacy": "public"
       }
     }
