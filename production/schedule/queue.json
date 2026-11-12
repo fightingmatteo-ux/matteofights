@@ -4180,11 +4180,18 @@
       "not_before": "2026-11-12T14:00:00Z",
       "min_gap_hours": 2.5,
       "approved": true,
-      "status": "queued",
+      "status": "posted",
       "cta": "protocol",
       "app_audio": "id:576492425503806 Echo Sax Endless - Caleb Arredondo (add in the Instagram app)",
       "video_asset_music": "lst-2026-11-12-better-bag-session-music.mp4",
-      "approved_note": "Matteo: approved the week of 10-18 Nov in chat ('Make sure to keep posting') 2026-11-12 (recorded 2026-11-12T13:51Z)"
+      "approved_note": "Matteo: approved the week of 10-18 Nov in chat ('Make sure to keep posting') 2026-11-12 (recorded 2026-11-12T13:51Z)",
+      "audio_id": "576492425503806",
+      "audio_title": "Echo Sax Endless",
+      "audio_artist": "caleb.arredondo",
+      "posting_since": "2026-11-12T14:06:00Z",
+      "media_id": "18134731057813998",
+      "permalink": "https://www.instagram.com/reel/DfpOzoFjm3O/",
+      "posted_at": "2026-11-12T14:06:45Z"
     },
     {
       "id": "lst-2026-11-13-fighters-at-work",
