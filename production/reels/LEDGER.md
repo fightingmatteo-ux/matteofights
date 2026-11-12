@@ -116,6 +116,10 @@ Sort by follows per 1k views when looking for what grows the account.
 | 2026-11-07 | lst-2026-11-07-bodyweight-carryover | - | 17977344759238526 | 6 BODYWEIGHT EXERCISES THAT ACTUALLY HELP YOUR STRIKING | lifestyle (tactical) | text-on-clip | trial | 2686 (1.05x) | ? | 1 | 22 | 0 | no | lifestyle strength: 1.05x, 22 saves |
 | 2026-11-07 | lst-2026-11-07-partners-respect | - | 18398747608160951 | 6 SIGNS YOUR SPARRING PARTNERS RESPECT YOU | listicle (identity) | text-on-clip | trial | 4647 (1.81x) | ? | 0 | 5 | 0 | no | identity contrast: 1.81x, skip 40%, near-winner |
 | 2026-11-08 | lst-2026-11-07-hands-when-kicking | - | 17882028045633798 | 6 WAYS TO STOP DROPPING YOUR HANDS WHEN YOU KICK | listicle (tactical) | text-on-clip | trial | 1511 (0.59x) | ? | 0 | 3 | 0 | no | tactical: 0.59x, skip 59% |
+| 2026-11-08 | lst-2026-11-08-bag-doesnt-hit-back | - | 18039385595834940 | THE BAG DOESN'T HIT BACK. THAT'S WHY IT FEELS SO GOOD. | statement (identity) | text-on-clip | trial | 2800 (1.09x) | ? | 1 | 3 | 0 | no | statement: 1.09x, skip 35% (low) |
+| 2026-11-08 | lst-2026-11-08-twice-a-day-week | - | 18122607415975352 | HOW PEOPLE WHO TRAIN TWICE A DAY PLAN THEIR WEEK | lifestyle (tactical) | text-on-clip | trial | 1680 (0.65x) | ? | 2 | 15 | 0 | no | lifestyle routine: 0.65x, 15 saves |
+| 2026-11-08 | lst-2026-11-08-training-changed-you | - | 18154062415550198 | 6 SIGNS TRAINING CHANGED YOU MORE THAN YOUR BODY | listicle (identity) | text-on-clip | trial | 2676 (1.04x) | ? | 0 | 2 | 0 | no | identity: 1.04x |
+| 2026-11-09 | lst-2026-11-08-taller-opponent | - | 18156274933535864 | 6 WAYS TO DEAL WITH A TALLER OPPONENT | listicle (tactical) | text-on-clip | trial | 3546 (1.38x) | ? | 44 | 27 | 0 | no | tactical fight problem: 1.38x, 44 shares (most shares of any listicle), 27 saves |
 
 ## Patterns so far
 - _Add a line whenever a test is decided. Keep it to what the numbers showed._
