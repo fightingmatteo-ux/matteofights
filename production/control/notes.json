@@ -1,13 +1,5 @@
 [
   {
-    "id": "lab-exp-1016-hook_style",
-    "text": "🧪 Style test done (hook_style): Split (Bebas white, last line red) 0.85x vs current 0.99x the normal views over 10+8 reels. Keeping the current look."
-  },
-  {
-    "id": "xp-e511a13b",
-    "text": "📤 Facebook slides: 7 SIGNS YOU WERE MADE FOR COMBAT SPORTS\nhttps://www.facebook.com/1070947222779004_122156864403352578"
-  },
-  {
     "id": "xp-94a4af57",
     "text": "📤 Threads: 7 WAYS TO STOP GETTING HIT WITH THE SAME SHOT\nhttps://www.threads.com/@matteofights/post/DezKGZVk-PX"
   },
@@ -798,5 +790,13 @@
   {
     "id": "xp-69f59539",
     "text": "📤 YouTube Shorts: 6 WAYS TO KEEP YOUR CHIN DOWN WITHOUT THINKING ABOUT IT\nhttps://youtube.com/shorts/1rKXuiFdrNE"
+  },
+  {
+    "id": "health-queue:lst-2026-10-30-not-a-beginner:failed-2026111220",
+    "text": "⚠️ lst-2026-10-30-not-a-beginner failed to post: GET https://graph.facebook.com/v23.0/530317382955170 -> 404: {\"title\":\"Not Found\",\"detail\":\"No audio asset found for the given ID\",\"status\":404}"
+  },
+  {
+    "id": "health-queue:lst-2026-11-09-train-for-fun:failed-2026111220",
+    "text": "⚠️ lst-2026-11-09-train-for-fun failed to post: Processing failed: {'id': '17977598316169938', 'status': 'Error: Media upload has failed with error code 2207082', 'status_code': 'ERROR'}"
   }
 ]
