@@ -3696,11 +3696,12 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-11-12T23:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "cta": "protocol",
       "app_audio": "id:530317382955170 Echo Sax End - Caleb Arredondo (add in the Instagram app)",
-      "video_asset_music": "lst-2026-11-12-good-gym-music.mp4"
+      "video_asset_music": "lst-2026-11-12-good-gym-music.mp4",
+      "approved_note": "Matteo: approved the week of 10-18 Nov in chat ('Make sure to keep posting') 2026-11-12 (recorded 2026-11-12T13:51Z)"
     },
     {
       "id": "lst-2026-11-13-walking-onto-punches",
@@ -3716,11 +3717,12 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-11-13T23:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "cta": "protocol",
       "app_audio": "id:496614019576474 Echo Sax Feeling Blue - Caleb Arredondo (add in the Instagram app)",
-      "video_asset_music": "lst-2026-11-13-walking-onto-punches-music.mp4"
+      "video_asset_music": "lst-2026-11-13-walking-onto-punches-music.mp4",
+      "approved_note": "Matteo: approved the week of 10-18 Nov in chat ('Make sure to keep posting') 2026-11-12 (recorded 2026-11-12T13:51Z)"
     },
     {
       "id": "lst-2026-11-14-more-disciplined",
@@ -3736,11 +3738,12 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-11-14T23:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "cta": "protocol",
       "app_audio": "id:530317382955170 Echo Sax End - Caleb Arredondo (add in the Instagram app)",
-      "video_asset_music": "lst-2026-11-14-more-disciplined-music.mp4"
+      "video_asset_music": "lst-2026-11-14-more-disciplined-music.mp4",
+      "approved_note": "Matteo: approved the week of 10-18 Nov in chat ('Make sure to keep posting') 2026-11-12 (recorded 2026-11-12T13:51Z)"
     },
     {
       "id": "lst-2026-11-15-faster-opponent",
@@ -3756,11 +3759,12 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-11-15T23:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "cta": "protocol",
       "app_audio": "id:576492425503806 Echo Sax Endless - Caleb Arredondo (add in the Instagram app)",
-      "video_asset_music": "lst-2026-11-15-faster-opponent-music.mp4"
+      "video_asset_music": "lst-2026-11-15-faster-opponent-music.mp4",
+      "approved_note": "Matteo: approved the week of 10-18 Nov in chat ('Make sure to keep posting') 2026-11-12 (recorded 2026-11-12T13:51Z)"
     },
     {
       "id": "lst-2026-11-16-new-people-watch",
@@ -3776,11 +3780,12 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-11-16T23:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "cta": "read",
       "app_audio": "id:530317382955170 Echo Sax End - Caleb Arredondo (add in the Instagram app)",
-      "video_asset_music": "lst-2026-11-16-new-people-watch-music.mp4"
+      "video_asset_music": "lst-2026-11-16-new-people-watch-music.mp4",
+      "approved_note": "Matteo: approved the week of 10-18 Nov in chat ('Make sure to keep posting') 2026-11-12 (recorded 2026-11-12T13:51Z)"
     },
     {
       "id": "lst-2026-11-17-steal-from-loma",
@@ -3796,11 +3801,12 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-11-17T23:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "cta": "protocol",
       "app_audio": "id:496614019576474 Echo Sax Feeling Blue - Caleb Arredondo (add in the Instagram app)",
-      "video_asset_music": "lst-2026-11-17-steal-from-loma-music.mp4"
+      "video_asset_music": "lst-2026-11-17-steal-from-loma-music.mp4",
+      "approved_note": "Matteo: approved the week of 10-18 Nov in chat ('Make sure to keep posting') 2026-11-12 (recorded 2026-11-12T13:51Z)"
     },
     {
       "id": "lst-2026-11-18-calm-when-panic",
@@ -3816,11 +3822,12 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-11-18T23:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "cta": "read",
       "app_audio": "id:530317382955170 Echo Sax End - Caleb Arredondo (add in the Instagram app)",
-      "video_asset_music": "lst-2026-11-18-calm-when-panic-music.mp4"
+      "video_asset_music": "lst-2026-11-18-calm-when-panic-music.mp4",
+      "approved_note": "Matteo: approved the week of 10-18 Nov in chat ('Make sure to keep posting') 2026-11-12 (recorded 2026-11-12T13:51Z)"
     },
     {
       "id": "lst-2026-11-12-slip-the-jab",
@@ -3836,11 +3843,12 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-11-13T02:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "cta": "protocol",
       "app_audio": "id:576492425503806 Echo Sax Endless - Caleb Arredondo (add in the Instagram app)",
-      "video_asset_music": "lst-2026-11-12-slip-the-jab-music.mp4"
+      "video_asset_music": "lst-2026-11-12-slip-the-jab-music.mp4",
+      "approved_note": "Matteo: approved the week of 10-18 Nov in chat ('Make sure to keep posting') 2026-11-12 (recorded 2026-11-12T13:51Z)"
     },
     {
       "id": "lst-2026-11-13-off-the-ropes",
@@ -3856,11 +3864,12 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-11-14T02:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "cta": "protocol",
       "app_audio": "id:530317382955170 Echo Sax End - Caleb Arredondo (add in the Instagram app)",
-      "video_asset_music": "lst-2026-11-13-off-the-ropes-music.mp4"
+      "video_asset_music": "lst-2026-11-13-off-the-ropes-music.mp4",
+      "approved_note": "Matteo: approved the week of 10-18 Nov in chat ('Make sure to keep posting') 2026-11-12 (recorded 2026-11-12T13:51Z)"
     },
     {
       "id": "lst-2026-11-14-counter-puncher",
@@ -3876,11 +3885,12 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-11-15T02:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "cta": "protocol",
       "app_audio": "id:496614019576474 Echo Sax Feeling Blue - Caleb Arredondo (add in the Instagram app)",
-      "video_asset_music": "lst-2026-11-14-counter-puncher-music.mp4"
+      "video_asset_music": "lst-2026-11-14-counter-puncher-music.mp4",
+      "approved_note": "Matteo: approved the week of 10-18 Nov in chat ('Make sure to keep posting') 2026-11-12 (recorded 2026-11-12T13:51Z)"
     },
     {
       "id": "lst-2026-11-15-catch-a-kick",
@@ -3896,11 +3906,12 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-11-16T02:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "cta": "read",
       "app_audio": "id:530317382955170 Echo Sax End - Caleb Arredondo (add in the Instagram app)",
-      "video_asset_music": "lst-2026-11-15-catch-a-kick-music.mp4"
+      "video_asset_music": "lst-2026-11-15-catch-a-kick-music.mp4",
+      "approved_note": "Matteo: approved the week of 10-18 Nov in chat ('Make sure to keep posting') 2026-11-12 (recorded 2026-11-12T13:51Z)"
     },
     {
       "id": "lst-2026-11-16-body-without-counter",
@@ -3916,11 +3927,12 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-11-17T02:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "cta": "protocol",
       "app_audio": "id:576492425503806 Echo Sax Endless - Caleb Arredondo (add in the Instagram app)",
-      "video_asset_music": "lst-2026-11-16-body-without-counter-music.mp4"
+      "video_asset_music": "lst-2026-11-16-body-without-counter-music.mp4",
+      "approved_note": "Matteo: approved the week of 10-18 Nov in chat ('Make sure to keep posting') 2026-11-12 (recorded 2026-11-12T13:51Z)"
     },
     {
       "id": "lst-2026-11-17-finish-round-stronger",
@@ -3936,11 +3948,12 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-11-18T02:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "cta": "read",
       "app_audio": "id:530317382955170 Echo Sax End - Caleb Arredondo (add in the Instagram app)",
-      "video_asset_music": "lst-2026-11-17-finish-round-stronger-music.mp4"
+      "video_asset_music": "lst-2026-11-17-finish-round-stronger-music.mp4",
+      "approved_note": "Matteo: approved the week of 10-18 Nov in chat ('Make sure to keep posting') 2026-11-12 (recorded 2026-11-12T13:51Z)"
     },
     {
       "id": "lst-2026-11-18-left-hook",
@@ -3956,11 +3969,12 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-11-19T02:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "cta": "protocol",
       "app_audio": "id:496614019576474 Echo Sax Feeling Blue - Caleb Arredondo (add in the Instagram app)",
-      "video_asset_music": "lst-2026-11-18-left-hook-music.mp4"
+      "video_asset_music": "lst-2026-11-18-left-hook-music.mp4",
+      "approved_note": "Matteo: approved the week of 10-18 Nov in chat ('Make sure to keep posting') 2026-11-12 (recorded 2026-11-12T13:51Z)"
     },
     {
       "id": "lst-2026-11-12-after-hard-sparring",
@@ -3976,11 +3990,12 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-11-12T17:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "cta": "protocol",
       "app_audio": "id:530317382955170 Echo Sax End - Caleb Arredondo (add in the Instagram app)",
-      "video_asset_music": "lst-2026-11-12-after-hard-sparring-music.mp4"
+      "video_asset_music": "lst-2026-11-12-after-hard-sparring-music.mp4",
+      "approved_note": "Matteo: approved the week of 10-18 Nov in chat ('Make sure to keep posting') 2026-11-12 (recorded 2026-11-12T13:51Z)"
     },
     {
       "id": "lst-2026-11-13-lost-before-first-punch",
@@ -3996,11 +4011,12 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-11-13T17:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "cta": "protocol",
       "app_audio": "id:576492425503806 Echo Sax Endless - Caleb Arredondo (add in the Instagram app)",
-      "video_asset_music": "lst-2026-11-13-lost-before-first-punch-music.mp4"
+      "video_asset_music": "lst-2026-11-13-lost-before-first-punch-music.mp4",
+      "approved_note": "Matteo: approved the week of 10-18 Nov in chat ('Make sure to keep posting') 2026-11-12 (recorded 2026-11-12T13:51Z)"
     },
     {
       "id": "lst-2026-11-14-hard-round-hard-day",
@@ -4016,11 +4032,12 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-11-14T17:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "cta": "read",
       "app_audio": "id:530317382955170 Echo Sax End - Caleb Arredondo (add in the Instagram app)",
-      "video_asset_music": "lst-2026-11-14-hard-round-hard-day-music.mp4"
+      "video_asset_music": "lst-2026-11-14-hard-round-hard-day-music.mp4",
+      "approved_note": "Matteo: approved the week of 10-18 Nov in chat ('Make sure to keep posting') 2026-11-12 (recorded 2026-11-12T13:51Z)"
     },
     {
       "id": "lst-2026-11-15-combo-finally-lands",
@@ -4036,11 +4053,12 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-11-15T17:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "cta": "read",
       "app_audio": "id:496614019576474 Echo Sax Feeling Blue - Caleb Arredondo (add in the Instagram app)",
-      "video_asset_music": "lst-2026-11-15-combo-finally-lands-music.mp4"
+      "video_asset_music": "lst-2026-11-15-combo-finally-lands-music.mp4",
+      "approved_note": "Matteo: approved the week of 10-18 Nov in chat ('Make sure to keep posting') 2026-11-12 (recorded 2026-11-12T13:51Z)"
     },
     {
       "id": "lst-2026-11-16-train-before-work",
@@ -4056,11 +4074,12 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-11-16T17:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "cta": "protocol",
       "app_audio": "id:530317382955170 Echo Sax End - Caleb Arredondo (add in the Instagram app)",
-      "video_asset_music": "lst-2026-11-16-train-before-work-music.mp4"
+      "video_asset_music": "lst-2026-11-16-train-before-work-music.mp4",
+      "approved_note": "Matteo: approved the week of 10-18 Nov in chat ('Make sure to keep posting') 2026-11-12 (recorded 2026-11-12T13:51Z)"
     },
     {
       "id": "lst-2026-11-17-pads-to-sparring",
@@ -4076,11 +4095,12 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-11-17T17:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "cta": "protocol",
       "app_audio": "id:576492425503806 Echo Sax Endless - Caleb Arredondo (add in the Instagram app)",
-      "video_asset_music": "lst-2026-11-17-pads-to-sparring-music.mp4"
+      "video_asset_music": "lst-2026-11-17-pads-to-sparring-music.mp4",
+      "approved_note": "Matteo: approved the week of 10-18 Nov in chat ('Make sure to keep posting') 2026-11-12 (recorded 2026-11-12T13:51Z)"
     },
     {
       "id": "lst-2026-11-18-look-after-hands",
@@ -4096,11 +4116,12 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-11-18T17:30:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "cta": "protocol",
       "app_audio": "id:530317382955170 Echo Sax End - Caleb Arredondo (add in the Instagram app)",
-      "video_asset_music": "lst-2026-11-18-look-after-hands-music.mp4"
+      "video_asset_music": "lst-2026-11-18-look-after-hands-music.mp4",
+      "approved_note": "Matteo: approved the week of 10-18 Nov in chat ('Make sure to keep posting') 2026-11-12 (recorded 2026-11-12T13:51Z)"
     },
     {
       "id": "lst-2026-11-10-faster-kicks",
@@ -4116,11 +4137,12 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-11-17T14:00:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "cta": "protocol",
       "app_audio": "id:496614019576474 Echo Sax Feeling Blue - Caleb Arredondo (add in the Instagram app)",
-      "video_asset_music": "lst-2026-11-10-faster-kicks-music.mp4"
+      "video_asset_music": "lst-2026-11-10-faster-kicks-music.mp4",
+      "approved_note": "Matteo: approved the week of 10-18 Nov in chat ('Make sure to keep posting') 2026-11-12 (recorded 2026-11-12T13:51Z)"
     },
     {
       "id": "lst-2026-11-11-stays-after-class",
@@ -4136,11 +4158,12 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-11-18T14:00:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "cta": "protocol",
       "app_audio": "id:530317382955170 Echo Sax End - Caleb Arredondo (add in the Instagram app)",
-      "video_asset_music": "lst-2026-11-11-stays-after-class-music.mp4"
+      "video_asset_music": "lst-2026-11-11-stays-after-class-music.mp4",
+      "approved_note": "Matteo: approved the week of 10-18 Nov in chat ('Make sure to keep posting') 2026-11-12 (recorded 2026-11-12T13:51Z)"
     },
     {
       "id": "lst-2026-11-12-better-bag-session",
@@ -4156,11 +4179,12 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-11-12T14:00:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "cta": "protocol",
       "app_audio": "id:576492425503806 Echo Sax Endless - Caleb Arredondo (add in the Instagram app)",
-      "video_asset_music": "lst-2026-11-12-better-bag-session-music.mp4"
+      "video_asset_music": "lst-2026-11-12-better-bag-session-music.mp4",
+      "approved_note": "Matteo: approved the week of 10-18 Nov in chat ('Make sure to keep posting') 2026-11-12 (recorded 2026-11-12T13:51Z)"
     },
     {
       "id": "lst-2026-11-13-fighters-at-work",
@@ -4176,11 +4200,12 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-11-13T14:00:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "cta": "read",
       "app_audio": "id:530317382955170 Echo Sax End - Caleb Arredondo (add in the Instagram app)",
-      "video_asset_music": "lst-2026-11-13-fighters-at-work-music.mp4"
+      "video_asset_music": "lst-2026-11-13-fighters-at-work-music.mp4",
+      "approved_note": "Matteo: approved the week of 10-18 Nov in chat ('Make sure to keep posting') 2026-11-12 (recorded 2026-11-12T13:51Z)"
     },
     {
       "id": "lst-2026-11-14-win-exchanges",
@@ -4196,11 +4221,12 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-11-14T14:00:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "cta": "read",
       "app_audio": "id:496614019576474 Echo Sax Feeling Blue - Caleb Arredondo (add in the Instagram app)",
-      "video_asset_music": "lst-2026-11-14-win-exchanges-music.mp4"
+      "video_asset_music": "lst-2026-11-14-win-exchanges-music.mp4",
+      "approved_note": "Matteo: approved the week of 10-18 Nov in chat ('Make sure to keep posting') 2026-11-12 (recorded 2026-11-12T13:51Z)"
     },
     {
       "id": "lst-2026-11-15-hands-feet",
@@ -4216,11 +4242,12 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-11-15T14:00:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "cta": "protocol",
       "app_audio": "id:530317382955170 Echo Sax End - Caleb Arredondo (add in the Instagram app)",
-      "video_asset_music": "lst-2026-11-15-hands-feet-music.mp4"
+      "video_asset_music": "lst-2026-11-15-hands-feet-music.mp4",
+      "approved_note": "Matteo: approved the week of 10-18 Nov in chat ('Make sure to keep posting') 2026-11-12 (recorded 2026-11-12T13:51Z)"
     },
     {
       "id": "lst-2026-11-16-forgot-mouthguard",
@@ -4236,11 +4263,12 @@
       "thumb_offset_ms": 500,
       "not_before": "2026-11-16T14:00:00Z",
       "min_gap_hours": 2.5,
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "cta": "read",
       "app_audio": "id:576492425503806 Echo Sax Endless - Caleb Arredondo (add in the Instagram app)",
-      "video_asset_music": "lst-2026-11-16-forgot-mouthguard-music.mp4"
+      "video_asset_music": "lst-2026-11-16-forgot-mouthguard-music.mp4",
+      "approved_note": "Matteo: approved the week of 10-18 Nov in chat ('Make sure to keep posting') 2026-11-12 (recorded 2026-11-12T13:51Z)"
     }
   ]
 }
