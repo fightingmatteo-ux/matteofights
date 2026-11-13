@@ -8,7 +8,7 @@
       "slots": [
         "19:30"
       ],
-      "last_slot": "2026-11-12T00:30:00Z",
+      "last_slot": "2026-11-13T00:30:00Z",
       "winners": {
         "min_age_hours": 72,
         "max_age_days": 7,
@@ -1392,6 +1392,12 @@
         "id": "77Yx7F0CJG0",
         "url": "https://youtube.com/shorts/77Yx7F0CJG0",
         "privacy": "public"
+      },
+      "facebook": {
+        "status": "posted",
+        "at": "2026-11-13T00:36:27Z",
+        "id": "2099490244017066",
+        "url": "https://www.facebook.com/reel/2099490244017066"
       }
     },
     "lst-2026-11-06-first-spar": {
