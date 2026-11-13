@@ -508,5 +508,10 @@
     "at": "2026-11-13T10:59:41Z",
     "who": "Claude",
     "text": "Daily check: LEDGER +3 (9 Nov), no winner. train-for-fun (approved) failed on 9 Nov with Instagram upload error 2207082; re-queued to the free 19 Nov 09:00 NY slot. Posting resumed 12 Nov after Matteo's yes."
+  },
+  {
+    "at": "2026-11-13T12:35:57Z",
+    "who": "system",
+    "text": "Sent 20 Threads posts to Telegram"
   }
 ]
