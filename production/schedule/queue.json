@@ -4040,11 +4040,18 @@
       "not_before": "2026-11-13T17:30:00Z",
       "min_gap_hours": 2.5,
       "approved": true,
-      "status": "queued",
+      "status": "posted",
       "cta": "protocol",
       "app_audio": "id:576492425503806 Echo Sax Endless - Caleb Arredondo (add in the Instagram app)",
       "video_asset_music": "lst-2026-11-13-lost-before-first-punch-music.mp4",
-      "approved_note": "Matteo: approved the week of 10-18 Nov in chat ('Make sure to keep posting') 2026-11-12 (recorded 2026-11-12T13:51Z)"
+      "approved_note": "Matteo: approved the week of 10-18 Nov in chat ('Make sure to keep posting') 2026-11-12 (recorded 2026-11-12T13:51Z)",
+      "audio_id": "576492425503806",
+      "audio_title": "Echo Sax Endless",
+      "audio_artist": "caleb.arredondo",
+      "posting_since": "2026-11-13T17:30:57Z",
+      "media_id": "18083892563346578",
+      "permalink": "https://www.instagram.com/reel/DfsLDa0GhBz/",
+      "posted_at": "2026-11-13T17:31:40Z"
     },
     {
       "id": "lst-2026-11-14-hard-round-hard-day",
