@@ -120,6 +120,9 @@ Sort by follows per 1k views when looking for what grows the account.
 | 2026-11-08 | lst-2026-11-08-twice-a-day-week | - | 18122607415975352 | HOW PEOPLE WHO TRAIN TWICE A DAY PLAN THEIR WEEK | lifestyle (tactical) | text-on-clip | trial | 1680 (0.65x) | ? | 2 | 15 | 0 | no | lifestyle routine: 0.65x, 15 saves |
 | 2026-11-08 | lst-2026-11-08-training-changed-you | - | 18154062415550198 | 6 SIGNS TRAINING CHANGED YOU MORE THAN YOUR BODY | listicle (identity) | text-on-clip | trial | 2676 (1.04x) | ? | 0 | 2 | 0 | no | identity: 1.04x |
 | 2026-11-09 | lst-2026-11-08-taller-opponent | - | 18156274933535864 | 6 WAYS TO DEAL WITH A TALLER OPPONENT | listicle (tactical) | text-on-clip | trial | 3546 (1.38x) | ? | 44 | 27 | 0 | no | tactical fight problem: 1.38x, 44 shares (most shares of any listicle), 27 saves |
+| 2026-11-09 | lst-2026-11-09-bag-insulted-family | - | 18232981231323098 | THE GUY WHO HITS THE BAG LIKE IT INSULTED HIS FAMILY | iykyk (identity) | text-on-clip | trial | 2715 (1.06x) | ? | 3 | 1 | 0 | no | iykyk: 1.06x, skip 33% (low) |
+| 2026-11-09 | lst-2026-11-09-pad-work-teaches | - | 18169515745490874 | 6 THINGS PAD WORK TEACHES YOU ABOUT WORKING WITH PEOPLE | builder (identity) | text-on-clip | trial | 1230 (0.48x) | ? | 0 | 1 | 0 | no | builder: 0.48x |
+| 2026-11-10 | lst-2026-11-09-chin-down | - | 18098651975445438 | 6 WAYS TO KEEP YOUR CHIN DOWN WITHOUT THINKING ABOUT IT | listicle (tactical) | text-on-clip | trial | 2190 (0.85x) | ? | 1 | 12 | 0 | no | tactical: 0.85x, 12 saves |
 
 ## Patterns so far
 - _Add a line whenever a test is decided. Keep it to what the numbers showed._
@@ -144,3 +147,4 @@ Sort by follows per 1k views when looking for what grows the account.
 - 2026-11-07 (listicle normal 2570): no winner on 3 Nov (best fighter-not-fit 1.49x). Loma plan reel, all 5 hooks out: D contrast 2302 views / 101 likes / 41 comments / 43 saves at 62 h; A story 2424 / 74 likes / 14 comments at 8 h; B question 1695; C contrast 1282; E callout ('if your feet...') 314. Naming a fight legend lifts comments 5-10x over plan reels without one (n=5 vs 3). Story opening led this test, against the trial learnings (n=1).
 - 2026-11-08 (auto, plan-loma): contrast opening won over contrast, story, question, question.
 - 2026-11-09 (listicle normal 2570): builder lane now n=5, all at or under normal (1.00x, 0.97x, 0.66x, 0.54x, 0.40x). On views it trails fight content every time; follows per reel are still not in the data.
+- 2026-11-13 (listicle normal 2570): builder lane n=7 now, all at or under normal (best 1.00x, median 0.66x; pad-work-teaches 0.48x). Statements/iykyk with low skip (bag-doesnt-hit-back 35%, bag-insulted-family 33%) hold viewers but stay near 1.0x on views.
