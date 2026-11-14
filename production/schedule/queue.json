@@ -3341,7 +3341,14 @@
       "posting_since": "2026-11-08T14:00:56Z",
       "media_id": "18039385595834940",
       "permalink": "https://www.instagram.com/reel/Dfe7EwZgsm1/",
-      "posted_at": "2026-11-08T14:02:03Z"
+      "posted_at": "2026-11-08T14:02:03Z",
+      "video_asset_fb": "lst-2026-11-08-bag-doesnt-hit-back-fb.mp4",
+      "fb_pick": {
+        "at": "2026-11-14T23:54:02Z",
+        "ig_views": 2800,
+        "vs_median": 1.09,
+        "shares_saves_per_1k": 1.4
+      }
     },
     {
       "id": "lst-2026-11-09-bag-insulted-family",
