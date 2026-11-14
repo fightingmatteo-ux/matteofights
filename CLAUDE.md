@@ -48,6 +48,9 @@ task needs it. Open items: [STATUS.md](STATUS.md) (read at session start, update
 - **Cadence (2026-10-20): 5 posts a day** (New York): listicles 09:00, 12:30, 18:30, 21:30 with an Instagram
   sound attached, plus 1 talking-head variant 15:30. Listicles run themselves
   ([tools/listicle/README.md](tools/listicle/README.md)).
+- **Pins + series (Matteo 2026-11-14):** pin 1 is the START HERE reel; pins 2-3 origin + Fighter Breakdown Ep. 1
+  (`production/reels/FILM-2026-11-14-pinned.md`). Pro fighter reels are a numbered series, "Comment PLAN and the
+  fighter you want next" (`production/reels/BREAKDOWNS-2026-11-14.md`). Rants and talking heads first.
 - **Talking heads ("trial reel maxing", Matteo 2026-10-30):** Matteo films from talking points, not scripts, and
   films **5 hooks** per reel (each labelled with an opening type), posted as trial reels the SAME day 15:00-16:00 NY.
   The "Hook tests" workflow calls the winner at **24 h**, then the Edit worker re-cuts that winner 5 ways (round 2,

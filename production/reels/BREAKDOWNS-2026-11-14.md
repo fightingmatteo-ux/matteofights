@@ -3,6 +3,25 @@
 Matteo's note: the pro reels jump from the hook ("why does Lomachenko dance?") straight to the workout. Not enough
 breakdown. He wants the middle to show his expertise.
 
+## The series: FIGHTER BREAKDOWN (Matteo 2026-11-14)
+
+Numbered episodes, one fighter each. Ep. 1 = Lomachenko (strongest reel so far). After that the comments pick.
+On-screen tag the whole reel: `FIGHTER BREAKDOWN · EP 1`. Cover: fighter name + `EP 1`.
+
+**Intro (right AFTER the hook, never before it, 3 s max):** "Fighter breakdown, episode one. I'm Matteo, I've
+trained in five countries, and every episode I break down one fighter you can actually learn from."
+
+**CTA (one comment does both jobs):** "Comment PLAN and the fighter you want next. I'll send you the plan, and
+the most-asked fighter is episode two."
+Why one comment, not "link in bio": the auto-DM fires on PLAN anywhere in a comment (any length), sends that reel's
+plan and logs the lead; the fighter name in the same comment is the vote. Link in bio loses the DM and the lead,
+and only 0.45% of profile visits tap the bio link (PROFILE-FIX-2026-10-30). The caption still needs the plan's
+match phrase (docs/plans/README.md).
+
+**Next episode:** the most-requested fighter in the comments (Claude tallies them in the daily check). If they ask
+for one without a plan yet, Claude writes the breakdown and plan (facts checked) before filming. Backlog already
+written: Tyson, Floyd, Khabib, Usyk.
+
 ## New shape (about 35 to 45 s)
 1. **Hook** (3 s): keep the 5 tested hooks per fighter (FILM-2026-11-02-pro-plan-reels.md). Fight clip behind.
 2. **Open loop** (3 s): one line that promises the answer.
