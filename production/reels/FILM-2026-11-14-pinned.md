@@ -30,9 +30,12 @@ for the whole first second (cover frame too, so it reads as the entry point on t
 | E | reframe | "People think combat sports is just violence. If you're new here, this is why I made this page." |
 
 Points (one breath each, keep it moving):
-1. **Who you are:** "I'm Matteo. Swiss-Brazilian, I'm a student in Thailand and I'm building a business. Karate at
-   seven, trained Muay Thai and boxing in five countries, first fight at sixteen. Right now I'm coming back from a
-   torn ACL." (Matteo 2026-11-14: add student + building a business. Say "a business", don't name the app.)
+1. **Who you are:** "I'm Matteo. Swiss-Brazilian, I'm a student in Thailand and I'm building an online marketing
+   business. Karate at seven, three years of BJJ, then a street fight taught me the mat isn't the street, so I moved
+   to Muay Thai. Trained in five countries, first fight at sixteen. Right now I'm coming back from a torn ACL."
+   (Matteo 2026-11-14: add student, the business, BJJ. The business = online marketing and advertising services
+   for clients; don't name clients on camera without their OK. BJJ-to-Muay-Thai uses the real reason from
+   context/founder.md, not a joke at BJJ's expense: a pinned reel can't push BJJ people away.)
 2. **What you'll get here (3 things, count them on your fingers):** "One: fighter breakdowns. Every episode I
    break down one fighter you can actually learn from, and you pick who's next. Two: training in Thailand, the
    real version, not the holiday version. Three: my comeback from a torn ACL, all of it."

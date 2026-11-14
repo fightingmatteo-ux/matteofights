@@ -48,6 +48,9 @@ always wanted."_ It's rare and it's real. Lead with it.
 - Based in **Bangkok, Thailand**.
 - Dropped a university semester due to injury.
 - Works on his mum's ecommerce brand **Gypsy Amazon** while recovering.
+- **Building an online marketing and advertising services business** (Matteo 2026-11-14): runs online marketing
+  and ads for clients (Peter, and now Lenny). On camera: "building an online marketing business"; client names only
+  with their OK.
 - Learning AI, building Stance, planning the next fight comeback.
 - Student identity — but building seriously.
 
