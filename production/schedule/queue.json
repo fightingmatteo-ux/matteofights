@@ -2739,7 +2739,14 @@
       "posting_since": "2026-11-10T23:30:57Z",
       "media_id": "18138031693679767",
       "permalink": "https://www.instagram.com/reel/DflF3cuD3v-/",
-      "posted_at": "2026-11-10T23:31:43Z"
+      "posted_at": "2026-11-10T23:31:43Z",
+      "video_asset_fb": "lst-2026-11-10-stop-blinking-fb.mp4",
+      "fb_pick": {
+        "at": "2026-11-14T00:53:54Z",
+        "ig_views": 3284,
+        "vs_median": 1.28,
+        "shares_saves_per_1k": 15.8
+      }
     },
     {
       "id": "lst-2026-11-11-cut-off-ring",
