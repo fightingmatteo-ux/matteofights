@@ -123,6 +123,9 @@ Sort by follows per 1k views when looking for what grows the account.
 | 2026-11-09 | lst-2026-11-09-bag-insulted-family | - | 18232981231323098 | THE GUY WHO HITS THE BAG LIKE IT INSULTED HIS FAMILY | iykyk (identity) | text-on-clip | trial | 2715 (1.06x) | ? | 3 | 1 | 0 | no | iykyk: 1.06x, skip 33% (low) |
 | 2026-11-09 | lst-2026-11-09-pad-work-teaches | - | 18169515745490874 | 6 THINGS PAD WORK TEACHES YOU ABOUT WORKING WITH PEOPLE | builder (identity) | text-on-clip | trial | 1230 (0.48x) | ? | 0 | 1 | 0 | no | builder: 0.48x |
 | 2026-11-10 | lst-2026-11-09-chin-down | - | 18098651975445438 | 6 WAYS TO KEEP YOUR CHIN DOWN WITHOUT THINKING ABOUT IT | listicle (tactical) | text-on-clip | trial | 2190 (0.85x) | ? | 1 | 12 | 0 | no | tactical: 0.85x, 12 saves |
+| 2026-11-10 | lst-2026-11-10-best-were-worst | - | 17982522144129692 | THE BEST PEOPLE IN YOUR GYM WERE ONCE THE WORST | statement (identity) | text-on-clip | trial | 523 (0.20x) | ? | 1 | 2 | 0 | no | statement: 0.20x |
+| 2026-11-10 | lst-2026-11-10-stop-blinking | - | 18138031693679767 | 7 WAYS TO STOP BLINKING WHEN PUNCHES COME | listicle (tactical) | text-on-clip | trial | 3284 (1.28x) | ? | 7 | 45 | 0 | no | tactical fight problem: 1.28x, 45 saves (2.2% save rate, best of any listicle) |
+| 2026-11-11 | lst-2026-11-10-better-without-more-sparring | - | 18085314938438397 | 7 WAYS TO GET BETTER AT SPARRING WITHOUT SPARRING MORE | listicle (tactical) | text-on-clip | trial | 1533 (0.60x) | ? | 19 | 15 | 0 | no | tactical: 0.60x views but 19 shares |
 
 ## Patterns so far
 - _Add a line whenever a test is decided. Keep it to what the numbers showed._
@@ -148,3 +151,4 @@ Sort by follows per 1k views when looking for what grows the account.
 - 2026-11-08 (auto, plan-loma): contrast opening won over contrast, story, question, question.
 - 2026-11-09 (listicle normal 2570): builder lane now n=5, all at or under normal (1.00x, 0.97x, 0.66x, 0.54x, 0.40x). On views it trails fight content every time; follows per reel are still not in the data.
 - 2026-11-13 (listicle normal 2570): builder lane n=7 now, all at or under normal (best 1.00x, median 0.66x; pad-work-teaches 0.48x). Statements/iykyk with low skip (bag-doesnt-hit-back 35%, bag-insulted-family 33%) hold viewers but stay near 1.0x on views.
+- 2026-11-14 (listicle normal 2570): statements n=11, best 1.09x, best-were-worst 0.20x: kept at 2 per 28. Builder n=7 all at or under normal: cut to 1 per 28 in the 14 Nov batch. Shares/saves leaders are fight-problem lists (taller-opponent 44 shares, stop-blinking 45 saves): the batch adds direct follow-ups (shorter rusher, heavier opponent, stop flinching).
