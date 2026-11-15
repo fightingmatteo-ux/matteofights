@@ -1,9 +1,5 @@
 [
   {
-    "id": "health-run:Cross-post-2026102510",
-    "text": "⚠️ Workflow 'Cross-post' failed: https://github.com/fightingmatteo-ux/matteofights/actions/runs/40178887299"
-  },
-  {
     "id": "health-run:Deploy control center-2026102510",
     "text": "⚠️ Workflow 'Deploy control center' failed: https://github.com/fightingmatteo-ux/matteofights/actions/runs/40183091105"
   },
@@ -798,5 +794,9 @@
   {
     "id": "health-queue:lst-2026-10-30-not-a-beginner:failed-2026111506",
     "text": "⚠️ lst-2026-10-30-not-a-beginner failed to post: GET https://graph.facebook.com/v23.0/530317382955170 -> 404: {\"title\":\"Not Found\",\"detail\":\"No audio asset found for the given ID\",\"status\":404}"
+  },
+  {
+    "id": "xp-dbd2647c",
+    "text": "📤 Threads: WHAT FIGHTERS EAT AFTER A HARD SPARRING DAY\nhttps://www.threads.com/@matteofights/post/DfxECwOB3sf"
   }
 ]

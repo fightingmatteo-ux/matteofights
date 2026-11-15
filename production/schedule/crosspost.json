@@ -39,7 +39,7 @@
         "21:00"
       ],
       "topic": "Combat Sports",
-      "last_slot": "2026-11-15T02:00:00Z"
+      "last_slot": "2026-11-15T15:00:00Z"
     },
     "facebook_slides": {
       "enabled": false,
@@ -1663,6 +1663,12 @@
         "id": "rEG23fdgn4o",
         "url": "https://youtube.com/shorts/rEG23fdgn4o",
         "privacy": "public"
+      },
+      "threads": {
+        "status": "posted",
+        "at": "2026-11-15T15:06:35Z",
+        "id": "18080712179749414",
+        "url": "https://www.threads.com/@matteofights/post/DfxECwOB3sf"
       }
     },
     "lst-2026-11-12-good-gym": {}
