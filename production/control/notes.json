@@ -1,9 +1,5 @@
 [
   {
-    "id": "health-run:Hook tests-2026102510",
-    "text": "⚠️ Workflow 'Hook tests' failed: https://github.com/fightingmatteo-ux/matteofights/actions/runs/40164698042"
-  },
-  {
     "id": "health-run:Platform stats-2026102510",
     "text": "⚠️ Workflow 'Platform stats' failed: https://github.com/fightingmatteo-ux/matteofights/actions/runs/40163693383"
   },
@@ -798,5 +794,9 @@
   {
     "id": "health-run:Listicle factory-2026111518",
     "text": "⚠️ Workflow 'Listicle factory' failed: https://github.com/fightingmatteo-ux/matteofights/actions/runs/43742249726"
+  },
+  {
+    "id": "xp-8b9c0646",
+    "text": "📤 Threads: 6 SIGNS YOU FOUND A GOOD GYM\nhttps://www.threads.com/@matteofights/post/Dfxp0IFBpj8"
   }
 ]
