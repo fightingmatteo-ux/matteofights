@@ -1443,6 +1443,248 @@
       "from": "founder",
       "status": "queued",
       "approved": false
+    },
+    {
+      "id": "th-1120-1",
+      "at": "2026-11-20T12:30:00Z",
+      "kind": "take",
+      "topic": "Fight Psychology",
+      "text": "Your first sparring partner shapes how you fight for years.\n\nA wild one teaches you panic. A patient one teaches you to look.",
+      "chain": [],
+      "from": "craft",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1120-2",
+      "at": "2026-11-20T17:30:00Z",
+      "kind": "question",
+      "topic": "Combat Sports",
+      "text": "Join a gym in week one or learn alone at home first?\n\nWhich would you tell a beginner?",
+      "chain": [],
+      "from": "craft",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1120-3",
+      "at": "2026-11-20T22:30:00Z",
+      "kind": "tip",
+      "topic": "Combat Sports",
+      "text": "Tired jab in round three? Breathe out on every punch.\n\nHolding your breath burns your gas faster than the punches do.",
+      "chain": [],
+      "from": "craft",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1121-1",
+      "at": "2026-11-21T12:30:00Z",
+      "kind": "tip",
+      "topic": "Combat Sports",
+      "text": "Sore neck after sparring? Chin down, not just hands up.\n\nA lifted chin makes your neck do the catching on every shot.",
+      "chain": [],
+      "from": "craft",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1121-2",
+      "at": "2026-11-21T17:30:00Z",
+      "kind": "chain",
+      "topic": "Combat Sports",
+      "text": "Five things a good training partner does that you never notice.",
+      "chain": [
+        "1. Tells you when you look tired.\nNot to be rude. Tired is when people get hurt.",
+        "2. Matches your pace.\nIf you're new, they let you see the shot before it lands.",
+        "3. Shows up on the bad days.\nYou don't have a partner if they only come when it's fun.",
+        "4. Corrects you in one sentence.\nRight after the round, no speech.",
+        "5. Says nothing when you're already annoyed at yourself.\nSometimes a fist bump is the whole coaching."
+      ],
+      "from": "craft",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1121-3",
+      "at": "2026-11-21T22:30:00Z",
+      "kind": "take",
+      "topic": "Combat Sports",
+      "text": "Cardio gets blamed for a lot of things technique caused.\n\nGassed in round two usually means you were tense, not unfit.",
+      "chain": [],
+      "from": "craft",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1122-1",
+      "at": "2026-11-22T12:30:00Z",
+      "kind": "take",
+      "topic": "Fight Psychology",
+      "text": "Losing a sparring round teaches you more when you lose it on purpose.\n\nTry the move you're bad at. Get caught. That's the lesson.",
+      "chain": [],
+      "from": "craft",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1122-2",
+      "at": "2026-11-22T17:30:00Z",
+      "kind": "question",
+      "topic": "Combat Sports",
+      "text": "What's the one move you only ever do in drills and never in sparring?",
+      "chain": [],
+      "from": "craft",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1122-3",
+      "at": "2026-11-22T22:30:00Z",
+      "kind": "story",
+      "topic": "Fight Psychology",
+      "text": "I had a ruptured appendix the day before a fight.\n\nThat's the closest I've come to quitting.\n\nI didn't.",
+      "chain": [],
+      "from": "founder",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1123-1",
+      "at": "2026-11-23T12:30:00Z",
+      "kind": "question",
+      "topic": "Combat Sports",
+      "text": "Early morning training or evening: which one do you actually show up for?",
+      "chain": [],
+      "from": "craft",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1123-2",
+      "at": "2026-11-23T17:30:00Z",
+      "kind": "tip",
+      "topic": "Combat Sports",
+      "text": "Learning a new combo? Do it at half speed for a full round before you add power.\n\nSpeed shows you where it breaks. Power hides it.",
+      "chain": [],
+      "from": "craft",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1123-3",
+      "at": "2026-11-23T22:30:00Z",
+      "kind": "take",
+      "topic": "Fight Psychology",
+      "text": "Everyone says they want honest feedback.\n\nThen a coach says your hands are low and half the room has an excuse ready.",
+      "chain": [],
+      "from": "craft",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1124-1",
+      "at": "2026-11-24T12:30:00Z",
+      "kind": "take",
+      "topic": "Fight Psychology",
+      "text": "Waiting until you feel ready to start sparring is how people never spar.\n\nNobody feels ready. The ones who spar just stop waiting.",
+      "chain": [],
+      "from": "craft",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1124-2",
+      "at": "2026-11-24T17:30:00Z",
+      "kind": "question",
+      "topic": "Combat Sports",
+      "text": "Boxing or BJJ for a total beginner who wants to feel confident fast?",
+      "chain": [],
+      "from": "craft",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1124-3",
+      "at": "2026-11-24T22:30:00Z",
+      "kind": "chain",
+      "topic": "Combat Sports",
+      "text": "How to survive your first month of sparring.",
+      "chain": [
+        "1. Go light on purpose.\nAsk your partner for 30% power. Good ones say yes before you finish asking.",
+        "2. Keep your hands where your face is.\nYou will drop them. Notice it, put them back, repeat.",
+        "3. Breathe out when you get hit.\nHolding your breath turns a normal shot into a bad one.",
+        "4. Stop after three rounds.\nTired beginners get hit and learn nothing. Leave while it still makes sense."
+      ],
+      "from": "craft",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1125-1",
+      "at": "2026-11-25T12:30:00Z",
+      "kind": "tip",
+      "topic": "Combat Sports",
+      "text": "Sore calves after skipping? Land on the balls of your feet and keep the jumps tiny.\n\nIf the rope is clearing the floor by a hand, you're jumping too high.",
+      "chain": [],
+      "from": "craft",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1125-2",
+      "at": "2026-11-25T17:30:00Z",
+      "kind": "take",
+      "topic": "Combat Sports",
+      "text": "Southpaws feel awkward because you only face one a few times a year.\n\nSpar a lefty every week and the problem goes away.",
+      "chain": [],
+      "from": "craft",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1125-3",
+      "at": "2026-11-25T22:30:00Z",
+      "kind": "story",
+      "topic": "Fight Psychology",
+      "text": "I'm Swiss and Brazilian, grew up in Thailand and trained Muay Thai in a Brazilian-run gym.\n\nWhere did you learn how you fight? Does it still show?",
+      "chain": [],
+      "from": "founder",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1126-1",
+      "at": "2026-11-26T12:30:00Z",
+      "kind": "question",
+      "topic": "Combat Sports",
+      "text": "After a hard round, do you trust your breathing or your legs?",
+      "chain": [],
+      "from": "craft",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1126-2",
+      "at": "2026-11-26T17:30:00Z",
+      "kind": "tip",
+      "topic": "Combat Sports",
+      "text": "Sick when you train after eating? Eat two hours earlier, or just a banana.\n\nHeavy food and body shots don't mix.",
+      "chain": [],
+      "from": "craft",
+      "status": "queued",
+      "approved": false
+    },
+    {
+      "id": "th-1126-3",
+      "at": "2026-11-26T22:30:00Z",
+      "kind": "take",
+      "topic": "Fight Psychology",
+      "text": "A bad day on the pads is still a day you showed up.\n\nThe ones who quit after a bad round never see the good one coming.",
+      "chain": [],
+      "from": "craft",
+      "status": "queued",
+      "approved": false
     }
   ]
 }
