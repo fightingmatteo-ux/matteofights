@@ -1,9 +1,5 @@
 [
   {
-    "id": "health-run:Fetch video-2026102510",
-    "text": "⚠️ Workflow 'Fetch video' failed: https://github.com/fightingmatteo-ux/matteofights/actions/runs/40180540367"
-  },
-  {
     "id": "health-run:Hook tests-2026102510",
     "text": "⚠️ Workflow 'Hook tests' failed: https://github.com/fightingmatteo-ux/matteofights/actions/runs/40164698042"
   },
@@ -798,5 +794,9 @@
   {
     "id": "xp-1b54c31f",
     "text": "📤 YouTube Shorts: 6 SIGNS YOU FOUND A GOOD GYM\nhttps://youtube.com/shorts/qj8psCKOlXQ"
+  },
+  {
+    "id": "health-run:Listicle factory-2026111518",
+    "text": "⚠️ Workflow 'Listicle factory' failed: https://github.com/fightingmatteo-ux/matteofights/actions/runs/43742249726"
   }
 ]
