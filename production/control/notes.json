@@ -1,9 +1,5 @@
 [
   {
-    "id": "health-queue:lst-2026-10-24-training-too-long:missed-2026102510",
-    "text": "⏰ lst-2026-10-24-training-too-long was due 2026-10-25T01:30:00Z and still hasn't posted."
-  },
-  {
     "id": "health-queue:saenchai-v3-B:missed-2026102510",
     "text": "⏰ saenchai-v3-B was due 2026-10-24T19:30:00Z and still hasn't posted."
   },
@@ -798,5 +794,9 @@
   {
     "id": "xp-d8672f73",
     "text": "📤 Facebook Reels: 7 WAYS TO STOP BLINKING WHEN PUNCHES COME\nhttps://www.facebook.com/reel/2158875318038158"
+  },
+  {
+    "id": "xp-692077f2",
+    "text": "📤 Threads: 6 WAYS TO GET MORE OUT OF A BAG SESSION\nhttps://www.threads.com/@matteofights/post/Dfvqy74CqyM"
   }
 ]
