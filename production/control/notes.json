@@ -1,9 +1,5 @@
 [
   {
-    "id": "health-queue:saenchai-v3-B:missed-2026102510",
-    "text": "⏰ saenchai-v3-B was due 2026-10-24T19:30:00Z and still hasn't posted."
-  },
-  {
     "id": "health-run:Cross-post-2026102510",
     "text": "⚠️ Workflow 'Cross-post' failed: https://github.com/fightingmatteo-ux/matteofights/actions/runs/40178887299"
   },
@@ -798,5 +794,9 @@
   {
     "id": "xp-692077f2",
     "text": "📤 Threads: 6 WAYS TO GET MORE OUT OF A BAG SESSION\nhttps://www.threads.com/@matteofights/post/Dfvqy74CqyM"
+  },
+  {
+    "id": "health-queue:lst-2026-10-30-not-a-beginner:failed-2026111506",
+    "text": "⚠️ lst-2026-10-30-not-a-beginner failed to post: GET https://graph.facebook.com/v23.0/530317382955170 -> 404: {\"title\":\"Not Found\",\"detail\":\"No audio asset found for the given ID\",\"status\":404}"
   }
 ]
