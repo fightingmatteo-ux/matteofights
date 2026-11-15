@@ -126,6 +126,9 @@ Sort by follows per 1k views when looking for what grows the account.
 | 2026-11-10 | lst-2026-11-10-best-were-worst | - | 17982522144129692 | THE BEST PEOPLE IN YOUR GYM WERE ONCE THE WORST | statement (identity) | text-on-clip | trial | 523 (0.20x) | ? | 1 | 2 | 0 | no | statement: 0.20x |
 | 2026-11-10 | lst-2026-11-10-stop-blinking | - | 18138031693679767 | 7 WAYS TO STOP BLINKING WHEN PUNCHES COME | listicle (tactical) | text-on-clip | trial | 3284 (1.28x) | ? | 7 | 45 | 0 | no | tactical fight problem: 1.28x, 45 saves (2.2% save rate, best of any listicle) |
 | 2026-11-11 | lst-2026-11-10-better-without-more-sparring | - | 18085314938438397 | 7 WAYS TO GET BETTER AT SPARRING WITHOUT SPARRING MORE | listicle (tactical) | text-on-clip | trial | 1533 (0.60x) | ? | 19 | 15 | 0 | no | tactical: 0.60x views but 19 shares |
+| 2026-11-11 | lst-2026-11-11-new-guy-partner | - | 18440703805151461 | WHEN COACH SAYS "GRAB A PARTNER" AND YOU'RE THE NEW GUY | iykyk (identity) | text-on-clip | trial | 2692 (1.04x) | ? | 2 | 0 | 0 | no | iykyk: 1.04x, skip 32% (low), 0 saves |
+| 2026-11-11 | lst-2026-11-11-cut-off-ring | - | 18176147746458932 | 6 WAYS TO CUT OFF THE RING ON SOMEONE WHO RUNS | listicle (tactical) | text-on-clip | trial | 2216 (0.85x) | ? | 0 | 13 | 0 | no | tactical: 0.85x, 13 saves, skip 45% |
+| 2026-11-12 | lst-2026-11-11-check-leg-kicks | - | 17981608091918229 | 6 WAYS TO CHECK LEG KICKS THAT ACTUALLY WORK | listicle (tactical) | text-on-clip | trial | 2113 (0.81x) | ? | 0 | 6 | 0 | no | tactical: 0.81x, skip 50% (bag clip, no partner) |
 
 ## Patterns so far
 - _Add a line whenever a test is decided. Keep it to what the numbers showed._
