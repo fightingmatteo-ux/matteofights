@@ -16,3 +16,7 @@ charts the revisions they came from.
 - [text] Hook text never sits over a face; move it to the lower plate instead (listicle review, 6 clips swapped, 2026-10-20)
 - [framing] Never post sideways footage: check rotation before render (09:00 batch review, 2026-10-25)
 - [broll] No clips under 3 s in listicles: they break the renderer and read as glitches (2026-10-25)
+- [cut] When a line was filmed more than once (long takes with repeats), pick the take with the most eye contact with the lens first, then the loudest and most expressive voice, then the one that sounds most natural (no reading tone, no stumble). Check every repeat, not just the last one (Matteo, 2026-11-16)
+- [broll] Cover any stretch where he looks away from the lens with b-roll; keep his face on screen for the lines where he holds eye contact (Matteo, 2026-11-16)
+- [broll] B-roll shows exactly what the words say at that moment: "sweep" shows the sweep, "standing on one leg" shows the man on one leg. No generic fight footage over a specific line (Matteo, 2026-11-16)
+- [broll] Longer b-roll holds are fine when they cover a look-away or show a full move, as long as the cut in and out is clean (Matteo, 2026-11-16)
