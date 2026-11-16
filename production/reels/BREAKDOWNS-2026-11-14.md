@@ -1,5 +1,11 @@
 # Pro fighter reels: breakdown first, then the plan (Matteo 2026-11-14)
 
+> **Update, Matteo 2026-11-16:** Episode 1 is now **Saenchai, redone** (not Lomachenko), and the series covers more
+> styles than Muay Thai (boxers, a wrestler, a kickboxer). He introduces himself properly in every episode. CTA stays
+> one comment: PLAN plus the fighter they want next. Reading scripts for the month shoot (6 episodes + 9 talking
+> heads): `FILM-2026-11-16-month-shoot.md`, source `2026-11-16-month-shoot/scripts.json`. Still to write before
+> they post: plans for Saenchai and Adesanya.
+
 Matteo's note: the pro reels jump from the hook ("why does Lomachenko dance?") straight to the workout. Not enough
 breakdown. He wants the middle to show his expertise.
 

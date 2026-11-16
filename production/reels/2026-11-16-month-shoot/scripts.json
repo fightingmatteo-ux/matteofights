@@ -1,0 +1,216 @@
+{
+  "updated": "2026-11-16",
+  "how": "Source of truth for the month shoot (Pocket 3). Edit here, then run: python3 -P production/reels/2026-11-16-month-shoot/build.py (rebuilds prompter.html and production/reels/FILM-2026-11-16-month-shoot.md).",
+  "reels": [
+    {
+      "id": "saenchai", "group": "breakdown", "slate": "SAENCHAI", "title": "Saenchai", "tag": "Episode 1 · Muay Thai",
+      "why": "Competitor outlier: 'Saenchai vs Giant' 4.3M views, 58x that channel's normal. Your own Saenchai reels held 15 to 17 s average watch.",
+      "note": "Plan not written yet (Claude writes it before this posts). Check before filming: Lumpinee champion in four weight classes.",
+      "takes": [
+        {"k": "A", "type": "contrast", "text": "Bigger guys win the trade. Saenchai never traded."},
+        {"k": "B", "type": "contrast", "text": "Most fighters try to hit harder than the bigger guy. Saenchai made the bigger guy miss, fall over, and start again."},
+        {"k": "C", "type": "result", "text": "Saenchai gave up weight for most of his career, and still made bigger men look slow."},
+        {"k": "D", "type": "question", "text": "Always sparring someone bigger? Steal this from Saenchai."},
+        {"k": "E", "type": "reframe", "text": "People think beating a bigger guy takes power. Saenchai did it with balance."},
+        {"k": "BODY", "text": "Fighter breakdown, episode one.\n\nI'm Matteo. I've trained in five countries, I grew up training Muay Thai in Thailand, and every episode I break down one fighter you can actually learn from.\n\nSaenchai won Lumpinee titles in four weight classes. Then he spent years fighting heavier men, because nobody his size could beat him.\n\nIt's not speed, and it's not toughness. It's three things.\n\nOne. He's never where the hit lands. One small step to the side, and the punch or the kick goes past him. He's not blocking the power. He's just not there.\n\nTwo. He catches the kick. Bigger guys kick hard. Saenchai catches it, and now the big man is standing on one leg. One leg, no power.\n\nThe third one is the one that breaks people.\n\nThree. The sweep. From the catch, he takes out the standing leg. The bigger guy goes down, gets up, and has to start over. Every reset costs him energy, and a bit of confidence. Do that ten times, and he's the one getting frustrated.\n\nSo if you always spar someone bigger: stop trying to win the exchange. Win the reset."},
+        {"k": "END", "text": "Here's how to train it this week, Monday to Friday.\n\n(pause two seconds, the plan cards go here)\n\nComment PLAN and the fighter you want to see next.\n\nI'll send you the plan for this one, and the most-asked fighter gets the next episode."}
+      ]
+    },
+    {
+      "id": "loma", "group": "breakdown", "slate": "LOMA", "title": "Lomachenko", "tag": "Boxing · footwork",
+      "why": "Your strongest engagement so far: 101 likes, 41 comments, 43 saves. It only held 5 to 6 s because it skipped the breakdown.",
+      "note": "Plan exists (lomachenko-footwork). Episode number goes on screen in the edit, the comments decide the order.",
+      "takes": [
+        {"k": "A", "type": "contrast", "text": "Most people drill punches. Lomachenko drilled his feet."},
+        {"k": "B", "type": "contrast", "text": "Lomachenko's footwork isn't talent. It's years of drills nobody films."},
+        {"k": "C", "type": "result", "text": "Four opponents in a row quit on their stools against Lomachenko. Here's what he was doing to them."},
+        {"k": "D", "type": "question", "text": "Why do good boxers look lost against Lomachenko?"},
+        {"k": "E", "type": "story", "text": "When Lomachenko was a kid, his dad pulled him out of boxing for four years to learn dance."},
+        {"k": "BODY", "text": "Fighter breakdown.\n\nI'm Matteo. I've trained in five countries, I had my first fight at sixteen, and every episode I break down one fighter you can actually learn from.\n\nAs a kid, his father took him out of boxing for about four years of traditional Ukrainian dance. It's not the dancing itself. It's what the dancing taught his feet.\n\nOne. He never steps straight back. When you punch, he steps to the side. So after his combo, he's standing where your punches can't reach him.\n\nTwo. His feet never stop. Tiny steps, in and out, all the time. You can't plant your feet to punch someone who's never in the same spot twice.\n\nThe third one is why people quit against him.\n\nThree. The pivot. He lands, then pivots around his front foot. Now he's at your side, and you have to turn to find him. While you're turning, he's already punching again. Four guys in a row quit on their stools against him.\n\nSo if your feet feel stuck: stop drilling more punches. Drill the step after the punch."},
+        {"k": "END", "text": "Here's how to train it at home, Monday to Friday.\n\n(pause two seconds, the plan cards go here)\n\nComment PLAN and the fighter you want to see next.\n\nI'll send you the plan for this one, and the most-asked fighter gets the next episode."}
+      ]
+    },
+    {
+      "id": "tyson", "group": "breakdown", "slate": "TYSON", "title": "Mike Tyson", "tag": "Boxing · peek-a-boo",
+      "why": "Boxing legend with the widest name recognition. The old Tyson plan reel got under 350 views with no breakdown, so this is the real test of the new shape.",
+      "note": "Plan exists (tyson-peekaboo).",
+      "takes": [
+        {"k": "A", "type": "contrast", "text": "Tyson was short for a heavyweight. He made that the advantage."},
+        {"k": "B", "type": "contrast", "text": "Everyone copies Tyson's power. Almost nobody copies what set it up."},
+        {"k": "C", "type": "result", "text": "Tyson's defence is where his knockouts came from."},
+        {"k": "D", "type": "question", "text": "Why was Tyson so hard to hit when he was walking straight at you?"},
+        {"k": "E", "type": "reframe", "text": "People think Tyson was just power. Watch his head, not his hands."},
+        {"k": "BODY", "text": "Fighter breakdown.\n\nI'm Matteo. I've trained in five countries, I had my first fight at sixteen, and every episode I break down one fighter you can actually learn from.\n\nTyson was small for a heavyweight. His coach, Cus D'Amato, built him a style for that. It's called peek-a-boo, and it's three things.\n\nOne. The guard. Gloves on his cheeks, elbows on his ribs. He turns himself into the smallest target in the ring.\n\nTwo. His head never stops. Side to side, all the time, even when nobody's punching. You can't aim at something that's always moving.\n\nThe third one is where his power came from.\n\nThree. Every slip loads a punch. When he slips to his right, his weight goes onto his right leg. That right hand is already loaded. Right to the body, right uppercut. His defence and his offence were the same move.\n\nSo if you're shorter than the people you spar: don't stand tall and trade. Move your head first, then punch from where the slip put you."},
+        {"k": "END", "text": "Here's how to train it at home, Monday to Friday.\n\n(pause two seconds, the plan cards go here)\n\nComment PLAN and the fighter you want to see next.\n\nI'll send you the plan for this one, and the most-asked fighter gets the next episode."}
+      ]
+    },
+    {
+      "id": "floyd", "group": "breakdown", "slate": "FLOYD", "title": "Floyd Mayweather", "tag": "Boxing · defence",
+      "why": "No competitor outlier behind this one. It runs as the control: a famous boxer, a defence people argue about.",
+      "note": "Plan exists (floyd-shoulder-roll).",
+      "takes": [
+        {"k": "A", "type": "contrast", "text": "Everyone aimed at Floyd's chin. They kept hitting his shoulder."},
+        {"k": "B", "type": "contrast", "text": "Most boxers block punches. Floyd made them miss by an inch, then made them pay."},
+        {"k": "C", "type": "result", "text": "Fifty fights, fifty wins, and he barely got hit clean. Here's the defence."},
+        {"k": "D", "type": "question", "text": "Why couldn't anyone land a clean right hand on Mayweather?"},
+        {"k": "E", "type": "reframe", "text": "The shoulder roll isn't a defence. It's a trap."},
+        {"k": "BODY", "text": "Fighter breakdown.\n\nI'm Matteo. I've trained in five countries, I had my first fight at sixteen, and every episode I break down one fighter you can actually learn from.\n\nFloyd retired fifty and zero. The thing people remember is how little he got hit. It's called the shoulder roll, and it's three things.\n\nOne. Lead shoulder up. His chin is tucked behind his front shoulder. Your right hand hits his shoulder, not his chin.\n\nTwo. Lead hand low, across his stomach. It catches the jab and protects his body at the same time.\n\nThe third one is the one nobody copies.\n\nThree. The pull counter. When you throw, he leans back, just out of range. You miss, and his right hand is already coming back at you. That's why he barely got hit in fifty fights.\n\nSo next time the same right hand keeps landing on you: don't block harder. Turn your shoulder, and make it miss by an inch."},
+        {"k": "END", "text": "Here's how to train it at home, Monday to Friday.\n\n(pause two seconds, the plan cards go here)\n\nComment PLAN and the fighter you want to see next.\n\nI'll send you the plan for this one, and the most-asked fighter gets the next episode."}
+      ]
+    },
+    {
+      "id": "khabib", "group": "breakdown", "slate": "KHABIB", "title": "Khabib", "tag": "MMA · wrestling pressure",
+      "why": "Adds grappling to the series. No competitor outlier behind it in our data, so watch its numbers against the strikers.",
+      "note": "Plan exists (khabib-pressure).",
+      "takes": [
+        {"k": "A", "type": "contrast", "text": "Everyone knew Khabib was going to take them down. Nobody stopped it."},
+        {"k": "B", "type": "contrast", "text": "Most wrestlers shoot once and hope. Khabib shot until you ran out of answers."},
+        {"k": "C", "type": "result", "text": "Twenty-nine fights, zero losses, and his whole game was three steps."},
+        {"k": "D", "type": "question", "text": "Why did great strikers look helpless against Khabib?"},
+        {"k": "E", "type": "reframe", "text": "Khabib's punches weren't for knockouts. They were for walking you to the fence."},
+        {"k": "BODY", "text": "Fighter breakdown.\n\nI'm Matteo. I've trained in five countries, I did three years of jiu-jitsu before I ever fought, and every episode I break down one fighter you can actually learn from.\n\nKhabib wrestled from early childhood under his father, and retired twenty-nine and zero. Everyone says it's his wrestling. It's how he uses it.\n\nOne. He walks you to the fence. His punches aren't there to knock you out. They're there to close the distance. Every step forward puts you closer to the cage.\n\nTwo. He never stops at one attempt. If the single leg doesn't work, it becomes a double. If that doesn't work, it's a trip. You defend one, and the next one's already coming.\n\nThe third one is why nobody had answers for him.\n\nThree. He makes you carry him. Once you're down, he puts all his weight on you and controls your legs. Every second, you're carrying him. You get tired. He doesn't. That's the pressure.\n\nSo if you grapple: don't fall in love with one takedown. Chain three."},
+        {"k": "END", "text": "Here's how to train it at home, Monday to Friday.\n\n(pause two seconds, the plan cards go here)\n\nComment PLAN and the fighter you want to see next.\n\nI'll send you the plan for this one, and the most-asked fighter gets the next episode."}
+      ]
+    },
+    {
+      "id": "izzy", "group": "breakdown", "slate": "IZZY", "title": "Israel Adesanya", "tag": "MMA · kickboxing, feints",
+      "why": "Competitor outlier: 'Why Israel Adesanya is called The Last Stylebender', 286k views, 39x that channel's normal.",
+      "note": "Plan not written yet (Claude writes it before this posts). Check before filming: long kickboxing career before the UFC, former UFC middleweight champion.",
+      "takes": [
+        {"k": "A", "type": "contrast", "text": "Most fighters throw to land. Adesanya throws fakes to learn."},
+        {"k": "B", "type": "contrast", "text": "Everyone watches Adesanya's strikes. The fight is won by the ones he doesn't throw."},
+        {"k": "C", "type": "result", "text": "Adesanya makes you defend punches he never throws."},
+        {"k": "D", "type": "question", "text": "Why do people freeze against Adesanya?"},
+        {"k": "E", "type": "reframe", "text": "Adesanya's best weapon isn't a strike. It's a twitch."},
+        {"k": "BODY", "text": "Fighter breakdown.\n\nI'm Matteo. I've trained in five countries, I had my first fight at sixteen, and every episode I break down one fighter you can actually learn from.\n\nAdesanya had a long kickboxing career before he ever fought in the UFC. He's a kickboxer in a cage, and it works because of three things.\n\nOne. The feints. He twitches a shoulder, a hip, a knee. You react, every time. Now he knows what you do when a real one comes.\n\nTwo. The distance. He stands one step outside your reach. You have to come to him, and when you step in, you walk onto his counter.\n\nThe third one is why people freeze against him.\n\nThree. The fake and the real one look the same. Once he's seen your reaction, he shows you the fake again. You flinch, and the real strike lands in the gap you just opened.\n\nSo in your next spar, spend one round only faking. Watch what your partner does. That's your map."},
+        {"k": "END", "text": "Here's how to train it this week, Monday to Friday.\n\n(pause two seconds, the plan cards go here)\n\nComment PLAN and the fighter you want to see next.\n\nI'll send you the plan for this one, and the most-asked fighter gets the next episode."}
+      ]
+    },
+    {
+      "id": "fun", "group": "talk", "slate": "FUN", "title": "Training for fun counts", "tag": "Rant",
+      "why": "Your best reel ever (331k) opens its caption with 'Some people train for fun.'",
+      "note": "",
+      "takes": [
+        {"k": "A", "type": "contrast", "text": "Half the best people in my gym will never fight. That's fine."},
+        {"k": "B", "type": "question", "text": "Why does everyone ask when your fight is?"},
+        {"k": "C", "type": "reframe", "text": "Training for fun isn't a lesser version of training."},
+        {"k": "D", "type": "result", "text": "Some people train for years and never take a fight. They still know more about fighting than most people who talk about it."},
+        {"k": "E", "type": "identity", "text": "If you train for fun, this one's for you."},
+        {"k": "BODY", "text": "Most people in any gym will never compete.\n\nThey still show up after work. They still get hit. They still get better.\n\nAnd people look down on that. Like it only counts if you take a fight.\n\nIt counts.\n\nSomeone who trains three times a week for five years knows more about fighting than the guy who took one fight and quit.\n\nAnd the gym needs them. They hold the pads. They keep the place open. They make it a room people want to come back to.\n\nSometimes I train for fun too. Nothing wrong with that."},
+        {"k": "END", "text": "If you train for fun, keep going.\n\nFollow if that's you."}
+      ]
+    },
+    {
+      "id": "tourist", "group": "talk", "slate": "TOURIST", "title": "Two weeks in Thailand", "tag": "Rant · Thailand",
+      "why": "Thailand training content is a tracked outlier lane (The Muay Thai Guy, Coach Dino).",
+      "note": "Only say the points you've seen yourself. Skip any line that isn't true for you.",
+      "takes": [
+        {"k": "A", "type": "contrast", "text": "Two weeks of Muay Thai in Thailand won't make you a fighter. It can still make you a lot better."},
+        {"k": "B", "type": "identity", "text": "Every gym in Thailand has this guy."},
+        {"k": "C", "type": "question", "text": "Coming to Thailand to train? Here's what people get wrong."},
+        {"k": "D", "type": "reframe", "text": "The best thing about training in Thailand isn't the sparring. It's the pad rounds."},
+        {"k": "E", "type": "result", "text": "I grew up training in Thailand. This is what I'd do with two weeks here."},
+        {"k": "BODY", "text": "People land, sign up for two sessions a day, and spar hard on day one.\n\nBy day four they're hurt, or burnt out.\n\nHere's what actually helps.\n\nPad rounds with a good trainer. That's the thing you can't get at home.\n\nClinch. Most gyms outside Thailand barely do it. Here you can do it every day.\n\nAnd rest. One session a day, done well, beats two sessions half asleep.\n\nWhat doesn't help: hard sparring every day, and trying to prove something to people who've done this since they were kids."},
+        {"k": "END", "text": "Follow if you want the real version of training in Thailand."}
+      ]
+    },
+    {
+      "id": "cost", "group": "talk", "slate": "COST", "title": "What Thailand really costs", "tag": "Talking head · Thailand",
+      "why": "Competitor outlier: The Muay Thai Guy's cost breakdown, 657k views, 12x his normal.",
+      "note": "Fill in your real numbers before filming. The brackets are yours to replace. Never guess a price.",
+      "takes": [
+        {"k": "A", "type": "contrast", "text": "People think training in Thailand is expensive. Here's what I actually pay."},
+        {"k": "B", "type": "question", "text": "What does a month of Muay Thai in Thailand really cost?"},
+        {"k": "C", "type": "result", "text": "This is my real monthly cost to train in Thailand."},
+        {"k": "D", "type": "reframe", "text": "The flight is the expensive part. After that, it gets cheap fast."},
+        {"k": "E", "type": "number", "text": "One month. Gym, room, food. Here are the real numbers."},
+        {"k": "BODY", "text": "Gym: [your price] a month. That's [how many] sessions a week.\n\nRoom: [your price] a month.\n\nFood: [your price] a day, if you eat local.\n\nGetting around: [your price].\n\nTotal: [your total] a month.\n\nWhat I'd skip: [one thing].\n\nWhat's worth paying for: [one thing]."},
+        {"k": "END", "text": "Save this if you're planning a trip.\n\nFollow for the real version of training in Thailand."}
+      ]
+    },
+    {
+      "id": "check", "group": "talk", "slate": "CHECK", "title": "Not a beginner anymore", "tag": "Talking head · checklist",
+      "why": "Competitor outliers: 'how many of these do you do' 627k and 'how many can you check off' 434k. Same shape as your best reel.",
+      "note": "Count on your fingers as you go.",
+      "takes": [
+        {"k": "A", "type": "identity", "text": "If you've done five of these, you're not a beginner anymore."},
+        {"k": "B", "type": "contrast", "text": "Beginners count how long they've trained. This is what actually counts."},
+        {"k": "C", "type": "question", "text": "How do you know you're not a beginner anymore?"},
+        {"k": "D", "type": "reframe", "text": "Not being a beginner has nothing to do with how many months you've trained."},
+        {"k": "E", "type": "number", "text": "Seven signs. Count how many you've got."},
+        {"k": "BODY", "text": "One. You've stopped closing your eyes when punches come.\n\nTwo. You've been hit clean in sparring, and you kept your shape.\n\nThree. You can go light with someone smaller and not hurt them.\n\nFour. You've had a terrible session, and you came back the next day.\n\nFive. You breathe out when you punch without thinking about it.\n\nSix. New people ask you where things are.\n\nSeven. You know how much you still don't know."},
+        {"k": "END", "text": "Comment your number.\n\nFollow if you got five or more."}
+      ]
+    },
+    {
+      "id": "insta", "group": "talk", "slate": "INSTA", "title": "Instagram sparring vs real sparring", "tag": "Rant",
+      "why": "Competitor outlier: 'Instagram jiu-jitsu vs Real Life', 468k views, 22x that channel's normal.",
+      "note": "",
+      "takes": [
+        {"k": "A", "type": "contrast", "text": "Sparring on Instagram and sparring in a real gym are two different sports."},
+        {"k": "B", "type": "question", "text": "Why does sparring online look nothing like sparring in your gym?"},
+        {"k": "C", "type": "reframe", "text": "The best sparring round you'll ever have would be boring to post."},
+        {"k": "D", "type": "result", "text": "Slow, ugly rounds will teach you more than any hard one."},
+        {"k": "E", "type": "identity", "text": "If your sparring never looks like the clips, good."},
+        {"k": "BODY", "text": "The clips you see are the ten best seconds of somebody's month.\n\nSometimes it's a pro against a beginner. Sometimes it's a gym war that should never have happened.\n\nReal sparring is mostly slow. You try one thing. It fails. You try it again. Nobody gets dropped.\n\nIf you go in trying to make it look like a highlight, you'll hurt your partner, or yourself, and you'll learn nothing.\n\nGood sparring is two people getting better.\n\nIf only one of you leaves better, that was a fight."},
+        {"k": "END", "text": "Send this to your sparring partner.\n\nFollow for more."}
+      ]
+    },
+    {
+      "id": "small", "group": "talk", "slate": "SMALL", "title": "The smaller guy's advantage", "tag": "Talking head · tactical",
+      "why": "Competitor outlier: 'Good strategy defeats size' 1.3M. Your taller-opponent list has your most shares (44).",
+      "note": "",
+      "takes": [
+        {"k": "A", "type": "contrast", "text": "Being the smaller guy is an advantage, once you stop fighting like the bigger guy."},
+        {"k": "B", "type": "question", "text": "Always the smallest in the room? Here's what to do with it."},
+        {"k": "C", "type": "reframe", "text": "Smaller fighters don't lose because of size. They lose because they stand still."},
+        {"k": "D", "type": "result", "text": "Do these three things, and bigger partners stop walking through you."},
+        {"k": "E", "type": "identity", "text": "If you're the smallest one in your gym, this is for you."},
+        {"k": "BODY", "text": "The bigger guy wants you in front of him, standing still, trading. Don't give him that.\n\nOne. Move first. Step off to the side after every exchange. Make him turn. Turning is slow when you're big.\n\nTwo. In and out. Get in, land two, and get out before the answer comes.\n\nThree. Work the body and the legs. His head is far away. His body isn't.\n\nYou'll never out-muscle him. You don't have to.\n\nYou have to make him reset more times than he wants to."},
+        {"k": "END", "text": "Save this for your next spar.\n\nFollow for more."}
+      ]
+    },
+    {
+      "id": "unseen", "group": "talk", "slate": "UNSEEN", "title": "The part nobody sees", "tag": "Story · comeback",
+      "why": "Competitor outlier: a young fighter's 'everyone sees fight day, nobody sees behind the scenes' reel, 8x his normal. Your own story openings hold 12 s.",
+      "note": "All facts are from your story. Say them your way.",
+      "takes": [
+        {"k": "A", "type": "contrast", "text": "Everyone sees the training clip. Nobody sees the year it took to get back to it."},
+        {"k": "B", "type": "result", "text": "A broken leg, a torn ACL, and a ruptured appendix the day before a fight. I still train."},
+        {"k": "C", "type": "question", "text": "Want to know what combat sports looks like when it goes wrong?"},
+        {"k": "D", "type": "reframe", "text": "The hard part of training isn't the training. It's the months you can't."},
+        {"k": "E", "type": "story", "text": "The day before a fight, my appendix ruptured."},
+        {"k": "BODY", "text": "People see the pads, the sparring, the good days.\n\nThey don't see this part.\n\nI tore a knee ligament in a street fight. I broke my leg. The day before a fight, my appendix ruptured. And right now I'm coming back from a torn ACL.\n\nWhen you can't train, you find out why you started.\n\nI kept doing push-ups and pull-ups. I studied fights. I did whatever I still could.\n\nI never had a big speech for it. It was just: I can't give up.\n\nSo if you're injured right now, or stuck, you're not behind. This part counts too."},
+        {"k": "END", "text": "Follow if you want to see the comeback."}
+      ]
+    },
+    {
+      "id": "chess", "group": "talk", "slate": "CHESS", "title": "Fighting is thinking", "tag": "Talking head · your belief",
+      "why": "Your own line ('it's like chess, but you might get punched'), with the reframe opening competitors use for bold claims.",
+      "note": "",
+      "takes": [
+        {"k": "A", "type": "reframe", "text": "People think combat sports is just violence. It's closer to chess."},
+        {"k": "B", "type": "contrast", "text": "In chess, a slow decision costs you a piece. In a fight, it costs you a punch in the face."},
+        {"k": "C", "type": "question", "text": "What are fighters actually thinking about in there?"},
+        {"k": "D", "type": "identity", "text": "If you think fighting is for people who don't think, watch this."},
+        {"k": "E", "type": "story", "text": "I've trained since I was seven. The biggest thing I learned is that fighting is mostly thinking."},
+        {"k": "BODY", "text": "From outside, it looks like two people hitting each other.\n\nInside, it's all questions.\n\nWhat does he do when I jab? Does he step back, or does he block? Does he drop his hand when he kicks?\n\nYou test. You get an answer. You use it. And he's doing the same thing to you.\n\nIt's balance, technique and flow.\n\nThe violence is the part everyone sees. The thinking is the part that wins.\n\nIt's like chess, with more pressure. Because if you think too slow, you get punched."},
+        {"k": "END", "text": "Follow if you want to understand fighting, not just watch it."}
+      ]
+    },
+    {
+      "id": "dayone", "group": "talk", "slate": "DAY ONE", "title": "What I'd tell myself on day one", "tag": "Talking head · beginners",
+      "why": "Competitor outlier: 'what I wish I knew when I first started', 263k views, 5x his normal.",
+      "note": "",
+      "takes": [
+        {"k": "A", "type": "result", "text": "I've trained since I was seven. This is what I'd tell myself on day one."},
+        {"k": "B", "type": "contrast", "text": "Beginners want to learn more moves. They need fewer."},
+        {"k": "C", "type": "question", "text": "Just started training? Here's what nobody tells you."},
+        {"k": "D", "type": "reframe", "text": "Your first year isn't about getting good. It's about not quitting and not getting hurt."},
+        {"k": "E", "type": "number", "text": "Four things I wish I knew when I started."},
+        {"k": "BODY", "text": "One. Pick a few things and do them a thousand times. A jab, a cross, a kick, a block. That's most of it.\n\nTwo. Go light in sparring. The ones who go hard every round are injured or gone within a year.\n\nThree. What works on the mat doesn't always work outside it. I learned that one on pavement, with a torn knee ligament.\n\nFour. Rest is part of training. Skip it, and your body takes it anyway."},
+        {"k": "END", "text": "Save this if you just started.\n\nFollow for more."}
+      ]
+    }
+  ]
+}
