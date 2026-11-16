@@ -1341,9 +1341,12 @@
       "text": "Watching your own sparring footage is worse than the sparring.\n\nThat's why it works. You can't argue with what you see.",
       "chain": [],
       "from": "craft",
-      "status": "queued",
+      "status": "posted",
       "approved": true,
-      "approved_note": "Matteo: approved via dashboard (2026-11-16T16:07:48Z)"
+      "approved_note": "Matteo: approved via dashboard (2026-11-16T16:07:48Z)",
+      "posted_at": "2026-11-16T22:36:09Z",
+      "thread_id": "17973339129189914",
+      "url": "https://www.threads.com/@matteofights/post/Df0cVMJoxji"
     },
     {
       "id": "th-1117-1",
