@@ -33,3 +33,7 @@ About four years of traditional Ukrainian dance as a kid (SI 2018, Sky Sports).
 ## Renders
 `media/2026-11-16-loma-breakdown/2026-11-16-loma-breakdown-<V>(-phone).mp4`, cloud (Modal). Queue: trial set
 `loma-breakdown`, A-E at 15:00/15:15/15:30/15:45/16:00 New York (`slot_ny`), date empty for Matteo, approved false.
+
+Posted versions: `-eye.mp4` (Matteo ran CapCut AI Eye Contact on the phone renders, 2026-11-17; checked: same
+length, no watermark or end card), in R2 `renders/`. Slots (approved false): A 20 Nov 16:00Z, D 20 Nov 20:30Z,
+B 21 Nov 16:00Z, C 21 Nov 20:30Z, E 22 Nov 16:00Z, after Saenchai Episode 1.
