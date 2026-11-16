@@ -1,6 +1,6 @@
 {
   "note": "Proven hooks for carousels. Every carousel in posts.json needs hook_ref = a 'read' entry's code (other creators' outlier carousels, found weekly by tools/carousel/scout.py) or an 'own' id (our own reels that proved the hook on our audience). Adapt the pattern to Matteo's topic; never copy another creator's slides word for word.",
-  "updated": "2026-11-09T16:41Z",
+  "updated": "2026-11-16T16:08Z",
   "own": [
     {
       "id": "own-born-fighter",
@@ -1373,6 +1373,330 @@
       "hook": null,
       "pattern": null,
       "found": "2026-11-09"
+    },
+    {
+      "code": "Dfr4jqpFdV7",
+      "user": "espnmma",
+      "followers": 5082920,
+      "permalink": "https://www.instagram.com/p/Dfr4jqpFdV7/",
+      "posted": "2026-11-13T14:49:28+0000",
+      "likes": 228622,
+      "comments": 3640,
+      "x_median": 2.4,
+      "caption_first_line": "According to the Abu Dhabi Judicial Department, the six members of Nurmagomedov’s team were fined 300,000 AED (approximately $81,700) and ordered to be deported",
+      "slides": [
+        "production/carousels/proven/Dfr4jqpFdV7/01.jpg",
+        "production/carousels/proven/Dfr4jqpFdV7/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-16"
+    },
+    {
+      "code": "DfuJ5rWDdjR",
+      "user": "ringmagazine",
+      "followers": 1314102,
+      "permalink": "https://www.instagram.com/p/DfuJ5rWDdjR/",
+      "posted": "2026-11-14T11:59:30+0000",
+      "likes": 17580,
+      "comments": 1043,
+      "x_median": 2.74,
+      "caption_first_line": "“I’m not taking ‘no’ for an answer” 😤",
+      "slides": [
+        "production/carousels/proven/DfuJ5rWDdjR/01.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-16"
+    },
+    {
+      "code": "DfmVjveiO9E",
+      "user": "ringmagazine",
+      "followers": 1314102,
+      "permalink": "https://www.instagram.com/p/DfmVjveiO9E/",
+      "posted": "2026-11-11T11:07:26+0000",
+      "likes": 67909,
+      "comments": 571,
+      "x_median": 9.22,
+      "caption_first_line": "ONE MONTH TO GO ‼️",
+      "slides": [
+        "production/carousels/proven/DfmVjveiO9E/01.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-16"
+    },
+    {
+      "code": "DfkSJB5CIO2",
+      "user": "ringmagazine",
+      "followers": 1314102,
+      "permalink": "https://www.instagram.com/p/DfkSJB5CIO2/",
+      "posted": "2026-11-10T15:59:06+0000",
+      "likes": 34140,
+      "comments": 397,
+      "x_median": 4.68,
+      "caption_first_line": "THE DEVASTATOR RETURNS! 🇮🇳",
+      "slides": [],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-16"
+    },
+    {
+      "code": "DfinaPNG2kQ",
+      "user": "ringmagazine",
+      "followers": 1314102,
+      "permalink": "https://www.instagram.com/p/DfinaPNG2kQ/",
+      "posted": "2026-11-10T00:26:28+0000",
+      "likes": 27143,
+      "comments": 517,
+      "x_median": 3.8,
+      "caption_first_line": "BENAVIDEZ VS USYK 😳",
+      "slides": [
+        "production/carousels/proven/DfinaPNG2kQ/01.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-16"
+    },
+    {
+      "code": "DfxfMqIoLzY",
+      "user": "mmajunkie",
+      "followers": 1414765,
+      "permalink": "https://www.instagram.com/p/DfxfMqIoLzY/",
+      "posted": "2026-11-15T19:03:19+0000",
+      "likes": 25768,
+      "comments": 1356,
+      "x_median": 4.18,
+      "caption_first_line": "Josh Hokit claps back at “piece of sh*t” Jon Jones following his #UFC334 title fight loss",
+      "slides": [
+        "production/carousels/proven/DfxfMqIoLzY/01.jpg",
+        "production/carousels/proven/DfxfMqIoLzY/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-16"
+    },
+    {
+      "code": "DfrvOUsoNLt",
+      "user": "mmajunkie",
+      "followers": 1414765,
+      "permalink": "https://www.instagram.com/p/DfrvOUsoNLt/",
+      "posted": "2026-11-13T13:27:54+0000",
+      "likes": 19158,
+      "comments": 1064,
+      "x_median": 3.13,
+      "caption_first_line": "Members of Team Nurmagomedov have been sentenced to prison time, fines and deportation after the brawl in an Abu Dhabi hotel",
+      "slides": [
+        "production/carousels/proven/DfrvOUsoNLt/01.jpg",
+        "production/carousels/proven/DfrvOUsoNLt/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-16"
+    },
+    {
+      "code": "DfxX_AmFkgF",
+      "user": "ufc",
+      "followers": 50968496,
+      "permalink": "https://www.instagram.com/p/DfxX_AmFkgF/",
+      "posted": "2026-11-15T16:00:05+0000",
+      "likes": 198610,
+      "comments": 2147,
+      "x_median": 2.38,
+      "caption_first_line": "BON GAMIN'S BELT 😤",
+      "slides": [
+        "production/carousels/proven/DfxX_AmFkgF/01.jpg",
+        "production/carousels/proven/DfxX_AmFkgF/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-16"
+    },
+    {
+      "code": "DfwGpd1lsYB",
+      "user": "ufc",
+      "followers": 50968496,
+      "permalink": "https://www.instagram.com/p/DfwGpd1lsYB/",
+      "posted": "2026-11-15T06:09:33+0000",
+      "likes": 182985,
+      "comments": 3844,
+      "x_median": 2.26,
+      "caption_first_line": "Title defense No. 1 for Ciryl_Gane 😤",
+      "slides": [
+        "production/carousels/proven/DfwGpd1lsYB/01.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-16"
+    },
+    {
+      "code": "DfvqmTWlD8D",
+      "user": "ufc",
+      "followers": 50968496,
+      "permalink": "https://www.instagram.com/p/DfvqmTWlD8D/",
+      "posted": "2026-11-15T02:04:27+0000",
+      "likes": 479196,
+      "comments": 2219,
+      "x_median": 5.64,
+      "caption_first_line": "PERFECT. JUST PERFECT.",
+      "slides": [],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-16"
+    },
+    {
+      "code": "DfwMlI7k1CS",
+      "user": "onechampionship",
+      "followers": 12677335,
+      "permalink": "https://www.instagram.com/p/DfwMlI7k1CS/",
+      "posted": "2026-11-15T07:01:23+0000",
+      "likes": 47616,
+      "comments": 268,
+      "x_median": 2.24,
+      "caption_first_line": "EVERY ANGLE. ONE FINISH. 👀 See Asadula Imangazaliev's KO of Nong-O before he rematches Aslamjon Ortikov at The Inner Circle 39 for a spot in the ONE Flyweight M",
+      "slides": [],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-16"
+    },
+    {
+      "code": "DftZ81YnEwr",
+      "user": "onechampionship",
+      "followers": 12677335,
+      "permalink": "https://www.instagram.com/p/DftZ81YnEwr/",
+      "posted": "2026-11-14T05:00:30+0000",
+      "likes": 44588,
+      "comments": 55,
+      "x_median": 2.07,
+      "caption_first_line": "The THRILL of victory ✨ Nong-O celebrates his win over Rodtang at The Inner Circle 38, booking his spot in the ONE Flyweight Muay Thai World Grand Prix semifina",
+      "slides": [],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-16"
+    },
+    {
+      "code": "DftMS4vijQY",
+      "user": "onechampionship",
+      "followers": 12677335,
+      "permalink": "https://www.instagram.com/p/DftMS4vijQY/",
+      "posted": "2026-11-14T03:01:19+0000",
+      "likes": 87375,
+      "comments": 344,
+      "x_median": 4.1,
+      "caption_first_line": "BLEW THE ROOF OFF 🌋 Nong-O and Rodtang had a battle for the ages in their ONE Flyweight Muay Thai World Grand Prix quarterfinal at The Inner Circle 38! nongogai",
+      "slides": [
+        "production/carousels/proven/DftMS4vijQY/01.jpg",
+        "production/carousels/proven/DftMS4vijQY/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-16"
+    },
+    {
+      "code": "Dfs-jJqCsPc",
+      "user": "onechampionship",
+      "followers": 12677335,
+      "permalink": "https://www.instagram.com/p/Dfs-jJqCsPc/",
+      "posted": "2026-11-14T01:01:04+0000",
+      "likes": 64764,
+      "comments": 155,
+      "x_median": 3.02,
+      "caption_first_line": "Another year of \"Jojo\" 🎂🔥 Wishing Johan Ghazali a very happy birthday! Can he celebrate with a win over Johan Estupinan at The Inner Circle 42? johanghazali_ ",
+      "slides": [
+        "production/carousels/proven/Dfs-jJqCsPc/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-16"
+    },
+    {
+      "code": "DfPGKWyn5ku",
+      "user": "evolvemma",
+      "followers": 156774,
+      "permalink": "https://www.instagram.com/p/DfPGKWyn5ku/",
+      "posted": "2026-11-02T10:30:22+0000",
+      "likes": 1620,
+      "comments": 33,
+      "x_median": 2.18,
+      "caption_first_line": "Your Muay Thai guard might reveal a little more about your personality than you think! 😂🥊 Which one describes you best? 👀",
+      "slides": [
+        "production/carousels/proven/DfPGKWyn5ku/01.jpg",
+        "production/carousels/proven/DfPGKWyn5ku/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-16"
+    },
+    {
+      "code": "DfJ7VjRH-w8",
+      "user": "evolvemma",
+      "followers": 156774,
+      "permalink": "https://www.instagram.com/p/DfJ7VjRH-w8/",
+      "posted": "2026-10-31T10:19:34+0000",
+      "likes": 2525,
+      "comments": 23,
+      "x_median": 3.29,
+      "caption_first_line": "One perfectly timed head kick can change everything. 🥶🥊",
+      "slides": [
+        "production/carousels/proven/DfJ7VjRH-w8/01.jpg",
+        "production/carousels/proven/DfJ7VjRH-w8/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-16"
+    },
+    {
+      "code": "De9AdKAGdjH",
+      "user": "danesmithfit",
+      "followers": 22644,
+      "permalink": "https://www.instagram.com/p/De9AdKAGdjH/",
+      "posted": "2026-10-26T09:54:10+0000",
+      "likes": 794,
+      "comments": 13,
+      "x_median": 13.88,
+      "caption_first_line": "There is something different about a man who learns to show up when nobody is watching.",
+      "slides": [
+        "production/carousels/proven/De9AdKAGdjH/01.jpg",
+        "production/carousels/proven/De9AdKAGdjH/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-16"
+    },
+    {
+      "code": "DfopT6jlI0d",
+      "user": "brezojr",
+      "followers": 104866,
+      "permalink": "https://www.instagram.com/p/DfopT6jlI0d/",
+      "posted": "2026-11-12T08:38:31+0000",
+      "likes": 57673,
+      "comments": 312,
+      "x_median": 22.07,
+      "caption_first_line": "One real friend is better than thousand fake friends🙏🏻",
+      "slides": [
+        "production/carousels/proven/DfopT6jlI0d/01.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-16"
     }
   ],
   "errors": []
