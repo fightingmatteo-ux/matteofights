@@ -5021,9 +5021,10 @@
       "hook": "Most people drill punches. Lomachenko drilled his feet.",
       "opening": "contrast",
       "not_before": "2026-11-20T16:00:00Z",
-      "approved": false,
+      "approved": true,
       "status": "queued",
-      "slot_note": "Fighter Breakdown (Lomachenko): 2 hooks/day between the listicle slots (11:00 and 15:30 NY, the Loma wave 2 slots), contrast/question first, story last. Starts Fri 20 Nov so Saenchai Episode 1 posts first: if Ep. 1 slips past 19 Nov, move these by the same days. Video = CapCut eye-contact version (-eye.mp4)."
+      "slot_note": "Fighter Breakdown (Lomachenko): 2 hooks/day between the listicle slots (11:00 and 15:30 NY, the Loma wave 2 slots), contrast/question first, story last. Starts Fri 20 Nov so Saenchai Episode 1 posts first: if Ep. 1 slips past 19 Nov, move these by the same days. Video = CapCut eye-contact version (-eye.mp4).",
+      "approved_note": "Matteo: approved the week via dashboard (2026-11-16T17:13:41Z)"
     },
     {
       "id": "2026-11-16-loma-breakdown-B",
@@ -5041,9 +5042,10 @@
       "hook": "Lomachenko's footwork isn't talent. It's years of drills that nobody films.",
       "opening": "contrast",
       "not_before": "2026-11-21T16:00:00Z",
-      "approved": false,
+      "approved": true,
       "status": "queued",
-      "slot_note": "Fighter Breakdown (Lomachenko): 2 hooks/day between the listicle slots (11:00 and 15:30 NY, the Loma wave 2 slots), contrast/question first, story last. Starts Fri 20 Nov so Saenchai Episode 1 posts first: if Ep. 1 slips past 19 Nov, move these by the same days. Video = CapCut eye-contact version (-eye.mp4)."
+      "slot_note": "Fighter Breakdown (Lomachenko): 2 hooks/day between the listicle slots (11:00 and 15:30 NY, the Loma wave 2 slots), contrast/question first, story last. Starts Fri 20 Nov so Saenchai Episode 1 posts first: if Ep. 1 slips past 19 Nov, move these by the same days. Video = CapCut eye-contact version (-eye.mp4).",
+      "approved_note": "Matteo: approved the week via dashboard (2026-11-16T17:13:41Z)"
     },
     {
       "id": "2026-11-16-loma-breakdown-C",
@@ -5061,9 +5063,10 @@
       "hook": "Four opponents in a row quit on their stools against Lomachenko. Here's what he did to them.",
       "opening": "result",
       "not_before": "2026-11-21T20:30:00Z",
-      "approved": false,
+      "approved": true,
       "status": "queued",
-      "slot_note": "Fighter Breakdown (Lomachenko): 2 hooks/day between the listicle slots (11:00 and 15:30 NY, the Loma wave 2 slots), contrast/question first, story last. Starts Fri 20 Nov so Saenchai Episode 1 posts first: if Ep. 1 slips past 19 Nov, move these by the same days. Video = CapCut eye-contact version (-eye.mp4)."
+      "slot_note": "Fighter Breakdown (Lomachenko): 2 hooks/day between the listicle slots (11:00 and 15:30 NY, the Loma wave 2 slots), contrast/question first, story last. Starts Fri 20 Nov so Saenchai Episode 1 posts first: if Ep. 1 slips past 19 Nov, move these by the same days. Video = CapCut eye-contact version (-eye.mp4).",
+      "approved_note": "Matteo: approved the week via dashboard (2026-11-16T17:13:41Z)"
     },
     {
       "id": "2026-11-16-loma-breakdown-D",
@@ -5081,9 +5084,10 @@
       "hook": "Why do good boxers look completely lost against Lomachenko?",
       "opening": "question",
       "not_before": "2026-11-20T20:30:00Z",
-      "approved": false,
+      "approved": true,
       "status": "queued",
-      "slot_note": "Fighter Breakdown (Lomachenko): 2 hooks/day between the listicle slots (11:00 and 15:30 NY, the Loma wave 2 slots), contrast/question first, story last. Starts Fri 20 Nov so Saenchai Episode 1 posts first: if Ep. 1 slips past 19 Nov, move these by the same days. Video = CapCut eye-contact version (-eye.mp4)."
+      "slot_note": "Fighter Breakdown (Lomachenko): 2 hooks/day between the listicle slots (11:00 and 15:30 NY, the Loma wave 2 slots), contrast/question first, story last. Starts Fri 20 Nov so Saenchai Episode 1 posts first: if Ep. 1 slips past 19 Nov, move these by the same days. Video = CapCut eye-contact version (-eye.mp4).",
+      "approved_note": "Matteo: approved the week via dashboard (2026-11-16T17:13:41Z)"
     },
     {
       "id": "2026-11-16-loma-breakdown-E",
@@ -5101,9 +5105,10 @@
       "hook": "When Lomachenko was a kid, his dad pulled him out of boxing for four years to learn how to dance.",
       "opening": "story",
       "not_before": "2026-11-22T16:00:00Z",
-      "approved": false,
+      "approved": true,
       "status": "queued",
-      "slot_note": "Fighter Breakdown (Lomachenko): 2 hooks/day between the listicle slots (11:00 and 15:30 NY, the Loma wave 2 slots), contrast/question first, story last. Starts Fri 20 Nov so Saenchai Episode 1 posts first: if Ep. 1 slips past 19 Nov, move these by the same days. Video = CapCut eye-contact version (-eye.mp4)."
+      "slot_note": "Fighter Breakdown (Lomachenko): 2 hooks/day between the listicle slots (11:00 and 15:30 NY, the Loma wave 2 slots), contrast/question first, story last. Starts Fri 20 Nov so Saenchai Episode 1 posts first: if Ep. 1 slips past 19 Nov, move these by the same days. Video = CapCut eye-contact version (-eye.mp4).",
+      "approved_note": "Matteo: approved the week via dashboard (2026-11-16T17:13:41Z)"
     }
   ]
 }
