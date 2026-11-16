@@ -1,9 +1,5 @@
 [
   {
-    "id": "xp-db903a3c",
-    "text": "📤 Threads: 7 SIGNS YOU HAVE A FIGHTER'S MINDSET\nhttps://www.threads.com/@matteofights/post/De6nUpvmU8m"
-  },
-  {
     "id": "xp-19f9b5b5",
     "text": "📤 YouTube Shorts: 6 SIGNS FIGHT TRAINING MADE YOU A DANGEROUS FOUNDER\nhttps://youtube.com/shorts/9IL239c9H7Q"
   },
@@ -798,5 +794,9 @@
   {
     "id": "xp-4cf0590d",
     "text": "📤 Threads: 6 WAYS TO SLIP THE JAB AND MAKE THEM PAY\nhttps://www.threads.com/@matteofights/post/DfyPmMCBgZ6"
+  },
+  {
+    "id": "health-queue:lst-2026-10-30-not-a-beginner:failed-2026111606",
+    "text": "⚠️ lst-2026-10-30-not-a-beginner failed to post: GET https://graph.facebook.com/v23.0/530317382955170 -> 404: {\"title\":\"Not Found\",\"detail\":\"No audio asset found for the given ID\",\"status\":404}"
   }
 ]
