@@ -1326,9 +1326,12 @@
       "text": "Boxing gym or Muay Thai gym for someone who has never trained?",
       "chain": [],
       "from": "craft",
-      "status": "queued",
+      "status": "posted",
       "approved": true,
-      "approved_note": "Matteo: approved via dashboard (2026-11-16T16:07:48Z)"
+      "approved_note": "Matteo: approved via dashboard (2026-11-16T16:07:48Z)",
+      "posted_at": "2026-11-16T17:41:13Z",
+      "thread_id": "18355843468285963",
+      "url": "https://www.threads.com/@matteofights/post/Dfz6lYVFhuF"
     },
     {
       "id": "th-1116-3",
