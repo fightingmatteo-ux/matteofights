@@ -798,5 +798,9 @@
   {
     "id": "health-queue:lst-2026-10-30-not-a-beginner:failed-2026111606",
     "text": "⚠️ lst-2026-10-30-not-a-beginner failed to post: GET https://graph.facebook.com/v23.0/530317382955170 -> 404: {\"title\":\"Not Found\",\"detail\":\"No audio asset found for the given ID\",\"status\":404}"
+  },
+  {
+    "id": "n-1116-winner-good-gym",
+    "text": "WINNER: '6 SIGNS YOU FOUND A GOOD GYM' (12 Nov) hit 6,781 views, 2.65x normal, reach 4,313. Belonging angle ('Some gyms sell memberships. Some gyms build people.') travels to anyone who trains. Re-post it to the grid from the app with an uplifting sound, e.g. 'Anything Could Happen' (Ellie Goulding). Check the sound page shows it's still active first."
   }
 ]
