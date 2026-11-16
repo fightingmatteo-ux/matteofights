@@ -3729,7 +3729,14 @@
       "posting_since": "2026-11-12T23:30:57Z",
       "media_id": "18139402906642219",
       "permalink": "https://www.instagram.com/reel/DfqPhVVIbiE/",
-      "posted_at": "2026-11-12T23:32:12Z"
+      "posted_at": "2026-11-12T23:32:12Z",
+      "video_asset_fb": "lst-2026-11-12-good-gym-fb.mp4",
+      "fb_pick": {
+        "at": "2026-11-15T23:58:14Z",
+        "ig_views": 6778,
+        "vs_median": 2.61,
+        "shares_saves_per_1k": 2.2
+      }
     },
     {
       "id": "lst-2026-11-13-walking-onto-punches",
