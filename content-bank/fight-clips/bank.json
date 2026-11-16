@@ -137,6 +137,13 @@
      "t": 89.0,
      "action": "underwater pool training",
      "used": "L1-C"
+    },
+    {
+     "t": 160.0,
+     "dur": 3.2,
+     "fighter": "Lomachenko",
+     "action": "footwork shadowboxing alone in an empty ring",
+     "used": "LB-hB"
     }
    ]
   },
@@ -160,6 +167,13 @@
      "t": 59.0,
      "action": "Loma angle work",
      "used": "L1-E"
+    },
+    {
+     "t": 189.6,
+     "dur": 3.4,
+     "fighter": "Lomachenko",
+     "action": "moves around the opponent, opponent turning to find him",
+     "used": "LB-hD"
     }
    ]
   },
@@ -179,6 +193,134 @@
    "file": "yt-tyson-douglas.mp4",
    "url": "https://www.youtube.com/watch?v=07bWUk1k6Vs",
    "res": "720p",
+   "moments": []
+  },
+  {
+   "file": "yt-loma-rigondeaux-stool.mp4",
+   "url": "https://www.youtube.com/watch?v=zssefX1ky-M",
+   "res": "1080p",
+   "note": "Loma vs Rigondeaux 2017 highlights (iFL TV): ring walk, rounds, Rigondeaux quits on his stool after round 6",
+   "moments": [
+    {
+     "t": 93.4,
+     "dur": 3.2,
+     "fighter": "Lomachenko",
+     "action": "throws, then steps off to the side",
+     "used": "LB-side1"
+    },
+    {
+     "t": 97.1,
+     "dur": 3.9,
+     "fighter": "Lomachenko",
+     "action": "small in-out steps, wide shot",
+     "used": "LB-inout"
+    },
+    {
+     "t": 161.0,
+     "dur": 3.4,
+     "fighter": "Rigondeaux",
+     "action": "sits on his stool in the corner, cutman on the hand (retirement)",
+     "used": "LB-hC"
+    }
+   ]
+  },
+  {
+   "file": "yt-loma-toprank-highlight-reel.mp4",
+   "url": "https://www.youtube.com/watch?v=u1BN82T44xk",
+   "res": "1080p",
+   "note": "Top Rank 'Insane Highlight Reel | Thank You, Loma' (8 min, many fights, overhead angles)",
+   "moments": [
+    {
+     "t": 4.5,
+     "dur": 3.4,
+     "fighter": "opponent",
+     "action": "opponent slumped on his stool, referee at the corner (stoppage)",
+     "used": "LB-stool"
+    },
+    {
+     "t": 273.1,
+     "dur": 3.3,
+     "fighter": "Lomachenko",
+     "action": "overhead: pivots to the opponent's side, opponent lunges into space and turns",
+     "used": "LB-pivot"
+    },
+    {
+     "t": 276.0,
+     "dur": 3.0,
+     "fighter": "Lomachenko",
+     "action": "keeps moving, opponent follows and can't set his feet",
+     "used": "LB-spot"
+    },
+    {
+     "t": 298.8,
+     "dur": 3.6,
+     "fighter": "Lomachenko",
+     "action": "overhead: combo, then side step out, opponent punches air",
+     "used": "LB-side2"
+    }
+   ]
+  },
+  {
+   "file": "yt-loma-how-he-trained.mp4",
+   "url": "https://www.youtube.com/watch?v=Y8T795WQmJc",
+   "res": "1080p",
+   "note": "'How Vasyl Lomachenko Really Trained' (Back to Boxing, 17 min): family archive, dance, training; burned-in subtitles at the bottom (crop top 86%)",
+   "moments": [
+    {
+     "t": 59.3,
+     "dur": 3.0,
+     "fighter": "Lomachenko",
+     "action": "as a toddler shadowboxing (family archive)",
+     "used": "LB-kid"
+    },
+    {
+     "t": 90.2,
+     "dur": 3.2,
+     "fighter": "",
+     "action": "children's dance troupe on stage (Ukrainian dance)",
+     "used": "LB-hE"
+    },
+    {
+     "t": 95.8,
+     "dur": 3.2,
+     "fighter": "",
+     "action": "children's dance troupe on stage, wider",
+     "used": "LB-dance"
+    },
+    {
+     "t": 259.5,
+     "dur": 3.2,
+     "fighter": "Lomachenko",
+     "action": "agility-ladder footwork drill, fighters watching",
+     "used": "LB-hA"
+    },
+    {
+     "t": 263.0,
+     "dur": 3.2,
+     "fighter": "Lomachenko",
+     "action": "agility-ladder drill, closer on his feet",
+     "used": "LB-feet"
+    },
+    {
+     "t": 905.0,
+     "dur": 3.0,
+     "fighter": "",
+     "action": "agility ladder feet close-up (fighter not identified)"
+    }
+   ]
+  },
+  {
+   "file": "yt-loma-walters-toprank.mp4",
+   "url": "https://www.youtube.com/watch?v=YfWVZjaGPzM",
+   "res": "1080p",
+   "note": "Top Rank 'When Lomachenko Shut Down The Axe Man' (Walters 2016, 25 min, Walters quits on his stool). Not tagged yet",
+   "moments": []
+  },
+  {
+   "file": "yt-loma-footwork-angles-statsguy.mp4",
+   "url": "https://www.youtube.com/watch?v=W5a5VZ10uwE",
+   "res": "720p",
+   "note": "Stats Guy: Loma footwork, creating angles. Not tagged yet",
    "moments": []
   }
  ],

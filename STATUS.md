@@ -16,6 +16,7 @@ Legend: **DO** = needs action now, **MATTEO** = only Matteo can do it, **WAIT** 
 | 5 | Saenchai approval | **MATTEO** | `approved:false` on all three. Only Matteo approves (dashboard Home, hold-to-approve) |
 | 6 | YouTube cross-post | **DO (verify)** | Secrets YT_* set 10-18 12:57Z. 5 failed records reset in crosspost.json. Check the next Cross-post run: if 401 `youtubeSignupRequired` again, the chosen Google account still has no channel |
 | 7 | YouTube API audit | **WAIT** | Unconfirmed. Uploads with `privacy: public` may be forced private until approved |
+| 8 | Fighter Breakdown: Lomachenko, 5 hook trial reels (2026-11-16) | **MATTEO** | Rendered (cloud), queued A-E 15:00-16:00 NY (`slot_ny`), `approved:false`, `not_before` empty. Matteo: pick the day (after Saenchai Ep. 1), the episode number (none on screen, spoken 'episode 2' cut), approve. Record: production/reels/2026-11-16-loma-breakdown/REEL.md |
 
 Render command for Matteo (PowerShell, from the repo root). One variant at a time, minimized, idle priority:
 

@@ -1,0 +1,35 @@
+{
+ "src": "../../../media/loma-breakdown-src/raw.mp4",
+ "words": "work/words.json",
+ "speed": 1.0,
+ "takes": {
+  "hookA": [9.25, 13.55],
+  "hookB": [20.33, 25.85],
+  "hookC": [35.95, 42.4],
+  "hookD": [52.45, 57.6],
+  "hookE": [64.6, 70.8],
+  "intro": [[73.7, 74.93], [77.45, 87.35]],
+  "body": [90.95, 118.75],
+  "third": [119.25, 122.45],
+  "pivot": [162.15, 175.3],
+  "takeaway": [148.5, 154.4],
+  "end": [[179.45, 182.75], [175.5, 177.4], [183.45, 191.1]]
+ },
+ "variants": {
+  "A": ["hookA", "intro", "body", "third", "pivot", "takeaway", "end"],
+  "B": ["hookB", "intro", "body", "third", "pivot", "takeaway", "end"],
+  "C": ["hookC", "intro", "body", "third", "pivot", "takeaway", "end"],
+  "D": ["hookD", "intro", "body", "third", "pivot", "takeaway", "end"],
+  "E": ["hookE", "intro", "body", "third", "pivot", "takeaway", "end"]
+ },
+ "why": {
+  "hookA..E": "one take each, all five hold the lens the whole line (2 fps sheets); onsets from the audio energy, 0.3-0.5 s tails",
+  "intro": "only take; 'episode 2' (74.99-75.86) cut out so the number stays off, 0.4 s of his own pause kept before 'I'm Matteo'",
+  "body": "only take of dance line + One + Two; he reads down for most of it, so b-roll covers it",
+  "third": "only take, holds the lens",
+  "pivot": "take 2 (162.2-175.2) over take 1 (122.9-136.4): more eye contact (take 1 half-lidded, reading for ~8 s), louder (-18.3 vs -19.2 LUFS), no hitch ('pivots, around' in take 1); the aborted 'Three, the pivot' at 156.9 skipped",
+  "takeaway": "take 2 (148.7-153.9) over take 1 (137.1-146.7): eyes on the lens throughout (take 1 turns away and looks down), louder (-15.2 vs -17.3 LUFS), no 1.5 s gaps mid-line; take 1 ends in 'Redo that part'",
+  "end": "only take; 1.9 s of room tone (175.5-177.4) spliced after 'Monday to Friday' so the 5 day cards get ~0.7 s each"
+ },
+ "fix": {}
+}
