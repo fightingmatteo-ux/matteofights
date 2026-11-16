@@ -1,0 +1,228 @@
+<title>Matteo Take Sheet</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;800&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Layout: a shot list (reels as rows, takes as chips) that opens into a full-screen prompter with a fixed reading line. Single dark look on purpose: it sits next to a lens. */
+:root{
+  color-scheme:dark;
+  --bg:#0c0d10; --panel:#16181d; --line:#2a2d35; --fg:#f3f1ea; --dim:#8f93a0;
+  --go:#f2b53a; --done:#58c08a; --stop:#e2604c;
+  --read:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --ui:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+html,body{height:100%}
+body{background:var(--bg);color:var(--fg);font-family:var(--ui);font-size:15px;line-height:1.45}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+button:focus-visible{outline:2px solid var(--go);outline-offset:2px}
+
+/* list */
+#list{max-width:760px;margin:0 auto;padding-block:20px 48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:22px}
+.top h1{font-family:var(--read);font-weight:800;font-size:26px;letter-spacing:-.01em;margin:0}
+.top p{margin:6px 0 0;color:var(--dim);max-width:60ch}
+.bar{height:6px;background:var(--panel);border-radius:3px;overflow:hidden;margin-top:12px}
+.bar i{display:block;height:100%;background:var(--done);width:0}
+.count{font-variant-numeric:tabular-nums;color:var(--dim);font-size:13px;margin-top:6px}
+.grp h2{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);font-weight:600;margin:0 0 4px}
+.reel{border-top:1px solid var(--line);padding-block:14px;display:flex;flex-direction:column;gap:8px}
+.reel .hd{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.reel h3{font-family:var(--read);font-weight:600;font-size:19px;margin:0}
+.reel .tag{color:var(--go);font-size:13px}
+.reel .why,.reel .note{color:var(--dim);font-size:13px;margin:0;max-width:68ch}
+.reel .note{color:var(--fg)}
+.reel .note b{color:var(--stop);font-weight:600}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:2px}
+.chip{min-width:46px;height:42px;padding:0 12px;border:1px solid var(--line);border-radius:6px;font-family:var(--read);font-weight:600;font-size:14px;background:var(--panel)}
+.chip.done{border-color:var(--done);color:var(--done);background:transparent}
+.chip:hover{border-color:var(--go)}
+
+/* prompter */
+#pr{height:100%;display:flex;flex-direction:column}
+.ph{display:flex;align-items:center;gap:12px;padding-block:10px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));border-bottom:1px solid var(--line)}
+.ph .back{height:40px;padding:0 12px;border:1px solid var(--line);border-radius:6px}
+.ph .meta{min-width:0;flex:1}
+.ph .t{font-family:var(--read);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ph .s{color:var(--dim);font-size:13px}
+.ph .s b{color:var(--go);font-weight:600}
+.stage{position:relative;flex:1;min-height:0;overflow:hidden}
+.scroll{position:absolute;inset:0;overflow-y:auto;scrollbar-width:none;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.scroll::-webkit-scrollbar{display:none}
+.txt{max-width:22em;margin:0 auto;font-family:var(--read);font-weight:600;line-height:1.28;padding-top:32vh;padding-bottom:70vh}
+.txt p{margin:0 0 .9em}
+.txt p.cue{color:var(--dim);font-weight:500;font-size:.6em}
+.txt .fill{color:var(--go)}
+.mir .txt{transform:scaleX(-1)}
+.mark{position:absolute;left:0;right:0;top:32vh;height:0;border-top:2px solid var(--go);opacity:.35;pointer-events:none}
+.cd{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(12,13,16,.86);font-family:var(--read);font-weight:800;font-size:28vh;color:var(--go)}
+.ctl{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center;border-top:1px solid var(--line);padding-block:10px;padding-left:max(12px,env(safe-area-inset-left,0px));padding-right:max(12px,env(safe-area-inset-right,0px))}
+.ctl button{height:46px;min-width:46px;padding:0 12px;border:1px solid var(--line);border-radius:6px;background:var(--panel);font-weight:600}
+.ctl .play{background:var(--go);color:#17130a;border-color:var(--go);min-width:104px}
+.ctl .play.on{background:var(--stop);border-color:var(--stop);color:#fff}
+.ctl .mk.on{border-color:var(--done);color:var(--done)}
+.ctl .pair{display:flex;align-items:center;gap:4px}
+.ctl .pair span{color:var(--dim);font-size:12px;min-width:44px;text-align:center;font-variant-numeric:tabular-nums}
+</style>
+
+<div id="list">
+  <div class="top">
+    <h1>Take Sheet</h1>
+    <p>15 reels for the month. Each one is 5 hook takes, then the body once, then the ending once. Tap a take to read it.</p>
+    <div class="bar"><i id="barfill"></i></div>
+    <div class="count" id="count"></div>
+  </div>
+  <div id="groups"></div>
+</div>
+
+<div id="pr" hidden>
+  <div class="ph">
+    <button class="back" id="back">List</button>
+    <div class="meta"><div class="t" id="pt"></div><div class="s" id="ps"></div></div>
+  </div>
+  <div class="stage" id="stage">
+    <div class="scroll" id="scroll"><div class="txt" id="txt"></div></div>
+    <div class="mark"></div>
+    <div class="cd" id="cd" hidden></div>
+  </div>
+  <div class="ctl">
+    <button id="prev" aria-label="Previous take">Prev</button>
+    <button class="play" id="play">Start</button>
+    <button id="next" aria-label="Next take">Next</button>
+    <button class="mk" id="mk">Got it</button>
+    <div class="pair"><button id="sd" aria-label="Slower">-</button><span id="sv"></span><button id="su" aria-label="Faster">+</button></div>
+    <div class="pair"><button id="fd" aria-label="Smaller text">A-</button><span id="fv"></span><button id="fu" aria-label="Bigger text">A+</button></div>
+    <button id="mir">Mirror</button>
+  </div>
+</div>
+
+<script>
+const DATA = /*DATA*/;
+const NAMES = {BODY:"Body", END:"Ending"};
+const $ = id => document.getElementById(id);
+const store = {
+  get(k, d){ try { const v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); } catch(e){ return d; } },
+  set(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch(e){} }
+};
+let done = store.get("ts.done", {});
+let speed = store.get("ts.speed", 5);     // 1..12
+let size = store.get("ts.size", 34);      // px
+let mirror = store.get("ts.mirror", false);
+const flat = [];
+DATA.reels.forEach((r, ri) => r.takes.forEach((t, ti) => flat.push({ri, ti})));
+let cur = 0, playing = false, raf = 0, last = 0, pos = 0, cdTimer = 0, lock = null;
+
+function label(t){ return NAMES[t.k] || ("Hook " + t.k); }
+function key(i){ const f = flat[i]; return DATA.reels[f.ri].id + ":" + DATA.reels[f.ri].takes[f.ti].k; }
+
+function renderList(){
+  const g = $("groups"); g.textContent = "";
+  [["breakdown","Fighter breakdown series"],["talk","Talking heads and rants"]].forEach(([id, name]) => {
+    const sec = document.createElement("section"); sec.className = "grp";
+    const h = document.createElement("h2"); h.textContent = name; sec.appendChild(h);
+    DATA.reels.forEach((r, ri) => {
+      if (r.group !== id) return;
+      const d = document.createElement("div"); d.className = "reel";
+      const hd = document.createElement("div"); hd.className = "hd";
+      const h3 = document.createElement("h3"); h3.textContent = r.title;
+      const tg = document.createElement("span"); tg.className = "tag"; tg.textContent = r.tag;
+      hd.append(h3, tg); d.appendChild(hd);
+      const why = document.createElement("p"); why.className = "why"; why.textContent = r.why; d.appendChild(why);
+      if (r.note){ const n = document.createElement("p"); n.className = "note"; const b = document.createElement("b"); b.textContent = "Before you film: "; n.append(b, r.note); d.appendChild(n); }
+      const chips = document.createElement("div"); chips.className = "chips";
+      r.takes.forEach((t, ti) => {
+        const i = flat.findIndex(f => f.ri === ri && f.ti === ti);
+        const b = document.createElement("button"); b.className = "chip" + (done[key(i)] ? " done" : "");
+        b.textContent = NAMES[t.k] || t.k; b.setAttribute("aria-label", r.title + ", " + label(t));
+        b.onclick = () => open(i); chips.appendChild(b);
+      });
+      d.appendChild(chips); sec.appendChild(d);
+    });
+    g.appendChild(sec);
+  });
+  const n = flat.filter((_, i) => done[key(i)]).length;
+  $("count").textContent = n + " of " + flat.length + " takes done";
+  $("barfill").style.width = (100 * n / flat.length) + "%";
+}
+
+function open(i){
+  stop(); cur = i;
+  const f = flat[i], r = DATA.reels[f.ri], t = r.takes[f.ti];
+  $("pt").textContent = r.title + " · " + label(t) + (t.type ? " (" + t.type + ")" : "");
+  $("ps").innerHTML = "";
+  $("ps").append("Say first: ");
+  const b = document.createElement("b"); b.textContent = r.slate + ", " + (NAMES[t.k] ? NAMES[t.k].toUpperCase() : "TAKE " + t.k);
+  $("ps").append(b, ", then wait two seconds");
+  const box = $("txt"); box.textContent = "";
+  t.text.split(/\n\n+/).forEach(par => {
+    const p = document.createElement("p");
+    if (/^\(.*\)$/.test(par)) { p.className = "cue"; p.textContent = par; }
+    else par.split(/(\[[^\]]+\])/).forEach(bit => {
+      if (/^\[/.test(bit)) { const s = document.createElement("span"); s.className = "fill"; s.textContent = bit; p.appendChild(s); }
+      else p.append(bit);
+    });
+    box.appendChild(p);
+  });
+  $("list").hidden = true; $("pr").hidden = false;
+  $("scroll").scrollTop = 0; pos = 0;
+  paint();
+}
+
+function paint(){
+  $("txt").style.fontSize = size + "px";
+  $("fv").textContent = size + " px";
+  $("sv").textContent = "speed " + speed;
+  $("stage").classList.toggle("mir", mirror);
+  $("mk").classList.toggle("on", !!done[key(cur)]);
+  $("mk").textContent = done[key(cur)] ? "Done" : "Got it";
+  $("play").textContent = playing ? "Stop" : "Start";
+  $("play").classList.toggle("on", playing);
+}
+
+function tick(ts){
+  if (!playing) return;
+  const sc = $("scroll");
+  const dt = Math.min(0.1, (ts - last) / 1000); last = ts;
+  pos += dt * speed * size * 0.42;       // px per second scales with text size
+  sc.scrollTop = pos;
+  if (pos >= sc.scrollHeight - sc.clientHeight - 1) { stop(); return; }
+  raf = requestAnimationFrame(tick);
+}
+function start(){
+  const cd = $("cd"); let n = 3; cd.textContent = n; cd.hidden = false;
+  playing = true; paint();
+  cdTimer = setInterval(() => {
+    n--; if (n > 0) { cd.textContent = n; return; }
+    clearInterval(cdTimer); cdTimer = 0; cd.hidden = true;
+    pos = $("scroll").scrollTop; last = performance.now(); raf = requestAnimationFrame(tick);
+  }, 1000);
+  if (navigator.wakeLock) navigator.wakeLock.request("screen").then(l => { lock = l; }).catch(() => {});
+}
+function stop(){
+  playing = false; cancelAnimationFrame(raf);
+  if (cdTimer) { clearInterval(cdTimer); cdTimer = 0; }
+  $("cd").hidden = true;
+  if (lock) { lock.release().catch(() => {}); lock = null; }
+  paint();
+}
+function toggle(){ playing ? stop() : start(); }
+function go(d){ const i = cur + d; if (i >= 0 && i < flat.length) open(i); }
+
+$("play").onclick = toggle;
+$("scroll").onclick = toggle;
+$("prev").onclick = () => go(-1);
+$("next").onclick = () => go(1);
+$("back").onclick = () => { stop(); $("pr").hidden = true; $("list").hidden = false; renderList(); };
+$("mk").onclick = () => { const k = key(cur); if (done[k]) delete done[k]; else done[k] = 1; store.set("ts.done", done); paint(); };
+$("su").onclick = () => { speed = Math.min(12, speed + 1); store.set("ts.speed", speed); paint(); };
+$("sd").onclick = () => { speed = Math.max(1, speed - 1); store.set("ts.speed", speed); paint(); };
+$("fu").onclick = () => { size = Math.min(72, size + 4); store.set("ts.size", size); paint(); };
+$("fd").onclick = () => { size = Math.max(22, size - 4); store.set("ts.size", size); paint(); };
+$("mir").onclick = () => { mirror = !mirror; store.set("ts.mirror", mirror); paint(); };
+document.addEventListener("keydown", e => {
+  if ($("pr").hidden) return;
+  if (e.code === "Space") { e.preventDefault(); toggle(); }
+  else if (e.key === "ArrowRight") go(1);
+  else if (e.key === "ArrowLeft") go(-1);
+  else if (e.key === "ArrowUp") $("su").click();
+  else if (e.key === "ArrowDown") $("sd").click();
+});
+renderList();
+</script>
