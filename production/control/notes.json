@@ -1,13 +1,5 @@
 [
   {
-    "id": "xp-a404e6eb",
-    "text": "📤 YouTube Shorts: 6 RECOVERY HABITS THAT LET FIGHTERS TRAIN TWICE A DAY\nhttps://youtube.com/shorts/FRgxJM3ZY6c"
-  },
-  {
-    "id": "health-queue:lst-2026-10-25-coach-thinks-ready:missed-2026102520",
-    "text": "⏰ lst-2026-10-25-coach-thinks-ready was due 2026-10-25T16:30:00Z and still hasn't posted."
-  },
-  {
     "id": "trial-saenchai-editorial",
     "text": "🏆 Hook test done: saenchai-editorial (72 h, 3 variants)\n\nWinner: B, question opening\n\"Always sparring someone bigger? Steal this from Saenchai\"\n68% stayed past 3 s, 16.3 s avg watch, 2,568 views (0.97x normal), 15 saves+shares per 1k\n\nThe others: A 61% stayed past 3 s, 15.3 s avg watch, 2,036 views, 15 saves+shares per 1k; C 62% stayed past 3 s, 15.5 s avg watch, 1,857 views, 9 saves+shares per 1k\n\nShare B to your followers now: open it in Instagram, tap the trial reel label, Share to followers. https://www.instagram.com/reel/DexKfNuDZUl/\n\nAcross all tests so far: question openings place best (100% avg placing, 1 clear wins in 1 variants)."
   },
@@ -798,5 +790,13 @@
   {
     "id": "xp-227e1968",
     "text": "📤 YouTube Shorts: 6 WAYS TO GET OFF THE ROPES WHEN YOU'RE TRAPPED\nhttps://youtube.com/shorts/aHMNLKDQm8A"
+  },
+  {
+    "id": "health-run:Talking points-2026111622",
+    "text": "⚠️ Workflow 'Talking points' failed: https://github.com/fightingmatteo-ux/matteofights/actions/runs/43936035612"
+  },
+  {
+    "id": "health-job:2026-11-16-loma-breakdown-A-20261116T130750:failed-2026111622",
+    "text": "⚠️ Cloud render 2026-11-16-loma-breakdown-A-20261116T130750 failed: ce\nnpm notice New major version of npm available! 10.9.9 -> 12.2.2\nnpm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.2\nnpm notice To update run: npm install -g npm@12.2.2\nnpm notice\n"
   }
 ]
