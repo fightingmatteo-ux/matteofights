@@ -40,4 +40,4 @@ He says "miss by 1cm" (sheet: "an inch"); left as spoken.
 `media/2026-11-17-floyd-breakdown/2026-11-17-floyd-breakdown-<V>(-phone).mp4`, cloud (Modal). Queue: trial set
 `floyd-breakdown`, approved false: A 23 Nov 16:00Z, D 23 Nov 20:30Z, B 24 Nov 16:00Z, C 24 Nov 20:30Z,
 E 25 Nov 16:00Z (11:00 and 15:30 New York), after the Lomachenko trials (20 to 22 Nov).
-Rescheduled 2026-11-17 (Matteo: 3 talking heads a day, 11:00/15:30/20:00 NY): A 22 Nov 20:30Z, D 23 Nov 01:00Z, B 23 Nov 16:00Z, C 23 Nov 20:30Z, E 24 Nov 01:00Z.
+Rescheduled 2026-11-17 (Matteo: 3 a day, Europe/US overlap only, 11:00/14:30/16:00 NY): A 22 Nov 19:30Z, D 22 Nov 21:00Z, B 23 Nov 16:00Z, C 23 Nov 19:30Z, E 23 Nov 21:00Z.

@@ -43,4 +43,4 @@ Gane came up in Muay Thai (his Muay Thai fights are in the source). Plan `gane-d
 `media/2026-11-17-gane-breakdown/2026-11-17-gane-breakdown-<V>(-phone).mp4`, cloud (Modal).
 Lengths A 55.9, B 56.8, C 59.0, D 56.2, E 55.8 s. Queue: trial set `gane-breakdown`, approved false: A 26 Nov
 16:00Z, D 26 Nov 20:30Z, B 27 Nov 16:00Z, C 27 Nov 20:30Z, E 28 Nov 16:00Z, after the Floyd trials.
-Rescheduled 2026-11-17 (Matteo: 3 talking heads a day, 11:00/15:30/20:00 NY): A 24 Nov 16:00Z, D 24 Nov 20:30Z, B 25 Nov 01:00Z, C 25 Nov 16:00Z, E 25 Nov 20:30Z.
+Rescheduled 2026-11-17 (Matteo: 3 a day, Europe/US overlap only, 11:00/14:30/16:00 NY): A 24 Nov 16:00Z, D 24 Nov 19:30Z, B 24 Nov 21:00Z, C 25 Nov 16:00Z, E 25 Nov 19:30Z.
