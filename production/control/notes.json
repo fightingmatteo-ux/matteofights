@@ -1,9 +1,5 @@
 [
   {
-    "id": "health-queue:lst-2026-10-25-coach-sees:missed-2026102605",
-    "text": "⏰ lst-2026-10-25-coach-sees was due 2026-10-26T01:30:00Z and still hasn't posted."
-  },
-  {
     "id": "n-1026-nerves",
     "text": "Early winner watch: '7 ways to kill fight nerves without faking confidence' has 7,012 views and 72 saves after 22 h, 3.2x your normal (2,226). If it holds at 72 h (Wed) it's a winner and I'll send sounds to re-post it with. Also strong: 'read your opponent in round one' 56 saves in 16 h."
   },
@@ -798,5 +794,9 @@
   {
     "id": "health-queue:lst-2026-10-30-not-a-beginner:failed-2026111708",
     "text": "⚠️ lst-2026-10-30-not-a-beginner failed to post: GET https://graph.facebook.com/v23.0/530317382955170 -> 404: {\"title\":\"Not Found\",\"detail\":\"No audio asset found for the given ID\",\"status\":404}"
+  },
+  {
+    "id": "xp-e86597f0",
+    "text": "📤 Threads: 6 THINGS A HARD ROUND TEACHES YOU ABOUT HARD DAYS\nhttps://www.threads.com/@matteofights/post/Df2Np5ChJkq"
   }
 ]
