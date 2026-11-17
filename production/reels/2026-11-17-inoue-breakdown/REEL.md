@@ -36,3 +36,4 @@ Jazeera, ABC/AP, BoxingScene). 165 cm = 5 ft 5. Trained by his father Shingo. Ni
 `media/2026-11-17-inoue-breakdown/2026-11-17-inoue-breakdown-<V>(-phone).mp4`, cloud (Modal).
 Lengths A 55.8, B 56.2, C 58.8, D 56.8, E 56.5 s. Queue: trial set `inoue-breakdown`, approved false: A 28 Nov
 20:30Z, D 29 Nov 16:00Z, B 29 Nov 20:30Z, C 30 Nov 16:00Z, E 30 Nov 20:30Z, after the Gane trials.
+Rescheduled 2026-11-17 (Matteo: 3 talking heads a day, 11:00/15:30/20:00 NY): A 26 Nov 01:00Z, D 26 Nov 16:00Z, B 26 Nov 20:30Z, C 27 Nov 01:00Z, E 27 Nov 16:00Z.
