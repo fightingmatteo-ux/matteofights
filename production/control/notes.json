@@ -1,9 +1,5 @@
 [
   {
-    "id": "xp-1a86007c",
-    "text": "📤 Threads: FIGHTS ARE WON IN THE ROUNDS NOBODY SEES\nhttps://www.threads.com/@matteofights/post/De8EAOVjseP"
-  },
-  {
     "id": "health-queue:lst-2026-10-25-coach-sees:missed-2026102605",
     "text": "⏰ lst-2026-10-25-coach-sees was due 2026-10-26T01:30:00Z and still hasn't posted."
   },
@@ -798,5 +794,9 @@
   {
     "id": "xp-a76dfb81",
     "text": "📤 Threads: 6 WAYS TO GET OFF THE ROPES WHEN YOU'RE TRAPPED\nhttps://www.threads.com/@matteofights/post/Df00YG0g5IG"
+  },
+  {
+    "id": "health-queue:lst-2026-10-30-not-a-beginner:failed-2026111708",
+    "text": "⚠️ lst-2026-10-30-not-a-beginner failed to post: GET https://graph.facebook.com/v23.0/530317382955170 -> 404: {\"title\":\"Not Found\",\"detail\":\"No audio asset found for the given ID\",\"status\":404}"
   }
 ]
