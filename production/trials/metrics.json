@@ -218,5 +218,25 @@
     "skip_rate": 43.5,
     "follows": null,
     "at": "2026-11-08T06:40:56Z"
+  },
+  "18079880432725099": {
+    "views": 2839,
+    "reach": 2411,
+    "shares": 5,
+    "saves": 69,
+    "avg_watch_s": 20.0,
+    "skip_rate": 46.4,
+    "follows": null,
+    "at": "2026-11-17T21:18:54Z"
+  },
+  "17879904522572492": {
+    "views": 74,
+    "reach": 31,
+    "shares": 0,
+    "saves": 1,
+    "avg_watch_s": 3.1,
+    "skip_rate": 50,
+    "follows": null,
+    "at": "2026-11-17T21:18:56Z"
   }
 }
