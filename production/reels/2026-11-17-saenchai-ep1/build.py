@@ -30,7 +30,7 @@ REEL = {
     },
     # body keywords only on lines where his face is on screen (red over fight tape fails contrast); hook keywords as in the series
     "keys": ["TRADED", "MISS", "SLOW", "STEAL", "BALANCE", "LUMPINEE", "LANDS", "THERE", "HARD", "POWER", "SWEEP",
-             "ENERGY", "FRUSTRATED", "PLAN"],
+             "FRUSTRATED", "PLAN"],
     "fx": {},
     # (first word, card ends before this word, KEYWORD); a 3rd item in a ref = the segment it is in (hooks differ)
     "cards": [

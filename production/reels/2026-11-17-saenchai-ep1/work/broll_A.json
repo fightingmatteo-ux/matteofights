@@ -5,19 +5,19 @@
  },
  "heavy": {
   "start": 17.22,
-  "dur": 3.5
+  "dur": 3.8
  },
  "step": {
   "start": 27.7,
   "dur": 3.3
  },
  "catch": {
-  "start": 37.87,
-  "dur": 3.2
+  "start": 37.57,
+  "dur": 3.9
  },
  "sweep": {
-  "start": 47.3,
-  "dur": 5.4
+  "start": 45.99,
+  "dur": 6.0
  },
  "day1": {
   "start": 69.31,

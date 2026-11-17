@@ -1,23 +1,23 @@
 {
  "hD": {
   "start": 1.66,
-  "dur": 3.6
+  "dur": 3.55
  },
  "heavy": {
   "start": 16.24,
-  "dur": 3.5
+  "dur": 3.8
  },
  "step": {
   "start": 26.72,
   "dur": 3.3
  },
  "catch": {
-  "start": 36.89,
-  "dur": 3.2
+  "start": 36.59,
+  "dur": 3.9
  },
  "sweep": {
-  "start": 46.32,
-  "dur": 5.4
+  "start": 45.01,
+  "dur": 6.0
  },
  "day1": {
   "start": 68.33,

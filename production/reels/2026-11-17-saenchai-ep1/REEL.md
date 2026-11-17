@@ -25,13 +25,16 @@ Eye contact: 2 fps face sheets of every repeat and a pass over the body (`work/s
 stretches found, so no b-roll was needed as cover.
 
 ## B-roll (content-bank/fight-clips/bank.json, used "S1-<name>")
-Framing: 4:5 crop of the action over a dark blurred copy (as in the October Saenchai editorial), because the
-two fighters do not fit a 9:16 crop; the crop pans with the action and leaves out the face-cam and logos.
-Hooks: A the big man attacks and Saenchai stays out of range, B the clinch dump, C the big man's kick and follow-up
-find nothing, D seminar sparring: the bigger partner put on the floor and getting up, E catch and sweep (another fight).
-Body: seminar big man in red ("heavier men"), the big man swings and ends up alone on the ropes ("goes past him"),
-kick caught and the big man hops on one leg ("standing on one leg"), catch then the standing leg taken out and
-the big man getting up ("the sweep ... has to start over").
+Framing: the action over a dark blurred copy (as in the October Saenchai editorial), 4:5 where the pair fits, 1:1 or
+6:5 for wide two-shots; the crop pans with the action and leaves out face-cams, watermarks and sponsor bugs.
+Recut 17 Nov (third render round) after Matteo's note (the old sweep clip opened on the big man's punch, hook and b-roll footage too
+weak): THAI FIGHT broadcast footage for hook A, hook E, "heavier men", the catch and the sweep.
+Hooks: A a taller man's punches miss, then he is caught and swept (THAI FIGHT), B the clinch dump, C the big man's
+kick finds nothing, D seminar sparring: the big man in red swept, E a taller man's standing leg swept (THAI FIGHT).
+Body: Nouri a head taller in the round 1 two-shot ("heavier men"), the big man swings and ends up alone on the
+ropes ("goes past him"), kick caught and the man hopping back on one leg until he falls ("standing on one leg"),
+and from "Three. The sweep": kick caught and the bigger man flipped inside the first second, back to stance,
+swept again ("goes down, gets up and has to start over").
 
 ## Facts checked
 Lumpinee titles in four weight classes (115, 118, 130, 135 lb: Wikipedia, Glory profile, Evolve). Often gave up

@@ -20,3 +20,5 @@ charts the revisions they came from.
 - [broll] Cover any stretch where he looks away from the lens with b-roll; keep his face on screen for the lines where he holds eye contact (Matteo, 2026-11-16)
 - [broll] B-roll shows exactly what the words say at that moment: "sweep" shows the sweep, "standing on one leg" shows the man on one leg. No generic fight footage over a specific line (Matteo, 2026-11-16)
 - [broll] Longer b-roll holds are fine when they cover a look-away or show a full move, as long as the cut in and out is clean (Matteo, 2026-11-16)
+- [broll] A cutaway opens on the move the words name, with no lead-in action: at "Three. The sweep" the clip opened on the opponent's punch and read as an elbow (Matteo, Saenchai Ep. 1, 2026-11-17)
+- [broll] Matteo asked for "a better hook clip" and "better b-roll footage" on Saenchai Ep. 1 (2026-11-17). Read as: sharp broadcast footage over handheld crowd video, and a hook clip where something happens in its first second (the reading is Claude's, he did not spell it out)

@@ -333,8 +333,7 @@
      "t": 0.0,
      "dur": 4.6,
      "fighter": "Saenchai",
-     "action": "opening: the big man throws a knee and punches, Saenchai stays out of range (no face-cam yet)",
-     "used": "S1-A"
+     "action": "opening: the big man throws a knee and punches, Saenchai stays out of range (no face-cam yet)"
     },
     {
      "t": 80.6,
@@ -367,28 +366,32 @@
      "t": 23.0,
      "dur": 3.3,
      "fighter": "Saenchai",
-     "action": "catches the kick, big man hops on one leg until the referee steps in",
-     "used": "S1-body catch"
+     "action": "catches the kick, big man hops on one leg until the referee steps in"
     },
     {
      "t": 118.5,
      "dur": 5.5,
      "fighter": "Saenchai",
-     "action": "catches the kick, takes out the standing leg, big man down then up to his knees",
-     "used": "S1-body sweep"
+     "action": "catches the kick, takes out the standing leg, big man down then up to his knees"
     },
     {
      "t": 200.6,
      "dur": 3.6,
      "fighter": "Saenchai",
-     "action": "seminar sparring: big man in red kicks, Saenchai (yellow) half his size",
-     "used": "S1-body heavier"
+     "action": "seminar sparring: big man in red kicks, Saenchai (yellow) half his size"
     },
     {
      "t": 152.4,
      "dur": 4.5,
      "fighter": "Saenchai",
      "action": "big man tangled in the corner ropes with the referee, Saenchai waits"
+    },
+    {
+     "t": 208.3,
+     "dur": 3.6,
+     "fighter": "Saenchai",
+     "action": "seminar sparring: sweeps the big man in red, he stumbles and recovers",
+     "used": "S1-D"
     }
    ]
   },
@@ -402,8 +405,7 @@
      "t": 90.4,
      "dur": 3.1,
      "fighter": "Saenchai",
-     "action": "catches the kick and sweeps, opponent on the canvas (dark arena, wide)",
-     "used": "S1-E"
+     "action": "catches the kick and sweeps, opponent on the canvas (dark arena, wide)"
     },
     {
      "t": 165.7,
@@ -442,8 +444,7 @@
      "t": 15.3,
      "dur": 3.8,
      "fighter": "Saenchai",
-     "action": "sparring: puts the bigger man on the floor, he gets up (Saenchai's back to the camera)",
-     "used": "S1-D"
+     "action": "sparring: puts the bigger man on the floor, he gets up (Saenchai's back to the camera)"
     },
     {
      "t": 31.0,
@@ -484,6 +485,108 @@
    "url": "https://www.youtube.com/watch?v=Ub6T7yfhtzY",
    "res": "720p",
    "note": "YOKKAO: Saenchai and Superlek sparring vs 13 guys, Pittsburgh seminar 2022 (17 min). Not scanned yet.",
+   "moments": []
+  },
+  {
+   "file": "yt-saenchai-thaifight-antics.mp4",
+   "url": "https://www.youtube.com/watch?v=n0LHkcIjFx0",
+   "res": "1080p",
+   "note": "Muay Thai Scholar: Saenchai, Knockouts and Antics (THAI FIGHT broadcast, close HD shots, bigger foreign opponents). Watermark top left (x<490, y<200). Many cuts under 3 s.",
+   "moments": [
+    {
+     "t": 351.7,
+     "dur": 3.8,
+     "fighter": "Saenchai",
+     "action": "tall opponent's punches miss as Saenchai leans out, then kick caught and swept",
+     "used": "S1-A"
+    },
+    {
+     "t": 342.2,
+     "dur": 4.0,
+     "fighter": "Saenchai",
+     "action": "kick caught, opponent hops back on one leg and falls in the corner",
+     "used": "S1-body catch"
+    },
+    {
+     "t": 274.8,
+     "dur": 2.9,
+     "fighter": "Saenchai",
+     "action": "tall blond opponent swept flat (cut at 277.7)"
+    },
+    {
+     "t": 299.6,
+     "dur": 3.2,
+     "fighter": "Saenchai",
+     "action": "close-up next to a much taller bearded opponent after the fight (too wide for a 4:5 crop)"
+    },
+    {
+     "t": 293.6,
+     "dur": 2.6,
+     "fighter": "Saenchai",
+     "action": "leans back from a punch, opponent goes down flat (looks like a knockout, not a slip: don't use for 'fall over')"
+    }
+   ]
+  },
+  {
+   "file": "yt-saenchai-sweeps-kos.mp4",
+   "url": "https://www.youtube.com/watch?v=-Caionn-Zjc",
+   "res": "1080p",
+   "note": "Inevitable MMA: Saenchai highlights, sweeps and knockouts (mostly THAI FIGHT broadcast).",
+   "moments": [
+    {
+     "t": 117.3,
+     "dur": 6.1,
+     "fighter": "Saenchai",
+     "action": "pink canvas, bigger opponent in purple: kick caught and flipped, he gets back to stance, caught and swept again",
+     "used": "S1-body sweep"
+    },
+    {
+     "t": 168.9,
+     "dur": 3.5,
+     "fighter": "Saenchai",
+     "action": "taller opponent kicks, standing leg swept, down",
+     "used": "S1-E"
+    },
+    {
+     "t": 105.3,
+     "dur": 6.0,
+     "fighter": "Saenchai",
+     "action": "clinch dump into the ropes, opponent sits on the canvas"
+    },
+    {
+     "t": 57.8,
+     "dur": 3.5,
+     "fighter": "Saenchai",
+     "action": "kick caught, clinch, opponent down"
+    }
+   ]
+  },
+  {
+   "file": "yt-saenchai-thaifight-nouri.mp4",
+   "url": "https://www.youtube.com/watch?v=4ZDwAIImKKk",
+   "res": "1080p",
+   "note": "THAI FIGHT official: Saenchai vs Ayoub Nouri, 18 Oct 2026, full fight. Only the first 3.5 min scanned. Sponsor bug bottom left at times.",
+   "moments": [
+    {
+     "t": 73.5,
+     "dur": 3.9,
+     "fighter": "Saenchai",
+     "action": "round 1 opening two-shot: Nouri a head taller, throws a kick",
+     "used": "S1-body heavier"
+    },
+    {
+     "t": 195.0,
+     "dur": 4.5,
+     "fighter": "Saenchai",
+     "action": "tight close-up of Saenchai guarding in front of the taller man's chest"
+    }
+   ]
+  },
+  {
+   "file": "yt-saenchai-thaifight-takaloo.mp4",
+   "url": "https://www.youtube.com/watch?v=MFEFUV9lEnQ",
+   "res": "1080p",
+   "note": "THAI FIGHT official: Saenchai vs Abbas Takaloo, full fight. Not scanned past the intro.",
    "moments": []
   }
  ],
