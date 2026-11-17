@@ -1371,9 +1371,12 @@
       "text": "Which hurts more the next day: a hard bag round or a hard run?",
       "chain": [],
       "from": "craft",
-      "status": "queued",
+      "status": "posted",
       "approved": true,
-      "approved_note": "Matteo: approved via dashboard (2026-11-16T16:07:48Z)"
+      "approved_note": "Matteo: approved via dashboard (2026-11-16T16:07:48Z)",
+      "posted_at": "2026-11-17T17:41:19Z",
+      "thread_id": "18379845784215879",
+      "url": "https://www.threads.com/@matteofights/post/Df2fYccCf78"
     },
     {
       "id": "th-1117-3",
