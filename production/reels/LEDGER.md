@@ -133,6 +133,10 @@ Sort by follows per 1k views when looking for what grows the account.
 | 2026-11-12 | lst-2026-11-12-after-hard-sparring | - | 18103015724640694 | WHAT FIGHTERS EAT AFTER A HARD SPARRING DAY | lifestyle (tactical) | text-on-clip | trial | 2627 (1.03x) | ? | 1 | 8 | 0 | no | lifestyle food: 1.03x, skip 40% (low) |
 | 2026-11-12 | lst-2026-11-12-good-gym | - | 18139402906642219 | 6 SIGNS YOU FOUND A GOOD GYM | listicle (identity) | text-on-clip | trial | 6781 (2.65x) | ? | 5 | 10 | 0 | **WINNER** | identity belonging: 2.65x, reach 4313 (2.3x typical), 7.6 s avg watch; low saves/shares, reach-driven |
 | 2026-11-13 | lst-2026-11-12-slip-the-jab | - | 18382057828210224 | 6 WAYS TO SLIP THE JAB AND MAKE THEM PAY | listicle (tactical) | text-on-clip | trial | 2545 (1.00x) | ? | 2 | 10 | 0 | no | tactical: 1.00x |
+| 2026-11-13 | lst-2026-11-13-fighters-at-work | - | 18374419915244317 | 6 THINGS FIGHTERS DO THAT MOST PEOPLE AT WORK DON'T | builder (identity) | text-on-clip | trial | 2852 (1.13x) | ? | 1 | 14 | 0 | no | builder: 1.13x, best builder so far (n=8) |
+| 2026-11-13 | lst-2026-11-13-lost-before-first-punch | - | 18083892563346578 | MOST FIGHTS ARE LOST BEFORE THE FIRST PUNCH | statement (identity) | text-on-clip | trial | 2330 (0.92x) | ? | 1 | 9 | 0 | no | statement: 0.92x |
+| 2026-11-13 | lst-2026-11-13-walking-onto-punches | - | 18135438076707128 | 6 WAYS TO STOP WALKING ONTO PUNCHES | listicle (tactical) | text-on-clip | trial | 2940 (1.17x) | ? | 19 | 20 | 0 | no | tactical fight problem: 1.17x, 19 shares + 20 saves |
+| 2026-11-14 | lst-2026-11-13-off-the-ropes | - | 18415530715080463 | 6 WAYS TO GET OFF THE ROPES WHEN YOU'RE TRAPPED | listicle (tactical) | text-on-clip | trial | 2494 (0.99x) | ? | 0 | 8 | 0 | no | tactical: 0.99x |
 
 ## Patterns so far
 - _Add a line whenever a test is decided. Keep it to what the numbers showed._
