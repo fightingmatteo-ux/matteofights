@@ -5154,9 +5154,10 @@
       "hook": "Bigger guys win the trade. Saenchai never traded.",
       "opening": "contrast",
       "not_before": "2026-11-17T16:00:00Z",
-      "approved": false,
+      "approved": true,
       "status": "queued",
-      "slot_note": "Fighter Breakdown Episode 1 (Saenchai): 2 hooks/day between the listicle slots (11:00 and 15:30 NY), contrast/question first, reframe last, 17 to 19 Nov, before the Lomachenko trials (20 to 22 Nov). If these slip, move Loma by the same days."
+      "slot_note": "Fighter Breakdown Episode 1 (Saenchai): 2 hooks/day between the listicle slots (11:00 and 15:30 NY), contrast/question first, reframe last, 17 to 19 Nov, before the Lomachenko trials (20 to 22 Nov). If these slip, move Loma by the same days.",
+      "approved_note": "Matteo: approved the week via dashboard (2026-11-17T12:30:54Z)"
     },
     {
       "id": "2026-11-17-saenchai-ep1-D",
@@ -5174,9 +5175,10 @@
       "hook": "Always sparring someone bigger? Steal this from Saenchai.",
       "opening": "question",
       "not_before": "2026-11-17T20:30:00Z",
-      "approved": false,
+      "approved": true,
       "status": "queued",
-      "slot_note": "Fighter Breakdown Episode 1 (Saenchai): 2 hooks/day between the listicle slots (11:00 and 15:30 NY), contrast/question first, reframe last, 17 to 19 Nov, before the Lomachenko trials (20 to 22 Nov). If these slip, move Loma by the same days."
+      "slot_note": "Fighter Breakdown Episode 1 (Saenchai): 2 hooks/day between the listicle slots (11:00 and 15:30 NY), contrast/question first, reframe last, 17 to 19 Nov, before the Lomachenko trials (20 to 22 Nov). If these slip, move Loma by the same days.",
+      "approved_note": "Matteo: approved the week via dashboard (2026-11-17T12:30:54Z)"
     },
     {
       "id": "2026-11-17-saenchai-ep1-B",
@@ -5194,9 +5196,10 @@
       "hook": "Most fighters try to hit harder than the bigger guy. Saenchai made the bigger guy miss, fall over, and start again.",
       "opening": "contrast",
       "not_before": "2026-11-18T16:00:00Z",
-      "approved": false,
+      "approved": true,
       "status": "queued",
-      "slot_note": "Fighter Breakdown Episode 1 (Saenchai): 2 hooks/day between the listicle slots (11:00 and 15:30 NY), contrast/question first, reframe last, 17 to 19 Nov, before the Lomachenko trials (20 to 22 Nov). If these slip, move Loma by the same days."
+      "slot_note": "Fighter Breakdown Episode 1 (Saenchai): 2 hooks/day between the listicle slots (11:00 and 15:30 NY), contrast/question first, reframe last, 17 to 19 Nov, before the Lomachenko trials (20 to 22 Nov). If these slip, move Loma by the same days.",
+      "approved_note": "Matteo: approved the week via dashboard (2026-11-17T12:30:54Z)"
     },
     {
       "id": "2026-11-17-saenchai-ep1-C",
@@ -5214,9 +5217,10 @@
       "hook": "Saenchai gave up weight for most of his career, and still made the bigger guy look slow.",
       "opening": "result",
       "not_before": "2026-11-18T20:30:00Z",
-      "approved": false,
+      "approved": true,
       "status": "queued",
-      "slot_note": "Fighter Breakdown Episode 1 (Saenchai): 2 hooks/day between the listicle slots (11:00 and 15:30 NY), contrast/question first, reframe last, 17 to 19 Nov, before the Lomachenko trials (20 to 22 Nov). If these slip, move Loma by the same days."
+      "slot_note": "Fighter Breakdown Episode 1 (Saenchai): 2 hooks/day between the listicle slots (11:00 and 15:30 NY), contrast/question first, reframe last, 17 to 19 Nov, before the Lomachenko trials (20 to 22 Nov). If these slip, move Loma by the same days.",
+      "approved_note": "Matteo: approved the week via dashboard (2026-11-17T12:30:54Z)"
     },
     {
       "id": "2026-11-17-saenchai-ep1-E",
@@ -5234,9 +5238,10 @@
       "hook": "People think beating a bigger guy takes power. Saenchai did it with balance.",
       "opening": "reframe",
       "not_before": "2026-11-19T16:00:00Z",
-      "approved": false,
+      "approved": true,
       "status": "queued",
-      "slot_note": "Fighter Breakdown Episode 1 (Saenchai): 2 hooks/day between the listicle slots (11:00 and 15:30 NY), contrast/question first, reframe last, 17 to 19 Nov, before the Lomachenko trials (20 to 22 Nov). If these slip, move Loma by the same days."
+      "slot_note": "Fighter Breakdown Episode 1 (Saenchai): 2 hooks/day between the listicle slots (11:00 and 15:30 NY), contrast/question first, reframe last, 17 to 19 Nov, before the Lomachenko trials (20 to 22 Nov). If these slip, move Loma by the same days.",
+      "approved_note": "Matteo: approved the week via dashboard (2026-11-17T12:30:54Z)"
     }
   ]
 }
