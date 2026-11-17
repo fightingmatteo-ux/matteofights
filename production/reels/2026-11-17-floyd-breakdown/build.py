@@ -1,0 +1,94 @@
+"""Editorial talking-head reel (the look since 2026-10-20): python -P build.py A
+
+Copy production/reels/_TEMPLATE/editorial/ (build.py, make.sh, work/template.html) into the new reel, fill REEL
+below from the transcript, then `bash make.sh A` (assemble -> cut-out -> build -> render -> glitch check).
+Kit + rules: production/editing/reel-kit/editorial/README.md. Worked example: 2026-10-20-freeze-editorial/.
+
+Words are the UPPERCASE tokens in work/edl_<V>.json. ("WORD", k) = the k-th time that word is said.
+"""
+import json
+import os
+import re
+import shutil
+import sys
+
+sys.path.insert(0, "../../editing/reel-kit/editorial")
+sys.path.insert(0, "../../../tools/planreel")
+import cutout  # noqa: E402
+import plan  # noqa: E402
+
+# ---------------------------------------------------------------- fill this in per reel
+REEL = {
+    # per variant: lead lines on frame 0, the hook word behind his head flies forward on `on`, title clears at `until`
+    # (each hook's fight clip cuts in at `until`, see work/broll_<V>.json)
+    "hooks": {
+        "A": {"lead": ["Everyone aimed at Floyd's"], "word": "chin.", "on": ("CHIN", 1), "until": ("BUT", 1)},
+        "B": {"lead": ["Most boxers block"], "word": "punches.", "on": ("PUNCHES", 1), "until": ("FLOYD", 1)},
+        "C": {"lead": ["Fifty fights,", "fifty"], "word": "wins.", "on": ("WINS", 1), "until": ("HE", 1)},
+        "D": {"lead": ["Why couldn't anyone land", "a clean right hand on"], "word": "Floyd?", "on": ("FLOYD", 1), "until": ("FIGHTER", 1)},
+        "E": {"lead": ["The shoulder roll", "isn't a defense."], "word": "trap.", "on": ("TRAP", 1), "until": ("FIGHTER", 1)},
+    },
+    # body keywords only on lines where his face is on screen (red over fight tape fails contrast)
+    "keys": ["SHOULDERS", "PAY", "CLEAN", "TRAP", "THAILAND", "LOW", "HARDER", "PLAN"],
+    "fx": {},
+    # (first word, card ends before this word, KEYWORD); a 3rd item in a ref = the segment it is in (hooks differ)
+    "cards": [
+        (("THE", 1, "third"), ("NUMBER", 1, "three"), "COPIES"),
+        (("DON'T", 1, "takeaway"), ("HERE'S", 1, "end"), "MISS"),
+    ],
+    "slam": ["COPIES"],
+    "bed": "../../listicles/music/epic-bold-drums-alex-morgan.mp3",   # same bed as Episode 1 (Saenchai)
+}
+# ----------------------------------------------------------------
+
+V = sys.argv[1] if len(sys.argv) > 1 else "A"
+d = json.load(open(f"work/edl_{V}.json", encoding="utf-8"))
+WORDS = d["words"]
+FG = f"assets/media/fg_{V}_full.webm"
+
+
+SEGNAME = {s["i"]: s["name"] for s in d["segments"]}
+
+
+def W(ref):
+    word, k, *seg = ref
+    return [w for w in WORDS if w["w"] == word and (not seg or SEGNAME[w["seg"]] == seg[0])][k - 1]["s"]
+
+
+hook = REEL["hooks"][V]
+title_end = W(hook["until"]) - 0.06
+swap = W(hook["on"]) - 0.02
+cards = [(W(a) - 0.06, W(b) - (0.12 if i == len(REEL["cards"]) - 1 else 0.08), kw) for i, (a, b, kw) in enumerate(REEL["cards"])]
+head = lambda t: cutout.head_top(FG, t) or 660  # noqa: E731
+# hook word: sized to fit, placed so his head hides ~40% of it until it flies forward
+hook_size = min(360, int(780 / (0.45 * len(hook["word"]))))  # fits the frame after the 1.26x fly-forward  # "head." is ~790 px wide at 360 px
+behind_top = min(head(t) for t in (0.0, swap / 2, swap)) - int(127 * hook_size / 360)
+
+# cutaways: make_broll.py-style work/broll.json ({name: {start, dur}}, files assets/media/b_<name>.mp4), if the reel has any
+broll = json.load(open(f"work/broll_{V}.json", encoding="utf-8")) if os.path.exists(f"work/broll_{V}.json") else {}
+import daycards  # noqa: E402
+_pl = json.load(open("work/plan.json", encoding="utf-8"))
+_win = [(c["start"], c["dur"]) for n, c in sorted(broll.items()) if n.startswith("day")]
+DC_HTML, DC_JS = daycards.cards(_pl, _pl["keyword"], _win)
+_cardspans = [(a, a + d) for a, d in _win]
+broll = {n: c for n, c in broll.items() if not n.startswith("day")}
+broll_html, broll_spans = plan.broll_html(broll)
+broll_html = broll_html.replace("assets/media/b_", "assets/broll/b_")  # submit.py skips assets/media/b_*.mp4
+ed = plan.build(d, keys=set(REEL["keys"]), cards=cards, slam=set(REEL["slam"]), fx=REEL["fx"],
+                hide=[(0, title_end)] + _cardspans, title_end=title_end, back_top=lambda t: head(t) - 235, broll=broll_spans,
+                **({"bed": "assets/media/bed" + os.path.splitext(REEL["bed"])[1]} if REEL.get("bed") else {}))
+css, js = plan.install(".", bed_seconds=None if REEL.get("bed") else d["duration"] + 1)
+if REEL.get("bed"):
+    os.makedirs("assets/media", exist_ok=True)
+    shutil.copy(REEL["bed"], "assets/media/bed" + os.path.splitext(REEL["bed"])[1])
+
+fill = {"ED_CSS": css, "ED_JS": js, "ED_HTML_CAPS": ed["caps"], "ED_HTML_CAPS_BACK": ed["caps_back"],
+        "ED_HTML_CARDS": ed["cards"], "ED_AUDIO": ed["audio"], "ED_PLAN": ed["plan"], "ED_BROLL": broll_html,
+        "AROLL": f"assets/media/aroll_{V}.mp4", "FG": FG, "DUR": f"{d['duration']:.3f}",
+        "HOOK_LEAD": "".join(f'<span class="lead">{x}</span>' for x in hook["lead"]), "HOOK_WORD": hook["word"],
+        "HOOK_SIZE": str(hook_size), "BEHIND_TOP": str(behind_top), "TITLE_END": f"{title_end:.3f}",
+        "HEAD_SWAP": f"{swap:.3f}", "FRONT_DUR": f"{title_end - swap:.3f}", "HEAD_SFX": f"{swap - 0.09:.3f}",
+        "CAP_TOP": "330", "BACK_TOP": "0", "DAYCARDS_HTML": DC_HTML, "DAYCARDS_JS": DC_JS}
+src = open("work/template.html", encoding="utf-8").read()
+open("index.html", "w", encoding="utf-8").write(re.sub(r"\{\{(\w+)\}\}", lambda m: fill[m.group(1)], src))
+print(f"{V}: index.html built, {d['duration']:.1f}s, {len(json.loads(ed['plan'])['phrases'])} phrases, {len(cards)} cards")

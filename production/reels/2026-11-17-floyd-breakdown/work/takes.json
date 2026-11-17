@@ -1,0 +1,45 @@
+{
+ "src": "../../../media/floyd-ep-src/raw.mp4",
+ "words": "work/words.json",
+ "speed": 1.0,
+ "takes": {
+  "hookA": [3.85, 9.45],
+  "hookB": [14.72, 20.95],
+  "hookC": [24.82, 30.2],
+  "hookD": [33.3, 37.85],
+  "hookE": [40.68, 44.15],
+  "intro": [[45.1, 45.76], [47.12, 57.6]],
+  "body": [64.45, 77.2],
+  "one": [78.2, 86.45],
+  "two": [87.25, 94.9],
+  "third": [95.95, 99.1],
+  "three": [99.25, 111.88],
+  "takeaway": [111.91, 120.3],
+  "end": [[120.65, 124.75], [60.2, 63.0], [125.05, 131.7]]
+ },
+ "variants": {
+  "A": ["hookA", "intro", "body", "one", "two", "third", "three", "takeaway", "end"],
+  "B": ["hookB", "intro", "body", "one", "two", "third", "three", "takeaway", "end"],
+  "C": ["hookC", "intro", "body", "one", "two", "third", "three", "takeaway", "end"],
+  "D": ["hookD", "intro", "body", "one", "two", "third", "three", "takeaway", "end"],
+  "E": ["hookE", "intro", "body", "one", "two", "third", "three", "takeaway", "end"]
+ },
+ "why": {
+  "source": "13 Pocket 3 clips (DJI 0197-0224, 17 Nov), one clip per section, each opens with a spoken slate ('Floyd, take A'); prepped and joined into media/floyd-ep-src/raw.mp4 (list.txt has the clip offsets). Every range starts after the slate, onsets from the audio energy (Whisper smears the first word after the slate)",
+  "hookA..E": "one take each. C runs on past the sheet's line: '50 fights, 50 wins. He barely got hit clean. Here's the difference.'",
+  "intro": "only take; spoken 'Episode 3' (45.8-46.85) cut out as in the Lomachenko episode, 0.3 s of his own pause kept before 'I'm Matteo'",
+  "body..takeaway": "only takes, one clip each. Clip 0220 is 'The third one is the one that nobody copies', clip 0222 opens 'Number three, the pull counter'",
+  "end": "only take; 2.8 s of room tone from the body clip's silence (60.2-63.0, same spot and mic) spliced after 'Monday to Friday' for the 5 day cards"
+ },
+ "fix": {
+  "MATEO": "MATTEO",
+  "LLOYD": "FLOYD",
+  "50": "FIFTY",
+  "0": "ZERO",
+  "-0": "ZERO",
+  "1": "ONE",
+  "2": "TWO",
+  "3": "THREE",
+  "16": "SIXTEEN"
+ }
+}
