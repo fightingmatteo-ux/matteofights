@@ -3764,7 +3764,14 @@
       "posting_since": "2026-11-13T23:30:58Z",
       "media_id": "18135438076707128",
       "permalink": "https://www.instagram.com/reel/Dfs0QSajr5X/",
-      "posted_at": "2026-11-13T23:31:43Z"
+      "posted_at": "2026-11-13T23:31:43Z",
+      "video_asset_fb": "lst-2026-11-13-walking-onto-punches-fb.mp4",
+      "fb_pick": {
+        "at": "2026-11-17T02:55:00Z",
+        "ig_views": 2939,
+        "vs_median": 1.15,
+        "shares_saves_per_1k": 13.3
+      }
     },
     {
       "id": "lst-2026-11-14-more-disciplined",
