@@ -3872,11 +3872,18 @@
       "not_before": "2026-11-17T23:30:00Z",
       "min_gap_hours": 2.5,
       "approved": true,
-      "status": "queued",
+      "status": "posted",
       "cta": "protocol",
       "app_audio": "id:496614019576474 Echo Sax Feeling Blue - Caleb Arredondo (add in the Instagram app)",
       "video_asset_music": "lst-2026-11-17-steal-from-loma-music.mp4",
-      "approved_note": "Matteo: approved the week of 10-18 Nov in chat ('Make sure to keep posting') 2026-11-12 (recorded 2026-11-12T13:51Z)"
+      "approved_note": "Matteo: approved the week of 10-18 Nov in chat ('Make sure to keep posting') 2026-11-12 (recorded 2026-11-12T13:51Z)",
+      "audio_id": "496614019576474",
+      "audio_title": "Caleb Arredondo - Echo Sax Feeling Blue",
+      "audio_artist": "sovenhq",
+      "posting_since": "2026-11-17T23:30:54Z",
+      "media_id": "18343909621256479",
+      "permalink": "https://www.instagram.com/reel/Df3HbFRjh9E/",
+      "posted_at": "2026-11-17T23:31:37Z"
     },
     {
       "id": "lst-2026-11-18-calm-when-panic",
