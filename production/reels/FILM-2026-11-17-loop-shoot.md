@@ -11,98 +11,98 @@ Built from `2026-11-17-loop-shoot/scripts-loop.json` (edit there, run `build_loo
 - Shorter than the first batch: about 35 to 40 s per reel. Episode numbers 1 to 3 are Saenchai, Lomachenko and Floyd; these are 4 to 7.
 - Edit rules: keep word tails (never trim on word ends), no speed changes, plan day cards over the PLAN line, b-roll shows what the words say.
 
-## TYSON: Mike Tyson (Episode 4 · Boxing · peek-a-boo), about 43 s
+## GANE: Ciryl Gane (Episode 4 · Heavyweight · movement and distance), about 43 s
 
-Why: Biggest name recognition in the series. The old Tyson plan reel (no breakdown) got under 350 views, so this tests the new shape on the same fighter.
-Before filming: Plan exists (tyson-peekaboo). Check: Cus D'Amato's peek-a-boo style, heavyweight champion at twenty.
+Why: Recent hype: stopped Alex Pereira (TKO, round 2, UFC Freedom 250 at the White House, June 14) and was reported to have fought at UFC 334 on Nov 14. Replaces Tyson.
+Before filming: Plan NOT written yet (Claude writes it before this posts). Confirm: Muay Thai start, the Pereira result and the UFC 334 result. Part three describes his style in general, not one fight, so pick clips that show exactly that.
 
 | Loop | Type | Bridge (end of reel) | Hook (start of reel) |
 |---|---|---|---|
-| A | contrast | So if you're the smaller guy in the room, | Tyson was short for a heavyweight, and he made that his weapon. |
-| B | question | And that's what makes people ask: | Why was Tyson so hard to hit when he was walking straight at you? |
-| C | result | And that is why | Tyson was heavyweight champion at twenty, and it started with his defence. |
-| D | reframe | And most people miss this part. | Everyone thinks Tyson was just power. Watch his head, not his hands. |
-| E | story | It all goes back to one coach. | Cus D'Amato took a short kid and built a whole style around being short. |
+| A | contrast | And that's the difference: | Most heavyweights stand and trade. Gane never does. |
+| B | question | Which is why people ask: | Why do the biggest hitters in the UFC keep missing Ciryl Gane? |
+| C | result | And that's the style behind it. | Ciryl Gane stopped Alex Pereira at the White House. Here's how he fights. |
+| D | reframe | And here's the thing. | Gane's best weapon isn't his power. It's his distance. |
+| E | story | It all starts with where he came from. | Ciryl Gane started in Muay Thai, and you can see it in his feet. |
 
 **BODY (said once)**
 
 > Fighter breakdown, episode four. I'm Matteo. I've trained in five countries, and every episode I break down one fighter you can learn from.
-> It's called peek-a-boo, and it's three things.
-> One. The guard. Gloves on his cheeks, elbows on his ribs. He's the smallest target in the ring.
-> Two. His head never stops. Side to side, even when nobody's punching. You can't aim at something that's always moving.
-> The third one is where the power came from.
-> Three. Every slip loads a punch. Slip to the right and your weight is already on your right leg. Right hand to the body, right uppercut. His defence and his offence were the same move.
-> So if you're shorter than your sparring partner, move your head first, then punch.
+> He's a heavyweight who moves like a lightweight, and it comes down to three things.
+> One. He never stands in front of you. A step to the side after every exchange, so your best shot hits air.
+> Two. His reach. A long jab and a teep from the edge of range, and he's gone before you can answer.
+> The third one is why big hitters struggle against him.
+> Three. He counters when you commit. Every time you step in with something big, he has already moved, and the counter lands on your way out.
+> So if you spar bigger hitters, don't stand in front of them. Step off the line, then answer.
 > Comment PLAN and the fighter you want next, and I'll send you the plan for this one.
 
-## ADESANYA: Israel Adesanya (Episode 5 · Kickboxing in MMA · feints), about 41 s
+## GAETHJE: Justin Gaethje (Episode 5 · MMA · leg kicks and pressure), about 43 s
 
-Why: Competitor outlier: 'Why Israel Adesanya is called The Last Stylebender', 286k views, 39x that channel's normal.
-Before filming: Plan NOT written yet (Claude writes it before this posts). Check: long kickboxing career before the UFC. The 'same fake twice' part is a breakdown of how feinting works, so confirm it against a clip before you say it.
+Why: Recent hype: stopped the undefeated Ilia Topuria (TKO, round 4) at UFC Freedom 250 on June 14 to become lightweight champion.
+Before filming: Plan NOT written yet (Claude writes it before this posts). Confirm: the Topuria result, college wrestling background. Parts one to three describe his general style, so pick clips of his leg kicks and body work.
 
 | Loop | Type | Bridge (end of reel) | Hook (start of reel) |
 |---|---|---|---|
-| A | contrast | And that's the difference: | Most fighters throw to land. Adesanya throws to learn. |
-| B | question | Which is why people ask: | Why does everyone freeze against Adesanya? |
-| C | result | Because of that, | Adesanya makes you defend strikes he never throws. |
-| D | reframe | And here's the thing. | Adesanya's best weapon isn't a strike. It's a twitch. |
-| E | story | It comes from his background. | Adesanya was a kickboxer for years before he ever fought in a cage, and it shows. |
+| A | contrast | And that's the difference: | Gaethje doesn't out-skill you. He out-lasts you. |
+| B | question | Which is why people ask: | How did Gaethje beat an undefeated champion? |
+| C | result | And that is how | Gaethje stopped Ilia Topuria at the White House. |
+| D | reframe | People get him wrong. | Gaethje isn't just a brawler. Look at what he does to your legs. |
+| E | story | It goes back to his past. | Gaethje was a college wrestler before he fought, and it shows in how calm he is under pressure. |
 
 **BODY (said once)**
 
 > Fighter breakdown, episode five. I'm Matteo. I've trained in five countries, and every episode I break down one fighter you can learn from.
-> He's a kickboxer in a cage, and it comes down to three things.
-> One. The feints. A twitch of the shoulder, the hip, the knee. You react every time, and now he knows how you react.
-> Two. The distance. He stands one step outside your reach, so you have to walk onto his counter.
-> The third one is why people freeze.
-> Three. The same fake, twice. The first time you flinch. The second time it's real, and it lands in the gap you just opened.
-> So next spar, spend one round only faking. Watch how your partner reacts. That's your map.
+> He's a brawler with a plan, and it comes down to three things.
+> One. The leg kicks. Every round he chops at your lead leg, so your movement fades as the fight goes on.
+> Two. He walks forward without panic. He's fine taking one to give one, so you start fighting scared of the exchange.
+> The third one is what beat an undefeated champion.
+> Three. He makes every round cost you. The leg kicks and body shots take your speed, and once your hands slow down, the head shots land.
+> So if you're the one pressing, make your partner pay in the legs and the body first. The head comes later.
 > Comment PLAN and the fighter you want next, and I'll send you the plan for this one.
 
-## KHABIB: Khabib Nurmagomedov (Episode 6 · MMA · wrestling pressure), about 42 s
+## INOUE: Naoya Inoue (Episode 6 · Boxing · balance and body shots), about 39 s
 
-Why: Adds grappling to the series. No competitor outlier behind it in our data, so it is the control against the strikers.
-Before filming: Plan exists (khabib-pressure). Check: retired 29 and 0, wrestled from early childhood under his father.
+Why: Recent hype: beat Junto Nakatani by decision at the Tokyo Dome on May 2 (about 55,000 fans) to stay undefeated at 33 and 0 and keep the undisputed super bantamweight title.
+Before filming: Plan NOT written yet (Claude writes it before this posts). Confirm: 33 and 0, five foot five, learned boxing from his father. Part three (balance) is a style breakdown, so check it against a clip.
 
 | Loop | Type | Bridge (end of reel) | Hook (start of reel) |
 |---|---|---|---|
-| A | contrast | And that's the whole point. | Everyone knew Khabib was going to shoot. Nobody could stop it. |
-| B | question | So the question is: | Why did great strikers look helpless against Khabib? |
-| C | result | And that's how he did it: | Twenty-nine fights, zero losses, and the game plan was three steps. |
-| D | reframe | People miss this. | Khabib's punches weren't there to knock you out. They were there to walk you to the fence. |
-| E | story | It started when he was a kid. | Khabib wrestled from early childhood under his father, and it shows in every fight. |
+| A | contrast | And that's the secret: | Everyone talks about Inoue's power. Watch his feet instead. |
+| B | question | Which brings up a question: | How does a five-foot-five super bantamweight hit this hard? |
+| C | result | And that's why | Thirty-three fights, zero losses, and a sold-out Tokyo Dome. Here's what Inoue does. |
+| D | reframe | Most people miss this. | Inoue's nickname is the Monster. His real weapon is his balance. |
+| E | story | It goes back to when he was a kid. | Inoue learned boxing from his father as a kid, and he still fights on the basics. |
 
 **BODY (said once)**
 
 > Fighter breakdown, episode six. I'm Matteo. I've trained in five countries, and every episode I break down one fighter you can learn from.
-> Everyone says it's his wrestling. It's how he uses it.
-> One. He walks you to the fence. His punches aren't there to knock you out. They're there to close the distance.
-> Two. He never stops at one attempt. The single leg fails, so it becomes a double. That fails, so it's a trip. The next one is already coming.
-> The third one is why nobody had answers.
-> Three. He makes you carry him. Once you're down, all his weight is on you. Every second, you're carrying him. You get tired. He doesn't.
-> So if you grapple, don't fall in love with one takedown. Chain three.
+> He's called the Monster, and it comes down to three things.
+> One. The jab. Fast, from the edge of range. It measures you and hides everything behind it.
+> Two. The body shot. He digs to the body early, so your guard comes down by the middle rounds.
+> The third one is why his power looks so heavy.
+> Three. Balance. His weight is over his feet on every punch, so the whole body goes into it, even the ones that don't look big.
+> So if you want more power, don't swing harder. Get your feet under you first.
 > Comment PLAN and the fighter you want next, and I'll send you the plan for this one.
 
-## USYK: Oleksandr Usyk (Episode 7 · Boxing · balance (optional 4th)), about 38 s
+## PEREIRA: Alex Pereira (Episode 7 · Kickboxing in MMA · the left hook (optional 4th)), about 39 s
 
-Why: Optional fourth: chosen for style variety and because the plan exists. No competitor outlier behind it, so skip it if you only want three.
-Before filming: Plan exists (usyk-balance). Check: southpaw, undisputed cruiserweight, beat Joshua twice and Fury twice.
+Why: Recent hype, mixed: stopped by Ciryl Gane (round 2) on June 14. Still the biggest name in kickboxing-to-MMA, and the left hook is a classic breakdown. Skip it if you want only winners.
+Before filming: Plan NOT written yet (Claude writes it before this posts). Confirm: Glory kickboxing champion, UFC champion in two weight classes. Parts are his general setup, so pick clips that show leg kick then hook.
 
 | Loop | Type | Bridge (end of reel) | Hook (start of reel) |
 |---|---|---|---|
-| A | contrast | And that's the secret: | Usyk beat much bigger men, and he didn't hit harder than them. |
-| B | question | Which brings up a question: | How does a cruiserweight beat the biggest men in boxing? |
-| C | result | And that's why | Usyk beat Joshua twice and Fury twice. Here's what he was doing. |
-| D | reframe | Most people laugh at it. | Usyk's balance drills look weird. They're the whole fight. |
-| E | story | It looks like play. | Usyk's training videos look like a dance class, and there's a reason. |
+| A | contrast | And that's the difference: | Pereira doesn't throw the left hook to land it. He throws kicks so it lands. |
+| B | question | So the question is: | Why does Alex Pereira's left hook land even when you know it's coming? |
+| C | result | And that's why | Pereira was champion in two weight classes. Here's the weapon behind it. |
+| D | reframe | And here's the thing. | Pereira's best weapon isn't the left hook. It's the leg kick. |
+| E | story | It all goes back to kickboxing. | Pereira was a kickboxing champion before he ever fought in the UFC. |
 
 **BODY (said once)**
 
 > Fighter breakdown, episode seven. I'm Matteo. I've trained in five countries, and every episode I break down one fighter you can learn from.
-> He's a southpaw, and it comes down to three things.
-> One. His feet never stop. Small steps, side to side, so a bigger man never gets a still target.
-> Two. His head stays over his feet. Even moving, he's balanced, so he can punch from any position.
-> The third one is what those weird drills are for.
-> Three. He punches on the move. Sideways, backwards, he throws and lands without stopping to set his feet.
-> So if you're always the smaller one, stop setting your feet. Punch while you move.
+> His left hook is famous, and it comes down to three things.
+> One. The leg kicks. He chops at your legs, so your hands drop to check them.
+> Two. The patience. He stays loose and relaxed, waiting for the exact moment you look down.
+> The third one is the one that ends fights.
+> Three. The left hook over the top. It comes with his whole body behind it, right into the space the kick just opened.
+> So if you throw a hook, set it up. Kick low first, then go high.
 > Comment PLAN and the fighter you want next, and I'll send you the plan for this one.

@@ -5,83 +5,199 @@
   "cta": "Comment PLAN and the fighter you want next, and I'll send you the plan for this one.",
   "reels": [
     {
-      "id": "tyson", "ep": "four", "slate": "TYSON", "title": "Mike Tyson", "tag": "Episode 4 · Boxing · peek-a-boo",
-      "why": "Biggest name recognition in the series. The old Tyson plan reel (no breakdown) got under 350 views, so this tests the new shape on the same fighter.",
-      "note": "Plan exists (tyson-peekaboo). Check: Cus D'Amato's peek-a-boo style, heavyweight champion at twenty.",
+      "id": "gane",
+      "ep": "four",
+      "slate": "GANE",
+      "title": "Ciryl Gane",
+      "tag": "Episode 4 · Heavyweight · movement and distance",
+      "why": "Recent hype: stopped Alex Pereira (TKO, round 2, UFC Freedom 250 at the White House, June 14) and was reported to have fought at UFC 334 on Nov 14. Replaces Tyson.",
+      "note": "Plan NOT written yet (Claude writes it before this posts). Confirm: Muay Thai start, the Pereira result and the UFC 334 result. Part three describes his style in general, not one fight, so pick clips that show exactly that.",
       "loops": [
-        {"k": "A", "type": "contrast", "bridge": "So if you're the smaller guy in the room,", "hook": "Tyson was short for a heavyweight, and he made that his weapon."},
-        {"k": "B", "type": "question", "bridge": "And that's what makes people ask:", "hook": "Why was Tyson so hard to hit when he was walking straight at you?"},
-        {"k": "C", "type": "result", "bridge": "And that is why", "hook": "Tyson was heavyweight champion at twenty, and it started with his defence."},
-        {"k": "D", "type": "reframe", "bridge": "And most people miss this part.", "hook": "Everyone thinks Tyson was just power. Watch his head, not his hands."},
-        {"k": "E", "type": "story", "bridge": "It all goes back to one coach.", "hook": "Cus D'Amato took a short kid and built a whole style around being short."}
+        {
+          "k": "A",
+          "type": "contrast",
+          "bridge": "And that's the difference:",
+          "hook": "Most heavyweights stand and trade. Gane never does."
+        },
+        {
+          "k": "B",
+          "type": "question",
+          "bridge": "Which is why people ask:",
+          "hook": "Why do the biggest hitters in the UFC keep missing Ciryl Gane?"
+        },
+        {
+          "k": "C",
+          "type": "result",
+          "bridge": "And that's the style behind it.",
+          "hook": "Ciryl Gane stopped Alex Pereira at the White House. Here's how he fights."
+        },
+        {
+          "k": "D",
+          "type": "reframe",
+          "bridge": "And here's the thing.",
+          "hook": "Gane's best weapon isn't his power. It's his distance."
+        },
+        {
+          "k": "E",
+          "type": "story",
+          "bridge": "It all starts with where he came from.",
+          "hook": "Ciryl Gane started in Muay Thai, and you can see it in his feet."
+        }
       ],
       "body": [
-        "It's called peek-a-boo, and it's three things.",
-        "One. The guard. Gloves on his cheeks, elbows on his ribs. He's the smallest target in the ring.",
-        "Two. His head never stops. Side to side, even when nobody's punching. You can't aim at something that's always moving.",
-        "The third one is where the power came from.",
-        "Three. Every slip loads a punch. Slip to the right and your weight is already on your right leg. Right hand to the body, right uppercut. His defence and his offence were the same move.",
-        "So if you're shorter than your sparring partner, move your head first, then punch."
+        "He's a heavyweight who moves like a lightweight, and it comes down to three things.",
+        "One. He never stands in front of you. A step to the side after every exchange, so your best shot hits air.",
+        "Two. His reach. A long jab and a teep from the edge of range, and he's gone before you can answer.",
+        "The third one is why big hitters struggle against him.",
+        "Three. He counters when you commit. Every time you step in with something big, he has already moved, and the counter lands on your way out.",
+        "So if you spar bigger hitters, don't stand in front of them. Step off the line, then answer."
       ]
     },
     {
-      "id": "izzy", "ep": "five", "slate": "ADESANYA", "title": "Israel Adesanya", "tag": "Episode 5 · Kickboxing in MMA · feints",
-      "why": "Competitor outlier: 'Why Israel Adesanya is called The Last Stylebender', 286k views, 39x that channel's normal.",
-      "note": "Plan NOT written yet (Claude writes it before this posts). Check: long kickboxing career before the UFC. The 'same fake twice' part is a breakdown of how feinting works, so confirm it against a clip before you say it.",
+      "id": "gaethje",
+      "ep": "five",
+      "slate": "GAETHJE",
+      "title": "Justin Gaethje",
+      "tag": "Episode 5 · MMA · leg kicks and pressure",
+      "why": "Recent hype: stopped the undefeated Ilia Topuria (TKO, round 4) at UFC Freedom 250 on June 14 to become lightweight champion.",
+      "note": "Plan NOT written yet (Claude writes it before this posts). Confirm: the Topuria result, college wrestling background. Parts one to three describe his general style, so pick clips of his leg kicks and body work.",
       "loops": [
-        {"k": "A", "type": "contrast", "bridge": "And that's the difference:", "hook": "Most fighters throw to land. Adesanya throws to learn."},
-        {"k": "B", "type": "question", "bridge": "Which is why people ask:", "hook": "Why does everyone freeze against Adesanya?"},
-        {"k": "C", "type": "result", "bridge": "Because of that,", "hook": "Adesanya makes you defend strikes he never throws."},
-        {"k": "D", "type": "reframe", "bridge": "And here's the thing.", "hook": "Adesanya's best weapon isn't a strike. It's a twitch."},
-        {"k": "E", "type": "story", "bridge": "It comes from his background.", "hook": "Adesanya was a kickboxer for years before he ever fought in a cage, and it shows."}
+        {
+          "k": "A",
+          "type": "contrast",
+          "bridge": "And that's the difference:",
+          "hook": "Gaethje doesn't out-skill you. He out-lasts you."
+        },
+        {
+          "k": "B",
+          "type": "question",
+          "bridge": "Which is why people ask:",
+          "hook": "How did Gaethje beat an undefeated champion?"
+        },
+        {
+          "k": "C",
+          "type": "result",
+          "bridge": "And that is how",
+          "hook": "Gaethje stopped Ilia Topuria at the White House."
+        },
+        {
+          "k": "D",
+          "type": "reframe",
+          "bridge": "People get him wrong.",
+          "hook": "Gaethje isn't just a brawler. Look at what he does to your legs."
+        },
+        {
+          "k": "E",
+          "type": "story",
+          "bridge": "It goes back to his past.",
+          "hook": "Gaethje was a college wrestler before he fought, and it shows in how calm he is under pressure."
+        }
       ],
       "body": [
-        "He's a kickboxer in a cage, and it comes down to three things.",
-        "One. The feints. A twitch of the shoulder, the hip, the knee. You react every time, and now he knows how you react.",
-        "Two. The distance. He stands one step outside your reach, so you have to walk onto his counter.",
-        "The third one is why people freeze.",
-        "Three. The same fake, twice. The first time you flinch. The second time it's real, and it lands in the gap you just opened.",
-        "So next spar, spend one round only faking. Watch how your partner reacts. That's your map."
+        "He's a brawler with a plan, and it comes down to three things.",
+        "One. The leg kicks. Every round he chops at your lead leg, so your movement fades as the fight goes on.",
+        "Two. He walks forward without panic. He's fine taking one to give one, so you start fighting scared of the exchange.",
+        "The third one is what beat an undefeated champion.",
+        "Three. He makes every round cost you. The leg kicks and body shots take your speed, and once your hands slow down, the head shots land.",
+        "So if you're the one pressing, make your partner pay in the legs and the body first. The head comes later."
       ]
     },
     {
-      "id": "khabib", "ep": "six", "slate": "KHABIB", "title": "Khabib Nurmagomedov", "tag": "Episode 6 · MMA · wrestling pressure",
-      "why": "Adds grappling to the series. No competitor outlier behind it in our data, so it is the control against the strikers.",
-      "note": "Plan exists (khabib-pressure). Check: retired 29 and 0, wrestled from early childhood under his father.",
+      "id": "inoue",
+      "ep": "six",
+      "slate": "INOUE",
+      "title": "Naoya Inoue",
+      "tag": "Episode 6 · Boxing · balance and body shots",
+      "why": "Recent hype: beat Junto Nakatani by decision at the Tokyo Dome on May 2 (about 55,000 fans) to stay undefeated at 33 and 0 and keep the undisputed super bantamweight title.",
+      "note": "Plan NOT written yet (Claude writes it before this posts). Confirm: 33 and 0, five foot five, learned boxing from his father. Part three (balance) is a style breakdown, so check it against a clip.",
       "loops": [
-        {"k": "A", "type": "contrast", "bridge": "And that's the whole point.", "hook": "Everyone knew Khabib was going to shoot. Nobody could stop it."},
-        {"k": "B", "type": "question", "bridge": "So the question is:", "hook": "Why did great strikers look helpless against Khabib?"},
-        {"k": "C", "type": "result", "bridge": "And that's how he did it:", "hook": "Twenty-nine fights, zero losses, and the game plan was three steps."},
-        {"k": "D", "type": "reframe", "bridge": "People miss this.", "hook": "Khabib's punches weren't there to knock you out. They were there to walk you to the fence."},
-        {"k": "E", "type": "story", "bridge": "It started when he was a kid.", "hook": "Khabib wrestled from early childhood under his father, and it shows in every fight."}
+        {
+          "k": "A",
+          "type": "contrast",
+          "bridge": "And that's the secret:",
+          "hook": "Everyone talks about Inoue's power. Watch his feet instead."
+        },
+        {
+          "k": "B",
+          "type": "question",
+          "bridge": "Which brings up a question:",
+          "hook": "How does a five-foot-five super bantamweight hit this hard?"
+        },
+        {
+          "k": "C",
+          "type": "result",
+          "bridge": "And that's why",
+          "hook": "Thirty-three fights, zero losses, and a sold-out Tokyo Dome. Here's what Inoue does."
+        },
+        {
+          "k": "D",
+          "type": "reframe",
+          "bridge": "Most people miss this.",
+          "hook": "Inoue's nickname is the Monster. His real weapon is his balance."
+        },
+        {
+          "k": "E",
+          "type": "story",
+          "bridge": "It goes back to when he was a kid.",
+          "hook": "Inoue learned boxing from his father as a kid, and he still fights on the basics."
+        }
       ],
       "body": [
-        "Everyone says it's his wrestling. It's how he uses it.",
-        "One. He walks you to the fence. His punches aren't there to knock you out. They're there to close the distance.",
-        "Two. He never stops at one attempt. The single leg fails, so it becomes a double. That fails, so it's a trip. The next one is already coming.",
-        "The third one is why nobody had answers.",
-        "Three. He makes you carry him. Once you're down, all his weight is on you. Every second, you're carrying him. You get tired. He doesn't.",
-        "So if you grapple, don't fall in love with one takedown. Chain three."
+        "He's called the Monster, and it comes down to three things.",
+        "One. The jab. Fast, from the edge of range. It measures you and hides everything behind it.",
+        "Two. The body shot. He digs to the body early, so your guard comes down by the middle rounds.",
+        "The third one is why his power looks so heavy.",
+        "Three. Balance. His weight is over his feet on every punch, so the whole body goes into it, even the ones that don't look big.",
+        "So if you want more power, don't swing harder. Get your feet under you first."
       ]
     },
     {
-      "id": "usyk", "ep": "seven", "slate": "USYK", "title": "Oleksandr Usyk", "tag": "Episode 7 · Boxing · balance (optional 4th)",
-      "why": "Optional fourth: chosen for style variety and because the plan exists. No competitor outlier behind it, so skip it if you only want three.",
-      "note": "Plan exists (usyk-balance). Check: southpaw, undisputed cruiserweight, beat Joshua twice and Fury twice.",
+      "id": "pereira",
+      "ep": "seven",
+      "slate": "PEREIRA",
+      "title": "Alex Pereira",
+      "tag": "Episode 7 · Kickboxing in MMA · the left hook (optional 4th)",
+      "why": "Recent hype, mixed: stopped by Ciryl Gane (round 2) on June 14. Still the biggest name in kickboxing-to-MMA, and the left hook is a classic breakdown. Skip it if you want only winners.",
+      "note": "Plan NOT written yet (Claude writes it before this posts). Confirm: Glory kickboxing champion, UFC champion in two weight classes. Parts are his general setup, so pick clips that show leg kick then hook.",
       "loops": [
-        {"k": "A", "type": "contrast", "bridge": "And that's the secret:", "hook": "Usyk beat much bigger men, and he didn't hit harder than them."},
-        {"k": "B", "type": "question", "bridge": "Which brings up a question:", "hook": "How does a cruiserweight beat the biggest men in boxing?"},
-        {"k": "C", "type": "result", "bridge": "And that's why", "hook": "Usyk beat Joshua twice and Fury twice. Here's what he was doing."},
-        {"k": "D", "type": "reframe", "bridge": "Most people laugh at it.", "hook": "Usyk's balance drills look weird. They're the whole fight."},
-        {"k": "E", "type": "story", "bridge": "It looks like play.", "hook": "Usyk's training videos look like a dance class, and there's a reason."}
+        {
+          "k": "A",
+          "type": "contrast",
+          "bridge": "And that's the difference:",
+          "hook": "Pereira doesn't throw the left hook to land it. He throws kicks so it lands."
+        },
+        {
+          "k": "B",
+          "type": "question",
+          "bridge": "So the question is:",
+          "hook": "Why does Alex Pereira's left hook land even when you know it's coming?"
+        },
+        {
+          "k": "C",
+          "type": "result",
+          "bridge": "And that's why",
+          "hook": "Pereira was champion in two weight classes. Here's the weapon behind it."
+        },
+        {
+          "k": "D",
+          "type": "reframe",
+          "bridge": "And here's the thing.",
+          "hook": "Pereira's best weapon isn't the left hook. It's the leg kick."
+        },
+        {
+          "k": "E",
+          "type": "story",
+          "bridge": "It all goes back to kickboxing.",
+          "hook": "Pereira was a kickboxing champion before he ever fought in the UFC."
+        }
       ],
       "body": [
-        "He's a southpaw, and it comes down to three things.",
-        "One. His feet never stop. Small steps, side to side, so a bigger man never gets a still target.",
-        "Two. His head stays over his feet. Even moving, he's balanced, so he can punch from any position.",
-        "The third one is what those weird drills are for.",
-        "Three. He punches on the move. Sideways, backwards, he throws and lands without stopping to set his feet.",
-        "So if you're always the smaller one, stop setting your feet. Punch while you move."
+        "His left hook is famous, and it comes down to three things.",
+        "One. The leg kicks. He chops at your legs, so your hands drop to check them.",
+        "Two. The patience. He stays loose and relaxed, waiting for the exact moment you look down.",
+        "The third one is the one that ends fights.",
+        "Three. The left hook over the top. It comes with his whole body behind it, right into the space the kick just opened.",
+        "So if you throw a hook, set it up. Kick low first, then go high."
       ]
     }
   ]
