@@ -1,0 +1,42 @@
+{
+ "hA": {
+  "start": 2.07,
+  "dur": 3.6
+ },
+ "heavy": {
+  "start": 17.22,
+  "dur": 3.5
+ },
+ "step": {
+  "start": 27.7,
+  "dur": 3.3
+ },
+ "catch": {
+  "start": 37.87,
+  "dur": 3.2
+ },
+ "sweep": {
+  "start": 47.3,
+  "dur": 5.4
+ },
+ "day1": {
+  "start": 69.31,
+  "dur": 0.7
+ },
+ "day2": {
+  "start": 70.01,
+  "dur": 0.7
+ },
+ "day3": {
+  "start": 70.71,
+  "dur": 0.7
+ },
+ "day4": {
+  "start": 71.41,
+  "dur": 0.7
+ },
+ "day5": {
+  "start": 72.11,
+  "dur": 0.7
+ }
+}

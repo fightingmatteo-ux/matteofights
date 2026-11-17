@@ -322,6 +322,169 @@
    "res": "720p",
    "note": "Stats Guy: Loma footwork, creating angles. Not tagged yet",
    "moments": []
+  },
+  {
+   "file": "yt-saenchai-vs-giant.mp4",
+   "url": "https://www.youtube.com/watch?v=zgYlkGv5Y1o",
+   "res": "1080p",
+   "note": "Saenchai (pink shorts) vs a much taller, heavier opponent (light blue shorts), one stadium fight 0:00-2:44, then seminar sparring vs a big man in red 2:48-3:46. Reaction face-cam top right (x>1660, y<265): crop it off. Title card at 5.5 s.",
+   "moments": [
+    {
+     "t": 0.0,
+     "dur": 4.6,
+     "fighter": "Saenchai",
+     "action": "opening: the big man throws a knee and punches, Saenchai stays out of range (no face-cam yet)",
+     "used": "S1-A"
+    },
+    {
+     "t": 80.6,
+     "dur": 4.6,
+     "fighter": "Saenchai",
+     "action": "clinch dump, the big man goes over and both hit the floor",
+     "used": "S1-B"
+    },
+    {
+     "t": 85.0,
+     "dur": 4.0,
+     "fighter": "Saenchai",
+     "action": "both get up after the dump and reset"
+    },
+    {
+     "t": 60.6,
+     "dur": 3.3,
+     "fighter": "Saenchai",
+     "action": "big man's kick and follow-up, Saenchai leans out and covers",
+     "used": "S1-C"
+    },
+    {
+     "t": 138.6,
+     "dur": 3.4,
+     "fighter": "Saenchai",
+     "action": "big man swings, Saenchai steps off, big man ends up alone on the ropes",
+     "used": "S1-body step"
+    },
+    {
+     "t": 23.0,
+     "dur": 3.3,
+     "fighter": "Saenchai",
+     "action": "catches the kick, big man hops on one leg until the referee steps in",
+     "used": "S1-body catch"
+    },
+    {
+     "t": 118.5,
+     "dur": 5.5,
+     "fighter": "Saenchai",
+     "action": "catches the kick, takes out the standing leg, big man down then up to his knees",
+     "used": "S1-body sweep"
+    },
+    {
+     "t": 200.6,
+     "dur": 3.6,
+     "fighter": "Saenchai",
+     "action": "seminar sparring: big man in red kicks, Saenchai (yellow) half his size",
+     "used": "S1-body heavier"
+    },
+    {
+     "t": 152.4,
+     "dur": 4.5,
+     "fighter": "Saenchai",
+     "action": "big man tangled in the corner ropes with the referee, Saenchai waits"
+    }
+   ]
+  },
+  {
+   "file": "yt-saenchai-sweeps-throws.mp4",
+   "url": "https://www.youtube.com/watch?v=9AINso2Cjzc",
+   "res": "1080p",
+   "note": "Muay Thai Scholar: Saenchai's Sweeps and Throws. Many fights, most cuts 1.5-2.5 s (too short alone). Small watermark top left (x<400, y<100).",
+   "moments": [
+    {
+     "t": 90.4,
+     "dur": 3.1,
+     "fighter": "Saenchai",
+     "action": "catches the kick and sweeps, opponent on the canvas (dark arena, wide)",
+     "used": "S1-E"
+    },
+    {
+     "t": 165.7,
+     "dur": 1.6,
+     "fighter": "Saenchai",
+     "action": "kick caught, opponent on one leg, swept (pink ring)"
+    },
+    {
+     "t": 43.0,
+     "dur": 1.4,
+     "fighter": "Saenchai",
+     "action": "catches a high kick of a taller fighter, sweeps"
+    },
+    {
+     "t": 6.0,
+     "dur": 5.8,
+     "fighter": "Saenchai",
+     "action": "lifts and dumps a taller opponent (red ring)"
+    }
+   ]
+  },
+  {
+   "file": "yt-saenchai-best-sweeps.mp4",
+   "url": "https://www.youtube.com/watch?v=QynjaH0FIZo",
+   "res": "720p",
+   "note": "Muay Thai Scholar: Saenchai's Best Muay Thai Sweeps. Old stadium tape shot through the ropes, watermark top right. Not used.",
+   "moments": []
+  },
+  {
+   "file": "saenchai-broll/aW6ew2j1ZmQ.mp4",
+   "url": "https://www.youtube.com/watch?v=aW6ew2j1ZmQ",
+   "res": "720p",
+   "note": "YOKKAO: Saenchai sparring in Canada (seminar, bigger partner in black). YOKKAO logo top left (y<110).",
+   "moments": [
+    {
+     "t": 15.3,
+     "dur": 3.8,
+     "fighter": "Saenchai",
+     "action": "sparring: puts the bigger man on the floor, he gets up (Saenchai's back to the camera)",
+     "used": "S1-D"
+    },
+    {
+     "t": 31.0,
+     "dur": 4.0,
+     "fighter": "Saenchai",
+     "action": "sparring: cartwheel kick, the bigger man drops to a knee"
+    },
+    {
+     "t": 29.3,
+     "dur": 3.1,
+     "fighter": "Saenchai",
+     "action": "steps off the line (October editorial 'step')"
+    }
+   ]
+  },
+  {
+   "file": "saenchai-broll/EXPvZzeb5cE.mp4",
+   "url": "https://www.youtube.com/watch?v=EXPvZzeb5cE",
+   "res": "720p",
+   "note": "Riddick Bowe and Saenchai @ 13 Coins Gym (heavyweight boxer next to Saenchai). Used in the October editorial.",
+   "moments": [
+    {
+     "t": 95.6,
+     "dur": 3.3,
+     "fighter": "Saenchai",
+     "action": "size difference next to Riddick Bowe"
+    },
+    {
+     "t": 98.9,
+     "dur": 2.4,
+     "fighter": "Saenchai",
+     "action": "sweep"
+    }
+   ]
+  },
+  {
+   "file": "saenchai-broll/Ub6T7yfhtzY.mp4",
+   "url": "https://www.youtube.com/watch?v=Ub6T7yfhtzY",
+   "res": "720p",
+   "note": "YOKKAO: Saenchai and Superlek sparring vs 13 guys, Pittsburgh seminar 2022 (17 min). Not scanned yet.",
+   "moments": []
   }
  ],
  "wanted": [

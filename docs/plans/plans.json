@@ -872,6 +872,106 @@
      ]
     }
    ]
+  },
+  {
+   "slug": "saenchai-reset",
+   "keywords": [
+    "saenchai",
+    "sanchai",
+    "saenchay"
+   ],
+   "reel": "E1",
+   "match": "saenchai reset plan",
+   "title": "The Saenchai Reset, for Smaller Fighters",
+   "sub": "Monday to Friday. Inspired by how Saenchai trains, not his exact program.",
+   "note": "Saenchai won Lumpinee titles in four weight classes and often gave up weight to find opponents. He beat bigger men with timing and balance, not power.",
+   "days": [
+    {
+     "d": "Monday \u00b7 Step",
+     "items": [
+      [
+       "Side step, then counter",
+       "4 x 2 min",
+       "Shadow. One small step off the line, then answer."
+      ],
+      [
+       "Lean back, kick back",
+       "3 x 1 min / side",
+       "Let the kick pass, return yours."
+      ],
+      [
+       "Pivot out",
+       "3 x 1 min",
+       "Both directions."
+      ]
+     ]
+    },
+    {
+     "d": "Tuesday \u00b7 Balance",
+     "items": [
+      [
+       "Single-leg stand, knee up",
+       "3 x 30 s / leg",
+       ""
+      ],
+      [
+       "Slow teeps with a hold",
+       "3 x 10 / leg",
+       "Hold the leg out for 2 seconds."
+      ],
+      [
+       "Single-leg shadowboxing",
+       "3 x 1 min / leg",
+       "Light punches, stay tall."
+      ]
+     ]
+    },
+    {
+     "d": "Wednesday \u00b7 Catch",
+     "items": [
+      [
+       "Catch a light body kick, step out",
+       "4 x 2 min",
+       "Partner kicks light. Catch, step to the side, let go."
+      ],
+      [
+       "Catch, then push him off balance",
+       "3 x 2 min",
+       "Slow. Feel where his weight is."
+      ]
+     ]
+    },
+    {
+     "d": "Thursday \u00b7 Sweep",
+     "items": [
+      [
+       "Catch, then sweep the standing leg",
+       "4 x 2 min",
+       "On mats, slow, partner knows it's coming."
+      ],
+      [
+       "Sweep step, no partner",
+       "3 x 1 min / side",
+       "Shadow the catch and the sweep as one move."
+      ]
+     ]
+    },
+    {
+     "d": "Friday \u00b7 Rounds",
+     "items": [
+      [
+       "Shadowboxing",
+       "5 x 3 min",
+       "Never stay where your combo ended."
+      ],
+      [
+       "Light technical sparring",
+       "3 x 3 min",
+       "One job: make him miss and start again."
+      ]
+     ]
+    }
+   ]
   }
  ]
 }
