@@ -52,6 +52,11 @@ button:focus-visible{outline:2px solid var(--go);outline-offset:2px}
 .txt .fill{color:var(--go)}
 .txt p.slate{color:var(--go);font-size:.55em;font-weight:800;letter-spacing:.03em;line-height:1.35}
 .txt .br{color:#9fb0ff}
+.card{position:absolute;inset:0;overflow-y:auto;display:flex;flex-direction:column;justify-content:flex-start;gap:18px;padding-block:16px;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px));cursor:pointer}
+.cs{color:var(--go);font-weight:800;font-size:18px;line-height:1.35;max-width:22em;margin:auto auto 0;width:100%}
+.cb{font-family:var(--read);font-weight:600;line-height:1.28;max-width:22em;margin:0 auto auto;width:100%}
+.cb p{margin:0 0 .7em}
+.cb .br{color:#9fb0ff}
 .mir .txt{transform:scaleX(-1)}
 .mark{position:absolute;left:0;right:0;top:32vh;height:0;border-top:2px solid var(--go);opacity:.35;pointer-events:none}
 .cd{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(12,13,16,.86);font-family:var(--read);font-weight:800;font-size:28vh;color:var(--go)}
@@ -83,6 +88,7 @@ button:focus-visible{outline:2px solid var(--go);outline-offset:2px}
     <div class="scroll" id="scroll"><div class="txt" id="txt"></div></div>
     <div class="mark"></div>
     <div class="cd" id="cd" hidden></div>
+    <div class="card" id="card" hidden><div class="cs" id="cs"></div><div class="cb" id="cb"></div></div>
   </div>
   <div class="ctl">
     <button id="prev" aria-label="Previous take">Prev</button>
@@ -92,6 +98,7 @@ button:focus-visible{outline:2px solid var(--go);outline-offset:2px}
     <div class="pair"><button id="sd" aria-label="Slower">-</button><span id="sv"></span><button id="su" aria-label="Faster">+</button></div>
     <div class="pair"><button id="fd" aria-label="Smaller text">A-</button><span id="fv"></span><button id="fu" aria-label="Bigger text">A+</button></div>
     <button id="mir">Mirror</button>
+    <button id="cards">Cards</button>
   </div>
 </div>
 
@@ -110,6 +117,7 @@ let mirror = store.get("ts.mirror", false);
 const flat = [];
 DATA.reels.forEach((r, ri) => r.takes.forEach((t, ti) => flat.push({ri, ti})));
 let cur = 0, playing = false, raf = 0, last = 0, pos = 0, cdTimer = 0, lock = null;
+let cardMode = store.get("ts.cards", true), segs = [], si = 0;
 
 function label(t){ return t.name || NAMES[t.k] || ("Hook " + t.k); }
 function key(i){ const f = flat[i]; return DATA.reels[f.ri].id + ":" + DATA.reels[f.ri].takes[f.ti].k; }
@@ -165,7 +173,7 @@ function open(i){
     box.appendChild(p);
   });
   $("list").hidden = true; $("pr").hidden = false;
-  $("scroll").scrollTop = 0; pos = 0;
+  $("scroll").scrollTop = 0; pos = 0; buildSegs(t); si = 0;
   paint();
 }
 
@@ -176,10 +184,40 @@ function paint(){
   $("stage").classList.toggle("mir", mirror);
   $("mk").classList.toggle("on", !!done[key(cur)]);
   $("mk").textContent = done[key(cur)] ? "Done" : "Got it";
-  $("play").textContent = playing ? "Stop" : "Start";
-  $("play").classList.toggle("on", playing);
+  $("card").hidden = !cardMode; $("scroll").hidden = cardMode; document.querySelector(".mark").hidden = cardMode;
+  $("cards").textContent = cardMode ? "Scroll" : "Cards";
+  $("play").textContent = cardMode ? (si < segs.length - 1 ? "Next " + (si + 1) + "/" + segs.length : "Done") : (playing ? "Stop" : "Start");
+  $("play").classList.toggle("on", playing && !cardMode);
+  if (cardMode && segs.length) paintCard();
 }
 
+function buildSegs(t){
+  segs = [];
+  t.text.split(/\n\n+/).forEach(par => {
+    if (par.startsWith(">> ")) segs.push({s: par.slice(3), body: []});
+    else { if (!segs.length) segs.push({s: "", body: []}); segs[segs.length - 1].body.push(par); }
+  });
+  const out = [];
+  segs.forEach(sg => {
+    if (sg.body.length <= 2) { out.push(sg); return; }
+    for (let i = 0; i < sg.body.length; i += 2) out.push({s: i ? "Keep going, same take" : sg.s, body: sg.body.slice(i, i + 2)});
+  });
+  segs = out;
+}
+function paintCard(){
+  const sg = segs[si]; $("cs").textContent = sg.s;
+  const cb = $("cb"); cb.textContent = ""; cb.style.fontSize = size + "px";
+  sg.body.forEach(par => {
+    const p = document.createElement("p");
+    par.split(/(\{[^}]+\})/).forEach(bit => {
+      if (/^\{/.test(bit)) { const s = document.createElement("span"); s.className = "br"; s.textContent = bit.slice(1, -1) + " "; p.appendChild(s); }
+      else p.append(bit);
+    });
+    cb.appendChild(p);
+  });
+  $("card").scrollTop = 0;
+}
+function seg(d){ const n = si + d; if (n >= 0 && n < segs.length) { si = n; paint(); } }
 function tick(ts){
   if (!playing) return;
   const sc = $("scroll");
@@ -206,13 +244,15 @@ function stop(){
   if (lock) { lock.release().catch(() => {}); lock = null; }
   paint();
 }
-function toggle(){ playing ? stop() : start(); }
+function toggle(){ if (cardMode) { seg(1); return; } playing ? stop() : start(); }
 function go(d){ const i = cur + d; if (i >= 0 && i < flat.length) open(i); }
 
 $("play").onclick = toggle;
 $("scroll").onclick = toggle;
-$("prev").onclick = () => go(-1);
-$("next").onclick = () => go(1);
+$("prev").onclick = () => cardMode ? seg(-1) : go(-1);
+$("next").onclick = () => cardMode ? seg(1) : go(1);
+$("card").onclick = toggle;
+$("cards").onclick = () => { stop(); cardMode = !cardMode; store.set("ts.cards", cardMode); paint(); };
 $("back").onclick = () => { stop(); $("pr").hidden = true; $("list").hidden = false; renderList(); };
 $("mk").onclick = () => { const k = key(cur); if (done[k]) delete done[k]; else done[k] = 1; store.set("ts.done", done); paint(); };
 $("su").onclick = () => { speed = Math.min(12, speed + 1); store.set("ts.speed", speed); paint(); };

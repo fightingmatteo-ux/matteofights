@@ -40,6 +40,54 @@ t = patch(t, ".txt .fill{color:var(--go)}",
           ".txt .fill{color:var(--go)}\n.txt p.slate{color:var(--go);font-size:.55em;font-weight:800;letter-spacing:.03em;line-height:1.35}\n.txt .br{color:#9fb0ff}")
 
 
+# card mode: one segment at a time, tap anywhere or the big button for the next one (default on)
+t = patch(t, '<div class="cd" id="cd" hidden></div>',
+          '<div class="cd" id="cd" hidden></div>\n    <div class="card" id="card" hidden><div class="cs" id="cs"></div><div class="cb" id="cb"></div></div>')
+t = patch(t, '<button id="mir">Mirror</button>', '<button id="mir">Mirror</button>\n    <button id="cards">Cards</button>')
+t = patch(t, ".txt .br{color:#9fb0ff}",
+          ".txt .br{color:#9fb0ff}\n.card{position:absolute;inset:0;overflow-y:auto;display:flex;flex-direction:column;justify-content:flex-start;gap:18px;padding-block:16px;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px));cursor:pointer}\n.cs{color:var(--go);font-weight:800;font-size:18px;line-height:1.35;max-width:22em;margin:auto auto 0;width:100%}\n.cb{font-family:var(--read);font-weight:600;line-height:1.28;max-width:22em;margin:0 auto auto;width:100%}\n.cb p{margin:0 0 .7em}\n.cb .br{color:#9fb0ff}")
+t = patch(t, 'let cur = 0, playing = false, raf = 0, last = 0, pos = 0, cdTimer = 0, lock = null;',
+          'let cur = 0, playing = false, raf = 0, last = 0, pos = 0, cdTimer = 0, lock = null;\nlet cardMode = store.get("ts.cards", true), segs = [], si = 0;')
+t = patch(t, 'function tick(ts){', r'''function buildSegs(t){
+  segs = [];
+  t.text.split(/\n\n+/).forEach(par => {
+    if (par.startsWith(">> ")) segs.push({s: par.slice(3), body: []});
+    else { if (!segs.length) segs.push({s: "", body: []}); segs[segs.length - 1].body.push(par); }
+  });
+  const out = [];
+  segs.forEach(sg => {
+    if (sg.body.length <= 2) { out.push(sg); return; }
+    for (let i = 0; i < sg.body.length; i += 2) out.push({s: i ? "Keep going, same take" : sg.s, body: sg.body.slice(i, i + 2)});
+  });
+  segs = out;
+}
+function paintCard(){
+  const sg = segs[si]; $("cs").textContent = sg.s;
+  const cb = $("cb"); cb.textContent = ""; cb.style.fontSize = size + "px";
+  sg.body.forEach(par => {
+    const p = document.createElement("p");
+    par.split(/(\{[^}]+\})/).forEach(bit => {
+      if (/^\{/.test(bit)) { const s = document.createElement("span"); s.className = "br"; s.textContent = bit.slice(1, -1) + " "; p.appendChild(s); }
+      else p.append(bit);
+    });
+    cb.appendChild(p);
+  });
+  $("card").scrollTop = 0;
+}
+function seg(d){ const n = si + d; if (n >= 0 && n < segs.length) { si = n; paint(); } }
+function tick(ts){''')
+t = patch(t, '$("scroll").scrollTop = 0; pos = 0;\n  paint();', '$("scroll").scrollTop = 0; pos = 0; buildSegs(t); si = 0;\n  paint();')
+t = patch(t, '  $("play").textContent = playing ? "Stop" : "Start";\n  $("play").classList.toggle("on", playing);',
+          '''  $("card").hidden = !cardMode; $("scroll").hidden = cardMode; document.querySelector(".mark").hidden = cardMode;
+  $("cards").textContent = cardMode ? "Scroll" : "Cards";
+  $("play").textContent = cardMode ? (si < segs.length - 1 ? "Next " + (si + 1) + "/" + segs.length : "Done") : (playing ? "Stop" : "Start");
+  $("play").classList.toggle("on", playing && !cardMode);
+  if (cardMode && segs.length) paintCard();''')
+t = patch(t, 'function toggle(){ playing ? stop() : start(); }', 'function toggle(){ if (cardMode) { seg(1); return; } playing ? stop() : start(); }')
+t = patch(t, '$("prev").onclick = () => go(-1);', '$("prev").onclick = () => cardMode ? seg(-1) : go(-1);')
+t = patch(t, '$("next").onclick = () => go(1);', '$("next").onclick = () => cardMode ? seg(1) : go(1);\n$("card").onclick = toggle;\n$("cards").onclick = () => { stop(); cardMode = !cardMode; store.set("ts.cards", cardMode); paint(); };')
+
+
 def words(s):
     return len(s.replace("{", "").replace("}", "").split())
 
