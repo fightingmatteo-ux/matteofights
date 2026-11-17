@@ -1,0 +1,153 @@
+{
+ "src": "../../../media/inoue-ep-src/raw.mp4",
+ "words": "work/words.json",
+ "speed": 1.0,
+ "takes": {
+  "hookA": [
+   20.47,
+   24.1
+  ],
+  "hookB": [
+   50.55,
+   54.55
+  ],
+  "hookC": [
+   66.07,
+   72.7
+  ],
+  "hookD": [
+   107.08,
+   111.7
+  ],
+  "hookE": [
+   126.35,
+   130.65
+  ],
+  "intro": [
+   [
+    173.55,
+    174.42
+   ],
+   [
+    175.75,
+    184.1
+   ]
+  ],
+  "body": [
+   190.2,
+   194.1
+  ],
+  "one": [
+   218.75,
+   224.0
+  ],
+  "two": [
+   249.85,
+   256.15
+  ],
+  "third": [
+   260.4,
+   263.75
+  ],
+  "three": [
+   305.1,
+   313.0
+  ],
+  "takeaway": [
+   317.55,
+   322.45
+  ],
+  "end": [
+   [
+    323.85,
+    331.2
+   ],
+   [
+    163.6,
+    167.6
+   ]
+  ]
+ },
+ "variants": {
+  "A": [
+   "hookA",
+   "intro",
+   "body",
+   "one",
+   "two",
+   "third",
+   "three",
+   "takeaway",
+   "end"
+  ],
+  "B": [
+   "hookB",
+   "intro",
+   "body",
+   "one",
+   "two",
+   "third",
+   "three",
+   "takeaway",
+   "end"
+  ],
+  "C": [
+   "hookC",
+   "intro",
+   "body",
+   "one",
+   "two",
+   "third",
+   "three",
+   "takeaway",
+   "end"
+  ],
+  "D": [
+   "hookD",
+   "intro",
+   "body",
+   "one",
+   "two",
+   "third",
+   "three",
+   "takeaway",
+   "end"
+  ],
+  "E": [
+   "hookE",
+   "intro",
+   "body",
+   "one",
+   "two",
+   "third",
+   "three",
+   "takeaway",
+   "end"
+  ]
+ },
+ "why": {
+  "hooks": "Each hook take opens with a bridge line ('And that's the secret', 'Which brings up a question', 'And that's why', 'Most people miss this', 'It goes back to when he was a kid'); only the claim is kept.",
+  "hookA": "take 3 ('but watch his feet instead')",
+  "hookB": "take 2, '5 foot 5' (take 1 says '5 foot')",
+  "hookC": "take 1, the only one ending 'does different'",
+  "hookD": "take 2, 'Inoue's nickname is the monster'",
+  "hookE": "take 2, 'fights with the basics'",
+  "intro": "spoken 'Episode 6' cut",
+  "body": "only take",
+  "one": "take 2 (last), cleanest",
+  "two": "last take, 'by the middle rounds your guard is already coming down'",
+  "third": "only take",
+  "three": "last take, the only clean full one",
+  "takeaway": "only take",
+  "end": "CTA, then 4.0 s room tone from 163.6 for the 5 plan day cards (0.7 s after the last word so the caption clears)"
+ },
+ "fix": {
+  "MATEO": "MATTEO",
+  "33": "THIRTY-THREE",
+  "0": "ZERO",
+  "5": "FIVE",
+  "1": "ONE",
+  "2": "TWO",
+  "3": "THREE"
+ }
+}

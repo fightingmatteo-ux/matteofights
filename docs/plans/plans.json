@@ -972,6 +972,206 @@
      ]
     }
    ]
+  },
+  {
+   "slug": "gane-distance",
+   "keywords": [
+    "gane",
+    "ciryl",
+    "cyril"
+   ],
+   "reel": "E4",
+   "match": "gane distance plan",
+   "title": "Gane's Distance, at Home",
+   "sub": "Monday to Friday. Inspired by Ciryl Gane's style, not his exact program.",
+   "note": "Gane never stands in front of you: a small step to the side after every exchange, a long jab and teep from the edge of range, and the counter when you commit to a big shot. He came from Muay Thai, and it shows in his feet.",
+   "days": [
+    {
+     "d": "Monday \u00b7 Side steps",
+     "items": [
+      [
+       "Side step drill",
+       "4 x 1 min",
+       "From your stance, step off to the side and turn to face the new line. Feet never cross, never together."
+      ],
+      [
+       "Jab, step off",
+       "3 x 2 min",
+       "Jab, then step to the side before you'd get hit back. Never two jabs from the same spot."
+      ],
+      [
+       "Plank",
+       "3 x 45 s",
+       ""
+      ]
+     ]
+    },
+    {
+     "d": "Tuesday \u00b7 Range",
+     "items": [
+      [
+       "Long jab from the edge",
+       "4 x 2 min",
+       "Touch the target at full reach, then step back out of range."
+      ],
+      [
+       "Teep",
+       "6 x 1 min",
+       "Lift the knee, push through the heel, put the foot back in your stance. Switch legs every round."
+      ],
+      [
+       "Jab, teep, out",
+       "3 x 2 min",
+       "Jab to bring the hands up, teep to the stomach, step back."
+      ]
+     ]
+    },
+    {
+     "d": "Wednesday \u00b7 Counter",
+     "items": [
+      [
+       "Step and counter",
+       "4 x 2 min",
+       "Picture a big right hand. Step off the line, fire a cross as it misses."
+      ],
+      [
+       "Pull and jab",
+       "3 x 2 min",
+       "Lean out of range on the back foot, jab straight back in."
+      ],
+      [
+       "Check hook",
+       "6 x 1 min",
+       "Pivot on the lead foot, finish off to the side. Switch sides every round."
+      ]
+     ]
+    },
+    {
+     "d": "Thursday \u00b7 Engine",
+     "items": [
+      [
+       "Jump rope",
+       "5 x 3 min",
+       "Light on the balls of your feet."
+      ],
+      [
+       "Fast feet in stance",
+       "4 x 30 s",
+       "Small quick steps in every direction, hands up."
+      ]
+     ]
+    },
+    {
+     "d": "Friday \u00b7 Rounds",
+     "items": [
+      [
+       "Distance rounds",
+       "6 x 3 min",
+       "Jab, teep, step off. Every time you picture them committing, step off and counter."
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "inoue-monster",
+   "keywords": [
+    "inoue",
+    "naoya",
+    "monster"
+   ],
+   "reel": "E6",
+   "match": "inoue monster plan",
+   "title": "Inoue's Jab, Body Shot and Balance, at Home",
+   "sub": "Monday to Friday. Inspired by Naoya Inoue's style, not his exact program.",
+   "note": "Inoue's power comes from the basics: a fast jab from the edge of range that measures you, body shots early so the guard comes down later, and balance, his weight over his feet on every punch so even the small ones land heavy.",
+   "days": [
+    {
+     "d": "Monday \u00b7 Jab",
+     "items": [
+      [
+       "Jab from the edge of range",
+       "4 x 2 min",
+       "Step in, jab at full reach, step back out before you'd get hit back."
+      ],
+      [
+       "Jab to the head, jab to the body",
+       "3 x 2 min",
+       "Same jab, two heights. Bend the knees for the body one, don't lean."
+      ],
+      [
+       "Double jab, cross",
+       "3 x 1 min",
+       "The first jab measures, the second hides the cross."
+      ]
+     ]
+    },
+    {
+     "d": "Tuesday \u00b7 Body",
+     "items": [
+      [
+       "Jab, left hook to the body",
+       "4 x 2 min",
+       "Bend the knees to get low, turn the hip, elbow tight."
+      ],
+      [
+       "Right hand to the body",
+       "3 x 1 min",
+       "Dip, then drive it straight through, back up into your guard."
+      ],
+      [
+       "Sit-ups",
+       "3 x 20",
+       ""
+      ]
+     ]
+    },
+    {
+     "d": "Wednesday \u00b7 Balance",
+     "items": [
+      [
+       "Freeze shadowboxing",
+       "3 x 2 min",
+       "Freeze after every punch. If you could not throw again without stepping, your weight was off your feet."
+      ],
+      [
+       "Single leg holds",
+       "6 x 30 s",
+       "Hands up, stay still. Switch legs every round."
+      ],
+      [
+       "Slow power punches",
+       "3 x 1 min",
+       "Half speed, whole body behind every punch, feet planted."
+      ]
+     ]
+    },
+    {
+     "d": "Thursday \u00b7 Engine",
+     "items": [
+      [
+       "Jump rope",
+       "5 x 3 min",
+       "Light and steady."
+      ],
+      [
+       "Body shot bursts",
+       "4 x 30 s",
+       "Fast hooks and uppercuts to the body, guard back up between bursts."
+      ]
+     ]
+    },
+    {
+     "d": "Friday \u00b7 Rounds",
+     "items": [
+      [
+       "Monster rounds",
+       "6 x 3 min",
+       "Jab to measure, go to the body early, finish every combination balanced."
+      ]
+     ]
+    }
+   ]
   }
  ]
 }

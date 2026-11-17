@@ -1,0 +1,157 @@
+{
+ "src": "../../../media/gane-ep-src/raw.mp4",
+ "words": "work/words.json",
+ "speed": 1.0,
+ "takes": {
+  "hookA": [
+   28.92,
+   32.55
+  ],
+  "hookB": [
+   41.85,
+   46.4
+  ],
+  "hookC": [
+   68.9,
+   75.7
+  ],
+  "hookD": [
+   104.8,
+   108.75
+  ],
+  "hookE": [
+   123.05,
+   126.65
+  ],
+  "intro": [
+   [
+    133.6,
+    134.36
+   ],
+   [
+    135.75,
+    142.25
+   ]
+  ],
+  "body": [
+   168.3,
+   172.6
+  ],
+  "one": [
+   217.25,
+   225.95
+  ],
+  "two": [
+   233.3,
+   240.1
+  ],
+  "third": [
+   244.5,
+   248.5
+  ],
+  "three": [
+   255.25,
+   262.9
+  ],
+  "takeaway": [
+   321.0,
+   326.4
+  ],
+  "end": [
+   [
+    332.2,
+    336.0
+   ],
+   [
+    304.3,
+    308.6
+   ]
+  ]
+ },
+ "variants": {
+  "A": [
+   "hookA",
+   "intro",
+   "body",
+   "one",
+   "two",
+   "third",
+   "three",
+   "takeaway",
+   "end"
+  ],
+  "B": [
+   "hookB",
+   "intro",
+   "body",
+   "one",
+   "two",
+   "third",
+   "three",
+   "takeaway",
+   "end"
+  ],
+  "C": [
+   "hookC",
+   "intro",
+   "body",
+   "one",
+   "two",
+   "third",
+   "three",
+   "takeaway",
+   "end"
+  ],
+  "D": [
+   "hookD",
+   "intro",
+   "body",
+   "one",
+   "two",
+   "third",
+   "three",
+   "takeaway",
+   "end"
+  ],
+  "E": [
+   "hookE",
+   "intro",
+   "body",
+   "one",
+   "two",
+   "third",
+   "three",
+   "takeaway",
+   "end"
+  ]
+ },
+ "why": {
+  "hooks": "Each hook take opens with a bridge line ('And that's the difference', 'Which is why people ask', 'And that's the style behind it', 'And here's the thing', 'It all starts with where Gane came from'); only the claim is kept so every hook stands on its own.",
+  "hookA": "take 3, the only one with 'Gane never does'",
+  "hookB": "take 1 (both clean), from 'Why do'",
+  "hookC": "take 1, 'at the White House in the UFC' (take 3 says 'recent UFC event')",
+  "hookD": "only take",
+  "hookE": "take 1, second sentence only",
+  "intro": "spoken 'episode four' cut (only Episode 1 says its number)",
+  "body": "take 4, the only full one",
+  "one": "last of 4 full takes, cleanest finish",
+  "two": "only take",
+  "three": "first full take, best wording ('the counter lands on your way out')",
+  "takeaway": "take 2 (take 1 was 'So' and a restart); he says 'spar' (Whisper hears 'support'/'sport'), captioned SPAR",
+  "end": "CTA, then 4.3 s room tone from 304.3 for the 5 plan day cards (start 0.7 s after the last word so the caption clears)"
+ },
+ "fix": {
+  "GUNN": "GANE",
+  "GON": "GANE",
+  "GUN": "GANE",
+  "GONE'S": "GANE'S",
+  "GOD'S": "GANE'S",
+  "CYRIL": "CIRYL",
+  "MATEO": "MATTEO",
+  "GON'S": "GANE'S",
+  "SUPPORT": "SPAR",
+  "1": "ONE",
+  "2": "TWO",
+  "3": "THREE"
+ }
+}
