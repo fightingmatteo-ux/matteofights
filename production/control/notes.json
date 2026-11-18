@@ -1,9 +1,5 @@
 [
   {
-    "id": "xp-dedf05d3",
-    "text": "📤 YouTube Shorts: 6 SIGNS YOU'VE BEEN TRAINING FIGHTING FOR TOO LONG\nhttps://youtube.com/shorts/2TJUrrv_DBc"
-  },
-  {
     "id": "xp-5f748679",
     "text": "📤 YouTube Shorts: 6 WAYS TO READ YOUR OPPONENT IN THE FIRST ROUND\nhttps://youtube.com/shorts/GHVyWFPqJoI"
   },
@@ -798,5 +794,9 @@
   {
     "id": "health-queue:lst-2026-10-30-not-a-beginner:failed-2026111820",
     "text": "⚠️ lst-2026-10-30-not-a-beginner failed to post: GET https://graph.facebook.com/v23.0/530317382955170 -> 404: {\"title\":\"Not Found\",\"detail\":\"No audio asset found for the given ID\",\"status\":404}"
+  },
+  {
+    "id": "xp-6d678190",
+    "text": "📤 YouTube Shorts: 6 WAYS TO CATCH A KICK AND MAKE THEM REGRET IT\nhttps://youtube.com/shorts/Q56O2myjvhQ"
   }
 ]
