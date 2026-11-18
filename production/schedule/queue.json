@@ -5247,9 +5247,13 @@
       "opening": "contrast",
       "not_before": "2026-11-18T16:00:00Z",
       "approved": true,
-      "status": "queued",
+      "status": "posted",
       "slot_note": "Fighter Breakdown Episode 1 (Saenchai): 2 hooks/day between the listicle slots (11:00 and 15:30 NY), contrast/question first, reframe last, 17 to 19 Nov, before the Lomachenko trials (20 to 22 Nov). If these slip, move Loma by the same days.",
-      "approved_note": "Matteo: approved the week via dashboard (2026-11-17T12:30:54Z)"
+      "approved_note": "Matteo: approved the week via dashboard (2026-11-17T12:30:54Z)",
+      "posting_since": "2026-11-18T16:00:58Z",
+      "media_id": "18120859006794561",
+      "permalink": "https://www.instagram.com/reel/Df440n0knsX/",
+      "posted_at": "2026-11-18T16:02:53Z"
     },
     {
       "id": "2026-11-17-saenchai-ep1-C",
