@@ -1,9 +1,5 @@
 [
   {
-    "id": "health-job:2026-10-24-knockout-draw-A-20261026T160520:failed-2026102622",
-    "text": "⚠️ Cloud render 2026-10-24-knockout-draw-A-20261026T160520 failed: -knockout-draw/raw.mp4: No such file or directory\n../../../media/2026-10-24-knockout-draw/raw.mp4: No such file or directory\n../../../media/2026-10-24-knockout-draw/raw.mp4: No such file or directory\n"
-  },
-  {
     "id": "xp-307265a6",
     "text": "📤 YouTube Shorts: HOW FIGHTERS EAT BEFORE A MORNING SESSION\nhttps://youtube.com/shorts/14UQyqfzHRA"
   },
@@ -798,5 +794,9 @@
   {
     "id": "xp-c24a1019",
     "text": "📤 Facebook Reels: 6 WAYS TO STOP WALKING ONTO PUNCHES\nhttps://www.facebook.com/reel/1178515498023809"
+  },
+  {
+    "id": "xp-1584df12",
+    "text": "📤 Threads: 6 WAYS TO BEAT A COUNTER PUNCHER\nhttps://www.threads.com/@matteofights/post/Df3ZKiFJqSk"
   }
 ]
