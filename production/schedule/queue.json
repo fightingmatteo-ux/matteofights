@@ -3799,7 +3799,14 @@
       "posting_since": "2026-11-14T23:31:00Z",
       "media_id": "18111053390264605",
       "permalink": "https://www.instagram.com/reel/DfvZDWujUuD/",
-      "posted_at": "2026-11-14T23:31:46Z"
+      "posted_at": "2026-11-14T23:31:46Z",
+      "video_asset_fb": "lst-2026-11-14-more-disciplined-fb.mp4",
+      "fb_pick": {
+        "at": "2026-11-18T02:25:03Z",
+        "ig_views": 3175,
+        "vs_median": 1.26,
+        "shares_saves_per_1k": 2.2
+      }
     },
     {
       "id": "lst-2026-11-15-faster-opponent",
