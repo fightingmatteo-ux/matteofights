@@ -137,6 +137,10 @@ Sort by follows per 1k views when looking for what grows the account.
 | 2026-11-13 | lst-2026-11-13-lost-before-first-punch | - | 18083892563346578 | MOST FIGHTS ARE LOST BEFORE THE FIRST PUNCH | statement (identity) | text-on-clip | trial | 2330 (0.92x) | ? | 1 | 9 | 0 | no | statement: 0.92x |
 | 2026-11-13 | lst-2026-11-13-walking-onto-punches | - | 18135438076707128 | 6 WAYS TO STOP WALKING ONTO PUNCHES | listicle (tactical) | text-on-clip | trial | 2940 (1.17x) | ? | 19 | 20 | 0 | no | tactical fight problem: 1.17x, 19 shares + 20 saves |
 | 2026-11-14 | lst-2026-11-13-off-the-ropes | - | 18415530715080463 | 6 WAYS TO GET OFF THE ROPES WHEN YOU'RE TRAPPED | listicle (tactical) | text-on-clip | trial | 2494 (0.99x) | ? | 0 | 8 | 0 | no | tactical: 0.99x |
+| 2026-11-14 | lst-2026-11-14-win-exchanges | - | 17969487162198953 | 6 WAYS TO WIN EXCHANGES WITHOUT THROWING MORE | listicle (tactical) | text-on-clip | trial | 1179 (0.47x) | ? | 0 | 6 | 0 | no | tactical: 0.47x, skip 60% (worst opening this week) |
+| 2026-11-14 | lst-2026-11-14-hard-round-hard-day | - | 18046361462827874 | 6 THINGS A HARD ROUND TEACHES YOU ABOUT HARD DAYS | builder (identity) | text-on-clip | trial | 2354 (0.93x) | ? | 0 | 8 | 0 | no | builder: 0.93x |
+| 2026-11-14 | lst-2026-11-14-more-disciplined | - | 18111053390264605 | 6 SIGNS YOU'RE MORE DISCIPLINED THAN YOU GIVE YOURSELF CREDIT FOR | listicle (identity) | text-on-clip | trial | 3177 (1.26x) | ? | 0 | 7 | 0 | no | identity: 1.26x, 7.2 s avg watch |
+| 2026-11-15 | lst-2026-11-14-counter-puncher | - | 17907632898353558 | 6 WAYS TO BEAT A COUNTER PUNCHER | listicle (tactical) | text-on-clip | trial | 2564 (1.02x) | ? | 1 | 13 | 0 | no | tactical: 1.02x, 9.8 s avg watch (highest listicle) but skip 56% |
 
 ## Patterns so far
 - _Add a line whenever a test is decided. Keep it to what the numbers showed._
