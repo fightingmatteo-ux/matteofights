@@ -1421,9 +1421,12 @@
         "4. Pick one thing you want to work on.\nJust one. Write it on your hand if you have to."
       ],
       "from": "craft",
-      "status": "queued",
+      "status": "posted",
       "approved": true,
-      "approved_note": "Matteo: approved via dashboard (2026-11-16T16:07:48Z)"
+      "approved_note": "Matteo: approved via dashboard (2026-11-16T16:07:48Z)",
+      "posted_at": "2026-11-18T17:41:45Z",
+      "thread_id": "17943369099384575",
+      "url": "https://www.threads.com/@matteofights/post/Df5EKamnKnu"
     },
     {
       "id": "th-1118-3",
