@@ -52,9 +52,12 @@ task needs it. Open items: [STATUS.md](STATUS.md) (read at session start, update
   (`production/reels/FILM-2026-11-14-pinned.md`). Pro fighter reels are a numbered series, "Comment PLAN and the
   fighter you want next" (`production/reels/BREAKDOWNS-2026-11-14.md`). Rants and talking heads first.
 - **Talking heads ("trial reel maxing", Matteo 2026-10-30):** Matteo films from talking points, not scripts, and
-  films **5 hooks** per reel (each labelled with an opening type), posted as trial reels the SAME day 15:00-16:00 NY.
+  films **5 hooks** per reel (each labelled with an opening type), posted as trial reels the SAME day 15:00-16:00 NY, 15 min apart,
+  slot order rotated per set (`trials.py schedule`). Never spread one reel's hooks over days: hooks posted after a
+  sibling took off starved (Saenchai Ep. 1, 2026-11-19, STATUS 12).
   The "Hook tests" workflow calls the winner at **24 h**, then the Edit worker re-cuts that winner 5 ways (round 2,
-  aimed at the drop-off; Matteo's retention-graph note steers it), posted the next free day; only the round-2 winner
+  aimed at the drop-off; Matteo's retention-graph note steers it), posted the next free day at least 72 h after
+  round 1's last post (`R2_FLOOR_H`, enforced by `trials.py schedule`); only the round-2 winner
   goes to the grid. Logs [production/reels/LEDGER.md](production/reels/LEDGER.md), tallies which openings and edits win ([tools/trials/trials.py](tools/trials/trials.py),
   `production/trials/learnings.md`). Look: **editorial**,
   start from `production/reels/_TEMPLATE/editorial/`.

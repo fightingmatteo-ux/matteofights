@@ -8,7 +8,7 @@
 Running tallies of which OPENING types (round 1) and which EDITS (round 2) win, so results outlive one reel.
 
     python -P tools/trials/trials.py label <queue id> <opening|edit> [--length short] [--parent <queue id>]
-    python -P tools/trials/trials.py schedule <set> 2026-10-26                       # same-day slots for a set
+    python -P tools/trials/trials.py schedule <set> 2026-10-26 [--first C]           # same-day slots, order rotates per set
     python -P tools/trials/trials.py run          # pull + verdict + learn (the "Hook tests" workflow)
     python -P tools/trials/trials.py pull | verdict | learn | status
 
@@ -23,7 +23,7 @@ score = weighted share of the best value per metric (past 3 s, avg watch, views,
 metrics missing for any variant drop out. Writes production/trials/verdicts.json, LEDGER.md rows, a Telegram note
 (production/control/notes.json, sent by control.py notify) and production/trials/learnings.md.
 """
-import argparse, datetime as dt, json, os, re, statistics, sys, urllib.parse, urllib.request
+import argparse, datetime as dt, json, os, re, statistics, sys, urllib.parse, urllib.request, zlib
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -61,6 +61,9 @@ EDITS = {   # round 2: ways to re-cut a winner, each aimed at a drop-off
 LENGTHS = ("full", "short")
 SLOTS_NY = ("15:00", "15:15", "15:30", "15:45", "16:00")
 HOURS = 24
+# Round 2 re-cuts the round-1 winner, so it never starts while that winner may still be getting reach. Saenchai Ep. 1
+# (2026-11-17): hooks posted 4.5-28.5 h after the one that took off got 105-300 reach at the same skip rate (2,976).
+R2_FLOOR_H = 72
 ROUNDS = 2          # round 2 = the re-edit round; the playbook allows more, the edit worker's 3 runs a day don't
 HOLD_RETENTION_H = 4   # round-2 job waits this long for Matteo's retention-graph note before the worker cuts
 WEIGHTS = {"hold": 0.30, "watch": 0.25, "reach": 0.20, "keep": 0.15, "follows": 0.10}
@@ -124,12 +127,32 @@ def ny_to_utc(day, hhmm):
     return iso(local.astimezone(dt.timezone.utc))
 
 
-def schedule(set_id, day):
+def r2_floor(set_id):
+    """Earliest UTC time a round-2 set may start: R2_FLOOR_H after round 1's last post (None if not round 2)."""
+    if not set_id.endswith("-r2"):
+        return None
+    posted = [parse(i["posted_at"]) for i in sets().get(set_id[:-3], []) if i.get("posted_at")]
+    return max(posted) + dt.timedelta(hours=R2_FLOOR_H) if posted else None
+
+
+def schedule(set_id, day, first=None):
+    """Same-day slots for a set. The slot order rotates per set (stable per set id, or `first` = the variant that
+    goes first), so no variant letter or opening type always gets the first slot. A round-2 set moves to the first
+    day that starts R2_FLOOR_H after round 1's last post."""
     items = sets().get(set_id)
     if not items:
         sys.exit(f"no set {set_id} (needs 2+ queue items with that trial_set/reel)")
     if len(items) > len(SLOTS_NY):
         sys.exit(f"{len(items)} variants, only {len(SLOTS_NY)} same-day slots")
+    floor = r2_floor(set_id)
+    while floor and parse(ny_to_utc(day, SLOTS_NY[0])) < floor:
+        day = (dt.date.fromisoformat(day) + dt.timedelta(days=1)).isoformat()
+        print(f"{set_id}: round 1 posted under {R2_FLOOR_H} h before that day, moved to {day}")
+    letters = [i["variant"] for i in items]
+    if first and first not in letters:
+        sys.exit(f"{set_id} has no variant {first} ({', '.join(letters)})")
+    k = letters.index(first) if first else zlib.crc32(set_id.encode()) % len(items)
+    items = items[k:] + items[:k]
     for i, hhmm in zip(items, SLOTS_NY):
         if i.get("status") != "queued":
             print(f"{i['id']}: {i.get('status')}, left alone"); continue
@@ -438,11 +461,12 @@ if __name__ == "__main__":
     p.add_argument("args", nargs="*")
     p.add_argument("--length", default="full", choices=LENGTHS)
     p.add_argument("--parent")
+    p.add_argument("--first", help="schedule: the variant that takes the first slot (default: rotates per set)")
     a = p.parse_args()
     if a.cmd == "label":
         label(a.args[0], a.args[1], a.length, a.parent)
     elif a.cmd == "schedule":
-        schedule(a.args[0], a.args[1])
+        schedule(a.args[0], a.args[1], a.first)
     elif a.cmd == "pull":
         pull()
     elif a.cmd == "verdict":

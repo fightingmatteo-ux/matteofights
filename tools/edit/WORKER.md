@@ -33,7 +33,7 @@ again, which is the number the dashboard tracks.
    `video_asset` = the `-phone.mp4` name, `caption_file`, `hook`, `format: "talking head"`, `status: "queued"`,
    `approved: false`, `reel: <slug>`, `variant`, `strategy: "MANUAL"`, `thumb_offset_ms: 500`. Then label each
    (`python3 -P tools/trials/trials.py label <id> <opening> [--length short]`) and give the set the next free day:
-   `python3 -P tools/trials/trials.py schedule <slug> <yyyy-mm-dd>` (15:00 to 16:00 NY every 15 min, same day).
+   `python3 -P tools/trials/trials.py schedule <slug> <yyyy-mm-dd>` (15:00 to 16:00 NY every 15 min, same day, slot order rotated per set). Never split a set across days.
    Matteo approves on the dashboard.
 5. Commit only your paths (`git add production/reels/<slug>`), pull --rebase, push.
 6. `requests_cli.py finish upload <id> done --note "5 variants ready: <hooks>"`; if the talking point was used,
@@ -54,7 +54,8 @@ names the leak (opening or middle) and the 5 edits (`tools/trials/trials.py` EDI
 3. Queue ids `<winner id>-r2-A` to `-E`, same fields as an upload's variants (`approved: false`, `reel` = the
    winner's reel, `hook` = the winner's hook), then
    `python3 -P tools/trials/trials.py label <id> <edit> --parent <winner id>` for each and
-   `python3 -P tools/trials/trials.py schedule <round-1 set>-r2 <next free day>`.
+   `python3 -P tools/trials/trials.py schedule <round-1 set>-r2 <next free day>` (it moves itself to the first day
+   72 h after round 1's last post, so re-cuts never compete with a winner that is still getting reach).
 4. Finish with a note listing the 5 edits. Matteo approves on the dashboard; the round-2 verdict (24 h) tells him
    which cut to share to the grid. A reel marked `no_grid` (Matteo said keep it off the grid) still gets round 2.
 
