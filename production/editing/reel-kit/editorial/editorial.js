@@ -110,6 +110,7 @@ window.Editorial = {
 
     // cutaways (fight tape / b-roll): whip in with a motion blur, like the cards
     (P.broll || []).forEach(([a]) => {
+      if (a < 0.05) return;  // a cold open (footage on frame 0): frame 0 is the thumbnail, so no whip-in blur there
       const el = Array.from(document.querySelectorAll(".ed-broll")).find((v) => Math.abs(parseFloat(v.dataset.start) - a) < 0.002);
       if (el) tl.fromTo(el, { filter: "blur(18px)", scale: 1.08 }, { filter: "blur(0px)", scale: 1, duration: 0.14, ease: "power3.out" }, a);
     });
