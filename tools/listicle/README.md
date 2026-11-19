@@ -118,5 +118,7 @@ Not only training clips: food, recovery, routine, travel clips in the folder can
 Five slots a day, New York time: **09:00 listicle, 12:30 listicle, 15:30 talking head, 18:30 listicle, 21:30 listicle**.
 The factory fills the four listicle slots (Sunday crons 09:00/09:40/10:20/11:00 UTC = 18:30/21:30/12:30/09:00 NY), so
 Saturday needs **28 ready hooks**. The 15:30 slot is only for talking-head variants (3 hook variants per filmed reel,
-editorial template); when none is ready the slot stays empty rather than adding a 5th listicle. Every listicle carries
+editorial template); when none is ready the slot stays empty rather than adding a 5th listicle.
+Hook-test sets (queue items with a `trial_set`) don't use this slot one variant per day: `tools/trials/trials.py schedule`
+puts a whole set in one hour, 15:00-16:00 NY, 15 min apart, and nothing moves them (Matteo 2026-11-19, STATUS 12-13). Every listicle carries
 an Instagram library sound through the Audio API (Echo Sax rotation, see the workflow's AUDIO default).
