@@ -141,6 +141,10 @@ Sort by follows per 1k views when looking for what grows the account.
 | 2026-11-14 | lst-2026-11-14-hard-round-hard-day | - | 18046361462827874 | 6 THINGS A HARD ROUND TEACHES YOU ABOUT HARD DAYS | builder (identity) | text-on-clip | trial | 2354 (0.93x) | ? | 0 | 8 | 0 | no | builder: 0.93x |
 | 2026-11-14 | lst-2026-11-14-more-disciplined | - | 18111053390264605 | 6 SIGNS YOU'RE MORE DISCIPLINED THAN YOU GIVE YOURSELF CREDIT FOR | listicle (identity) | text-on-clip | trial | 3177 (1.26x) | ? | 0 | 7 | 0 | no | identity: 1.26x, 7.2 s avg watch |
 | 2026-11-15 | lst-2026-11-14-counter-puncher | - | 17907632898353558 | 6 WAYS TO BEAT A COUNTER PUNCHER | listicle (tactical) | text-on-clip | trial | 2564 (1.02x) | ? | 1 | 13 | 0 | no | tactical: 1.02x, 9.8 s avg watch (highest listicle) but skip 56% |
+| 2026-11-15 | lst-2026-11-15-hands-feet | - | 18076974653759762 | YOUR HANDS GET YOU NOTICED. YOUR FEET KEEP YOU SAFE. | statement (tactical) | text-on-clip | trial | 1988 (0.77x) | ? | 4 | 5 | 0 | no | statement: 0.77x |
+| 2026-11-15 | lst-2026-11-15-combo-finally-lands | - | 18122689454081326 | WHEN THE COMBO YOU'VE DRILLED FOR MONTHS FINALLY LANDS | iykyk (identity) | text-on-clip | trial | 2705 (1.05x) | ? | 0 | 2 | 0 | no | iykyk: 1.05x, skip 40% (low) |
+| 2026-11-15 | lst-2026-11-15-faster-opponent | - | 18137065810782674 | 6 WAYS TO BEAT SOMEONE FASTER THAN YOU | listicle (tactical) | text-on-clip | trial | 2862 (1.11x) | ? | 0 | 12 | 0 | no | tactical opponent-type: 1.11x |
+| 2026-11-16 | lst-2026-11-15-catch-a-kick | - | 18035817770676289 | 6 WAYS TO CATCH A KICK AND MAKE THEM REGRET IT | listicle (tactical) | text-on-clip | trial | 2793 (1.09x) | ? | 0 | 10 | 0 | no | tactical: 1.09x |
 
 ## Patterns so far
 - _Add a line whenever a test is decided. Keep it to what the numbers showed._
