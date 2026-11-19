@@ -4827,11 +4827,18 @@
       "not_before": "2026-11-19T17:30:00Z",
       "min_gap_hours": 2.5,
       "approved": true,
-      "status": "queued",
+      "status": "posted",
       "cta": "protocol",
       "app_audio": "id:530317382955170 Echo Sax End - Caleb Arredondo (add in the Instagram app)",
       "video_asset_music": "lst-2026-11-19-before-hard-sparring-music.mp4",
-      "approved_note": "Matteo: approved the week via dashboard (2026-11-16T09:57:39Z)"
+      "approved_note": "Matteo: approved the week via dashboard (2026-11-16T09:57:39Z)",
+      "audio_id": "530317382955170",
+      "audio_title": "Echo Sax End (Take 2)",
+      "audio_artist": "caleb.arredondo",
+      "posting_since": "2026-11-19T17:30:57Z",
+      "media_id": "18172161646475002",
+      "permalink": "https://www.instagram.com/reel/Df7n7ruD_kH/",
+      "posted_at": "2026-11-19T17:32:34Z"
     },
     {
       "id": "lst-2026-11-20-best-partners-good",
