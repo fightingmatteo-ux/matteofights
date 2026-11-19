@@ -5124,7 +5124,7 @@
       "not_before": "2026-11-20T20:45:00Z",
       "approved": false,
       "status": "queued",
-      "slot_note": "held 2026-11-19 (Matteo): re-edit with 3 visually different openings before posting. Old version = 5 hooks on the same shot, only the first line differs, 78-80 s long, CTA at ~76 s. Do not post.",
+      "slot_note": "replaced by 2026-11-20-loma-3open F/G/H (Matteo 2026-11-19). Do not post.",
       "approved_note": "Matteo: approved the week via dashboard (2026-11-16T17:13:41Z)"
     },
     {
@@ -5145,7 +5145,7 @@
       "not_before": "2026-11-20T21:00:00Z",
       "approved": false,
       "status": "queued",
-      "slot_note": "held 2026-11-19 (Matteo): re-edit with 3 visually different openings before posting. Old version = 5 hooks on the same shot, only the first line differs, 78-80 s long, CTA at ~76 s. Do not post.",
+      "slot_note": "replaced by 2026-11-20-loma-3open F/G/H (Matteo 2026-11-19). Do not post.",
       "approved_note": "Matteo: approved the week via dashboard (2026-11-16T17:13:41Z)"
     },
     {
@@ -5166,7 +5166,7 @@
       "not_before": "2026-11-20T20:00:00Z",
       "approved": false,
       "status": "queued",
-      "slot_note": "held 2026-11-19 (Matteo): re-edit with 3 visually different openings before posting. Old version = 5 hooks on the same shot, only the first line differs, 78-80 s long, CTA at ~76 s. Do not post.",
+      "slot_note": "replaced by 2026-11-20-loma-3open F/G/H (Matteo 2026-11-19). Do not post.",
       "approved_note": "Matteo: approved the week via dashboard (2026-11-16T17:13:41Z)"
     },
     {
@@ -5187,7 +5187,7 @@
       "not_before": "2026-11-20T20:15:00Z",
       "approved": false,
       "status": "queued",
-      "slot_note": "held 2026-11-19 (Matteo): re-edit with 3 visually different openings before posting. Old version = 5 hooks on the same shot, only the first line differs, 78-80 s long, CTA at ~76 s. Do not post.",
+      "slot_note": "replaced by 2026-11-20-loma-3open F/G/H (Matteo 2026-11-19). Do not post.",
       "approved_note": "Matteo: approved the week via dashboard (2026-11-16T17:13:41Z)"
     },
     {
@@ -5208,7 +5208,7 @@
       "not_before": "2026-11-20T20:30:00Z",
       "approved": false,
       "status": "queued",
-      "slot_note": "held 2026-11-19 (Matteo): re-edit with 3 visually different openings before posting. Old version = 5 hooks on the same shot, only the first line differs, 78-80 s long, CTA at ~76 s. Do not post.",
+      "slot_note": "replaced by 2026-11-20-loma-3open F/G/H (Matteo 2026-11-19). Do not post.",
       "approved_note": "Matteo: approved the week via dashboard (2026-11-16T17:13:41Z)"
     },
     {
@@ -5646,6 +5646,66 @@
       "status": "queued",
       "slot_note": "held 2026-11-19 (Matteo): re-edit with 3 visually different openings before posting. Old version = 5 hooks on the same shot, only the first line differs, 78-80 s long, CTA at ~76 s. Do not post.",
       "approved_note": "Matteo: approved the week via dashboard (2026-11-17T20:09:27Z)"
+    },
+    {
+      "id": "2026-11-20-loma-3open-F",
+      "reel": "2026-11-20-loma-3open",
+      "variant": "F",
+      "format": "talking head",
+      "strategy": "MANUAL",
+      "trial_set": "loma-3open",
+      "length": "full",
+      "thumb_offset_ms": 300,
+      "min_gap_hours": 2.5,
+      "crosspost_to": [],
+      "video_asset": "2026-11-20-loma-3open-F-phone.mp4",
+      "caption_file": "production/reels/2026-11-20-loma-3open/caption-F.txt",
+      "hook": "Four opponents in a row quit on their stools against Lomachenko. Here's what he did to them.",
+      "opening": "result",
+      "approved": false,
+      "status": "queued",
+      "slot_note": "hook test, same day: 2026-11-20 15:00 NY (trials.py schedule)",
+      "not_before": "2026-11-20T20:00:00Z"
+    },
+    {
+      "id": "2026-11-20-loma-3open-G",
+      "reel": "2026-11-20-loma-3open",
+      "variant": "G",
+      "format": "talking head",
+      "strategy": "MANUAL",
+      "trial_set": "loma-3open",
+      "length": "full",
+      "thumb_offset_ms": 300,
+      "min_gap_hours": 0.25,
+      "crosspost_to": [],
+      "video_asset": "2026-11-20-loma-3open-G-phone.mp4",
+      "caption_file": "production/reels/2026-11-20-loma-3open/caption-G.txt",
+      "hook": "Most people drill punches. Lomachenko drilled his feet.",
+      "opening": "contrast",
+      "approved": false,
+      "status": "queued",
+      "slot_note": "hook test, same day: 2026-11-20 15:15 NY (trials.py schedule)",
+      "not_before": "2026-11-20T20:15:00Z"
+    },
+    {
+      "id": "2026-11-20-loma-3open-H",
+      "reel": "2026-11-20-loma-3open",
+      "variant": "H",
+      "format": "talking head",
+      "strategy": "MANUAL",
+      "trial_set": "loma-3open",
+      "length": "full",
+      "thumb_offset_ms": 300,
+      "min_gap_hours": 0.25,
+      "crosspost_to": [],
+      "video_asset": "2026-11-20-loma-3open-H-phone.mp4",
+      "caption_file": "production/reels/2026-11-20-loma-3open/caption-H.txt",
+      "hook": "Why do good boxers look completely lost against Lomachenko?",
+      "opening": "question",
+      "approved": false,
+      "status": "queued",
+      "slot_note": "hook test, same day: 2026-11-20 15:30 NY (trials.py schedule)",
+      "not_before": "2026-11-20T20:30:00Z"
     }
   ]
 }

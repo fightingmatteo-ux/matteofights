@@ -1,0 +1,84 @@
+{
+ "src": "../../../media/loma-breakdown-src/raw.mp4",
+ "words": "work/words.json",
+ "speed": 1.0,
+ "takes": {
+  "hookF": [
+   35.95,
+   42.4
+  ],
+  "hookG": [
+   9.25,
+   13.55
+  ],
+  "one": [
+   100.55,
+   109.3
+  ],
+  "two": [
+   109.65,
+   118.4
+  ],
+  "third": [
+   119.25,
+   122.3
+  ],
+  "pivot": [
+   162.15,
+   175.3
+  ],
+  "cta": [
+   [
+    183.4,
+    183.92
+   ],
+   [
+    184.48,
+    185.95
+   ],
+   [
+    187.72,
+    190.9
+   ]
+  ],
+  "hookH": [
+   52.45,
+   57.6
+  ]
+ },
+ "variants": {
+  "F": [
+   "hookF",
+   "one",
+   "two",
+   "third",
+   "pivot",
+   "cta"
+  ],
+  "G": [
+   "hookG",
+   "one",
+   "two",
+   "third",
+   "pivot",
+   "cta"
+  ],
+  "H": [
+   "hookH",
+   "one",
+   "two",
+   "third",
+   "pivot",
+   "cta"
+  ]
+ },
+ "why": {
+  "hooks": "same takes as 2026-11-16-loma-breakdown hooks C (F), A (G), D (H): one take each, all hold the lens",
+  "cut": "Matteo 2026-11-19: 80 s with the CTA at 76 s was too long, nobody reached the end. Intro (11 s), the dance-origin line, the takeaway and the 5 plan cards are out; the 3 moves and the 'third one' re-hook stay",
+  "one, two": "whole thoughts in one take each (taste: fewer jump cuts)",
+  "pivot": "take 2, same pick as the old reel (more eye contact, louder, no hitch)",
+  "cta": "one ask (Matteo 2026-11-19): 'Comment | the fighter you want to see next. | The most asked for fighter gets the next episode.' 'plan and' and 'I'll send you the plan for this one and' cut out",
+  "speed": "1.0: any time-stretch made his voice sound robotic (assemble.py)"
+ },
+ "fix": {}
+}

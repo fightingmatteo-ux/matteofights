@@ -1,0 +1,22 @@
+{
+ "lost": {
+  "start": 0.0,
+  "dur": 3.32
+ },
+ "side1": {
+  "start": 6.7,
+  "dur": 3.0
+ },
+ "side2": {
+  "start": 9.7,
+  "dur": 3.6
+ },
+ "inout": {
+  "start": 14.5,
+  "dur": 6.9
+ },
+ "pivot": {
+  "start": 27.05,
+  "dur": 3.3
+ }
+}

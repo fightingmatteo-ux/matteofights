@@ -1,0 +1,26 @@
+{
+ "pads": {
+  "start": 0.0,
+  "dur": 2.13
+ },
+ "feet": {
+  "start": 2.13,
+  "dur": 2.17
+ },
+ "side1": {
+  "start": 5.85,
+  "dur": 3.0
+ },
+ "side2": {
+  "start": 8.85,
+  "dur": 3.6
+ },
+ "inout": {
+  "start": 13.65,
+  "dur": 6.9
+ },
+ "pivot": {
+  "start": 26.2,
+  "dur": 3.3
+ }
+}

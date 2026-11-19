@@ -1,0 +1,18 @@
+{
+ "side1": {
+  "start": 8.0,
+  "dur": 3.0
+ },
+ "side2": {
+  "start": 11.0,
+  "dur": 3.6
+ },
+ "inout": {
+  "start": 15.8,
+  "dur": 6.9
+ },
+ "pivot": {
+  "start": 28.35,
+  "dur": 3.3
+ }
+}
