@@ -106,6 +106,10 @@ window.Editorial = {
       c.words.forEach((w) => (w.key ? keyIn(w, true) : focusIn(q(w.id), Math.max(c.t0, w.s - 0.05))));
       tl.fromTo("#" + c.id + " .ed-cardbox", { scale: 1.0 }, { scale: 1.03, duration: c.t1 - c.t0, ease: "none" }, c.t0);
       if (o.cam) tl.fromTo(o.cam, { filter: "blur(18px)" }, { filter: "blur(0px)", duration: 0.16, ease: "power2.out", immediateRender: false }, c.t1);
+      // hide the card's text when the card ends: in a full render (frames captured in order) the words of a card could
+      // stay on screen to the end of the reel without the white card behind them (loma-3open G, 2026-11-19);
+      // a snapshot seeking straight past the card was clean, so this is renderer state, not the plan
+      tl.set("#" + c.id + " .ed-cardbox", { autoAlpha: 0 }, c.t1);
     });
 
     // cutaways (fight tape / b-roll): whip in with a motion blur, like the cards
