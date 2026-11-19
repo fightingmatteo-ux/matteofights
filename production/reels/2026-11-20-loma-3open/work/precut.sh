@@ -2,7 +2,7 @@
 # Cuts this reel's cutaways from the big sources into assets/broll/b_<name>.mp4 (1080x1920, no audio), and builds the
 # a-rolls if they aren't there yet. Run from anywhere; Submit render runs it on the runner before packing, after
 # fetching the sources from the media release:
-#   media: loma-breakdown-src.mp4=media/loma-breakdown-src/raw.mp4 broll-pads-chaiya.mp4=media/loma-src/broll-pads-chaiya.mp4
+#   media: loma-breakdown-src.mp4=media/loma-breakdown-src/drive.mp4 broll-pads-chaiya.mp4=media/loma-src/broll-pads-chaiya.mp4
 #          yt-loma-highlights.mp4=media/loma-src/yt-loma-highlights.mp4 yt-loma-angles-footwork.mp4=media/loma-src/yt-loma-angles-footwork.mp4
 #          yt-loma-skillr.mp4=media/loma-src/yt-loma-skillr.mp4
 # The original b-roll (yt-loma-how-he-trained, -rigondeaux-stool, -toprank-highlight-reel) isn't on the release and
@@ -26,6 +26,10 @@ cut side1 yt-loma-skillr.mp4          411.20 3.00 0.50   # Loma vs Pedraza: Loma
 cut side2 yt-loma-skillr.mp4          30.40  3.60 0.50   # Loma vs Pedraza: after his combo he is out of range
 cut inout yt-loma-highlights.mp4      34.60  6.90 0.48   # Loma alone in the ring, small steps in and out, never still
 cut pivot yt-loma-angles-footwork.mp4 189.40 3.30 0.48   # overhead: Loma pivots around him, he has to turn
+# the Drive original is 1728x3072 10-bit HEVC; the editorial template and cutout.head_top expect the prepped
+# 1080x1920 30 fps master (prep_footage.sh, no trim, so words.json timings hold)
+R=../../../media/loma-breakdown-src
+[ -f "$R/raw.mp4" ] || bash ../../editing/reel-kit/scripts/prep_footage.sh "$R/drive.mp4" "$R/raw.mp4"
 for V in F G H; do
   [ -f "assets/media/aroll_$V.mp4" ] || python3 -P ../../editing/reel-kit/scripts/assemble.py work/takes.json "$V"
 done
