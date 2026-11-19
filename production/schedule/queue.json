@@ -3834,7 +3834,14 @@
       "posting_since": "2026-11-15T23:30:56Z",
       "media_id": "18137065810782674",
       "permalink": "https://www.instagram.com/reel/Dfx976rDQhx/",
-      "posted_at": "2026-11-15T23:32:32Z"
+      "posted_at": "2026-11-15T23:32:32Z",
+      "video_asset_fb": "lst-2026-11-15-faster-opponent-fb.mp4",
+      "fb_pick": {
+        "at": "2026-11-19T01:52:26Z",
+        "ig_views": 2862,
+        "vs_median": 1.14,
+        "shares_saves_per_1k": 4.2
+      }
     },
     {
       "id": "lst-2026-11-16-new-people-watch",
