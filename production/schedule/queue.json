@@ -2702,7 +2702,7 @@
       "not_before": "2026-11-19T14:00:00Z",
       "min_gap_hours": 2.5,
       "approved": true,
-      "status": "queued",
+      "status": "posted",
       "cta": "protocol",
       "app_audio": "id:530317382955170 Echo Sax End - Caleb Arredondo (add in the Instagram app)",
       "video_asset_music": "lst-2026-11-09-train-for-fun-music.mp4",
@@ -2710,8 +2710,11 @@
       "audio_id": "530317382955170",
       "audio_title": "Echo Sax End (Take 2)",
       "audio_artist": "caleb.arredondo",
-      "posting_since": "2026-11-09T23:30:56Z",
-      "retry_note": "Instagram upload error 2207082 on 9 Nov (transient upload failure); re-queued to the free 19 Nov 09:00 NY slot"
+      "posting_since": "2026-11-19T14:00:55Z",
+      "retry_note": "Instagram upload error 2207082 on 9 Nov (transient upload failure); re-queued to the free 19 Nov 09:00 NY slot",
+      "media_id": "18143674774714122",
+      "permalink": "https://www.instagram.com/reel/Df7PyXgjM7m/",
+      "posted_at": "2026-11-19T14:01:31Z"
     },
     {
       "id": "lst-2026-11-10-stop-blinking",
