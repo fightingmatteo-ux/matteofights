@@ -39,7 +39,7 @@
         "21:00"
       ],
       "topic": "Combat Sports",
-      "last_slot": "2026-11-19T15:00:00Z"
+      "last_slot": "2026-11-19T20:30:00Z"
     },
     "facebook_slides": {
       "enabled": false,
@@ -1894,7 +1894,14 @@
         "id": "MP8d6HnVqsM",
         "url": "https://youtube.com/shorts/MP8d6HnVqsM",
         "privacy": "public"
+      },
+      "threads": {
+        "status": "posted",
+        "at": "2026-11-19T20:36:42Z",
+        "id": "18081342734748978",
+        "url": "https://www.threads.com/@matteofights/post/Df79AGOKybg"
       }
-    }
+    },
+    "lst-2026-11-16-body-without-counter": {}
   }
 }
