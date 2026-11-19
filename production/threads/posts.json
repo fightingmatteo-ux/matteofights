@@ -1466,9 +1466,12 @@
       "text": "Mouthguard in the bag or already in your mouth when the bell rings?\n\nSerious question.",
       "chain": [],
       "from": "craft",
-      "status": "queued",
+      "status": "posted",
       "approved": true,
-      "approved_note": "Matteo: approved via dashboard (2026-11-16T16:07:48Z)"
+      "approved_note": "Matteo: approved via dashboard (2026-11-16T16:07:48Z)",
+      "posted_at": "2026-11-19T17:41:10Z",
+      "thread_id": "18119934052812755",
+      "url": "https://www.threads.com/@matteofights/post/Df7o9TsoWTL"
     },
     {
       "id": "th-1119-3",
