@@ -115,7 +115,7 @@ Cut every 2 to 3 s while the story runs; back to your face on the bold lines.
 
 ## Photos from Matteo (11-20, sent in chat; upload them to Studio with the takes)
 
-Not committed: the repo is public and these are medical/personal. 1 hospital gown (appendicitis) · 2 swollen hand
+Committed cropped to assets/photos/ with Matteo's OK (11-20) so the cloud render can use them. 1 hospital gown (appendicitis) · 2 swollen hand
 (boxer's fracture) · 3 knee X-ray · 4 Super Pro Samui BJJ kids photo.
 
 ## Open idea, not in this reel: Andrew Tate
