@@ -17,12 +17,12 @@ CLIPS = {
     "hospital": ("photo", "hospital.jpg", 0, 2.0, ""),        # appendicitis: Matteo in the gown, duck face
     "stadium":  ("clip", "first-fight-2.mp4", 22.9, 2.05, 0.5),  # Matteo's pick: his kicks at 24 s (black shorts)
     "trained":  ("clip", "kicking.mov", 15.4, 2.0, 0.5),      # "so I trained three more months": explosive bag kicks
-    "thai":     ("clip", "success.mov", 22.2, 0.6, 0.5),     # Thailand: Success gym ring
+    "thai":     ("clip", "success.mov", 21.6, 1.15, 0.5),     # Thailand: Success gym ring
     "swiss":    ("clip", "impact-mma.mov", 15.0, 0.78, 0.5),   # Switzerland: Impact MMA roundhouses (Matteo: 15-20 s)
     "italy":    ("clip", "rome.mp4", 14.6, 0.56, 0.5),         # Italy: Rome garden bag work
     "morocco":  ("clip", "morocco.mov", 1.8, 0.7, 0.5),       # Morocco: Essaouira pads with the old coach
     "hand":     ("photo", "hand.jpg", 0, 1.6, ""),            # boxer's fracture: "Just a bit swollen"
-    "xray":     ("photo", "xray.jpg", 0, 3.0, ""),            # broken fibula, torn ACL
+    "xray":     ("photo", "xray.jpg", 0, 4.4, ""),            # broken fibula, torn ACL ... "I can't jump" (covers 2 look-aways)
     "combos":   ("clip", "fitness-first.mov", 28.2, 2.3, 0.5),  # "but I can do this": sharp bag combos (no kicks)
     "combos2":  ("clip", "fitness-first.mov", 40.2, 2.2, 0.5),  # second sharp combo, full extension (graded good)
     "coldB":    ("clip", "broll-pads-chaiya.mp4", 19.4, 0, 0.4),  # B frame 0: the beginner kick (dur set below)
@@ -38,12 +38,12 @@ BODY = {
     "hospital": 157.30,  # "I got appendicitis" (A, B; C has it in the hook)
     "stadium":  159.35,  # "pushed back three months, at a different stadium"
     "trained":  161.45,  # "So I trained three more months"
-    "thai":     236.80,  # "Thailand"
+    "thai":     236.25,  # "Thailand" (starts early: he looks away before the word)
     "swiss":    237.42,  # "Switzerland"
     "italy":    238.22,  # "Italy"
     "morocco":  238.80,  # "Morocco"  ("Brazil": his face, no clip)
     "hand":     276.85,  # "Boxer's fracture"
-    "xray":     283.20,  # "Broken fibula and fully torn ACL"
+    "xray":     283.20,  # "Broken fibula and fully torn ACL. I can't jump." (spans the p7/p8 join)
     "combos":   306.90,  # the shadowboxing beat is fully covered: Matteo 11-20, no home shadowboxing on screen
     "combos2":  309.20,  # (its room sound stays under the bed: breathing, feet)
 }

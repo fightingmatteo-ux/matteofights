@@ -13,7 +13,7 @@
   ],
   "hookB": [
    411.74,
-   416.25
+   415.95
   ],
   "bridgeB": [
    409.08,
@@ -134,7 +134,8 @@
   "p8": "take 1, seated, eye contact; take 2 is said while standing up (face leaves frame)",
   "shadow": "home shadowboxing 307-311: kept only as 4.5 s of room sound under two sharp bag-combo cutaways (Matteo 11-20: no home shadowboxing on screen)",
   "cut": "'Same rule as that first fight' dropped: repeats p5, and shadowboxing into 'Follow if you want to see the comeback' is the stronger end (retention: tighter is better)",
-  "speed": "1.0: any time-stretch made his voice sound robotic (assemble.py)"
+  "speed": "1.0: any time-stretch made his voice sound robotic (assemble.py)",
+  "eyes": "Every face second checked against the raw frames (Matteo 11-20: no talking head where he isn't looking at the lens): hook B trimmed before his head drops (416); look-aways at 236 (before 'Thailand'), 286 (after 'ACL') and 291 ('I can't jump') are covered by b-roll; 212 is under the WORK card"
  },
  "fix": {
   "KOSEMUI": "SAMUI",

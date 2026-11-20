@@ -4,63 +4,63 @@
   "dur": 1.3
  },
  "superpro": {
-  "start": 5.61,
+  "start": 5.31,
   "dur": 2.6
  },
  "striking": {
-  "start": 11.86,
+  "start": 11.56,
   "dur": 2.1
  },
  "booked": {
-  "start": 18.71,
+  "start": 18.41,
   "dur": 2.4
  },
  "hadnt": {
-  "start": 26.91,
+  "start": 26.61,
   "dur": 2.5
  },
  "hospital": {
-  "start": 31.91,
+  "start": 31.61,
   "dur": 2.0
  },
  "stadium": {
-  "start": 33.96,
+  "start": 33.66,
   "dur": 2.05
  },
  "trained": {
-  "start": 36.06,
+  "start": 35.76,
   "dur": 2.0
  },
  "thai": {
-  "start": 49.6,
-  "dur": 0.6
+  "start": 48.75,
+  "dur": 1.15
  },
  "swiss": {
-  "start": 50.22,
+  "start": 49.92,
   "dur": 0.78
  },
  "italy": {
-  "start": 51.02,
+  "start": 50.72,
   "dur": 0.56
  },
  "morocco": {
-  "start": 51.6,
+  "start": 51.3,
   "dur": 0.7
  },
  "hand": {
-  "start": 55.44,
+  "start": 55.14,
   "dur": 1.6
  },
  "xray": {
-  "start": 61.79,
-  "dur": 3.0
+  "start": 61.49,
+  "dur": 4.4
  },
  "combos": {
-  "start": 69.19,
+  "start": 68.89,
   "dur": 2.3
  },
  "combos2": {
-  "start": 71.49,
+  "start": 71.19,
   "dur": 2.2
  }
 }

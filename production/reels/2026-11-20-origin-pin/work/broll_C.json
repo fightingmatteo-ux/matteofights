@@ -32,8 +32,8 @@
   "dur": 2.0
  },
  "thai": {
-  "start": 49.83,
-  "dur": 0.6
+  "start": 49.28,
+  "dur": 1.15
  },
  "swiss": {
   "start": 50.45,
@@ -53,7 +53,7 @@
  },
  "xray": {
   "start": 62.02,
-  "dur": 3.0
+  "dur": 4.4
  },
  "combos": {
   "start": 69.42,
