@@ -9,7 +9,7 @@ Current bio: _"Fighter rebuilding from broken leg + ACL tear · I help beginners
 DM 'HELP' for free boxing advice · 🇨🇭🇧🇷 Bangkok."_
 
 ## The story (the content goldmine)
-Martial arts his whole life. Karate at 7. Moved to Thailand, trained Muay Thai. Three years of
+Martial arts since he was a kid (BJJ from about 10). Moved to Thailand, trained Muay Thai. Three years of
 BJJ, got good on the mat. Then a streetfight — took someone down like a BJJ guy, tore a knee
 ligament on pavement. The mat isn't the street. Lesson learned.
 
@@ -45,14 +45,15 @@ always wanted."_ It's rare and it's real. Lead with it.
   from someone living it.
 
 ## Facts confirmed by Matteo (2026-11-20, origin pin)
-- Karate at 7. BJJ about age 10 to 13. Street fight around 13 to 14: nobody won, he pulled a knee ligament, then moved
+- **Karate was one trial class as a kid: never claim it** (Matteo 11-20; older notes saying "karate at 7" are wrong).
+  BJJ about age 10 to 13. Street fight around 13 to 14: nobody won, he pulled a knee ligament, then moved
   to striking (Muay Thai) and trained for his first fight. After it: boxing to level up his hands, an MMA gym in
   Switzerland.
 - First fight at 16: booked for a Saturday, appendicitis on the Friday, postponed 3 months to a different stadium.
 - **Broken fibula + torn ACL came from ONE accident**, late March 2026 in Koh Samui, the day before he went back to
   school, age 19. In public content say only "an accident": **never mention a car, a crash, alcohol or driving**
   (insurance). No surgery planned yet (11-20). He walks fine and shadowboxes; no explosive movements.
-- Moved to Bangkok at about 18, almost 19. Got a **boxer's fracture** there; with the knee it keeps delaying his
+- Moved to Bangkok at about 18, almost 19. Got a **boxer's fracture** there (before the March 2026 accident); with the knee it keeps delaying his
   **second fight** (he has had one fight, at 16).
 - What fighting is to him (his words): it's what taught him consistency, discipline and how to actually progress.
   School came naturally, he never built study habits; training for his first fight was the first time the outcome

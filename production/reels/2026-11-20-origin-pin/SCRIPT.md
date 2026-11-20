@@ -20,13 +20,13 @@ that taught him consistency, discipline, and how to actually get good at somethi
 
 | Fact | Say |
 |---|---|
-| Karate | at 7 |
+| Karate | one trial class as a kid: **never mention it** (Matteo 11-20) |
 | BJJ | about 10 to 13 ("three years") |
 | Street fight | around 13 to 14, nobody won, pulled a knee ligament. Say no age |
 | Then | striking: Muay Thai, trained for the first fight |
 | First fight | at 16. Booked for a Saturday, appendicitis on the Friday, postponed 3 months, different stadium |
 | After | boxing to level up his hands, an MMA gym in Switzerland; trained in 5 countries (Thailand, Switzerland, Italy, Morocco, Brazil) |
-| Bangkok | moved there at about 18, almost 19. Boxer's fracture there, which (with the knee) keeps delaying his second fight |
+| Bangkok | moved there at about 18, almost 19. Boxer's fracture there (before the March accident), which (with the knee) keeps delaying his second fight |
 | Injury | late March 2026, the day before going back to school, an accident in Koh Samui: broken fibula + torn ACL, at 19 |
 | Now | no surgery planned yet. Walks fine, shadowboxes, seated punches; no explosive moves (can't jump, can't spar) |
 
@@ -49,8 +49,8 @@ both peaks (not "it all started when...") and E is your belief, so all five are 
 
 Talk it, don't read it. Lines in **bold** are worth saying close to word for word; the rest is the gist.
 
-1. **Where it started (fast, about 6 s):** "Karate at seven. Jiu-jitsu from ten to thirteen. Then a street fight
-   showed me the mat isn't the street. So I switched to striking."
+1. **Where it started (fast, about 5 s):** "I started with jiu-jitsu at ten. Three years on the mat. Then a street
+   fight showed me the mat isn't the street. So I switched to striking."
 2. **School (the setup, about 6 s):** "Back then, school came easy. I never studied, and I still passed. **I'd never
    had to work for anything.**"
 3. **The first fight (the core, about 10 s):** "Then I booked my first Muay Thai fight. I was sixteen, and I was
@@ -77,15 +77,15 @@ to me." The edit ends before the last sentence, so the replay runs into hook B.
 
 ## Text boxes in the body (editor)
 
-`KARATE 7` / `BJJ 10-13` / `STREET FIGHT` · `SCHOOL: EASY` · `FIRST FIGHT: 16` · `APPENDICITIS` (red, with the date
+`BJJ 10-13` / `STREET FIGHT` · `SCHOOL: EASY` · `FIRST FIGHT: 16` · `APPENDICITIS` (red, with the date
 card `1 DAY BEFORE`) · `+3 MONTHS` · white card: "if you want an outcome, you have to **work** for it" ·
 `5 COUNTRIES` with place plates · `BANGKOK` · `BOXER'S FRACTURE` · `MARCH 2026` · `BROKEN FIBULA` / `TORN ACL` · `FIGHT 2: ?` · end card `FOLLOW FOR THE COMEBACK`.
 
 ## B-roll (Drive)
 
 Cut every 2 to 3 s while the story runs; back to your face on the bold lines.
-- Karate at 7: childhood/karate photo, 1 s, under the `KARATE 7` card.
-- BJJ: any jiu-jitsu clip or photo (ask Matteo which folder) · street fight: no footage, black card `STREET FIGHT`.
+- BJJ: the jiu-jitsu photos from the "Worst fighting decision" reel (`p_bjj2.jpg`, `p_bjj3.jpg`, on Matteo's laptop in
+  `media/worst-decision/`, not on the media release), with a slow push-in · street fight: no footage, black card `STREET FIGHT`.
 - First year: the first-year training clip (also hook B's opening).
 - First fight: walkout and first exchanges ONLY (`Muay Thai fight matteo .MOV`), nothing from the clinch on.
 - Appendicitis: hospital photo if one exists; otherwise black card `APPENDICITIS. 1 DAY BEFORE.`
@@ -121,7 +121,7 @@ no music playing. Look into the lens, not at the screen. Say the board's number 
 ```
 School came easy. Fighting didn't.
 
-Karate at 7. Jiu-jitsu at 10. First Muay Thai fight at 16, three months late because of appendicitis.
+Jiu-jitsu at 10. First Muay Thai fight at 16, three months late because of appendicitis.
 Five countries since. Then a boxer's fracture, a broken fibula and a torn ACL.
 I'm 19 and I still haven't had my second fight.
 

@@ -31,7 +31,7 @@ for the whole first second (cover frame too, so it reads as the entry point on t
 
 Points (one breath each, keep it moving):
 1. **Who you are:** "I'm Matteo. Swiss-Brazilian, I'm a student in Thailand and I'm building an online marketing
-   business. Karate at seven, three years of BJJ, then a street fight taught me the mat isn't the street, so I moved
+   business. Three years of BJJ from age ten, then a street fight taught me the mat isn't the street, so I moved
    to Muay Thai. Trained in five countries, first fight at sixteen. Right now I'm coming back from a torn ACL."
    (Matteo 2026-11-14: add student, the business, BJJ. The business = online marketing and advertising services
    for clients; don't name clients on camera without their OK. BJJ-to-Muay-Thai uses the real reason from

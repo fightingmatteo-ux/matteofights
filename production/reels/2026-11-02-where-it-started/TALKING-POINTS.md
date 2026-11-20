@@ -1,5 +1,8 @@
 # Talking points: Where it started (pinned "who I am" reel)
 
+> **Superseded 2026-11-20** by `production/reels/2026-11-20-origin-pin/SCRIPT.md`. Karate was one trial class: never
+> say "karate at seven" (Matteo 11-20).
+
 Replaces the KO story as the pinned origin reel (Matteo 2026-11-02: the KO story keeps drawing "illegal punch"
 hate and the owned version killed engagement). **No knockout, no draw, no ref, no illegal punch.** The fight
 is one line, and the tape stops before the clinch.
