@@ -44,6 +44,18 @@ always wanted."_ It's rare and it's real. Lead with it.
 - **What followers get (his words):** "They get to see my story." Sharpen to: the mental side of fighting
   from someone living it.
 
+## Facts confirmed by Matteo (2026-11-20, origin pin)
+- Karate at 7. BJJ about age 10 to 13. Street fight around 13 to 14: nobody won, he pulled a knee ligament, then moved
+  to striking (Muay Thai) and trained for his first fight. After it: boxing to level up his hands, an MMA gym in
+  Switzerland.
+- First fight at 16: booked for a Saturday, appendicitis on the Friday, postponed 3 months to a different stadium.
+- **Broken fibula + torn ACL came from ONE accident**, late March 2026 in Koh Samui, the day before he went back to
+  school, age 19. In public content say only "an accident": **never mention a car, a crash, alcohol or driving**
+  (insurance). No surgery planned yet (11-20). He walks fine and shadowboxes; no explosive movements.
+- What fighting is to him (his words): it's what taught him consistency, discipline and how to actually progress.
+  School came naturally, he never built study habits; training for his first fight was the first time the outcome
+  depended on the work. He couldn't sleep if he hadn't trained, scared of getting knocked out in front of his friends.
+
 ## Where he is now (as of 2026-06)
 - Based in **Bangkok, Thailand**.
 - Dropped a university semester due to injury.
