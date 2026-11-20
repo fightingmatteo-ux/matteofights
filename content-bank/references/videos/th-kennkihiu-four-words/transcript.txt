@@ -1,0 +1,44 @@
+language: en
+[   0.0-   5.7] When two men are about to fight, sometimes the worst thing you can do is tell them what to do.
+[   6.1-   7.6] Excuse me, can we not do this?
+[   7.9-   9.2] Hey y'all, can we not do this?
+[   9.6-  10.2] I know we don't.
+[  10.2-  10.9] Can we not do this?
+[  11.5-  11.8] I know.
+[  12.3-  13.5] We can talk like grown men.
+[  14.4-  15.4] Can we not do this?
+[  15.4-  16.2] I know we do it.
+[  16.3-  17.3] You got to record it.
+[  17.8-  23.5] So there is someone off camera who keeps repeatedly saying, let's not do this, let's not do this.
+[  24.1-  26.9] I appreciate the intention because they are trying to stop a fight.
+[  26.9-  32.6] But when it comes to de-escalation, you often have to account for ego because when two people are about to fight,
+[  32.8-  36.5] often pride becomes more important than the original disagreement.
+[  36.7-  40.8] And you telling them what to do becomes one more thing for them to resist.
+[  41.0-  43.8] And so if you have to say something, the question becomes,
+[  44.3-  48.2] how do you tell someone what to do without telling them what to do?
+[  48.3-  53.7] If you remember the movie Inception, the whole idea was to plant a thought in someone's mind,
+[  53.7-  58.9] so naturally that they believed it was their own and de-escalation works the same way.
+[  59.1-  64.4] So instead of trying to control someone's behavior, you're trying to give them something to think about.
+[  64.7-  68.4] And these four simple words, it's not worth it.
+[  68.7-  73.9] They have a very powerful way of reminding someone what's important to them and what they stand to lose.
+[  74.0-  74.5] Yo, yo!
+[  75.1-  75.9] It ain't worth it.
+[  76.1-  77.0] It ain't worth it, man.
+[  77.5-  78.8] Chill, it ain't worth it.
+[  79.1-  79.8] Fuck you, dude.
+[  79.9-  80.8] It ain't worth it, man.
+[  80.9-  81.7] It ain't worth it, y'all.
+[  82.0-  82.9] And shit's not worth it.
+[  82.9-  83.8] It's not worth it.
+[  84.3-  85.2] It's not following me, bro.
+[  85.7-  87.1] Hey, yo, it's not worth it, bro.
+[  87.3-  87.8] Chill it, y'all.
+[  87.9-  89.1] Go on back to your business.
+[  89.2-  89.9] It's not worth it, man.
+[  90.1-  90.8] It's not following me, bro.
+[  90.9-  91.6] Jail's not worth it.
+[  91.9-  92.4] It's not yet.
+[  92.6-  92.8] Boom.
+[  93.6-  95.2] It's not worth it.
+[  95.3- 101.1] Four words that give someone time and space to make their own decision, because the goal isn't to get them to back down.
+[ 101.3- 105.0] The goal is to give them a way out without losing face.
