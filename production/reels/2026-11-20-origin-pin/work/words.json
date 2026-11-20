@@ -1,0 +1,3177 @@
+[
+{
+"text": "Part",
+"start": 1.46,
+"end": 1.94
+},
+{
+"text": "one",
+"start": 1.94,
+"end": 2.2
+},
+{
+"text": "where",
+"start": 2.2,
+"end": 2.5
+},
+{
+"text": "it",
+"start": 2.5,
+"end": 2.66
+},
+{
+"text": "started.",
+"start": 2.66,
+"end": 2.98
+},
+{
+"text": "I",
+"start": 12.54,
+"end": 12.88
+},
+{
+"text": "started",
+"start": 12.88,
+"end": 13.26
+},
+{
+"text": "with",
+"start": 13.26,
+"end": 13.56
+},
+{
+"text": "Brazilian",
+"start": 13.56,
+"end": 13.94
+},
+{
+"text": "jiu",
+"start": 13.94,
+"end": 14.2
+},
+{
+"text": "-jitsu",
+"start": 14.2,
+"end": 14.38
+},
+{
+"text": "at",
+"start": 14.38,
+"end": 14.62
+},
+{
+"text": "10",
+"start": 14.62,
+"end": 14.86
+},
+{
+"text": "Three",
+"start": 14.86,
+"end": 15.58
+},
+{
+"text": "years",
+"start": 15.58,
+"end": 15.84
+},
+{
+"text": "on",
+"start": 15.84,
+"end": 16.0
+},
+{
+"text": "the",
+"start": 16.0,
+"end": 16.1
+},
+{
+"text": "mat",
+"start": 16.1,
+"end": 16.34
+},
+{
+"text": "then",
+"start": 16.34,
+"end": 16.8
+},
+{
+"text": "a",
+"start": 16.8,
+"end": 16.94
+},
+{
+"text": "fight",
+"start": 16.94,
+"end": 17.22
+},
+{
+"text": "showed",
+"start": 17.22,
+"end": 17.6
+},
+{
+"text": "me",
+"start": 17.6,
+"end": 17.8
+},
+{
+"text": "that",
+"start": 17.8,
+"end": 18.2
+},
+{
+"text": "the",
+"start": 18.2,
+"end": 18.34
+},
+{
+"text": "mat",
+"start": 18.34,
+"end": 18.62
+},
+{
+"text": "isn't",
+"start": 18.62,
+"end": 19.2
+},
+{
+"text": "the",
+"start": 19.2,
+"end": 19.36
+},
+{
+"text": "street.",
+"start": 19.36,
+"end": 19.7
+},
+{
+"text": "So",
+"start": 19.8,
+"end": 20.14
+},
+{
+"text": "I",
+"start": 20.14,
+"end": 20.44
+},
+{
+"text": "switched",
+"start": 20.44,
+"end": 20.82
+},
+{
+"text": "to",
+"start": 20.82,
+"end": 21.2
+},
+{
+"text": "striking",
+"start": 21.2,
+"end": 21.56
+},
+{
+"text": "to",
+"start": 27.18,
+"end": 27.7
+},
+{
+"text": "school",
+"start": 27.7,
+"end": 28.36
+},
+{
+"text": "Back",
+"start": 28.36,
+"end": 29.34
+},
+{
+"text": "then",
+"start": 31.0,
+"end": 31.38
+},
+{
+"text": "school",
+"start": 31.38,
+"end": 32.02
+},
+{
+"text": "came",
+"start": 32.02,
+"end": 32.58
+},
+{
+"text": "easy.",
+"start": 32.58,
+"end": 33.12
+},
+{
+"text": "I",
+"start": 33.28,
+"end": 33.58
+},
+{
+"text": "never",
+"start": 33.58,
+"end": 33.8
+},
+{
+"text": "studied",
+"start": 33.8,
+"end": 34.18
+},
+{
+"text": "for",
+"start": 34.18,
+"end": 34.44
+},
+{
+"text": "anything",
+"start": 34.44,
+"end": 34.78
+},
+{
+"text": "and",
+"start": 34.78,
+"end": 35.16
+},
+{
+"text": "I",
+"start": 35.16,
+"end": 35.28
+},
+{
+"text": "still",
+"start": 35.28,
+"end": 35.6
+},
+{
+"text": "passed.",
+"start": 35.6,
+"end": 36.02
+},
+{
+"text": "I",
+"start": 36.22,
+"end": 36.6
+},
+{
+"text": "never",
+"start": 36.6,
+"end": 37.02
+},
+{
+"text": "learned",
+"start": 37.02,
+"end": 37.54
+},
+{
+"text": "how",
+"start": 37.54,
+"end": 37.92
+},
+{
+"text": "to",
+"start": 37.92,
+"end": 38.08
+},
+{
+"text": "work",
+"start": 38.08,
+"end": 38.28
+},
+{
+"text": "for",
+"start": 38.28,
+"end": 38.46
+},
+{
+"text": "something",
+"start": 38.46,
+"end": 38.8
+},
+{
+"text": "Again",
+"start": 43.69,
+"end": 44.15
+},
+{
+"text": "back",
+"start": 44.15,
+"end": 45.19
+},
+{
+"text": "then",
+"start": 48.17,
+"end": 48.47
+},
+{
+"text": "school",
+"start": 48.47,
+"end": 48.85
+},
+{
+"text": "came",
+"start": 48.85,
+"end": 49.13
+},
+{
+"text": "easy.",
+"start": 49.13,
+"end": 49.55
+},
+{
+"text": "I",
+"start": 49.67,
+"end": 49.87
+},
+{
+"text": "never",
+"start": 49.87,
+"end": 50.11
+},
+{
+"text": "studied",
+"start": 50.11,
+"end": 50.57
+},
+{
+"text": "for",
+"start": 50.57,
+"end": 50.81
+},
+{
+"text": "anything",
+"start": 50.81,
+"end": 51.09
+},
+{
+"text": "and",
+"start": 51.09,
+"end": 51.47
+},
+{
+"text": "I",
+"start": 51.47,
+"end": 51.61
+},
+{
+"text": "still",
+"start": 51.61,
+"end": 51.93
+},
+{
+"text": "passed",
+"start": 51.93,
+"end": 52.37
+},
+{
+"text": "I",
+"start": 52.37,
+"end": 52.67
+},
+{
+"text": "never",
+"start": 52.67,
+"end": 52.99
+},
+{
+"text": "worked",
+"start": 52.99,
+"end": 53.55
+},
+{
+"text": "for",
+"start": 53.55,
+"end": 53.87
+},
+{
+"text": "anything",
+"start": 53.87,
+"end": 54.23
+},
+{
+"text": "Again",
+"start": 59.87,
+"end": 60.37
+},
+{
+"text": "back",
+"start": 60.37,
+"end": 60.85
+},
+{
+"text": "then",
+"start": 60.85,
+"end": 61.15
+},
+{
+"text": "school",
+"start": 61.15,
+"end": 61.47
+},
+{
+"text": "came",
+"start": 61.47,
+"end": 61.73
+},
+{
+"text": "easy,",
+"start": 61.73,
+"end": 62.09
+},
+{
+"text": "but",
+"start": 62.27,
+"end": 62.27
+},
+{
+"text": "I",
+"start": 62.27,
+"end": 62.45
+},
+{
+"text": "still",
+"start": 62.45,
+"end": 62.75
+},
+{
+"text": "passed.",
+"start": 62.75,
+"end": 63.19
+},
+{
+"text": "I'd",
+"start": 63.39,
+"end": 63.73
+},
+{
+"text": "never",
+"start": 63.73,
+"end": 63.97
+},
+{
+"text": "had",
+"start": 63.97,
+"end": 64.21
+},
+{
+"text": "to",
+"start": 64.21,
+"end": 64.37
+},
+{
+"text": "work",
+"start": 64.37,
+"end": 64.55
+},
+{
+"text": "for",
+"start": 64.55,
+"end": 64.77
+},
+{
+"text": "anything",
+"start": 64.77,
+"end": 65.13
+},
+{
+"text": "Again",
+"start": 68.14,
+"end": 69.02
+},
+{
+"text": "back",
+"start": 69.02,
+"end": 69.56
+},
+{
+"text": "then",
+"start": 69.56,
+"end": 69.92
+},
+{
+"text": "school",
+"start": 69.92,
+"end": 70.36
+},
+{
+"text": "again",
+"start": 70.36,
+"end": 71.18
+},
+{
+"text": "back",
+"start": 71.18,
+"end": 71.94
+},
+{
+"text": "then",
+"start": 71.94,
+"end": 72.3
+},
+{
+"text": "school",
+"start": 72.3,
+"end": 72.74
+},
+{
+"text": "came",
+"start": 72.74,
+"end": 73.08
+},
+{
+"text": "easy.",
+"start": 73.08,
+"end": 73.48
+},
+{
+"text": "I",
+"start": 73.5,
+"end": 73.96
+},
+{
+"text": "never",
+"start": 73.96,
+"end": 74.22
+},
+{
+"text": "studied",
+"start": 74.22,
+"end": 74.66
+},
+{
+"text": "and",
+"start": 74.66,
+"end": 74.98
+},
+{
+"text": "I",
+"start": 74.98,
+"end": 75.12
+},
+{
+"text": "still",
+"start": 75.12,
+"end": 75.42
+},
+{
+"text": "passed",
+"start": 75.42,
+"end": 75.96
+},
+{
+"text": "again",
+"start": 77.04,
+"end": 77.68
+},
+{
+"text": "Back",
+"start": 79.0,
+"end": 79.64
+},
+{
+"text": "then",
+"start": 79.64,
+"end": 79.96
+},
+{
+"text": "school",
+"start": 79.96,
+"end": 80.32
+},
+{
+"text": "came",
+"start": 80.32,
+"end": 80.6
+},
+{
+"text": "easy.",
+"start": 80.6,
+"end": 80.94
+},
+{
+"text": "I",
+"start": 81.06,
+"end": 81.36
+},
+{
+"text": "never",
+"start": 81.36,
+"end": 81.54
+},
+{
+"text": "studied",
+"start": 81.54,
+"end": 81.96
+},
+{
+"text": "and",
+"start": 81.96,
+"end": 82.24
+},
+{
+"text": "I",
+"start": 82.24,
+"end": 82.34
+},
+{
+"text": "still",
+"start": 82.34,
+"end": 82.62
+},
+{
+"text": "passed.",
+"start": 82.62,
+"end": 83.12
+},
+{
+"text": "I'd",
+"start": 83.28,
+"end": 83.72
+},
+{
+"text": "never",
+"start": 83.72,
+"end": 83.94
+},
+{
+"text": "had",
+"start": 83.94,
+"end": 84.24
+},
+{
+"text": "to",
+"start": 84.24,
+"end": 84.48
+},
+{
+"text": "work",
+"start": 84.48,
+"end": 84.68
+},
+{
+"text": "for",
+"start": 84.68,
+"end": 84.88
+},
+{
+"text": "anything",
+"start": 84.88,
+"end": 85.3
+},
+{
+"text": "Then",
+"start": 95.05,
+"end": 95.61
+},
+{
+"text": "I",
+"start": 95.61,
+"end": 96.23
+},
+{
+"text": "booked",
+"start": 96.23,
+"end": 96.49
+},
+{
+"text": "my",
+"start": 96.49,
+"end": 96.73
+},
+{
+"text": "first",
+"start": 96.73,
+"end": 97.13
+},
+{
+"text": "Muay",
+"start": 97.13,
+"end": 97.49
+},
+{
+"text": "Thai",
+"start": 97.49,
+"end": 97.63
+},
+{
+"text": "fight.",
+"start": 97.63,
+"end": 98.05
+},
+{
+"text": "I",
+"start": 98.55,
+"end": 99.19
+},
+{
+"text": "Was",
+"start": 99.19,
+"end": 99.31
+},
+{
+"text": "16",
+"start": 99.31,
+"end": 99.75
+},
+{
+"text": "and",
+"start": 99.75,
+"end": 100.15
+},
+{
+"text": "I",
+"start": 100.15,
+"end": 100.29
+},
+{
+"text": "was",
+"start": 100.29,
+"end": 100.43
+},
+{
+"text": "scared",
+"start": 100.43,
+"end": 100.91
+},
+{
+"text": "again",
+"start": 101.83,
+"end": 102.43
+},
+{
+"text": "Then",
+"start": 103.95,
+"end": 104.55
+},
+{
+"text": "I",
+"start": 104.55,
+"end": 104.85
+},
+{
+"text": "booked",
+"start": 104.85,
+"end": 105.05
+},
+{
+"text": "my",
+"start": 105.05,
+"end": 105.25
+},
+{
+"text": "first",
+"start": 105.25,
+"end": 105.59
+},
+{
+"text": "Muay",
+"start": 105.59,
+"end": 105.89
+},
+{
+"text": "Thai",
+"start": 105.89,
+"end": 106.01
+},
+{
+"text": "fight.",
+"start": 106.01,
+"end": 106.31
+},
+{
+"text": "I",
+"start": 106.47,
+"end": 106.77
+},
+{
+"text": "was",
+"start": 106.77,
+"end": 106.91
+},
+{
+"text": "16",
+"start": 106.91,
+"end": 107.35
+},
+{
+"text": "and",
+"start": 107.35,
+"end": 107.85
+},
+{
+"text": "I",
+"start": 107.85,
+"end": 107.97
+},
+{
+"text": "was",
+"start": 107.97,
+"end": 108.09
+},
+{
+"text": "scared",
+"start": 108.09,
+"end": 108.57
+},
+{
+"text": "Scared",
+"start": 108.57,
+"end": 109.51
+},
+{
+"text": "of",
+"start": 109.51,
+"end": 110.09
+},
+{
+"text": "getting",
+"start": 110.09,
+"end": 110.35
+},
+{
+"text": "knocked",
+"start": 110.35,
+"end": 110.65
+},
+{
+"text": "out",
+"start": 110.65,
+"end": 110.93
+},
+{
+"text": "in",
+"start": 110.93,
+"end": 111.13
+},
+{
+"text": "front",
+"start": 111.13,
+"end": 111.27
+},
+{
+"text": "of",
+"start": 111.27,
+"end": 111.45
+},
+{
+"text": "all",
+"start": 111.45,
+"end": 111.77
+},
+{
+"text": "my",
+"start": 111.77,
+"end": 111.97
+},
+{
+"text": "friends",
+"start": 111.97,
+"end": 112.41
+},
+{
+"text": "So",
+"start": 112.41,
+"end": 113.41
+},
+{
+"text": "if",
+"start": 113.41,
+"end": 114.29
+},
+{
+"text": "I",
+"start": 114.29,
+"end": 114.45
+},
+{
+"text": "didn't",
+"start": 114.45,
+"end": 114.73
+},
+{
+"text": "train",
+"start": 114.73,
+"end": 114.95
+},
+{
+"text": "that",
+"start": 114.95,
+"end": 115.19
+},
+{
+"text": "day,",
+"start": 115.19,
+"end": 115.43
+},
+{
+"text": "I",
+"start": 115.43,
+"end": 115.73
+},
+{
+"text": "couldn't",
+"start": 115.73,
+"end": 116.03
+},
+{
+"text": "sleep",
+"start": 116.03,
+"end": 116.37
+},
+{
+"text": "again",
+"start": 120.37,
+"end": 121.41
+},
+{
+"text": "then",
+"start": 121.41,
+"end": 122.39
+},
+{
+"text": "again",
+"start": 123.17,
+"end": 123.77
+},
+{
+"text": "Then",
+"start": 125.45,
+"end": 126.05
+},
+{
+"text": "I",
+"start": 126.05,
+"end": 126.29
+},
+{
+"text": "booked",
+"start": 126.29,
+"end": 126.47
+},
+{
+"text": "my",
+"start": 126.47,
+"end": 126.67
+},
+{
+"text": "first",
+"start": 126.67,
+"end": 126.97
+},
+{
+"text": "Muay",
+"start": 126.97,
+"end": 127.25
+},
+{
+"text": "Thai",
+"start": 127.25,
+"end": 127.39
+},
+{
+"text": "fight.",
+"start": 127.39,
+"end": 127.77
+},
+{
+"text": "I",
+"start": 127.81,
+"end": 128.11
+},
+{
+"text": "was",
+"start": 128.11,
+"end": 128.27
+},
+{
+"text": "16",
+"start": 128.27,
+"end": 128.73
+},
+{
+"text": "and",
+"start": 128.73,
+"end": 129.25
+},
+{
+"text": "I",
+"start": 129.25,
+"end": 129.51
+},
+{
+"text": "was",
+"start": 129.51,
+"end": 129.71
+},
+{
+"text": "scared",
+"start": 129.71,
+"end": 130.25
+},
+{
+"text": "Scared",
+"start": 130.25,
+"end": 131.07
+},
+{
+"text": "to",
+"start": 131.07,
+"end": 131.19
+},
+{
+"text": "get",
+"start": 131.19,
+"end": 131.35
+},
+{
+"text": "knocked",
+"start": 131.35,
+"end": 131.61
+},
+{
+"text": "out",
+"start": 131.61,
+"end": 131.89
+},
+{
+"text": "in",
+"start": 131.89,
+"end": 132.09
+},
+{
+"text": "front",
+"start": 132.09,
+"end": 132.25
+},
+{
+"text": "of",
+"start": 132.25,
+"end": 132.41
+},
+{
+"text": "all",
+"start": 132.41,
+"end": 132.73
+},
+{
+"text": "my",
+"start": 132.73,
+"end": 132.95
+},
+{
+"text": "friends",
+"start": 132.95,
+"end": 133.35
+},
+{
+"text": "So",
+"start": 133.99,
+"end": 134.51
+},
+{
+"text": "if",
+"start": 134.51,
+"end": 135.01
+},
+{
+"text": "I",
+"start": 135.01,
+"end": 135.15
+},
+{
+"text": "hadn't",
+"start": 135.15,
+"end": 135.41
+},
+{
+"text": "trained",
+"start": 135.41,
+"end": 135.65
+},
+{
+"text": "that",
+"start": 135.65,
+"end": 135.87
+},
+{
+"text": "day,",
+"start": 135.87,
+"end": 136.09
+},
+{
+"text": "I",
+"start": 136.21,
+"end": 136.35
+},
+{
+"text": "couldn't",
+"start": 136.35,
+"end": 136.65
+},
+{
+"text": "sleep",
+"start": 136.65,
+"end": 137.01
+},
+{
+"text": "for",
+"start": 140.4,
+"end": 141.36
+},
+{
+"text": "the",
+"start": 141.36,
+"end": 141.96
+},
+{
+"text": "twist",
+"start": 141.96,
+"end": 142.28
+},
+{
+"text": "The",
+"start": 142.28,
+"end": 143.28
+},
+{
+"text": "day",
+"start": 147.76,
+"end": 148.0
+},
+{
+"text": "before",
+"start": 148.0,
+"end": 148.3
+},
+{
+"text": "the",
+"start": 148.3,
+"end": 148.5
+},
+{
+"text": "fight,",
+"start": 148.5,
+"end": 148.8
+},
+{
+"text": "I",
+"start": 148.92,
+"end": 149.2
+},
+{
+"text": "got",
+"start": 149.2,
+"end": 149.48
+},
+{
+"text": "appendicitis",
+"start": 149.48,
+"end": 150.96
+},
+{
+"text": "Again",
+"start": 152.08,
+"end": 152.6
+},
+{
+"text": "the",
+"start": 155.8,
+"end": 156.32
+},
+{
+"text": "day",
+"start": 156.32,
+"end": 156.54
+},
+{
+"text": "before",
+"start": 156.54,
+"end": 156.74
+},
+{
+"text": "the",
+"start": 156.74,
+"end": 156.9
+},
+{
+"text": "fight",
+"start": 156.9,
+"end": 157.22
+},
+{
+"text": "I",
+"start": 157.22,
+"end": 157.42
+},
+{
+"text": "got",
+"start": 157.42,
+"end": 157.62
+},
+{
+"text": "appendicitis",
+"start": 157.62,
+"end": 158.66
+},
+{
+"text": "the",
+"start": 158.66,
+"end": 158.98
+},
+{
+"text": "fight",
+"start": 158.98,
+"end": 159.2
+},
+{
+"text": "got",
+"start": 159.2,
+"end": 159.4
+},
+{
+"text": "pushed",
+"start": 159.4,
+"end": 159.62
+},
+{
+"text": "back",
+"start": 159.62,
+"end": 159.88
+},
+{
+"text": "three",
+"start": 159.88,
+"end": 160.22
+},
+{
+"text": "months",
+"start": 160.22,
+"end": 160.56
+},
+{
+"text": "at",
+"start": 160.56,
+"end": 160.78
+},
+{
+"text": "a",
+"start": 160.78,
+"end": 160.9
+},
+{
+"text": "different",
+"start": 160.9,
+"end": 161.16
+},
+{
+"text": "stadium.",
+"start": 161.16,
+"end": 161.52
+},
+{
+"text": "So",
+"start": 161.52,
+"end": 161.98
+},
+{
+"text": "I",
+"start": 161.98,
+"end": 162.42
+},
+{
+"text": "trained",
+"start": 162.42,
+"end": 162.7
+},
+{
+"text": "three",
+"start": 162.7,
+"end": 162.94
+},
+{
+"text": "more",
+"start": 162.94,
+"end": 163.08
+},
+{
+"text": "months",
+"start": 163.08,
+"end": 163.42
+},
+{
+"text": "five",
+"start": 167.09,
+"end": 167.57
+},
+{
+"text": "That's",
+"start": 173.25,
+"end": 173.77
+},
+{
+"text": "what",
+"start": 173.77,
+"end": 173.93
+},
+{
+"text": "fighting",
+"start": 173.93,
+"end": 174.25
+},
+{
+"text": "is",
+"start": 174.25,
+"end": 174.53
+},
+{
+"text": "to",
+"start": 174.53,
+"end": 174.69
+},
+{
+"text": "me",
+"start": 174.69,
+"end": 174.87
+},
+{
+"text": "again",
+"start": 174.87,
+"end": 175.67
+},
+{
+"text": "and",
+"start": 175.67,
+"end": 176.71
+},
+{
+"text": "that",
+"start": 178.4,
+"end": 178.7
+},
+{
+"text": "that's",
+"start": 178.7,
+"end": 179.36
+},
+{
+"text": "what",
+"start": 179.36,
+"end": 179.48
+},
+{
+"text": "fighting",
+"start": 179.48,
+"end": 179.74
+},
+{
+"text": "is",
+"start": 179.74,
+"end": 180.0
+},
+{
+"text": "to",
+"start": 180.0,
+"end": 180.14
+},
+{
+"text": "me",
+"start": 180.14,
+"end": 180.28
+},
+{
+"text": "It's",
+"start": 180.28,
+"end": 180.54
+},
+{
+"text": "the",
+"start": 180.54,
+"end": 180.68
+},
+{
+"text": "first",
+"start": 180.68,
+"end": 180.96
+},
+{
+"text": "thing",
+"start": 180.96,
+"end": 181.28
+},
+{
+"text": "that",
+"start": 181.28,
+"end": 181.46
+},
+{
+"text": "taught",
+"start": 181.46,
+"end": 181.72
+},
+{
+"text": "me",
+"start": 181.72,
+"end": 181.96
+},
+{
+"text": "if",
+"start": 181.96,
+"end": 182.26
+},
+{
+"text": "you",
+"start": 182.26,
+"end": 182.42
+},
+{
+"text": "want",
+"start": 182.42,
+"end": 182.66
+},
+{
+"text": "something",
+"start": 182.66,
+"end": 183.04
+},
+{
+"text": "you",
+"start": 183.04,
+"end": 183.4
+},
+{
+"text": "have",
+"start": 183.4,
+"end": 183.64
+},
+{
+"text": "to",
+"start": 183.64,
+"end": 183.78
+},
+{
+"text": "work",
+"start": 183.78,
+"end": 184.0
+},
+{
+"text": "for",
+"start": 184.0,
+"end": 184.24
+},
+{
+"text": "it",
+"start": 184.24,
+"end": 184.5
+},
+{
+"text": "again",
+"start": 187.42,
+"end": 188.26
+},
+{
+"text": "That's",
+"start": 189.88,
+"end": 190.4
+},
+{
+"text": "what",
+"start": 190.4,
+"end": 190.5
+},
+{
+"text": "fighting",
+"start": 190.5,
+"end": 190.8
+},
+{
+"text": "is",
+"start": 190.8,
+"end": 191.06
+},
+{
+"text": "to",
+"start": 191.06,
+"end": 191.2
+},
+{
+"text": "me",
+"start": 191.2,
+"end": 191.34
+},
+{
+"text": "It's",
+"start": 191.34,
+"end": 191.62
+},
+{
+"text": "the",
+"start": 191.62,
+"end": 191.74
+},
+{
+"text": "first",
+"start": 191.74,
+"end": 192.02
+},
+{
+"text": "thing",
+"start": 192.02,
+"end": 192.3
+},
+{
+"text": "that",
+"start": 192.3,
+"end": 192.52
+},
+{
+"text": "taught",
+"start": 192.52,
+"end": 192.76
+},
+{
+"text": "me",
+"start": 192.76,
+"end": 193.02
+},
+{
+"text": "if",
+"start": 193.02,
+"end": 193.54
+},
+{
+"text": "you",
+"start": 193.54,
+"end": 193.68
+},
+{
+"text": "want",
+"start": 193.68,
+"end": 193.92
+},
+{
+"text": "something",
+"start": 193.92,
+"end": 194.24
+},
+{
+"text": "you",
+"start": 194.24,
+"end": 194.88
+},
+{
+"text": "have",
+"start": 194.88,
+"end": 195.1
+},
+{
+"text": "to",
+"start": 195.1,
+"end": 195.24
+},
+{
+"text": "work",
+"start": 195.24,
+"end": 195.46
+},
+{
+"text": "for",
+"start": 195.46,
+"end": 195.72
+},
+{
+"text": "it",
+"start": 195.72,
+"end": 195.96
+},
+{
+"text": "discipline",
+"start": 195.96,
+"end": 196.56
+},
+{
+"text": "consistency",
+"start": 196.56,
+"end": 197.52
+},
+{
+"text": "How",
+"start": 198.22,
+"end": 198.74
+},
+{
+"text": "to",
+"start": 198.74,
+"end": 198.9
+},
+{
+"text": "actually",
+"start": 198.9,
+"end": 199.3
+},
+{
+"text": "get",
+"start": 199.3,
+"end": 199.68
+},
+{
+"text": "good",
+"start": 199.68,
+"end": 199.94
+},
+{
+"text": "at",
+"start": 199.94,
+"end": 200.08
+},
+{
+"text": "something",
+"start": 200.08,
+"end": 200.38
+},
+{
+"text": "again?",
+"start": 200.38,
+"end": 201.56
+},
+{
+"text": "That's",
+"start": 207.83,
+"end": 208.35
+},
+{
+"text": "what",
+"start": 208.35,
+"end": 208.47
+},
+{
+"text": "fighting",
+"start": 208.47,
+"end": 208.75
+},
+{
+"text": "is",
+"start": 208.75,
+"end": 209.07
+},
+{
+"text": "to",
+"start": 209.07,
+"end": 209.21
+},
+{
+"text": "me.",
+"start": 209.21,
+"end": 209.43
+},
+{
+"text": "It",
+"start": 209.43,
+"end": 209.95
+},
+{
+"text": "taught",
+"start": 209.95,
+"end": 210.17
+},
+{
+"text": "me",
+"start": 210.17,
+"end": 210.35
+},
+{
+"text": "if",
+"start": 210.35,
+"end": 210.79
+},
+{
+"text": "you",
+"start": 210.79,
+"end": 210.99
+},
+{
+"text": "want",
+"start": 210.99,
+"end": 211.27
+},
+{
+"text": "something",
+"start": 211.27,
+"end": 211.67
+},
+{
+"text": "you",
+"start": 211.67,
+"end": 212.03
+},
+{
+"text": "actually",
+"start": 212.03,
+"end": 212.51
+},
+{
+"text": "have",
+"start": 212.51,
+"end": 212.81
+},
+{
+"text": "to",
+"start": 212.81,
+"end": 212.95
+},
+{
+"text": "work",
+"start": 212.95,
+"end": 213.29
+},
+{
+"text": "your",
+"start": 213.29,
+"end": 213.51
+},
+{
+"text": "ass",
+"start": 213.51,
+"end": 213.89
+},
+{
+"text": "off",
+"start": 213.89,
+"end": 214.11
+},
+{
+"text": "for",
+"start": 214.11,
+"end": 214.29
+},
+{
+"text": "it",
+"start": 214.29,
+"end": 214.57
+},
+{
+"text": "Discipline",
+"start": 214.57,
+"end": 215.53
+},
+{
+"text": "consistency",
+"start": 215.53,
+"end": 216.35
+},
+{
+"text": "how",
+"start": 216.35,
+"end": 216.99
+},
+{
+"text": "to",
+"start": 216.99,
+"end": 217.17
+},
+{
+"text": "actually",
+"start": 217.17,
+"end": 217.61
+},
+{
+"text": "get",
+"start": 217.61,
+"end": 217.95
+},
+{
+"text": "good",
+"start": 217.95,
+"end": 218.27
+},
+{
+"text": "at",
+"start": 218.27,
+"end": 218.61
+},
+{
+"text": "something",
+"start": 218.61,
+"end": 218.97
+},
+{
+"text": "Since",
+"start": 223.98,
+"end": 224.52
+},
+{
+"text": "then",
+"start": 224.52,
+"end": 224.88
+},
+{
+"text": "five",
+"start": 224.88,
+"end": 225.58
+},
+{
+"text": "countries",
+"start": 225.58,
+"end": 226.18
+},
+{
+"text": "Switzerland",
+"start": 226.18,
+"end": 226.8
+},
+{
+"text": "Italy",
+"start": 226.8,
+"end": 227.48
+},
+{
+"text": "Morocco",
+"start": 227.48,
+"end": 228.0
+},
+{
+"text": "Brazil",
+"start": 228.0,
+"end": 228.66
+},
+{
+"text": "Since",
+"start": 234.28,
+"end": 234.82
+},
+{
+"text": "then",
+"start": 234.82,
+"end": 235.18
+},
+{
+"text": "five",
+"start": 235.18,
+"end": 235.72
+},
+{
+"text": "countries",
+"start": 235.72,
+"end": 236.38
+},
+{
+"text": "Thailand",
+"start": 236.86,
+"end": 237.4
+},
+{
+"text": "Switzerland",
+"start": 237.4,
+"end": 238.2
+},
+{
+"text": "Italy",
+"start": 238.2,
+"end": 238.78
+},
+{
+"text": "Morocco",
+"start": 238.78,
+"end": 239.48
+},
+{
+"text": "Brazil",
+"start": 239.48,
+"end": 240.02
+},
+{
+"text": "Then",
+"start": 248.56,
+"end": 249.1
+},
+{
+"text": "I",
+"start": 249.1,
+"end": 249.52
+},
+{
+"text": "moved",
+"start": 249.52,
+"end": 249.74
+},
+{
+"text": "to",
+"start": 249.74,
+"end": 249.92
+},
+{
+"text": "Bangkok",
+"start": 249.92,
+"end": 250.24
+},
+{
+"text": "Boxers",
+"start": 250.96,
+"end": 251.5
+},
+{
+"text": "fracture",
+"start": 251.5,
+"end": 251.92
+},
+{
+"text": "and",
+"start": 251.92,
+"end": 252.86
+},
+{
+"text": "on",
+"start": 252.86,
+"end": 252.98
+},
+{
+"text": "March",
+"start": 252.98,
+"end": 253.32
+},
+{
+"text": "Again,",
+"start": 254.1,
+"end": 254.64
+},
+{
+"text": "then",
+"start": 269.45,
+"end": 270.47
+},
+{
+"text": "I",
+"start": 270.47,
+"end": 270.75
+},
+{
+"text": "moved",
+"start": 270.75,
+"end": 270.95
+},
+{
+"text": "to",
+"start": 270.95,
+"end": 271.07
+},
+{
+"text": "Bangkok",
+"start": 271.07,
+"end": 271.39
+},
+{
+"text": "Again",
+"start": 272.93,
+"end": 273.47
+},
+{
+"text": "Then",
+"start": 274.71,
+"end": 275.39
+},
+{
+"text": "I",
+"start": 275.39,
+"end": 275.77
+},
+{
+"text": "moved",
+"start": 275.77,
+"end": 275.95
+},
+{
+"text": "to",
+"start": 275.95,
+"end": 276.11
+},
+{
+"text": "Bangkok",
+"start": 276.11,
+"end": 276.39
+},
+{
+"text": "Boxers",
+"start": 276.91,
+"end": 277.43
+},
+{
+"text": "fracture",
+"start": 277.43,
+"end": 277.83
+},
+{
+"text": "and",
+"start": 277.83,
+"end": 278.39
+},
+{
+"text": "this",
+"start": 278.39,
+"end": 278.69
+},
+{
+"text": "March",
+"start": 278.69,
+"end": 279.03
+},
+{
+"text": "the",
+"start": 279.03,
+"end": 279.59
+},
+{
+"text": "day",
+"start": 279.59,
+"end": 279.91
+},
+{
+"text": "before",
+"start": 279.91,
+"end": 280.37
+},
+{
+"text": "I",
+"start": 280.37,
+"end": 280.67
+},
+{
+"text": "went",
+"start": 280.67,
+"end": 280.83
+},
+{
+"text": "back",
+"start": 280.83,
+"end": 281.13
+},
+{
+"text": "to",
+"start": 281.13,
+"end": 281.33
+},
+{
+"text": "uni",
+"start": 281.33,
+"end": 281.67
+},
+{
+"text": "an",
+"start": 281.67,
+"end": 282.13
+},
+{
+"text": "accident",
+"start": 282.13,
+"end": 282.55
+},
+{
+"text": "in",
+"start": 282.55,
+"end": 282.81
+},
+{
+"text": "Kosemui",
+"start": 282.81,
+"end": 283.27
+},
+{
+"text": "Broken",
+"start": 283.27,
+"end": 284.11
+},
+{
+"text": "fibula",
+"start": 284.11,
+"end": 284.69
+},
+{
+"text": "and",
+"start": 284.69,
+"end": 285.01
+},
+{
+"text": "fully",
+"start": 285.01,
+"end": 285.37
+},
+{
+"text": "torn",
+"start": 285.37,
+"end": 285.71
+},
+{
+"text": "ACL.",
+"start": 285.71,
+"end": 286.21
+},
+{
+"text": "I",
+"start": 290.73,
+"end": 290.79
+},
+{
+"text": "can't",
+"start": 290.79,
+"end": 291.21
+},
+{
+"text": "jump.",
+"start": 291.21,
+"end": 291.55
+},
+{
+"text": "I",
+"start": 291.99,
+"end": 292.13
+},
+{
+"text": "can't",
+"start": 292.13,
+"end": 292.61
+},
+{
+"text": "spar,",
+"start": 292.61,
+"end": 292.83
+},
+{
+"text": "but",
+"start": 292.99,
+"end": 293.55
+},
+{
+"text": "I",
+"start": 293.55,
+"end": 293.97
+},
+{
+"text": "can",
+"start": 293.97,
+"end": 294.13
+},
+{
+"text": "do",
+"start": 294.13,
+"end": 294.31
+},
+{
+"text": "this",
+"start": 294.31,
+"end": 294.71
+},
+{
+"text": "I",
+"start": 294.71,
+"end": 295.27
+},
+{
+"text": "can't",
+"start": 303.11,
+"end": 303.87
+},
+{
+"text": "jump.",
+"start": 303.87,
+"end": 304.13
+},
+{
+"text": "I",
+"start": 304.47,
+"end": 304.51
+},
+{
+"text": "can't",
+"start": 304.51,
+"end": 304.87
+},
+{
+"text": "spar,",
+"start": 304.87,
+"end": 305.11
+},
+{
+"text": "but",
+"start": 305.27,
+"end": 305.77
+},
+{
+"text": "I",
+"start": 305.77,
+"end": 306.37
+},
+{
+"text": "can",
+"start": 306.37,
+"end": 306.51
+},
+{
+"text": "do",
+"start": 306.51,
+"end": 306.63
+},
+{
+"text": "this",
+"start": 306.63,
+"end": 306.91
+},
+{
+"text": "Same",
+"start": 323.97,
+"end": 324.95
+},
+{
+"text": "rule",
+"start": 324.95,
+"end": 325.23
+},
+{
+"text": "as",
+"start": 325.23,
+"end": 325.51
+},
+{
+"text": "that",
+"start": 325.51,
+"end": 325.69
+},
+{
+"text": "first",
+"start": 325.69,
+"end": 325.99
+},
+{
+"text": "fight",
+"start": 325.99,
+"end": 326.43
+},
+{
+"text": "if",
+"start": 326.43,
+"end": 326.91
+},
+{
+"text": "you",
+"start": 326.91,
+"end": 327.21
+},
+{
+"text": "want",
+"start": 327.21,
+"end": 327.49
+},
+{
+"text": "it",
+"start": 327.49,
+"end": 327.67
+},
+{
+"text": "you",
+"start": 327.67,
+"end": 328.19
+},
+{
+"text": "work",
+"start": 328.19,
+"end": 328.45
+},
+{
+"text": "for",
+"start": 328.45,
+"end": 328.65
+},
+{
+"text": "it",
+"start": 328.65,
+"end": 328.87
+},
+{
+"text": "Same",
+"start": 333.57,
+"end": 334.43
+},
+{
+"text": "rule",
+"start": 334.43,
+"end": 334.75
+},
+{
+"text": "as",
+"start": 334.75,
+"end": 335.07
+},
+{
+"text": "that",
+"start": 335.07,
+"end": 335.25
+},
+{
+"text": "first",
+"start": 335.25,
+"end": 335.55
+},
+{
+"text": "fight",
+"start": 335.55,
+"end": 335.89
+},
+{
+"text": "you",
+"start": 335.89,
+"end": 336.41
+},
+{
+"text": "want",
+"start": 336.41,
+"end": 336.65
+},
+{
+"text": "it",
+"start": 336.65,
+"end": 336.79
+},
+{
+"text": "you",
+"start": 336.79,
+"end": 337.17
+},
+{
+"text": "work",
+"start": 337.17,
+"end": 337.41
+},
+{
+"text": "for",
+"start": 337.41,
+"end": 337.57
+},
+{
+"text": "it",
+"start": 337.57,
+"end": 337.81
+},
+{
+"text": "Follow",
+"start": 362.1,
+"end": 362.92
+},
+{
+"text": "if",
+"start": 362.92,
+"end": 363.44
+},
+{
+"text": "you",
+"start": 363.44,
+"end": 363.58
+},
+{
+"text": "want",
+"start": 363.58,
+"end": 363.76
+},
+{
+"text": "to",
+"start": 363.76,
+"end": 363.92
+},
+{
+"text": "see",
+"start": 363.92,
+"end": 364.08
+},
+{
+"text": "the",
+"start": 364.08,
+"end": 364.22
+},
+{
+"text": "again",
+"start": 364.22,
+"end": 364.74
+},
+{
+"text": "These",
+"start": 365.68,
+"end": 366.22
+},
+{
+"text": "are",
+"start": 366.22,
+"end": 366.38
+},
+{
+"text": "the",
+"start": 366.38,
+"end": 366.5
+},
+{
+"text": "loops",
+"start": 366.5,
+"end": 366.68
+},
+{
+"text": "by",
+"start": 366.68,
+"end": 366.9
+},
+{
+"text": "the",
+"start": 366.9,
+"end": 366.96
+},
+{
+"text": "way",
+"start": 366.96,
+"end": 367.12
+},
+{
+"text": "a",
+"start": 367.12,
+"end": 367.36
+},
+{
+"text": "loop",
+"start": 367.36,
+"end": 367.7
+},
+{
+"text": "a",
+"start": 367.7,
+"end": 367.96
+},
+{
+"text": "Follow",
+"start": 371.17,
+"end": 371.63
+},
+{
+"text": "if",
+"start": 371.63,
+"end": 371.91
+},
+{
+"text": "you",
+"start": 371.91,
+"end": 371.99
+},
+{
+"text": "want",
+"start": 371.99,
+"end": 372.15
+},
+{
+"text": "to",
+"start": 372.15,
+"end": 372.27
+},
+{
+"text": "see",
+"start": 372.27,
+"end": 372.43
+},
+{
+"text": "the",
+"start": 372.43,
+"end": 372.53
+},
+{
+"text": "comeback",
+"start": 372.53,
+"end": 372.89
+},
+{
+"text": "because",
+"start": 372.89,
+"end": 373.45
+},
+{
+"text": "right",
+"start": 373.45,
+"end": 373.75
+},
+{
+"text": "now",
+"start": 373.75,
+"end": 374.01
+},
+{
+"text": "it's",
+"start": 374.01,
+"end": 374.49
+},
+{
+"text": "still",
+"start": 374.49,
+"end": 374.73
+},
+{
+"text": "this",
+"start": 374.73,
+"end": 375.09
+},
+{
+"text": "one",
+"start": 375.09,
+"end": 375.75
+},
+{
+"text": "fight",
+"start": 375.75,
+"end": 376.09
+},
+{
+"text": "at",
+"start": 376.09,
+"end": 376.33
+},
+{
+"text": "16",
+"start": 376.33,
+"end": 376.77
+},
+{
+"text": "I'm",
+"start": 376.77,
+"end": 377.55
+},
+{
+"text": "19",
+"start": 377.55,
+"end": 378.01
+},
+{
+"text": "and",
+"start": 378.01,
+"end": 378.37
+},
+{
+"text": "I",
+"start": 378.37,
+"end": 378.51
+},
+{
+"text": "still",
+"start": 378.51,
+"end": 378.93
+},
+{
+"text": "haven't",
+"start": 378.93,
+"end": 379.35
+},
+{
+"text": "had",
+"start": 379.35,
+"end": 379.55
+},
+{
+"text": "my",
+"start": 379.55,
+"end": 379.77
+},
+{
+"text": "second",
+"start": 379.77,
+"end": 380.09
+},
+{
+"text": "one",
+"start": 380.09,
+"end": 380.41
+},
+{
+"text": "hook",
+"start": 384.12,
+"end": 385.08
+},
+{
+"text": "be",
+"start": 385.08,
+"end": 385.44
+},
+{
+"text": "Follow",
+"start": 391.24,
+"end": 391.68
+},
+{
+"text": "if",
+"start": 391.68,
+"end": 392.0
+},
+{
+"text": "you",
+"start": 392.0,
+"end": 392.1
+},
+{
+"text": "want",
+"start": 392.1,
+"end": 392.3
+},
+{
+"text": "to",
+"start": 392.3,
+"end": 392.44
+},
+{
+"text": "see",
+"start": 392.44,
+"end": 392.6
+},
+{
+"text": "the",
+"start": 392.6,
+"end": 392.7
+},
+{
+"text": "comeback",
+"start": 392.7,
+"end": 393.04
+},
+{
+"text": "again",
+"start": 393.04,
+"end": 393.6
+},
+{
+"text": "Hook",
+"start": 394.86,
+"end": 395.42
+},
+{
+"text": "be",
+"start": 395.42,
+"end": 395.64
+},
+{
+"text": "follow",
+"start": 395.64,
+"end": 396.54
+},
+{
+"text": "if",
+"start": 396.54,
+"end": 396.8
+},
+{
+"text": "you",
+"start": 396.8,
+"end": 396.88
+},
+{
+"text": "want",
+"start": 396.88,
+"end": 397.02
+},
+{
+"text": "to",
+"start": 397.02,
+"end": 397.1
+},
+{
+"text": "see",
+"start": 397.1,
+"end": 397.22
+},
+{
+"text": "the",
+"start": 397.22,
+"end": 397.32
+},
+{
+"text": "comeback",
+"start": 397.32,
+"end": 397.66
+},
+{
+"text": "and",
+"start": 397.66,
+"end": 398.0
+},
+{
+"text": "honestly",
+"start": 398.0,
+"end": 398.46
+},
+{
+"text": "school",
+"start": 398.46,
+"end": 399.18
+},
+{
+"text": "came",
+"start": 399.18,
+"end": 399.46
+},
+{
+"text": "easy",
+"start": 399.46,
+"end": 399.76
+},
+{
+"text": "to",
+"start": 399.76,
+"end": 400.0
+},
+{
+"text": "me",
+"start": 400.0,
+"end": 400.16
+},
+{
+"text": "fighting",
+"start": 400.16,
+"end": 400.78
+},
+{
+"text": "was",
+"start": 400.78,
+"end": 401.06
+},
+{
+"text": "the",
+"start": 401.06,
+"end": 401.26
+},
+{
+"text": "first",
+"start": 401.26,
+"end": 401.68
+},
+{
+"text": "thing",
+"start": 401.68,
+"end": 402.08
+},
+{
+"text": "that",
+"start": 402.08,
+"end": 402.52
+},
+{
+"text": "didn't",
+"start": 402.52,
+"end": 402.88
+},
+{
+"text": "Hook",
+"start": 406.1,
+"end": 406.5
+},
+{
+"text": "be",
+"start": 406.5,
+"end": 406.7
+},
+{
+"text": "again.",
+"start": 406.7,
+"end": 406.98
+},
+{
+"text": "Maybe",
+"start": 407.02,
+"end": 407.14
+},
+{
+"text": "this",
+"start": 407.14,
+"end": 407.36
+},
+{
+"text": "one",
+"start": 407.36,
+"end": 407.48
+},
+{
+"text": "is",
+"start": 407.48,
+"end": 407.54
+},
+{
+"text": "better",
+"start": 407.54,
+"end": 407.78
+},
+{
+"text": "Follow",
+"start": 409.24,
+"end": 409.8
+},
+{
+"text": "if",
+"start": 409.8,
+"end": 410.18
+},
+{
+"text": "you",
+"start": 410.18,
+"end": 410.28
+},
+{
+"text": "want",
+"start": 410.28,
+"end": 410.44
+},
+{
+"text": "to",
+"start": 410.44,
+"end": 410.54
+},
+{
+"text": "see",
+"start": 410.54,
+"end": 410.66
+},
+{
+"text": "the",
+"start": 410.66,
+"end": 410.76
+},
+{
+"text": "comeback",
+"start": 410.76,
+"end": 411.12
+},
+{
+"text": "and",
+"start": 411.12,
+"end": 411.42
+},
+{
+"text": "honestly",
+"start": 411.42,
+"end": 411.78
+},
+{
+"text": "school",
+"start": 411.78,
+"end": 412.18
+},
+{
+"text": "came",
+"start": 412.18,
+"end": 412.4
+},
+{
+"text": "easy",
+"start": 412.4,
+"end": 412.7
+},
+{
+"text": "to",
+"start": 412.7,
+"end": 412.9
+},
+{
+"text": "me",
+"start": 412.9,
+"end": 413.1
+},
+{
+"text": "fighting",
+"start": 413.1,
+"end": 413.66
+},
+{
+"text": "was",
+"start": 413.66,
+"end": 414.08
+},
+{
+"text": "the",
+"start": 414.08,
+"end": 414.22
+},
+{
+"text": "first",
+"start": 414.22,
+"end": 414.62
+},
+{
+"text": "thing",
+"start": 414.62,
+"end": 414.98
+},
+{
+"text": "that",
+"start": 414.98,
+"end": 415.34
+},
+{
+"text": "didn't",
+"start": 415.34,
+"end": 415.9
+},
+{
+"text": "Hook",
+"start": 419.58,
+"end": 420.44
+},
+{
+"text": "see",
+"start": 420.44,
+"end": 420.7
+},
+{
+"text": "Follow",
+"start": 433.99,
+"end": 434.43
+},
+{
+"text": "if",
+"start": 434.43,
+"end": 434.77
+},
+{
+"text": "you",
+"start": 434.77,
+"end": 434.87
+},
+{
+"text": "want",
+"start": 434.87,
+"end": 435.03
+},
+{
+"text": "to",
+"start": 435.03,
+"end": 435.11
+},
+{
+"text": "see",
+"start": 435.11,
+"end": 435.27
+},
+{
+"text": "the",
+"start": 435.27,
+"end": 435.37
+},
+{
+"text": "comeback",
+"start": 435.37,
+"end": 435.73
+},
+{
+"text": "because",
+"start": 435.73,
+"end": 436.23
+},
+{
+"text": "this",
+"start": 436.23,
+"end": 436.55
+},
+{
+"text": "isn't",
+"start": 436.55,
+"end": 436.87
+},
+{
+"text": "my",
+"start": 436.87,
+"end": 437.01
+},
+{
+"text": "first",
+"start": 437.01,
+"end": 437.31
+},
+{
+"text": "time",
+"start": 437.31,
+"end": 437.69
+},
+{
+"text": "The",
+"start": 438.41,
+"end": 438.97
+},
+{
+"text": "day",
+"start": 438.97,
+"end": 439.23
+},
+{
+"text": "before",
+"start": 439.23,
+"end": 439.65
+},
+{
+"text": "my",
+"start": 439.65,
+"end": 439.83
+},
+{
+"text": "first",
+"start": 439.83,
+"end": 440.19
+},
+{
+"text": "fight",
+"start": 440.19,
+"end": 440.53
+},
+{
+"text": "I",
+"start": 440.53,
+"end": 440.79
+},
+{
+"text": "ended",
+"start": 440.79,
+"end": 441.09
+},
+{
+"text": "up",
+"start": 441.09,
+"end": 441.33
+},
+{
+"text": "in",
+"start": 441.33,
+"end": 441.47
+},
+{
+"text": "the",
+"start": 441.47,
+"end": 441.57
+},
+{
+"text": "hospital",
+"start": 441.57,
+"end": 442.03
+},
+{
+"text": "Follow",
+"start": 450.86,
+"end": 451.5
+},
+{
+"text": "if",
+"start": 451.5,
+"end": 451.9
+},
+{
+"text": "you",
+"start": 451.9,
+"end": 452.0
+},
+{
+"text": "want",
+"start": 452.0,
+"end": 452.16
+},
+{
+"text": "to",
+"start": 452.16,
+"end": 452.26
+},
+{
+"text": "see",
+"start": 452.26,
+"end": 452.4
+},
+{
+"text": "the",
+"start": 452.4,
+"end": 452.52
+},
+{
+"text": "comeback",
+"start": 452.52,
+"end": 452.84
+},
+{
+"text": "because",
+"start": 452.84,
+"end": 453.24
+},
+{
+"text": "this",
+"start": 453.24,
+"end": 453.56
+},
+{
+"text": "isn't",
+"start": 453.56,
+"end": 454.06
+},
+{
+"text": "the",
+"start": 454.06,
+"end": 454.12
+},
+{
+"text": "first",
+"start": 454.12,
+"end": 454.36
+},
+{
+"text": "time",
+"start": 454.36,
+"end": 454.66
+},
+{
+"text": "the",
+"start": 454.66,
+"end": 455.16
+},
+{
+"text": "day",
+"start": 455.16,
+"end": 455.38
+},
+{
+"text": "before",
+"start": 455.38,
+"end": 455.7
+},
+{
+"text": "my",
+"start": 455.7,
+"end": 455.92
+},
+{
+"text": "first",
+"start": 455.92,
+"end": 456.24
+},
+{
+"text": "fight",
+"start": 456.24,
+"end": 456.56
+},
+{
+"text": "I",
+"start": 456.56,
+"end": 456.86
+},
+{
+"text": "ended",
+"start": 456.86,
+"end": 457.08
+},
+{
+"text": "up",
+"start": 457.08,
+"end": 457.38
+},
+{
+"text": "in",
+"start": 457.38,
+"end": 457.58
+},
+{
+"text": "the",
+"start": 457.58,
+"end": 457.72
+},
+{
+"text": "hospital",
+"start": 457.72,
+"end": 458.08
+}
+]

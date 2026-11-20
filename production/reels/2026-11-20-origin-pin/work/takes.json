@@ -1,0 +1,145 @@
+{
+ "src": "../../../media/origin-pin/raw.mp4",
+ "words": "work/words.json",
+ "speed": 1.0,
+ "takes": {
+  "hookA": [
+   375.04,
+   380.75
+  ],
+  "bridgeA": [
+   371.0,
+   375.04
+  ],
+  "hookB": [
+   411.74,
+   416.25
+  ],
+  "bridgeB": [
+   409.08,
+   411.74
+  ],
+  "hookC": [
+   438.25,
+   442.4
+  ],
+  "bridgeC": [
+   433.85,
+   438.25
+  ],
+  "p1": [
+   12.4,
+   21.9
+  ],
+  "p2": [
+   78.85,
+   85.6
+  ],
+  "p2B": [
+   80.95,
+   85.6
+  ],
+  "p3": [
+   [
+    125.3,
+    133.45
+   ],
+   [
+    133.85,
+    137.3
+   ]
+  ],
+  "p4": [
+   155.65,
+   163.75
+  ],
+  "p4C": [
+   157.16,
+   163.75
+  ],
+  "p5": [
+   207.68,
+   216.25
+  ],
+  "p6": [
+   234.13,
+   240.35
+  ],
+  "p7": [
+   274.56,
+   286.5
+  ],
+  "p8": [
+   290.58,
+   294.68
+  ],
+  "shadow": [
+   306.9,
+   311.4
+  ]
+ },
+ "variants": {
+  "A": [
+   "hookA",
+   "p1",
+   "p2",
+   "p3",
+   "p4",
+   "p5",
+   "p6",
+   "p7",
+   "p8",
+   "shadow",
+   "bridgeA"
+  ],
+  "B": [
+   "hookB",
+   "p1",
+   "p2B",
+   "p3",
+   "p4",
+   "p5",
+   "p6",
+   "p7",
+   "p8",
+   "shadow",
+   "bridgeB"
+  ],
+  "C": [
+   "hookC",
+   "p1",
+   "p2",
+   "p3",
+   "p4C",
+   "p5",
+   "p6",
+   "p7",
+   "p8",
+   "shadow",
+   "bridgeC"
+  ]
+ },
+ "why": {
+  "loops": "Each variant = hook + body + bridge, where bridge and hook are one continuous take split at the hook's first word (Matteo 11-20): the video ends on the bridge and restarts on the hook, one unbroken sentence",
+  "hookA": "only take (371-381), holds the lens",
+  "hookB": "take 2 (409-416): Matteo flagged it ('maybe this one is better'), clean start; take 1 starts with 'Hook be'",
+  "hookC": "take 1 (434-442): natural pause between bridge and hook, so the loop seam is clean; take 2 runs the words together",
+  "p1": "only take; 'Part one where it started' dropped",
+  "p2": "last take (79-85), the only clean full one; B skips 'Back then school came easy' (its hook says it)",
+  "p3": "take 3 (125-137), the only one with 'hadn't trained'; 1 s pause before 'So' cut to 0.4 s",
+  "p4": "take 2 (155-164); take 1 drags 9 s; C skips 'the day before the fight' (its hook says it)",
+  "p5": "'work your ass off' take (208-216), most natural; ends on 'Discipline. Consistency.' for pace",
+  "p6": "take 2, has Thailand (take 1 forgot it)",
+  "p7": "take 3 (275-286), the only full one",
+  "p8": "take 1, seated, eye contact; take 2 is said while standing up (face leaves frame)",
+  "shadow": "home shadowboxing 307-311 (best stance, before he walks to the camera)",
+  "cut": "'Same rule as that first fight' dropped: repeats p5, and shadowboxing into 'Follow if you want to see the comeback' is the stronger end (retention: tighter is better)",
+  "speed": "1.0: any time-stretch made his voice sound robotic (assemble.py)"
+ },
+ "fix": {
+  "KOSEMUI": "SAMUI",
+  "BOXERS": "BOXER'S",
+  "16": "16",
+  "UNI": "UNI"
+ }
+}

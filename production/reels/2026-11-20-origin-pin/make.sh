@@ -25,8 +25,8 @@ npx --yes hyperframes@0.8.147 check || { echo "hyperframes check failed"; exit 1
 mkdir -p "$(dirname "$OUT")"
 render() { npx --yes hyperframes@0.8.147 render -q standard -w 4 -o "$OUT" 2>&1 | grep -E "rendered in|failed|rror" || true; }
 render
-# G and H open on footage, not the A-roll: only black frames count as a glitch there
-case "$V" in G|H) CHK=(1.5 black);; *) CHK=();; esac
+# B and C open on footage, not the A-roll: only black frames count as a glitch there
+case "$V" in B|C) CHK=(1.5 black);; *) CHK=();; esac
 "$PY" -I "$K/check_render.py" "$OUT" "assets/media/aroll_$V.mp4" ${CHK[@]+"${CHK[@]}"} || { echo "glitch: rendering again"; render; "$PY" -I "$K/check_render.py" "$OUT" "assets/media/aroll_$V.mp4" ${CHK[@]+"${CHK[@]}"} || echo "still flagged after one re-render (cutaways can trip it), continuing"; }
 ffmpeg -v error -y -i "$OUT" -c:v libx264 -crf 23 -preset slow -c:a copy -movflags +faststart "${OUT%.mp4}-phone.mp4"
 echo "done: $OUT (+ -phone.mp4)"

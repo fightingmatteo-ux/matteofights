@@ -1,0 +1,62 @@
+{
+ "coldC": {
+  "start": 0.0,
+  "dur": 2.19
+ },
+ "coldC2": {
+  "start": 2.19,
+  "dur": 1.96
+ },
+ "superpro": {
+  "start": 5.25,
+  "dur": 2.6
+ },
+ "striking": {
+  "start": 11.5,
+  "dur": 2.1
+ },
+ "booked": {
+  "start": 20.45,
+  "dur": 2.4
+ },
+ "hadnt": {
+  "start": 28.65,
+  "dur": 2.5
+ },
+ "stadium": {
+  "start": 34.19,
+  "dur": 2.05
+ },
+ "trained": {
+  "start": 36.29,
+  "dur": 2.0
+ },
+ "thai": {
+  "start": 49.83,
+  "dur": 0.6
+ },
+ "swiss": {
+  "start": 50.45,
+  "dur": 0.78
+ },
+ "italy": {
+  "start": 51.25,
+  "dur": 0.56
+ },
+ "morocco": {
+  "start": 51.83,
+  "dur": 0.7
+ },
+ "hand": {
+  "start": 55.67,
+  "dur": 1.6
+ },
+ "xray": {
+  "start": 62.02,
+  "dur": 3.0
+ },
+ "combos": {
+  "start": 69.42,
+  "dur": 2.4
+ }
+}

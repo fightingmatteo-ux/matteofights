@@ -19,27 +19,28 @@ import plan  # noqa: E402
 
 # ---------------------------------------------------------------- fill this in per reel
 REEL = {
-    # per variant: lead lines on frame 0, the hook word behind his head flies forward on `on`, title clears at `until`
-    # (each hook's fight clip cuts in at `until`, see work/broll_<V>.json)
+    # Origin pin (Matteo 2026-11-20): 3 openings that look different on mute, every variant a loop (the bridge at the
+    # end runs into the hook at the start, one continuous take). Research: production/competitors/talking-heads-2026-11-20.md
+    # A: his face, numbers board (result). B: cold, his beginner pad kick under "School came easy" (contrast).
+    # C: cold, the stadium under "The day before my first fight", the hospital photo under "I ended up in the hospital".
     "hooks": {
-        # F: his face on frame 0 (result opening). G, H: "cold" = fight/archive footage from frame 0, his voice over it,
-        # the whole hook line on screen (no word behind his head: he isn't visible), he appears at "One"
-        # (Matteo 2026-11-19: the 3 variants must look different in the first second, not just read different).
-        "F": {"lead": ["Four opponents in a row"], "word": "quit.", "on": ("QUIT", 1), "until": ("STOOLS", 1)},
-        "G": {"lead": ["Most people drill"], "word": "punches.", "on": ("PUNCHES", 1), "until": ("LOMACHENKO", 1), "cold": True},
-        "H": {"lead": ["Why do good boxers look"], "word": "lost?", "on": ("LOST", 1), "until": ("AGAINST", 1), "cold": True},
+        "A": {"lead": ["One fight at 16.", "Still no"], "word": "second.", "on": ("SECOND", 1), "until": ("STARTED", 1)},
+        "B": {"lead": ["School came easy.", "Fighting"], "word": "didn't.", "on": ("DIDN'T", 1), "until": ("STARTED", 1), "cold": True},
+        "C": {"lead": ["The day before", "my first fight:"], "word": "hospital.", "on": ("HOSPITAL", 1), "until": ("STARTED", 1), "cold": True},
     },
-    "keys": ["FEET", "DANCE", "BACK", "SIDE", "STOP", "TWICE", "PIVOT", "TURN", "STOOLS", "STUCK", "STEPS"],
-    "fx": {},
-    # (first word, card ends before this word, KEYWORD); a 3rd item in a ref = the segment it is in (hooks differ)
+    # one red keyword every ~3-6 s, on the word that carries the line
+    "keys": ["JITSU", "STREET", "ANYTHING", "SCARED", "SLEEP", "APPENDICITIS", "STADIUM", "COUNTRIES", "FRACTURE", "ACL",
+             "SPAR", "COMEBACK"],
+    "fx": {"APPENDICITIS": "impact", "ACL": "impact", "STREET": "jab", "SPAR": "jab"},
+    # (first word, card ends before this word, KEYWORD): the 2 lines that carry the reel
     "cards": [
-        (("THE", 1, "third"), ("THREE", 1, "pivot"), "QUIT"),
+        (("SCARED", 2), ("SO", 2), "FRIENDS"),         # "Scared to get knocked out in front of all my friends"
+        (("TAUGHT", 1), ("DISCIPLINE", 1), "WORK"),     # "if you want something you actually have to work your ass off for it"
     ],
-    # the top pill turns from FIGHTER BREAKDOWN into the one ask at "Two" (Matteo 2026-11-19: ask early, not only at the end)
-    "cta_at": ("TWO", 1),
-    "cta": "COMMENT THE NEXT FIGHTER",
-    "slam": ["QUIT"],
-    "bed": "../../listicles/music/epic-bold-drums-alex-morgan.mp3",   # same bed as Episode 1 (Saenchai)
+    "cta_at": ("FOLLOW", 1),
+    "cta": "FOLLOW FOR THE COMEBACK",
+    "slam": ["WORK"],
+    "bed": "../../listicles/music/epic-bold-drums-alex-morgan.mp3",
 }
 # ----------------------------------------------------------------
 
@@ -69,12 +70,7 @@ behind_top = min(head(t) for t in (0.0, swap / 2, swap)) - int(127 * hook_size /
 
 # cutaways: make_broll.py-style work/broll.json ({name: {start, dur}}, files assets/media/b_<name>.mp4), if the reel has any
 broll = json.load(open(f"work/broll_{V}.json", encoding="utf-8")) if os.path.exists(f"work/broll_{V}.json") else {}
-import daycards  # noqa: E402
-_pl = json.load(open("work/plan.json", encoding="utf-8"))
-_win = [(c["start"], c["dur"]) for n, c in sorted(broll.items()) if n.startswith("day")]
-DC_HTML, DC_JS = daycards.cards(_pl, _pl["keyword"], _win)
-_cardspans = [(a, a + d) for a, d in _win]
-broll = {n: c for n, c in broll.items() if not n.startswith("day")}
+_cardspans = []
 broll_html, broll_spans = plan.broll_html(broll)
 broll_html = broll_html.replace("assets/media/b_", "assets/broll/b_")  # submit.py skips assets/media/b_*.mp4
 ed = plan.build(d, keys=set(REEL["keys"]), cards=cards, slam=set(REEL["slam"]), fx=REEL["fx"],
@@ -95,7 +91,7 @@ fill = {"ED_CSS": css, "ED_JS": js, "ED_HTML_CAPS": ed["caps"], "ED_HTML_CAPS_BA
         "CTA_DUR": f"{d['duration'] - W(REEL['cta_at']) + 0.1:.3f}",
         "HOOK_SIZE": str(hook_size), "BEHIND_TOP": str(behind_top), "TITLE_END": f"{title_end:.3f}",
         "HEAD_SWAP": f"{swap:.3f}", "FRONT_DUR": f"{title_end - swap:.3f}", "HEAD_SFX": f"{swap - 0.09:.3f}",
-        "CAP_TOP": "330", "BACK_TOP": "0", "DAYCARDS_HTML": DC_HTML, "DAYCARDS_JS": DC_JS}
+        "CAP_TOP": "330", "BACK_TOP": "0", "DAYCARDS_HTML": "", "DAYCARDS_JS": ""}
 src = open("work/template.html", encoding="utf-8").read()
 open("index.html", "w", encoding="utf-8").write(re.sub(r"\{\{(\w+)\}\}", lambda m: fill[m.group(1)], src))
 print(f"{V} ({'cold open' if cold else 'face open'}): index.html built, {d['duration']:.1f}s, {len(json.loads(ed['plan'])['phrases'])} phrases, {len(cards)} cards")

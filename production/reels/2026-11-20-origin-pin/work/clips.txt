@@ -1,0 +1,18 @@
+# name kind source start dur cropx   (written by make_broll_json.py)
+superpro photo superpro.jpg 0 2.70 0.5
+striking clip super8.mp4 1.0 2.20 0.5
+booked clip first-fight-2.mp4 0.5 2.50 0.5
+hadnt clip broll-pads-chaiya.mp4 4.4 2.60 0.42
+hospital photo hospital.jpg 0 2.10 0.5
+stadium clip first-fight-2.mp4 22.9 2.15 0.5
+trained clip kicking.mov 15.4 2.10 0.5
+thai clip success.mov 22.2 0.70 0.5
+swiss clip impact-mma.mov 15.0 0.88 0.5
+italy clip rome.mp4 14.6 0.66 0.5
+morocco clip morocco.mov 1.8 0.80 0.5
+hand photo hand.jpg 0 1.70 0.5
+xray photo xray.jpg 0 3.10 0.5
+combos clip fitness-first.mov 28.2 2.50 0.5
+coldB clip broll-pads-chaiya.mp4 19.4 1.40 0.4
+coldC clip first-fight-2.mp4 6.0 2.29 0.5
+coldC2 photo hospital.jpg 0 2.06 0.5

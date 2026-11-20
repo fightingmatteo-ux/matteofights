@@ -33,6 +33,7 @@ photo() {  # name jpg dur: slow push-in on a still (Ken Burns, 1.00 -> 1.08), 30
 drive 1kY_fR5PwN07yk9dasbW4Q_5k39muHf-T kicking.mov          # low-angle bag kicks, red shirt (sharp, quality 4)
 drive 1vj6GxY875E36-_u9yC84tWzqDm4-9SIc impact-mma.mov       # Zurich, Impact MMA: roundhouses (Matteo: 15-20 s)
 drive 1-XaH84HgvgRKgajbc1F15GxBakWA7oO_ fitness-first.mov    # Bangkok red BOX bag: sharp combos, full extension
+drive 1cO7ZS2vB0GficgdhERknFjIt1zkldbU6 super8.mp4           # Super8 pads close (first striking years)
 drive 1HwvYUojYUMftZfNlofwE3qDwK2ggLCa5 morocco.mov          # Essaouira pad work with the old coach
 drive 1-GxiwEjn1oJCJKUEkPb9W_lIXsOMsAAw rome.mp4             # Rome garden bag work
 drive 1A9Awnno2e_KHq52e4PWWnRp9GUEEDY9V success.mov          # Success gym, Thailand: ring sparring from the corner
