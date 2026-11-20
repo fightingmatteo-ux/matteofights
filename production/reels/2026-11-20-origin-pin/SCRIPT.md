@@ -39,7 +39,7 @@ Film each one as its own take. Say the line, pause one second, then stop. The bo
 | **A** | result | Handheld selfie, arm's length, tight on your face, plain wall | `1st fight: 16. 2nd fight: ?` | "One fight at sixteen. I'm nineteen, and I still haven't had my second." |
 | **B** | contrast | Your first-year training clip, full screen, no face. Cut to you on the tripod at 2 s | `16. The first thing I ever had to work for.` | "School came easy to me. Fighting was the first thing that didn't." |
 | **C** | story peak | Split screen: you on top (tripod, chest up), first-fight walkout below | `I almost never made it to this fight.` | "The day before my first fight, I ended up in hospital." |
-| **D** | result, injury | Knee footage from Drive (scan, brace, crutches or hospital) for the first 1.5 s, then you | `March 2026.` | "One day before I went back to school, an accident took out my knee. Broken fibula. Torn ACL." |
+| **D** | result, injury | The knee X-ray (photo 3, `L LAT`), full screen for the first 1.5 s with a slow push-in, then you | `March 2026.` | "One day before I went back to school, an accident took out my knee. Broken fibula. Torn ACL." |
 | **E** | reframe | Wide, full body, you shadowboxing at home. Stop, step in, talk | `"Fighting is just violence."` | "People think fighting is just violence. For me it's the only thing that ever taught me discipline." |
 
 Your hook tests so far: contrast and result win, story-from-the-start loses. B and A are the favourites. C and D are
@@ -84,16 +84,30 @@ card `1 DAY BEFORE`) · `+3 MONTHS` · white card: "if you want an outcome, you 
 ## B-roll (Drive)
 
 Cut every 2 to 3 s while the story runs; back to your face on the bold lines.
-- BJJ: the jiu-jitsu photos from the "Worst fighting decision" reel (`p_bjj2.jpg`, `p_bjj3.jpg`, on Matteo's laptop in
-  `media/worst-decision/`, not on the media release), with a slow push-in · street fight: no footage, black card `STREET FIGHT`.
+- BJJ: photo 4, Matteo at about 10 at Super Pro Samui with his coach and two other kids, kneeling on the mat logo
+  (crop out the phone's "Ask Gemini" bar; circle Matteo; plate `SUPER PRO SAMUI`). Backup: `p_bjj2.jpg` / `p_bjj3.jpg`
+  from the "Worst fighting decision" reel (Matteo's laptop, `media/worst-decision/`) · street fight: no footage, black card `STREET FIGHT`.
 - First year: the first-year training clip (also hook B's opening).
 - First fight: walkout and first exchanges ONLY (`Muay Thai fight matteo .MOV`), nothing from the clinch on.
-- Appendicitis: hospital photo if one exists; otherwise black card `APPENDICITIS. 1 DAY BEFORE.`
+- Appendicitis: photo 1, Matteo in a hospital gown pulling a duck face (crop the phone status bar), under the
+  `APPENDICITIS` / `1 DAY BEFORE` card. The face is the joke: hold it a beat.
 - 5 countries: Zurich `Bag work impact mma.MOV` · Essaouira `padwork morocco 2.mov` · Rome `sparring audace.mov` ·
   São Paulo + Koh Samui clips.
-- Hand: any photo or X-ray of the boxer's fracture, or the cast/splint.
+- Hand: photo 2, hospital bed, both fists up, the right hand swollen, Snapchat caption "Just a bit swollen" (keep it).
 - Knee: the Drive "Knee surgery" folder: scan, brace, crutches. Nothing showing a car or a road.
 - Now: today's home shadowboxing.
+
+## Photos from Matteo (11-20, sent in chat; upload them to Studio with the takes)
+
+Not committed: the repo is public and these are medical/personal. 1 hospital gown (appendicitis) · 2 swollen hand
+(boxer's fracture) · 3 knee X-ray · 4 Super Pro Samui BJJ kids photo.
+
+## Open idea, not in this reel: Andrew Tate
+
+Matteo 11-20: Tate trained at Super Pro Samui years after Matteo did BJJ there at 10. Possible hook for a
+separate one-off trial reel only, never the pin (a polarizing name takes over the comments, like the KO reel).
+Accurate wording only: "Years later, Andrew Tate trained at the gym where I learned jiu-jitsu at ten." Never
+"trained with". Matteo decides.
 
 ## Filming today (home, about 20 minutes)
 

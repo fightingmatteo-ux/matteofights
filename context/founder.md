@@ -46,7 +46,7 @@ always wanted."_ It's rare and it's real. Lead with it.
 
 ## Facts confirmed by Matteo (2026-11-20, origin pin)
 - **Karate was one trial class as a kid: never claim it** (Matteo 11-20; older notes saying "karate at 7" are wrong).
-  BJJ about age 10 to 13. Street fight around 13 to 14: nobody won, he pulled a knee ligament, then moved
+  BJJ about age 10 to 13 (started at Super Pro Samui, Koh Samui). Street fight around 13 to 14: nobody won, he pulled a knee ligament, then moved
   to striking (Muay Thai) and trained for his first fight. After it: boxing to level up his hands, an MMA gym in
   Switzerland.
 - First fight at 16: booked for a Saturday, appendicitis on the Friday, postponed 3 months to a different stadium.
