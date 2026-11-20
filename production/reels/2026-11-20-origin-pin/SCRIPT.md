@@ -72,8 +72,21 @@ Talk it, don't read it. Lines in **bold** are worth saying close to word for wor
    you want to see fight number two.**" (more specific; the pinned set uses "comeback", Matteo 11-14, so the editor
    cuts both and Matteo picks)
 
-Loop take (optional, one continuous take): "...Follow if you want to see the comeback. Because school came easy
-to me." The edit ends before the last sentence, so the replay runs into hook B.
+**Loops (Matteo 11-20): every version loops.** The opening is recorded INSIDE the ending, in one breath:
+close + bridge + opening. The editor cuts at the ✂, moves the opening to the start and keeps the bridge at the end,
+so the replay flows on without a seam. The standalone hook takes above are replaced by these:
+
+| V | Loop ending (one breath) |
+|---|---|
+| A | "Follow if you want to see the comeback. Because right now it's still this. ✂ One fight at sixteen. I'm nineteen, and I still haven't had my second." |
+| B | "Follow if you want to see the comeback. And honestly? ✂ School came easy to me. Fighting was the first thing that didn't." |
+| C | "Follow if you want to see the comeback. Because this isn't the first time. ✂ The day before my first fight, I ended up in hospital." |
+| D | "Follow if you want to see the comeback. Because everything changed in March. ✂ One day before I went back to school, an accident took out my knee. Broken fibula. Torn ACL." |
+| E | "Follow if you want to see the comeback. And I know what you're thinking. ✂ People think fighting is just violence. For me it's the only thing that ever taught me discipline." |
+
+Editor: the last frame and the first frame are the same take, so for A punch in on the bridge too; for B, D and E the
+footage starts on the hook's first word over the continuous voice. "Fight number two" close dropped from the shoot
+(the loops use "comeback").
 
 ## Text boxes in the body (editor)
 
