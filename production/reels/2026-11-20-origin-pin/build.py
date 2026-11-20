@@ -63,7 +63,10 @@ cold = hook.get("cold", False)
 title_end = W(hook["until"]) - 0.06
 swap = W(hook["on"]) - 0.02
 cards = [(W(a) - 0.06, W(b) - (0.12 if i == len(REEL["cards"]) - 1 else 0.08), kw) for i, (a, b, kw) in enumerate(REEL["cards"])]
-head = lambda t: cutout.head_top(FG, t) or 660  # noqa: E731
+# cut-out only covers the opening (FG_TO s, the hook word behind his head): the full-length cut-out took ~1 h per 80 s
+# variant on Modal (2026-11-20). After it, "behind" phrases sit in the clean space above his head instead.
+FG_TO = 8.0
+head = lambda t: (cutout.head_top(FG, t) or 660) if t < FG_TO - 0.3 else 565  # noqa: E731
 # hook word: sized to fit, placed so his head hides ~40% of it until it flies forward
 hook_size = min(360, int(780 / (0.45 * len(hook["word"]))))  # fits the frame after the 1.26x fly-forward  # "head." is ~790 px wide at 360 px
 behind_top = min(head(t) for t in (0.0, swap / 2, swap)) - int(127 * hook_size / 360)
@@ -83,7 +86,7 @@ if REEL.get("bed"):
 
 fill = {"ED_CSS": css, "ED_JS": js, "ED_HTML_CAPS": ed["caps"], "ED_HTML_CAPS_BACK": ed["caps_back"],
         "ED_HTML_CARDS": ed["cards"], "ED_AUDIO": ed["audio"], "ED_PLAN": ed["plan"], "ED_BROLL": broll_html,
-        "AROLL": f"assets/media/aroll_{V}.mp4", "FG": FG, "DUR": f"{d['duration']:.3f}",
+        "AROLL": f"assets/media/aroll_{V}.mp4", "FG": FG, "FG_DUR": f"{min(FG_TO, d['duration']):.3f}", "DUR": f"{d['duration']:.3f}",
         "HOOK_LEAD": "".join(f'<span class="lead">{x}</span>' for x in hook["lead"])
                      + (f'<span class="word">{hook["word"]}</span>' if cold else ""),
         "HOOK_WORD": "" if cold else hook["word"],

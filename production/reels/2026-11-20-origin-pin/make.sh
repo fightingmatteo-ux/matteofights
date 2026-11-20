@@ -17,7 +17,7 @@ if [ ! -f "assets/media/fg_${V}_full.webm" ]; then
   VPY=.venv/bin/python; [ -x "$VPY" ] || VPY=.venv/Scripts/python.exe
   "$VPY" -m pip install -q onnxruntime numpy
   [ -f rvm.onnx ] || curl -sSL -o rvm.onnx https://github.com/PeterL1n/RobustVideoMatting/releases/download/v1.0.0/rvm_mobilenetv3_fp32.onnx
-  "$VPY" "$K/cutout.py" "assets/media/aroll_$V.mp4" "assets/media/fg_${V}_full.webm" --model rvm.onnx
+  "$VPY" "$K/cutout.py" "assets/media/aroll_$V.mp4" "assets/media/fg_${V}_full.webm" --to 8 --model rvm.onnx   # hook only (build.py FG_TO)
 fi
 
 "$PY" -P build.py "$V"
