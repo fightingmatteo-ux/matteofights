@@ -12,7 +12,8 @@ italy clip rome.mp4 14.6 0.66 0.5
 morocco clip morocco.mov 1.8 0.80 0.5
 hand photo hand.jpg 0 1.70 0.5
 xray photo xray.jpg 0 3.10 0.5
-combos clip fitness-first.mov 28.2 2.50 0.5
+combos clip fitness-first.mov 28.2 2.40 0.5
+combos2 clip fitness-first.mov 40.2 2.30 0.5
 coldB clip broll-pads-chaiya.mp4 19.4 1.40 0.4
 coldC clip first-fight-2.mp4 6.0 2.29 0.5
 coldC2 photo hospital.jpg 0 2.06 0.5

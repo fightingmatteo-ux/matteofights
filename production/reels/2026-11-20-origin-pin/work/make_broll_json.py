@@ -23,7 +23,8 @@ CLIPS = {
     "morocco":  ("clip", "morocco.mov", 1.8, 0.7, 0.5),       # Morocco: Essaouira pads with the old coach
     "hand":     ("photo", "hand.jpg", 0, 1.6, ""),            # boxer's fracture: "Just a bit swollen"
     "xray":     ("photo", "xray.jpg", 0, 3.0, ""),            # broken fibula, torn ACL
-    "combos":   ("clip", "fitness-first.mov", 28.2, 2.4, 0.5),  # "but I can do this": sharp bag combos (no kicks)
+    "combos":   ("clip", "fitness-first.mov", 28.2, 2.3, 0.5),  # "but I can do this": sharp bag combos (no kicks)
+    "combos2":  ("clip", "fitness-first.mov", 40.2, 2.2, 0.5),  # second sharp combo, full extension (graded good)
     "coldB":    ("clip", "broll-pads-chaiya.mp4", 19.4, 0, 0.4),  # B frame 0: the beginner kick (dur set below)
     "coldC":    ("clip", "first-fight-2.mp4", 6.0, 0, 0.5),   # C frame 0: the stadium, "the day before my first fight"
     "coldC2":   ("photo", "hospital.jpg", 0, 0, ""),          # C: "...I ended up in the hospital"
@@ -43,7 +44,8 @@ BODY = {
     "morocco":  238.80,  # "Morocco"  ("Brazil": his face, no clip)
     "hand":     276.85,  # "Boxer's fracture"
     "xray":     283.20,  # "Broken fibula and fully torn ACL"
-    "combos":   306.90,  # first part of the shadowboxing beat, then his home shadowboxing shows
+    "combos":   306.90,  # the shadowboxing beat is fully covered: Matteo 11-20, no home shadowboxing on screen
+    "combos2":  309.20,  # (its room sound stays under the bed: breathing, feet)
 }
 
 

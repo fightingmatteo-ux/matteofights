@@ -16,15 +16,15 @@ prepped to the 1080x1920 master by Fetch video and stored on the media release a
 
 ## Edit decisions (for retention)
 - Takes and reasons: `work/takes.json` ("why"). Eye contact first, then energy (taste.md).
-- Cut "Same rule as that first fight": repeats point 5; shadowboxing straight into "Follow if you want to see the
+- Cut "Same rule as that first fight": repeats point 5; the sharp bag combos straight into "Follow if you want to see the
   comeback" is the stronger end. B's body skips "school came easy", C's skips "the day before the fight" (said in
   their hooks).
 - B-roll on the exact words (`work/make_broll_json.py`): Super Pro photo with Matteo circled on "jiu-jitsu at 10",
   Super8 pads on "switched to striking", the stadium on "booked my first fight", beginner pads on "if I hadn't
   trained", hospital photo on "appendicitis", Matteo's kicks in fight 2 (his pick, 24 s) on "different stadium",
   bag kicks on "trained three more months", a 1-cut-per-country flash (Thailand, Switzerland, Italy, Morocco; Brazil
-  on his face), hand photo on "boxer's fracture", X-ray on "broken fibula, torn ACL", sharp bag combos then his home
-  shadowboxing on "but I can do this". No kick clip near "I can't jump" (viewers would call it out).
+  on his face), hand photo on "boxer's fracture", X-ray on "broken fibula, torn ACL", two sharp bag combos
+  (Fitness First, 28 s and 40 s) on "but I can do this": Matteo 11-20, no home shadowboxing on screen. No kick clip near "I can't jump" (viewers would call it out).
 - 2 white cards: "Scared to get knocked out in front of all my FRIENDS", "...you actually have to WORK your ass off
   for it" (slam). Keywords every 3-6 s; captions from frame 0 (Buzzfy: burned-in captions, skip 33% vs 44%).
 - CTA pill "FOLLOW FOR THE COMEBACK" from "Follow" in the bridge. Bed: epic-bold-drums (same as the breakdowns).
