@@ -1,0 +1,54 @@
+language: en
+[   0.0-   2.8] Last week, a woman asked me, why do you put on fights?
+[   3.0-   5.1] Me personally, I just can't support violence.
+[   5.4-   6.6] And you know, I don't blame her.
+[   6.7-   7.2] Like abuse?
+[   7.5-   9.0] Or assaulting a defenseless stranger?
+[   9.2-  10.0] That's just cruelty.
+[  10.2-  11.3] Obviously don't do that.
+[  11.4-  12.8] But if violence is so unacceptable,
+[  13.0-  15.2] then why is it in every movie, every sport,
+[  15.3-  17.3] and every history book ever written?
+[  17.4-  19.3] It's because violence isn't just one thing.
+[  19.4-  20.9] Sometimes violence is a necessity.
+[  21.0-  22.2] Like with a lion catching its dinner,
+[  22.3-  23.5] or someone protecting their family.
+[  23.6-  24.9] I feel like everyone gets that.
+[  25.0-  27.5] But then there's also violence between consenting adults.
+[  27.7-  28.7] Like with football players,
+[  28.7-  31.4] they regularly get injuries that would end most fights.
+[  31.5-  33.6] But we'd still watch that with our family over dinner.
+[  33.7-  35.8] Because competition itself is kind of violent.
+[  36.0-  37.4] But fighting just gets the most criticism
+[  37.4-  38.7] because it's the most obvious.
+[  39.0-  40.6] And martial arts takes this to furthest.
+[  40.7-  42.4] People spending years, maybe decades,
+[  42.7-  44.7] getting in the best physical shape of their life.
+[  44.8-  45.8] Learning from different masters.
+[  46.1-  48.5] Sacrificing their time, relationships, careers.
+[  48.7-  50.7] Just to step into a cage in front of an audience
+[  50.7-  52.9] and test themselves against someone who's been training
+[  52.9-  54.1] for the exact same thing.
+[  54.2-  56.8] And every style has generations of history behind it.
+[  56.8-  58.2] It's one of the oldest living traditions
+[  58.2-  59.5] that we have as a species.
+[  59.7-  62.1] No wonder so many of us grew up idolizing Bruce Lee.
+[  62.2-  63.8] Or dressing up as ninjas for Halloween.
+[  64.0-  64.5] And is it dangerous?
+[  65.0-  65.6] Of course it is.
+[  65.7-  66.8] But so is climbing Mount Everest.
+[  67.0-  68.8] And people risk their lives all the time
+[  68.8-  69.9] to chase something that they love.
+[  69.9-  71.1] And I've trained my whole life,
+[  71.1-  73.0] and some of the most chill and gentle people
+[  73.0-  74.4] that I know are actually fighters.
+[  74.6-  76.9] And maybe it's because once you understand the consequences,
+[  77.1-  79.3] you stop looking for violence outside of the cage.
+[  79.5-  80.7] So what is violence, really?
+[  80.8-  82.0] I think it depends on the context.
+[  82.2-  83.0] And with martial arts,
+[  83.2-  85.2] it's one of the darkest parts of being a human
+[  85.2-  87.4] transmuted into something that's worth celebrating.
+[  87.4-  88.9] And that's why we created Sundown.
+[  89.0-  90.5] To honor the discipline, humanity,
+[  90.9-  92.1] and the art of martial arts.
