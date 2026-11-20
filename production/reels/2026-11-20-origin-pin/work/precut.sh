@@ -13,10 +13,11 @@ command -v gdown > /dev/null || python3 -m pip install -q gdown
 drive() {  # id file: download a Drive clip once
   [ -f "$S/$2" ] || gdown -q "$1" -O "$S/$2"
 }
-cut() {  # name source start dur [crop-center-x 0-1 for landscape sources]
-  local out="assets/broll/b_$1.mp4" x="${5:-0.5}"
+cut() {  # name source start dur [crop-center-x 0-1 for landscape sources] [zoom: crop the centre first, e.g. 1.45]
+  local out="assets/broll/b_$1.mp4" x="${5:-0.5}" z="${6:-1}"
   [ -f "$out" ] && return 0
   vf="crop=w='min(iw,ih*9/16)':h='min(ih,iw*16/9)':x='max(0,min(iw-min(iw,ih*9/16),iw*$x-min(iw,ih*9/16)/2))':y='(ih-min(ih,iw*16/9))/2',scale=1080:1920"
+  [ "$z" = 1 ] || vf="crop=iw/$z:ih/$z:(iw-iw/$z)*$x:(ih-ih/$z)/2,$vf"
   ffmpeg -nostdin -v error -y -ss "$3" -t "$4" -i "$S/$2" -vf "$vf,setsar=1,fps=30,format=yuv420p" -an -c:v libx264 -crf 18 -preset medium "$out"
   echo "b_$1: $2 @ $3 +$4"
 }
@@ -32,16 +33,13 @@ photo() {  # name jpg dur: slow push-in on a still (Ken Burns, 1.00 -> 1.08), 30
 
 drive 1kY_fR5PwN07yk9dasbW4Q_5k39muHf-T kicking.mov          # low-angle bag kicks, red shirt (sharp, quality 4)
 drive 1vj6GxY875E36-_u9yC84tWzqDm4-9SIc impact-mma.mov       # Zurich, Impact MMA: roundhouses (Matteo: 15-20 s)
-drive 1-XaH84HgvgRKgajbc1F15GxBakWA7oO_ fitness-first.mov    # Bangkok red BOX bag: sharp combos, full extension
 drive 1cO7ZS2vB0GficgdhERknFjIt1zkldbU6 super8.mp4           # Super8 pads close (first striking years)
-drive 1HwvYUojYUMftZfNlofwE3qDwK2ggLCa5 morocco.mov          # Essaouira pad work with the old coach
-drive 1-GxiwEjn1oJCJKUEkPb9W_lIXsOMsAAw rome.mp4             # Rome garden bag work
-drive 1A9Awnno2e_KHq52e4PWWnRp9GUEEDY9V success.mov          # Success gym, Thailand: ring sparring from the corner
+drive 1x_zg9B392R2uYXJrd8it7QbctQaK650h headkick.mov         # his head kick on a partner (Matteo's pick), filmed off a screen
 
 # filled in by work/make_broll_json.py's CLIPS table (same names, same seconds)
-while read -r name kind src start dur x <&3; do
+while read -r name kind src start dur x z <&3; do
   case "$name" in ""|\#*) continue;; esac
-  if [ "$kind" = photo ]; then photo "$name" "$src" "$dur"; else cut "$name" "$src" "$start" "$dur" "$x"; fi
+  if [ "$kind" = photo ]; then photo "$name" "$src" "$dur"; else cut "$name" "$src" "$start" "$dur" "$x" "$z"; fi
 done 3< work/clips.txt
 
 R=$S/raw.mp4   # the media release copy is already the prepped 1080x1920 master (fetch-video prep_footage.sh, no trim)

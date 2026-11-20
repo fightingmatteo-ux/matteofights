@@ -19,6 +19,7 @@ window.Editorial = {
         { opacity: 1, filter: "blur(0px)", scale: 1, x: 0, y: 0, duration: d, ease: "power2.out" }, Math.max(0, t));
     const show = (sel, t) => tl.fromTo(sel, { opacity: 0 }, { opacity: 1, duration: 0.01 }, Math.max(0, t));
     const punchCam = (t, a) => {
+      if (o.calm) return;  // calm mode (origin pin review 2026-11-20, Matteo: "jumpy"): no camera punches
       tl.fromTo(shake, { scale: 1 }, { scale: 1 + a, duration: 0.06, ease: "power2.out", immediateRender: false }, t);
       tl.to(shake, { scale: 1, duration: 0.2, ease: "power2.out" }, t + 0.06);
     };
@@ -102,10 +103,10 @@ window.Editorial = {
 
     // quote cards: whip in (motion blur), words build on the voice, face whips back in after
     P.cards.forEach((c) => {
-      tl.fromTo("#" + c.id, { filter: "blur(26px)", x: -160 }, { filter: "blur(0px)", x: 0, duration: 0.14, ease: "power3.out" }, c.t0);
+      if (!o.calm) tl.fromTo("#" + c.id, { filter: "blur(26px)", x: -160 }, { filter: "blur(0px)", x: 0, duration: 0.14, ease: "power3.out" }, c.t0);
       c.words.forEach((w) => (w.key ? keyIn(w, true) : focusIn(q(w.id), Math.max(c.t0, w.s - 0.05))));
       tl.fromTo("#" + c.id + " .ed-cardbox", { scale: 1.0 }, { scale: 1.03, duration: c.t1 - c.t0, ease: "none" }, c.t0);
-      if (o.cam) tl.fromTo(o.cam, { filter: "blur(18px)" }, { filter: "blur(0px)", duration: 0.16, ease: "power2.out", immediateRender: false }, c.t1);
+      if (o.cam && !o.calm) tl.fromTo(o.cam, { filter: "blur(18px)" }, { filter: "blur(0px)", duration: 0.16, ease: "power2.out", immediateRender: false }, c.t1);
       // hide the card's text when the card ends: in a full render (frames captured in order) the words of a card could
       // stay on screen to the end of the reel without the white card behind them (loma-3open G, 2026-11-19);
       // a snapshot seeking straight past the card was clean, so this is renderer state, not the plan
@@ -114,7 +115,7 @@ window.Editorial = {
 
     // cutaways (fight tape / b-roll): whip in with a motion blur, like the cards
     (P.broll || []).forEach(([a]) => {
-      if (a < 0.05) return;  // a cold open (footage on frame 0): frame 0 is the thumbnail, so no whip-in blur there
+      if (a < 0.05 || o.calm) return;  // calm: clean cuts. A cold open (footage on frame 0): frame 0 is the thumbnail, so no whip-in blur there
       const el = Array.from(document.querySelectorAll(".ed-broll")).find((v) => Math.abs(parseFloat(v.dataset.start) - a) < 0.002);
       if (el) tl.fromTo(el, { filter: "blur(18px)", scale: 1.08 }, { filter: "blur(0px)", scale: 1, duration: 0.14, ease: "power3.out" }, a);
     });
@@ -125,8 +126,9 @@ window.Editorial = {
       P.faces.forEach(([a, b], k) => {
         // the last stretch holds frame 0's framing so the loop has no visual jump
         if (k === last && last > 0 && o.loop !== false) { tl.set(o.cam, { scale: 1.0 }, a); return; }
-        const z = k % 2 ? 1.1 : 1.0;
-        tl.fromTo(o.cam, { scale: z }, { immediateRender: k === 0, scale: z + 0.04, duration: b - a, ease: "none" }, a);
+        // calm: one steady framing with a gentle push on each face stretch (no 1.0 <-> 1.1 jumps at every cutaway)
+        const z = o.calm ? 1.0 : (k % 2 ? 1.1 : 1.0);
+        tl.fromTo(o.cam, { scale: z }, { immediateRender: k === 0, scale: z + (o.calm ? 0.025 : 0.04), duration: b - a, ease: "none" }, a);
       });
     }
 

@@ -33,7 +33,7 @@ REEL = {
     # one red keyword every ~3-6 s, on the word that carries the line
     "keys": ["JITSU", "STREET", "ANYTHING", "SCARED", "SLEEP", "STADIUM", "COUNTRIES", "FRACTURE", "ACL",
              "SPAR", "COMEBACK"],
-    "fx": {"ACL": "impact", "STREET": "jab", "SPAR": "jab"},  # review 11-20: APPENDICITIS out of keys, at 176 px it broke over two lines
+    "fx": {"ACL": "focus", "STREET": "focus", "SPAR": "focus"},  # review 11-20: calm keyword pulls (Matteo: jumpy); APPENDICITIS out of keys (broke over 2 lines)
     # (first word, card ends before this word, KEYWORD): the 2 lines that carry the reel
     "cards": [
         # review 11-20: cards start late so the white page fills in ~1 s (the long builds sat ~2 s as a near-empty white screen)

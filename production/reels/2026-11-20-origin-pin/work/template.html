@@ -84,7 +84,7 @@
       tl.to("#title", { opacity: 0, y: -20, filter: "blur(10px)", duration: 0.12, ease: "power1.in" }, {{TITLE_END}} - 0.12);
       tl.to("#front-head", { opacity: 0, filter: "blur(10px)", duration: 0.12, ease: "power1.in" }, {{TITLE_END}} - 0.12);
       tl.fromTo("#cta", { opacity: 0, y: -12, scale: 0.96 }, { opacity: 1, y: 0, scale: 1, duration: 0.22, ease: "back.out(2)" }, {{CTA_START}});
-      Editorial.animate(tl, PLAN, { cam: "#cam-inner", shake: "#cam" });
+      Editorial.animate(tl, PLAN, { cam: "#cam-inner", shake: "#cam", calm: true });  // review 11-20: calm (clean cuts, no zoom jumps)
       {{DAYCARDS_JS}}
       window.__timelines["main"] = tl;
     </script>

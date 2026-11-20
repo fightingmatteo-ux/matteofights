@@ -12,51 +12,39 @@
   "dur": 2.4
  },
  "hadnt": {
-  "start": 30.21,
+  "start": 30.46,
   "dur": 2.5
  },
  "hospital": {
-  "start": 35.21,
+  "start": 35.46,
   "dur": 2.0
  },
  "stadium": {
-  "start": 37.26,
+  "start": 37.51,
   "dur": 2.05
  },
  "trained": {
-  "start": 39.36,
+  "start": 39.61,
   "dur": 2.0
  },
- "thai": {
-  "start": 52.35,
-  "dur": 1.15
- },
  "swiss": {
-  "start": 53.52,
-  "dur": 0.78
+  "start": 52.77,
+  "dur": 4.0
  },
- "italy": {
-  "start": 54.32,
-  "dur": 0.56
+ "kickend": {
+  "start": 73.13,
+  "dur": 2.3
  },
- "morocco": {
-  "start": 54.9,
-  "dur": 0.7
+ "headkick": {
+  "start": 75.43,
+  "dur": 2.2
  },
  "hand": {
-  "start": 58.74,
+  "start": 59.16,
   "dur": 1.6
  },
  "xray": {
-  "start": 65.09,
+  "start": 65.51,
   "dur": 4.4
- },
- "combos": {
-  "start": 72.49,
-  "dur": 2.3
- },
- "combos2": {
-  "start": 74.79,
-  "dur": 2.2
  }
 }

@@ -16,15 +16,12 @@ CLIPS = {
     "hadnt":    ("clip", "broll-pads-chaiya.mp4", 4.4, 2.5, 0.42),  # training as a beginner, punches on pads
     "hospital": ("photo", "hospital.jpg", 0, 2.0, ""),        # appendicitis: Matteo in the gown, duck face
     "stadium":  ("clip", "first-fight-2.mp4", 22.9, 2.05, 0.5),  # Matteo's pick: his kicks at 24 s (black shorts)
-    "trained":  ("clip", "kicking.mov", 15.4, 2.0, 0.5),      # "so I trained three more months": explosive bag kicks
-    "thai":     ("clip", "success.mov", 21.6, 1.15, 0.5),     # Thailand: Success gym ring
-    "swiss":    ("clip", "impact-mma.mov", 15.0, 0.78, 0.5),   # Switzerland: Impact MMA roundhouses (Matteo: 15-20 s)
-    "italy":    ("clip", "rome.mp4", 14.6, 0.56, 0.5),         # Italy: Rome garden bag work
-    "morocco":  ("clip", "morocco.mov", 1.8, 0.7, 0.5),       # Morocco: Essaouira pads with the old coach
+    "trained":  ("clip", "super8.mp4", 60.6, 2.0, 0.5),       # "so I trained three more months": Super8 kick/knee combos (graded good)
+    "swiss":    ("clip", "impact-mma.mov", 15.2, 4.0, 0.5),   # "five countries: Thailand ... Brazil": ONE held clip of his sharp Impact MMA kicks (Matteo 11-20: the 0.6 s flashes looked buggy)
+    "kickend":  ("clip", "kicking.mov", 19.6, 2.3, 0.5),      # "but I can do this": the high kick on the bag (Matteo: sharp kicks)
+    "headkick": ("clip", "headkick.mov", 4.6, 2.2, 0.6, 1.45),  # then his head kick (Matteo's pick), zoomed past the dark bars
     "hand":     ("photo", "hand.jpg", 0, 1.6, ""),            # boxer's fracture: "Just a bit swollen"
     "xray":     ("photo", "xray.jpg", 0, 4.4, ""),            # broken fibula, torn ACL ... "I can't jump" (covers 2 look-aways)
-    "combos":   ("clip", "fitness-first.mov", 28.2, 2.3, 0.5),  # "but I can do this": sharp bag combos (no kicks)
-    "combos2":  ("clip", "fitness-first.mov", 40.2, 2.2, 0.5),  # second sharp combo, full extension (graded good)
     "coldB":    ("clip", "broll-pads-chaiya.mp4", 19.4, 0, 0.4),  # B frame 0: the beginner kick (dur set below)
     "coldC":    ("clip", "first-fight-2.mp4", 6.0, 0, 0.5),   # C frame 0: the stadium, "the day before my first fight"
     "coldC2":   ("photo", "hospital_hook.jpg", 0, 0, ""),     # C: "...I ended up in the hospital" (face lower: clear of the board)
@@ -38,14 +35,11 @@ BODY = {
     "hospital": 157.30,  # "I got appendicitis" (A, B; C has it in the hook)
     "stadium":  159.35,  # "pushed back three months, at a different stadium"
     "trained":  161.45,  # "So I trained three more months"
-    "thai":     236.25,  # "Thailand" (starts early: he looks away before the word)
-    "swiss":    237.42,  # "Switzerland"
-    "italy":    238.22,  # "Italy"
-    "morocco":  238.80,  # "Morocco"  ("Brazil": his face, no clip)
+    "swiss":    236.25,  # "Thailand, Switzerland, Italy, Morocco, Brazil" (starts early: he looks away before the word)
+    "kickend":  306.90,  # the 4.5 s after "but I can do this" (his room sound under the bed)
+    "headkick": 309.20,
     "hand":     276.85,  # "Boxer's fracture"
     "xray":     283.20,  # "Broken fibula and fully torn ACL. I can't jump." (spans the p7/p8 join)
-    "combos":   306.90,  # the shadowboxing beat is fully covered: Matteo 11-20, no home shadowboxing on screen
-    "combos2":  309.20,  # (its room sound stays under the bed: breathing, feet)
 }
 
 
@@ -93,6 +87,6 @@ for V in "ABC":
 
 with open("work/clips.txt", "w") as f:
     f.write("# name kind source start dur cropx   (written by make_broll_json.py)\n")
-    for n, (kind, src, a, d, x) in CLIPS.items():
+    for n, (kind, src, a, d, x, *z) in CLIPS.items():
         d = durs.get(n, d) + 0.1  # a hair longer than placed: no black frame at the out-point
-        f.write(f"{n} {kind} {src} {a} {d:.2f} {x or 0.5}\n")
+        f.write(f"{n} {kind} {src} {a} {d:.2f} {x or 0.5} {z[0] if z else 1}\n")
