@@ -1496,9 +1496,12 @@
       "text": "Your first sparring partner shapes how you fight for years.\n\nA wild one teaches you panic. A patient one teaches you to look.",
       "chain": [],
       "from": "craft",
-      "status": "queued",
+      "status": "posted",
       "approved": true,
-      "approved_note": "Matteo: approved via dashboard (2026-11-16T16:07:48Z)"
+      "approved_note": "Matteo: approved via dashboard (2026-11-16T16:07:48Z)",
+      "posted_at": "2026-11-20T12:36:50Z",
+      "thread_id": "18079731227725770",
+      "url": "https://www.threads.com/@matteofights/post/Df9q7X0kRp_"
     },
     {
       "id": "th-1120-2",
