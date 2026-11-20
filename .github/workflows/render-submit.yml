@@ -86,6 +86,7 @@ jobs:
         if: inputs.where == 'runner'
         run: |
           command -v ffmpeg > /dev/null || { sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null; }
+          python3 -m pip install -q numpy
           (cd /tmp && npx --yes hyperframes@0.8.147 browser ensure)
           for v in $VARIANTS; do (cd "$REEL" && bash make.sh "$v"); done
           ls -la "media/$(basename "$REEL")/"
