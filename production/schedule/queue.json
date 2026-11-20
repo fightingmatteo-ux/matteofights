@@ -4869,11 +4869,18 @@
       "not_before": "2026-11-20T17:30:00Z",
       "min_gap_hours": 2.5,
       "approved": true,
-      "status": "queued",
+      "status": "posted",
       "cta": "protocol",
       "app_audio": "id:576492425503806 Echo Sax Endless - Caleb Arredondo (add in the Instagram app)",
       "video_asset_music": "lst-2026-11-20-best-partners-good-music.mp4",
-      "approved_note": "Matteo: approved the week via dashboard (2026-11-16T09:57:39Z)"
+      "approved_note": "Matteo: approved the week via dashboard (2026-11-16T09:57:39Z)",
+      "audio_id": "576492425503806",
+      "audio_title": "Echo Sax Endless",
+      "audio_artist": "caleb.arredondo",
+      "posting_since": "2026-11-20T17:31:07Z",
+      "media_id": "18099859208396838",
+      "permalink": "https://www.instagram.com/reel/Df-MpCMDc_b/",
+      "posted_at": "2026-11-20T17:31:53Z"
     },
     {
       "id": "lst-2026-11-21-lazy-guard",
