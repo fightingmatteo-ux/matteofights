@@ -1526,9 +1526,12 @@
       "text": "Tired jab in round three? Breathe out on every punch.\n\nHolding your breath burns your gas faster than the punches do.",
       "chain": [],
       "from": "craft",
-      "status": "queued",
+      "status": "posted",
       "approved": true,
-      "approved_note": "Matteo: approved via dashboard (2026-11-16T16:07:48Z)"
+      "approved_note": "Matteo: approved via dashboard (2026-11-16T16:07:48Z)",
+      "posted_at": "2026-11-20T22:36:23Z",
+      "thread_id": "18182010697450840",
+      "url": "https://www.threads.com/@matteofights/post/Df-viYQI_YS"
     },
     {
       "id": "th-1121-1",
