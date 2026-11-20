@@ -37,7 +37,7 @@ Film each one as its own take. Say the line, pause one second, then stop. The bo
 | V | Type | Frame 0 (what's on screen) | Text box, 0 to 5 s | Say |
 |---|---|---|---|---|
 | **A** | result | Handheld selfie, arm's length, tight on your face, plain wall | `1st fight: 16. 2nd fight: ?` | "One fight at sixteen. I'm nineteen, and I still haven't had my second." |
-| **B** | contrast | Your first-year training clip, full screen, no face. Cut to you on the tripod at 2 s | `16. The first thing I ever had to work for.` | "School came easy to me. Fighting was the first thing that didn't." |
+| **B** | contrast | First-year pad work (`pads chaiya.MOV`, the kick at 20 s), full screen, no face. Cut to you on the tripod at 2 s | `16. The first thing I ever had to work for.` | "School came easy to me. Fighting was the first thing that didn't." |
 | **C** | story peak | Split screen: you on top (tripod, chest up), first-fight walkout below | `I almost never made it to this fight.` | "The day before my first fight, I ended up in hospital." |
 | **D** | result, injury | The knee X-ray (photo 3, `L LAT`), full screen for the first 1.5 s with a slow push-in, then you | `March 2026.` | "One day before I went back to school, an accident took out my knee. Broken fibula. Torn ACL." |
 | **E** | reframe | Wide, full body, you shadowboxing at home. Stop, step in, talk | `"Fighting is just violence."` | "People think fighting is just violence. For me it's the only thing that ever taught me discipline." |
@@ -87,7 +87,10 @@ Cut every 2 to 3 s while the story runs; back to your face on the bold lines.
 - BJJ: photo 4, Matteo at about 10 at Super Pro Samui with his coach and two other kids, kneeling on the mat logo
   (crop out the phone's "Ask Gemini" bar; circle Matteo; plate `SUPER PRO SAMUI`). Backup: `p_bjj2.jpg` / `p_bjj3.jpg`
   from the "Worst fighting decision" reel (Matteo's laptop, `media/worst-decision/`) · street fight: no footage, black card `STREET FIGHT`.
-- First year: the first-year training clip (also hook B's opening).
+- First year (Matteo 11-20): Drive folder "Hella footage u...", the circled clips `pads chaiya.MOV` (two files) and
+  `pads super8.mp4`. One chaiya take is already analysed: `content-bank/real-footage/analysis/broll-pads-chaiya/`
+  (53 s, landscape 1920x1080, pad work with a trainer, SUPER Muay Thai banner behind): crop 9:16 on Matteo.
+  Hook B opens on its kick at 20 s (or the knee at 3 s); the rest covers point 3 ("I booked my first fight").
 - First fight: walkout and first exchanges ONLY (`Muay Thai fight matteo .MOV`), nothing from the clinch on.
 - Appendicitis: photo 1, Matteo in a hospital gown pulling a duck face (crop the phone status bar), under the
   `APPENDICITIS` / `1 DAY BEFORE` card. The face is the joke: hold it a beat.
