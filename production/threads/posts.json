@@ -1511,9 +1511,12 @@
       "text": "Join a gym in week one or learn alone at home first?\n\nWhich would you tell a beginner?",
       "chain": [],
       "from": "craft",
-      "status": "queued",
+      "status": "posted",
       "approved": true,
-      "approved_note": "Matteo: approved via dashboard (2026-11-16T16:07:48Z)"
+      "approved_note": "Matteo: approved via dashboard (2026-11-16T16:07:48Z)",
+      "posted_at": "2026-11-20T17:41:25Z",
+      "thread_id": "18114625523611113",
+      "url": "https://www.threads.com/@matteofights/post/Df-NyOlFAOn"
     },
     {
       "id": "th-1120-3",
