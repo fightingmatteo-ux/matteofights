@@ -85,7 +85,7 @@ card `1 DAY BEFORE`) · `+3 MONTHS` · white card: "if you want an outcome, you 
 
 Cut every 2 to 3 s while the story runs; back to your face on the bold lines.
 - BJJ: photo 4, Matteo at about 10 at Super Pro Samui with his coach and two other kids, kneeling on the mat logo
-  (crop out the phone's "Ask Gemini" bar; circle Matteo; plate `SUPER PRO SAMUI`). Backup: `p_bjj2.jpg` / `p_bjj3.jpg`
+  (crop out the phone's "Ask Gemini" bar; circle Matteo: the kid on the LEFT, white shirt, green pants; plate `SUPER PRO SAMUI`). Backup: `p_bjj2.jpg` / `p_bjj3.jpg`
   from the "Worst fighting decision" reel (Matteo's laptop, `media/worst-decision/`) · street fight: no footage, black card `STREET FIGHT`.
 - First year (Matteo 11-20): Drive folder "Hella footage u...", the circled clips `pads chaiya.MOV` (two files) and
   `pads super8.mp4`. One chaiya take is already analysed: `content-bank/real-footage/analysis/broll-pads-chaiya/`
@@ -125,6 +125,22 @@ Tips: phone vertical, 4K 30fps, back camera if someone can frame you (front came
 no music playing. Look into the lens, not at the screen. Say the board's number with your hands where it fits
 (count the countries on your fingers).
 
+## Before you hit record (checklist)
+
+- One plain dark T-shirt, no logos, the same in every setup (hooks cut into the body, so the outfit must match).
+- Face the window (light on your face, never behind you). Lens wiped. Phone charged, 10 GB free, Do Not Disturb.
+- Back camera if you can frame it, 4K 30fps, tap and hold on your face to lock focus and exposure.
+- Earbuds or lav mic, fan and AC off, no music.
+- Say the body out loud once before recording. Then record without stopping: if you trip, pause, restart the
+  sentence, keep going. The editor cuts.
+- Energy: the hooks a notch higher than feels natural. Smile on the appendicitis line (the duck-face photo lands on it).
+- After each hook, hold eye contact for 1 s in silence (gives the editor a clean cut).
+
+## Cover (the pinned thumbnail)
+
+Frame: you on the tripod looking into the lens, serious. Text: `1ST FIGHT: 16` / `2ND FIGHT: ?` in the
+editorial style. It reads on the grid at thumbnail size, and works as the "who is he" pin next to START HERE.
+
 ## Then
 
 1. Upload the takes to Studio (or Drive) with the note `origin-pin`. The Edit worker cuts A to E in the editorial look.
@@ -143,6 +159,8 @@ Five countries since. Then a boxer's fracture, a broken fibula and a torn ACL.
 I'm 19 and I still haven't had my second fight.
 
 Fighting taught me one rule: if you want an outcome, you work for it. Same rule now.
+
+What's the first thing you ever had to really work for? Tell me below.
 
 Whether you fight or train for fun, you're welcome here.
 Follow if you want to see the comeback.
