@@ -24,7 +24,9 @@ REEL = {
     # A: his face, numbers board (result). B: cold, his beginner pad kick under "School came easy" (contrast).
     # C: cold, the stadium under "The day before my first fight", the hospital photo under "I ended up in the hospital".
     "hooks": {
-        "A": {"lead": ["One fight at 16.", "Still no"], "word": "second.", "on": ("SECOND", 1), "until": ("STARTED", 1)},
+        # review 11-20: the behind-the-head word never showed (the cut-out misreads his head on the white wall), so frame 0
+        # was two small lines. Now the whole board is on frame 0 over his face, the last word big and red (Santino style)
+        "A": {"lead": ["One fight at 16.", "Still no"], "word": "second.", "on": ("SECOND", 1), "until": ("STARTED", 1), "cold": True},
         "B": {"lead": ["School came easy.", "Fighting"], "word": "didn't.", "on": ("DIDN'T", 1), "until": ("STARTED", 1), "cold": True},
         "C": {"lead": ["The day before", "my first fight:"], "word": "hospital.", "on": ("HOSPITAL", 1), "until": ("STARTED", 1), "cold": True},
     },

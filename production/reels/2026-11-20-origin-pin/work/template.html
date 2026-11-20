@@ -31,12 +31,18 @@
       .ed-broll { filter: brightness(0.8); }
       {{ED_CSS}}
       :root { --ed-cap-top: {{CAP_TOP}}px; --ed-back-top: {{BACK_TOP}}px; }
+      /* review 2026-11-20: Matteo's bright white wall swallowed the white captions. A real dark halo on every caption and
+         the title, plus a soft shade over the top of the frame where they sit. Still no boxes. */
+      .ed-ph, #title { text-shadow: 0 2px 3px rgba(0,0,0,0.75), 0 0 22px rgba(0,0,0,0.6), 0 0 64px rgba(0,0,0,0.4); }
+      #shade { position: absolute; left: 0; right: 0; top: 0; height: 1050px; pointer-events: none;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.46) 0%, rgba(0,0,0,0.26) 50%, rgba(0,0,0,0) 100%); }
     </style>
   </head>
   <body>
     <div id="root" data-composition-id="main" data-start="0" data-duration="{{DUR}}" data-width="1080" data-height="1920">
       <div id="cam"><div id="cam-inner">
         <video id="aroll" class="clip full" src="{{AROLL}}" data-start="0" data-duration="{{DUR}}" data-track-index="0" muted playsinline></video>
+        <div id="shade"></div>
         <div id="behind" class="clip" data-start="0" data-duration="{{HEAD_SWAP}}" data-track-index="1">{{HOOK_WORD}}</div>
         <div id="ed-caps-back">
         {{ED_HTML_CAPS_BACK}}
