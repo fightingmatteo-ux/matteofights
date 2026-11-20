@@ -90,6 +90,13 @@ jobs:
           f=$(ls dl/video* | grep -v '\.json$' | head -1 || true)
           if [ -z "$f" ]; then echo "NO_VIDEO=1" >> "$GITHUB_ENV"; exit 0; fi
           ffmpeg -v error -i "$f" -c copy -movflags +faststart "dl/$NAME.mp4" || cp "$f" "dl/$NAME.mp4"
+          # release assets max out at 2 GB: a bigger original (4K DJI/iPhone take) becomes the prepped 1080x1920 master
+          # the edit uses anyway (prep_footage.sh: neutral colour, no trim, so word timings hold)
+          if [ "$(stat -c%s "dl/$NAME.mp4")" -gt 1990000000 ]; then
+            rm -f "$f"
+            bash production/editing/reel-kit/scripts/prep_footage.sh "dl/$NAME.mp4" dl/prepped.mp4
+            mv dl/prepped.mp4 "dl/$NAME.mp4"; ls -la "dl/$NAME.mp4"
+          fi
 
       - name: Watch
         run: |
