@@ -23,4 +23,4 @@ charts the revisions they came from.
 - [broll] A cutaway opens on the move the words name, with no lead-in action: at "Three. The sweep" the clip opened on the opponent's punch and read as an elbow (Matteo, Saenchai Ep. 1, 2026-11-17)
 - [broll] Matteo asked for "a better hook clip" and "better b-roll footage" on Saenchai Ep. 1 (2026-11-17). Read as: sharp broadcast footage over handheld crowd video, and a hook clip where something happens in its first second (the reading is Claude's, he did not spell it out)
 - [broll] "Now" footage must make him look sharp: real training sessions graded good in production/listicles/moments.json, never casual home shadowboxing, and never old beginner pad work outside the beginner years of a story (Matteo, origin pin, 2026-11-20)
-- [broll] Never show what the words just ruled out: no kick or jump clip right after "I can't jump" (Matteo-approved reading, origin pin, 2026-11-20)
+- [broll] Never show what the words just ruled out: no kick or jump clip right after "I can't jump" (Claude's reading, not yet confirmed by Matteo, origin pin, 2026-11-20)
