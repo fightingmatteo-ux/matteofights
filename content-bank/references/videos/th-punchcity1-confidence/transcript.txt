@@ -1,0 +1,4 @@
+language: en
+[   0.0-   4.4] Confidence. Confidence. Confidence. Listen to me closely. Confidence.
+[   5.0-  11.4] It's not a feeling. It's something you build. You build it every time you fail. You freaking build it.
+[  11.8-  15.9] Every time you get up in the morning and you finish the task, you build it.
