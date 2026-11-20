@@ -112,7 +112,20 @@ separate one-off trial reel only, never the pin (a polarizing name takes over th
 Accurate wording only: "Years later, Andrew Tate trained at the gym where I learned jiu-jitsu at ten." Never
 "trained with". Matteo decides.
 
-## Filming today (home, about 20 minutes)
+## One take (Matteo 11-20) — shoot page: `film.html`
+
+Matteo films everything in ONE continuous take, one tripod setup (waist up, headroom, room to step back): hooks A
+to E with pauses, then the body, then both closes. The 5 openings differ through the edit: A tight punch-in + board,
+B beginner pad kick, C split with the 5 s silent hold, D X-ray, E sharp shadowboxing clip. The setup table below is
+the multi-setup alternative.
+
+**Then vs now (Matteo 11-20):** the old pad clips (`pads chaiya`, `pads super8`) make him look like a beginner: use
+them ONLY for hook B and point 3. Everything about "now" must look sharp: `kicking.mov` (bag kicks, quality 4),
+`bagwork fitness first.MOV` (quality 4), `IMG_1181.MOV` (red bag, smooth), `IMG_1551.MOV` (rooftop shadowboxing at
+dusk), and today's home shadowboxing. Fight tape: his best kicks, before the clinch (45 s in the first file);
+Matteo to send the timestamps.
+
+## Filming today, multi-setup alternative (home, about 20 minutes)
 
 | Setup | Camera | Film |
 |---|---|---|
