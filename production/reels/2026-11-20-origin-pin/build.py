@@ -31,13 +31,14 @@ REEL = {
         "C": {"lead": ["The day before", "my first fight:"], "word": "hospital.", "on": ("HOSPITAL", 1), "until": ("STARTED", 1), "cold": True},
     },
     # one red keyword every ~3-6 s, on the word that carries the line
-    "keys": ["JITSU", "STREET", "ANYTHING", "SCARED", "SLEEP", "APPENDICITIS", "STADIUM", "COUNTRIES", "FRACTURE", "ACL",
+    "keys": ["JITSU", "STREET", "ANYTHING", "SCARED", "SLEEP", "STADIUM", "COUNTRIES", "FRACTURE", "ACL",
              "SPAR", "COMEBACK"],
-    "fx": {"APPENDICITIS": "impact", "ACL": "impact", "STREET": "jab", "SPAR": "jab"},
+    "fx": {"ACL": "impact", "STREET": "jab", "SPAR": "jab"},  # review 11-20: APPENDICITIS out of keys, at 176 px it broke over two lines
     # (first word, card ends before this word, KEYWORD): the 2 lines that carry the reel
     "cards": [
-        (("SCARED", 2), ("SO", 2), "FRIENDS"),         # "Scared to get knocked out in front of all my friends"
-        (("TAUGHT", 1), ("DISCIPLINE", 1), "WORK"),     # "if you want something you actually have to work your ass off for it"
+        # review 11-20: cards start late so the white page fills in ~1 s (the long builds sat ~2 s as a near-empty white screen)
+        (("KNOCKED", 1), ("SO", 2), "FRIENDS"),        # "knocked out in front of all my friends"
+        (("ACTUALLY", 1), ("DISCIPLINE", 1), "WORK"),   # "actually have to work your ass off for it"
     ],
     "cta_at": ("FOLLOW", 1),
     "cta": "FOLLOW FOR THE COMEBACK",

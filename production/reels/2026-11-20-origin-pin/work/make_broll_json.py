@@ -27,7 +27,7 @@ CLIPS = {
     "combos2":  ("clip", "fitness-first.mov", 40.2, 2.2, 0.5),  # second sharp combo, full extension (graded good)
     "coldB":    ("clip", "broll-pads-chaiya.mp4", 19.4, 0, 0.4),  # B frame 0: the beginner kick (dur set below)
     "coldC":    ("clip", "first-fight-2.mp4", 6.0, 0, 0.5),   # C frame 0: the stadium, "the day before my first fight"
-    "coldC2":   ("photo", "hospital.jpg", 0, 0, ""),          # C: "...I ended up in the hospital"
+    "coldC2":   ("photo", "hospital_hook.jpg", 0, 0, ""),     # C: "...I ended up in the hospital" (face lower: clear of the board)
 }
 # body: name -> source second it starts on. Words it covers in the comment.
 BODY = {
