@@ -52,6 +52,8 @@ always wanted."_ It's rare and it's real. Lead with it.
 - **Broken fibula + torn ACL came from ONE accident**, late March 2026 in Koh Samui, the day before he went back to
   school, age 19. In public content say only "an accident": **never mention a car, a crash, alcohol or driving**
   (insurance). No surgery planned yet (11-20). He walks fine and shadowboxes; no explosive movements.
+- Moved to Bangkok at about 18, almost 19. Got a **boxer's fracture** there; with the knee it keeps delaying his
+  **second fight** (he has had one fight, at 16).
 - What fighting is to him (his words): it's what taught him consistency, discipline and how to actually progress.
   School came naturally, he never built study habits; training for his first fight was the first time the outcome
   depended on the work. He couldn't sleep if he hadn't trained, scared of getting knocked out in front of his friends.

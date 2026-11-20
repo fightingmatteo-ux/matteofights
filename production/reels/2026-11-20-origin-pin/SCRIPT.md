@@ -26,6 +26,7 @@ that taught him consistency, discipline, and how to actually get good at somethi
 | Then | striking: Muay Thai, trained for the first fight |
 | First fight | at 16. Booked for a Saturday, appendicitis on the Friday, postponed 3 months, different stadium |
 | After | boxing to level up his hands, an MMA gym in Switzerland; trained in 5 countries (Thailand, Switzerland, Italy, Morocco, Brazil) |
+| Bangkok | moved there at about 18, almost 19. Boxer's fracture there, which (with the knee) keeps delaying his second fight |
 | Injury | late March 2026, the day before going back to school, an accident in Koh Samui: broken fibula + torn ACL, at 19 |
 | Now | no surgery planned yet. Walks fine, shadowboxes, seated punches; no explosive moves (can't jump, can't spar) |
 
@@ -35,7 +36,7 @@ Film each one as its own take. Say the line, pause one second, then stop. The bo
 
 | V | Type | Frame 0 (what's on screen) | Text box, 0 to 5 s | Say |
 |---|---|---|---|---|
-| **A** | result | Handheld selfie, arm's length, tight on your face, plain wall | `19. Broken fibula. Torn ACL.` | "I'm nineteen, I've trained in five countries, and right now I can't even jump." |
+| **A** | result | Handheld selfie, arm's length, tight on your face, plain wall | `1st fight: 16. 2nd fight: ?` | "One fight at sixteen. I'm nineteen, and I still haven't had my second." |
 | **B** | contrast | Your first-year training clip, full screen, no face. Cut to you on the tripod at 2 s | `16. The first thing I ever had to work for.` | "School came easy to me. Fighting was the first thing that didn't." |
 | **C** | story peak | Split screen: you on top (tripod, chest up), first-fight walkout below | `I almost never made it to this fight.` | "The day before my first fight, I ended up in hospital." |
 | **D** | result, injury | Knee footage from Drive (scan, brace, crutches or hospital) for the first 1.5 s, then you | `March 2026.` | "One day before I went back to school, an accident took out my knee. Broken fibula. Torn ACL." |
@@ -62,11 +63,14 @@ Talk it, don't read it. Lines in **bold** are worth saying close to word for wor
    thing that taught me: if you want an outcome, you have to work for it.** Consistency. Discipline. How to
    actually get good at something."
 6. **Since (fast, about 4 s):** "Since then, five countries. Thailand, Switzerland, Italy, Morocco, Brazil."
-7. **The knee (about 6 s):** "Then this March, the day before I went back to school, an accident in Koh Samui.
-   Broken fibula. Torn ACL." (Skip in hook D: it's already the opening; the editor cuts it.)
+7. **What's kept fight two away (about 8 s):** "Then I moved to Bangkok. Boxer's fracture. And this March, the day
+   before I went back to school, an accident in Koh Samui. Broken fibula. Torn ACL." (In hook D the accident is
+   already the opening: the editor keeps only "Boxer's fracture" here.)
 8. **Now (about 6 s, shadowbox while you say it or right after):** "**I can't jump. I can't spar. But I can do
    this.**" Then: "Same rule as that first fight. You want it, you work for it."
-9. **Close (spoken + on screen):** "**Follow if you want to see the comeback.**"
+9. **Close (spoken + on screen):** "**Follow if you want to see the comeback.**" Option to film too: "**Follow if
+   you want to see fight number two.**" (more specific; the pinned set uses "comeback", Matteo 11-14, so the editor
+   cuts both and Matteo picks)
 
 Loop take (optional, one continuous take): "...Follow if you want to see the comeback. Because school came easy
 to me." The edit ends before the last sentence, so the replay runs into hook B.
@@ -75,7 +79,7 @@ to me." The edit ends before the last sentence, so the replay runs into hook B.
 
 `KARATE 7` / `BJJ 10-13` / `STREET FIGHT` · `SCHOOL: EASY` · `FIRST FIGHT: 16` · `APPENDICITIS` (red, with the date
 card `1 DAY BEFORE`) · `+3 MONTHS` · white card: "if you want an outcome, you have to **work** for it" ·
-`5 COUNTRIES` with place plates · `MARCH 2026` · `BROKEN FIBULA` / `TORN ACL` · end card `FOLLOW FOR THE COMEBACK`.
+`5 COUNTRIES` with place plates · `BANGKOK` · `BOXER'S FRACTURE` · `MARCH 2026` · `BROKEN FIBULA` / `TORN ACL` · `FIGHT 2: ?` · end card `FOLLOW FOR THE COMEBACK`.
 
 ## B-roll (Drive)
 
@@ -87,6 +91,7 @@ Cut every 2 to 3 s while the story runs; back to your face on the bold lines.
 - Appendicitis: hospital photo if one exists; otherwise black card `APPENDICITIS. 1 DAY BEFORE.`
 - 5 countries: Zurich `Bag work impact mma.MOV` · Essaouira `padwork morocco 2.mov` · Rome `sparring audace.mov` ·
   São Paulo + Koh Samui clips.
+- Hand: any photo or X-ray of the boxer's fracture, or the cast/splint.
 - Knee: the Drive "Knee surgery" folder: scan, brace, crutches. Nothing showing a car or a road.
 - Now: today's home shadowboxing.
 
@@ -117,7 +122,8 @@ no music playing. Look into the lens, not at the screen. Say the board's number 
 School came easy. Fighting didn't.
 
 Karate at 7. Jiu-jitsu at 10. First Muay Thai fight at 16, three months late because of appendicitis.
-Five countries since. Then a broken fibula and a torn ACL at 19.
+Five countries since. Then a boxer's fracture, a broken fibula and a torn ACL.
+I'm 19 and I still haven't had my second fight.
 
 Fighting taught me one rule: if you want an outcome, you work for it. Same rule now.
 
