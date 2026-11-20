@@ -23,7 +23,7 @@ fi
 "$PY" -P build.py "$V"
 npx --yes hyperframes@0.8.147 check || { echo "hyperframes check failed"; exit 1; }
 mkdir -p "$(dirname "$OUT")"
-render() { npx --yes hyperframes@0.8.147 render -q standard -w 8 -o "$OUT" 2>&1 | grep -E "rendered in|failed|rror" || true; }
+render() { npx --yes hyperframes@0.8.147 render -q standard -w 4 -o "$OUT" 2>&1 | grep -E "rendered in|failed|rror" || true; }
 render
 # B and C open on footage, not the A-roll: only black frames count as a glitch there
 case "$V" in B|C) CHK=(1.5 black);; *) CHK=();; esac
