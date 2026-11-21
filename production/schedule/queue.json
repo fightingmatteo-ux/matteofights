@@ -5720,8 +5720,8 @@
       "opening": "result",
       "approved": false,
       "status": "queued",
-      "slot_note": "hook test, same day: 2026-11-20 15:00 NY (trials.py schedule)",
-      "not_before": "2026-11-20T20:00:00Z"
+      "slot_note": "hook test, same day: 2026-11-21 15:00 NY (trials.py schedule)",
+      "not_before": "2026-11-21T20:00:00Z"
     },
     {
       "id": "2026-11-20-loma-3open-G",
@@ -5740,8 +5740,8 @@
       "opening": "contrast",
       "approved": false,
       "status": "queued",
-      "slot_note": "hook test, same day: 2026-11-20 15:15 NY (trials.py schedule)",
-      "not_before": "2026-11-20T20:15:00Z"
+      "slot_note": "hook test, same day: 2026-11-21 15:15 NY (trials.py schedule)",
+      "not_before": "2026-11-21T20:15:00Z"
     },
     {
       "id": "2026-11-20-loma-3open-H",
@@ -5760,8 +5760,8 @@
       "opening": "question",
       "approved": false,
       "status": "queued",
-      "slot_note": "hook test, same day: 2026-11-20 15:30 NY (trials.py schedule)",
-      "not_before": "2026-11-20T20:30:00Z"
+      "slot_note": "hook test, same day: 2026-11-21 15:30 NY (trials.py schedule)",
+      "not_before": "2026-11-21T20:30:00Z"
     }
   ]
 }
