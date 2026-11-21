@@ -149,6 +149,10 @@ Sort by follows per 1k views when looking for what grows the account.
 | 2026-11-16 | lst-2026-11-16-train-before-work | - | 17928009333202428 | 6 MORNING HABITS OF PEOPLE WHO TRAIN BEFORE WORK | lifestyle (tactical) | text-on-clip | trial | 1031 (0.39x) | ? | 1 | 1 | 0 | no | lifestyle routine: 0.39x, skip 63% |
 | 2026-11-16 | lst-2026-11-16-new-people-watch | - | 17943199617363187 | 6 SIGNS THE NEW PEOPLE IN YOUR GYM LOOK UP TO YOU | listicle (identity) | text-on-clip | trial | 3555 (1.33x) | ? | 0 | 4 | 0 | no | identity: 1.33x, skip 37.7%, 7.8 s avg watch |
 | 2026-11-17 | lst-2026-11-16-body-without-counter | - | 18104917268548599 | 6 WAYS TO HIT THE BODY WITHOUT GETTING COUNTERED | listicle (tactical) | text-on-clip | trial | 3023 (1.13x) | ? | 2 | 9 | 0 | no | tactical: 1.13x |
+| 2026-11-17 | lst-2026-11-10-faster-kicks | - | 17912661006589705 | 6 WAYS TO MAKE YOUR KICKS FASTER | listicle (tactical) | text-on-clip | trial | 2550 (0.97x) | ? | 3 | 13 | 0 | no | tactical: 0.97x |
+| 2026-11-17 | lst-2026-11-17-pads-to-sparring | - | 18122632750969847 | 6 WAYS TO MAKE YOUR PAD WORK SHOW UP IN SPARRING | listicle (tactical) | text-on-clip | trial | 2349 (0.89x) | ? | 0 | 12 | 0 | no | tactical: 0.89x |
+| 2026-11-17 | lst-2026-11-17-steal-from-loma | - | 18343909621256479 | 6 FOOTWORK HABITS YOU CAN STEAL FROM LOMACHENKO | listicle (tactical) | text-on-clip | trial | 2270 (0.86x) | ? | 18 | 32 | 0 | no | pro-fighter list: 0.86x views but 18 shares + 32 saves (1.8% save rate); skip 63% |
+| 2026-11-18 | lst-2026-11-17-finish-round-stronger | - | 17958337641282308 | 6 WAYS TO FINISH A ROUND STRONGER THAN YOU STARTED | listicle (tactical) | text-on-clip | trial | 2729 (1.04x) | ? | 0 | 3 | 0 | no | tactical: 1.04x |
 
 ## Patterns so far
 - _Add a line whenever a test is decided. Keep it to what the numbers showed._

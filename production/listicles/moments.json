@@ -799,15 +799,17 @@
   },
   "1J8mHxp5EZj0v1cEodM1GSZq6b7oE4UH-": {
     "good": [
-      29.0
+      34.0,
+      31.0
     ],
     "bad": [
-      37.4,
       1.8,
+      10.2,
       18.6,
-      10.2
+      29.0,
+      37.4
     ],
-    "notes": "red bag gym in grey tee: A shadowboxing with guard up; B walks to camera, C/E kettlebell and bending, D ends bent over",
+    "notes": "red bag gym in grey tee: A shadowboxing with guard up; B walks to camera, C/E kettlebell and bending, D ends bent over | 2026-11-21: 29.0 opens on him walking, hands down (two covers had to be re-cut); start at 34 or 31.",
     "graded": "2026-10-18T11:00:32Z",
     "by": "Claude (session, rubric context/boxing-technique.md + pose check)"
   },
