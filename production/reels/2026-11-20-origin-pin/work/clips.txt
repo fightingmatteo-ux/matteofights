@@ -7,7 +7,7 @@ hospital photo hospital.jpg 0 2.10 0.5 1
 stadium clip first-fight-2.mp4 22.9 2.15 0.5 1
 trained clip super8.mp4 60.6 2.10 0.5 1
 swiss clip impact-mma.mov 15.2 4.10 0.5 1
-kickend clip kicking.mov 19.6 2.40 0.5 1
+kickend clip impact-mma.mov 24.0 2.40 0.5 1
 headkick clip headkick.mov 4.6 2.30 0.6 1.45
 hand photo hand.jpg 0 1.70 0.5 1
 xray photo xray.jpg 0 4.50 0.5 1

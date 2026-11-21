@@ -79,7 +79,8 @@ broll = json.load(open(f"work/broll_{V}.json", encoding="utf-8")) if os.path.exi
 _cardspans = []
 broll_html, broll_spans = plan.broll_html(broll)
 broll_html = broll_html.replace("assets/media/b_", "assets/broll/b_")  # submit.py skips assets/media/b_*.mp4
-ed = plan.build(d, keys=set(REEL["keys"]), cards=cards, slam=set(REEL["slam"]), fx=REEL["fx"],
+# behind=False: Matteo 11-20, captions went missing (the "behind him" layer sat under the cutaways)
+ed = plan.build(d, keys=set(REEL["keys"]), cards=cards, slam=set(REEL["slam"]), fx=REEL["fx"], behind=False,
                 hide=[(0, title_end)] + _cardspans, title_end=title_end, back_top=lambda t: head(t) - 235, broll=broll_spans,
                 **({"bed": "assets/media/bed" + os.path.splitext(REEL["bed"])[1]} if REEL.get("bed") else {}))
 css, js = plan.install(".", bed_seconds=None if REEL.get("bed") else d["duration"] + 1)

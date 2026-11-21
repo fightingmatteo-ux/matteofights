@@ -28,3 +28,6 @@ charts the revisions they came from.
 - [cut] No cutaways under ~2 s in talking heads: 0.6 s flashes (a country montage) read as glitches; hold one clip over a list instead (Matteo, origin pin, 2026-11-20)
 - [cut] Calm transitions on long talking heads: clean cuts, one steady slow push, no whip-blur entries, no 1.0/1.1 zoom alternation, no camera punches ("jumpy", "buggy"; Matteo, origin pin, 2026-11-20). Template: Editorial.animate(..., {calm: true})
 - [audio] Never end a range on Whisper's word end: it lands early and clips the word ("audio cuts off"); keep 0.15-0.3 s past it (Matteo, origin pin, 2026-11-20)
+- [color] Never add overlays or filters that change the footage's look: no dark shade gradients, no dimmed cutaways ("the colour looks graded and shit"). Caption readability comes from the text's own shadow only (Matteo, origin pin, 2026-11-20)
+- [captions] Every spoken line has a caption on screen, including over cutaways: put captions in the front layer (plan.build behind=False) unless the cut-out runs the full length (Matteo: "a lot of captions are missing", 2026-11-20)
+- [audio] When a line ends on a long word Whisper times short ("consistency"), keep the whole sentence or 0.5 s past it; he must hear every word finish (Matteo, 2026-11-20)

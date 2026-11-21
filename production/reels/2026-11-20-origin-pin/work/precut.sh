@@ -31,7 +31,6 @@ photo() {  # name jpg dur: slow push-in on a still (Ken Burns, 1.00 -> 1.08), 30
   echo "b_$1: photo $2 +$3"
 }
 
-drive 1kY_fR5PwN07yk9dasbW4Q_5k39muHf-T kicking.mov          # low-angle bag kicks, red shirt (sharp, quality 4)
 drive 1vj6GxY875E36-_u9yC84tWzqDm4-9SIc impact-mma.mov       # Zurich, Impact MMA: roundhouses (Matteo: 15-20 s)
 drive 1cO7ZS2vB0GficgdhERknFjIt1zkldbU6 super8.mp4           # Super8 pads close (first striking years)
 drive 1x_zg9B392R2uYXJrd8it7QbctQaK650h headkick.mov         # his head kick on a partner (Matteo's pick), filmed off a screen

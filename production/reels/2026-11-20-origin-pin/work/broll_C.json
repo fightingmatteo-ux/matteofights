@@ -32,23 +32,23 @@
   "dur": 2.0
  },
  "swiss": {
-  "start": 49.7,
+  "start": 52.58,
   "dur": 4.0
  },
  "kickend": {
-  "start": 70.06,
+  "start": 72.94,
   "dur": 2.3
  },
  "headkick": {
-  "start": 72.36,
+  "start": 75.24,
   "dur": 2.2
  },
  "hand": {
-  "start": 56.09,
+  "start": 58.97,
   "dur": 1.6
  },
  "xray": {
-  "start": 62.44,
+  "start": 65.32,
   "dur": 4.4
  }
 }

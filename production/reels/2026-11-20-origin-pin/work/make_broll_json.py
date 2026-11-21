@@ -18,7 +18,7 @@ CLIPS = {
     "stadium":  ("clip", "first-fight-2.mp4", 22.9, 2.05, 0.5),  # Matteo's pick: his kicks at 24 s (black shorts)
     "trained":  ("clip", "super8.mp4", 60.6, 2.0, 0.5),       # "so I trained three more months": Super8 kick/knee combos (graded good)
     "swiss":    ("clip", "impact-mma.mov", 15.2, 4.0, 0.5),   # "five countries: Thailand ... Brazil": ONE held clip of his sharp Impact MMA kicks (Matteo 11-20: the 0.6 s flashes looked buggy)
-    "kickend":  ("clip", "kicking.mov", 19.6, 2.3, 0.5),      # "but I can do this": the high kick on the bag (Matteo: sharp kicks)
+    "kickend":  ("clip", "impact-mma.mov", 24.0, 2.3, 0.5),   # "but I can do this": Impact MMA roundhouse (graded clean; Matteo 11-20: the kicking.mov knee was bad)
     "headkick": ("clip", "headkick.mov", 4.6, 2.2, 0.6, 1.45),  # then his head kick (Matteo's pick), zoomed past the dark bars
     "hand":     ("photo", "hand.jpg", 0, 1.6, ""),            # boxer's fracture: "Just a bit swollen"
     "xray":     ("photo", "xray.jpg", 0, 4.4, ""),            # broken fibula, torn ACL ... "I can't jump" (covers 2 look-aways)
