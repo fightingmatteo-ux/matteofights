@@ -1592,9 +1592,12 @@
       "text": "Losing a sparring round teaches you more when you lose it on purpose.\n\nTry the move you're bad at. Get caught. That's the lesson.",
       "chain": [],
       "from": "craft",
-      "status": "queued",
+      "status": "posted",
       "approved": true,
-      "approved_note": "Matteo: approved via dashboard (2026-11-16T16:07:48Z)"
+      "approved_note": "Matteo: approved via dashboard (2026-11-16T16:07:48Z)",
+      "posted_at": "2026-11-22T12:36:13Z",
+      "thread_id": "18182588383432345",
+      "url": "https://www.threads.com/@matteofights/post/DgC0chCoEeP"
     },
     {
       "id": "th-1122-2",
