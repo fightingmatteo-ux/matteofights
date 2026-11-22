@@ -39,7 +39,7 @@
         "21:00"
       ],
       "topic": "Combat Sports",
-      "last_slot": "2026-11-22T15:00:00Z"
+      "last_slot": "2026-11-22T20:30:00Z"
     },
     "facebook_slides": {
       "enabled": false,
@@ -2039,7 +2039,14 @@
         "id": "-WCe9schvKQ",
         "url": "https://youtube.com/shorts/-WCe9schvKQ",
         "privacy": "public"
+      },
+      "threads": {
+        "status": "posted",
+        "at": "2026-11-22T20:36:46Z",
+        "id": "18203253091387174",
+        "url": "https://www.threads.com/@matteofights/post/DgDrY8XBZM3"
       }
-    }
+    },
+    "lst-2026-11-19-stop-flinching": {}
   }
 }

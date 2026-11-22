@@ -1,9 +1,5 @@
 [
   {
-    "id": "xp-4c62b6ab",
-    "text": "📤 Threads: THE SMELL OF YOUR GLOVES AFTER A WEEK IN THE BAG\nhttps://www.threads.com/@matteofights/post/DfOMcuAFR_9"
-  },
-  {
     "id": "health-queue:lst-2026-10-30-not-a-beginner:failed-2026110206",
     "text": "⚠️ lst-2026-10-30-not-a-beginner failed to post: GET https://graph.facebook.com/v23.0/530317382955170 -> 404: {\"title\":\"Not Found\",\"detail\":\"No audio asset found for the given ID\",\"status\":404}"
   },
@@ -798,5 +794,9 @@
   {
     "id": "health-run:Listicle factory-2026112219",
     "text": "⚠️ Workflow 'Listicle factory' failed: https://github.com/fightingmatteo-ux/matteofights/actions/runs/45054807964"
+  },
+  {
+    "id": "xp-0fb667b2",
+    "text": "📤 Threads: 6 SIGNS YOUR TRAINING PARTNERS HATE SPARRING YOU\nhttps://www.threads.com/@matteofights/post/DgDrY8XBZM3"
   }
 ]
