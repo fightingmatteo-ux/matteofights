@@ -153,6 +153,11 @@ Sort by follows per 1k views when looking for what grows the account.
 | 2026-11-17 | lst-2026-11-17-pads-to-sparring | - | 18122632750969847 | 6 WAYS TO MAKE YOUR PAD WORK SHOW UP IN SPARRING | listicle (tactical) | text-on-clip | trial | 2349 (0.89x) | ? | 0 | 12 | 0 | no | tactical: 0.89x |
 | 2026-11-17 | lst-2026-11-17-steal-from-loma | - | 18343909621256479 | 6 FOOTWORK HABITS YOU CAN STEAL FROM LOMACHENKO | listicle (tactical) | text-on-clip | trial | 2270 (0.86x) | ? | 18 | 32 | 0 | no | pro-fighter list: 0.86x views but 18 shares + 32 saves (1.8% save rate); skip 63% |
 | 2026-11-18 | lst-2026-11-17-finish-round-stronger | - | 17958337641282308 | 6 WAYS TO FINISH A ROUND STRONGER THAN YOU STARTED | listicle (tactical) | text-on-clip | trial | 2729 (1.04x) | ? | 0 | 3 | 0 | no | tactical: 1.04x |
+| 2026-11-18 | lst-2026-11-11-stays-after-class | - | 17978633997157037 | 6 SIGNS YOU'VE BECOME THE ONE WHO STAYS AFTER CLASS | listicle (identity) | text-on-clip | trial | 3354 (1.22x) | ? | 4 | 3 | 0 | no | identity: 1.22x, skip 40% |
+| 2026-11-18 | lst-2026-11-18-look-after-hands | - | 18357859300217996 | 6 WAYS FIGHTERS LOOK AFTER THEIR HANDS | lifestyle (tactical) | text-on-clip | trial | 2831 (1.03x) | ? | 0 | 2 | 0 | no | lifestyle care: 1.03x, skip 40% |
+| 2026-11-18 | lst-2026-11-18-calm-when-panic | - | 18132712834874234 | 6 SIGNS YOU STAY CALM WHEN EVERYONE ELSE PANICS | listicle (identity) | text-on-clip | trial | 2747 (1.00x) | ? | 0 | 4 | 0 | no | identity: 1.00x |
+| 2026-11-19 | lst-2026-11-18-left-hook | - | 17889598323623006 | 6 WAYS TO STOP GETTING CAUGHT BY THE LEFT HOOK | listicle (tactical) | text-on-clip | trial | 898 (0.33x) | ? | 1 | 9 | 0 | no | tactical: 0.33x, reach 660 (stalled early) |
+| 2026-11-19 | lst-2026-11-09-train-for-fun | - | 18143674774714122 | 6 SIGNS YOU TRAIN FOR FUN AND STILL TAKE IT SERIOUSLY | listicle (identity) | text-on-clip | trial | 3890 (1.42x) | ? | 2 | 4 | 0 | no | identity, train-for-fun angle: 1.42x, 7.7 s avg watch |
 
 ## Patterns so far
 - _Add a line whenever a test is decided. Keep it to what the numbers showed._
