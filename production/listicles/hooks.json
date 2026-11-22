@@ -2688,18 +2688,19 @@
     {
       "id": "fun-and-serious",
       "archetype": "identity",
-      "hook": "6 SIGNS YOU TRAIN FOR FUN AND STILL TAKE IT SERIOUSLY",
+      "hook": "6 SIGNS YOUR GYM WOULD FEEL DIFFERENT WITHOUT YOU",
       "subhook": [
-        "Some people train for fun.",
-        "People think that means not trying."
+        "You think you just show up and train.",
+        "The room notices when you don't."
       ],
-      "caption": "Some people train for fun.\nPeople think that means not trying.\n\n6 signs you train for fun and still take it seriously:\n\n1. You never miss class, even with no fight booked\n2. You drill the boring stuff anyway\n3. You spar to learn, not to prove something\n4. You watch fights to steal things\n5. You rest when your body tells you to\n6. You'll still be training when the people who mocked it quit\n\nRepost this so someone who trains for fun sees it.\n\n#muaythai #boxinglife #training",
+      "caption": "You think you just show up and train.\nThe room notices when you don't.\n\n6 signs your gym would feel different without you:\n\n1. People ask where you were when you miss a day\n2. New people pair up with you first\n3. You notice when someone's having a bad day\n4. The coach saves the hard rounds for you\n5. You bring the energy on the quiet nights\n6. Someone started training because of you\n\nRepost this so someone who holds your gym together sees it.\n\n#muaythai #boxinglife #gymlife",
       "status": "rendered",
       "format": "listicle",
       "clip_id": "10IHPzw-ET_GpEOXfftLwgAkLu0b7bSSh",
       "clip": "IMG_1230.MOV (10IHPzw-ET_GpEOXfftLwgAkLu0b7bSSh)",
       "queue_id": "lst-2026-12-02-fun-and-serious",
-      "rendered_at": "2026-11-22T15:52Z"
+      "rendered_at": "2026-11-22T15:52Z",
+      "note": "replaced 2026-11-22: old hook duplicated posted lst-2026-11-09-train-for-fun"
     },
     {
       "id": "set-up-head-kick",
