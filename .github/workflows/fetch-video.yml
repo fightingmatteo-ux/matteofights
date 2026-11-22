@@ -90,6 +90,21 @@ jobs:
           f=$(ls dl/video* | grep -v '\.json$' | head -1 || true)
           if [ -z "$f" ]; then echo "NO_VIDEO=1" >> "$GITHUB_ENV"; exit 0; fi
           ffmpeg -v error -i "$f" -c copy -movflags +faststart "dl/$NAME.mp4" || cp "$f" "dl/$NAME.mp4"
+          # colour test (name ending -colortest): one frame from the ORIGINAL, converted 4 ways, + the camera's colour tags
+          if [[ "$NAME" == *-colortest ]]; then
+            d=content-bank/real-footage/analysis/$NAME; mkdir -p "$d"
+            ffprobe -v error -select_streams v:0 -show_entries stream=codec_name,pix_fmt,color_range,color_space,color_transfer,color_primaries,profile:stream_side_data -of default "dl/$NAME.mp4" > "$d/probe.txt" || true
+            for t in 80 376; do
+              ffmpeg -v error -y -ss $t -i "dl/$NAME.mp4" -frames:v 1 -vf "scale=540:-2" "$d/t${t}_1_as-is.jpg" || true
+              ffmpeg -v error -y -ss $t -i "dl/$NAME.mp4" -frames:v 1 -vf "zscale=t=linear:npl=100:tin=arib-std-b67:pin=bt2020:min=bt2020nc,format=gbrpf32le,zscale=p=bt709,tonemap=hable:desat=0,zscale=t=bt709:m=bt709:r=tv,scale=540:-2" "$d/t${t}_2_hable-current.jpg" || true
+              ffmpeg -v error -y -ss $t -i "dl/$NAME.mp4" -frames:v 1 -vf "zscale=t=linear:npl=203:tin=arib-std-b67:pin=bt2020:min=bt2020nc,format=gbrpf32le,zscale=p=bt709,tonemap=mobius:desat=2,zscale=t=bt709:m=bt709:r=tv,scale=540:-2" "$d/t${t}_3_mobius.jpg" || true
+              ffmpeg -v error -y -ss $t -i "dl/$NAME.mp4" -frames:v 1 -vf "zscale=pin=bt2020:p=bt709:min=bt2020nc:m=bt709:tin=bt709:t=bt709:r=tv,scale=540:-2" "$d/t${t}_4_primaries-only.jpg" || true
+            done
+            ls "$d"; cat "$d/probe.txt"
+            git config user.name "github-actions[bot]"; git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+            git add "$d" && git commit -qm "media: colour test $NAME" && git pull -q --rebase origin "${GITHUB_REF_NAME}" && git push -q origin "HEAD:${GITHUB_REF_NAME}"
+            exit 1   # stop here on purpose: a test, nothing to watch or store
+          fi
           # release assets max out at 2 GB: a bigger original (4K DJI/iPhone take) becomes the prepped 1080x1920 master
           # the edit uses anyway (prep_footage.sh: neutral colour, no trim, so word timings hold)
           if [ "$(stat -c%s "dl/$NAME.mp4")" -gt 1990000000 ]; then
