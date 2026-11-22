@@ -490,13 +490,25 @@ def fb_pick():
         print(f"  {i['id']}: {views} views ({views / median:.2f}x median), {ss_k:.1f} shares+saves /1k" if median else f"  {i['id']}: {views}")
     if not cands or (median and cands[0][0] < rule.get("min_vs_median", 1.0) * median):
         return print(f"fb-pick: nothing clears {rule.get('min_vs_median', 1.0)}x the {median} median views: no Facebook reel today")
-    views, ss_k, item = cands[0]
+    # A listicle needs a list in its caption for the Facebook version (iykyk / statement captions have none):
+    # skip those and take the next best candidate that still clears the bar.
+    pick = None
+    for views, ss_k, item in cands:
+        if median and views < rule.get("min_vs_median", 1.0) * median:
+            break
+        if item["id"].startswith("lst-"):
+            cap = (ROOT / item["caption_file"]).read_text(encoding="utf-8")
+            content = captions.slides(cap, item.get("hook", ""))
+            if not content:
+                print(f"  {item['id']}: caption has no list, can't make its Facebook version: skipped")
+                continue
+        pick = (views, ss_k, item)
+        break
+    if not pick:
+        return print("fb-pick: no candidate with a Facebook-ready caption clears the bar: no Facebook reel today")
+    views, ss_k, item = pick
     if item["id"].startswith("lst-"):
         h = by_q[item["id"]]
-        cap = (ROOT / item["caption_file"]).read_text(encoding="utf-8")
-        content = captions.slides(cap, item.get("hook", ""))
-        if not content:
-            sys.exit(f"{item['id']}: caption has no list, can't make its Facebook version")
         clip, rot = clip_of(item)
         out = WORK / item["video_asset"].replace(".mp4", "-fb.mp4")
         offsite(fetch(clip["ID"], clip["Name"]), h["id"], out, content[1], content[2], now.timetuple().tm_yday, rot)
