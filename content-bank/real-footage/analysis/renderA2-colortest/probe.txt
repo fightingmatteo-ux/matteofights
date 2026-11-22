@@ -1,0 +1,9 @@
+[STREAM]
+codec_name=h264
+profile=High
+pix_fmt=yuv420p
+color_range=tv
+color_space=bt709
+color_transfer=bt709
+color_primaries=bt709
+[/STREAM]
