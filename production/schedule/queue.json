@@ -4953,11 +4953,18 @@
       "not_before": "2026-11-22T17:30:00Z",
       "min_gap_hours": 2.5,
       "approved": true,
-      "status": "queued",
+      "status": "posted",
       "cta": "read",
       "app_audio": "id:496614019576474 Echo Sax Feeling Blue - Caleb Arredondo (add in the Instagram app)",
       "video_asset_music": "lst-2026-11-22-new-gym-staring-music.mp4",
-      "approved_note": "Matteo: approved the week via dashboard (2026-11-16T09:57:39Z)"
+      "approved_note": "Matteo: approved the week via dashboard (2026-11-16T09:57:39Z)",
+      "audio_id": "496614019576474",
+      "audio_title": "Caleb Arredondo - Echo Sax Feeling Blue",
+      "audio_artist": "sovenhq",
+      "posting_since": "2026-11-22T18:01:10Z",
+      "media_id": "18109734266637897",
+      "permalink": "https://www.instagram.com/reel/DgDZqtECsy0/",
+      "posted_at": "2026-11-22T18:01:53Z"
     },
     {
       "id": "lst-2026-11-23-recover-after-work",
