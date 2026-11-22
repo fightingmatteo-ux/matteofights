@@ -1,0 +1,9 @@
+[STREAM]
+codec_name=hevc
+profile=Main 10
+pix_fmt=yuv420p10le
+color_range=tv
+color_space=bt709
+color_transfer=bt709
+color_primaries=bt709
+[/STREAM]
