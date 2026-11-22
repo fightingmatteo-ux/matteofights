@@ -1622,9 +1622,12 @@
       "text": "I had a ruptured appendix the day before a fight.\n\nThat's the closest I've come to quitting.\n\nI didn't.",
       "chain": [],
       "from": "founder",
-      "status": "queued",
+      "status": "posted",
       "approved": true,
-      "approved_note": "Matteo: approved via dashboard (2026-11-16T16:07:48Z)"
+      "approved_note": "Matteo: approved via dashboard (2026-11-16T16:07:48Z)",
+      "posted_at": "2026-11-22T22:36:09Z",
+      "thread_id": "17979820542148938",
+      "url": "https://www.threads.com/@matteofights/post/DgD5GpDGPSL"
     },
     {
       "id": "th-1123-1",
