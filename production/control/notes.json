@@ -1,13 +1,5 @@
 [
   {
-    "id": "xp-62057297",
-    "text": "📤 YouTube Shorts: THE SMELL OF YOUR GLOVES AFTER A WEEK IN THE BAG\nhttps://youtube.com/shorts/tGEBcvr3dqY"
-  },
-  {
-    "id": "xp-2559c84c",
-    "text": "📤 Facebook Reels: 7 SIGNS YOU'RE IMPROVING EVEN IF IT DOESN'T FEEL LIKE IT\nhttps://www.facebook.com/reel/1188925476799099"
-  },
-  {
     "id": "xp-4c62b6ab",
     "text": "📤 Threads: THE SMELL OF YOUR GLOVES AFTER A WEEK IN THE BAG\nhttps://www.threads.com/@matteofights/post/DfOMcuAFR_9"
   },
@@ -798,5 +790,13 @@
   {
     "id": "xp-4da53373",
     "text": "📤 YouTube Shorts: 6 SIGNS YOUR TRAINING PARTNERS HATE SPARRING YOU\nhttps://youtube.com/shorts/-WCe9schvKQ"
+  },
+  {
+    "id": "health-queue:lst-2026-10-30-not-a-beginner:failed-2026112219",
+    "text": "⚠️ lst-2026-10-30-not-a-beginner failed to post: GET https://graph.facebook.com/v23.0/530317382955170 -> 404: {\"title\":\"Not Found\",\"detail\":\"No audio asset found for the given ID\",\"status\":404}"
+  },
+  {
+    "id": "health-run:Listicle factory-2026112219",
+    "text": "⚠️ Workflow 'Listicle factory' failed: https://github.com/fightingmatteo-ux/matteofights/actions/runs/45054807964"
   }
 ]
