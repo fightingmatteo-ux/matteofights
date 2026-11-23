@@ -1,33 +1,5 @@
 [
   {
-    "id": "xp-4cb5bb6e",
-    "text": "📤 YouTube Shorts: 6 WAYS TO FIGHT A SOUTHPAW WHEN YOU NEVER SPAR ONE\nhttps://youtube.com/shorts/zbOFIRO2rnM"
-  },
-  {
-    "id": "xp-fe419e09",
-    "text": "📤 Threads: 6 WAYS TO FIGHT A SOUTHPAW WHEN YOU NEVER SPAR ONE\nhttps://www.threads.com/@matteofights/post/DfQLfNYjOWt"
-  },
-  {
-    "id": "xp-05fdfb48",
-    "text": "📤 YouTube Shorts: ONE BAD ROUND DOESN'T LOSE THE FIGHT. SAME WITH BUILDING.\nhttps://youtube.com/shorts/hdqBV7G-r3c"
-  },
-  {
-    "id": "health-job:2026-11-02-plan-P0-A-20261102T124603:failed-2026110221",
-    "text": "⚠️ Cloud render 2026-11-02-plan-P0-A-20261102T124603 failed: ailable: 25.1.1 -> 26.2.2\n[notice] To update, run: pip install --upgrade pip\n\n[notice] A new release of pip is available: 25.0.1 -> 26.2.2\n[notice] To update, run: python -m pip install --upgrade pip\n"
-  },
-  {
-    "id": "health-job:2026-11-02-plan-P0-A-20261102T124855:failed-2026110221",
-    "text": "⚠️ Cloud render 2026-11-02-plan-P0-A-20261102T124855 failed: ailable: 25.1.1 -> 26.2.2\n[notice] To update, run: pip install --upgrade pip\n\n[notice] A new release of pip is available: 25.0.1 -> 26.2.2\n[notice] To update, run: python -m pip install --upgrade pip\n"
-  },
-  {
-    "id": "health-job:2026-11-02-plan-P0-A-20261102T125319:failed-2026110221",
-    "text": "⚠️ Cloud render 2026-11-02-plan-P0-A-20261102T125319 failed: ailable: 25.1.1 -> 26.2.2\n[notice] To update, run: pip install --upgrade pip\n\n[notice] A new release of pip is available: 25.0.1 -> 26.2.2\n[notice] To update, run: python -m pip install --upgrade pip\n"
-  },
-  {
-    "id": "health-job:2026-11-02-yt-fetch-1-20261102T123714:failed-2026110221",
-    "text": "⚠️ Cloud render 2026-11-02-yt-fetch-1-20261102T123714 failed: H]  to your command/config. YouTube extraction without a JS runtime has been deprecated, and some formats may be missing. See  https://github.com/yt-dlp/yt-dlp/wiki/EJS  for details on installing one\n"
-  },
-  {
     "id": "health-job:2026-11-02-yt-fetch-1-20261102T124336:failed-2026110221",
     "text": "⚠️ Cloud render 2026-11-02-yt-fetch-1-20261102T124336 failed: -do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies\n"
   },
@@ -798,5 +770,33 @@
   {
     "id": "xp-d25028b9",
     "text": "📤 Threads: 6 WAYS TO STOP FLINCHING WHEN YOU GET HIT\nhttps://www.threads.com/@matteofights/post/DgERJy3JZE4"
+  },
+  {
+    "id": "health-job:2026-11-20-origin-pin-A-20261120T152131:stuck-2026112307",
+    "text": "⚠️ Cloud render 2026-11-20-origin-pin-A-20261120T152131 has had no result for over 2 h."
+  },
+  {
+    "id": "health-job:2026-11-20-origin-pin-A-20261120T171805:stuck-2026112307",
+    "text": "⚠️ Cloud render 2026-11-20-origin-pin-A-20261120T171805 has had no result for over 2 h."
+  },
+  {
+    "id": "health-job:2026-11-20-origin-pin-B-20261120T152232:stuck-2026112307",
+    "text": "⚠️ Cloud render 2026-11-20-origin-pin-B-20261120T152232 has had no result for over 2 h."
+  },
+  {
+    "id": "health-job:2026-11-20-origin-pin-B-20261120T171718:stuck-2026112307",
+    "text": "⚠️ Cloud render 2026-11-20-origin-pin-B-20261120T171718 has had no result for over 2 h."
+  },
+  {
+    "id": "health-job:2026-11-20-origin-pin-C-20261120T154222:stuck-2026112307",
+    "text": "⚠️ Cloud render 2026-11-20-origin-pin-C-20261120T154222 has had no result for over 2 h."
+  },
+  {
+    "id": "health-job:2026-11-20-origin-pin-C-20261120T170840:stuck-2026112307",
+    "text": "⚠️ Cloud render 2026-11-20-origin-pin-C-20261120T170840 has had no result for over 2 h."
+  },
+  {
+    "id": "health-job:2026-11-20-origin-pin-C-20261120T171912:stuck-2026112307",
+    "text": "⚠️ Cloud render 2026-11-20-origin-pin-C-20261120T171912 has had no result for over 2 h."
   }
 ]
