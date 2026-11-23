@@ -6392,6 +6392,25 @@
       "cta": "protocol",
       "app_audio": "id:576492425503806 Echo Sax Endless - Caleb Arredondo (add in the Instagram app)",
       "video_asset_music": "lst-2026-12-03-defend-high-kicks-music.mp4"
+    },
+    {
+      "id": "2026-11-24-spotting-danger-A",
+      "reel": "2026-11-24-spotting-danger",
+      "variant": "A",
+      "format": "talking head",
+      "strategy": "MANUAL",
+      "length": "full",
+      "thumb_offset_ms": 3000,
+      "min_gap_hours": 0.25,
+      "crosspost_to": [],
+      "video_asset": "2026-11-24-spotting-danger-A.mp4",
+      "caption_file": "production/reels/2026-11-24-spotting-danger/caption-A.txt",
+      "hook": "In any bar or any meeting, you can spot who's dangerous in under two seconds.",
+      "opening": "bold claim",
+      "approved": false,
+      "status": "queued",
+      "slot_note": "single trial Matteo asked for tonight: 23:00 Bangkok, his followers' peak",
+      "not_before": "2026-11-24T16:00:00Z"
     }
   ]
 }

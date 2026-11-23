@@ -26,8 +26,10 @@ task needs it. Open items: [STATUS.md](STATUS.md) (read at session start, update
   is public (capped 1 per 90 s, 48 per day). Each job bills at least 1 minute. Every job has a
   free backup (Modal, same workflow file; [tools/ops/README.md](tools/ops/README.md)); keep new workflows runnable
   there (`python3 -P tools/ops/runner.py check`) and new limits in `tools/ops/limits.json`.
-- Analytics files are dated snapshots: pull live (Buzzfy first, Windsor `instagram` 17841465098113052 as
-  fallback) when current numbers matter, then write a fresh snapshot.
+- Analytics files are dated snapshots: pull live (Windsor `instagram` 17841465098113052, or Graph API insights
+  with our Meta app token) when current numbers matter, then write a fresh snapshot.
+- **Buzzfy is retired (Matteo 2026-11-24): never use it** for posting, metrics or research. Posting goes through
+  our Meta app only (queue + Post queue, or the Post trial reel workflow).
 
 ## Content direction (Matteo, standing)
 

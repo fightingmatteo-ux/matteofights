@@ -16,7 +16,7 @@ numbered list living in the caption. No talking, so it renders headless.
 4. **Yes.** Matteo watches the week in Drive and reads the captions. On his explicit yes:
    `python -P tools/instagram/approve.py lst-… lst-… --note "<when he said yes>"`.
 5. **Post.** The **Post queue** Action posts each one as a MANUAL trial reel on its day (cover = 0.5 s frame).
-6. **Track.** At 72 h, pull metrics (Buzzfy → Windsor) and log a row in `production/reels/LEDGER.md`.
+6. **Track.** At 72 h, pull metrics (Windsor or Graph API insights; Buzzfy is retired) and log a row in `production/reels/LEDGER.md`.
    Winner metric: follows per 1k views, then shares. Winners get shared to the grid in the app.
 
 ## Smoothness (render.py)

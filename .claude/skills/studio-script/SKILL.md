@@ -17,7 +17,7 @@ the skill expects, under other names. Use these, never create a `video-agent/` f
 | Skill expects | In this repo |
 |---|---|
 | `video-agent/voice.md` | `context/voice.md` + `context/creator-voice.md` (how he sounds) + `context/founder.md` (his only usable facts and story) |
-| `video-agent/swipe.md` (proven concepts) | `production/competitors/outliers.json` + `ideas.json`, `content-bank/references/*.md`, Buzzfy `buzzfy_reel_search` |
+| `video-agent/swipe.md` (proven concepts) | `production/competitors/outliers.json` + `ideas.json`, `content-bank/references/*.md` |
 | `video-agent/audit.md` (own numbers) | `production/reels/LEDGER.md` "Patterns so far" + `production/trials/learnings.md` (which openings win) |
 | `video-agent/log.md` (used topics) | `production/reels/*/TALKING-POINTS.md` + `production/listicles/*/caption.txt` |
 | `video-agent/scripts/week-*.md` | `production/reels/<yyyy-mm-dd-slug>/TALKING-POINTS.md` (+ `REEL.md`) from `production/reels/_TEMPLATE/` |
