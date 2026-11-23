@@ -39,7 +39,7 @@
         "21:00"
       ],
       "topic": "Combat Sports",
-      "last_slot": "2026-11-23T02:00:00Z"
+      "last_slot": "2026-11-23T15:00:00Z"
     },
     "facebook_slides": {
       "enabled": false,
@@ -2071,6 +2071,13 @@
         "privacy": "public"
       }
     },
-    "lst-2026-11-20-best-partners-good": {}
+    "lst-2026-11-20-best-partners-good": {
+      "threads": {
+        "status": "posted",
+        "at": "2026-11-23T15:06:43Z",
+        "id": "18094203854238678",
+        "url": "https://www.threads.com/@matteofights/post/DgFqa74TpWj"
+      }
+    }
   }
 }
