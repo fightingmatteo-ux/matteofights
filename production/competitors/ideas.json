@@ -1,7 +1,128 @@
 {
  "_how": "Idea cards from competitor outliers (production/competitors/outliers.json), written by the competitor-ideas skill. Shown in the control center under Results > Rivals; 'Use this' sends the idea to production/control/ideas.json. 'skip' lists off-topic outlier ids hidden from the list (not combat sports or not makeable by Matteo).",
- "updated": "2026-11-09",
+ "updated": "2026-11-23",
  "ideas": [
+  {
+   "id": "where-i-started",
+   "title": "Look back at where I started",
+   "status": "new",
+   "evidence": [
+    {
+     "id": "Dfuf6rPyJ3Y",
+     "platform": "instagram",
+     "handle": "brezojr",
+     "name": "Brezo Jr",
+     "views": 222972,
+     "x": 19.2,
+     "url": "https://www.instagram.com/reel/Dfuf6rPyJ3Y/",
+     "hook": "Sometimes I look back at where I started and it doesn’t even feel real."
+    }
+   ],
+   "pattern": "A then-vs-now clip with one quiet line about how far it has come, no lesson and no advice.",
+   "why": "Likely why: before-and-after is understood in one second and the viewer fills in the story themselves. Brezo Jr's 'Sometimes I look back at where I started and it doesn't even feel real.' got 222,972 views, 19.2x his 11.6k median. Caveat: one creator, one clip, and his started-from-nothing arc is his own. Only the shape transfers.",
+   "version": {
+    "format": "voiceover b-roll, 10-15 s, own footage old then new, one on-screen line each side",
+    "hook": "AGE 16 IN BANGKOK. NOW THIS.",
+    "beats": [
+     "Open on the oldest fight or training clip Matteo has, date on screen",
+     "Hard cut to a recent session, same gym or same move",
+     "One dry line on screen, no motivation, no 'journey'",
+     "End on the new clip, no question card"
+    ],
+    "needs": "The real clips and dates from Matteo's folder (first fight footage from age 16, a recent session) and his own line. No numbers or claims beyond what the footage shows. Never frame him as a current fighter."
+   },
+   "platforms": {
+    "instagram": "Then and now reel, one on-screen line, caption is one dry sentence",
+    "facebook": "Same reel",
+    "tiktok": "Same reel, old clip in the first second",
+    "youtube": "Muay Thai At 16 vs Now (Training Progress) #shorts",
+    "threads": "Observation: 'Watching your own sparring from three years ago is the most humbling gym session you can have.'"
+   }
+  },
+  {
+   "id": "first-fight-never-list",
+   "title": "Never do this after your first fight",
+   "status": "new",
+   "evidence": [
+    {
+     "id": "Dfwhk4AqsAm",
+     "platform": "instagram",
+     "handle": "brezojr",
+     "name": "Brezo Jr",
+     "views": 72560,
+     "x": 6.3,
+     "url": "https://www.instagram.com/reel/Dfwhk4AqsAm/",
+     "hook": "7 things you should NEVER do after your first MMA fight 👇"
+    },
+    {
+     "id": "DfxFQVrKiBq",
+     "platform": "instagram",
+     "handle": "brezojr",
+     "name": "Brezo Jr",
+     "views": 55925,
+     "x": 4.8,
+     "url": "https://www.instagram.com/reel/DfxFQVrKiBq/",
+     "hook": "7 things you should NEVER do after your first MMA fight 👇"
+    }
+   ],
+   "pattern": "A numbered 'things you should NEVER do after X' list tied to one milestone moment (the first fight), so a viewer who is about to have it saves the reel.",
+   "why": "Likely why: a narrow milestone with a warning frame is made for saving and sending to a friend who has a fight booked. Brezo Jr posted the same 7-item list twice, 72,560 views (6.3x) and 55,925 views (4.8x) against his 11.6k median. Caveat: same list posted twice by one creator, and the numbers show reach only, not saves.",
+   "version": {
+    "format": "listicle factory reel, statement style, 4 to 5 items, sound attached",
+    "hook": "AFTER YOUR FIRST FIGHT, DON'T DO THIS",
+    "beats": [
+     "Item drawn from Matteo's real first fight: the result you did not expect (the KO that went down as a draw)",
+     "Item from the ruptured appendix the day before a fight: what ignoring a body signal costs",
+     "Item on watching the footage back the same night",
+     "Item on comparing your record to the other fighter's"
+    ],
+    "needs": "Matteo confirms each item is something he actually did or learned, in his own words. Item count and any claims come from him, none invented here."
+   },
+   "platforms": {
+    "instagram": "Listicle reel, caption opens on the milestone, no bait",
+    "facebook": "Same reel",
+    "tiktok": "Same reel",
+    "youtube": "First Fight Mistakes To Avoid (Muay Thai Beginners) #shorts",
+    "threads": "Observation: 'Nobody warns you that the day after your first fight is the loneliest part of the whole thing.'"
+   }
+  },
+  {
+   "id": "fight-day-vs-behind",
+   "title": "What fight day hides",
+   "status": "new",
+   "evidence": [
+    {
+     "id": "DfmX_MzK4f2",
+     "platform": "instagram",
+     "handle": "brezojr",
+     "name": "Brezo Jr",
+     "views": 84281,
+     "x": 7.3,
+     "url": "https://www.instagram.com/reel/DfmX_MzK4f2/",
+     "hook": "Everyone sees the 70kg on fight day, but not the 61kg behind the scenes."
+    }
+   ],
+   "pattern": "Everyone sees the polished moment, here is the unglamorous part behind it, stated as one contrast line over footage.",
+   "why": "Likely why: a see-vs-don't-see contrast is identity content, which also wins on this account (the 331k reel opens on 'Some people train for fun.'). Brezo Jr's weight-cut line got 84,281 views, 7.3x his 11.6k median. Caveat: one clip from one creator, and the numbers in it are his own weight-cut figures, which do not transfer.",
+   "version": {
+    "format": "talking head or voiceover b-roll, 12-20 s, one contrast line",
+    "hook": "EVERYONE SEES THE FIGHT. NOBODY SEES THE WEEK BEFORE.",
+    "beats": [
+     "Say the contrast in one sentence",
+     "One real detail from Matteo's fight weeks, said plainly",
+     "A second detail, the less glamorous one",
+     "Stop, no moral"
+    ],
+    "needs": "Matteo supplies the real details of his own fight weeks (food, sleep, nerves, the appendix day). Any weight or number must be his, so leave out figures he does not give."
+   },
+   "platforms": {
+    "instagram": "Contrast reel, one caption line, no question",
+    "facebook": "Same reel",
+    "tiktok": "Same reel, contrast line in the first second",
+    "youtube": "What Fight Week Really Looks Like (Muay Thai) #shorts",
+    "threads": "Observation: 'The fight is 3 rounds. The week before it is where most of the work and most of the fear actually sits.'"
+   }
+  },
   {
    "id": "sparring-someone-close",
    "title": "Sparring someone you can't hit back",
@@ -46,10 +167,20 @@
      "x": 3.8,
      "url": "https://www.instagram.com/reel/DfPDVAfoYa-/",
      "hook": "Why mom😭😭"
+    },
+    {
+     "id": "DfjqppKqtFB",
+     "platform": "instagram",
+     "handle": "brezojr",
+     "name": "Brezo Jr",
+     "views": 175686,
+     "x": 15.1,
+     "url": "https://www.instagram.com/reel/DfjqppKqtFB/",
+     "hook": "Why mom😭"
     }
    ],
    "pattern": "A sparring clip with someone close to the creator (family or a friend), captioned with one deadpan line and no lesson, so the relationship is the joke.",
-   "why": "Likely why: the relationship makes a 10-second clip funny with no setup, and it is easy to tag a person in. Brezo Jr posted this shape four times in a week at 3.8x to 12.6x his 20.8k median ('Always listen dad' 263k and 184k, 'This sparrings was the most personal' 204k, 'Why mom' 80k). Caveat: one creator, and his family appears on camera. Only the shape transfers, the numbers will not.",
+   "why": "Likely why: the relationship makes a 10-second clip funny with no setup, and it is easy to tag a person in. Brezo Jr posted this shape four times in a week at 3.8x to 12.6x his 20.8k median ('Always listen dad' 263k and 184k, 'This sparrings was the most personal' 204k, 'Why mom' 80k). Caveat: one creator, and his family appears on camera. Only the shape transfers, the numbers will not. Update 2026-11-23: a fifth clip, 'Why mom' (175,686 views, 15.1x), repeats the shape.",
    "version": {
     "format": "voiceover b-roll on one own sparring clip, 8-12 s, no talking, one on-screen line",
     "hook": "SPARRING SOMEONE YOU'RE NOT ALLOWED TO HIT HARD",
@@ -1089,6 +1220,22 @@
   "DfCfL_BsSN0",
   "DfFgKsgotfr",
   "DfKBzEsoD1i",
-  "DfFwEXDqCDq"
+  "DfFwEXDqCDq",
+  "DfmzCuhPMGB",
+  "DfmZv5FvMPi",
+  "DfiaTuVSolw",
+  "DfxGy9tBLgr",
+  "DfnFEv1qkjh",
+  "DfR0LiPMPaG",
+  "DfIJVi2MWyc",
+  "DfP9OeAMycG",
+  "DfPwSmqsfKR",
+  "DfVFbuHsTA7",
+  "Dfe1rlpsnex",
+  "DfQLZ8llY4T",
+  "Dfa5qhaC9wD",
+  "Dfj3T0MKugU",
+  "Dfmxx71q-8Z",
+  "DfzPwS8KQ8R"
  ]
 }
