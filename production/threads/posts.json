@@ -1652,9 +1652,12 @@
       "text": "Learning a new combo? Do it at half speed for a full round before you add power.\n\nSpeed shows you where it breaks. Power hides it.",
       "chain": [],
       "from": "craft",
-      "status": "queued",
+      "status": "posted",
       "approved": true,
-      "approved_note": "Matteo: approved via dashboard (2026-11-16T16:07:48Z)"
+      "approved_note": "Matteo: approved via dashboard (2026-11-16T16:07:48Z)",
+      "posted_at": "2026-11-23T17:41:31Z",
+      "thread_id": "18199725535386454",
+      "url": "https://www.threads.com/@matteofights/post/DgF8LjUmLVp"
     },
     {
       "id": "th-1123-3",
