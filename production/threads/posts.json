@@ -1667,9 +1667,12 @@
       "text": "Everyone says they want honest feedback.\n\nThen a coach says your hands are low and half the room has an excuse ready.",
       "chain": [],
       "from": "craft",
-      "status": "queued",
+      "status": "posted",
       "approved": true,
-      "approved_note": "Matteo: approved via dashboard (2026-11-16T16:07:48Z)"
+      "approved_note": "Matteo: approved via dashboard (2026-11-16T16:07:48Z)",
+      "posted_at": "2026-11-23T22:36:12Z",
+      "thread_id": "18041756669890391",
+      "url": "https://www.threads.com/@matteofights/post/DgGd6DZFPSN"
     },
     {
       "id": "th-1124-1",
