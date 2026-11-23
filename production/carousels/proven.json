@@ -1,6 +1,6 @@
 {
   "note": "Proven hooks for carousels. Every carousel in posts.json needs hook_ref = a 'read' entry's code (other creators' outlier carousels, found weekly by tools/carousel/scout.py) or an 'own' id (our own reels that proved the hook on our audience). Adapt the pattern to Matteo's topic; never copy another creator's slides word for word.",
-  "updated": "2026-11-16T16:08Z",
+  "updated": "2026-11-23T18:30Z",
   "own": [
     {
       "id": "own-born-fighter",
@@ -1697,6 +1697,334 @@
       "hook": null,
       "pattern": null,
       "found": "2026-11-16"
+    },
+    {
+      "code": "Df5fRosHQp8",
+      "user": "espnmma",
+      "followers": 5129702,
+      "permalink": "https://www.instagram.com/p/Df5fRosHQp8/",
+      "posted": "2026-11-18T21:37:55+0000",
+      "likes": 224111,
+      "comments": 907,
+      "x_median": 2.03,
+      "caption_first_line": "Conor McGregor took care of his team so they could play GTA VI 🔥🎮",
+      "slides": [
+        "production/carousels/proven/Df5fRosHQp8/01.jpg",
+        "production/carousels/proven/Df5fRosHQp8/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-23"
+    },
+    {
+      "code": "DgAFIcvCKyz",
+      "user": "ringmagazine",
+      "followers": 1317936,
+      "permalink": "https://www.instagram.com/p/DgAFIcvCKyz/",
+      "posted": "2026-11-21T11:04:09+0000",
+      "likes": 17790,
+      "comments": 518,
+      "x_median": 2.96,
+      "caption_first_line": "Floyd Mayweather tweeting at Ryan Garcia 👀",
+      "slides": [
+        "production/carousels/proven/DgAFIcvCKyz/01.jpg",
+        "production/carousels/proven/DgAFIcvCKyz/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-23"
+    },
+    {
+      "code": "Df4IVibjY9B",
+      "user": "ringmagazine",
+      "followers": 1317936,
+      "permalink": "https://www.instagram.com/p/Df4IVibjY9B/",
+      "posted": "2026-11-18T08:58:14+0000",
+      "likes": 11554,
+      "comments": 559,
+      "x_median": 2.02,
+      "caption_first_line": "Deontay Wilder vs Jai Opetaia is off and will no longer be taking place on the Tyson Fury vs Anthony Joshua undercard on December 11th ❌",
+      "slides": [
+        "production/carousels/proven/Df4IVibjY9B/01.jpg",
+        "production/carousels/proven/Df4IVibjY9B/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-23"
+    },
+    {
+      "code": "Df22CreE5_y",
+      "user": "ringmagazine",
+      "followers": 1317936,
+      "permalink": "https://www.instagram.com/p/Df22CreE5_y/",
+      "posted": "2026-11-17T20:59:08+0000",
+      "likes": 26836,
+      "comments": 427,
+      "x_median": 4.3,
+      "caption_first_line": "Curmel Moton wanted all the smoke in sparring 😤👀",
+      "slides": [
+        "production/carousels/proven/Df22CreE5_y/01.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-23"
+    },
+    {
+      "code": "Dfvag5Km6uP",
+      "user": "ringmagazine",
+      "followers": 1317936,
+      "permalink": "https://www.instagram.com/p/Dfvag5Km6uP/",
+      "posted": "2026-11-14T23:43:54+0000",
+      "likes": 14249,
+      "comments": 305,
+      "x_median": 2.32,
+      "caption_first_line": "ANOTHER WIN ✅",
+      "slides": [
+        "production/carousels/proven/Dfvag5Km6uP/01.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-23"
+    },
+    {
+      "code": "DgAodrkoOD-",
+      "user": "mmajunkie",
+      "followers": 1413200,
+      "permalink": "https://www.instagram.com/p/DgAodrkoOD-/",
+      "posted": "2026-11-21T16:12:53+0000",
+      "likes": 9632,
+      "comments": 74,
+      "x_median": 2.24,
+      "caption_first_line": "Dom Mar Fan changed Nikolas Motta’s face in a dominant decision at #UFCQatar 😳",
+      "slides": [
+        "production/carousels/proven/DgAodrkoOD-/01.jpg",
+        "production/carousels/proven/DgAodrkoOD-/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-23"
+    },
+    {
+      "code": "Df0RS_MoG1t",
+      "user": "mmajunkie",
+      "followers": 1413200,
+      "permalink": "https://www.instagram.com/p/Df0RS_MoG1t/",
+      "posted": "2026-11-16T20:59:34+0000",
+      "likes": 23392,
+      "comments": 1123,
+      "x_median": 6.09,
+      "caption_first_line": "Amanda Nunes wants her get back with Kayla Harrison after #UFC334 – and is willing to put her 145-pound belt on the line",
+      "slides": [
+        "production/carousels/proven/Df0RS_MoG1t/01.jpg",
+        "production/carousels/proven/Df0RS_MoG1t/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-23"
+    },
+    {
+      "code": "Dfx_PbZoJ7F",
+      "user": "mmajunkie",
+      "followers": 1413200,
+      "permalink": "https://www.instagram.com/p/Dfx_PbZoJ7F/",
+      "posted": "2026-11-15T23:43:18+0000",
+      "likes": 7377,
+      "comments": 780,
+      "x_median": 2.21,
+      "caption_first_line": "Jon Jones responds to Josh Hokit’s “baffling” verbal attacks with some career advice #UFC334",
+      "slides": [
+        "production/carousels/proven/Dfx_PbZoJ7F/01.jpg",
+        "production/carousels/proven/Dfx_PbZoJ7F/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-23"
+    },
+    {
+      "code": "DfxqRAxIAmc",
+      "user": "mmajunkie",
+      "followers": 1413200,
+      "permalink": "https://www.instagram.com/p/DfxqRAxIAmc/",
+      "posted": "2026-11-15T20:40:01+0000",
+      "likes": 8831,
+      "comments": 452,
+      "x_median": 2.32,
+      "caption_first_line": "Amanda Nunes appears eager to fight on after falling short of gold in her #UFC334 comeback vs. Kayla Harrison 🦁",
+      "slides": [
+        "production/carousels/proven/DfxqRAxIAmc/01.jpg",
+        "production/carousels/proven/DfxqRAxIAmc/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-23"
+    },
+    {
+      "code": "DgDoLrgE1BT",
+      "user": "ufc",
+      "followers": 50960702,
+      "permalink": "https://www.instagram.com/p/DgDoLrgE1BT/",
+      "posted": "2026-11-22T20:08:09+0000",
+      "likes": 145311,
+      "comments": 1760,
+      "x_median": 3.0,
+      "caption_first_line": "The rest of #UFCDallas is here 👊",
+      "slides": [
+        "production/carousels/proven/DgDoLrgE1BT/01.jpg",
+        "production/carousels/proven/DgDoLrgE1BT/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-23"
+    },
+    {
+      "code": "DgBDKWjDLFr",
+      "user": "ufc",
+      "followers": 50960702,
+      "permalink": "https://www.instagram.com/p/DgBDKWjDLFr/",
+      "posted": "2026-11-21T20:06:10+0000",
+      "likes": 178439,
+      "comments": 2110,
+      "x_median": 3.69,
+      "caption_first_line": "This one’s for you briantcity 💪",
+      "slides": [
+        "production/carousels/proven/DgBDKWjDLFr/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-23"
+    },
+    {
+      "code": "DgBBQHrh78g",
+      "user": "ufc",
+      "followers": 50960702,
+      "permalink": "https://www.instagram.com/p/DgBBQHrh78g/",
+      "posted": "2026-11-21T19:49:29+0000",
+      "likes": 99885,
+      "comments": 646,
+      "x_median": 2.03,
+      "caption_first_line": "Nothing like a DanHangman win 💪",
+      "slides": [
+        "production/carousels/proven/DgBBQHrh78g/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-23"
+    },
+    {
+      "code": "DgA5qpNQCjI",
+      "user": "ufc",
+      "followers": 50960702,
+      "permalink": "https://www.instagram.com/p/DgA5qpNQCjI/",
+      "posted": "2026-11-21T18:43:12+0000",
+      "likes": 105002,
+      "comments": 756,
+      "x_median": 2.14,
+      "caption_first_line": "The decision is HIS! ",
+      "slides": [
+        "production/carousels/proven/DgA5qpNQCjI/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-23"
+    },
+    {
+      "code": "Df7CBgnGUbd",
+      "user": "ufc",
+      "followers": 50960702,
+      "permalink": "https://www.instagram.com/p/Df7CBgnGUbd/",
+      "posted": "2026-11-19T12:00:01+0000",
+      "likes": 124059,
+      "comments": 337,
+      "x_median": 2.5,
+      "caption_first_line": "That’s a bad man 😤",
+      "slides": [
+        "production/carousels/proven/Df7CBgnGUbd/01.jpg",
+        "production/carousels/proven/Df7CBgnGUbd/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-23"
+    },
+    {
+      "code": "DgByknSlP2g",
+      "user": "onechampionship",
+      "followers": 12688742,
+      "permalink": "https://www.instagram.com/p/DgByknSlP2g/",
+      "posted": "2026-11-22T03:00:27+0000",
+      "likes": 47562,
+      "comments": 117,
+      "x_median": 3.57,
+      "caption_first_line": "HEADS UP🦵💥 Swipe through the best head kicks in ONE!",
+      "slides": [],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-23"
+    },
+    {
+      "code": "Df-DHHDjOT0",
+      "user": "onechampionship",
+      "followers": 12688742,
+      "permalink": "https://www.instagram.com/p/Df-DHHDjOT0/",
+      "posted": "2026-11-20T16:08:01+0000",
+      "likes": 46583,
+      "comments": 1942,
+      "x_median": 3.9,
+      "caption_first_line": "BACK-AND-FORTH ⚔️ Rewatch the razor-close ONE Flyweight Muay Thai World Title rematch between Asadula Imangazaliev and Aslamjon Ortikov NOW at live.onefc.com! a",
+      "slides": [],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-23"
+    },
+    {
+      "code": "Df4Q6a1H4vi",
+      "user": "evolvemma",
+      "followers": 157158,
+      "permalink": "https://www.instagram.com/p/Df4Q6a1H4vi/",
+      "posted": "2026-11-18T10:13:10+0000",
+      "likes": 3912,
+      "comments": 20,
+      "x_median": 4.17,
+      "caption_first_line": "Fight smarter, not just harder. 🧠🥊 Kru Aek (penake11) shows why timing beats waiting.",
+      "slides": [],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-23"
+    },
+    {
+      "code": "Df6978HHwDP",
+      "user": "brezojr",
+      "followers": 106105,
+      "permalink": "https://www.instagram.com/p/Df6978HHwDP/",
+      "posted": "2026-11-19T11:25:04+0000",
+      "likes": 3095,
+      "comments": 52,
+      "x_median": 2.41,
+      "caption_first_line": "From a kid with a dream to a fighter who’s still chasing it every single day.",
+      "slides": [
+        "production/carousels/proven/Df6978HHwDP/01.jpg",
+        "production/carousels/proven/Df6978HHwDP/02.jpg"
+      ],
+      "status": "unread",
+      "hook": null,
+      "pattern": null,
+      "found": "2026-11-23"
     }
   ],
   "errors": []
