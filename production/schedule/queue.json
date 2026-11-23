@@ -4544,7 +4544,14 @@
       "posting_since": "2026-11-19T23:30:59Z",
       "media_id": "18184096297441249",
       "permalink": "https://www.instagram.com/reel/Df8RBlSmu9T/",
-      "posted_at": "2026-11-19T23:31:46Z"
+      "posted_at": "2026-11-19T23:31:46Z",
+      "video_asset_fb": "lst-2026-11-19-hate-sparring-you-fb.mp4",
+      "fb_pick": {
+        "at": "2026-11-23T00:50:02Z",
+        "ig_views": 6609,
+        "vs_median": 2.41,
+        "shares_saves_per_1k": 1.1
+      }
     },
     {
       "id": "lst-2026-11-20-shorter-rusher",
