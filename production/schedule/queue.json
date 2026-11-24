@@ -6435,10 +6435,11 @@
       "caption_file": "production/reels/2026-11-24-spotting-danger/caption-A.txt",
       "hook": "You can spot who's dangerous in under two seconds.",
       "opening": "bold claim",
-      "approved": false,
+      "approved": true,
       "status": "queued",
       "slot_note": "single trial Matteo asked for: 00:50 Bangkok, inside his followers' peak (23:00-01:00)",
-      "not_before": "2026-11-24T17:50:00Z"
+      "not_before": "2026-11-24T17:50:00Z",
+      "approved_note": "Matteo: \"Approved\" in chat 2026-11-25 00:30 Bangkok (recorded 2026-11-24T17:30Z)"
     }
   ]
 }
