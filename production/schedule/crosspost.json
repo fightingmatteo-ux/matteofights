@@ -8,7 +8,7 @@
       "slots": [
         "19:30"
       ],
-      "last_slot": "2026-11-20T00:30:00Z",
+      "last_slot": "2026-11-24T00:30:00Z",
       "winners": {
         "min_age_hours": 72,
         "max_age_days": 7,
@@ -2045,6 +2045,12 @@
         "at": "2026-11-22T20:36:46Z",
         "id": "18203253091387174",
         "url": "https://www.threads.com/@matteofights/post/DgDrY8XBZM3"
+      },
+      "facebook": {
+        "status": "posted",
+        "at": "2026-11-24T00:36:39Z",
+        "id": "1165250166059448",
+        "url": "https://www.facebook.com/reel/1165250166059448"
       }
     },
     "lst-2026-11-19-stop-flinching": {
