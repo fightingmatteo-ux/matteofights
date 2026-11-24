@@ -1,9 +1,5 @@
 [
   {
-    "id": "n-1103-week-waiting",
-    "text": "Next week's 28 listicles (3-11 Nov) are still waiting for your yes. Today's 09:00 (7 ways to warm up so you don't get hurt) won't post until you approve; the other 3 slots today are already approved. Approve the week on the dashboard or here."
-  },
-  {
     "id": "xp-f4153954",
     "text": "📤 Threads: 6 THINGS SPARRING TEACHES YOU ABOUT BUILDING ANYTHING\nhttps://www.threads.com/@matteofights/post/DfSKgWqhr4-"
   },
@@ -798,5 +794,9 @@
   {
     "id": "health-queue:lst-2026-10-30-not-a-beginner:failed-2026112400",
     "text": "⚠️ lst-2026-10-30-not-a-beginner failed to post: GET https://graph.facebook.com/v23.0/530317382955170 -> 404: {\"title\":\"Not Found\",\"detail\":\"No audio asset found for the given ID\",\"status\":404}"
+  },
+  {
+    "id": "xp-cf0db551",
+    "text": "📤 YouTube Shorts: 6 SIGNS YOU'RE TRAINING SMARTER THAN MOST PEOPLE IN YOUR GYM\nhttps://youtube.com/shorts/9wZN4mCSyKU"
   }
 ]
