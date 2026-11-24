@@ -6443,10 +6443,14 @@
       "hook": "You can spot who's dangerous in under two seconds.",
       "opening": "bold claim",
       "approved": true,
-      "status": "queued",
+      "status": "posted",
       "slot_note": "single trial Matteo asked for: 00:50 Bangkok, inside his followers' peak (23:00-01:00)",
       "not_before": "2026-11-24T17:50:00Z",
-      "approved_note": "Matteo: \"Approved\" in chat 2026-11-25 00:30 Bangkok (recorded 2026-11-24T17:30Z)"
+      "approved_note": "Matteo: \"Approved\" in chat 2026-11-25 00:30 Bangkok (recorded 2026-11-24T17:30Z)",
+      "posting_since": "2026-11-24T17:51:03Z",
+      "media_id": "17980027923077118",
+      "permalink": "https://www.instagram.com/reel/DgIiMBdgiNQ/",
+      "posted_at": "2026-11-24T17:52:27Z"
     }
   ]
 }
