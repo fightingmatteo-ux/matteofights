@@ -1,13 +1,6 @@
 language: en
-[   0.0-   2.0] Fighters, learn this before anything else.
-[   2.3-   4.4] Number one, watch the hands, not the face.
-[   4.7-   6.7] Untrained guys talk with their arms wide.
-[   7.0-   8.3] Fighters keep them close and loose.
-[   9.1-  10.5] Number two, watch the feet.
-[  10.7-  12.6] If he has one foot slightly back,
-[  13.0-  14.6] it probably means he's done this before.
-[  15.1-  16.9] Number three, watch where he looks.
-[  17.1-  19.0] Your hands or your neck, not your face.
-[  19.4-  21.7] Once you see this, you can't unsee it.
-[  22.0-  23.6] In any bar or in any meeting,
-[  23.8-  25.8] you can spot who's dangerous in under two seconds.
+[   0.0-   6.0] You can spot who's dangerous in under two seconds fighters learn this before anything else number one watch the hands
+[   6.0-  10.8] Not the face untrained guys talk with their arms wide fighters. Keep them close and loose
+[  10.8-  15.1] Number two watch the feet if he has one foot slightly back
+[  15.1-  21.4] It probably means he's done this before number three watch where he looks your hands or your neck not your face
+[  21.4-  26.0] Once you see this you can't unsee it in any bar or in any meeting
