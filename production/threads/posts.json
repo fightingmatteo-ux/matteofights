@@ -1717,9 +1717,12 @@
         "4. Stop after three rounds.\nTired beginners get hit and learn nothing. Leave while it still makes sense."
       ],
       "from": "craft",
-      "status": "queued",
+      "status": "posted",
       "approved": true,
-      "approved_note": "Matteo: approved via dashboard (2026-11-16T16:07:48Z)"
+      "approved_note": "Matteo: approved via dashboard (2026-11-16T16:07:48Z)",
+      "posted_at": "2026-11-24T22:36:54Z",
+      "thread_id": "18111766148353368",
+      "url": "https://www.threads.com/@matteofights/post/DgJCthDIe9c"
     },
     {
       "id": "th-1125-1",
