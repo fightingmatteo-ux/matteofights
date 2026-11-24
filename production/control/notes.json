@@ -798,5 +798,9 @@
   {
     "id": "health-job:2026-11-20-origin-pin-C-20261120T171912:stuck-2026112410",
     "text": "⚠️ Cloud render 2026-11-20-origin-pin-C-20261120T171912 has had no result for over 2 h."
+  },
+  {
+    "id": "n-1124-week-waiting",
+    "text": "Next week's 28 listicles (26 Nov - 3 Dec) are rendered and checked but not approved. The first one posts Thu 26 Nov 12:30 New York. Approve the week on the dashboard or here when you're happy with the covers."
   }
 ]

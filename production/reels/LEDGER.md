@@ -161,6 +161,10 @@ Sort by follows per 1k views when looking for what grows the account.
 | 2026-11-19 | lst-2026-11-19-before-hard-sparring | - | 18172161646475002 | WHAT TO EAT THE DAY BEFORE HARD SPARRING | lifestyle (tactical) | text-on-clip | trial | 3128 (1.11x) | ? | 7 | 7 | 0 | no | lifestyle food: 1.11x, 7 shares |
 | 2026-11-19 | lst-2026-11-19-hate-sparring-you | - | 18184096297441249 | 6 SIGNS YOUR TRAINING PARTNERS HATE SPARRING YOU | listicle (identity) | text-on-clip | trial | 6685 (2.38x) | ? | 1 | 6 | 0 | **WINNER** | identity, cheeky contrast subhook: 2.38x, reach 3660, 9.4 s avg watch, 1.83 views/reach (rewatched); few saves/shares |
 | 2026-11-20 | lst-2026-11-19-stop-flinching | - | 17958803853297269 | 6 WAYS TO STOP FLINCHING WHEN YOU GET HIT | listicle (tactical) | text-on-clip | trial | 2904 (1.03x) | ? | 0 | 10 | 0 | no | tactical: 1.03x |
+| 2026-11-20 | lst-2026-11-20-heavier-opponent | - | 18102227252397208 | 6 WAYS TO DEAL WITH A HEAVIER OPPONENT | listicle (tactical) | text-on-clip | trial | 2144 (0.77x) | ? | 2 | 9 | 0 | no | tactical opponent-type: 0.77x |
+| 2026-11-20 | lst-2026-11-20-best-partners-good | - | 18099859208396838 | THE BEST SPARRING PARTNERS MAKE YOU LOOK GOOD | statement (identity) | text-on-clip | trial | 816 (0.29x) | ? | 1 | 2 | 0 | no | statement: 0.29x, reach 639 |
+| 2026-11-20 | lst-2026-11-20-shorter-rusher | - | 17985123180128747 | 6 WAYS TO HANDLE A SHORTER FIGHTER WHO KEEPS RUSHING YOU | listicle (tactical) | text-on-clip | trial | 2646 (0.95x) | ? | 3 | 21 | 0 | no | tactical opponent-type: 0.95x, 21 saves |
+| 2026-11-21 | lst-2026-11-20-close-distance | - | 17869100220679508 | 6 WAYS TO CLOSE THE DISTANCE WITHOUT GETTING HIT | listicle (tactical) | text-on-clip | trial | 3061 (1.10x) | ? | 1 | 33 | 0 | no | tactical: 1.10x, 33 saves (1.5% save rate) |
 
 ## Patterns so far
 - _Add a line whenever a test is decided. Keep it to what the numbers showed._
