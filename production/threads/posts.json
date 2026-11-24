@@ -1682,9 +1682,12 @@
       "text": "Waiting until you feel ready to start sparring is how people never spar.\n\nNobody feels ready. The ones who spar just stop waiting.",
       "chain": [],
       "from": "craft",
-      "status": "queued",
+      "status": "posted",
       "approved": true,
-      "approved_note": "Matteo: approved via dashboard (2026-11-16T16:07:48Z)"
+      "approved_note": "Matteo: approved via dashboard (2026-11-16T16:07:48Z)",
+      "posted_at": "2026-11-24T12:36:17Z",
+      "thread_id": "18101003912414784",
+      "url": "https://www.threads.com/@matteofights/post/DgH-C4pFaC0"
     },
     {
       "id": "th-1124-2",
