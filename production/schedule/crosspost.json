@@ -39,7 +39,7 @@
         "21:00"
       ],
       "topic": "Combat Sports",
-      "last_slot": "2026-11-24T15:00:00Z"
+      "last_slot": "2026-11-24T20:30:00Z"
     },
     "facebook_slides": {
       "enabled": false,
@@ -2139,7 +2139,14 @@
         "id": "Tc2axzi4gLg",
         "url": "https://youtube.com/shorts/Tc2axzi4gLg",
         "privacy": "public"
+      },
+      "threads": {
+        "status": "posted",
+        "at": "2026-11-24T20:36:49Z",
+        "id": "18349319410251991",
+        "url": "https://www.threads.com/@matteofights/post/DgI0_Hyhzku"
       }
-    }
+    },
+    "lst-2026-11-21-counter-the-jab": {}
   }
 }
