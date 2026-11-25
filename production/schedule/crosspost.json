@@ -8,7 +8,7 @@
       "slots": [
         "19:30"
       ],
-      "last_slot": "2026-11-24T00:30:00Z",
+      "last_slot": "2026-11-25T00:30:00Z",
       "winners": {
         "min_age_hours": 72,
         "max_age_days": 7,
@@ -2023,7 +2023,14 @@
         "url": "https://www.threads.com/@matteofights/post/DgBsWdQBT2i"
       }
     },
-    "lst-2026-11-09-train-for-fun": {},
+    "lst-2026-11-09-train-for-fun": {
+      "facebook": {
+        "status": "posted",
+        "at": "2026-11-25T00:37:02Z",
+        "id": "1167744109234554",
+        "url": "https://www.facebook.com/reel/1167744109234554"
+      }
+    },
     "lst-2026-11-19-before-hard-sparring": {
       "threads": {
         "status": "posted",
