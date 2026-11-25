@@ -4614,7 +4614,14 @@
       "posting_since": "2026-11-21T23:31:02Z",
       "media_id": "18100932350118332",
       "permalink": "https://www.instagram.com/reel/DgBassXD2XE/",
-      "posted_at": "2026-11-21T23:32:28Z"
+      "posted_at": "2026-11-21T23:32:28Z",
+      "video_asset_fb": "lst-2026-11-21-sparring-no-fear-fb.mp4",
+      "fb_pick": {
+        "at": "2026-11-25T03:32:42Z",
+        "ig_views": 4074,
+        "vs_median": 1.46,
+        "shares_saves_per_1k": 4.7
+      }
     },
     {
       "id": "lst-2026-11-22-same-jab-all-round",
