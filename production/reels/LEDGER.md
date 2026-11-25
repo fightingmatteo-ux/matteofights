@@ -165,6 +165,10 @@ Sort by follows per 1k views when looking for what grows the account.
 | 2026-11-20 | lst-2026-11-20-best-partners-good | - | 18099859208396838 | THE BEST SPARRING PARTNERS MAKE YOU LOOK GOOD | statement (identity) | text-on-clip | trial | 816 (0.29x) | ? | 1 | 2 | 0 | no | statement: 0.29x, reach 639 |
 | 2026-11-20 | lst-2026-11-20-shorter-rusher | - | 17985123180128747 | 6 WAYS TO HANDLE A SHORTER FIGHTER WHO KEEPS RUSHING YOU | listicle (tactical) | text-on-clip | trial | 2646 (0.95x) | ? | 3 | 21 | 0 | no | tactical opponent-type: 0.95x, 21 saves |
 | 2026-11-21 | lst-2026-11-20-close-distance | - | 17869100220679508 | 6 WAYS TO CLOSE THE DISTANCE WITHOUT GETTING HIT | listicle (tactical) | text-on-clip | trial | 3061 (1.10x) | ? | 1 | 33 | 0 | no | tactical: 1.10x, 33 saves (1.5% save rate) |
+| 2026-11-21 | lst-2026-11-21-training-smarter | - | 18474711025136021 | 6 SIGNS YOU'RE TRAINING SMARTER THAN MOST PEOPLE IN YOUR GYM | listicle (identity) | text-on-clip | trial | 3305 (1.17x) | ? | 0 | 12 | 0 | no | identity: 1.17x |
+| 2026-11-21 | lst-2026-11-21-lazy-guard | - | 18190878652372921 | 6 WAYS TO FIX A LAZY GUARD | listicle (tactical) | text-on-clip | trial | 3050 (1.08x) | ? | 1 | 19 | 0 | no | tactical: 1.08x, 19 saves |
+| 2026-11-21 | lst-2026-11-21-sparring-no-fear | - | 18100932350118332 | 6 SIGNS SPARRING DOESN'T SCARE YOU ANYMORE | listicle (identity) | text-on-clip | trial | 4074 (1.44x) | ? | 0 | 19 | 0 | no | identity, 18:30: 1.44x |
+| 2026-11-22 | lst-2026-11-21-counter-the-jab | - | 18418983559082797 | 6 WAYS TO COUNTER THE JAB | listicle (tactical) | text-on-clip | trial | 2820 (1.00x) | ? | 1 | 16 | 0 | no | tactical: 1.00x |
 
 ## Patterns so far
 - _Add a line whenever a test is decided. Keep it to what the numbers showed._

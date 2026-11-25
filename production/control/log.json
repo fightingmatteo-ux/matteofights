@@ -698,5 +698,10 @@
     "at": "2026-11-24T10:59:50Z",
     "who": "Claude",
     "text": "LEDGER +4 (20 Nov), no winner: close-distance 1.10x (33 saves), shorter-rusher 0.95x, heavier-opponent 0.77x, best-partners-good statement 0.29x. Normal 2789. Week 26 Nov-3 Dec still unapproved; reminder note sent."
+  },
+  {
+    "at": "2026-11-25T11:00:44Z",
+    "who": "Claude",
+    "text": "LEDGER +4 (21 Nov), no winner: sparring-no-fear 1.44x, training-smarter 1.17x, lazy-guard 1.08x, counter-the-jab 1.00x. Normal 2827. Numbers now from platforms.json (Meta app): Buzzfy retired, Windsor reads paused (free plan allows 1 account, 2 connected). Reach/skip rate not in that file."
   }
 ]
