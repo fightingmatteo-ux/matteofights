@@ -1777,9 +1777,12 @@
       "text": "After a hard round, do you trust your breathing or your legs?",
       "chain": [],
       "from": "craft",
-      "status": "queued",
+      "status": "posted",
       "approved": true,
-      "approved_note": "Matteo: approved via dashboard (2026-11-16T16:07:48Z)"
+      "approved_note": "Matteo: approved via dashboard (2026-11-16T16:07:48Z)",
+      "posted_at": "2026-11-26T12:36:13Z",
+      "thread_id": "18457299613122479",
+      "url": "https://www.threads.com/@matteofights/post/DgNHn7zlfVE"
     },
     {
       "id": "th-1126-2",
