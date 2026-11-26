@@ -39,7 +39,7 @@
         "21:00"
       ],
       "topic": "Combat Sports",
-      "last_slot": "2026-11-26T15:00:00Z"
+      "last_slot": "2026-11-26T20:30:00Z"
     },
     "facebook_slides": {
       "enabled": false,
@@ -2246,7 +2246,14 @@
         "id": "igr20t7TgIM",
         "url": "https://youtube.com/shorts/igr20t7TgIM",
         "privacy": "public"
+      },
+      "threads": {
+        "status": "posted",
+        "at": "2026-11-26T20:36:47Z",
+        "id": "18091342307322724",
+        "url": "https://www.threads.com/@matteofights/post/DgN-kzEvccy"
       }
-    }
+    },
+    "lst-2026-11-23-land-left-hook": {}
   }
 }
