@@ -703,5 +703,10 @@
     "at": "2026-11-25T11:00:44Z",
     "who": "Claude",
     "text": "LEDGER +4 (21 Nov), no winner: sparring-no-fear 1.44x, training-smarter 1.17x, lazy-guard 1.08x, counter-the-jab 1.00x. Normal 2827. Numbers now from platforms.json (Meta app): Buzzfy retired, Windsor reads paused (free plan allows 1 account, 2 connected). Reach/skip rate not in that file."
+  },
+  {
+    "at": "2026-11-26T14:31:13Z",
+    "who": "Claude",
+    "text": "Daily check: 5 LEDGER rows for 22-23 Nov from platforms.json, no 2x winner (median 2778; best new-gym-staring 1.01x). read-a-feint only 203 views (0.07x), flagged to watch. Week 26 Nov - 3 Dec still not approved; its first post is today 18:30 NY."
   }
 ]

@@ -169,6 +169,11 @@ Sort by follows per 1k views when looking for what grows the account.
 | 2026-11-21 | lst-2026-11-21-lazy-guard | - | 18190878652372921 | 6 WAYS TO FIX A LAZY GUARD | listicle (tactical) | text-on-clip | trial | 3050 (1.08x) | ? | 1 | 19 | 0 | no | tactical: 1.08x, 19 saves |
 | 2026-11-21 | lst-2026-11-21-sparring-no-fear | - | 18100932350118332 | 6 SIGNS SPARRING DOESN'T SCARE YOU ANYMORE | listicle (identity) | text-on-clip | trial | 4074 (1.44x) | ? | 0 | 19 | 0 | no | identity, 18:30: 1.44x |
 | 2026-11-22 | lst-2026-11-21-counter-the-jab | - | 18418983559082797 | 6 WAYS TO COUNTER THE JAB | listicle (tactical) | text-on-clip | trial | 2820 (1.00x) | ? | 1 | 16 | 0 | no | tactical: 1.00x |
+| 2026-11-22 | lst-2026-11-22-read-a-feint | - | 18111332477210945 | 6 WAYS TO READ A FEINT | listicle (tactical) | text-on-clip | trial | 203 (0.07x) | ? | 0 | 1 | 0 | no | tactical, 09:00: 0.07x, worst listicle in weeks; Instagram barely served it (cause unknown, watch for a repeat) |
+| 2026-11-22 | lst-2026-11-22-new-gym-staring | - | 18109734266637897 | WHEN YOU WALK INTO A NEW GYM AND EVERYONE STARTS STARING | iykyk (identity) | text-on-clip | trial | 2798 (1.01x) | ? | 1 | 0 | 0 | no | iykyk: 1.01x, 0 saves |
+| 2026-11-22 | lst-2026-11-22-same-jab-all-round | - | 18025732367722608 | 6 WAYS TO STOP EATING THE SAME JAB ALL ROUND | listicle (tactical) | text-on-clip | trial | 2758 (0.99x) | ? | 4 | 9 | 0 | no | tactical, 18:30: 0.99x |
+| 2026-11-23 | lst-2026-11-22-clinch-tired | - | 18084559073651401 | 6 WAYS TO ESCAPE THE CLINCH WHEN YOU'RE TIRED | listicle (tactical) | text-on-clip | trial | 2032 (0.73x) | ? | 0 | 7 | 0 | no | tactical, 21:30: 0.73x |
+| 2026-11-23 | lst-2026-11-23-first-year-embarrassing | - | 18499619146111353 | YOUR FIRST YEAR OF TRAINING IS SUPPOSED TO BE EMBARRASSING | statement (identity) | text-on-clip | trial | 2060 (0.74x) | ? | 1 | 2 | 0 | no | statement: 0.74x, 32 likes (most of the batch) |
 
 ## Patterns so far
 - _Add a line whenever a test is decided. Keep it to what the numbers showed._
