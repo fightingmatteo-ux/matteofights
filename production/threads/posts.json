@@ -1792,9 +1792,12 @@
       "text": "Sick when you train after eating? Eat two hours earlier, or just a banana.\n\nHeavy food and body shots don't mix.",
       "chain": [],
       "from": "craft",
-      "status": "queued",
+      "status": "posted",
       "approved": true,
-      "approved_note": "Matteo: approved via dashboard (2026-11-16T16:07:48Z)"
+      "approved_note": "Matteo: approved via dashboard (2026-11-16T16:07:48Z)",
+      "posted_at": "2026-11-26T17:41:47Z",
+      "thread_id": "18141283756723680",
+      "url": "https://www.threads.com/@matteofights/post/DgNql_UoHjF"
     },
     {
       "id": "th-1126-3",
