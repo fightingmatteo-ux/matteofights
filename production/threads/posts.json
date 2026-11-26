@@ -1807,9 +1807,12 @@
       "text": "A bad day on the pads is still a day you showed up.\n\nThe ones who quit after a bad round never see the good one coming.",
       "chain": [],
       "from": "craft",
-      "status": "queued",
+      "status": "posted",
       "approved": true,
-      "approved_note": "Matteo: approved via dashboard (2026-11-16T16:07:48Z)"
+      "approved_note": "Matteo: approved via dashboard (2026-11-16T16:07:48Z)",
+      "posted_at": "2026-11-26T22:36:19Z",
+      "thread_id": "18001290950830406",
+      "url": "https://www.threads.com/@matteofights/post/DgOMTGiozxE"
     }
   ]
 }
