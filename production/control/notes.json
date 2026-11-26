@@ -1,9 +1,5 @@
 [
   {
-    "id": "xp-d0fd672f",
-    "text": "📤 YouTube Shorts: 7 WAYS TO THROW KICKS THAT DON'T GET CAUGHT\nhttps://youtube.com/shorts/oYjEi7yipgM"
-  },
-  {
     "id": "xp-471aa205",
     "text": "📤 YouTube Shorts: 6 WAYS TO LEARN MORE FROM EVERY SPARRING ROUND\nhttps://youtube.com/shorts/wGw2n1OXVGk"
   },
@@ -798,5 +794,9 @@
   {
     "id": "xp-fd928f2a",
     "text": "📤 YouTube Shorts: 6 WAYS TO LAND YOUR LEFT HOOK\nhttps://youtube.com/shorts/toz8UqLT2Ao"
+  },
+  {
+    "id": "health-queue:lst-2026-10-30-not-a-beginner:failed-2026112621",
+    "text": "⚠️ lst-2026-10-30-not-a-beginner failed to post: GET https://graph.facebook.com/v23.0/530317382955170 -> 404: {\"title\":\"Not Found\",\"detail\":\"No audio asset found for the given ID\",\"status\":404}"
   }
 ]
