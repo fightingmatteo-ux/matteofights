@@ -5181,7 +5181,14 @@
       "posting_since": "2026-11-21T14:01:14Z",
       "media_id": "18474711025136021",
       "permalink": "https://www.instagram.com/reel/DgAZatCAIdR/",
-      "posted_at": "2026-11-21T14:02:00Z"
+      "posted_at": "2026-11-21T14:02:00Z",
+      "video_asset_fb": "lst-2026-11-21-training-smarter-fb.mp4",
+      "fb_pick": {
+        "at": "2026-11-26T02:49:50Z",
+        "ig_views": 3305,
+        "vs_median": 1.17,
+        "shares_saves_per_1k": 3.6
+      }
     },
     {
       "id": "lst-2026-11-22-read-a-feint",
