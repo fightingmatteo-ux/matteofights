@@ -8,7 +8,7 @@
       "slots": [
         "19:30"
       ],
-      "last_slot": "2026-11-26T00:30:00Z",
+      "last_slot": "2026-11-27T00:30:00Z",
       "winners": {
         "min_age_hours": 72,
         "max_age_days": 7,
@@ -2129,6 +2129,12 @@
         "id": "9wZN4mCSyKU",
         "url": "https://youtube.com/shorts/9wZN4mCSyKU",
         "privacy": "public"
+      },
+      "facebook": {
+        "status": "posted",
+        "at": "2026-11-27T00:36:44Z",
+        "id": "1341269474737429",
+        "url": "https://www.facebook.com/reel/1341269474737429"
       }
     },
     "lst-2026-11-21-lazy-guard": {
