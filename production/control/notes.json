@@ -798,5 +798,9 @@
   {
     "id": "health-job:2026-11-20-origin-pin-C-20261120T171912:stuck-2026112708",
     "text": "⚠️ Cloud render 2026-11-20-origin-pin-C-20261120T171912 has had no result for over 2 h."
+  },
+  {
+    "id": "n-1127-week-missing",
+    "text": "Listicles stopped: the week 26 Nov - 3 Dec (28 reels, covers sent 23 Nov) isn't approved, so last night's 18:30 and 21:30 slots went out empty. One tap on Approve the week in the control center restarts it from the next slot."
   }
 ]
