@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-26T14:31:13Z",
-  "median_views": 2778.0,
+  "updated": "2026-11-27T10:59:20Z",
+  "median_views": 2701.5,
   "median_basis": "median views of the last 20 listicles posted more than 48 h ago (platforms.json)",
   "audience": {
     "us_reach_pct": 20.0,
@@ -276,7 +276,7 @@
       "saves": 0,
       "follows": null,
       "skip_rate": 46.6,
-      "vs_median_x": 0.49
+      "vs_median_x": 0.5
     },
     "17912693520506520": {
       "views": 1998,
@@ -285,7 +285,7 @@
       "saves": 2,
       "follows": null,
       "skip_rate": 40.2,
-      "vs_median_x": 0.72
+      "vs_median_x": 0.74
     },
     "18122055467473089": {
       "views": 4086,
@@ -294,7 +294,7 @@
       "saves": 30,
       "follows": null,
       "skip_rate": 53.3,
-      "vs_median_x": 1.47
+      "vs_median_x": 1.51
     },
     "18130738504818002": {
       "views": 3475,
@@ -303,7 +303,7 @@
       "saves": 8,
       "follows": null,
       "skip_rate": 39.1,
-      "vs_median_x": 1.25
+      "vs_median_x": 1.29
     },
     "17989846548098278": {
       "views": 1794,
@@ -312,16 +312,16 @@
       "saves": 7,
       "follows": null,
       "skip_rate": 46.2,
-      "vs_median_x": 0.65
+      "vs_median_x": 0.66
     },
     "17904143727671253": {
-      "views": 8378,
+      "views": 8380,
       "reach": 4724,
       "shares": 13,
       "saves": 84,
       "follows": null,
       "skip_rate": 41.0,
-      "vs_median_x": 3.02
+      "vs_median_x": 3.1
     },
     "17937728643403693": {
       "views": 2866,
@@ -330,7 +330,7 @@
       "saves": 1,
       "follows": null,
       "skip_rate": 37.2,
-      "vs_median_x": 1.03
+      "vs_median_x": 1.06
     },
     "18077274071460612": {
       "views": 4574,
@@ -339,25 +339,25 @@
       "saves": 6,
       "follows": null,
       "skip_rate": 41.6,
-      "vs_median_x": 1.65
+      "vs_median_x": 1.69
     },
     "17996364396056868": {
-      "views": 2084,
+      "views": 2085,
       "reach": 1560,
       "shares": 0,
       "saves": 4,
       "follows": null,
       "skip_rate": 41.9,
-      "vs_median_x": 0.75
+      "vs_median_x": 0.77
     },
     "18105677701998427": {
-      "views": 2224,
+      "views": 2225,
       "reach": 1546,
       "shares": 0,
       "saves": 7,
       "follows": null,
       "skip_rate": 34.3,
-      "vs_median_x": 0.8
+      "vs_median_x": 0.82
     },
     "18229051564336831": {
       "views": 2326,
@@ -366,16 +366,16 @@
       "saves": 10,
       "follows": null,
       "skip_rate": 43.0,
-      "vs_median_x": 0.84
+      "vs_median_x": 0.86
     },
     "17989638402114541": {
-      "views": 5951,
+      "views": 5953,
       "reach": 3340,
       "shares": 16,
       "saves": 122,
       "follows": null,
       "skip_rate": 51.3,
-      "vs_median_x": 2.14
+      "vs_median_x": 2.2
     },
     "18113954333125892": {
       "views": 525,
@@ -393,7 +393,7 @@
       "saves": 23,
       "follows": null,
       "skip_rate": 38.4,
-      "vs_median_x": 0.82
+      "vs_median_x": 0.85
     },
     "18128492534303106": {
       "views": 2467,
@@ -402,7 +402,7 @@
       "saves": 23,
       "follows": null,
       "skip_rate": 41.5,
-      "vs_median_x": 0.89
+      "vs_median_x": 0.91
     },
     "18134712637724569": {
       "views": 2399,
@@ -411,7 +411,7 @@
       "saves": 16,
       "follows": null,
       "skip_rate": 47.6,
-      "vs_median_x": 0.86
+      "vs_median_x": 0.89
     },
     "18105370838635390": {
       "views": 4816,
@@ -420,16 +420,16 @@
       "saves": 12,
       "follows": null,
       "skip_rate": 44.5,
-      "vs_median_x": 1.73
+      "vs_median_x": 1.78
     },
     "18013800395977603": {
-      "views": 17152,
+      "views": 17215,
       "reach": 7579,
       "shares": 24,
-      "saves": 186,
+      "saves": 187,
       "follows": null,
       "skip_rate": 41.1,
-      "vs_median_x": 6.17
+      "vs_median_x": 6.37
     },
     "18131293301493046": {
       "views": 3274,
@@ -438,7 +438,7 @@
       "saves": 3,
       "follows": null,
       "skip_rate": 38.2,
-      "vs_median_x": 1.18
+      "vs_median_x": 1.21
     },
     "18204962350378125": {
       "views": 2262,
@@ -447,7 +447,7 @@
       "saves": 7,
       "follows": null,
       "skip_rate": 41.1,
-      "vs_median_x": 0.81
+      "vs_median_x": 0.84
     },
     "18199174084386139": {
       "views": 2003,
@@ -456,7 +456,7 @@
       "saves": 21,
       "follows": null,
       "skip_rate": 37.8,
-      "vs_median_x": 0.72
+      "vs_median_x": 0.74
     },
     "17934543939408131": {
       "views": 1882,
@@ -465,7 +465,7 @@
       "saves": 2,
       "follows": null,
       "skip_rate": 42.0,
-      "vs_median_x": 0.68
+      "vs_median_x": 0.7
     },
     "18013870892765364": {
       "views": 2756,
@@ -474,7 +474,7 @@
       "saves": 6,
       "follows": null,
       "skip_rate": 45.4,
-      "vs_median_x": 0.99
+      "vs_median_x": 1.02
     },
     "18131046229700566": {
       "views": 3071,
@@ -483,7 +483,7 @@
       "saves": 3,
       "follows": null,
       "skip_rate": 30.3,
-      "vs_median_x": 1.11
+      "vs_median_x": 1.14
     },
     "18103719341371347": {
       "views": 2252,
@@ -492,7 +492,7 @@
       "saves": 2,
       "follows": null,
       "skip_rate": 47.8,
-      "vs_median_x": 0.81
+      "vs_median_x": 0.83
     },
     "18118866650049649": {
       "views": 0,
@@ -510,7 +510,7 @@
       "saves": 6,
       "follows": null,
       "skip_rate": 33.8,
-      "vs_median_x": 0.92
+      "vs_median_x": 0.95
     },
     "18218137072358274": {
       "views": 1361,
@@ -519,7 +519,7 @@
       "saves": 0,
       "follows": null,
       "skip_rate": 36.9,
-      "vs_median_x": 0.49
+      "vs_median_x": 0.5
     },
     "18120129104061061": {
       "views": 2036,
@@ -528,7 +528,7 @@
       "saves": 5,
       "follows": null,
       "skip_rate": 38.7,
-      "vs_median_x": 0.73
+      "vs_median_x": 0.75
     },
     "18102625025548674": {
       "views": 616,
@@ -537,7 +537,7 @@
       "saves": 0,
       "follows": null,
       "skip_rate": 56.9,
-      "vs_median_x": 0.22
+      "vs_median_x": 0.23
     },
     "18054939758612177": {
       "views": 2781,
@@ -546,7 +546,7 @@
       "saves": 10,
       "follows": null,
       "skip_rate": 47.4,
-      "vs_median_x": 1.0
+      "vs_median_x": 1.03
     },
     "18112201892350877": {
       "views": 3105,
@@ -555,7 +555,7 @@
       "saves": 7,
       "follows": null,
       "skip_rate": 44.4,
-      "vs_median_x": 1.12
+      "vs_median_x": 1.15
     },
     "18072120599787634": {
       "views": 3618,
@@ -564,7 +564,7 @@
       "saves": 13,
       "follows": null,
       "skip_rate": 41.3,
-      "vs_median_x": 1.3
+      "vs_median_x": 1.34
     },
     "18128550844883062": {
       "views": 2964,
@@ -573,7 +573,7 @@
       "saves": 17,
       "follows": null,
       "skip_rate": 47.6,
-      "vs_median_x": 1.07
+      "vs_median_x": 1.1
     },
     "18096080225170784": {
       "views": 3007,
@@ -582,7 +582,7 @@
       "saves": 9,
       "follows": null,
       "skip_rate": 44.9,
-      "vs_median_x": 1.08
+      "vs_median_x": 1.11
     },
     "18134570593739399": {
       "views": 3995,
@@ -591,7 +591,7 @@
       "saves": 26,
       "follows": null,
       "skip_rate": 44.1,
-      "vs_median_x": 1.44
+      "vs_median_x": 1.48
     },
     "17894923212682270": {
       "views": 1846,
@@ -600,7 +600,7 @@
       "saves": 3,
       "follows": null,
       "skip_rate": 43.2,
-      "vs_median_x": 0.66
+      "vs_median_x": 0.68
     },
     "18131061478868853": {
       "views": 3943,
@@ -609,7 +609,7 @@
       "saves": 22,
       "follows": null,
       "skip_rate": 46.2,
-      "vs_median_x": 1.42
+      "vs_median_x": 1.46
     },
     "18435569284194314": {
       "views": 1514,
@@ -618,7 +618,7 @@
       "saves": 4,
       "follows": null,
       "skip_rate": 51.7,
-      "vs_median_x": 0.54
+      "vs_median_x": 0.56
     },
     "18050587088815104": {
       "views": 1696,
@@ -627,7 +627,7 @@
       "saves": 3,
       "follows": null,
       "skip_rate": 47.1,
-      "vs_median_x": 0.61
+      "vs_median_x": 0.63
     },
     "17917181916540466": {
       "views": 2596,
@@ -636,7 +636,7 @@
       "saves": 0,
       "follows": null,
       "skip_rate": 30.6,
-      "vs_median_x": 0.93
+      "vs_median_x": 0.96
     },
     "18101450915181231": {
       "views": 2180,
@@ -645,7 +645,7 @@
       "saves": 5,
       "follows": null,
       "skip_rate": 38.0,
-      "vs_median_x": 0.78
+      "vs_median_x": 0.81
     },
     "18043312127836126": {
       "views": 932,
@@ -663,7 +663,7 @@
       "saves": 33,
       "follows": null,
       "skip_rate": 64.7,
-      "vs_median_x": 0.9
+      "vs_median_x": 0.92
     },
     "17913053517559998": {
       "views": 231,
@@ -672,7 +672,7 @@
       "saves": 0,
       "follows": null,
       "skip_rate": 56.3,
-      "vs_median_x": 0.08
+      "vs_median_x": 0.09
     },
     "18208640077374596": {
       "views": 504,
@@ -681,7 +681,7 @@
       "saves": 0,
       "follows": null,
       "skip_rate": 55.0,
-      "vs_median_x": 0.18
+      "vs_median_x": 0.19
     },
     "18125732224931879": {
       "views": 2145,
@@ -690,7 +690,7 @@
       "saves": 2,
       "follows": null,
       "skip_rate": 32.9,
-      "vs_median_x": 0.77
+      "vs_median_x": 0.79
     },
     "18114748997521583": {
       "views": 2643,
@@ -699,7 +699,7 @@
       "saves": 4,
       "follows": null,
       "skip_rate": 31.4,
-      "vs_median_x": 0.95
+      "vs_median_x": 0.98
     },
     "18142439116713907": {
       "views": 1388,
@@ -708,25 +708,25 @@
       "saves": 0,
       "follows": null,
       "skip_rate": 41.4,
-      "vs_median_x": 0.5
+      "vs_median_x": 0.51
     },
     "18122065310066340": {
-      "views": 3129,
+      "views": 3130,
       "reach": 1900,
       "shares": 7,
       "saves": 14,
       "follows": null,
       "skip_rate": 48.4,
-      "vs_median_x": 1.13
+      "vs_median_x": 1.16
     },
     "18194589373401310": {
-      "views": 4080,
+      "views": 4082,
       "reach": 2529,
       "shares": 3,
       "saves": 24,
       "follows": null,
       "skip_rate": 50.9,
-      "vs_median_x": 1.47
+      "vs_median_x": 1.51
     },
     "18100587368436187": {
       "views": 2665,
@@ -735,7 +735,7 @@
       "saves": 4,
       "follows": null,
       "skip_rate": 33.9,
-      "vs_median_x": 0.96
+      "vs_median_x": 0.99
     },
     "17991412163867000": {
       "views": 1027,
@@ -744,7 +744,7 @@
       "saves": 0,
       "follows": null,
       "skip_rate": 49.7,
-      "vs_median_x": 0.37
+      "vs_median_x": 0.38
     },
     "17918608239262835": {
       "views": 3879,
@@ -753,7 +753,7 @@
       "saves": 7,
       "follows": null,
       "skip_rate": 39.3,
-      "vs_median_x": 1.4
+      "vs_median_x": 1.44
     },
     "18111703811353503": {
       "views": 1411,
@@ -762,7 +762,7 @@
       "saves": 8,
       "follows": null,
       "skip_rate": 54.9,
-      "vs_median_x": 0.51
+      "vs_median_x": 0.52
     },
     "18194950774404627": {
       "views": 1170,
@@ -771,7 +771,7 @@
       "saves": 1,
       "follows": null,
       "skip_rate": 40.0,
-      "vs_median_x": 0.42
+      "vs_median_x": 0.43
     },
     "18174617512456797": {
       "views": 634,
@@ -789,7 +789,7 @@
       "saves": 11,
       "follows": null,
       "skip_rate": 37.4,
-      "vs_median_x": 1.12
+      "vs_median_x": 1.15
     },
     "18125141699297137": {
       "views": 2833,
@@ -798,7 +798,7 @@
       "saves": 18,
       "follows": null,
       "skip_rate": 47.7,
-      "vs_median_x": 1.02
+      "vs_median_x": 1.05
     },
     "18086812361520554": {
       "views": 2646,
@@ -807,7 +807,7 @@
       "saves": 31,
       "follows": null,
       "skip_rate": 51.7,
-      "vs_median_x": 0.95
+      "vs_median_x": 0.98
     },
     "18341851606274977": {
       "views": 2318,
@@ -816,7 +816,7 @@
       "saves": 23,
       "follows": null,
       "skip_rate": 53.4,
-      "vs_median_x": 0.83
+      "vs_median_x": 0.86
     },
     "17913495681559440": {
       "views": 3269,
@@ -825,7 +825,7 @@
       "saves": 9,
       "follows": null,
       "skip_rate": 45,
-      "vs_median_x": 1.18
+      "vs_median_x": 1.21
     },
     "18120773428952964": {
       "views": 2911,
@@ -834,7 +834,7 @@
       "saves": 11,
       "follows": null,
       "skip_rate": 40,
-      "vs_median_x": 1.05
+      "vs_median_x": 1.08
     },
     "17962932867239608": {
       "views": 2305,
@@ -843,7 +843,7 @@
       "saves": 12,
       "follows": null,
       "skip_rate": 51.8,
-      "vs_median_x": 0.83
+      "vs_median_x": 0.85
     },
     "18042423440842176": {
       "views": 1395,
@@ -852,7 +852,7 @@
       "saves": 3,
       "follows": null,
       "skip_rate": 52.8,
-      "vs_median_x": 0.5
+      "vs_median_x": 0.52
     },
     "18357958825168661": {
       "views": 2320,
@@ -861,7 +861,7 @@
       "saves": 42,
       "follows": null,
       "skip_rate": 44.4,
-      "vs_median_x": 0.84
+      "vs_median_x": 0.86
     },
     "18089086031317687": {
       "views": 2953,
@@ -870,7 +870,7 @@
       "saves": 6,
       "follows": null,
       "skip_rate": 44.1,
-      "vs_median_x": 1.06
+      "vs_median_x": 1.09
     },
     "18051318701813798": {
       "views": 2792,
@@ -879,7 +879,7 @@
       "saves": 5,
       "follows": null,
       "skip_rate": 48.2,
-      "vs_median_x": 1.01
+      "vs_median_x": 1.03
     },
     "18110365757211907": {
       "views": 2662,
@@ -888,7 +888,7 @@
       "saves": 19,
       "follows": null,
       "skip_rate": 49.3,
-      "vs_median_x": 0.96
+      "vs_median_x": 0.99
     },
     "17886961380514107": {
       "views": 2509,
@@ -897,25 +897,25 @@
       "saves": 11,
       "follows": null,
       "skip_rate": 51.1,
-      "vs_median_x": 0.9
+      "vs_median_x": 0.93
     },
     "18287478829293619": {
-      "views": 2446,
+      "views": 2447,
       "reach": 1967,
       "shares": 7,
       "saves": 33,
       "follows": null,
       "skip_rate": 48.3,
-      "vs_median_x": 0.88
+      "vs_median_x": 0.91
     },
     "18041900690844548": {
-      "views": 2142,
+      "views": 2147,
       "reach": 1716,
       "shares": 6,
       "saves": 19,
       "follows": null,
       "skip_rate": 46,
-      "vs_median_x": 0.77
+      "vs_median_x": 0.79
     },
     "18442321336195624": {
       "views": 1251,
@@ -924,7 +924,7 @@
       "saves": 19,
       "follows": null,
       "skip_rate": 43.5,
-      "vs_median_x": 0.45
+      "vs_median_x": 0.46
     },
     "18169771873473069": {
       "views": 2472,
@@ -933,7 +933,7 @@
       "saves": 14,
       "follows": null,
       "skip_rate": 42.5,
-      "vs_median_x": 0.89
+      "vs_median_x": 0.92
     },
     "18398747608160951": {
       "views": 4715,
@@ -942,7 +942,7 @@
       "saves": 5,
       "follows": null,
       "skip_rate": 40.2,
-      "vs_median_x": 1.7
+      "vs_median_x": 1.75
     },
     "17882028045633798": {
       "views": 1512,
@@ -951,7 +951,7 @@
       "saves": 3,
       "follows": null,
       "skip_rate": 59,
-      "vs_median_x": 0.54
+      "vs_median_x": 0.56
     },
     "17977344759238526": {
       "views": 2690,
@@ -960,7 +960,7 @@
       "saves": 22,
       "follows": null,
       "skip_rate": 55.6,
-      "vs_median_x": 0.97
+      "vs_median_x": 1.0
     },
     "18004219217798503": {
       "views": 2332,
@@ -969,7 +969,7 @@
       "saves": 12,
       "follows": null,
       "skip_rate": 48.4,
-      "vs_median_x": 0.84
+      "vs_median_x": 0.86
     },
     "18154062415550198": {
       "views": 2678,
@@ -978,7 +978,7 @@
       "saves": 2,
       "follows": null,
       "skip_rate": 45.2,
-      "vs_median_x": 0.96
+      "vs_median_x": 0.99
     },
     "18156274933535864": {
       "views": 3558,
@@ -987,7 +987,7 @@
       "saves": 27,
       "follows": null,
       "skip_rate": 45.7,
-      "vs_median_x": 1.28
+      "vs_median_x": 1.32
     },
     "18122607415975352": {
       "views": 1686,
@@ -996,7 +996,7 @@
       "saves": 15,
       "follows": null,
       "skip_rate": 44.3,
-      "vs_median_x": 0.61
+      "vs_median_x": 0.62
     },
     "18039385595834940": {
       "views": 2811,
@@ -1005,7 +1005,7 @@
       "saves": 3,
       "follows": null,
       "skip_rate": 35.2,
-      "vs_median_x": 1.01
+      "vs_median_x": 1.04
     },
     "18098651975445438": {
       "views": 2190,
@@ -1014,7 +1014,7 @@
       "saves": 12,
       "follows": null,
       "skip_rate": 48.8,
-      "vs_median_x": 0.79
+      "vs_median_x": 0.81
     },
     "18169515745490874": {
       "views": 1230,
@@ -1023,7 +1023,7 @@
       "saves": 1,
       "follows": null,
       "skip_rate": 48.6,
-      "vs_median_x": 0.44
+      "vs_median_x": 0.46
     },
     "18232981231323098": {
       "views": 2715,
@@ -1032,16 +1032,16 @@
       "saves": 1,
       "follows": null,
       "skip_rate": 33.3,
-      "vs_median_x": 0.98
+      "vs_median_x": 1.0
     },
     "18138031693679767": {
-      "views": 3313,
+      "views": 3316,
       "reach": 2088,
       "shares": 7,
       "saves": 46,
       "follows": null,
       "skip_rate": 47.3,
-      "vs_median_x": 1.19
+      "vs_median_x": 1.23
     },
     "18085314938438397": {
       "views": 1537,
@@ -1050,7 +1050,7 @@
       "saves": 16,
       "follows": null,
       "skip_rate": 54.7,
-      "vs_median_x": 0.55
+      "vs_median_x": 0.57
     },
     "17982522144129692": {
       "views": 524,
@@ -1075,15 +1075,15 @@
       "shares": 5,
       "saves": 10,
       "skip_rate": 52.8,
-      "vs_median_x": 2.44
+      "vs_median_x": 2.51
     },
     "18135438076707128": {
-      "views": 2943,
+      "views": 2944,
       "reach": 2085,
       "shares": 19,
       "saves": 20,
       "skip_rate": 48.9,
-      "vs_median_x": 1.06
+      "vs_median_x": 1.09
     },
     "18111053390264605": {
       "views": 3181,
@@ -1091,7 +1091,7 @@
       "shares": 0,
       "saves": 6,
       "skip_rate": 45.8,
-      "vs_median_x": 1.15
+      "vs_median_x": 1.18
     },
     "18382057828210224": {
       "views": 2547,
@@ -1099,7 +1099,7 @@
       "shares": 2,
       "saves": 10,
       "skip_rate": 46.8,
-      "vs_median_x": 0.92
+      "vs_median_x": 0.94
     },
     "18415530715080463": {
       "views": 2494,
@@ -1107,15 +1107,15 @@
       "shares": 0,
       "saves": 8,
       "skip_rate": 45.7,
-      "vs_median_x": 0.9
+      "vs_median_x": 0.92
     },
     "17907632898353558": {
-      "views": 2567,
+      "views": 2569,
       "reach": 1883,
       "shares": 1,
       "saves": 13,
       "skip_rate": 56.1,
-      "vs_median_x": 0.92
+      "vs_median_x": 0.95
     },
     "18103015724640694": {
       "views": 2647,
@@ -1123,7 +1123,7 @@
       "shares": 1,
       "saves": 8,
       "skip_rate": 40.4,
-      "vs_median_x": 0.95
+      "vs_median_x": 0.98
     },
     "18083892563346578": {
       "views": 2331,
@@ -1131,7 +1131,7 @@
       "shares": 1,
       "saves": 9,
       "skip_rate": 49,
-      "vs_median_x": 0.84
+      "vs_median_x": 0.86
     },
     "18046361462827874": {
       "views": 2355,
@@ -1139,7 +1139,7 @@
       "shares": 0,
       "saves": 8,
       "skip_rate": 44.4,
-      "vs_median_x": 0.85
+      "vs_median_x": 0.87
     },
     "18134731057813998": {
       "views": 2571,
@@ -1147,7 +1147,7 @@
       "shares": 1,
       "saves": 11,
       "skip_rate": 46.5,
-      "vs_median_x": 0.93
+      "vs_median_x": 0.95
     },
     "18374419915244317": {
       "views": 2858,
@@ -1155,7 +1155,7 @@
       "shares": 1,
       "saves": 14,
       "skip_rate": 47.5,
-      "vs_median_x": 1.03
+      "vs_median_x": 1.06
     },
     "17969487162198953": {
       "views": 1179,
@@ -1163,7 +1163,7 @@
       "shares": 0,
       "saves": 6,
       "skip_rate": 60.2,
-      "vs_median_x": 0.42
+      "vs_median_x": 0.44
     },
     "18176147746458932": {
       "views": 2225,
@@ -1171,7 +1171,7 @@
       "shares": 0,
       "saves": 13,
       "skip_rate": 44.8,
-      "vs_median_x": 0.8
+      "vs_median_x": 0.82
     },
     "17981608091918229": {
       "views": 2157,
@@ -1179,23 +1179,23 @@
       "shares": 0,
       "saves": 6,
       "skip_rate": 49.5,
-      "vs_median_x": 0.78
+      "vs_median_x": 0.8
     },
     "18440703805151461": {
-      "views": 2713,
+      "views": 2717,
       "reach": 1850,
       "shares": 2,
       "saves": 0,
       "skip_rate": 32.3,
-      "vs_median_x": 0.98
+      "vs_median_x": 1.01
     },
     "18137065810782674": {
-      "views": 2868,
+      "views": 2873,
       "reach": 1910,
       "shares": 0,
       "saves": 12,
       "skip_rate": 46.2,
-      "vs_median_x": 1.03
+      "vs_median_x": 1.06
     },
     "18035817770676289": {
       "views": 2794,
@@ -1203,7 +1203,7 @@
       "shares": 0,
       "saves": 10,
       "skip_rate": 42.8,
-      "vs_median_x": 1.01
+      "vs_median_x": 1.03
     },
     "18122689454081326": {
       "views": 2706,
@@ -1211,7 +1211,7 @@
       "shares": 0,
       "saves": 2,
       "skip_rate": 40.2,
-      "vs_median_x": 0.97
+      "vs_median_x": 1.0
     },
     "18076974653759762": {
       "views": 1993,
@@ -1219,23 +1219,23 @@
       "shares": 4,
       "saves": 5,
       "skip_rate": 47.4,
-      "vs_median_x": 0.72
+      "vs_median_x": 0.74
     },
     "17943199617363187": {
-      "views": 3569,
+      "views": 3573,
       "reach": 2261,
       "shares": 0,
-      "saves": 4,
+      "saves": 5,
       "skip_rate": 37.7,
-      "vs_median_x": 1.28
+      "vs_median_x": 1.32
     },
     "18104917268548599": {
-      "views": 3033,
+      "views": 3034,
       "reach": 2090,
       "shares": 2,
       "saves": 9,
       "skip_rate": 36.8,
-      "vs_median_x": 1.09
+      "vs_median_x": 1.12
     },
     "17928009333202428": {
       "views": 1031,
@@ -1243,7 +1243,7 @@
       "shares": 1,
       "saves": 1,
       "skip_rate": 63,
-      "vs_median_x": 0.37
+      "vs_median_x": 0.38
     },
     "18119290723825663": {
       "views": 4017,
@@ -1251,15 +1251,15 @@
       "shares": 0,
       "saves": 0,
       "skip_rate": 32.5,
-      "vs_median_x": 1.45
+      "vs_median_x": 1.49
     },
     "18343909621256479": {
-      "views": 2303,
+      "views": 2313,
       "reach": 1791,
       "shares": 20,
       "saves": 32,
       "skip_rate": 62.7,
-      "vs_median_x": 0.83
+      "vs_median_x": 0.86
     },
     "17958337641282308": {
       "views": 2730,
@@ -1267,7 +1267,7 @@
       "shares": 0,
       "saves": 3,
       "skip_rate": 47.4,
-      "vs_median_x": 0.98
+      "vs_median_x": 1.01
     },
     "18122632750969847": {
       "views": 2350,
@@ -1275,7 +1275,7 @@
       "shares": 0,
       "saves": 12,
       "skip_rate": 45.7,
-      "vs_median_x": 0.85
+      "vs_median_x": 0.87
     },
     "17912661006589705": {
       "views": 2551,
@@ -1283,15 +1283,15 @@
       "shares": 3,
       "saves": 13,
       "skip_rate": 49.7,
-      "vs_median_x": 0.92
+      "vs_median_x": 0.94
     },
     "18143674774714122": {
-      "views": 3935,
+      "views": 3936,
       "reach": 2467,
       "shares": 2,
       "saves": 4,
       "skip_rate": 42.2,
-      "vs_median_x": 1.42
+      "vs_median_x": 1.46
     },
     "18132712834874234": {
       "views": 2752,
@@ -1299,7 +1299,7 @@
       "shares": 0,
       "saves": 4,
       "skip_rate": 45,
-      "vs_median_x": 0.99
+      "vs_median_x": 1.02
     },
     "17889598323623006": {
       "views": 898,
@@ -1307,7 +1307,7 @@
       "shares": 1,
       "saves": 9,
       "skip_rate": 52.6,
-      "vs_median_x": 0.32
+      "vs_median_x": 0.33
     },
     "18357859300217996": {
       "views": 2834,
@@ -1315,23 +1315,23 @@
       "shares": 0,
       "saves": 2,
       "skip_rate": 40.1,
-      "vs_median_x": 1.02
+      "vs_median_x": 1.05
     },
     "17978633997157037": {
-      "views": 3386,
+      "views": 3397,
       "reach": 2221,
       "shares": 4,
       "saves": 3,
       "skip_rate": 40.1,
-      "vs_median_x": 1.22
+      "vs_median_x": 1.26
     },
     "18184096297441249": {
-      "views": 6881,
+      "views": 6901,
       "reach": 3660,
       "shares": 1,
       "saves": 6,
       "skip_rate": 40.2,
-      "vs_median_x": 2.48
+      "vs_median_x": 2.55
     },
     "17958803853297269": {
       "views": 2905,
@@ -1339,31 +1339,31 @@
       "shares": 0,
       "saves": 10,
       "skip_rate": 41.8,
-      "vs_median_x": 1.05
+      "vs_median_x": 1.08
     },
     "18172161646475002": {
-      "views": 3184,
+      "views": 3205,
       "reach": 2152,
       "shares": 7,
       "saves": 7,
       "skip_rate": 39.8,
-      "vs_median_x": 1.15
+      "vs_median_x": 1.19
     },
     "17985123180128747": {
-      "views": 2647,
+      "views": 2648,
       "reach": 1784,
       "shares": 3,
       "saves": 21,
       "skip_rate": 45.3,
-      "vs_median_x": 0.95
+      "vs_median_x": 0.98
     },
     "17869100220679508": {
-      "views": 3065,
+      "views": 3069,
       "reach": 2213,
       "shares": 1,
       "saves": 32,
       "skip_rate": 51.6,
-      "vs_median_x": 1.1
+      "vs_median_x": 1.14
     },
     "18099859208396838": {
       "views": 816,
@@ -1371,7 +1371,7 @@
       "shares": 1,
       "saves": 2,
       "skip_rate": 51.8,
-      "vs_median_x": 0.29
+      "vs_median_x": 0.3
     },
     "18102227252397208": {
       "views": 2144,
@@ -1379,121 +1379,121 @@
       "shares": 2,
       "saves": 9,
       "skip_rate": 45.2,
-      "vs_median_x": 0.77
+      "vs_median_x": 0.79
     },
     "18119604148790746": {
       "views": 345,
       "shares": 1,
       "saves": 2,
-      "vs_median_x": 0.12
+      "vs_median_x": 0.13
     },
     "18037826501891149": {
       "views": 343,
       "shares": 1,
       "saves": 3,
-      "vs_median_x": 0.12
+      "vs_median_x": 0.13
     },
     "18100932350118332": {
-      "views": 4081,
+      "views": 4094,
       "shares": 0,
       "saves": 19,
-      "vs_median_x": 1.47
+      "vs_median_x": 1.52
     },
     "18025732367722608": {
       "views": 2758,
       "shares": 4,
       "saves": 9,
-      "vs_median_x": 0.99
+      "vs_median_x": 1.02
     },
     "18119066573106371": {
-      "views": 4686,
+      "views": 4719,
       "shares": 0,
-      "saves": 12,
-      "vs_median_x": 1.69
+      "saves": 13,
+      "vs_median_x": 1.75
     },
     "18403997686201659": {
-      "views": 2883,
+      "views": 2890,
       "shares": 3,
       "saves": 11,
-      "vs_median_x": 1.04
+      "vs_median_x": 1.07
     },
     "18418983559082797": {
       "views": 2822,
       "shares": 1,
       "saves": 16,
-      "vs_median_x": 1.02
+      "vs_median_x": 1.04
     },
     "18084559073651401": {
       "views": 2032,
       "shares": 0,
       "saves": 7,
-      "vs_median_x": 0.73
+      "vs_median_x": 0.75
     },
     "18132489742889605": {
       "views": 763,
       "shares": 0,
       "saves": 4,
-      "vs_median_x": 0.27
+      "vs_median_x": 0.28
     },
     "18390528502232053": {
-      "views": 2746,
+      "views": 2755,
       "shares": 0,
       "saves": 18,
-      "vs_median_x": 0.99
+      "vs_median_x": 1.02
     },
     "18190878652372921": {
       "views": 3052,
       "shares": 1,
       "saves": 19,
-      "vs_median_x": 1.1
+      "vs_median_x": 1.13
     },
     "18109734266637897": {
-      "views": 2798,
+      "views": 2799,
       "shares": 1,
       "saves": 0,
-      "vs_median_x": 1.01
+      "vs_median_x": 1.04
     },
     "18151535413562242": {
       "views": 1672,
       "shares": 6,
       "saves": 15,
-      "vs_median_x": 0.6
+      "vs_median_x": 0.62
     },
     "18205334620380242": {
-      "views": 2482,
+      "views": 2483,
       "shares": 0,
       "saves": 3,
-      "vs_median_x": 0.89
+      "vs_median_x": 0.92
     },
     "18474711025136021": {
       "views": 3305,
       "shares": 0,
       "saves": 12,
-      "vs_median_x": 1.19
+      "vs_median_x": 1.22
     },
     "18111332477210945": {
       "views": 203,
       "shares": 0,
       "saves": 1,
-      "vs_median_x": 0.07
+      "vs_median_x": 0.08
     },
     "18499619146111353": {
       "views": 2060,
       "shares": 1,
       "saves": 2,
-      "vs_median_x": 0.74
+      "vs_median_x": 0.76
     },
     "18048858401833843": {
-      "views": 2599,
+      "views": 2602,
       "shares": 0,
       "saves": 17,
-      "vs_median_x": 0.94
+      "vs_median_x": 0.96
     },
     "18079880432725099": {
-      "views": 3559,
+      "views": 3563,
       "shares": 17,
       "saves": 90,
-      "vs_median_x": 1.28
+      "vs_median_x": 1.32
     },
     "17879904522572492": {
       "views": 353,
@@ -1514,46 +1514,55 @@
       "vs_median_x": 0.04
     },
     "17980027923077118": {
-      "views": 5751,
+      "views": 5801,
       "shares": 6,
-      "saves": 23,
-      "vs_median_x": 2.07
+      "saves": 25,
+      "vs_median_x": 2.15
     },
     "18292047583295785": {
       "reach": null,
       "follows": null,
       "skip_rate": null,
-      "views": 2085,
+      "views": 2194,
       "shares": 1,
       "saves": 5,
-      "vs_median_x": 0.75
+      "vs_median_x": 0.81
     },
     "18356491828265781": {
       "reach": null,
       "follows": null,
       "skip_rate": null,
-      "views": 2440,
+      "views": 2627,
       "shares": 13,
       "saves": 5,
-      "vs_median_x": 0.88
+      "vs_median_x": 0.97
     },
     "18097900676691444": {
       "reach": null,
       "follows": null,
       "skip_rate": null,
-      "views": 307,
+      "views": 357,
       "shares": 0,
       "saves": 0,
-      "vs_median_x": 0.11
+      "vs_median_x": 0.13
     },
     "17998860926843171": {
       "reach": null,
       "follows": null,
       "skip_rate": null,
-      "views": 3611,
+      "views": 3753,
       "shares": 2,
-      "saves": 7,
-      "vs_median_x": 1.3
+      "saves": 8,
+      "vs_median_x": 1.39
+    },
+    "18041727587895158": {
+      "reach": null,
+      "follows": null,
+      "skip_rate": null,
+      "views": 2271,
+      "shares": 1,
+      "saves": 15,
+      "vs_median_x": 0.84
     }
   },
   "source": "platforms.json (Meta app Graph API); Buzzfy retired 2026-11-24, Windsor paused (free plan, 2 accounts)"

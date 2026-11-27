@@ -174,6 +174,9 @@ Sort by follows per 1k views when looking for what grows the account.
 | 2026-11-22 | lst-2026-11-22-same-jab-all-round | - | 18025732367722608 | 6 WAYS TO STOP EATING THE SAME JAB ALL ROUND | listicle (tactical) | text-on-clip | trial | 2758 (0.99x) | ? | 4 | 9 | 0 | no | tactical, 18:30: 0.99x |
 | 2026-11-23 | lst-2026-11-22-clinch-tired | - | 18084559073651401 | 6 WAYS TO ESCAPE THE CLINCH WHEN YOU'RE TIRED | listicle (tactical) | text-on-clip | trial | 2032 (0.73x) | ? | 0 | 7 | 0 | no | tactical, 21:30: 0.73x |
 | 2026-11-23 | lst-2026-11-23-first-year-embarrassing | - | 18499619146111353 | YOUR FIRST YEAR OF TRAINING IS SUPPOSED TO BE EMBARRASSING | statement (identity) | text-on-clip | trial | 2060 (0.74x) | ? | 1 | 2 | 0 | no | statement: 0.74x, 32 likes (most of the batch) |
+| 2026-11-23 | lst-2026-11-23-recover-after-work | - | 18151535413562242 | 6 RECOVERY HABITS FOR PEOPLE WHO TRAIN AFTER WORK | lifestyle (tactical) | text-on-clip | trial | 1672 (0.62x) | ? | 6 | 15 | 0 | no | lifestyle, 12:30: 0.62x but 15 saves, 6 shares |
+| 2026-11-23 | lst-2026-11-23-scary-good-five-years | - | 18119066573106371 | 6 SIGNS YOU'LL BE SCARY GOOD IN FIVE YEARS | listicle (identity) | text-on-clip | trial | 4719 (1.75x) | ? | 0 | 13 | 0 | no | identity, 18:30: 1.75x, 60 likes (best of the week, short of 2x) |
+| 2026-11-24 | lst-2026-11-23-land-left-hook | - | 18132489742889605 | 6 WAYS TO LAND YOUR LEFT HOOK | listicle (tactical) | text-on-clip | trial | 763 (0.28x) | ? | 0 | 4 | 0 | no | tactical, 21:30: 0.28x |
 
 ## Patterns so far
 - _Add a line whenever a test is decided. Keep it to what the numbers showed._
