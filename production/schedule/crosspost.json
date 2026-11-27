@@ -27,7 +27,7 @@
         "19:00"
       ],
       "privacy_note": "Matteo: 'youtube approved' (2026-10-16). If YouTube still forces private, the audit isn't through yet.",
-      "last_slot": "2026-11-27T00:00:00Z"
+      "last_slot": "2026-11-27T17:30:00Z"
     },
     "threads": {
       "enabled": true,
@@ -2290,6 +2290,15 @@
         "at": "2026-11-27T15:06:43Z",
         "id": "18640160032000727",
         "url": "https://www.threads.com/@matteofights/post/DgP9mdCqrDi"
+      }
+    },
+    "lst-2026-11-24-wont-stop-kicking": {
+      "youtube": {
+        "status": "posted",
+        "at": "2026-11-27T17:41:16Z",
+        "id": "TJAbefV5p20",
+        "url": "https://youtube.com/shorts/TJAbefV5p20",
+        "privacy": "public"
       }
     }
   }
