@@ -1,13 +1,5 @@
 [
   {
-    "id": "health-run:Listicle factory-2026110822",
-    "text": "⚠️ Workflow 'Listicle factory' failed: https://github.com/fightingmatteo-ux/matteofights/actions/runs/42502596364"
-  },
-  {
-    "id": "xp-dc275bed",
-    "text": "📤 YouTube Shorts: 5 RULES FROM SPARRING THAT WORK IN BUSINESS\nhttps://youtube.com/shorts/Enu1SwIqEMY"
-  },
-  {
     "id": "xp-7ac79db8",
     "text": "📤 Facebook Reels: 6 SIGNS YOU'RE A FIGHTER, NOT JUST FIT\nhttps://www.facebook.com/reel/1584928926731470"
   },
@@ -802,5 +794,9 @@
   {
     "id": "n-1127-week-missing",
     "text": "Listicles stopped: the week 26 Nov - 3 Dec (28 reels, covers sent 23 Nov) isn't approved, so last night's 18:30 and 21:30 slots went out empty. One tap on Approve the week in the control center restarts it from the next slot."
+  },
+  {
+    "id": "xp-f98c946d",
+    "text": "📤 Threads: 6 THINGS TRAINING TEACHES YOU ABOUT HARD CONVERSATIONS\nhttps://www.threads.com/@matteofights/post/DgP9mdCqrDi"
   }
 ]
