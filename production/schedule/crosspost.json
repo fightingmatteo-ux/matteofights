@@ -27,7 +27,7 @@
         "19:00"
       ],
       "privacy_note": "Matteo: 'youtube approved' (2026-10-16). If YouTube still forces private, the audit isn't through yet.",
-      "last_slot": "2026-11-27T17:30:00Z"
+      "last_slot": "2026-11-27T21:00:00Z"
     },
     "threads": {
       "enabled": true,
@@ -2307,6 +2307,14 @@
         "url": "https://www.threads.com/@matteofights/post/DgQjYJpRwKs"
       }
     },
-    "lst-2026-11-24-body-shots-hurt": {}
+    "lst-2026-11-24-body-shots-hurt": {
+      "youtube": {
+        "status": "posted",
+        "at": "2026-11-27T21:06:17Z",
+        "id": "wkFxmEIPgBc",
+        "url": "https://youtube.com/shorts/wkFxmEIPgBc",
+        "privacy": "public"
+      }
+    }
   }
 }

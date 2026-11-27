@@ -1,9 +1,5 @@
 [
   {
-    "id": "health-queue:lst-2026-10-30-not-a-beginner:failed-2026110906",
-    "text": "⚠️ lst-2026-10-30-not-a-beginner failed to post: GET https://graph.facebook.com/v23.0/530317382955170 -> 404: {\"title\":\"Not Found\",\"detail\":\"No audio asset found for the given ID\",\"status\":404}"
-  },
-  {
     "id": "n-1109-week-waiting",
     "text": "Next week's 28 listicles (10-18 Nov) are rendered and waiting for your yes. The first one goes out tomorrow (Tue 10 Nov, 09:00 New York) only if you approve. Tap 'Approve the week' on the dashboard or here."
   },
@@ -798,5 +794,9 @@
   {
     "id": "xp-e95256a6",
     "text": "📤 Threads: 6 WAYS TO FIGHT SOMEONE WHO WON'T STOP KICKING\nhttps://www.threads.com/@matteofights/post/DgQjYJpRwKs"
+  },
+  {
+    "id": "xp-b938db59",
+    "text": "📤 YouTube Shorts: 6 WAYS TO STOP GETTING HURT BY BODY SHOTS\nhttps://youtube.com/shorts/wkFxmEIPgBc"
   }
 ]
