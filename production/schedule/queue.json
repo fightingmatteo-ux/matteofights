@@ -4677,7 +4677,14 @@
       "posting_since": "2026-11-23T23:31:07Z",
       "media_id": "18119066573106371",
       "permalink": "https://www.instagram.com/reel/DgGkOF5pb4P/",
-      "posted_at": "2026-11-23T23:31:41Z"
+      "posted_at": "2026-11-23T23:31:41Z",
+      "video_asset_fb": "lst-2026-11-23-scary-good-five-years-fb.mp4",
+      "fb_pick": {
+        "at": "2026-11-27T02:50:36Z",
+        "ig_views": 4686,
+        "vs_median": 1.69,
+        "shares_saves_per_1k": 2.6
+      }
     },
     {
       "id": "lst-2026-11-24-wont-stop-kicking",
