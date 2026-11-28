@@ -177,6 +177,10 @@ Sort by follows per 1k views when looking for what grows the account.
 | 2026-11-23 | lst-2026-11-23-recover-after-work | - | 18151535413562242 | 6 RECOVERY HABITS FOR PEOPLE WHO TRAIN AFTER WORK | lifestyle (tactical) | text-on-clip | trial | 1672 (0.62x) | ? | 6 | 15 | 0 | no | lifestyle, 12:30: 0.62x but 15 saves, 6 shares |
 | 2026-11-23 | lst-2026-11-23-scary-good-five-years | - | 18119066573106371 | 6 SIGNS YOU'LL BE SCARY GOOD IN FIVE YEARS | listicle (identity) | text-on-clip | trial | 4719 (1.75x) | ? | 0 | 13 | 0 | no | identity, 18:30: 1.75x, 60 likes (best of the week, short of 2x) |
 | 2026-11-24 | lst-2026-11-23-land-left-hook | - | 18132489742889605 | 6 WAYS TO LAND YOUR LEFT HOOK | listicle (tactical) | text-on-clip | trial | 763 (0.28x) | ? | 0 | 4 | 0 | no | tactical, 21:30: 0.28x |
+| 2026-11-24 | lst-2026-11-24-hands-up-relaxed | - | 18048858401833843 | 6 WAYS TO KEEP YOUR HANDS UP WITHOUT TENSING UP | listicle (tactical) | text-on-clip | trial | 2604 (0.97x) | ? | 0 | 17 | 0 | no | tactical, 09:00: 0.97x, 17 saves |
+| 2026-11-24 | lst-2026-11-24-hard-conversations | - | 18205334620380242 | 6 THINGS TRAINING TEACHES YOU ABOUT HARD CONVERSATIONS | builder (identity) | text-on-clip | trial | 2483 (0.92x) | ? | 0 | 3 | 0 | no | builder: 0.92x, 3 saves |
+| 2026-11-24 | lst-2026-11-24-wont-stop-kicking | - | 18403997686201659 | 6 WAYS TO FIGHT SOMEONE WHO WON'T STOP KICKING | listicle (tactical) | text-on-clip | trial | 2902 (1.08x) | ? | 3 | 12 | 3 | no | tactical, 18:30: 1.08x |
+| 2026-11-25 | lst-2026-11-24-body-shots-hurt | - | 18390528502232053 | 6 WAYS TO STOP GETTING HURT BY BODY SHOTS | listicle (tactical) | text-on-clip | trial | 2757 (1.02x) | ? | 0 | 18 | 0 | no | tactical, 21:30: 1.02x, 18 saves |
 
 ## Patterns so far
 - _Add a line whenever a test is decided. Keep it to what the numbers showed._
